@@ -1,0 +1,54 @@
+name: Daily Sector Rotation Run
+
+on:
+  schedule:
+    # 6:30 PM ET (22:30 UTC) — after US market close
+    - cron: '30 22 * * 1-5'
+  workflow_dispatch:   # manual trigger any time
+
+permissions:
+  contents: write
+
+jobs:
+  daily-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run daily simulation
+        run: python daily_run.py
+
+      - name: Commit updated state + dashboard
+        run: |
+          git config user.name  "sector-bot"
+          git config user.email "sector-bot@users.noreply.github.com"
+          git add state.json docs/index.html docs/trades.json
+          git diff --cached --quiet || git commit -m "daily run $(date -u '+%Y-%m-%d') — $(python -c "
+          import json
+          s = json.load(open('state.json'))
+          buys  = [t for t in s['trade_log'] if t['action']=='BUY'  and t['date']==__import__('datetime').date.today().isoformat()]
+          sells = [t for t in s['trade_log'] if t['action']=='SELL' and t['date']==__import__('datetime').date.today().isoformat()]
+          snap  = s['daily_snapshots'][-1] if s['daily_snapshots'] else {}
+          eq    = snap.get('equity', 0)
+          print(f'sector={snap.get(\"sector\",\"—\")} | {len(buys)}B {len(sells)}S | equity=\${eq:,.0f}')
+          ")"
+          git push
