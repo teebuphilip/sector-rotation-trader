@@ -11,22 +11,30 @@ daily_run.py — Runs once per day via GitHub Actions.
   9. Save state + trade log
 """
 import sys
+import argparse
 import pandas as pd
-import yfinance as yf
 from datetime import date
 
-from config import MAX_POSITION_SIZE, SECTOR_ETFS
-from scanner import SECTOR_STOCKS, find_leading_sector, filter_sector_leaders
+parser = argparse.ArgumentParser()
+parser.add_argument("--dry-run", action="store_true", help="Run without saving state or dashboard")
+args = parser.parse_args()
+DRY_RUN = args.dry_run
+
+from config import (
+    MAX_POSITION_SIZE, SECTOR_ETFS,
+    STOP_LOSS_PCT, MAX_DRAWDOWN_PCT, MAX_POSITIONS_PER_SECTOR
+)
+from scanner import SECTOR_STOCKS, find_leading_sector, filter_sector_leaders, safe_download
 from signals import check_entry, check_exit, get_entry_price
 from portfolio import (
     load_state, save_state, open_position, close_position,
     accrue_interest, snapshot, available_cash, can_borrow,
-    save_trade_log, total_equity
+    save_trade_log, total_equity, compute_analytics
 )
 from dashboard import generate_dashboard
 
 print("=" * 60)
-print(f"SECTOR ROTATION TRADER — Daily Run {date.today()}")
+print(f"SECTOR ROTATION TRADER — Daily Run {date.today()}" + (" [DRY RUN]" if DRY_RUN else ""))
 print("=" * 60)
 
 # ── Load state ─────────────────────────────────────────────────
@@ -37,7 +45,11 @@ print(f"\nLoaded state | Cash: ${state['cash']:,.0f} | "
 
 # ── Download data ──────────────────────────────────────────────
 print("\n[1/6] Downloading market data...")
-sector_data = yf.download(SECTOR_ETFS, period="1y", auto_adjust=True, progress=False)['Close']
+sector_raw = safe_download(SECTOR_ETFS, period="1y")
+if sector_raw.empty:
+    print("  ✖ Failed to download sector ETF data — aborting run.")
+    sys.exit(0)
+sector_data = sector_raw['Close']
 
 # Build ticker list: all sector stocks + currently held tickers
 held_tickers = list(state["positions"].keys())
@@ -49,8 +61,12 @@ candidate_universe = list(set(
 all_needed = list(set(candidate_universe + held_tickers))
 
 if all_needed:
-    raw = yf.download(all_needed, period="1y", auto_adjust=True, progress=False)
-    if isinstance(raw.columns, pd.MultiIndex):
+    raw = safe_download(all_needed, period="1y")
+    if raw.empty:
+        print("  ⚠ Failed to download stock data — proceeding with exits only.")
+        prices_all  = pd.DataFrame()
+        volumes_all = pd.DataFrame()
+    elif isinstance(raw.columns, pd.MultiIndex):
         prices_all  = raw['Close']
         volumes_all = raw['Volume']
     else:
@@ -79,14 +95,24 @@ for ticker in list(state["positions"].keys()):
         print(f"  ⚠ {ticker}: no price data, skipping exit check")
         continue
     px_t   = prices_all[ticker].dropna()
-    consec = state["positions"][ticker].get("consec_below_ma", 0)
+    pos    = state["positions"][ticker]
+    cur_px = current_px.get(ticker, pos["entry_price"])
+
+    # Hard stop-loss check
+    loss_pct = (cur_px - pos["entry_price"]) / pos["entry_price"]
+    if loss_pct <= -STOP_LOSS_PCT:
+        close_position(state, ticker, cur_px, reason="stop_loss")
+        exits_today.append(ticker)
+        print(f"  ✖ STOP-LOSS {ticker} @ ${cur_px:.2f} ({loss_pct:.1%})")
+        continue
+
+    consec = pos.get("consec_below_ma", 0)
     should_exit, new_consec = check_exit(px_t, consec)
     state["positions"][ticker]["consec_below_ma"] = new_consec
     if should_exit:
-        close_price = current_px.get(ticker, state["positions"][ticker]["entry_price"])
-        close_position(state, ticker, close_price, reason="20MA_exit")
+        close_position(state, ticker, cur_px, reason="20MA_exit")
         exits_today.append(ticker)
-        print(f"  ✖ EXITED {ticker} @ ${close_price:.2f}")
+        print(f"  ✖ EXITED {ticker} @ ${cur_px:.2f}")
     else:
         unr = (current_px.get(ticker, state["positions"][ticker]["entry_price"])
                - state["positions"][ticker]["entry_price"]) * state["positions"][ticker]["shares"]
@@ -123,11 +149,43 @@ else:
 print(f"\n[6/6] Checking entry signals...")
 entries_today = []
 
+# Drawdown circuit breaker
+peak_equity = max(
+    (s["equity"] for s in state["daily_snapshots"]),
+    default=100_000
+)
+cur_equity = total_equity(state, current_px)
+drawdown = (cur_equity - peak_equity) / peak_equity if peak_equity > 0 else 0
+drawdown_blocked = drawdown <= -MAX_DRAWDOWN_PCT
+if drawdown_blocked:
+    print(f"  ⚠ DRAWDOWN BREAKER: {drawdown:.1%} from peak — no new entries")
+
+# Count positions per sector for concentration limit
+def sector_for_ticker(t):
+    for etf, tickers in SECTOR_STOCKS.items():
+        if t in tickers:
+            return etf
+    return None
+
+sector_counts = {}
+for t in state["positions"]:
+    sec = sector_for_ticker(t)
+    if sec:
+        sector_counts[sec] = sector_counts.get(sec, 0) + 1
+
 for ticker in candidates:
+    if drawdown_blocked:
+        break
     if ticker in state["positions"]:
         print(f"  ~ {ticker}: already held, skip")
         continue
     if ticker not in prices_all.columns or ticker not in volumes_all.columns:
+        continue
+
+    # Sector concentration check
+    t_sector = sector_for_ticker(ticker)
+    if t_sector and sector_counts.get(t_sector, 0) >= MAX_POSITIONS_PER_SECTOR:
+        print(f"  ~ {ticker}: sector {t_sector} at max {MAX_POSITIONS_PER_SECTOR} positions, skip")
         continue
 
     px_t  = prices_all[ticker].dropna()
@@ -143,21 +201,38 @@ for ticker in candidates:
     if cash_avail >= MAX_POSITION_SIZE:
         open_position(state, ticker, entry_price, MAX_POSITION_SIZE, using_margin=False)
         entries_today.append(ticker)
+        if t_sector:
+            sector_counts[t_sector] = sector_counts.get(t_sector, 0) + 1
         print(f"  ✚ ENTERED {ticker} @ ${entry_price:.2f} (cash)")
     elif can_borrow(state, MAX_POSITION_SIZE):
         open_position(state, ticker, entry_price, MAX_POSITION_SIZE, using_margin=True)
         entries_today.append(ticker)
+        if t_sector:
+            sector_counts[t_sector] = sector_counts.get(t_sector, 0) + 1
         print(f"  ✚ ENTERED {ticker} @ ${entry_price:.2f} (MARGIN)")
     else:
         print(f"  ✗ {ticker}: signal fired but insufficient cash + margin")
 
 # ── Snapshot + save ────────────────────────────────────────────
 snapshot(state, current_px, top_etf or "none")
-save_state(state)
-save_trade_log(state)
+if not DRY_RUN:
+    save_state(state)
+    save_trade_log(state)
+else:
+    print("\n  [DRY RUN] Skipping state save.")
+
+# ── SPY benchmark ─────────────────────────────────────────────
+spy_raw = safe_download(["SPY"], period="1y")
+spy_prices = None
+if not spy_raw.empty:
+    spy_prices = spy_raw['Close'] if 'Close' in spy_raw.columns else spy_raw[['Close']]
 
 # ── Dashboard ──────────────────────────────────────────────────
-generate_dashboard(state, current_px, top_etf)
+analytics = compute_analytics(state)
+if not DRY_RUN:
+    generate_dashboard(state, current_px, top_etf, analytics=analytics, spy_prices=spy_prices)
+else:
+    print("  [DRY RUN] Skipping dashboard generation.")
 
 # ── Summary ────────────────────────────────────────────────────
 equity = total_equity(state, current_px)

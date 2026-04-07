@@ -42,7 +42,7 @@ def _default_state() -> dict:
 
 
 def available_cash(state: dict) -> float:
-    return state["cash"]
+    return max(0.0, state["cash"] - state["accrued_interest"])
 
 
 def can_borrow(state: dict, amount: float) -> bool:
@@ -99,12 +99,26 @@ def close_position(state: dict, ticker: str, price: float, reason: str = "exit_s
     pnl      = proceeds - cost
 
     if pos["using_margin"]:
-        # Pay back principal from proceeds
-        repay          = min(pos["cost"], proceeds)
-        state["borrowed"] = max(0, state["borrowed"] - repay)
-        state["cash"]  += max(0, proceeds - repay)
+        # Settle accrued interest first (proportional to this position's share of borrowed)
+        if state["borrowed"] > 0 and state["accrued_interest"] > 0:
+            interest_share = min(
+                state["accrued_interest"],
+                state["accrued_interest"] * (pos["cost"] / state["borrowed"])
+            )
+            proceeds -= interest_share
+            state["accrued_interest"] = max(0, state["accrued_interest"] - interest_share)
+
+        # Repay borrowed principal fully — shortfall comes from cash
+        principal = pos["cost"]
+        if proceeds >= principal:
+            state["borrowed"] = max(0, state["borrowed"] - principal)
+            state["cash"] += proceeds - principal
+        else:
+            state["borrowed"] = max(0, state["borrowed"] - principal)
+            shortfall = principal - proceeds
+            state["cash"] -= shortfall  # loss hits cash
     else:
-        state["cash"]  += proceeds
+        state["cash"] += proceeds
 
     state["trade_log"].append({
         "date":          _today(),
@@ -158,6 +172,61 @@ def snapshot(state: dict, current_prices: dict, sector: str):
     })
 
     state["last_run"] = _today()
+
+
+def compute_analytics(state: dict) -> dict:
+    """Compute risk metrics from daily snapshots."""
+    snaps = state.get("daily_snapshots", [])
+    equities = [s["equity"] for s in snaps]
+
+    if len(equities) < 2:
+        return {"sharpe": 0.0, "max_drawdown_pct": 0.0, "avg_win": 0.0, "avg_loss": 0.0}
+
+    # Daily returns
+    returns = [(equities[i] - equities[i-1]) / equities[i-1]
+               for i in range(1, len(equities)) if equities[i-1] > 0]
+
+    # Sharpe (annualized, rf=4.5%)
+    import numpy as np
+    if returns and np.std(returns) > 0:
+        excess = np.mean(returns) - (0.045 / 252)
+        sharpe = float(excess / np.std(returns) * np.sqrt(252))
+    else:
+        sharpe = 0.0
+
+    # Max drawdown
+    peak = equities[0]
+    max_dd = 0.0
+    for eq in equities:
+        if eq > peak:
+            peak = eq
+        dd = (eq - peak) / peak if peak > 0 else 0
+        if dd < max_dd:
+            max_dd = dd
+
+    # Avg win / avg loss
+    sells = [t for t in state["trade_log"] if t["action"] == "SELL"]
+    wins  = [t["pnl"] for t in sells if t.get("pnl", 0) > 0]
+    losses = [t["pnl"] for t in sells if t.get("pnl", 0) < 0]
+    avg_win  = float(np.mean(wins)) if wins else 0.0
+    avg_loss = float(np.mean(losses)) if losses else 0.0
+
+    # Drawdown series for chart
+    dd_series = []
+    peak = equities[0]
+    for i, eq in enumerate(equities):
+        if eq > peak:
+            peak = eq
+        dd_pct = ((eq - peak) / peak * 100) if peak > 0 else 0
+        dd_series.append(round(dd_pct, 2))
+
+    return {
+        "sharpe": round(sharpe, 2),
+        "max_drawdown_pct": round(max_dd * 100, 2),
+        "avg_win": round(avg_win, 2),
+        "avg_loss": round(avg_loss, 2),
+        "drawdown_series": dd_series,
+    }
 
 
 def save_trade_log(state: dict):

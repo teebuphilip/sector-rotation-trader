@@ -61,7 +61,7 @@
   /* ── KPI bar ── */
   .kpi-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 12px;
     margin-bottom: 28px;
   }
@@ -177,7 +177,7 @@
   .dot.yellow { background: var(--yellow); }
 
   @media (max-width: 1100px) {
-    .kpi-grid { grid-template-columns: repeat(4, 1fr); }
+    .kpi-grid { grid-template-columns: repeat(3, 1fr); }
     .two-col  { grid-template-columns: 1fr; }
   }
   @media (max-width: 680px) {
@@ -190,7 +190,7 @@
 
 <header>
   <div class="logo">Sector<span>/</span>Rotation <span>|</span> Paper Trader</div>
-  <div class="last-update">Last run: 2026-04-06 &nbsp;·&nbsp; $100k base · $10k/trade</div>
+  <div class="last-update">Last run: 2026-04-07 &nbsp;·&nbsp; $100k base · $10k/trade</div>
 </header>
 
 <div class="container">
@@ -199,23 +199,15 @@
   <div class="kpi-grid">
     <div class="kpi">
       <div class="kpi-label">Total Equity</div>
-      <div class="kpi-value">$101,645</div>
+      <div class="kpi-value">$102,074</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">Net P&L</div>
-      <div class="kpi-value green">$+1,645</div>
+      <div class="kpi-value green">$+2,074</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">Return</div>
-      <div class="kpi-value green">+1.64%</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">Realized P&L</div>
-      <div class="kpi-value red">$-914</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">Unrealized</div>
-      <div class="kpi-value green">$+2,558</div>
+      <div class="kpi-value green">+2.07%</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">Win Rate</div>
@@ -224,6 +216,26 @@
     <div class="kpi">
       <div class="kpi-label">Leading Sector</div>
       <div class="kpi-value accent">XLRE</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Sharpe Ratio</div>
+      <div class="kpi-value accent">0.60</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Max Drawdown</div>
+      <div class="kpi-value red">-2.6%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Avg Win</div>
+      <div class="kpi-value green">$+1,854</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Avg Loss</div>
+      <div class="kpi-value red">$-779</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Realized / Unrealized</div>
+      <div class="kpi-value red">$-484 / $+2,558</div>
     </div>
   </div>
 
@@ -236,6 +248,19 @@
     <div class="panel-body">
       <div class="chart-wrap">
         <canvas id="equityChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawdown Chart -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot" style="background:var(--red);box-shadow:0 0 6px var(--red)"></span>
+      <span class="panel-title">Drawdown</span>
+    </div>
+    <div class="panel-body">
+      <div class="chart-wrap" style="height:180px">
+        <canvas id="drawdownChart"></canvas>
       </div>
     </div>
   </div>
@@ -253,8 +278,8 @@
           <td><span class="ticker">CF</span></td>
           <td>$104.30</td>
           <td>$130.98</td>
-          <td style="color:#00ff88">$+2,558.00 (+25.6%)</td>
-          <td>2026-04-06</td>
+          <td style="color:#00ff88">$+2,558.01 (+25.6%)</td>
+          <td>2026-04-07</td>
           <td>0</td>
         </tr></tbody></table>
       </div>
@@ -268,14 +293,14 @@
       <div class="panel-body">
         <table>
           <tbody>
-            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">CASH</td><td>$89,086.50</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">CASH</td><td>$89,515.54</td></tr>
             <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">BORROWED</td><td style="color:var(--text)">$0.00</td></tr>
             <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">ACCRUED INT.</td><td style="color:var(--red)">$0.00</td></tr>
             <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">OPEN POSITIONS</td><td>1</td></tr>
             <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">TOTAL TRADES</td><td>4</td></tr>
             <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">WINNERS</td><td>1</td></tr>
             <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">WIN RATE</td><td>25.0%</td></tr>
-            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">SIM START</td><td>2026-01-05</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">SIM START</td><td>2026-01-06</td></tr>
           </tbody>
         </table>
       </div>
@@ -291,17 +316,17 @@
     <div class="panel-body" style="padding:0; overflow-x:auto">
       <table><thead><tr><th>Date</th><th>Action</th><th>Ticker</th><th>Price</th><th>Shares</th><th>Value</th><th>P&L</th><th>Notes</th></tr></thead><tbody>
             <tr class="sell-row">
-              <td>2026-04-06</td>
+              <td>2026-04-07</td>
               <td><span class="action-sell">SELL</span></td>
               <td><span class="ticker">MOS</span></td>
-              <td>$26.20</td>
+              <td>$27.67</td>
               <td>318.8775</td>
-              <td>$8,354.59</td>
-              <td style="color:#ff4d6d">$-1,645.41 (-16.4%)</td>
-              <td>20MA_exit</td>
+              <td>$8,823.34</td>
+              <td style="color:#ff4d6d">$-1,176.66 (-11.8%)</td>
+              <td>stop_loss</td>
             </tr>
             <tr class="buy-row">
-              <td>2026-04-06</td>
+              <td>2026-04-07</td>
               <td><span class="action-buy">BUY</span></td>
               <td><span class="ticker">MOS</span></td>
               <td>$31.36</td>
@@ -311,7 +336,7 @@
               <td>CASH</td>
             </tr>
             <tr class="sell-row">
-              <td>2026-04-06</td>
+              <td>2026-04-07</td>
               <td><span class="action-sell">SELL</span></td>
               <td><span class="ticker">CL</span></td>
               <td>$95.28</td>
@@ -321,7 +346,7 @@
               <td>20MA_exit</td>
             </tr>
             <tr class="sell-row">
-              <td>2026-04-06</td>
+              <td>2026-04-07</td>
               <td><span class="action-sell">SELL</span></td>
               <td><span class="ticker">PM</span></td>
               <td>$176.36</td>
@@ -331,7 +356,7 @@
               <td>20MA_exit</td>
             </tr>
             <tr class="buy-row">
-              <td>2026-04-06</td>
+              <td>2026-04-07</td>
               <td><span class="action-buy">BUY</span></td>
               <td><span class="ticker">CF</span></td>
               <td>$104.30</td>
@@ -340,18 +365,8 @@
               <td>—</td>
               <td>CASH</td>
             </tr>
-            <tr class="sell-row">
-              <td>2026-04-06</td>
-              <td><span class="action-sell">SELL</span></td>
-              <td><span class="ticker">NEM</span></td>
-              <td>$112.62</td>
-              <td>79.5762</td>
-              <td>$8,962.04</td>
-              <td style="color:#ff4d6d">$-1,037.96 (-10.4%)</td>
-              <td>20MA_exit</td>
-            </tr>
             <tr class="buy-row">
-              <td>2026-04-06</td>
+              <td>2026-04-07</td>
               <td><span class="action-buy">BUY</span></td>
               <td><span class="ticker">PM</span></td>
               <td>$177.85</td>
@@ -360,8 +375,18 @@
               <td>—</td>
               <td>CASH</td>
             </tr>
+            <tr class="sell-row">
+              <td>2026-04-07</td>
+              <td><span class="action-sell">SELL</span></td>
+              <td><span class="ticker">NEM</span></td>
+              <td>$112.12</td>
+              <td>79.5762</td>
+              <td>$8,922.33</td>
+              <td style="color:#ff4d6d">$-1,077.67 (-10.8%)</td>
+              <td>stop_loss</td>
+            </tr>
             <tr class="buy-row">
-              <td>2026-04-06</td>
+              <td>2026-04-07</td>
               <td><span class="action-buy">BUY</span></td>
               <td><span class="ticker">NEM</span></td>
               <td>$125.67</td>
@@ -371,7 +396,7 @@
               <td>CASH</td>
             </tr>
             <tr class="buy-row">
-              <td>2026-04-06</td>
+              <td>2026-04-07</td>
               <td><span class="action-buy">BUY</span></td>
               <td><span class="ticker">CL</span></td>
               <td>$80.38</td>
@@ -386,9 +411,11 @@
 </div>
 
 <script>
-const dates  = ["2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06", "2026-04-06"];
-const equity = [100000.0, 100000.0, 100000.0, 100000.0, 100075.43, 100131.07, 100258.44, 100455.05, 100429.08, 100451.34, 100451.34, 100565.1, 100541.47, 100675.83, 100781.58, 100599.94, 100755.38, 101053.93, 100685.13, 100155.53, 100422.16, 100415.08, 100755.78, 100908.96, 100895.62, 100809.91, 100829.22, 101200.42, 101456.77, 101438.72, 101438.72, 101096.71, 101033.38, 100880.58, 101013.1, 101476.06, 101589.45, 101566.34, 101547.65, 101708.13, 101311.46, 100952.28, 100771.21, 101353.19, 101832.58, 101378.12, 101283.2, 102249.64, 103771.21, 102501.03, 101283.91, 101745.85, 101740.85, 101124.85, 101061.57, 100609.03, 101255.24, 101369.34, 101795.99, 102168.95, 102279.21, 101535.2, 101356.87, 101547.67, 101547.67, 101644.5];
+const dates  = ["2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07", "2026-04-07"];
+const equity = [100000.0, 100000.0, 100000.0, 100075.43, 100131.07, 100258.44, 100455.05, 100429.08, 100451.34, 100451.34, 100565.1, 100541.47, 100675.83, 100781.58, 100599.94, 100755.38, 101053.93, 100685.13, 100155.53, 100382.45, 100375.37, 100716.08, 100869.25, 100855.92, 100770.2, 100789.51, 101160.71, 101417.06, 101399.01, 101399.01, 101057.0, 100993.68, 100840.87, 100973.4, 101436.35, 101549.75, 101526.63, 101507.94, 101668.42, 101271.75, 100912.57, 100731.51, 101313.48, 101792.87, 101338.41, 101243.49, 102209.93, 103731.51, 102461.32, 101244.21, 101336.25, 101666.07, 101553.89, 101490.61, 101038.07, 101684.28, 101798.38, 102225.03, 102597.99, 102708.25, 101964.24, 101785.91, 101976.71, 101976.71, 102073.54];
 const startV = 100000.0;
+const spyData = [100000.0, 99677.66, 99667.54, 100326.68, 100484.24, 100283.32, 99790.41, 100062.16, 99978.32, 97943.08, 99073.45, 99590.93, 99627.06, 100132.98, 100531.94, 100521.82, 100322.34, 100023.13, 100520.38, 99670.44, 99187.64, 97948.87, 99827.99, 100309.34, 100044.81, 100021.69, 98476.47, 98545.84, 98704.85, 99202.1, 98940.46, 99655.98, 98638.36, 99355.31, 100193.71, 99637.18, 99158.73, 99215.11, 98340.59, 99034.42, 98482.25, 97191.43, 98042.83, 97885.26, 97762.4, 96277.88, 95732.94, 96707.2, 96961.59, 95608.62, 95373.01, 94005.76, 94992.83, 94673.95, 95201.55, 93501.37, 91906.99, 91599.7, 94262.32, 94972.53, 95058.05, 95507.37, 94834.84];
+const ddData  = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.03, -0.0, -0.0, 0.0, -0.02, 0.0, 0.0, -0.18, -0.03, 0.0, -0.36, -0.89, -0.66, -0.67, -0.33, -0.18, -0.2, -0.28, -0.26, 0.0, 0.0, -0.02, -0.02, -0.36, -0.42, -0.57, -0.44, 0.0, 0.0, -0.02, -0.04, 0.0, -0.39, -0.74, -0.92, -0.35, 0.0, -0.45, -0.54, 0.0, 0.0, -1.22, -2.4, -2.31, -1.99, -2.1, -2.16, -2.6, -1.97, -1.86, -1.45, -1.09, -0.99, -1.7, -1.88, -1.69, -1.69, -1.6];
 
 const ctx = document.getElementById('equityChart').getContext('2d');
 
@@ -412,6 +439,16 @@ new Chart(ctx, {
         pointRadius: equity.length > 60 ? 0 : 3,
         pointHoverRadius: 5,
         pointBackgroundColor: '#00d4ff',
+      },
+      {
+        label: 'SPY Benchmark',
+        data: spyData.length ? spyData.slice(0, dates.length) : [],
+        borderColor: '#ffd166',
+        borderWidth: 1.5,
+        borderDash: [6,3],
+        fill: false,
+        tension: 0.3,
+        pointRadius: 0,
       },
       {
         label: 'Starting Capital',
@@ -470,6 +507,60 @@ new Chart(ctx, {
     }
   }
 });
+
+// ── Drawdown Chart ──
+if (ddData.length > 0) {
+  const ddCtx = document.getElementById('drawdownChart').getContext('2d');
+  const ddGrad = ddCtx.createLinearGradient(0, 0, 0, 180);
+  ddGrad.addColorStop(0, 'rgba(255,77,109,0.00)');
+  ddGrad.addColorStop(1, 'rgba(255,77,109,0.30)');
+
+  new Chart(ddCtx, {
+    type: 'line',
+    data: {
+      labels: dates,
+      datasets: [{
+        label: 'Drawdown %',
+        data: ddData,
+        borderColor: '#ff4d6d',
+        borderWidth: 1.5,
+        backgroundColor: ddGrad,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 0,
+        pointHoverRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#111520',
+          borderColor: '#1e2535',
+          borderWidth: 1,
+          titleColor: '#ff4d6d',
+          bodyColor: '#c8d6e5',
+          titleFont: { family: 'Space Mono', size: 11 },
+          bodyFont: { family: 'DM Sans', size: 12 },
+          callbacks: { label: ctx => ' ' + ctx.parsed.y.toFixed(2) + '%' }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(30,37,53,0.8)' },
+          ticks: { color: '#4a5568', font: { family: 'Space Mono', size: 10 }, maxTicksLimit: 12 }
+        },
+        y: {
+          max: 0,
+          grid: { color: 'rgba(30,37,53,0.8)' },
+          ticks: { color: '#4a5568', font: { family: 'Space Mono', size: 10 }, callback: v => v.toFixed(0) + '%' }
+        }
+      }
+    }
+  });
+}
 </script>
 </body>
 </html>

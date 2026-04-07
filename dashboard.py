@@ -8,7 +8,8 @@ from datetime import date
 from config import STARTING_CASH, DASHBOARD_FILE
 
 
-def generate_dashboard(state: dict, current_px: dict, sector: str):
+def generate_dashboard(state: dict, current_px: dict, sector: str,
+                       analytics: dict = None, spy_prices=None):
     os.makedirs("docs", exist_ok=True)
 
     # ── Compute summary stats ──────────────────────────────────
@@ -27,6 +28,29 @@ def generate_dashboard(state: dict, current_px: dict, sector: str):
     wins  = [t for t in state["trade_log"] if t["action"] == "SELL" and t.get("pnl", 0) > 0]
     total_closed = [t for t in state["trade_log"] if t["action"] == "SELL"]
     win_rate = (len(wins) / len(total_closed) * 100) if total_closed else 0.0
+
+    # ── Analytics ──────────────────────────────────────────────
+    if analytics is None:
+        analytics = {"sharpe": 0.0, "max_drawdown_pct": 0.0, "avg_win": 0.0, "avg_loss": 0.0, "drawdown_series": []}
+    sharpe       = analytics.get("sharpe", 0.0)
+    max_dd       = analytics.get("max_drawdown_pct", 0.0)
+    avg_win      = analytics.get("avg_win", 0.0)
+    avg_loss     = analytics.get("avg_loss", 0.0)
+    dd_series    = analytics.get("drawdown_series", [])
+
+    # ── SPY benchmark data ────────────────────────────────────
+    spy_returns_js = "[]"
+    if spy_prices is not None and not spy_prices.empty:
+        import pandas as pd
+        sim_start = state.get("sim_start", "")
+        if sim_start:
+            spy_s = spy_prices.squeeze() if hasattr(spy_prices, 'squeeze') else spy_prices
+            spy_s = spy_s.dropna()
+            spy_s = spy_s[spy_s.index >= sim_start]
+            if len(spy_s) > 0:
+                base = float(spy_s.iloc[0])
+                spy_norm = [round(float(v) / base * STARTING_CASH, 2) for v in spy_s]
+                spy_returns_js = json.dumps(spy_norm)
 
     # ── Equity curve data ──────────────────────────────────────
     snap_dates  = [s["date"] for s in state["daily_snapshots"]]
@@ -84,6 +108,7 @@ def generate_dashboard(state: dict, current_px: dict, sector: str):
     # ── Equity chart JS data ───────────────────────────────────
     dates_js  = json.dumps(snap_dates)
     equity_js = json.dumps(snap_equity)
+    dd_js     = json.dumps(dd_series)
 
     pnl_color  = "#00ff88" if net_pnl >= 0 else "#ff4d6d"
     sector_str = sector or "—"
@@ -151,7 +176,7 @@ def generate_dashboard(state: dict, current_px: dict, sector: str):
   /* ── KPI bar ── */
   .kpi-grid {{
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 12px;
     margin-bottom: 28px;
   }}
@@ -267,7 +292,7 @@ def generate_dashboard(state: dict, current_px: dict, sector: str):
   .dot.yellow {{ background: var(--yellow); }}
 
   @media (max-width: 1100px) {{
-    .kpi-grid {{ grid-template-columns: repeat(4, 1fr); }}
+    .kpi-grid {{ grid-template-columns: repeat(3, 1fr); }}
     .two-col  {{ grid-template-columns: 1fr; }}
   }}
   @media (max-width: 680px) {{
@@ -300,20 +325,32 @@ def generate_dashboard(state: dict, current_px: dict, sector: str):
       <div class="kpi-value {'green' if net_pnl_pct >= 0 else 'red'}">{net_pnl_pct:+.2f}%</div>
     </div>
     <div class="kpi">
-      <div class="kpi-label">Realized P&L</div>
-      <div class="kpi-value {'green' if realized >= 0 else 'red'}">${realized:+,.0f}</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">Unrealized</div>
-      <div class="kpi-value {'green' if unrealized >= 0 else 'red'}">${unrealized:+,.0f}</div>
-    </div>
-    <div class="kpi">
       <div class="kpi-label">Win Rate</div>
       <div class="kpi-value accent">{win_rate:.0f}%</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">Leading Sector</div>
       <div class="kpi-value accent">{sector_str}</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Sharpe Ratio</div>
+      <div class="kpi-value {'green' if sharpe >= 1.0 else 'red' if sharpe < 0 else 'accent'}">{sharpe:.2f}</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Max Drawdown</div>
+      <div class="kpi-value red">{max_dd:.1f}%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Avg Win</div>
+      <div class="kpi-value green">${avg_win:+,.0f}</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Avg Loss</div>
+      <div class="kpi-value red">${avg_loss:+,.0f}</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Realized / Unrealized</div>
+      <div class="kpi-value {'green' if realized >= 0 else 'red'}">${realized:+,.0f} / ${unrealized:+,.0f}</div>
     </div>
   </div>
 
@@ -326,6 +363,19 @@ def generate_dashboard(state: dict, current_px: dict, sector: str):
     <div class="panel-body">
       <div class="chart-wrap">
         <canvas id="equityChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawdown Chart -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot" style="background:var(--red);box-shadow:0 0 6px var(--red)"></span>
+      <span class="panel-title">Drawdown</span>
+    </div>
+    <div class="panel-body">
+      <div class="chart-wrap" style="height:180px">
+        <canvas id="drawdownChart"></canvas>
       </div>
     </div>
   </div>
@@ -381,6 +431,8 @@ def generate_dashboard(state: dict, current_px: dict, sector: str):
 const dates  = {dates_js};
 const equity = {equity_js};
 const startV = {STARTING_CASH};
+const spyData = {spy_returns_js};
+const ddData  = {dd_js};
 
 const ctx = document.getElementById('equityChart').getContext('2d');
 
@@ -404,6 +456,16 @@ new Chart(ctx, {{
         pointRadius: equity.length > 60 ? 0 : 3,
         pointHoverRadius: 5,
         pointBackgroundColor: '#00d4ff',
+      }},
+      {{
+        label: 'SPY Benchmark',
+        data: spyData.length ? spyData.slice(0, dates.length) : [],
+        borderColor: '#ffd166',
+        borderWidth: 1.5,
+        borderDash: [6,3],
+        fill: false,
+        tension: 0.3,
+        pointRadius: 0,
       }},
       {{
         label: 'Starting Capital',
@@ -462,6 +524,60 @@ new Chart(ctx, {{
     }}
   }}
 }});
+
+// ── Drawdown Chart ──
+if (ddData.length > 0) {{
+  const ddCtx = document.getElementById('drawdownChart').getContext('2d');
+  const ddGrad = ddCtx.createLinearGradient(0, 0, 0, 180);
+  ddGrad.addColorStop(0, 'rgba(255,77,109,0.00)');
+  ddGrad.addColorStop(1, 'rgba(255,77,109,0.30)');
+
+  new Chart(ddCtx, {{
+    type: 'line',
+    data: {{
+      labels: dates,
+      datasets: [{{
+        label: 'Drawdown %',
+        data: ddData,
+        borderColor: '#ff4d6d',
+        borderWidth: 1.5,
+        backgroundColor: ddGrad,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 0,
+        pointHoverRadius: 4,
+      }}]
+    }},
+    options: {{
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {{
+        legend: {{ display: false }},
+        tooltip: {{
+          backgroundColor: '#111520',
+          borderColor: '#1e2535',
+          borderWidth: 1,
+          titleColor: '#ff4d6d',
+          bodyColor: '#c8d6e5',
+          titleFont: {{ family: 'Space Mono', size: 11 }},
+          bodyFont: {{ family: 'DM Sans', size: 12 }},
+          callbacks: {{ label: ctx => ' ' + ctx.parsed.y.toFixed(2) + '%' }}
+        }}
+      }},
+      scales: {{
+        x: {{
+          grid: {{ color: 'rgba(30,37,53,0.8)' }},
+          ticks: {{ color: '#4a5568', font: {{ family: 'Space Mono', size: 10 }}, maxTicksLimit: 12 }}
+        }},
+        y: {{
+          max: 0,
+          grid: {{ color: 'rgba(30,37,53,0.8)' }},
+          ticks: {{ color: '#4a5568', font: {{ family: 'Space Mono', size: 10 }}, callback: v => v.toFixed(0) + '%' }}
+        }}
+      }}
+    }}
+  }});
+}}
 </script>
 </body>
 </html>"""

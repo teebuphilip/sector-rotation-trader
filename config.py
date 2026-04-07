@@ -26,6 +26,11 @@ BB_STD               = 2.0   # Bollinger Band std devs
 EXIT_MA_PERIOD       = 20    # 20-day MA
 EXIT_CONSEC_DAYS     = 2     # N consecutive closes below MA triggers exit
 
+# Risk management
+STOP_LOSS_PCT        = 0.08  # 8% hard stop-loss per position
+MAX_DRAWDOWN_PCT     = 0.15  # 15% portfolio drawdown — pause new entries
+MAX_POSITIONS_PER_SECTOR = 5 # max open positions in the same sector
+
 # Simulation window
 SEED_DAYS            = 90    # historical days to seed state on first run
 SIM_MONTHS           = 6     # total simulation duration

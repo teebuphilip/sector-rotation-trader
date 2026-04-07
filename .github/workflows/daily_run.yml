@@ -52,3 +52,13 @@ jobs:
           print(f'sector={snap.get(\"sector\",\"—\")} | {len(buys)}B {len(sells)}S | equity=\${eq:,.0f}')
           ")"
           git push
+
+      - name: Create issue on failure
+        if: failure()
+        run: |
+          gh issue create \
+            --title "Daily run failed $(date -u '+%Y-%m-%d')" \
+            --body "The daily sector rotation run failed. Check [workflow logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})." \
+            --label "bug"
+        env:
+          GH_TOKEN: ${{ github.token }}

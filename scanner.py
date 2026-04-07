@@ -1,10 +1,29 @@
 """
 scanner.py — Sector rotation detection + stock leadership filter
 """
+import time
 import yfinance as yf
 import pandas as pd
 import numpy as np
 from config import (SECTOR_ETFS, PERF_SHORT_DAYS, PERF_LONG_DAYS, DATA_PERIOD)
+
+
+def safe_download(tickers, period="1y", retries=2, delay=30, **kwargs):
+    """Download with retry. Returns empty DataFrame on total failure."""
+    kwargs.setdefault("auto_adjust", True)
+    kwargs.setdefault("progress", False)
+    for attempt in range(retries):
+        try:
+            data = yf.download(tickers, period=period, **kwargs)
+            if data is not None and not data.empty:
+                return data
+        except Exception as e:
+            print(f"  ⚠ yfinance download failed (attempt {attempt+1}/{retries}): {e}")
+        if attempt < retries - 1:
+            print(f"  Retrying in {delay}s...")
+            time.sleep(delay)
+    print("  ✖ Download failed after all retries")
+    return pd.DataFrame()
 
 # Map each sector ETF to its component tickers (top holdings subset for speed)
 SECTOR_STOCKS = {
@@ -15,7 +34,7 @@ SECTOR_STOCKS = {
     'XLI':  ['GE','RTX','CAT','HON','UNP','DE','LMT','UPS','BA','MMM'],
     'XLC':  ['META','GOOGL','GOOG','NFLX','DIS','CMCSA','T','VZ','CHTR','TMUS'],
     'XLP':  ['PG','KO','PEP','COST','WMT','PM','MO','MDLZ','CL','GIS'],
-    'XLE':  ['XOM','CVX','COP','EOG','SLB','MPC','PSX','VLO','OXY','PXD'],
+    'XLE':  ['XOM','CVX','COP','EOG','SLB','MPC','PSX','VLO','OXY','FANG'],
     'XLB':  ['LIN','APD','SHW','FCX','NEM','NUE','VMC','MLM','CF','MOS'],
     'XLRE': ['PLD','AMT','EQIX','CCI','PSA','O','WELL','AVB','EQR','DLR'],
     'XLU':  ['NEE','DUK','SO','D','AEP','EXC','SRE','XEL','ED','ETR'],
@@ -24,8 +43,10 @@ SECTOR_STOCKS = {
 
 def get_sector_data(period=DATA_PERIOD):
     """Download sector ETF price data."""
-    data = yf.download(SECTOR_ETFS, period=period, auto_adjust=True, progress=False)['Close']
-    return data
+    data = safe_download(SECTOR_ETFS, period=period)
+    if data.empty:
+        return pd.DataFrame()
+    return data['Close']
 
 
 def find_leading_sector(sector_data):
@@ -56,7 +77,9 @@ def get_stock_data(tickers, period=DATA_PERIOD):
     """Download individual stock price + volume data."""
     if not tickers:
         return pd.DataFrame(), pd.DataFrame()
-    raw = yf.download(tickers, period=period, auto_adjust=True, progress=False)
+    raw = safe_download(tickers, period=period)
+    if raw.empty:
+        return pd.DataFrame(), pd.DataFrame()
     if isinstance(raw.columns, pd.MultiIndex):
         prices  = raw['Close']
         volumes = raw['Volume']

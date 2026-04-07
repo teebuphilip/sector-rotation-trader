@@ -8,14 +8,14 @@ Usage:
 This walks day-by-day through the seed window applying the full
 entry/exit logic so the portfolio starts in a realistic state.
 """
+import sys
 import pandas as pd
 import numpy as np
 from datetime import date, timedelta
-import yfinance as yf
 import json
 
-from config import SEED_DAYS, MAX_POSITION_SIZE, STATE_FILE
-from scanner import SECTOR_STOCKS, SECTOR_ETFS, find_leading_sector, filter_sector_leaders
+from config import SEED_DAYS, MAX_POSITION_SIZE, STATE_FILE, STOP_LOSS_PCT
+from scanner import SECTOR_STOCKS, SECTOR_ETFS, find_leading_sector, filter_sector_leaders, safe_download
 from signals import check_entry, check_exit, get_entry_price
 from portfolio import (
     _default_state, save_state, open_position, close_position,
@@ -29,11 +29,18 @@ print("=" * 60)
 
 # ── Download all data upfront ──────────────────────────────────
 print("\n[1/4] Downloading sector ETF data...")
-sector_raw = yf.download(SECTOR_ETFS, period="2y", auto_adjust=True, progress=False)['Close']
+_sector_dl = safe_download(SECTOR_ETFS, period="2y")
+if _sector_dl.empty:
+    print("  ✖ Failed to download sector ETF data — cannot seed.")
+    sys.exit(1)
+sector_raw = _sector_dl['Close']
 
 all_tickers = list(set(t for tl in SECTOR_STOCKS.values() for t in tl))
 print(f"[2/4] Downloading {len(all_tickers)} stock tickers...")
-stock_raw = yf.download(all_tickers, period="2y", auto_adjust=True, progress=False)
+stock_raw = safe_download(all_tickers, period="2y")
+if stock_raw.empty:
+    print("  ✖ Failed to download stock data — cannot seed.")
+    sys.exit(1)
 prices_all  = stock_raw['Close']  if isinstance(stock_raw.columns, pd.MultiIndex) else stock_raw[['Close']]
 volumes_all = stock_raw['Volume'] if isinstance(stock_raw.columns, pd.MultiIndex) else stock_raw[['Volume']]
 
@@ -80,12 +87,20 @@ for i, dt in enumerate(trading_days):
         px_t = px_slice[ticker].dropna()
         if len(px_t) < 22:
             continue
-        consec = state["positions"][ticker]["consec_below_ma"]
+        pos = state["positions"][ticker]
+        cur_px = float(px_t.iloc[-1])
+
+        # Hard stop-loss
+        loss_pct = (cur_px - pos["entry_price"]) / pos["entry_price"]
+        if loss_pct <= -STOP_LOSS_PCT:
+            close_position(state, ticker, cur_px, reason="stop_loss")
+            continue
+
+        consec = pos["consec_below_ma"]
         should_exit, new_consec = check_exit(px_t, consec)
         state["positions"][ticker]["consec_below_ma"] = new_consec
         if should_exit:
-            close_price = float(px_t.iloc[-1])
-            close_position(state, ticker, close_price, reason="20MA_exit")
+            close_position(state, ticker, cur_px, reason="20MA_exit")
 
     # --- 3. Sector scan
     top_etf, spread, _ = find_leading_sector(sec_slice)
