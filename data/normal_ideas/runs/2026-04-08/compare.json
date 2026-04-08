@@ -3,7 +3,7 @@
   "base": "data/normal_ideas",
   "counts": {
     "chatgpt": 1,
-    "claude": 0
+    "claude": 1
   },
   "overlap": {
     "idea_id": [],
@@ -11,12 +11,20 @@
   },
   "unique": {
     "chatgpt": [
-      "value-momentum-combo"
+      "cross-asset-volatility-breakout"
     ],
-    "claude": []
+    "claude": [
+      "relative-strength-momentum"
+    ]
   },
   "score_summary": {
     "chatgpt": {
+      "count": 1,
+      "avg": 100.0,
+      "min": 100,
+      "max": 100
+    },
+    "claude": {
       "count": 1,
       "avg": 100.0,
       "min": 100,
