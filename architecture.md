@@ -23,7 +23,7 @@ This repo runs a paper‑trading research lab with:
 - Entry points: `normal_run.py`, `normal_seed.py`
 
 ## Crazy Algos (Alternative Data)
-- Algo definitions: `crazy/algos.py`
+- Algo definitions: `crazy/algos/` (registered via `crazy/algos/registry.py`)
 - Runner: `crazy/runner.py`
 - Seed: `crazy/seed.py`
 - Combined dashboard: `crazy/combined_dashboard.py`
@@ -39,6 +39,14 @@ This repo runs a paper‑trading research lab with:
 - Publish markdown: `scripts/crazy_publish_markdown.py`
 - Daily stats report: `scripts/daily_stats_email.py`
 - GitHub Action: `.github/workflows/crazy_ideas_daily.yml`
+
+## Normal Idea Pipeline
+- Prompt: `prompts/normal_ideas_prompt.txt`
+- Generators: `scripts/normal_generate_chatgpt.sh`, `scripts/normal_generate_claude.sh`
+- Orchestrator: `scripts/normal_generate_ideas.py`
+- Scoring: `scripts/normal_score_ideas.py`
+- Publish markdown: `scripts/normal_publish_markdown.py`
+- GitHub Action: `.github/workflows/normal_ideas_weekly.yml`
 
 ## Reporting
 - Per‑algo dashboards:
@@ -59,8 +67,8 @@ This repo runs a paper‑trading research lab with:
 - Caches: `cache/`
 
 ## Execution Flow (Daily)
-1. GitHub Action runs idea generation.
-2. Normal/crazy runners update states, dashboards, ledgers, leaderboard.
+1. GitHub Action runs baseline NRWise (`daily_run.py`).
+2. Normal + crazy runners execute, auto‑seeding any new algos, then update states, dashboards, ledgers, and leaderboard.
 3. Landing/CTA pages read from `docs/` outputs.
 
 ## Commands

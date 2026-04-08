@@ -64,8 +64,13 @@ git clone https://github.com/teebuphilip/sector-rotation-trader.git
 cd sector-rotation-trader
 pip install -r requirements.txt
 
-# Run once to bootstrap 90-day historical state
+# Run once to bootstrap 90-day historical state (baseline)
 python seed.py
+
+# Normal/crazy algos auto-seed on first run,
+# but you can force a full seed if needed:
+python normal_seed.py
+python crazy_seed.py
 
 # Commit the generated state.json
 git add state.json docs/
@@ -88,6 +93,8 @@ python crazy_run.py
 Notes:
 - LinkedIn algo will use `data/crazy/linkedin_workforce.csv` if present (columns: `date,sector,hire_rate,layoff_rate`). Otherwise it attempts a best‑effort PDF parse and may hold cash if parsing fails.
 
+Crazy algos live in `crazy/algos/` and are registered in `crazy/algos/registry.py`.
+
 ## Blocked Queue (Missing Keys)
 
 Blocked algos are recorded here:
@@ -104,6 +111,18 @@ Key files:
 
 GitHub Action:
 - `.github/workflows/crazy_ideas_daily.yml`
+
+## Weekly Normal Idea Pipeline (Minimal)
+
+Generates one new “normal” academic idea from ChatGPT and Claude weekly, stores JSON + Markdown, and scores for completeness.
+
+Key files:
+- Prompt: `prompts/normal_ideas_prompt.txt`
+- Run artifacts: `data/normal_ideas/runs/YYYY-MM-DD/`
+- Published markdown: `docs/normal_ideas/YYYY-MM-DD.md`
+
+GitHub Action:
+- `.github/workflows/normal_ideas_weekly.yml`
 
 ## Daily Pipeline Email
 
@@ -186,6 +205,11 @@ Dedicated page for Algo Baileymol:
 Runs automatically at **6:30 PM ET Mon-Fri** after market close.
 
 Manual trigger: **Actions > Daily Sector Rotation Run > Run workflow**
+
+This workflow now runs:
+- Baseline NRWise (`daily_run.py`)
+- Normal algos (`normal_run.py`, auto-seeds new algos)
+- Crazy algos (`crazy_run.py`, auto-seeds new algos)
 
 ---
 
