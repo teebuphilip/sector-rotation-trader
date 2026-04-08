@@ -12,6 +12,8 @@ permissions:
 jobs:
   daily-run:
     runs-on: ubuntu-latest
+    env:
+      ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
 
     steps:
       - name: Checkout repo
@@ -78,7 +80,7 @@ jobs:
           git push
 
       - name: Prepare daily stats email
-        if: ${{ success() && secrets.ALERT_EMAIL_TO != '' }}
+        if: ${{ success() && env.ALERT_EMAIL_TO != '' }}
         run: |
           echo "AFH_RUN_DATE=$(date -u +%F)" >> $GITHUB_ENV
           python scripts/daily_stats_email.py > /tmp/crazy_daily_email.txt
@@ -87,7 +89,7 @@ jobs:
           echo "EOF" >> $GITHUB_ENV
 
       - name: Email daily stats
-        if: ${{ success() && secrets.ALERT_EMAIL_TO != '' }}
+        if: ${{ success() && env.ALERT_EMAIL_TO != '' }}
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
