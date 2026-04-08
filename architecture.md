@@ -16,7 +16,7 @@ This repo runs a paper‑trading research lab with:
 - Dashboard: `dashboard.py`
 
 ## Normal Algos (Academic Baselines)
-- Algo definitions: `normal/algos.py`
+- Algo definitions: `normal/algos/`
 - Runner: `normal/runner.py`
 - Seed: `normal/seed.py`
 - Consolidated ledger: `normal/ledger.py`
