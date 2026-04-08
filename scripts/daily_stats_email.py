@@ -143,6 +143,32 @@ def _build_report() -> str:
 
     lines.append("")
 
+    # Normal idea run (weekly)
+    normal_base = Path("data/normal_ideas/runs")
+    normal_run = _latest_run_dir(normal_base)
+    if normal_run:
+        n_date = normal_run.name
+        lines.append(f"Latest normal idea run: {n_date}")
+        lines.append(f"- ChatGPT ideas: {_count_jsonl(normal_run / 'raw' / f'chatgpt_{n_date}.jsonl')}")
+        lines.append(f"- Claude ideas:  {_count_jsonl(normal_run / 'raw' / f'claude_{n_date}.jsonl')}")
+        n_score = _load_json(normal_run / "score.json")
+        lines.append(f"- Score file: {'present' if n_score is not None else 'missing'}")
+        err_dir = normal_run / "errors"
+        if err_dir.exists():
+            err_files = sorted([p.name for p in err_dir.glob('*.txt')])
+            if err_files:
+                lines.append("- Generator errors:")
+                for name in err_files:
+                    lines.append(f"  - {name}")
+            else:
+                lines.append("- Generator errors: none")
+        else:
+            lines.append("- Generator errors: none")
+    else:
+        lines.append("Latest normal idea run: missing")
+
+    lines.append("")
+
     # Algo status
     lines.append("Algo run status:")
     algos = _collect_algo_status()
