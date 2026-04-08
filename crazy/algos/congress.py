@@ -29,8 +29,25 @@ class CongressAlgo(CrazyAlgoBase):
         def _fetch():
             house_url = "https://house-stock-watcher-data.s3-us-east-2.amazonaws.com/data/all_transactions.json"
             senate_url = "https://senatestockwatcher.com/api/transactions"
-            house_df = pd.DataFrame(requests.get(house_url, timeout=30).json())
-            senate_df = pd.DataFrame(requests.get(senate_url, timeout=30).json())
+            def _safe_json(url: str):
+                try:
+                    resp = requests.get(url, timeout=30)
+                    resp.raise_for_status()
+                    if not resp.content:
+                        return []
+                    return resp.json()
+                except Exception:
+                    return []
+
+            house_data = _safe_json(house_url)
+            senate_data = _safe_json(senate_url)
+            if not isinstance(house_data, list):
+                house_data = []
+            if not isinstance(senate_data, list):
+                senate_data = []
+
+            house_df = pd.DataFrame(house_data)
+            senate_df = pd.DataFrame(senate_data)
             df = pd.concat([house_df, senate_df], ignore_index=True)
             return df.to_dict(orient="records")
 
