@@ -46,4 +46,5 @@ jobs:
             git add logs
           fi
           git commit -m "weekly: normal idea run" || echo "No changes to commit"
+          git pull --rebase
           git push
