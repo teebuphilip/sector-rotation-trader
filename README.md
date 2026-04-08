@@ -148,9 +148,14 @@ Email delivery:
 ### Gmail App Password (for `ALERT_EMAIL_PASS`)
 
 Gmail does not allow your normal password for SMTP. You must create an **App Password**:
-1. Enable 2‑Step Verification on the Gmail account.
-2. Create an App Password for “Mail”.
-3. Use that 16‑character App Password as `ALERT_EMAIL_PASS`.
+1. Go to `myaccount.google.com` → **Security**.
+2. Under **How you sign in to Google**, enable **2‑Step Verification** (must be ON).
+3. Go back to **Security** → **App passwords**.
+4. **Select app** → `Mail`.
+5. **Select device** → `Other (Custom name)` → type `sector-rotation-trader`.
+6. Click **Generate**.
+7. Copy the 16‑character password shown (you can remove spaces).
+8. Set that value as the GitHub secret `ALERT_EMAIL_PASS`.
 
 ## 30-Day Rolling Leaderboard
 
