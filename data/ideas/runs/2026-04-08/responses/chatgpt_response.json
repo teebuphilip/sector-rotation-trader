@@ -1,14 +1,14 @@
 {
-  "id": "chatcmpl-DSOI0sz0ejwMIAbuJaimRVHezQmfy",
+  "id": "chatcmpl-DSQJUwgqPdXVkU7JXr9ciRb4OxRIR",
   "object": "chat.completion",
-  "created": 1775658924,
+  "created": 1775666704,
   "model": "gpt-4.1-mini-2025-04-14",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "[\n  {\n    \"idea_id\": \"reddit-sentiment-volatility-spike\",\n    \"title\": \"Reddit Sentiment Volatility Spike\",\n    \"thesis\": \"Sudden spikes in sentiment volatility on Reddit's r/investing subreddit often precede short-term price reversals in popular stocks discussed there. Tracking the daily variance in sentiment scores can reveal overreactions or panic moments where mean reversion trading can be profitable. By capturing these sentiment swings, traders can enter contrarian positions ahead of price corrections.\",\n    \"data_sources\": [\n      \"Pushshift Reddit API (https://pushshift.io/)\",\n      \"Yahoo Finance (historical price data)\"\n    ],\n    \"signal_logic\": \"1) Collect all posts and comments mentioning tickers in the universe on r/investing daily. 2) Compute daily sentiment scores per ticker using a simple lexicon-based sentiment analyzer. 3) Calculate daily volatility as the standard deviation of sentiment scores over a rolling 3-day window. 4) Signal triggers when sentiment volatility spikes above the 90th percentile of its historical distribution for that ticker.\",\n    \"entry_exit\": \"Entry: Buy if volatility spike occurs and the average sentiment score that day is negative (contrarian long). Sell if volatility spike occurs and average sentiment is positive (contrarian short). Exit positions when sentiment volatility drops below the 50th percentile or after 5 trading days.\",\n    \"position_sizing\": \"Allocate 5% of portfolio per position, max 20% total exposure. Reduce size by half if average daily volume is below 1 million shares.\",\n    \"universe\": [\"AAPL\", \"TSLA\", \"AMZN\", \"MSFT\", \"GME\", \"NVDA\"],\n    \"frequency\": \"daily\",\n    \"risks\": \"Sentiment analysis errors, low Reddit mention volume causing noisy signals, stocks with high natural volatility may trigger false signals, sudden fundamental changes not reflected in social sentiment.\",\n    \"implementation_notes\": \"1) Use Pushshift API to pull daily r/investing posts/comments mentioning each ticker. 2) Preprocess text and apply lexicon-based sentiment analysis (e.g., VADER). 3) Calculate rolling standard deviation of sentiment scores. 4) Compare against historical percentiles to identify spikes. 5) Backtest signals against Yahoo Finance price data for entry/exit logic.\",\n    \"required_keys\": []\n  }\n]",
+        "content": "[\n  {\n    \"idea_id\": \"social-media-sentiment-spike\",\n    \"title\": \"Social Media Sentiment Spike\",\n    \"thesis\": \"Sudden spikes in positive sentiment on social media platforms around a stock often precede short-term price rallies. By tracking keyword and hashtag sentiment changes on Twitter and Reddit, we can identify early bullish momentum. This signal leverages public sentiment shifts before they fully reflect in price.\",\n    \"data_sources\": [\n      \"Twitter API (free tier)\",\n      \"Pushshift Reddit API\",\n      \"Finnhub News Sentiment API (free tier)\"\n    ],\n    \"signal_logic\": \"Calculate daily sentiment score for each ticker based on related tweets and Reddit posts using keyword matching. Signal triggers when the daily sentiment score increases by more than 30% compared to the 7-day moving average, with at least 100 posts mentioning the ticker that day.\",\n    \"entry_exit\": \"Buy at market open the day after a sentiment spike signal. Sell when sentiment reverts below the 7-day average or after 5 trading days, whichever comes first.\",\n    \"position_sizing\": \"Allocate 2% of portfolio per position, capped at 10 simultaneous positions to diversify risk.\",\n    \"universe\": [\n      \"AAPL\",\n      \"TSLA\",\n      \"AMZN\",\n      \"MSFT\",\n      \"NVDA\",\n      \"NFLX\",\n      \"GOOGL\",\n      \"META\"\n    ],\n    \"frequency\": \"daily\",\n    \"risks\": \"False sentiment spikes due to bots or coordinated social campaigns may cause whipsaws. Low volume tickers may generate unreliable sentiment data. Sudden news events not captured in social data can invalidate the signal.\",\n    \"implementation_notes\": \"1) Collect tweets and Reddit posts mentioning each ticker daily. 2) Perform simple sentiment analysis using lexicon-based scoring or pretrained models. 3) Compute daily sentiment score and compare against 7-day moving average. 4) Generate signals and track open positions. 5) Implement position sizing and risk controls.\",\n    \"required_keys\": [\n      \"Twitter API key\"\n    ]\n  }\n]",
         "refusal": null,
         "annotations": []
       },
@@ -18,8 +18,8 @@
   ],
   "usage": {
     "prompt_tokens": 241,
-    "completion_tokens": 490,
-    "total_tokens": 731,
+    "completion_tokens": 436,
+    "total_tokens": 677,
     "prompt_tokens_details": {
       "cached_tokens": 0,
       "audio_tokens": 0
