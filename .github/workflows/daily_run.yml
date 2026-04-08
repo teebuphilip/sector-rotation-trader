@@ -37,11 +37,23 @@ jobs:
       - name: Run daily simulation
         run: python daily_run.py
 
+      - name: Run normal algos
+        run: python normal_run.py
+
+      - name: Run crazy algos
+        run: python crazy_run.py
+
       - name: Commit updated state + dashboard
         run: |
           git config user.name  "sector-bot"
           git config user.email "sector-bot@users.noreply.github.com"
           git add state.json docs/index.html docs/trades.json
+          git add data/normal/state docs/normal
+          git add data/crazy/state docs/algos docs/crazy
+          git add docs/ledgers docs/leaderboards docs/algos/index.md
+          if [ -d data/blocked ]; then
+            git add data/blocked
+          fi
           git diff --cached --quiet || git commit -m "daily run $(date -u '+%Y-%m-%d') — $(python -c "
           import json
           s = json.load(open('state.json'))
