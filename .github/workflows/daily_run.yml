@@ -74,7 +74,30 @@ jobs:
           eq    = snap.get('equity', 0)
           print(f'sector={snap.get(\"sector\",\"—\")} | {len(buys)}B {len(sells)}S | equity=\${eq:,.0f}')
           ")"
+          git pull --rebase
           git push
+
+      - name: Prepare daily stats email
+        if: ${{ success() && secrets.ALERT_EMAIL_TO != '' }}
+        run: |
+          echo "AFH_RUN_DATE=$(date -u +%F)" >> $GITHUB_ENV
+          python scripts/daily_stats_email.py > /tmp/crazy_daily_email.txt
+          echo "CRAZY_DAILY_EMAIL_BODY<<EOF" >> $GITHUB_ENV
+          cat /tmp/crazy_daily_email.txt >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Email daily stats
+        if: ${{ success() && secrets.ALERT_EMAIL_TO != '' }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.ALERT_EMAIL_USER }}
+          password: ${{ secrets.ALERT_EMAIL_PASS }}
+          subject: Crazy Daily Stats — ${{ env.AFH_RUN_DATE }}
+          body: ${{ env.CRAZY_DAILY_EMAIL_BODY }}
+          to: ${{ secrets.ALERT_EMAIL_TO }}
+          from: ${{ secrets.ALERT_EMAIL_USER }}
 
       - name: Create issue on failure
         if: failure()

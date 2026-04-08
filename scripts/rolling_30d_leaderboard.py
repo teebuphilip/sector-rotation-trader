@@ -1,11 +1,18 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import sys
+
 import json
 from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
+
+from pathlib import Path as _Path
+ROOT = _Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from scanner import safe_download
 
