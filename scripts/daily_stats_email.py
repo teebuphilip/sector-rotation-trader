@@ -33,6 +33,21 @@ def _count_jsonl(path: Path) -> int:
     return len([line for line in path.read_text().splitlines() if line.strip()])
 
 
+def _load_ideas(path: Path) -> list[dict]:
+    items = []
+    if not path.exists():
+        return items
+    for line in path.read_text().splitlines():
+        s = line.strip()
+        if not s:
+            continue
+        try:
+            items.append(json.loads(s))
+        except Exception:
+            continue
+    return items
+
+
 def _state_last_run(path: Path) -> str:
     state = _load_json(path)
     if not isinstance(state, dict):
@@ -87,14 +102,7 @@ def _collect_blocked_ideas(run_dir: Path) -> list[str]:
         path = raw_dir / f"{src}_{run_dir.name}.jsonl"
         if not path.exists():
             continue
-        for line in path.read_text().splitlines():
-            s = line.strip()
-            if not s:
-                continue
-            try:
-                idea = json.loads(s)
-            except Exception:
-                continue
+        for idea in _load_ideas(path):
             keys = idea.get("required_keys", [])
             if keys:
                 blocked.append(f"{idea.get('idea_id','(unknown)')} ({src}) -> {', '.join(keys)}")
@@ -134,8 +142,13 @@ def _build_report() -> str:
     if latest_run:
         run_date = latest_run.name
         lines.append(f"Latest idea run: {run_date}")
-        lines.append(f"- ChatGPT ideas: {_count_jsonl(latest_run / 'raw' / f'chatgpt_{run_date}.jsonl')}")
-        lines.append(f"- Claude ideas:  {_count_jsonl(latest_run / 'raw' / f'claude_{run_date}.jsonl')}")
+        chat_path = latest_run / "raw" / f"chatgpt_{run_date}.jsonl"
+        claude_path = latest_run / "raw" / f"claude_{run_date}.jsonl"
+        chat_count = _count_jsonl(chat_path)
+        claude_count = _count_jsonl(claude_path)
+        lines.append(f"- ChatGPT ideas: {chat_count}")
+        lines.append(f"- Claude ideas:  {claude_count}")
+        lines.append(f"- Total ideas: {chat_count + claude_count}")
         score = _load_json(latest_run / "score.json")
         lines.append(f"- Score file: {'present' if score is not None else 'missing'}")
         err_dir = latest_run / "errors"
@@ -154,11 +167,28 @@ def _build_report() -> str:
             lines.append("- Generator errors: none")
         blocked = _collect_blocked_ideas(latest_run)
         if blocked:
+            lines.append(f"- Blocked ideas total: {len(blocked)}")
             lines.append("- Blocked ideas (missing keys):")
             for b in blocked:
                 lines.append(f"  - {b}")
         else:
+            lines.append("- Blocked ideas total: 0")
             lines.append("- Blocked ideas: none")
+
+        # Idea summaries
+        ideas = []
+        for src, path in [("chatgpt", chat_path), ("claude", claude_path)]:
+            for idea in _load_ideas(path):
+                ideas.append({
+                    "src": src,
+                    "idea_id": idea.get("idea_id", "(unknown)"),
+                    "title": idea.get("title", "").strip(),
+                })
+        if ideas:
+            lines.append("- Ideas generated:")
+            for item in ideas:
+                title = f" — {item['title']}" if item["title"] else ""
+                lines.append(f"  - {item['idea_id']} ({item['src']}){title}")
     else:
         lines.append("Latest idea run: missing")
 
@@ -181,8 +211,13 @@ def _build_report() -> str:
     if normal_run:
         n_date = normal_run.name
         lines.append(f"Latest normal idea run: {n_date}")
-        lines.append(f"- ChatGPT ideas: {_count_jsonl(normal_run / 'raw' / f'chatgpt_{n_date}.jsonl')}")
-        lines.append(f"- Claude ideas:  {_count_jsonl(normal_run / 'raw' / f'claude_{n_date}.jsonl')}")
+        chat_path = normal_run / "raw" / f"chatgpt_{n_date}.jsonl"
+        claude_path = normal_run / "raw" / f"claude_{n_date}.jsonl"
+        chat_count = _count_jsonl(chat_path)
+        claude_count = _count_jsonl(claude_path)
+        lines.append(f"- ChatGPT ideas: {chat_count}")
+        lines.append(f"- Claude ideas:  {claude_count}")
+        lines.append(f"- Total ideas: {chat_count + claude_count}")
         n_score = _load_json(normal_run / "score.json")
         lines.append(f"- Score file: {'present' if n_score is not None else 'missing'}")
         err_dir = normal_run / "errors"
@@ -199,6 +234,29 @@ def _build_report() -> str:
                 lines.append("- Generator errors: none")
         else:
             lines.append("- Generator errors: none")
+
+        blocked = _collect_blocked_ideas(normal_run)
+        if blocked:
+            lines.append(f"- Blocked ideas total: {len(blocked)}")
+            lines.append("- Blocked ideas (missing keys):")
+            for b in blocked:
+                lines.append(f"  - {b}")
+        else:
+            lines.append("- Blocked ideas total: 0")
+
+        ideas = []
+        for src, path in [("chatgpt", chat_path), ("claude", claude_path)]:
+            for idea in _load_ideas(path):
+                ideas.append({
+                    "src": src,
+                    "idea_id": idea.get("idea_id", "(unknown)"),
+                    "title": idea.get("title", "").strip(),
+                })
+        if ideas:
+            lines.append("- Ideas generated:")
+            for item in ideas:
+                title = f" — {item['title']}" if item["title"] else ""
+                lines.append(f"  - {item['idea_id']} ({item['src']}){title}")
     else:
         lines.append("Latest normal idea run: missing")
 
