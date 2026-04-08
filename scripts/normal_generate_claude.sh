@@ -35,6 +35,8 @@ if not raw:
     raise SystemExit("Empty Claude response")
 
 obj = json.loads(raw)
+if isinstance(obj, dict) and "error" in obj:
+    raise SystemExit(f"Claude API error: {obj['error']}")
 text = obj["content"][0]["text"]
 ideas = json.loads(text)
 if isinstance(ideas, dict):
@@ -65,7 +67,9 @@ import sys
 raw = sys.argv[1]
 model = sys.argv[2]
 
-log_path = Path("logs") / "ai_costs_claude_normal.csv"
+log_dir = Path("logs")
+log_dir.mkdir(parents=True, exist_ok=True)
+log_path = log_dir / "ai_costs_claude_normal.csv"
 new_file = not log_path.exists()
 
 try:

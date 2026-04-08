@@ -78,7 +78,9 @@ import sys
 src = sys.argv[1]
 model = sys.argv[2]
 
-log_path = Path("logs") / "ai_costs_chatgpt_normal.csv"
+log_dir = Path("logs")
+log_dir.mkdir(parents=True, exist_ok=True)
+log_path = log_dir / "ai_costs_chatgpt_normal.csv"
 new_file = not log_path.exists()
 
 try:
