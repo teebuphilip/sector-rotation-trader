@@ -15,7 +15,7 @@ class FaberMomentumAlgo(NormalAlgoBase):
         return list(SECTOR_ETFS) + ["SPY"]
 
     def compute_target(self, prices: pd.DataFrame, as_of: date):
-        monthly = prices.resample("M").last().dropna(how="all")
+        monthly = prices.resample("ME").last().dropna(how="all")
         if len(monthly) < 12:
             return {}
 

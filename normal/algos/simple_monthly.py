@@ -14,7 +14,7 @@ class SimpleMonthlyAlgo(NormalAlgoBase):
         return ["SPY", "EEM", "TLT"]
 
     def compute_target(self, prices: pd.DataFrame, as_of: date):
-        monthly = prices.resample("M").last().dropna(how="all")
+        monthly = prices.resample("ME").last().dropna(how="all")
         if len(monthly) < 2:
             return {}
 

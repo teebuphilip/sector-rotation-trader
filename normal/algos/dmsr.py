@@ -15,7 +15,7 @@ class DMSRAlgo(NormalAlgoBase):
         return list(SECTOR_ETFS) + ["SPY", "AGG"]
 
     def compute_target(self, prices: pd.DataFrame, as_of: date):
-        monthly = prices.resample("M").last().dropna(how="all")
+        monthly = prices.resample("ME").last().dropna(how="all")
         if len(monthly) < 13:
             return {}
 
