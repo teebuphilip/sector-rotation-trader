@@ -40,6 +40,8 @@ jobs:
           python scripts/crazy_generate_ideas.py
           python scripts/crazy_score_ideas.py
           python scripts/crazy_publish_markdown.py
+          python scripts/compare_ideas.py --base data/ideas
+          python scripts/ai_costs_aggregate.py
           python scripts/daily_stats_email.py > /tmp/crazy_daily_email.txt
           echo "CRAZY_DAILY_EMAIL_BODY<<EOF" >> $GITHUB_ENV
           cat /tmp/crazy_daily_email.txt >> $GITHUB_ENV
@@ -59,7 +61,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add data/ideas docs/ideas
+          git add data/ideas docs/ideas logs
           git commit -m "daily: crazy idea run" || echo "No changes to commit"
           git push
 
