@@ -3,3 +3,4 @@ Baseline and normal runners update per‑algo state, dashboards, ledgers, and th
 Crazy algos live in `crazy/algos/` (one file per algo) and are registered via `crazy/algos/registry.py`.
 Each algo has its own state JSON under `data/normal/state/` or `data/crazy/state/`, plus consolidated ledgers in `docs/ledgers/`.
 Public pages and CTAs are served from `docs/`, including landing, honor pages, dashboards, and leaderboards.
+Data is segregated per model: each algo has its own state JSON and dashboard, with consolidated ledgers split into normal vs crazy.
