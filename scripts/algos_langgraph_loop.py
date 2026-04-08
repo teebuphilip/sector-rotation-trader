@@ -37,6 +37,49 @@ def _write(path: Path, text: str) -> None:
     path.write_text(text, encoding="utf-8")
 
 
+def _log_cost(provider: str, model: str, usage: dict | None, out_dir: Path) -> None:
+    if not usage:
+        return
+    log_path = Path("logs") / "ai_costs_langgraph.csv"
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Normalize usage fields
+    in_tokens = usage.get("input_tokens") or usage.get("prompt_tokens") or 0
+    out_tokens = usage.get("output_tokens") or usage.get("completion_tokens") or 0
+
+    if provider == "openai":
+        in_rate = float(os.getenv("OPENAI_INPUT_PER_MTOK", "2.50"))
+        out_rate = float(os.getenv("OPENAI_OUTPUT_PER_MTOK", "10.00"))
+    else:
+        in_rate = float(os.getenv("ANTHROPIC_INPUT_PER_MTOK", "3.00"))
+        out_rate = float(os.getenv("ANTHROPIC_OUTPUT_PER_MTOK", "15.00"))
+
+    total = (in_tokens * in_rate + out_tokens * out_rate) / 1_000_000
+    ts = datetime.utcnow()
+
+    new_file = not log_path.exists()
+    with log_path.open("a", encoding="utf-8") as f:
+        if new_file:
+            f.write("date,time,provider,model,input_tokens,output_tokens,cost_usd,run_id\n")
+        f.write(
+            f"{ts.strftime('%Y-%m-%d')},"
+            f"{ts.strftime('%H:%M:%S')},"
+            f"{provider},{model},{in_tokens},{out_tokens},{total:.6f},{out_dir.name}\n"
+        )
+
+
+def _extract_usage(resp) -> dict | None:
+    # LangChain message objects expose usage in response_metadata or usage_metadata
+    meta = getattr(resp, "response_metadata", None) or {}
+    usage = meta.get("token_usage")
+    if usage:
+        return usage
+    usage = getattr(resp, "usage_metadata", None)
+    if isinstance(usage, dict):
+        return usage
+    return None
+
+
 def _openai_model() -> str:
     return os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
 
@@ -65,9 +108,11 @@ def node_claude_spec(state: Dict[str, Any]) -> Dict[str, Any]:
         "Return ONLY JSON. Keep fields precise and implementable.\n\n"
         f"SPEC INPUT:\n{spec_input}\n"
     )
-    resp = _llm_anthropic().invoke(prompt).content
-    state["spec_draft"] = resp
-    _save_artifact(state, "1_claude_spec_draft", resp)
+    resp = _llm_anthropic().invoke(prompt)
+    text = resp.content
+    state["spec_draft"] = text
+    _save_artifact(state, "1_claude_spec_draft", text)
+    _log_cost("anthropic", _anthropic_model(), _extract_usage(resp), Path(state["out_dir"]))
     return state
 
 
@@ -78,9 +123,11 @@ def node_chat_critique(state: Dict[str, Any]) -> Dict[str, Any]:
         "Return bullet list of fixes.\n\n"
         f"SPEC JSON:\n{state['spec_draft']}\n"
     )
-    resp = _llm_openai().invoke(prompt).content
-    state["spec_critique"] = resp
-    _save_artifact(state, "2_chat_spec_critique", resp)
+    resp = _llm_openai().invoke(prompt)
+    text = resp.content
+    state["spec_critique"] = text
+    _save_artifact(state, "2_chat_spec_critique", text)
+    _log_cost("openai", _openai_model(), _extract_usage(resp), Path(state["out_dir"]))
     return state
 
 
@@ -91,18 +138,22 @@ def node_claude_finalize_spec(state: Dict[str, Any]) -> Dict[str, Any]:
         f"SPEC JSON:\n{state['spec_draft']}\n\n"
         f"CRITIQUE:\n{state['spec_critique']}\n"
     )
-    resp = _llm_anthropic().invoke(prompt).content
-    state["spec_final"] = resp
-    _save_artifact(state, "3_claude_spec_final", resp)
+    resp = _llm_anthropic().invoke(prompt)
+    text = resp.content
+    state["spec_final"] = text
+    _save_artifact(state, "3_claude_spec_final", text)
+    _log_cost("anthropic", _anthropic_model(), _extract_usage(resp), Path(state["out_dir"]))
     return state
 
 
 def node_claude_codegen(state: Dict[str, Any]) -> Dict[str, Any]:
     codegen_prompt = state["codegen_prompt"]
     prompt = codegen_prompt.replace("<PASTE SPEC HERE>", state["spec_final"])
-    resp = _llm_anthropic().invoke(prompt).content
-    state["code_draft"] = resp
-    _save_artifact(state, "4_claude_codegen", resp)
+    resp = _llm_anthropic().invoke(prompt)
+    text = resp.content
+    state["code_draft"] = text
+    _save_artifact(state, "4_claude_codegen", text)
+    _log_cost("anthropic", _anthropic_model(), _extract_usage(resp), Path(state["out_dir"]))
     return state
 
 
@@ -113,9 +164,11 @@ def node_chat_validate_code(state: Dict[str, Any]) -> Dict[str, Any]:
         f"SPEC JSON:\n{state['spec_final']}\n\n"
         f"CODE:\n{state['code_draft']}\n"
     )
-    resp = _llm_openai().invoke(prompt).content
-    state["code_validation"] = resp
-    _save_artifact(state, "5_chat_code_validation", resp)
+    resp = _llm_openai().invoke(prompt)
+    text = resp.content
+    state["code_validation"] = text
+    _save_artifact(state, "5_chat_code_validation", text)
+    _log_cost("openai", _openai_model(), _extract_usage(resp), Path(state["out_dir"]))
     return state
 
 
@@ -126,9 +179,11 @@ def node_claude_finalize_code(state: Dict[str, Any]) -> Dict[str, Any]:
         f"VALIDATION:\n{state['code_validation']}\n\n"
         f"CODE:\n{state['code_draft']}\n"
     )
-    resp = _llm_anthropic().invoke(prompt).content
-    state["code_final"] = resp
-    _save_artifact(state, "6_claude_code_final", resp)
+    resp = _llm_anthropic().invoke(prompt)
+    text = resp.content
+    state["code_final"] = text
+    _save_artifact(state, "6_claude_code_final", text)
+    _log_cost("anthropic", _anthropic_model(), _extract_usage(resp), Path(state["out_dir"]))
     return state
 
 
