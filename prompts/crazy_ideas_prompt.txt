@@ -1,0 +1,24 @@
+You are generating ONE new crazy trading signal idea.
+
+Return ONLY valid JSON (no markdown). The JSON must be a list with exactly 1 object.
+
+Required keys in the object:
+- idea_id: short kebab-case slug (e.g., "airport-security-surge")
+- title: short name
+- thesis: 2-4 sentences
+- data_sources: list of free public data sources (no paid tools unless explicitly required)
+- signal_logic: precise rules and thresholds
+- entry_exit: buy/sell rules
+- position_sizing: how to size positions
+- universe: list of tickers or assets
+- frequency: daily, weekly, or monthly
+- risks: failure modes and edge cases
+- implementation_notes: steps to implement in code
+- required_keys: list of API keys needed (empty if none)
+
+Constraints:
+- Use only free public data wherever possible.
+- Keep it implementable in 1-2 days.
+- Avoid ideas already used: TSA throughput, Craigslist listings, 311 calls, LinkedIn workforce report, Congress trading.
+- Do not reference any proprietary data.
+- Output must be strict JSON and parseable.

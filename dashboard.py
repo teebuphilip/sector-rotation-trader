@@ -9,8 +9,13 @@ from config import STARTING_CASH, DASHBOARD_FILE
 
 
 def generate_dashboard(state: dict, current_px: dict, sector: str,
-                       analytics: dict = None, spy_prices=None):
-    os.makedirs("docs", exist_ok=True)
+                       analytics: dict = None, spy_prices=None,
+                       output_path: str = None,
+                       strategy_label: str = None,
+                       strategy_value: str = None,
+                       title: str = None):
+    out_path = output_path or DASHBOARD_FILE
+    os.makedirs(os.path.dirname(out_path) or "docs", exist_ok=True)
 
     # ── Compute summary stats ──────────────────────────────────
     pos_value = sum(
@@ -111,7 +116,9 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
     dd_js     = json.dumps(dd_series)
 
     pnl_color  = "#00ff88" if net_pnl >= 0 else "#ff4d6d"
-    sector_str = sector or "—"
+    sector_str = strategy_value or sector or "—"
+    label_str = strategy_label or "Leading Sector"
+    title_str = title or "Sector<span>/</span>Rotation <span>|</span> Paper Trader"
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -304,7 +311,7 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
 <body>
 
 <header>
-  <div class="logo">Sector<span>/</span>Rotation <span>|</span> Paper Trader</div>
+  <div class="logo">{title_str}</div>
   <div class="last-update">Last run: {date.today()} &nbsp;·&nbsp; $100k base · $10k/trade</div>
 </header>
 
@@ -329,7 +336,7 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
       <div class="kpi-value accent">{win_rate:.0f}%</div>
     </div>
     <div class="kpi">
-      <div class="kpi-label">Leading Sector</div>
+      <div class="kpi-label">{label_str}</div>
       <div class="kpi-value accent">{sector_str}</div>
     </div>
     <div class="kpi">
@@ -582,7 +589,7 @@ if (ddData.length > 0) {{
 </body>
 </html>"""
 
-    with open(DASHBOARD_FILE, "w") as f:
+    with open(out_path, "w") as f:
         f.write(html)
 
-    print(f"\n  Dashboard written → {DASHBOARD_FILE}")
+    print(f"\n  Dashboard written → {out_path}")

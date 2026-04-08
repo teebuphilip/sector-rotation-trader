@@ -48,9 +48,8 @@ Paper trading system implementing the sector rotation strategy from NRWise / Dat
 
 ## Not Yet Implemented
 
-- **Tax simulation**: No short-term vs long-term capital gains tracking, no wash sale rule detection, no estimated tax liability on realized gains. Needed before transitioning to real trading.
+- **Tax simulation (advanced)**: No wash sale rule detection or capital gains carryforward. Basic short/long estimated tax is now supported.
 - **Slippage model**: Entries/exits use closing price with no bid-ask spread or slippage estimate.
-- **Commission fees**: No broker commission tracking (most brokers are zero-commission now, but margin interest is modeled).
 - **Additional entry filters**: RSI, MACD, or ATR-based filters to improve signal quality.
 - **Profit-taking exit**: No rule to take profits at a target % (e.g., exit if up 25% in 5 days).
 - **Monthly P&L breakdown**: Dashboard doesn't show month-by-month performance.
@@ -73,6 +72,64 @@ git add state.json docs/
 git commit -m "seed: bootstrap 90-day historical state"
 git push
 ```
+
+## Crazy Algos (No-Key Set)
+
+Separate runner for the no‑API‑key “crazy” algos (TSA, Craigslist, 311, LinkedIn PDF, Congress).
+
+```bash
+# Seed 90-day history (best-effort; some algos require live data)
+python crazy_seed.py
+
+# Daily run (writes per‑algo dashboards + combined overview)
+python crazy_run.py
+```
+
+Notes:
+- LinkedIn algo will use `data/crazy/linkedin_workforce.csv` if present (columns: `date,sector,hire_rate,layoff_rate`). Otherwise it attempts a best‑effort PDF parse and may hold cash if parsing fails.
+
+## Blocked Queue (Missing Keys)
+
+Blocked algos are recorded here:
+- `data/blocked/algos.jsonl`
+
+## Daily Crazy Idea Pipeline (Minimal)
+
+Generates one new “crazy idea” from ChatGPT and Claude daily, stores JSON + Markdown, and scores for completeness.
+
+Key files:
+- Prompt: `prompts/crazy_ideas_prompt.txt`
+- Run artifacts: `data/ideas/runs/YYYY-MM-DD/`
+- Published markdown: `docs/ideas/YYYY-MM-DD.md`
+
+GitHub Action:
+- `.github/workflows/crazy_ideas_daily.yml`
+
+## Daily Pipeline Email
+
+Script:
+- `scripts/daily_stats_email.py`
+
+## 30-Day Rolling Leaderboard
+
+Generated daily by the algo runners and written to:
+- `docs/leaderboards/rolling_30d.md`
+- `docs/leaderboards/rolling_30d.json`
+
+## Landing Page
+
+CTA landing page (links to the two products + latest winners):
+- `docs/landing.html`
+
+## Algo Biscotti Page
+
+Dedicated page for Algo Biscotti:
+- `docs/biscotti.html`
+
+## Algo Baileymol Page
+
+Dedicated page for Algo Baileymol:
+- `docs/bailey.html`
 
 ## GitHub Pages
 

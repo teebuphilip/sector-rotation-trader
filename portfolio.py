@@ -6,7 +6,9 @@ import os
 from datetime import date, datetime
 from config import (
     STARTING_CASH, MAX_POSITION_SIZE, MAX_BORROW,
-    BORROW_RATE_ANNUAL, STATE_FILE, LOG_FILE
+    BORROW_RATE_ANNUAL, STATE_FILE, LOG_FILE,
+    APPLY_FEES, COMMISSION_PER_TRADE, SEC_FEE_RATE, TAF_FEE_PER_SHARE,
+    APPLY_TAXES, TAX_RATE_SHORT, TAX_RATE_LONG, TAX_LONG_TERM_DAYS
 )
 
 DAILY_BORROW_RATE = BORROW_RATE_ANNUAL / 365.0
@@ -17,14 +19,27 @@ def _today():
 
 
 def load_state() -> dict:
-    if os.path.exists(STATE_FILE):
-        with open(STATE_FILE) as f:
-            return json.load(f)
-    return _default_state()
+    return load_state_from(STATE_FILE)
 
 
 def save_state(state: dict):
-    with open(STATE_FILE, "w") as f:
+    save_state_to(state, STATE_FILE)
+
+
+def load_state_from(path: str) -> dict:
+    if os.path.exists(path):
+        with open(path) as f:
+            state = json.load(f)
+            state.setdefault("fees_paid", 0.0)
+            state.setdefault("taxes_paid", 0.0)
+            state.setdefault("meta", {})
+            return state
+    return _default_state()
+
+
+def save_state_to(state: dict, path: str):
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "w") as f:
         json.dump(state, f, indent=2, default=str)
 
 
@@ -33,6 +48,8 @@ def _default_state() -> dict:
         "cash":            STARTING_CASH,
         "borrowed":        0.0,
         "accrued_interest":0.0,
+        "fees_paid":       0.0,
+        "taxes_paid":      0.0,
         "positions":       {},   # ticker -> {shares, entry_price, entry_date, consec_below_ma, cost}
         "trade_log":       [],
         "daily_snapshots": [],
@@ -68,6 +85,12 @@ def open_position(state: dict, ticker: str, price: float, amount: float, using_m
     else:
         state["cash"] -= cost
 
+    fees = 0.0
+    if APPLY_FEES and COMMISSION_PER_TRADE > 0:
+        fees += COMMISSION_PER_TRADE
+        state["cash"] -= COMMISSION_PER_TRADE
+        state["fees_paid"] += COMMISSION_PER_TRADE
+
     state["positions"][ticker] = {
         "shares":         shares,
         "entry_price":    price,
@@ -85,6 +108,7 @@ def open_position(state: dict, ticker: str, price: float, amount: float, using_m
         "price":         round(price, 4),
         "cost":          round(cost, 2),
         "margin":        using_margin,
+        "fees":          round(fees, 2),
     })
 
 
@@ -94,9 +118,30 @@ def close_position(state: dict, ticker: str, price: float, reason: str = "exit_s
         return
 
     pos      = state["positions"][ticker]
-    proceeds = pos["shares"] * price
+    gross_proceeds = pos["shares"] * price
     cost     = pos["cost"]
+
+    fees = 0.0
+    if APPLY_FEES:
+        if COMMISSION_PER_TRADE > 0:
+            fees += COMMISSION_PER_TRADE
+        if SEC_FEE_RATE > 0:
+            fees += gross_proceeds * SEC_FEE_RATE
+        if TAF_FEE_PER_SHARE > 0:
+            fees += pos["shares"] * TAF_FEE_PER_SHARE
+
+    proceeds = gross_proceeds - fees
     pnl      = proceeds - cost
+
+    tax = 0.0
+    if APPLY_TAXES and pnl > 0:
+        try:
+            entry_dt = datetime.fromisoformat(pos["entry_date"])
+            hold_days = (date.today() - entry_dt.date()).days
+        except Exception:
+            hold_days = 0
+        rate = TAX_RATE_LONG if hold_days >= TAX_LONG_TERM_DAYS else TAX_RATE_SHORT
+        tax = pnl * rate
 
     if pos["using_margin"]:
         # Settle accrued interest first (proportional to this position's share of borrowed)
@@ -120,6 +165,14 @@ def close_position(state: dict, ticker: str, price: float, reason: str = "exit_s
     else:
         state["cash"] += proceeds
 
+    if fees > 0:
+        state["fees_paid"] += fees
+
+    if tax > 0:
+        state["taxes_paid"] += tax
+        state["cash"] -= tax
+        pnl -= tax
+
     state["trade_log"].append({
         "date":          _today(),
         "action":        "SELL",
@@ -127,6 +180,8 @@ def close_position(state: dict, ticker: str, price: float, reason: str = "exit_s
         "shares":        round(pos["shares"], 4),
         "price":         round(price, 4),
         "proceeds":      round(proceeds, 2),
+        "fees":          round(fees, 2),
+        "tax":           round(tax, 2),
         "pnl":           round(pnl, 2),
         "pnl_pct":       round((pnl / cost) * 100, 2),
         "entry_date":    pos["entry_date"],
@@ -230,9 +285,13 @@ def compute_analytics(state: dict) -> dict:
 
 
 def save_trade_log(state: dict):
-    """Write trade log to docs/trades.json for dashboard."""
-    os.makedirs("docs", exist_ok=True)
-    with open(LOG_FILE, "w") as f:
+    save_trade_log_to(state, LOG_FILE)
+
+
+def save_trade_log_to(state: dict, path: str):
+    """Write trade log to a JSON file for dashboards."""
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "w") as f:
         json.dump({
             "trade_log":       state["trade_log"],
             "daily_snapshots": state["daily_snapshots"],

@@ -42,3 +42,14 @@ DATA_PERIOD          = "1y"  # yfinance download window
 STATE_FILE           = "state.json"
 DASHBOARD_FILE       = "docs/index.html"
 LOG_FILE             = "docs/trades.json"
+
+# Fees & Taxes (configurable; conservative/high defaults)
+APPLY_FEES           = True
+COMMISSION_PER_TRADE = 9.95       # flat commission per buy/sell
+SEC_FEE_RATE         = 0.00005    # sell-side fee rate on proceeds (high default)
+TAF_FEE_PER_SHARE    = 0.0003     # sell-side fee per share (high default)
+
+APPLY_TAXES          = True
+TAX_RATE_SHORT       = 0.37       # short-term cap gains (high default)
+TAX_RATE_LONG        = 0.20       # long-term cap gains (high default)
+TAX_LONG_TERM_DAYS   = 365

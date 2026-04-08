@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crazy Models Lab</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+  :root {
+    --bg: #0d1412;
+    --bg-2: #13231f;
+    --card: #182b26;
+    --accent: #19d38f;
+    --muted: #9ab0a7;
+    --text: #ecf5f2;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(1000px 600px at 15% -10%, #1e3f35, transparent),
+      radial-gradient(900px 500px at 90% 0%, #1b352f, transparent),
+      var(--bg);
+  }
+  header {
+    padding: 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 30px;
+    letter-spacing: 0.5px;
+  }
+  header p {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+  }
+  .wrap { padding: 24px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+  }
+  .card h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+  }
+  .card p {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .cta {
+    display: inline-block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .cta:hover { background: rgba(25, 211, 143, 0.1); }
+  .winners h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+  }
+  .winners ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .winners li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 14px;
+  }
+  .winners li:last-child { border-bottom: none; }
+  .muted { color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Crazy Models Lab</h1>
+    <p>Public receipts. Daily weird models. Clean baselines.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="grid">
+      <div class="card">
+        <h2>Product 1: Daily Crazy Models Feed</h2>
+        <p>See what AI thinks up next, every day. Full specs, timestamps, and a public trail of what worked and what didn’t.</p>
+        <a class="cta" href="#" title="Link this to the product when ready">Join the daily feed</a>
+      </div>
+
+      <div class="card">
+        <h2>Product 2: Model‑Fit Scoring</h2>
+        <p>Paste a stock or sector and see how it lines up against the live model library and historical performance.</p>
+        <a class="cta" href="#" title="Link this to the product when ready">Check model fit</a>
+      </div>
+
+      <div class="card winners">
+        <h3>30‑Day Rolling Winners</h3>
+        <ul id="winners-list">
+          <li class="muted">Loading leaderboard…</li>
+        </ul>
+        <p class="muted">Source: rolling 30‑day leaderboard</p>
+      </div>
+
+      <div class="card">
+        <h2>Honor Pages</h2>
+        <p>Named algos that mean something to us.</p>
+        <a class="cta" href="biscotti.html">Algo Biscotti</a>
+        <div style="height:8px"></div>
+        <a class="cta" href="bailey.html">Algo Baileymol</a>
+      </div>
+    </div>
+  </div>
+
+<script>
+(async function() {
+  try {
+    const res = await fetch('leaderboards/rolling_30d.json');
+    if (!res.ok) throw new Error('fetch failed');
+    const data = await res.json();
+    const winners = (data.entries || []).slice(0, 3);
+    const ul = document.getElementById('winners-list');
+    ul.innerHTML = '';
+    if (!winners.length) {
+      ul.innerHTML = '<li class="muted">No data yet</li>';
+      return;
+    }
+    winners.forEach((w, i) => {
+      const ret = (w.ret_30d === null || w.ret_30d === undefined) ? 'n/a' : (w.ret_30d * 100).toFixed(2) + '%';
+      const li = document.createElement('li');
+      li.textContent = `${i + 1}. ${w.name} — ${ret}`;
+      ul.appendChild(li);
+    });
+  } catch (e) {
+    const ul = document.getElementById('winners-list');
+    if (ul) ul.innerHTML = '<li class="muted">Leaderboard not available</li>';
+  }
+})();
+</script>
+</body>
+</html>
