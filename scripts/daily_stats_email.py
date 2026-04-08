@@ -142,7 +142,7 @@ def _build_report() -> str:
         if err_dir.exists():
             err_files = sorted([
                 p.name for p in err_dir.glob("*.txt")
-                if p.stat().st_size > 0
+                if p.stat().st_size > 0 and not p.name.endswith("_http_code.txt")
             ])
             if err_files:
                 lines.append("- Generator errors:")
@@ -189,7 +189,7 @@ def _build_report() -> str:
         if err_dir.exists():
             err_files = sorted([
                 p.name for p in err_dir.glob("*.txt")
-                if p.stat().st_size > 0
+                if p.stat().st_size > 0 and not p.name.endswith("_http_code.txt")
             ])
             if err_files:
                 lines.append("- Generator errors:")
