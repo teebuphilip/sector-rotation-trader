@@ -12,6 +12,7 @@ from crazy.algos import get_crazy_algos
 from crazy.config import CRAZY_STATE_DIR, CRAZY_DASHBOARD_DIR, CRAZY_LOG_DIR
 from crazy.combined_dashboard import generate_combined_dashboard
 from crazy.ledger import write_crazy_ledger
+from crazy.seed import seed_algos
 import subprocess
 
 
@@ -47,6 +48,16 @@ def run_all(dry_run: bool = False, as_of: date = None):
 
     algos = get_crazy_algos()
     summaries = []
+    if not dry_run:
+        to_seed = []
+        for algo in algos:
+            state_path = os.path.join(CRAZY_STATE_DIR, f"{algo.algo_id}.json")
+            if not os.path.exists(state_path):
+                to_seed.append(algo)
+        if to_seed:
+            names = ", ".join(a.name for a in to_seed)
+            print(f"Seeding new crazy algos: {names}")
+            seed_algos(to_seed)
 
     for algo in algos:
         state_path = os.path.join(CRAZY_STATE_DIR, f"{algo.algo_id}.json")

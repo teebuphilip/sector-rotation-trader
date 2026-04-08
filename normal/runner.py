@@ -12,6 +12,7 @@ from portfolio import (
 from dashboard import generate_dashboard
 from normal.algos import get_normal_algos
 from normal.ledger import write_normal_ledger
+from normal.seed import seed_algos
 import subprocess
 
 
@@ -45,6 +46,16 @@ def run_all(dry_run: bool = False, as_of: date = None):
     eom = is_month_end(as_of)
 
     algos = get_normal_algos()
+    if not dry_run:
+        to_seed = []
+        for algo in algos:
+            state_path = os.path.join("data/normal/state", f"{algo.algo_id}.json")
+            if not os.path.exists(state_path):
+                to_seed.append(algo)
+        if to_seed:
+            names = ", ".join(a.name for a in to_seed)
+            print(f"Seeding new normal algos: {names}")
+            seed_algos(to_seed)
 
     all_tickers = sorted({t for algo in algos for t in algo.universe()})
     prices = {}

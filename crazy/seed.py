@@ -29,12 +29,13 @@ def rebalance_to_target(state: dict, target: dict, prices: dict):
             open_position(state, ticker, price, amount, using_margin=False)
 
 
-def seed_all():
+def seed_algos(algos):
+    if not algos:
+        return
     end_date = date.today() - timedelta(days=1)
     start_date = end_date - timedelta(days=SEED_DAYS)
     trading_days = pd.bdate_range(start=start_date, end=end_date)
 
-    algos = get_crazy_algos()
     all_tickers = sorted({t for algo in algos for t in algo.universe()})
 
     prices_raw = safe_download(all_tickers, period="2y")
@@ -85,6 +86,10 @@ def seed_all():
         save_state_to(state, state_path)
         save_trade_log_to(state, trade_log_path)
         print(f"Seeded {algo.name} with historical simulation.")
+
+
+def seed_all():
+    seed_algos(get_crazy_algos())
 
 
 if __name__ == "__main__":
