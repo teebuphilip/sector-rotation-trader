@@ -1,0 +1,28 @@
+You are generating a NEW algo implementation for the sector-rotation-trader repo.
+
+Goal:
+Implement the algo spec below into the existing codebase, using the provided scaffold.
+
+Constraints:
+- Do NOT change existing behavior unrelated to this algo.
+- Keep the algo file small and focused.
+- Only use data sources allowed in the spec.
+- If an API key is required, mark the algo as blocked by adding it to data/blocked/algos.jsonl and set supports_historical_seed = False.
+- Prefer deterministic, readable logic over cleverness.
+- Follow repo patterns:
+  - Crazy algos: crazy/algos/<algo_id>.py and register in crazy/algos/registry.py
+  - Normal algos: normal/algos/<algo_id>.py and register in normal/algos/registry.py
+  - Each algo class exposes: algo_id, name, universe(), compute_signal(), target_allocations(), rebalance_frequency
+  - Use cached_fetch for web data and save to CRAZY_CACHE_DIR when applicable
+
+Scaffold:
+Use templates/algo_scaffold.py as the base.
+
+Deliverables:
+1) The full code for the new algo file.
+2) The minimal registry change (add the algo class).
+3) If blocked, append a line to data/blocked/algos.jsonl (JSON per line):
+   {"date":"YYYY-MM-DD","algo_id":"<id>","name":"<name>","required_keys":["..."]}
+
+Algo Spec (verbatim):
+<PASTE SPEC HERE>
