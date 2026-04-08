@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crazy Algos Dashboard</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+  :root {
+    --bg: #0f1d1a;
+    --bg-2: #12312a;
+    --card: #152a25;
+    --accent: #18d6a1;
+    --muted: #9db7ad;
+    --text: #e6f3ee;
+    --warn: #ff6b6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    color: var(--text);
+    background: radial-gradient(1200px 600px at 10% -20%, #1f4a3d, transparent),
+                radial-gradient(1000px 800px at 100% 0%, #1a3f35, transparent),
+                var(--bg);
+  }
+  header {
+    padding: 28px 28px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+  }
+  header p {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+  }
+  .wrap { padding: 24px; }
+  .card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  th, td {
+    padding: 10px 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  th {
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+  td.name { font-weight: 600; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  @media (max-width: 760px) {
+    table, thead, tbody, th, td, tr { display: block; }
+    tr { margin-bottom: 14px; }
+    th { border-bottom: none; }
+    td { border-bottom: none; padding: 6px 0; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Crazy Algos — Portfolio Overview</h1>
+    <p>Last updated: 2026-04-08</p>
+  </header>
+  <div class="wrap">
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Strategy</th>
+            <th>Equity</th>
+            <th>Net P&L</th>
+            <th>Sharpe</th>
+            <th>Max DD</th>
+            <th>Signal</th>
+            <th>Dashboard</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        <tr>
+          <td class="name">TSA Body Count</td>
+          <td>$100,000</td>
+          <td style="color:#0dd39b">$+0</td>
+          <td>0.00</td>
+          <td>0.00%</td>
+          <td>HOLD</td>
+          <td><a href="../algos/tsa/index.html">Open</a></td>
+        </tr>
+        
+        <tr>
+          <td class="name">Cardboard Box Index</td>
+          <td>$100,000</td>
+          <td style="color:#0dd39b">$+0</td>
+          <td>0.00</td>
+          <td>0.00%</td>
+          <td>HOLD</td>
+          <td><a href="../algos/cardboard/index.html">Open</a></td>
+        </tr>
+        
+        <tr>
+          <td class="name">Craigslist Desperation Index</td>
+          <td>$100,000</td>
+          <td style="color:#0dd39b">$+0</td>
+          <td>0.00</td>
+          <td>0.00%</td>
+          <td>NEUTRAL</td>
+          <td><a href="../algos/craigslist/index.html">Open</a></td>
+        </tr>
+        
+        <tr>
+          <td class="name">Glassdoor Misery Gradient</td>
+          <td>$100,000</td>
+          <td style="color:#0dd39b">$+0</td>
+          <td>0.00</td>
+          <td>0.00%</td>
+          <td>HOLD</td>
+          <td><a href="../algos/glassdoor/index.html">Open</a></td>
+        </tr>
+        
+        <tr>
+          <td class="name">311 Call Rotation</td>
+          <td>$100,000</td>
+          <td style="color:#0dd39b">$+0</td>
+          <td>0.00</td>
+          <td>0.00%</td>
+          <td>HOLD</td>
+          <td><a href="../algos/calls311/index.html">Open</a></td>
+        </tr>
+        
+        <tr>
+          <td class="name">Liquor Store Leading Indicator</td>
+          <td>$100,000</td>
+          <td style="color:#0dd39b">$+0</td>
+          <td>0.00</td>
+          <td>0.00%</td>
+          <td>HOLD</td>
+          <td><a href="../algos/liquor/index.html">Open</a></td>
+        </tr>
+        
+        <tr>
+          <td class="name">LinkedIn Layoff Propagation</td>
+          <td>$100,000</td>
+          <td style="color:#0dd39b">$+0</td>
+          <td>0.00</td>
+          <td>0.00%</td>
+          <td>HOLD</td>
+          <td><a href="../algos/linkedin/index.html">Open</a></td>
+        </tr>
+        
+        <tr>
+          <td class="name">Congress Trading Fade</td>
+          <td>$100,000</td>
+          <td style="color:#0dd39b">$+0</td>
+          <td>0.00</td>
+          <td>0.00%</td>
+          <td>HOLD</td>
+          <td><a href="../algos/congress/index.html">Open</a></td>
+        </tr>
+        
+        <tr>
+          <td class="name">Algo Biscotti (Unconditional Loyalty)</td>
+          <td>$95,186</td>
+          <td style="color:#ff6b6b">$-4,814</td>
+          <td>-1.81</td>
+          <td>-11.85%</td>
+          <td>BUY:XLP</td>
+          <td><a href="../algos/biscotti/index.html">Open</a></td>
+        </tr>
+        
+        <tr>
+          <td class="name">Algo Baileymol (Chaos Monger)</td>
+          <td>$91,764</td>
+          <td style="color:#ff6b6b">$-8,236</td>
+          <td>-3.52</td>
+          <td>-9.70%</td>
+          <td>TOP:XLK,XLY,XLI</td>
+          <td><a href="../algos/baileymol/index.html">Open</a></td>
+        </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
