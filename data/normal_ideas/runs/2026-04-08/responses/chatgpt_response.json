@@ -1,14 +1,14 @@
 {
-  "id": "chatcmpl-DSNayC1UyBUEt4nQ8bzGxYSmAGk2I",
+  "id": "chatcmpl-DSOHlQq5jzT1Ka8ctkpHpkVAdommM",
   "object": "chat.completion",
-  "created": 1775656256,
+  "created": 1775658909,
   "model": "gpt-4.1-mini-2025-04-14",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "[\n  {\n    \"idea_id\": \"seasonal-strength-rotation\",\n    \"title\": \"Seasonal Strength Rotation\",\n    \"thesis\": \"Certain asset classes exhibit persistent seasonal patterns in returns due to economic cycles, tax policies, and investor behavior. By identifying the strongest performing assets over specific calendar months and rotating into them monthly, the strategy aims to capture predictable seasonal trends while avoiding weaker assets. This approach leverages well-documented seasonality effects in equity sectors and commodities to enhance returns.\",\n    \"data_sources\": [\"yfinance\"],\n    \"signal_logic\": \"Calculate average monthly returns for each asset over the past 10 years. For the current month, select the top 3 assets with the highest historical average returns for that month. Rebalance monthly into these assets.\",\n    \"entry_exit\": \"At the start of each month, sell all current holdings and buy equal-weighted positions in the top 3 seasonal performers identified for that month.\",\n    \"position_sizing\": \"Equal weight allocation across the selected top 3 assets each month, fully invested with no leverage.\",\n    \"universe\": [\"SPY\", \"GLD\", \"USO\", \"TLT\", \"EEM\", \"VNQ\", \"XLF\", \"XLY\", \"XLP\"],\n    \"frequency\": \"monthly\",\n    \"risks\": \"Seasonality patterns may break down during structural market changes or black swan events. The model may underperform in trending markets where seasonal effects are overshadowed. Monthly rebalancing incurs transaction costs that can erode returns.\",\n    \"implementation_notes\": \"Download 10+ years of daily price data for all universe assets. Aggregate daily returns into monthly returns. Compute average returns per calendar month for each asset. At each month start, rank assets by historical average return for that month and select top 3. Execute trades to equal weight selected assets.\",\n    \"required_keys\": []\n  }\n]",
+        "content": "[\n  {\n    \"idea_id\": \"volatility-adjusted-momentum\",\n    \"title\": \"Volatility Adjusted Momentum\",\n    \"thesis\": \"This model combines traditional momentum with volatility scaling to improve risk-adjusted returns. By adjusting momentum signals based on recent volatility, the strategy aims to reduce exposure during turbulent periods and increase exposure when momentum is strong and volatility is low. This approach seeks to capture momentum premiums while controlling for drawdowns in volatile markets.\",\n    \"data_sources\": [\"yfinance\"],\n    \"signal_logic\": \"Calculate 12-month price momentum (price return over the past 252 trading days excluding the last month). Calculate the annualized 20-day rolling volatility of daily returns. Adjust momentum by dividing raw momentum by volatility. Select assets with adjusted momentum above the median of the universe.\",\n    \"entry_exit\": \"Entry: Buy top 30% of assets ranked by volatility-adjusted momentum at the start of each month. Exit: Sell assets that fall below the median adjusted momentum on monthly rebalancing.\",\n    \"position_sizing\": \"Equal weight positions among selected assets. If no assets meet criteria, hold cash (0% exposure).\",\n    \"universe\": [\"SPY\", \"EFA\", \"EEM\", \"TLT\", \"GLD\", \"IEF\", \"VNQ\", \"DBC\", \"QQQ\", \"IWM\"],\n    \"frequency\": \"monthly\",\n    \"risks\": \"Momentum crashes during sudden market reversals; volatility estimates may lag and cause delayed adjustments; periods of uniformly high volatility may reduce signal effectiveness; liquidity constraints in less liquid ETFs.\",\n    \"implementation_notes\": \"1. Download daily price data for universe from yfinance. 2. Compute daily returns and rolling 20-day volatility. 3. Calculate 12-month momentum excluding the last month. 4. Compute adjusted momentum = momentum / volatility. 5. Rank assets monthly and select top 30%. 6. Rebalance monthly with equal weights. 7. Track portfolio returns and turnover.\",\n    \"required_keys\": []\n  }\n]",
         "refusal": null,
         "annotations": []
       },
@@ -18,8 +18,8 @@
   ],
   "usage": {
     "prompt_tokens": 235,
-    "completion_tokens": 390,
-    "total_tokens": 625,
+    "completion_tokens": 422,
+    "total_tokens": 657,
     "prompt_tokens_details": {
       "cached_tokens": 0,
       "audio_tokens": 0
