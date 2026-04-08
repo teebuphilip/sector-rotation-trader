@@ -120,6 +120,17 @@ def _build_report() -> str:
         lines.append(f"- Claude ideas:  {_count_jsonl(latest_run / 'raw' / f'claude_{run_date}.jsonl')}")
         score = _load_json(latest_run / "score.json")
         lines.append(f"- Score file: {'present' if score is not None else 'missing'}")
+        err_dir = latest_run / "errors"
+        if err_dir.exists():
+            err_files = sorted([p.name for p in err_dir.glob("*.txt")])
+            if err_files:
+                lines.append("- Generator errors:")
+                for name in err_files:
+                    lines.append(f"  - {name}")
+            else:
+                lines.append("- Generator errors: none")
+        else:
+            lines.append("- Generator errors: none")
         blocked = _collect_blocked_ideas(latest_run)
         if blocked:
             lines.append("- Blocked ideas (missing keys):")
