@@ -121,6 +121,11 @@ Generated daily by the algo runners and written to:
 CTA landing page (links to the two products + latest winners):
 - `docs/landing.html`
 
+## Architecture
+
+Repo layout and workflow overview:
+- `architecture.md`
+
 ## Algo Biscotti Page
 
 Dedicated page for Algo Biscotti:
