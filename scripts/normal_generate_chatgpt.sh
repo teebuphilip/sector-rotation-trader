@@ -59,4 +59,41 @@ for item in ideas:
     print(json.dumps(item, ensure_ascii=False))
 PY
 
+# Log cost
+python3 - <<'PY' "$TMP_JSON" "$MODEL"
+import json
+import os
+from datetime import datetime
+from pathlib import Path
+import sys
+
+src = sys.argv[1]
+model = sys.argv[2]
+
+log_path = Path("logs") / "ai_costs_chatgpt_normal.csv"
+new_file = not log_path.exists()
+
+try:
+    data = json.loads(Path(src).read_text())
+except Exception:
+    sys.exit(0)
+
+usage = data.get("usage", {})
+in_tokens = usage.get("prompt_tokens", 0) or 0
+out_tokens = usage.get("completion_tokens", 0) or 0
+in_rate = float(os.getenv("OPENAI_INPUT_PER_MTOK", "2.50"))
+out_rate = float(os.getenv("OPENAI_OUTPUT_PER_MTOK", "10.00"))
+total = (in_tokens * in_rate + out_tokens * out_rate) / 1_000_000
+
+now = datetime.utcnow()
+with log_path.open("a", newline="") as f:
+    if new_file:
+        f.write("date,time,provider,model,input_tokens,output_tokens,cost_usd\n")
+    f.write(
+        f"{now.strftime('%Y-%m-%d')},"
+        f"{now.strftime('%H:%M:%S')},"
+        f"openai,{model},{in_tokens},{out_tokens},{total:.6f}\n"
+    )
+PY
+
 rm -f "$TMP_JSON"

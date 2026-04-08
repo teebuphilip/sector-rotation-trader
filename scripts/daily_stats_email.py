@@ -169,6 +169,40 @@ def _build_report() -> str:
 
     lines.append("")
 
+    # Daily AI cost (idea generation)
+    def _daily_cost(path: Path, run_date: str) -> float:
+        if not path.exists():
+            return 0.0
+        total = 0.0
+        with path.open("r", encoding="utf-8", errors="replace") as f:
+            header = f.readline()
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                parts = line.split(",")
+                if len(parts) < 7:
+                    continue
+                if parts[0] != run_date:
+                    continue
+                try:
+                    total += float(parts[6])
+                except ValueError:
+                    continue
+        return total
+
+    lines.append("Daily AI cost (idea generation):")
+    chat_cost = _daily_cost(Path("logs/ai_costs_chatgpt_ideas.csv"), run_date)
+    claude_cost = _daily_cost(Path("logs/ai_costs_claude_ideas.csv"), run_date)
+    normal_chat_cost = _daily_cost(Path("logs/ai_costs_chatgpt_normal.csv"), run_date)
+    normal_claude_cost = _daily_cost(Path("logs/ai_costs_claude_normal.csv"), run_date)
+    lines.append(f"- ChatGPT (crazy): ${chat_cost:.2f}")
+    lines.append(f"- Claude (crazy): ${claude_cost:.2f}")
+    if normal_run:
+        lines.append(f"- ChatGPT (normal): ${normal_chat_cost:.2f}")
+        lines.append(f"- Claude (normal): ${normal_claude_cost:.2f}")
+    lines.append(f"- Total: ${(chat_cost + claude_cost + normal_chat_cost + normal_claude_cost):.2f}")
+
     # Algo status
     lines.append("Algo run status:")
     algos = _collect_algo_status()
