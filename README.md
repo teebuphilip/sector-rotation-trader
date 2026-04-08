@@ -110,6 +110,11 @@ GitHub Action:
 Script:
 - `scripts/daily_stats_email.py`
 
+Email delivery (same as AFH) requires GitHub secrets:
+- `ALERT_EMAIL_TO`
+- `ALERT_EMAIL_USER`
+- `ALERT_EMAIL_PASS`
+
 ## 30-Day Rolling Leaderboard
 
 Generated daily by the algo runners and written to:

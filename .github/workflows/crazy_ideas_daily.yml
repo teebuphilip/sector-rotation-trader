@@ -11,6 +11,8 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    env:
+      ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,6 +26,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
 
+      - name: Set run date
+        run: |
+          echo "AFH_RUN_DATE=$(date -u +%F)" >> $GITHUB_ENV
+
       - name: Generate ideas
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -34,7 +40,20 @@ jobs:
           python scripts/crazy_generate_ideas.py
           python scripts/crazy_score_ideas.py
           python scripts/crazy_publish_markdown.py
-          python scripts/daily_stats_email.py
+          python scripts/daily_stats_email.py > /tmp/crazy_daily_email.txt
+          echo "CRAZY_DAILY_EMAIL_BODY<<EOF" >> $GITHUB_ENV
+          cat /tmp/crazy_daily_email.txt >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Validate email secrets
+        if: ${{ success() && env.ALERT_EMAIL_TO != '' }}
+        run: |
+          if [ -z "${ALERT_EMAIL_TO}" ]; then
+            echo "Missing ALERT_EMAIL_TO"; exit 1; fi
+          if [ -z "${{ secrets.ALERT_EMAIL_USER }}" ]; then
+            echo "Missing ALERT_EMAIL_USER"; exit 1; fi
+          if [ -z "${{ secrets.ALERT_EMAIL_PASS }}" ]; then
+            echo "Missing ALERT_EMAIL_PASS"; exit 1; fi
 
       - name: Commit results
         run: |
@@ -43,3 +62,32 @@ jobs:
           git add data/ideas docs/ideas
           git commit -m "daily: crazy idea run" || echo "No changes to commit"
           git push
+
+      - name: Email daily stats
+        if: ${{ success() && env.ALERT_EMAIL_TO != '' }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.ALERT_EMAIL_USER }}
+          password: ${{ secrets.ALERT_EMAIL_PASS }}
+          subject: Crazy Daily Stats — ${{ env.AFH_RUN_DATE }}
+          body: ${{ env.CRAZY_DAILY_EMAIL_BODY }}
+          to: ${{ secrets.ALERT_EMAIL_TO }}
+          from: ${{ secrets.ALERT_EMAIL_USER }}
+
+      - name: Email alert on failure
+        if: ${{ failure() && env.ALERT_EMAIL_TO != '' }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.ALERT_EMAIL_USER }}
+          password: ${{ secrets.ALERT_EMAIL_PASS }}
+          subject: Crazy Ideas Pipeline FAILED — ${{ env.AFH_RUN_DATE }}
+          body: |
+            The Crazy Ideas pipeline failed.
+            Repo: ${{ github.repository }}
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          to: ${{ secrets.ALERT_EMAIL_TO }}
+          from: ${{ secrets.ALERT_EMAIL_USER }}
