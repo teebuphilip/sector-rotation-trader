@@ -4,6 +4,7 @@ from datetime import date
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+from io import StringIO
 
 from scanner import safe_download
 from crazy.utils import cached_fetch
@@ -35,7 +36,9 @@ class TSAAlgo(CrazyAlgoBase):
             r.raise_for_status()
             soup = BeautifulSoup(r.text, "html.parser")
             table = soup.find("table")
-            df = pd.read_html(str(table))[0]
+            if table is None:
+                return []
+            df = pd.read_html(StringIO(str(table)))[0]
             df["date"] = pd.to_datetime(df["Date"])
             df["throughput"] = df.iloc[:, 1].astype(str).str.replace(",", "").astype(int)
             df["throughput_yoy"] = df.iloc[:, 2].astype(str).str.replace(",", "").astype(int)
