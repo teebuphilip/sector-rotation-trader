@@ -75,6 +75,7 @@ def main() -> int:
         chat_out.write_text(chat_stdout)
         success = True
     except Exception as e:
+        print(f"❌ ChatGPT generator failed: {e}", file=sys.stderr)
         _write_error(run_dir, "chatgpt", e)
         chat_out.write_text("")
 
@@ -83,6 +84,7 @@ def main() -> int:
         claude_out.write_text(claude_stdout)
         success = True
     except Exception as e:
+        print(f"❌ Claude generator failed: {e}", file=sys.stderr)
         _write_error(run_dir, "claude", e)
         claude_out.write_text("")
 

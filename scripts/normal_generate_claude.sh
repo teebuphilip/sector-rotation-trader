@@ -37,6 +37,14 @@ if not raw:
 obj = json.loads(raw)
 text = obj["content"][0]["text"]
 ideas = json.loads(text)
+if isinstance(ideas, dict):
+    if isinstance(ideas.get("ideas"), list):
+        ideas = ideas["ideas"]
+    else:
+        ideas = [ideas]
+
+if not isinstance(ideas, list) or len(ideas) == 0:
+    raise SystemExit("Expected a non-empty JSON list for ideas")
 
 for item in ideas:
     if not isinstance(item, dict):

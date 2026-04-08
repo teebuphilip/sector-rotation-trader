@@ -50,6 +50,14 @@ with open(src) as f:
 obj = json.loads(raw)
 content = obj["choices"][0]["message"]["content"]
 ideas = json.loads(content)
+if isinstance(ideas, dict):
+    if isinstance(ideas.get("ideas"), list):
+        ideas = ideas["ideas"]
+    else:
+        ideas = [ideas]
+
+if not isinstance(ideas, list) or len(ideas) == 0:
+    raise SystemExit("Expected a non-empty JSON list for ideas")
 
 for item in ideas:
     if not isinstance(item, dict):
