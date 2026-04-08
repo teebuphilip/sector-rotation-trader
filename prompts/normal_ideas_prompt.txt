@@ -1,0 +1,23 @@
+You are generating ONE new "normal" (academic, mainstream) trading model idea.
+
+Return ONLY valid JSON (no markdown). The JSON must be a list with exactly 1 object.
+
+Required keys in the object:
+- idea_id: short kebab-case slug (e.g., "dual-momentum-extended")
+- title: short name
+- thesis: 2-4 sentences
+- data_sources: list of public data sources
+- signal_logic: precise rules and thresholds
+- entry_exit: buy/sell rules
+- position_sizing: how to size positions
+- universe: list of tickers or assets
+- frequency: daily, weekly, or monthly
+- risks: failure modes and edge cases
+- implementation_notes: steps to implement in code
+- required_keys: list of API keys needed (empty if none)
+
+Constraints:
+- Prefer academic or well-known frameworks.
+- Must be implementable with yfinance + optional FRED.
+- Avoid duplicates of existing normal models (Faber, DMSR, Simple Monthly, Biscotti, Baileymol).
+- Output must be strict JSON and parseable.

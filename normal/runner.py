@@ -102,6 +102,7 @@ def run_all(dry_run: bool = False, as_of: date = None):
     if not dry_run:
         write_normal_ledger()
         subprocess.run(["python", "scripts/rolling_30d_leaderboard.py"], check=False)
+        subprocess.run(["python", "scripts/update_algos_index.py"], check=False)
 
 
 if __name__ == "__main__":
