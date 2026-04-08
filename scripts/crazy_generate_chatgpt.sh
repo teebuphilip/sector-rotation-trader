@@ -4,6 +4,7 @@ set -euo pipefail
 MODEL="${OPENAI_MODEL:-gpt-4.1-mini}"
 PROMPT_FILE="${1:-prompts/crazy_ideas_prompt.txt}"
 TMP_JSON="$(mktemp)"
+ERROR_DIR="${ERROR_DIR:-}"
 
 if [[ ! -f "$PROMPT_FILE" ]]; then
   echo "❌ Prompt file not found: $PROMPT_FILE" >&2
@@ -33,11 +34,16 @@ HTTP_CODE=$(curl -sS -w "%{http_code}" \
 if [[ "$HTTP_CODE" != "200" ]]; then
   echo "❌ OpenAI HTTP $HTTP_CODE" >&2
   cat "$TMP_JSON" >&2
+  if [[ -n "$ERROR_DIR" ]]; then
+    mkdir -p "$ERROR_DIR"
+    cp "$TMP_JSON" "$ERROR_DIR/chatgpt_response.json"
+    echo "$HTTP_CODE" > "$ERROR_DIR/chatgpt_http_code.txt"
+  fi
   rm -f "$TMP_JSON"
   exit 1
 fi
 
-python3 - <<'PY' "$TMP_JSON" "$MODEL"
+if ! python3 - <<'PY' "$TMP_JSON" "$MODEL"; then
 import json
 import sys
 
@@ -58,5 +64,13 @@ for item in ideas:
     item["source_model"] = model
     print(json.dumps(item, ensure_ascii=False))
 PY
+  if [[ -n "$ERROR_DIR" ]]; then
+    mkdir -p "$ERROR_DIR"
+    cp "$TMP_JSON" "$ERROR_DIR/chatgpt_response.json"
+    echo "$HTTP_CODE" > "$ERROR_DIR/chatgpt_http_code.txt"
+  fi
+  rm -f "$TMP_JSON"
+  exit 1
+fi
 
 rm -f "$TMP_JSON"

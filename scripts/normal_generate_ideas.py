@@ -68,6 +68,7 @@ def main() -> int:
         return 2
 
     env = dict(os.environ)
+    env["ERROR_DIR"] = str(run_dir / "errors")
     success = False
 
     try:
