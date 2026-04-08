@@ -5,6 +5,7 @@ MODEL="${OPENAI_MODEL:-gpt-4.1-mini}"
 PROMPT_FILE="${1:-prompts/normal_ideas_prompt.txt}"
 TMP_JSON="$(mktemp)"
 ERROR_DIR="${ERROR_DIR:-}"
+RESPONSE_DIR="${RESPONSE_DIR:-}"
 
 if [[ ! -f "$PROMPT_FILE" ]]; then
   echo "❌ Prompt file not found: $PROMPT_FILE" >&2
@@ -38,6 +39,11 @@ if [[ "$HTTP_CODE" != "200" ]]; then
     mkdir -p "$ERROR_DIR"
     cp "$TMP_JSON" "$ERROR_DIR/chatgpt_response.json"
     echo "$HTTP_CODE" > "$ERROR_DIR/chatgpt_http_code.txt"
+  fi
+  if [[ -n "$RESPONSE_DIR" ]]; then
+    mkdir -p "$RESPONSE_DIR"
+    cp "$TMP_JSON" "$RESPONSE_DIR/chatgpt_response.json"
+    echo "$HTTP_CODE" > "$RESPONSE_DIR/chatgpt_http_code.txt"
   fi
   rm -f "$TMP_JSON"
   exit 1
@@ -77,8 +83,19 @@ PY
     cp "$TMP_JSON" "$ERROR_DIR/chatgpt_response.json"
     echo "$HTTP_CODE" > "$ERROR_DIR/chatgpt_http_code.txt"
   fi
+  if [[ -n "$RESPONSE_DIR" ]]; then
+    mkdir -p "$RESPONSE_DIR"
+    cp "$TMP_JSON" "$RESPONSE_DIR/chatgpt_response.json"
+    echo "$HTTP_CODE" > "$RESPONSE_DIR/chatgpt_http_code.txt"
+  fi
   rm -f "$TMP_JSON"
   exit 1
+fi
+
+if [[ -n "$RESPONSE_DIR" ]]; then
+  mkdir -p "$RESPONSE_DIR"
+  cp "$TMP_JSON" "$RESPONSE_DIR/chatgpt_response.json"
+  echo "$HTTP_CODE" > "$RESPONSE_DIR/chatgpt_http_code.txt"
 fi
 
 # Log cost

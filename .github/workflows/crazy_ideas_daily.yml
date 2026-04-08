@@ -67,6 +67,7 @@ jobs:
             git add logs
           fi
           git commit -m "daily: crazy idea run" || echo "No changes to commit"
+          git pull --rebase
           git push
 
       - name: Email daily stats
