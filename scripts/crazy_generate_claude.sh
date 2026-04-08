@@ -4,7 +4,6 @@ set -euo pipefail
 MODEL="${ANTHROPIC_MODEL:-claude-3-haiku-20240307}"
 PROMPT_FILE="${1:-prompts/crazy_ideas_prompt.txt}"
 TMP_JSON="$(mktemp)"
-ERROR_DIR="${ERROR_DIR:-}"
 RESPONSE_DIR="${RESPONSE_DIR:-}"
 
 if [[ ! -f "$PROMPT_FILE" ]]; then
@@ -33,11 +32,6 @@ HTTP_CODE=$(curl -sS -w "%{http_code}" \
 if [[ "$HTTP_CODE" != "200" ]]; then
   echo "❌ Claude HTTP $HTTP_CODE" >&2
   cat "$TMP_JSON" >&2
-  if [[ -n "$ERROR_DIR" ]]; then
-    mkdir -p "$ERROR_DIR"
-    cp "$TMP_JSON" "$ERROR_DIR/claude_response.json"
-    echo "$HTTP_CODE" > "$ERROR_DIR/claude_http_code.txt"
-  fi
   if [[ -n "$RESPONSE_DIR" ]]; then
     mkdir -p "$RESPONSE_DIR"
     cp "$TMP_JSON" "$RESPONSE_DIR/claude_response.json"
@@ -70,11 +64,6 @@ for item in ideas:
     item["source_model"] = model
     print(json.dumps(item, ensure_ascii=False))
 PY
-  if [[ -n "$ERROR_DIR" ]]; then
-    mkdir -p "$ERROR_DIR"
-    cp "$TMP_JSON" "$ERROR_DIR/claude_response.json"
-    echo "$HTTP_CODE" > "$ERROR_DIR/claude_http_code.txt"
-  fi
   if [[ -n "$RESPONSE_DIR" ]]; then
     mkdir -p "$RESPONSE_DIR"
     cp "$TMP_JSON" "$RESPONSE_DIR/claude_response.json"
