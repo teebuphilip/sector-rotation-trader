@@ -115,6 +115,24 @@ Email delivery (same as AFH) requires GitHub secrets:
 - `ALERT_EMAIL_USER`
 - `ALERT_EMAIL_PASS`
 
+## Required Secrets
+
+LLM access:
+- `OPENAI_API_KEY`
+- `ANTHROPIC_API_KEY`
+
+Email delivery:
+- `ALERT_EMAIL_TO`
+- `ALERT_EMAIL_USER`
+- `ALERT_EMAIL_PASS`
+
+### Gmail App Password (for `ALERT_EMAIL_PASS`)
+
+Gmail does not allow your normal password for SMTP. You must create an **App Password**:
+1. Enable 2‑Step Verification on the Gmail account.
+2. Create an App Password for “Mail”.
+3. Use that 16‑character App Password as `ALERT_EMAIL_PASS`.
+
 ## 30-Day Rolling Leaderboard
 
 Generated daily by the algo runners and written to:
