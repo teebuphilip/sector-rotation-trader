@@ -43,6 +43,9 @@ jobs:
       - name: Run crazy algos
         run: python crazy_run.py
 
+      - name: Generate rolling leaderboard
+        run: python scripts/rolling_30d_leaderboard.py
+
       - name: Commit updated state + dashboard
         run: |
           git config user.name  "sector-bot"

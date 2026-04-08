@@ -101,6 +101,24 @@ def _collect_blocked_ideas(run_dir: Path) -> list[str]:
     return blocked
 
 
+def _collect_new_algos(run_date: str) -> list[dict]:
+    path = Path("data/algos/new_algos.jsonl")
+    if not path.exists():
+        return []
+    items = []
+    for line in path.read_text().splitlines():
+        s = line.strip()
+        if not s:
+            continue
+        try:
+            obj = json.loads(s)
+        except Exception:
+            continue
+        if obj.get("date") == run_date:
+            items.append(obj)
+    return items
+
+
 def _build_report() -> str:
     lines = []
     now = datetime.utcnow().strftime("%Y-%m-%d")
@@ -143,6 +161,17 @@ def _build_report() -> str:
             lines.append("- Blocked ideas: none")
     else:
         lines.append("Latest idea run: missing")
+
+    lines.append("")
+
+    # New algos added today
+    new_algos = _collect_new_algos(run_date)
+    if new_algos:
+        lines.append("New algos added:")
+        for item in new_algos:
+            lines.append(f"- {item.get('name','(unknown)')} ({item.get('category','?')})")
+    else:
+        lines.append("New algos added: none")
 
     lines.append("")
 

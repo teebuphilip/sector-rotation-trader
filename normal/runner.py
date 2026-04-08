@@ -1,5 +1,7 @@
 import argparse
 from datetime import date
+from pathlib import Path
+import json
 import os
 
 import pandas as pd
@@ -56,6 +58,7 @@ def run_all(dry_run: bool = False, as_of: date = None):
             names = ", ".join(a.name for a in to_seed)
             print(f"Seeding new normal algos: {names}")
             seed_algos(to_seed)
+            _log_new_algos("normal", to_seed, as_of)
 
     all_tickers = sorted({t for algo in algos for t in algo.universe()})
     prices = {}
@@ -114,6 +117,22 @@ def run_all(dry_run: bool = False, as_of: date = None):
         write_normal_ledger()
         subprocess.run(["python", "scripts/rolling_30d_leaderboard.py"], check=False)
         subprocess.run(["python", "scripts/update_algos_index.py"], check=False)
+
+
+def _log_new_algos(category: str, algos: list, as_of: date):
+    if not algos:
+        return
+    log_dir = Path("data/algos")
+    log_dir.mkdir(parents=True, exist_ok=True)
+    path = log_dir / "new_algos.jsonl"
+    with path.open("a", encoding="utf-8") as f:
+        for algo in algos:
+            f.write(json.dumps({
+                "date": as_of.isoformat(),
+                "category": category,
+                "algo_id": algo.algo_id,
+                "name": algo.name,
+            }) + "\n")
 
 
 if __name__ == "__main__":

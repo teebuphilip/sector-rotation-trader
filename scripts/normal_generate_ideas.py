@@ -57,6 +57,10 @@ def main() -> int:
     run_dir = repo_root / "data" / "normal_ideas" / "runs" / args.date
     raw_dir = run_dir / "raw"
     raw_dir.mkdir(parents=True, exist_ok=True)
+    err_dir = run_dir / "errors"
+    err_dir.mkdir(parents=True, exist_ok=True)
+    for p in err_dir.glob("*.txt"):
+        p.unlink()
 
     chat_out = raw_dir / f"chatgpt_{args.date}.jsonl"
     claude_out = raw_dir / f"claude_{args.date}.jsonl"
@@ -75,7 +79,7 @@ def main() -> int:
     try:
         chat_stdout = _run(["/bin/bash", str(chat_script), args.prompt], env, "chatgpt")
         chat_out.write_text(chat_stdout)
-        err_file = run_dir / "errors" / "chatgpt.txt"
+        err_file = err_dir / "chatgpt.txt"
         if err_file.exists():
             err_file.unlink()
         success = True
@@ -87,7 +91,7 @@ def main() -> int:
     try:
         claude_stdout = _run(["/bin/bash", str(claude_script), args.prompt], env, "claude")
         claude_out.write_text(claude_stdout)
-        err_file = run_dir / "errors" / "claude.txt"
+        err_file = err_dir / "claude.txt"
         if err_file.exists():
             err_file.unlink()
         success = True
