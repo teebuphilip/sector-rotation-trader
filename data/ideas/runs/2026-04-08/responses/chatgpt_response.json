@@ -1,14 +1,14 @@
 {
-  "id": "chatcmpl-DSNXzSu3fmDimEyUPjwSzB4f2sosW",
+  "id": "chatcmpl-DSNyaNhWZDPqVJvdG4GkIGdV0VyPm",
   "object": "chat.completion",
-  "created": 1775656071,
+  "created": 1775657720,
   "model": "gpt-4.1-mini-2025-04-14",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "[\n  {\n    \"idea_id\": \"reddit-subreddit-surge-momentum\",\n    \"title\": \"Reddit Subreddit Surge Momentum\",\n    \"thesis\": \"Sudden surges in mentions of a stock ticker within specific finance-related subreddits often precede increased retail investor interest and potential short-term price movements. By tracking the daily percentage increase in mentions, one can capture early momentum shifts driven by the retail crowd before they fully materialize in price.\",\n    \"data_sources\": [\n      \"Pushshift Reddit API\",\n      \"Yahoo Finance for price data\"\n    ],\n    \"signal_logic\": \"Calculate the daily count of mentions of a ticker’s cashtag (e.g., $TSLA) in r/wallstreetbets, r/investing, and r/stocks. Generate a 3-day moving average of mentions. Signal triggers when daily mentions increase by more than 100% compared to the 3-day moving average and the average mentions are above 20 posts per day.\",\n    \"entry_exit\": \"Enter a long position at market open the day after the surge. Exit when mentions fall below the 3-day moving average or after 5 trading days, whichever comes first.\",\n    \"position_sizing\": \"Allocate 5% of portfolio per signal, max 3 concurrent positions. Reduce size by 50% if market volatility (VIX) is above 25.\",\n    \"universe\": [\n      \"AAPL\",\n      \"TSLA\",\n      \"AMC\",\n      \"GME\",\n      \"NVDA\",\n      \"MSFT\",\n      \"AMD\",\n      \"NIO\",\n      \"PLTR\",\n      \"NFLX\"\n    ],\n    \"frequency\": \"daily\",\n    \"risks\": \"High noise and false positives due to meme stock hype. Mentions may spike without price follow-through. Risk of sudden short squeezes or dumps. Data latency and API rate limits may delay signals.\",\n    \"implementation_notes\": \"Use Pushshift API to collect daily subreddit comments filtered by cashtag mentions. Aggregate counts per ticker and compute moving averages. Combine with Yahoo Finance price data to backtest. Automate daily data pulls and signal generation with scheduled scripts.\",\n    \"required_keys\": []\n  }\n]",
+        "content": "[\n  {\n    \"idea_id\": \"reddit-volatility-spike\",\n    \"title\": \"Reddit Volatility Spike\",\n    \"thesis\": \"Sudden spikes in Reddit mentions of a stock combined with a surge in implied volatility can predict short-term price reversals or breakouts. Retail interest often precedes volatility expansions, creating trading opportunities by capturing momentum or mean reversion shortly after the spike.\",\n    \"data_sources\": [\n      \"Pushshift Reddit API\",\n      \"Yahoo Finance (implied volatility data via options prices)\",\n      \"Alpha Vantage (free stock price and volume data)\"\n    ],\n    \"signal_logic\": \"1) Identify a 100%+ day-over-day increase in Reddit daily mentions of a ticker's cashtag or symbol on r/stocks or r/investing.\\n2) Confirm that the stock's implied volatility (IV) has increased by at least 10% over the previous trading day.\\n3) Entry signal triggers if both conditions are met on the same day.\\n4) Exit signal triggers when IV drops below its 5-day moving average or after 5 trading days, whichever comes first.\",\n    \"entry_exit\": \"Buy at market open the day after the signal triggers. Sell when IV drops below its 5-day moving average or hold for a maximum of 5 trading days to limit risk.\",\n    \"position_sizing\": \"Allocate 2% of portfolio capital per trade to limit risk from volatility spikes and avoid overexposure to retail-driven moves.\",\n    \"universe\": [\n      \"AAPL\",\n      \"TSLA\",\n      \"GME\",\n      \"AMC\",\n      \"MSFT\",\n      \"NVDA\",\n      \"AMD\",\n      \"NFLX\",\n      \"META\",\n      \"GOOGL\"\n    ],\n    \"frequency\": \"daily\",\n    \"risks\": \"High false positives due to noise in Reddit mentions or IV spikes unrelated to fundamental news. Sudden regulatory actions or market-wide volatility can invalidate signal. Low liquidity stocks may have unreliable IV data.\",\n    \"implementation_notes\": \"1) Use Pushshift API to query Reddit submissions and comments mentioning ticker cashtags daily.\\n2) Use Yahoo Finance or Alpha Vantage to fetch daily options IV and price data.\\n3) Calculate percentage changes and moving averages.\\n4) Backtest signal logic on historical data.\\n5) Automate daily execution with conditional checks.\",\n    \"required_keys\": []\n  }\n]",
         "refusal": null,
         "annotations": []
       },
@@ -18,8 +18,8 @@
   ],
   "usage": {
     "prompt_tokens": 241,
-    "completion_tokens": 452,
-    "total_tokens": 693,
+    "completion_tokens": 497,
+    "total_tokens": 738,
     "prompt_tokens_details": {
       "cached_tokens": 0,
       "audio_tokens": 0
