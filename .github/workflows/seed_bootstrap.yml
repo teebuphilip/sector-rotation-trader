@@ -1,0 +1,63 @@
+name: Seed Bootstrap
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Seed baseline
+        run: python seed.py
+
+      - name: Seed normal algos
+        run: python normal_seed.py
+
+      - name: Seed crazy algos
+        run: python crazy_seed.py
+
+      - name: Commit seeded state + dashboards
+        run: |
+          git config user.name "seed-bot"
+          git config user.email "seed-bot@users.noreply.github.com"
+          git add state.json docs/index.html docs/trades.json
+          git add data/normal/state docs/normal
+          git add data/crazy/state docs/algos docs/crazy
+          if [ -d docs/ledgers ]; then
+            git add docs/ledgers
+          fi
+          if [ -d docs/leaderboards ]; then
+            git add docs/leaderboards
+          fi
+          if [ -f docs/algos/index.md ]; then
+            git add docs/algos/index.md
+          fi
+          if [ -d data/blocked ]; then
+            git add data/blocked
+          fi
+          git commit -m "seed: bootstrap baseline + normal + crazy" || echo "No changes to commit"
+          git pull --rebase
+          git push
