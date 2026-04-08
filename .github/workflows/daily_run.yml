@@ -50,7 +50,15 @@ jobs:
           git add state.json docs/index.html docs/trades.json
           git add data/normal/state docs/normal
           git add data/crazy/state docs/algos docs/crazy
-          git add docs/ledgers docs/leaderboards docs/algos/index.md
+          if [ -d docs/ledgers ]; then
+            git add docs/ledgers
+          fi
+          if [ -d docs/leaderboards ]; then
+            git add docs/leaderboards
+          fi
+          if [ -f docs/algos/index.md ]; then
+            git add docs/algos/index.md
+          fi
           if [ -d data/blocked ]; then
             git add data/blocked
           fi
