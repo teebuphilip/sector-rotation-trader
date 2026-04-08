@@ -1,14 +1,14 @@
 {
-  "id": "chatcmpl-DSQSjjcg5jtSuhecXF1BLAhdh7TJ2",
+  "id": "chatcmpl-DSQY3D8Dyhd1fQRXoD9xsOGofvOGf",
   "object": "chat.completion",
-  "created": 1775667277,
+  "created": 1775667607,
   "model": "gpt-4.1-mini-2025-04-14",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "[\n  {\n    \"idea_id\": \"twitter-sentiment-spike\",\n    \"title\": \"Twitter Sentiment Spike\",\n    \"thesis\": \"Sudden spikes in positive or negative Twitter sentiment about a specific stock often precede short-term price moves as retail attention surges. By tracking unusually large daily sentiment changes, traders can anticipate momentum shifts before they appear in traditional volume or price indicators. This can capture early moves driven by viral news or social trends.\",\n    \"data_sources\": [\n      \"Twitter API (free tier)\",\n      \"Yahoo Finance (for price and volume data)\"\n    ],\n    \"signal_logic\": \"Calculate daily sentiment score for each ticker from tweets mentioning its ticker symbol or company name. Generate a 7-day moving average of sentiment scores. Signal triggers when daily sentiment changes by more than ±30% compared to the 7-day average.\",\n    \"entry_exit\": \"Entry: Buy if sentiment spikes positively by >30%, sell/short if sentiment drops negatively by >30%. Exit: Close position when sentiment returns to within ±10% of the 7-day average or after 5 trading days, whichever comes first.\",\n    \"position_sizing\": \"Allocate no more than 5% of portfolio per position to limit risk from volatile sentiment-driven moves.\",\n    \"universe\": [\n      \"AAPL\",\n      \"TSLA\",\n      \"AMZN\",\n      \"MSFT\",\n      \"GOOGL\",\n      \"NFLX\",\n      \"NVDA\",\n      \"META\",\n      \"AMD\",\n      \"BABA\"\n    ],\n    \"frequency\": \"daily\",\n    \"risks\": \"Sentiment can be noisy and manipulated (e.g., bot activity). Spike may not translate to price moves, causing false signals. Sudden news events may cause whipsaws. Limited tweet volume for smaller tickers can reduce reliability.\",\n    \"implementation_notes\": \"1) Collect tweets mentioning ticker symbols using Twitter API. 2) Perform sentiment analysis using a simple lexicon-based approach or free NLP libraries. 3) Aggregate daily sentiment scores and compute moving averages. 4) Compare daily changes to thresholds and backtest signals against price data from Yahoo Finance.\",\n    \"required_keys\": [\n      \"twitter_api_key\"\n    ]\n  }\n]",
+        "content": "[\n  {\n    \"idea_id\": \"reddit-gaming-thread-spike\",\n    \"title\": \"Reddit Gaming Thread Spike\",\n    \"thesis\": \"Sudden spikes in activity within specific gaming-related subreddits often precede increased interest and sales for gaming companies or hardware suppliers. By tracking the surge in new posts and comments in popular gaming subreddits, one can anticipate short-term momentum in gaming stocks. This signal leverages social sentiment shifts before they appear in traditional financial news.\",\n    \"data_sources\": [\n      \"Reddit API (r/gaming, r/pcgaming, r/games)\",\n      \"Yahoo Finance for price data\"\n    ],\n    \"signal_logic\": \"Calculate the daily percentage increase in total posts plus comments in target subreddits. Signal triggers when combined activity rises more than 50% compared to the 7-day moving average.\",\n    \"entry_exit\": \"Buy gaming hardware or publisher stocks (e.g., ATVI, EA, NVDA) on day of spike detection. Sell when activity falls below the 7-day moving average or after 5 trading days, whichever comes first.\",\n    \"position_sizing\": \"Allocate 5% of portfolio per signal, max 20% total exposure to this strategy.\",\n    \"universe\": [\n      \"ATVI\",\n      \"EA\",\n      \"NVDA\",\n      \"TTWO\",\n      \"MSFT\"\n    ],\n    \"frequency\": \"daily\",\n    \"risks\": \"False positives from viral posts unrelated to business fundamentals; short-lived spikes with no price follow-through; API rate limits or data outages; sector-wide selloffs overriding signal.\",\n    \"implementation_notes\": \"Use Reddit API to pull daily counts of posts and comments from target subreddits. Compute rolling averages and percentage changes. Integrate with price data from Yahoo Finance to manage entry/exit. Backtest on historical Reddit data if available.\",\n    \"required_keys\": []\n  }\n]",
         "refusal": null,
         "annotations": []
       },
@@ -18,8 +18,8 @@
   ],
   "usage": {
     "prompt_tokens": 241,
-    "completion_tokens": 459,
-    "total_tokens": 700,
+    "completion_tokens": 395,
+    "total_tokens": 636,
     "prompt_tokens_details": {
       "cached_tokens": 0,
       "audio_tokens": 0
