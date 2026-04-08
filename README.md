@@ -126,6 +126,21 @@ CTA landing page (links to the two products + latest winners):
 Repo layout and workflow overview:
 - `architecture.md`
 
+## What This Is (And Isn’t)
+
+This is a public experiment: we run weird alternative‑data trading signals every day, publish the receipts, and refuse to hide the failures. It’s research, not advice. The goal is to see which ugly signals survive real time and which die in public.
+
+What this is:
+- A live, timestamped paper‑trading lab
+- Daily algo ideas (ChatGPT + Claude) with full specs
+- Public ledgers, dashboards, and failure logs
+
+What this isn’t:
+- Investment advice
+- A promise of performance
+
+If you’re here, you’re either curious, skeptical, or both. That’s the right mindset.
+
 ## Algo Biscotti Page
 
 Dedicated page for Algo Biscotti:
