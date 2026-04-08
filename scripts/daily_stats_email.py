@@ -48,14 +48,14 @@ def _stale(last_run: str, days: int = 2) -> bool:
     return (datetime.utcnow().date() - dt.date()) > timedelta(days=days)
 
 
-def _collect_algo_status() -> list[dict]:
-    entries = []
+def _collect_algo_status() -> dict[str, list[dict]]:
+    entries = {"baseline": [], "normal": [], "crazy": []}
 
     # Baseline
     base_path = Path("state.json")
     if base_path.exists():
         last = _state_last_run(base_path)
-        entries.append({"name": "NRWise Acceleration", "path": str(base_path), "last_run": last})
+        entries["baseline"].append({"name": "NRWise Acceleration", "path": str(base_path), "last_run": last})
 
     # Normal
     normal_dir = Path("data/normal/state")
@@ -65,7 +65,7 @@ def _collect_algo_status() -> list[dict]:
             meta = (state or {}).get("meta", {}).get(p.stem, {}) if isinstance(state, dict) else {}
             name = meta.get("name") or p.stem
             last = state.get("last_run") if isinstance(state, dict) else "missing"
-            entries.append({"name": name, "path": str(p), "last_run": last})
+            entries["normal"].append({"name": name, "path": str(p), "last_run": last})
 
     # Crazy
     crazy_dir = Path("data/crazy/state")
@@ -75,7 +75,7 @@ def _collect_algo_status() -> list[dict]:
             meta = (state or {}).get("meta", {}).get(p.stem, {}) if isinstance(state, dict) else {}
             name = meta.get("name") or p.stem
             last = state.get("last_run") if isinstance(state, dict) else "missing"
-            entries.append({"name": name, "path": str(p), "last_run": last})
+            entries["crazy"].append({"name": name, "path": str(p), "last_run": last})
 
     return entries
 
@@ -122,7 +122,10 @@ def _build_report() -> str:
         lines.append(f"- Score file: {'present' if score is not None else 'missing'}")
         err_dir = latest_run / "errors"
         if err_dir.exists():
-            err_files = sorted([p.name for p in err_dir.glob("*.txt")])
+            err_files = sorted([
+                p.name for p in err_dir.glob("*.txt")
+                if p.stat().st_size > 0
+            ])
             if err_files:
                 lines.append("- Generator errors:")
                 for name in err_files:
@@ -155,7 +158,10 @@ def _build_report() -> str:
         lines.append(f"- Score file: {'present' if n_score is not None else 'missing'}")
         err_dir = normal_run / "errors"
         if err_dir.exists():
-            err_files = sorted([p.name for p in err_dir.glob('*.txt')])
+            err_files = sorted([
+                p.name for p in err_dir.glob("*.txt")
+                if p.stat().st_size > 0
+            ])
             if err_files:
                 lines.append("- Generator errors:")
                 for name in err_files:
@@ -206,12 +212,24 @@ def _build_report() -> str:
     # Algo status
     lines.append("Algo run status:")
     algos = _collect_algo_status()
-    if not algos:
+    if not any(algos.values()):
         lines.append("- No algo states found")
     else:
-        for a in algos:
-            flag = "STALE" if _stale(a["last_run"]) else "OK"
-            lines.append(f"- {a['name']}: {a['last_run']} [{flag}]")
+        if algos["baseline"]:
+            lines.append("- Baseline:")
+            for a in algos["baseline"]:
+                flag = "STALE" if _stale(a["last_run"]) else "OK"
+                lines.append(f"  - {a['name']}: {a['last_run']} [{flag}]")
+        if algos["normal"]:
+            lines.append("- Normal:")
+            for a in algos["normal"]:
+                flag = "STALE" if _stale(a["last_run"]) else "OK"
+                lines.append(f"  - {a['name']}: {a['last_run']} [{flag}]")
+        if algos["crazy"]:
+            lines.append("- Crazy:")
+            for a in algos["crazy"]:
+                flag = "STALE" if _stale(a["last_run"]) else "OK"
+                lines.append(f"  - {a['name']}: {a['last_run']} [{flag}]")
 
     # Leaderboard
     lb_json = Path("docs/leaderboards/rolling_30d.json")

@@ -76,6 +76,9 @@ def main() -> int:
     try:
         chat_stdout = _run(["/bin/bash", str(chat_script), args.prompt], env, "chatgpt")
         chat_out.write_text(chat_stdout)
+        err_file = run_dir / "errors" / "chatgpt.txt"
+        if err_file.exists():
+            err_file.unlink()
         success = True
     except Exception as e:
         _write_error(run_dir, "chatgpt", e)
@@ -84,6 +87,9 @@ def main() -> int:
     try:
         claude_stdout = _run(["/bin/bash", str(claude_script), args.prompt], env, "claude")
         claude_out.write_text(claude_stdout)
+        err_file = run_dir / "errors" / "claude.txt"
+        if err_file.exists():
+            err_file.unlink()
         success = True
     except Exception as e:
         _write_error(run_dir, "claude", e)
