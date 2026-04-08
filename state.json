@@ -1,19 +1,10 @@
 {
-  "cash": 88741.76807958046,
+  "cash": 100055.5031214379,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 91.69950475139811,
-  "taxes_paid": 682.0716783138955,
-  "positions": {
-    "CF": {
-      "shares": 95.87727428001706,
-      "entry_price": 104.30000305175781,
-      "entry_date": "2026-04-08",
-      "cost": 10000.0,
-      "using_margin": false,
-      "consec_below_ma": 1
-    }
-  },
+  "fees_paid": 102.28306179739612,
+  "taxes_paid": 1453.6303536904825,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-08",
@@ -120,6 +111,20 @@
       "pnl_pct": -11.87,
       "entry_date": "2026-04-08",
       "reason": "stop_loss"
+    },
+    {
+      "date": "2026-04-08",
+      "action": "SELL",
+      "ticker": "CF",
+      "shares": 95.8773,
+      "price": 126.16,
+      "proceeds": 12085.29,
+      "fees": 10.58,
+      "tax": 771.56,
+      "pnl": 1313.74,
+      "pnl_pct": 13.14,
+      "entry_date": "2026-04-08",
+      "reason": "20MA_exit"
     }
   ],
   "daily_snapshots": [
@@ -1702,6 +1707,16 @@
       },
       "sector": "XLU",
       "num_positions": 1
+    },
+    {
+      "date": "2026-04-08",
+      "cash": 100055.5,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100055.5,
+      "positions": {},
+      "sector": "XLU",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-07",

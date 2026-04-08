@@ -105,6 +105,20 @@
       "pnl_pct": -11.87,
       "entry_date": "2026-04-08",
       "reason": "stop_loss"
+    },
+    {
+      "date": "2026-04-08",
+      "action": "SELL",
+      "ticker": "CF",
+      "shares": 95.8773,
+      "price": 126.16,
+      "proceeds": 12085.29,
+      "fees": 10.58,
+      "tax": 771.56,
+      "pnl": 1313.74,
+      "pnl_pct": 13.14,
+      "entry_date": "2026-04-08",
+      "reason": "20MA_exit"
     }
   ],
   "daily_snapshots": [
@@ -1687,6 +1701,16 @@
       },
       "sector": "XLU",
       "num_positions": 1
+    },
+    {
+      "date": "2026-04-08",
+      "cash": 100055.5,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100055.5,
+      "positions": {},
+      "sector": "XLU",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-07"

@@ -1,38 +1,30 @@
 {
-  "as_of": "2026-04-08T16:32:40.082904",
-  "spy_ret_30d": -0.0019259175042476429,
+  "as_of": "2026-04-08T23:07:34.721620",
+  "spy_ret_30d": -0.0006101505886302316,
   "entries": [
     {
       "algo_id": "faber",
       "name": "Faber Momentum Rotation",
       "category": "standard",
       "ret_30d": 0.03846609999999995,
-      "sharpe_30d": 0.5460009499833185,
+      "sharpe_30d": 0.5056095693978275,
       "max_dd_30d": -0.055103047557002474
     },
     {
       "algo_id": "dmsr",
       "name": "Antonacci Dual Momentum Sector Rotation",
       "category": "standard",
-      "ret_30d": 0.016349500000000017,
-      "sharpe_30d": 0.19367356962629081,
+      "ret_30d": 0.019656200000000013,
+      "sharpe_30d": 0.2535982254038443,
       "max_dd_30d": -0.03780722090648794
     },
     {
       "algo_id": "nrwise",
       "name": "NRWise Acceleration",
       "category": "standard",
-      "ret_30d": 0.0037359999999999616,
-      "sharpe_30d": -0.3534294626604958,
+      "ret_30d": 0.0005550000000000832,
+      "sharpe_30d": -0.46397856252953645,
       "max_dd_30d": -0.028923195914234492
-    },
-    {
-      "algo_id": "baileymol",
-      "name": "Algo Baileymol (Chaos Monger)",
-      "category": "standard",
-      "ret_30d": 0.0,
-      "sharpe_30d": 0.0,
-      "max_dd_30d": 0.0
     },
     {
       "algo_id": "simple_monthly",
@@ -43,9 +35,9 @@
       "max_dd_30d": 0.0
     },
     {
-      "algo_id": "linkedin",
-      "name": "LinkedIn Layoff Propagation",
-      "category": "crazy",
+      "algo_id": "baileymol",
+      "name": "Algo Baileymol (Chaos Monger)",
+      "category": "standard",
       "ret_30d": 0.0,
       "sharpe_30d": 0.0,
       "max_dd_30d": 0.0
@@ -53,22 +45,6 @@
     {
       "algo_id": "cardboard",
       "name": "Cardboard Box Index",
-      "category": "crazy",
-      "ret_30d": 0.0,
-      "sharpe_30d": 0.0,
-      "max_dd_30d": 0.0
-    },
-    {
-      "algo_id": "glassdoor",
-      "name": "Glassdoor Misery Gradient",
-      "category": "crazy",
-      "ret_30d": 0.0,
-      "sharpe_30d": 0.0,
-      "max_dd_30d": 0.0
-    },
-    {
-      "algo_id": "calls311",
-      "name": "311 Call Rotation",
       "category": "crazy",
       "ret_30d": 0.0,
       "sharpe_30d": 0.0,
@@ -83,8 +59,8 @@
       "max_dd_30d": 0.0
     },
     {
-      "algo_id": "craigslist",
-      "name": "Craigslist Desperation Index",
+      "algo_id": "tsa",
+      "name": "TSA Body Count",
       "category": "crazy",
       "ret_30d": 0.0,
       "sharpe_30d": 0.0,
@@ -99,8 +75,32 @@
       "max_dd_30d": 0.0
     },
     {
-      "algo_id": "tsa",
-      "name": "TSA Body Count",
+      "algo_id": "craigslist",
+      "name": "Craigslist Desperation Index",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "linkedin",
+      "name": "LinkedIn Layoff Propagation",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "calls311",
+      "name": "311 Call Rotation",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "glassdoor",
+      "name": "Glassdoor Misery Gradient",
       "category": "crazy",
       "ret_30d": 0.0,
       "sharpe_30d": 0.0,
@@ -110,24 +110,24 @@
       "algo_id": "biscotti",
       "name": "Algo Biscotti (Unconditional Loyalty)",
       "category": "standard",
-      "ret_30d": -0.024576700000000007,
-      "sharpe_30d": -0.4526358925562685,
+      "ret_30d": -0.022023000000000015,
+      "sharpe_30d": -0.39955381085519603,
       "max_dd_30d": -0.1010886
     },
     {
       "algo_id": "biscotti",
       "name": "Algo Biscotti (Unconditional Loyalty)",
       "category": "crazy",
-      "ret_30d": -0.03771320000000011,
-      "sharpe_30d": -0.3840977643772146,
-      "max_dd_30d": -0.11413815625505465
+      "ret_30d": -0.030332799999999938,
+      "sharpe_30d": -0.1852422841638885,
+      "max_dd_30d": -0.11854196296666494
     },
     {
       "algo_id": "baileymol",
       "name": "Algo Baileymol (Chaos Monger)",
       "category": "crazy",
-      "ret_30d": -0.07451359999999996,
-      "sharpe_30d": -0.8936439334826587,
+      "ret_30d": -0.07576130000000003,
+      "sharpe_30d": -1.3461647860495167,
       "max_dd_30d": -0.10812210000000007
     }
   ]
