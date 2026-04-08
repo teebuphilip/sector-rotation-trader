@@ -1,115 +1,130 @@
 {
-  "cash": 89515.53926264575,
+  "cash": 88741.76807958046,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
+  "fees_paid": 91.69950475139811,
+  "taxes_paid": 682.0716783138955,
   "positions": {
     "CF": {
       "shares": 95.87727428001706,
       "entry_price": 104.30000305175781,
-      "entry_date": "2026-04-07",
+      "entry_date": "2026-04-08",
       "cost": 10000.0,
       "using_margin": false,
-      "consec_below_ma": 1
+      "consec_below_ma": 0
     }
   },
   "trade_log": [
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "action": "BUY",
       "ticker": "CL",
       "shares": 124.4124,
       "price": 80.3778,
       "cost": 10000.0,
-      "margin": false
+      "margin": false,
+      "fees": 9.95
     },
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "action": "BUY",
       "ticker": "NEM",
       "shares": 79.5762,
       "price": 125.6657,
       "cost": 10000.0,
-      "margin": false
+      "margin": false,
+      "fees": 9.95
     },
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "action": "SELL",
       "ticker": "NEM",
       "shares": 79.5762,
       "price": 112.1231,
-      "proceeds": 8922.33,
-      "pnl": -1077.67,
-      "pnl_pct": -10.78,
-      "entry_date": "2026-04-07",
+      "proceeds": 8911.91,
+      "fees": 10.42,
+      "tax": 0.0,
+      "pnl": -1088.09,
+      "pnl_pct": -10.88,
+      "entry_date": "2026-04-08",
       "reason": "stop_loss"
     },
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "action": "BUY",
       "ticker": "PM",
       "shares": 56.2264,
       "price": 177.8523,
       "cost": 10000.0,
-      "margin": false
+      "margin": false,
+      "fees": 9.95
     },
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "action": "BUY",
       "ticker": "CF",
       "shares": 95.8773,
       "price": 104.3,
       "cost": 10000.0,
-      "margin": false
+      "margin": false,
+      "fees": 9.95
     },
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "action": "SELL",
       "ticker": "PM",
       "shares": 56.2264,
       "price": 176.3557,
-      "proceeds": 9915.85,
-      "pnl": -84.15,
-      "pnl_pct": -0.84,
-      "entry_date": "2026-04-07",
+      "proceeds": 9905.39,
+      "fees": 10.46,
+      "tax": 0.0,
+      "pnl": -94.61,
+      "pnl_pct": -0.95,
+      "entry_date": "2026-04-08",
       "reason": "20MA_exit"
     },
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "action": "SELL",
       "ticker": "CL",
       "shares": 124.4124,
       "price": 95.28,
-      "proceeds": 11854.02,
-      "pnl": 1854.02,
-      "pnl_pct": 18.54,
-      "entry_date": "2026-04-07",
+      "proceeds": 11843.44,
+      "fees": 10.58,
+      "tax": 682.07,
+      "pnl": 1161.37,
+      "pnl_pct": 11.61,
+      "entry_date": "2026-04-08",
       "reason": "20MA_exit"
     },
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "action": "BUY",
       "ticker": "MOS",
       "shares": 318.8775,
       "price": 31.36,
       "cost": 10000.0,
-      "margin": false
+      "margin": false,
+      "fees": 9.95
     },
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "action": "SELL",
       "ticker": "MOS",
       "shares": 318.8775,
       "price": 27.67,
-      "proceeds": 8823.34,
-      "pnl": -1176.66,
-      "pnl_pct": -11.77,
-      "entry_date": "2026-04-07",
+      "proceeds": 8812.85,
+      "fees": 10.49,
+      "tax": 0.0,
+      "pnl": -1187.15,
+      "pnl_pct": -11.87,
+      "entry_date": "2026-04-08",
       "reason": "stop_loss"
     }
   ],
   "daily_snapshots": [
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "cash": 100000.0,
       "borrowed": 0.0,
       "interest": 0.0,
@@ -119,21 +134,11 @@
       "num_positions": 0
     },
     {
-      "date": "2026-04-07",
-      "cash": 100000.0,
+      "date": "2026-04-08",
+      "cash": 89990.05,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100000.0,
-      "positions": {},
-      "sector": "XLP",
-      "num_positions": 0
-    },
-    {
-      "date": "2026-04-07",
-      "cash": 90000.0,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 100000.0,
+      "equity": 99990.05,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -141,7 +146,7 @@
           "current_price": 80.3778,
           "market_value": 10000.0,
           "unrealized_pnl": 0.0,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -149,11 +154,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90000.0,
+      "date": "2026-04-08",
+      "cash": 89990.05,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100075.43,
+      "equity": 100065.48,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -161,7 +166,7 @@
           "current_price": 80.9841,
           "market_value": 10075.43,
           "unrealized_pnl": 75.43,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -169,11 +174,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90000.0,
+      "date": "2026-04-08",
+      "cash": 89990.05,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100131.07,
+      "equity": 100121.12,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -181,7 +186,7 @@
           "current_price": 81.4314,
           "market_value": 10131.07,
           "unrealized_pnl": 131.07,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -189,11 +194,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90000.0,
+      "date": "2026-04-08",
+      "cash": 89990.05,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100258.44,
+      "equity": 100248.49,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -201,7 +206,7 @@
           "current_price": 82.4551,
           "market_value": 10258.44,
           "unrealized_pnl": 258.44,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -209,11 +214,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90000.0,
+      "date": "2026-04-08",
+      "cash": 89990.05,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100455.05,
+      "equity": 100445.1,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -221,7 +226,7 @@
           "current_price": 84.0354,
           "market_value": 10455.05,
           "unrealized_pnl": 455.05,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -229,11 +234,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90000.0,
+      "date": "2026-04-08",
+      "cash": 89990.05,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100429.08,
+      "equity": 100419.13,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -241,7 +246,7 @@
           "current_price": 83.8267,
           "market_value": 10429.08,
           "unrealized_pnl": 429.08,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -249,11 +254,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90000.0,
+      "date": "2026-04-08",
+      "cash": 89990.05,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100451.34,
+      "equity": 100441.39,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -261,7 +266,7 @@
           "current_price": 84.0056,
           "market_value": 10451.34,
           "unrealized_pnl": 451.34,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -269,11 +274,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90000.0,
+      "date": "2026-04-08",
+      "cash": 89990.05,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100451.34,
+      "equity": 100441.39,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -281,7 +286,7 @@
           "current_price": 84.0056,
           "market_value": 10451.34,
           "unrealized_pnl": 451.34,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -289,11 +294,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90000.0,
+      "date": "2026-04-08",
+      "cash": 89990.05,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100565.1,
+      "equity": 100555.15,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -301,7 +306,7 @@
           "current_price": 84.92,
           "market_value": 10565.1,
           "unrealized_pnl": 565.1,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -309,11 +314,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90000.0,
+      "date": "2026-04-08",
+      "cash": 89990.05,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100541.47,
+      "equity": 100531.52,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -321,7 +326,7 @@
           "current_price": 84.73,
           "market_value": 10541.47,
           "unrealized_pnl": 541.47,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -329,11 +334,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90000.0,
+      "date": "2026-04-08",
+      "cash": 89990.05,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100675.83,
+      "equity": 100665.88,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -341,7 +346,7 @@
           "current_price": 85.81,
           "market_value": 10675.83,
           "unrealized_pnl": 675.83,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -349,11 +354,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90000.0,
+      "date": "2026-04-08",
+      "cash": 89990.05,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100781.58,
+      "equity": 100771.63,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -361,7 +366,7 @@
           "current_price": 86.66,
           "market_value": 10781.58,
           "unrealized_pnl": 781.58,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -369,11 +374,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 80000.0,
+      "date": "2026-04-08",
+      "cash": 79980.1,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100599.94,
+      "equity": 100580.04,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -381,7 +386,7 @@
           "current_price": 85.2,
           "market_value": 10599.94,
           "unrealized_pnl": 599.94,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "NEM": {
@@ -390,7 +395,7 @@
           "current_price": 125.6657,
           "market_value": 10000.0,
           "unrealized_pnl": 0.0,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -398,11 +403,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 80000.0,
+      "date": "2026-04-08",
+      "cash": 79980.1,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100755.38,
+      "equity": 100735.48,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -410,7 +415,7 @@
           "current_price": 85.76,
           "market_value": 10669.61,
           "unrealized_pnl": 669.61,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "NEM": {
@@ -419,7 +424,7 @@
           "current_price": 126.7435,
           "market_value": 10085.77,
           "unrealized_pnl": 85.77,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -427,11 +432,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 80000.0,
+      "date": "2026-04-08",
+      "cash": 79980.1,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101053.93,
+      "equity": 101034.03,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -439,7 +444,7 @@
           "current_price": 85.0,
           "market_value": 10575.06,
           "unrealized_pnl": 575.06,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "NEM": {
@@ -448,7 +453,7 @@
           "current_price": 131.6835,
           "market_value": 10478.88,
           "unrealized_pnl": 478.88,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -456,11 +461,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 80000.0,
+      "date": "2026-04-08",
+      "cash": 79980.1,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100685.13,
+      "equity": 100665.23,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -468,7 +473,7 @@
           "current_price": 85.24,
           "market_value": 10604.92,
           "unrealized_pnl": 604.92,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "NEM": {
@@ -477,7 +482,7 @@
           "current_price": 126.6736,
           "market_value": 10080.21,
           "unrealized_pnl": 80.21,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -485,11 +490,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100155.53,
+      "equity": 100115.26,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -497,7 +502,7 @@
           "current_price": 90.29,
           "market_value": 11233.2,
           "unrealized_pnl": 1233.2,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -506,7 +511,7 @@
           "current_price": 177.8523,
           "market_value": 10000.0,
           "unrealized_pnl": 0.0,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -514,11 +519,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100382.45,
+      "equity": 100342.18,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -526,7 +531,7 @@
           "current_price": 91.89,
           "market_value": 11432.26,
           "unrealized_pnl": 1432.26,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -535,7 +540,7 @@
           "current_price": 178.3479,
           "market_value": 10027.86,
           "unrealized_pnl": 27.86,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -543,11 +548,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100375.37,
+      "equity": 100335.1,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -555,7 +560,7 @@
           "current_price": 93.15,
           "market_value": 11589.02,
           "unrealized_pnl": 1589.02,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -564,7 +569,7 @@
           "current_price": 175.4339,
           "market_value": 9864.02,
           "unrealized_pnl": -135.98,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -572,11 +577,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100716.08,
+      "equity": 100675.81,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -584,7 +589,7 @@
           "current_price": 94.37,
           "market_value": 11740.8,
           "unrealized_pnl": 1740.8,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -593,7 +598,7 @@
           "current_price": 178.7939,
           "market_value": 10052.94,
           "unrealized_pnl": 52.94,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -601,11 +606,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100869.25,
+      "equity": 100828.98,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -613,7 +618,7 @@
           "current_price": 94.88,
           "market_value": 11804.25,
           "unrealized_pnl": 1804.25,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -622,7 +627,7 @@
           "current_price": 180.3897,
           "market_value": 10142.67,
           "unrealized_pnl": 142.67,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -630,11 +635,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100855.92,
+      "equity": 100815.65,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -642,7 +647,7 @@
           "current_price": 94.41,
           "market_value": 11745.78,
           "unrealized_pnl": 1745.78,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -651,7 +656,7 @@
           "current_price": 181.1925,
           "market_value": 10187.81,
           "unrealized_pnl": 187.81,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -659,11 +664,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100770.2,
+      "equity": 100729.93,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -671,7 +676,7 @@
           "current_price": 94.16,
           "market_value": 11714.68,
           "unrealized_pnl": 1714.68,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -680,7 +685,7 @@
           "current_price": 180.2212,
           "market_value": 10133.19,
           "unrealized_pnl": 133.19,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -688,11 +693,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100789.51,
+      "equity": 100749.24,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -700,7 +705,7 @@
           "current_price": 93.93,
           "market_value": 11686.06,
           "unrealized_pnl": 1686.06,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -709,7 +714,7 @@
           "current_price": 181.0736,
           "market_value": 10181.12,
           "unrealized_pnl": 181.12,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -717,11 +722,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101160.71,
+      "equity": 101120.44,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -729,7 +734,7 @@
           "current_price": 95.31,
           "market_value": 11857.75,
           "unrealized_pnl": 1857.75,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -738,7 +743,7 @@
           "current_price": 184.6219,
           "market_value": 10380.63,
           "unrealized_pnl": 380.63,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -746,11 +751,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101417.06,
+      "equity": 101376.79,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -758,7 +763,7 @@
           "current_price": 96.17,
           "market_value": 11964.74,
           "unrealized_pnl": 1964.74,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -767,7 +772,7 @@
           "current_price": 187.2782,
           "market_value": 10529.98,
           "unrealized_pnl": 529.98,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -775,11 +780,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101399.01,
+      "equity": 101358.74,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -787,7 +792,7 @@
           "current_price": 96.67,
           "market_value": 12026.95,
           "unrealized_pnl": 2026.95,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -796,7 +801,7 @@
           "current_price": 185.8509,
           "market_value": 10449.73,
           "unrealized_pnl": 449.73,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -804,11 +809,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101399.01,
+      "equity": 101358.74,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -816,7 +821,7 @@
           "current_price": 96.67,
           "market_value": 12026.95,
           "unrealized_pnl": 2026.95,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -825,7 +830,7 @@
           "current_price": 185.8509,
           "market_value": 10449.73,
           "unrealized_pnl": 449.73,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -833,11 +838,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101057.0,
+      "equity": 101016.73,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -845,7 +850,7 @@
           "current_price": 95.65,
           "market_value": 11900.05,
           "unrealized_pnl": 1900.05,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -854,7 +859,7 @@
           "current_price": 182.0251,
           "market_value": 10234.62,
           "unrealized_pnl": 234.62,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -862,11 +867,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100993.68,
+      "equity": 100953.41,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -874,7 +879,7 @@
           "current_price": 95.58,
           "market_value": 11891.34,
           "unrealized_pnl": 1891.34,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -883,7 +888,7 @@
           "current_price": 181.0537,
           "market_value": 10180.0,
           "unrealized_pnl": 180.0,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -891,11 +896,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100840.87,
+      "equity": 100800.6,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -903,7 +908,7 @@
           "current_price": 93.98,
           "market_value": 11692.28,
           "unrealized_pnl": 1692.28,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -912,7 +917,7 @@
           "current_price": 181.8764,
           "market_value": 10226.26,
           "unrealized_pnl": 226.26,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -920,11 +925,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100973.4,
+      "equity": 100933.13,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -932,7 +937,7 @@
           "current_price": 95.09,
           "market_value": 11830.38,
           "unrealized_pnl": 1830.38,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -941,7 +946,7 @@
           "current_price": 181.7773,
           "market_value": 10220.69,
           "unrealized_pnl": 220.69,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -949,11 +954,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101436.35,
+      "equity": 101396.08,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -961,7 +966,7 @@
           "current_price": 97.1,
           "market_value": 12080.45,
           "unrealized_pnl": 2080.45,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -970,7 +975,7 @@
           "current_price": 185.5635,
           "market_value": 10433.57,
           "unrealized_pnl": 433.57,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -978,11 +983,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101549.75,
+      "equity": 101509.48,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -990,7 +995,7 @@
           "current_price": 98.11,
           "market_value": 12206.1,
           "unrealized_pnl": 2206.1,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -999,7 +1004,7 @@
           "current_price": 185.3454,
           "market_value": 10421.31,
           "unrealized_pnl": 421.31,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1007,11 +1012,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101526.63,
+      "equity": 101486.36,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -1019,7 +1024,7 @@
           "current_price": 96.67,
           "market_value": 12026.95,
           "unrealized_pnl": 2026.95,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -1028,7 +1033,7 @@
           "current_price": 188.1207,
           "market_value": 10577.35,
           "unrealized_pnl": 577.35,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1036,11 +1041,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101507.94,
+      "equity": 101467.67,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -1048,7 +1053,7 @@
           "current_price": 97.55,
           "market_value": 12136.43,
           "unrealized_pnl": 2136.43,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -1057,7 +1062,7 @@
           "current_price": 185.841,
           "market_value": 10449.17,
           "unrealized_pnl": 449.17,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1065,11 +1070,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 78922.33,
+      "date": "2026-04-08",
+      "cash": 78882.06,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101668.42,
+      "equity": 101628.15,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -1077,7 +1082,7 @@
           "current_price": 99.14,
           "market_value": 12334.25,
           "unrealized_pnl": 2334.25,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -1086,7 +1091,7 @@
           "current_price": 185.1769,
           "market_value": 10411.84,
           "unrealized_pnl": 411.84,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1094,11 +1099,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 68922.33,
+      "date": "2026-04-08",
+      "cash": 68872.11,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101271.75,
+      "equity": 101221.53,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -1106,7 +1111,7 @@
           "current_price": 97.3,
           "market_value": 12105.33,
           "unrealized_pnl": 2105.33,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "PM": {
@@ -1115,7 +1120,7 @@
           "current_price": 182.1936,
           "market_value": 10244.09,
           "unrealized_pnl": 244.09,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "CF": {
@@ -1124,7 +1129,7 @@
           "current_price": 104.3,
           "market_value": 10000.0,
           "unrealized_pnl": 0.0,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1132,11 +1137,11 @@
       "num_positions": 3
     },
     {
-      "date": "2026-04-07",
-      "cash": 78838.18,
+      "date": "2026-04-08",
+      "cash": 78777.5,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100912.57,
+      "equity": 100851.88,
       "positions": {
         "CL": {
           "shares": 124.4124,
@@ -1144,7 +1149,7 @@
           "current_price": 95.51,
           "market_value": 11882.63,
           "unrealized_pnl": 1882.63,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "CF": {
@@ -1153,7 +1158,7 @@
           "current_price": 106.3,
           "market_value": 10191.75,
           "unrealized_pnl": 191.75,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1161,11 +1166,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 90692.2,
+      "date": "2026-04-08",
+      "cash": 89938.86,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 100731.51,
+      "equity": 99978.17,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1173,7 +1178,7 @@
           "current_price": 104.71,
           "market_value": 10039.31,
           "unrealized_pnl": 39.31,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1181,11 +1186,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90692.2,
+      "date": "2026-04-08",
+      "cash": 89938.86,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101313.48,
+      "equity": 100560.15,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1193,7 +1198,7 @@
           "current_price": 110.78,
           "market_value": 10621.28,
           "unrealized_pnl": 621.28,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1201,11 +1206,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90692.2,
+      "date": "2026-04-08",
+      "cash": 89938.86,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101792.87,
+      "equity": 101039.53,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1213,7 +1218,7 @@
           "current_price": 115.78,
           "market_value": 11100.67,
           "unrealized_pnl": 1100.67,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1221,11 +1226,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90692.2,
+      "date": "2026-04-08",
+      "cash": 89938.86,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101338.41,
+      "equity": 100585.08,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1233,7 +1238,7 @@
           "current_price": 111.04,
           "market_value": 10646.21,
           "unrealized_pnl": 646.21,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1241,11 +1246,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90692.2,
+      "date": "2026-04-08",
+      "cash": 89938.86,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101243.49,
+      "equity": 100490.16,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1253,7 +1258,7 @@
           "current_price": 110.05,
           "market_value": 10551.29,
           "unrealized_pnl": 551.29,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1261,11 +1266,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 90692.2,
+      "date": "2026-04-08",
+      "cash": 89938.86,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 102209.93,
+      "equity": 101456.6,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1273,7 +1278,7 @@
           "current_price": 120.13,
           "market_value": 11517.74,
           "unrealized_pnl": 1517.74,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1281,11 +1286,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 80692.2,
+      "date": "2026-04-08",
+      "cash": 79928.91,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 103731.51,
+      "equity": 102968.22,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1293,7 +1298,7 @@
           "current_price": 136.0,
           "market_value": 13039.31,
           "unrealized_pnl": 3039.31,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "MOS": {
@@ -1302,7 +1307,7 @@
           "current_price": 31.36,
           "market_value": 10000.0,
           "unrealized_pnl": 0.0,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1310,11 +1315,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 80692.2,
+      "date": "2026-04-08",
+      "cash": 79928.91,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 102461.32,
+      "equity": 101698.03,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1322,7 +1327,7 @@
           "current_price": 129.57,
           "market_value": 12422.82,
           "unrealized_pnl": 2422.82,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         },
         "MOS": {
@@ -1331,7 +1336,7 @@
           "current_price": 29.31,
           "market_value": 9346.3,
           "unrealized_pnl": -653.7,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1339,11 +1344,11 @@
       "num_positions": 2
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101244.21,
+      "equity": 100470.44,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1351,7 +1356,7 @@
           "current_price": 122.33,
           "market_value": 11728.67,
           "unrealized_pnl": 1728.67,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1359,11 +1364,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101336.25,
+      "equity": 100562.48,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1371,7 +1376,7 @@
           "current_price": 123.29,
           "market_value": 11820.71,
           "unrealized_pnl": 1820.71,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1379,11 +1384,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101666.07,
+      "equity": 100892.3,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1391,7 +1396,7 @@
           "current_price": 126.73,
           "market_value": 12150.53,
           "unrealized_pnl": 2150.53,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1399,11 +1404,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101553.89,
+      "equity": 100780.12,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1411,7 +1416,7 @@
           "current_price": 125.56,
           "market_value": 12038.35,
           "unrealized_pnl": 2038.35,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1419,11 +1424,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101490.61,
+      "equity": 100716.84,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1431,7 +1436,7 @@
           "current_price": 124.9,
           "market_value": 11975.07,
           "unrealized_pnl": 1975.07,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1439,11 +1444,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101038.07,
+      "equity": 100264.3,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1451,7 +1456,7 @@
           "current_price": 120.18,
           "market_value": 11522.53,
           "unrealized_pnl": 1522.53,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1459,11 +1464,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101684.28,
+      "equity": 100910.51,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1471,7 +1476,7 @@
           "current_price": 126.92,
           "market_value": 12168.74,
           "unrealized_pnl": 2168.74,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1479,11 +1484,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101798.38,
+      "equity": 101024.61,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1491,7 +1496,7 @@
           "current_price": 128.11,
           "market_value": 12282.84,
           "unrealized_pnl": 2282.84,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1499,11 +1504,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 102225.03,
+      "equity": 101451.26,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1511,7 +1516,7 @@
           "current_price": 132.56,
           "market_value": 12709.49,
           "unrealized_pnl": 2709.49,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1519,11 +1524,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 102597.99,
+      "equity": 101824.22,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1531,7 +1536,7 @@
           "current_price": 136.45,
           "market_value": 13082.45,
           "unrealized_pnl": 3082.45,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1539,11 +1544,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 102708.25,
+      "equity": 101934.48,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1551,7 +1556,7 @@
           "current_price": 137.6,
           "market_value": 13192.71,
           "unrealized_pnl": 3192.71,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1559,11 +1564,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101964.24,
+      "equity": 101190.47,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1571,7 +1576,7 @@
           "current_price": 129.84,
           "market_value": 12448.7,
           "unrealized_pnl": 2448.7,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1579,11 +1584,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101785.91,
+      "equity": 101012.14,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1591,7 +1596,7 @@
           "current_price": 127.98,
           "market_value": 12270.37,
           "unrealized_pnl": 2270.37,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1599,11 +1604,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101976.71,
+      "equity": 101202.94,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1611,7 +1616,7 @@
           "current_price": 129.97,
           "market_value": 12461.17,
           "unrealized_pnl": 2461.17,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1619,11 +1624,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 101976.71,
+      "equity": 101202.94,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1631,7 +1636,7 @@
           "current_price": 129.97,
           "market_value": 12461.17,
           "unrealized_pnl": 2461.17,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1639,11 +1644,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 102073.54,
+      "equity": 101299.77,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1651,7 +1656,7 @@
           "current_price": 130.98,
           "market_value": 12558.0,
           "unrealized_pnl": 2558.0,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1659,11 +1664,11 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-07",
-      "cash": 89515.54,
+      "date": "2026-04-08",
+      "cash": 88741.77,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 102342.0,
+      "equity": 101568.23,
       "positions": {
         "CF": {
           "shares": 95.8773,
@@ -1671,87 +1676,7 @@
           "current_price": 133.78,
           "market_value": 12826.46,
           "unrealized_pnl": 2826.46,
-          "entry_date": "2026-04-07",
-          "margin": false
-        }
-      },
-      "sector": "XLU",
-      "num_positions": 1
-    },
-    {
-      "date": "2026-04-08",
-      "cash": 89515.54,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 102342.0,
-      "positions": {
-        "CF": {
-          "shares": 95.8773,
-          "entry_price": 104.3,
-          "current_price": 133.78,
-          "market_value": 12826.46,
-          "unrealized_pnl": 2826.46,
-          "entry_date": "2026-04-07",
-          "margin": false
-        }
-      },
-      "sector": "XLU",
-      "num_positions": 1
-    },
-    {
-      "date": "2026-04-08",
-      "cash": 89515.54,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 102342.0,
-      "positions": {
-        "CF": {
-          "shares": 95.8773,
-          "entry_price": 104.3,
-          "current_price": 133.78,
-          "market_value": 12826.46,
-          "unrealized_pnl": 2826.46,
-          "entry_date": "2026-04-07",
-          "margin": false
-        }
-      },
-      "sector": "XLU",
-      "num_positions": 1
-    },
-    {
-      "date": "2026-04-08",
-      "cash": 89515.54,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 102342.0,
-      "positions": {
-        "CF": {
-          "shares": 95.8773,
-          "entry_price": 104.3,
-          "current_price": 133.78,
-          "market_value": 12826.46,
-          "unrealized_pnl": 2826.46,
-          "entry_date": "2026-04-07",
-          "margin": false
-        }
-      },
-      "sector": "XLU",
-      "num_positions": 1
-    },
-    {
-      "date": "2026-04-08",
-      "cash": 89515.54,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 100769.61,
-      "positions": {
-        "CF": {
-          "shares": 95.8773,
-          "entry_price": 104.3,
-          "current_price": 117.38,
-          "market_value": 11254.07,
-          "unrealized_pnl": 1254.07,
-          "entry_date": "2026-04-07",
+          "entry_date": "2026-04-08",
           "margin": false
         }
       },
@@ -1759,9 +1684,6 @@
       "num_positions": 1
     }
   ],
-  "sim_start": "2026-01-06",
-  "last_run": "2026-04-08",
-  "fees_paid": 0.0,
-  "taxes_paid": 0.0,
-  "meta": {}
+  "sim_start": "2026-01-07",
+  "last_run": "2026-04-08"
 }
