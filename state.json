@@ -11,7 +11,7 @@
       "entry_date": "2026-04-08",
       "cost": 10000.0,
       "using_margin": false,
-      "consec_below_ma": 0
+      "consec_below_ma": 1
     }
   },
   "trade_log": [
@@ -1682,8 +1682,29 @@
       },
       "sector": "XLU",
       "num_positions": 1
+    },
+    {
+      "date": "2026-04-08",
+      "cash": 88741.77,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100373.6,
+      "positions": {
+        "CF": {
+          "shares": 95.8773,
+          "entry_price": 104.3,
+          "current_price": 121.32,
+          "market_value": 11631.83,
+          "unrealized_pnl": 1631.83,
+          "entry_date": "2026-04-08",
+          "margin": false
+        }
+      },
+      "sector": "XLU",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-07",
-  "last_run": "2026-04-08"
+  "last_run": "2026-04-08",
+  "meta": {}
 }
