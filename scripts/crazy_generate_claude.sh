@@ -31,6 +31,9 @@ import sys
 
 model = sys.argv[1]
 raw = sys.stdin.read().strip()
+if not raw:
+    raise SystemExit("Empty Claude response")
+
 obj = json.loads(raw)
 text = obj["content"][0]["text"]
 ideas = json.loads(text)

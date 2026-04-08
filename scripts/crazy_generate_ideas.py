@@ -35,6 +35,12 @@ def _run(cmd: list[str], env: dict[str, str], label: str) -> str:
     return proc.stdout
 
 
+def _write_error(run_dir: Path, label: str, err: Exception) -> None:
+    err_dir = run_dir / "errors"
+    err_dir.mkdir(parents=True, exist_ok=True)
+    (err_dir / f"{label}.txt").write_text(str(err) + "\n")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", default=_today_iso())
@@ -48,7 +54,8 @@ def main() -> int:
         return 2
 
     repo_root = Path.cwd()
-    raw_dir = repo_root / "data" / "ideas" / "runs" / args.date / "raw"
+    run_dir = repo_root / "data" / "ideas" / "runs" / args.date
+    raw_dir = run_dir / "raw"
     raw_dir.mkdir(parents=True, exist_ok=True)
 
     chat_out = raw_dir / f"chatgpt_{args.date}.jsonl"
@@ -62,15 +69,27 @@ def main() -> int:
 
     env = dict(os.environ)
 
+    success = False
+
     try:
         chat_stdout = _run(["/bin/bash", str(chat_script), args.prompt], env, "chatgpt")
-        claude_stdout = _run(["/bin/bash", str(claude_script), args.prompt], env, "claude")
+        chat_out.write_text(chat_stdout)
+        success = True
     except Exception as e:
-        print(f"❌ generate_ideas failed: {e}", file=sys.stderr)
-        return 1
+        _write_error(run_dir, "chatgpt", e)
+        chat_out.write_text("")
 
-    chat_out.write_text(chat_stdout)
-    claude_out.write_text(claude_stdout)
+    try:
+        claude_stdout = _run(["/bin/bash", str(claude_script), args.prompt], env, "claude")
+        claude_out.write_text(claude_stdout)
+        success = True
+    except Exception as e:
+        _write_error(run_dir, "claude", e)
+        claude_out.write_text("")
+
+    if not success:
+        print("❌ Both generators failed. See data/ideas/runs/<date>/errors/", file=sys.stderr)
+        return 1
 
     print(f"✅ Wrote:\n  {chat_out}\n  {claude_out}")
     return 0
