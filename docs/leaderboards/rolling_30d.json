@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-04-08T23:07:34.721620",
-  "spy_ret_30d": -0.0006101505886302316,
+  "as_of": "2026-04-09T23:07:17.580887",
+  "spy_ret_30d": 0.00677343324025359,
   "entries": [
     {
       "algo_id": "faber",
       "name": "Faber Momentum Rotation",
       "category": "standard",
       "ret_30d": 0.03846609999999995,
-      "sharpe_30d": 0.5056095693978275,
-      "max_dd_30d": -0.055103047557002474
+      "sharpe_30d": 0.524962654960835,
+      "max_dd_30d": -0.055976830988732657
     },
     {
       "algo_id": "dmsr",
       "name": "Antonacci Dual Momentum Sector Rotation",
       "category": "standard",
-      "ret_30d": 0.019656200000000013,
-      "sharpe_30d": 0.2535982254038443,
+      "ret_30d": 0.02013929999999986,
+      "sharpe_30d": 0.264129571391293,
       "max_dd_30d": -0.03780722090648794
     },
     {
@@ -23,7 +23,7 @@
       "name": "NRWise Acceleration",
       "category": "standard",
       "ret_30d": 0.0005550000000000832,
-      "sharpe_30d": -0.46397856252953645,
+      "sharpe_30d": -0.4325444223658659,
       "max_dd_30d": -0.028923195914234492
     },
     {
@@ -110,24 +110,24 @@
       "algo_id": "biscotti",
       "name": "Algo Biscotti (Unconditional Loyalty)",
       "category": "standard",
-      "ret_30d": -0.022023000000000015,
-      "sharpe_30d": -0.39955381085519603,
+      "ret_30d": -0.011980600000000008,
+      "sharpe_30d": -0.2012592731659893,
       "max_dd_30d": -0.1010886
     },
     {
       "algo_id": "biscotti",
       "name": "Algo Biscotti (Unconditional Loyalty)",
       "category": "crazy",
-      "ret_30d": -0.030332799999999938,
-      "sharpe_30d": -0.1852422841638885,
-      "max_dd_30d": -0.11854196296666494
+      "ret_30d": -0.022483699999999995,
+      "sharpe_30d": -0.016705110304434966,
+      "max_dd_30d": -0.11131230278761396
     },
     {
       "algo_id": "baileymol",
       "name": "Algo Baileymol (Chaos Monger)",
       "category": "crazy",
-      "ret_30d": -0.07576130000000003,
-      "sharpe_30d": -1.3461647860495167,
+      "ret_30d": -0.06958679999999995,
+      "sharpe_30d": -1.1088553907383407,
       "max_dd_30d": -0.10812210000000007
     }
   ]
