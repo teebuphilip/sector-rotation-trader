@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-04-10T09:22:15.547196",
-  "spy_ret_30d": 0.00677343324025359,
+  "as_of": "2026-04-10T23:03:23.658953",
+  "spy_ret_30d": 0.007371585669142311,
   "entries": [
     {
       "algo_id": "faber",
       "name": "Faber Momentum Rotation",
       "category": "standard",
       "ret_30d": 0.03846609999999995,
-      "sharpe_30d": 0.4904761946802434,
-      "max_dd_30d": -0.055976830988732657
+      "sharpe_30d": 0.4626688556959857,
+      "max_dd_30d": -0.055103047557002474
     },
     {
       "algo_id": "dmsr",
       "name": "Antonacci Dual Momentum Sector Rotation",
       "category": "standard",
-      "ret_30d": 0.02013929999999986,
-      "sharpe_30d": 0.24931274544916893,
+      "ret_30d": 0.0185419,
+      "sharpe_30d": 0.20996791306295076,
       "max_dd_30d": -0.03693824943506792
     },
     {
@@ -23,7 +23,7 @@
       "name": "NRWise Acceleration",
       "category": "standard",
       "ret_30d": 0.0005550000000000832,
-      "sharpe_30d": -0.45510313335907693,
+      "sharpe_30d": -0.3963950921224707,
       "max_dd_30d": -0.028923195914234492
     },
     {
@@ -110,16 +110,16 @@
       "algo_id": "biscotti",
       "name": "Algo Biscotti (Unconditional Loyalty)",
       "category": "standard",
-      "ret_30d": -0.011980600000000008,
-      "sharpe_30d": -0.08316385223724365,
+      "ret_30d": -0.01582539999999999,
+      "sharpe_30d": -0.10504425092839469,
       "max_dd_30d": -0.1010886
     },
     {
       "algo_id": "biscotti",
       "name": "Algo Biscotti (Unconditional Loyalty)",
       "category": "crazy",
-      "ret_30d": -0.022483699999999995,
-      "sharpe_30d": -0.0451038951215613,
+      "ret_30d": -0.0351359,
+      "sharpe_30d": -0.07857354144096884,
       "max_dd_30d": -0.10981200786078711
     },
     {
@@ -127,7 +127,7 @@
       "name": "Algo Baileymol (Chaos Monger)",
       "category": "crazy",
       "ret_30d": -0.0778696000000001,
-      "sharpe_30d": -1.1076650271897992,
+      "sharpe_30d": -1.1481057491794868,
       "max_dd_30d": -0.10812210000000007
     }
   ]
