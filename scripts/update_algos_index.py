@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import sys
 from datetime import datetime
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from normal.algos import get_normal_algos
 from crazy.algos import get_crazy_algos

@@ -127,8 +127,28 @@ def run_all(dry_run: bool = False, as_of: date = None):
     if not dry_run:
         generate_combined_dashboard(summaries)
         write_crazy_ledger()
-        subprocess.run(["python", "scripts/rolling_30d_leaderboard.py"], check=False)
-        subprocess.run(["python", "scripts/update_algos_index.py"], check=False)
+        _run_post_script("scripts/rolling_30d_leaderboard.py")
+        _run_post_script("scripts/update_algos_index.py")
+
+
+def _run_post_script(script: str):
+    """Run a post-pipeline helper script. Logs failures loudly but does
+    not abort the run — an index/leaderboard failure should not kill
+    a trading pipeline that already committed state."""
+    result = subprocess.run(
+        ["python", script],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        print(f"[WARN] {script} exited {result.returncode}")
+        if result.stdout:
+            print(f"[WARN] {script} stdout:\n{result.stdout}")
+        if result.stderr:
+            print(f"[WARN] {script} stderr:\n{result.stderr}")
+    else:
+        if result.stdout:
+            print(result.stdout, end="")
 
 
 def _log_new_algos(category: str, algos: list, as_of: date):
