@@ -1,27 +1,10 @@
 {
-  "cash": 30267.47339490172,
+  "cash": 92213.04382030552,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 1075.2097607222822,
-  "taxes_paid": 3318.412525364074,
-  "positions": {
-    "XLK": {
-      "shares": 221.43130329875416,
-      "entry_price": 136.77999877929688,
-      "entry_date": "2026-04-08",
-      "cost": 30287.37339490171,
-      "using_margin": false,
-      "consec_below_ma": 0
-    },
-    "XLY": {
-      "shares": 277.7638769314131,
-      "entry_price": 109.04000091552734,
-      "entry_date": "2026-04-08",
-      "cost": 30287.37339490171,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "fees_paid": 1098.3982115650185,
+  "taxes_paid": 4123.499422462705,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-08",
@@ -618,6 +601,34 @@
       "cost": 30287.37,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-10",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 221.4313,
+      "price": 142.07,
+      "proceeds": 31447.16,
+      "fees": 11.59,
+      "tax": 429.12,
+      "pnl": 730.66,
+      "pnl_pct": 2.41,
+      "entry_date": "2026-04-08",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-10",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 277.7639,
+      "price": 112.74,
+      "proceeds": 31303.5,
+      "fees": 11.6,
+      "tax": 375.97,
+      "pnl": 640.16,
+      "pnl_pct": 2.11,
+      "entry_date": "2026-04-08",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -2079,22 +2090,32 @@
       },
       "sector": "Algo Baileymol (Chaos Monger)",
       "num_positions": 2
+    },
+    {
+      "date": "2026-04-10",
+      "cash": 92213.04,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 92213.04,
+      "positions": {},
+      "sector": "Algo Baileymol (Chaos Monger)",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-07",
-  "last_run": "2026-04-09",
+  "last_run": "2026-04-10",
   "meta": {
     "baileymol": {
-      "signal_label": "TOP:XLK,XLY,XLE",
-      "signal_key": "XLK|XLY|XLE",
+      "signal_label": "FRIDAY_EXIT",
+      "signal_key": "FRIDAY_EXIT",
       "target_sectors": [
         "XLK",
         "XLY",
         "XLE"
       ],
       "name": "Algo Baileymol (Chaos Monger)",
-      "last_signal": "XLK|XLY|XLE",
-      "last_run": "2026-04-09"
+      "last_signal": "FRIDAY_EXIT",
+      "last_run": "2026-04-10"
     }
   }
 }
