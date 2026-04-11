@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-DTPMBMlq5AVIgo5CezhyfqHWnE1cg",
+  "object": "chat.completion",
+  "created": 1775901355,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[\n  {\n    \"idea_id\": \"reddit-mentions-volatility-spike\",\n    \"title\": \"Reddit Mentions Volatility Spike\",\n    \"thesis\": \"Sudden spikes in daily Reddit mentions of a stock ticker often precede short-term volatility bursts. By monitoring mentions on popular subreddits like r/WallStreetBets and r/stocks, we can detect unusual social interest that may drive price swings. This signal aims to capitalize on volatility expansion following social media hype or panic.\",\n    \"data_sources\": [\n      \"Pushshift Reddit API\",\n      \"Yahoo Finance (for price and volatility data)\"\n    ],\n    \"signal_logic\": \"Calculate the 7-day moving average of daily Reddit mentions of a ticker. If today's mentions exceed 3 times the 7-day average, and the stock's 14-day historical volatility is below its 30-day average, signal a volatility spike incoming.\",\n    \"entry_exit\": \"Entry (Buy a straddle or volatility ETF): When signal_logic triggers. Exit: When volatility returns above its 30-day average or after 5 trading days, whichever comes first.\",\n    \"position_sizing\": \"Allocate 5% of portfolio per signal, scaling down linearly if multiple signals overlap to keep total exposure below 20%.\",\n    \"universe\": [\n      \"AAPL\",\n      \"TSLA\",\n      \"GME\",\n      \"AMC\",\n      \"MSFT\",\n      \"NVDA\",\n      \"AMD\",\n      \"NFLX\"\n    ],\n    \"frequency\": \"daily\",\n    \"risks\": \"High false positives if Reddit chatter is unrelated to fundamentals. Risk of sudden news events invalidating the pattern. Volatility may not increase despite chatter, causing losses in options or volatility products.\",\n    \"implementation_notes\": \"1) Use Pushshift API to scrape daily Reddit comment counts mentioning ticker symbols in target subreddits. 2) Calculate moving averages and volatility using Yahoo Finance daily price data. 3) Implement logic to trigger and track open positions. 4) Automate daily signal generation and position management.\",\n    \"required_keys\": []\n  }\n]",
+        "refusal": null,
+        "annotations": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 241,
+    "completion_tokens": 432,
+    "total_tokens": 673,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "service_tier": "default",
+  "system_fingerprint": "fp_82a9313dc7"
+}
