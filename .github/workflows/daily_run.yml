@@ -45,6 +45,9 @@ jobs:
       - name: Run crazy algos
         run: python crazy_run.py
 
+      - name: Pre-compute signal verdicts
+        run: python precompute_signals.py --min-days 30
+
       - name: Generate rolling leaderboard
         run: python scripts/rolling_30d_leaderboard.py
 
@@ -55,6 +58,7 @@ jobs:
           git add state.json docs/index.html docs/trades.json
           git add data/normal/state docs/normal
           git add data/crazy/state docs/algos docs/crazy
+          git add docs/signals || true
           if [ -d docs/ledgers ]; then
             git add docs/ledgers
           fi
