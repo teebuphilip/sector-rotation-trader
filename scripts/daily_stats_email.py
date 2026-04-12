@@ -323,6 +323,53 @@ def _build_report() -> str:
     lines.append("")
     lines.append(f"Rolling 30D leaderboard: {'present' if lb_json.exists() else 'missing'}")
 
+    # ── Top performers (from rank_history.csv) ────────────────────────
+    lines.append("")
+    rank_csv = Path("data/rank_history.csv")
+    if rank_csv.exists():
+        import csv
+        today_str = datetime.utcnow().strftime("%Y-%m-%d")
+        with rank_csv.open("r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            today_rows = [r for r in reader if r.get("date") == today_str]
+        if today_rows:
+            by_return = sorted(today_rows, key=lambda r: float(r.get("ytd_pct", 0)), reverse=True)
+            beating = sum(1 for r in by_return if r.get("beat_spy", "").lower() == "true")
+            lines.append(f"Force Rank Summary ({len(by_return)} algos):")
+            lines.append(f"- Beating SPY: {beating}/{len(by_return)}")
+            lines.append("")
+            lines.append("Top 10 by Return:")
+            for i, r in enumerate(by_return[:10], 1):
+                name = r.get("name", r.get("algo_id", "?"))
+                ytd = float(r.get("ytd_pct", 0))
+                alpha = float(r.get("alpha_pct", 0))
+                flag = "BEAT" if r.get("beat_spy", "").lower() == "true" else "LAG"
+                lines.append(f"  {i:2d}. {name:40s}  {ytd:+7.2f}%  alpha:{alpha:+6.2f}%  [{flag}]")
+            lines.append("")
+            lines.append("Bottom 5 by Return:")
+            for r in by_return[-5:]:
+                name = r.get("name", r.get("algo_id", "?"))
+                ytd = float(r.get("ytd_pct", 0))
+                alpha = float(r.get("alpha_pct", 0))
+                rank = r.get("rank_return", "?")
+                lines.append(f"  #{rank:>3s}  {name:40s}  {ytd:+7.2f}%  alpha:{alpha:+6.2f}%")
+        else:
+            lines.append("Force Rank: no rows for today")
+    else:
+        lines.append("Force Rank: rank_history.csv missing")
+
+    # ── Validation summary ────────────────────────────────────────────
+    lines.append("")
+    validation_cache = Path("data/.validation_cache/snapshot_counts.json")
+    if validation_cache.exists():
+        counts = _load_json(validation_cache)
+        if isinstance(counts, dict):
+            lines.append(f"Validation cache: {len(counts)} algos tracked")
+        else:
+            lines.append("Validation cache: present but unreadable")
+    else:
+        lines.append("Validation cache: not yet established")
+
     return "\n".join(lines)
 
 
