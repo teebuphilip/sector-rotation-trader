@@ -1,67 +1,51 @@
 {
-  "as_of": "2026-04-10T23:03:23.658953",
+  "as_of": "2026-04-12T12:56:35.332255",
   "spy_ret_30d": 0.007371585669142311,
   "entries": [
+    {
+      "algo_id": "biscotti",
+      "name": "Algo Biscotti (Unconditional Loyalty)",
+      "category": "standard",
+      "ret_30d": 0.07615919276259353,
+      "sharpe_30d": 4.303372507058023,
+      "max_dd_30d": -0.031009334599850523
+    },
+    {
+      "algo_id": "baileymol",
+      "name": "Algo Baileymol (Chaos Monger)",
+      "category": "standard",
+      "ret_30d": 0.05775131375010645,
+      "sharpe_30d": 5.1345431646294335,
+      "max_dd_30d": -0.012719058256177891
+    },
     {
       "algo_id": "faber",
       "name": "Faber Momentum Rotation",
       "category": "standard",
-      "ret_30d": 0.03846609999999995,
-      "sharpe_30d": 0.4626688556959857,
-      "max_dd_30d": -0.055103047557002474
+      "ret_30d": 0.017289888494139483,
+      "sharpe_30d": 1.9906772949121172,
+      "max_dd_30d": -0.013793570426934458
     },
     {
       "algo_id": "dmsr",
       "name": "Antonacci Dual Momentum Sector Rotation",
       "category": "standard",
-      "ret_30d": 0.0185419,
-      "sharpe_30d": 0.20996791306295076,
-      "max_dd_30d": -0.03693824943506792
+      "ret_30d": 0.016019327214392032,
+      "sharpe_30d": 1.7892609077833892,
+      "max_dd_30d": -0.016342083047611863
     },
     {
       "algo_id": "nrwise",
       "name": "NRWise Acceleration",
       "category": "standard",
       "ret_30d": 0.0005550000000000832,
-      "sharpe_30d": -0.3963950921224707,
+      "sharpe_30d": -0.4097091282230626,
       "max_dd_30d": -0.028923195914234492
     },
     {
       "algo_id": "simple_monthly",
       "name": "Quantified Simple Monthly Rotation",
       "category": "standard",
-      "ret_30d": 0.0,
-      "sharpe_30d": 0.0,
-      "max_dd_30d": 0.0
-    },
-    {
-      "algo_id": "baileymol",
-      "name": "Algo Baileymol (Chaos Monger)",
-      "category": "standard",
-      "ret_30d": 0.0,
-      "sharpe_30d": 0.0,
-      "max_dd_30d": 0.0
-    },
-    {
-      "algo_id": "cardboard",
-      "name": "Cardboard Box Index",
-      "category": "crazy",
-      "ret_30d": 0.0,
-      "sharpe_30d": 0.0,
-      "max_dd_30d": 0.0
-    },
-    {
-      "algo_id": "congress",
-      "name": "Congress Trading Fade",
-      "category": "crazy",
-      "ret_30d": 0.0,
-      "sharpe_30d": 0.0,
-      "max_dd_30d": 0.0
-    },
-    {
-      "algo_id": "tsa",
-      "name": "TSA Body Count",
-      "category": "crazy",
       "ret_30d": 0.0,
       "sharpe_30d": 0.0,
       "max_dd_30d": 0.0
@@ -75,16 +59,8 @@
       "max_dd_30d": 0.0
     },
     {
-      "algo_id": "craigslist",
-      "name": "Craigslist Desperation Index",
-      "category": "crazy",
-      "ret_30d": 0.0,
-      "sharpe_30d": 0.0,
-      "max_dd_30d": 0.0
-    },
-    {
-      "algo_id": "linkedin",
-      "name": "LinkedIn Layoff Propagation",
+      "algo_id": "volatility-spike-follow-through",
+      "name": "Volatility Spike Follow-Through",
       "category": "crazy",
       "ret_30d": 0.0,
       "sharpe_30d": 0.0,
@@ -99,6 +75,182 @@
       "max_dd_30d": 0.0
     },
     {
+      "algo_id": "reddit-subreddit-mention-spike",
+      "name": "Reddit Subreddit Mention Spike",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "reddit-volatility-spike",
+      "name": "Reddit Volatility Spike",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "congress",
+      "name": "Congress Trading Fade",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "reddit-emoji-sentiment-spike",
+      "name": "Reddit Emoji Sentiment Spike",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "pet-food-supply-chain",
+      "name": "Pet Food Supply Chain Disruption",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "insider-trading-signals",
+      "name": "Insider Trading Signals",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "weather-volatility-spike",
+      "name": "Weather Volatility Spike",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "reddit-sentiment-spike-trend",
+      "name": "Reddit Sentiment Spike Trend",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "twitter-sentiment-spike",
+      "name": "Twitter Sentiment Spike",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "online-ad-impression-volatility",
+      "name": "Online Ad Impression Volatility Trader",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "tsa",
+      "name": "TSA Body Count",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "cardboard",
+      "name": "Cardboard Box Index",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "cloud-storage-demand-surge",
+      "name": "Cloud Storage Demand Surge",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "reddit-subreddit-sentiment-spike",
+      "name": "Reddit Subreddit Sentiment Spike",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "earthquake-energy-demand",
+      "name": "Earthquake Energy Demand Indicator",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "reddit-gaming-thread-spike",
+      "name": "Reddit Gaming Thread Spike",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "superbowl-futures-trade",
+      "name": "Superbowl Futures Trade",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "electric-vehicle-charge-station-density",
+      "name": "Electric Vehicle Charge Station Density",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "craigslist",
+      "name": "Craigslist Desperation Index",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "crypto-derivative-arbitrage",
+      "name": "Crypto Derivative Arbitrage",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "airport-shopping-spree",
+      "name": "Airport Shopping Spree",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "reddit-sentiment-spike",
+      "name": "Reddit Sentiment Spike",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
       "algo_id": "glassdoor",
       "name": "Glassdoor Misery Gradient",
       "category": "crazy",
@@ -107,28 +259,60 @@
       "max_dd_30d": 0.0
     },
     {
-      "algo_id": "biscotti",
-      "name": "Algo Biscotti (Unconditional Loyalty)",
-      "category": "standard",
-      "ret_30d": -0.01582539999999999,
-      "sharpe_30d": -0.10504425092839469,
-      "max_dd_30d": -0.1010886
+      "algo_id": "reddit-subreddit-surge-momentum",
+      "name": "Reddit Subreddit Surge Momentum",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
     },
     {
-      "algo_id": "biscotti",
-      "name": "Algo Biscotti (Unconditional Loyalty)",
+      "algo_id": "reddit-sentiment-volatility-spike",
+      "name": "Reddit Sentiment Volatility Spike",
       "category": "crazy",
-      "ret_30d": -0.0351359,
-      "sharpe_30d": -0.07857354144096884,
-      "max_dd_30d": -0.10981200786078711
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "social-media-sentiment-spike",
+      "name": "Social Media Sentiment Spike",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "linkedin",
+      "name": "LinkedIn Layoff Propagation",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
+    },
+    {
+      "algo_id": "reddit-mentions-volatility-spike",
+      "name": "Reddit Mentions Volatility Spike",
+      "category": "crazy",
+      "ret_30d": 0.0,
+      "sharpe_30d": 0.0,
+      "max_dd_30d": 0.0
     },
     {
       "algo_id": "baileymol",
       "name": "Algo Baileymol (Chaos Monger)",
       "category": "crazy",
-      "ret_30d": -0.0778696000000001,
-      "sharpe_30d": -1.1481057491794868,
-      "max_dd_30d": -0.10812210000000007
+      "ret_30d": -0.019410782257437975,
+      "sharpe_30d": -1.5898024861515159,
+      "max_dd_30d": -0.056903980541209855
+    },
+    {
+      "algo_id": "biscotti",
+      "name": "Algo Biscotti (Unconditional Loyalty)",
+      "category": "crazy",
+      "ret_30d": -0.022751442576287584,
+      "sharpe_30d": -1.9831686415427734,
+      "max_dd_30d": -0.04342199668891029
     }
   ]
 }
