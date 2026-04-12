@@ -51,6 +51,9 @@ jobs:
       - name: Generate rolling leaderboard
         run: python scripts/rolling_30d_leaderboard.py
 
+      - name: Daily force-rank all algos
+        run: python scripts/rank_daily.py
+
       - name: Commit updated state + dashboard
         run: |
           git config user.name  "sector-bot"
@@ -70,6 +73,9 @@ jobs:
           fi
           if [ -d data/blocked ]; then
             git add data/blocked
+          fi
+          if [ -f data/rank_history.csv ]; then
+            git add data/rank_history.csv
           fi
           git diff --cached --quiet || git commit -m "daily run $(date -u '+%Y-%m-%d') — $(python -c "
           import json

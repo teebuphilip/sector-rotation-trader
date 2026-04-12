@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crazy Stock Algo — Live Signal Leaderboard</title>
+<meta name="description" content="38 experimental trading algorithms running live. Track their performance against SPY in real time." />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+  :root {
+    --bg: #0a0a0a;
+    --bg2: #111;
+    --card: #161616;
+    --border: rgba(255,255,255,0.08);
+    --accent: #19d38f;
+    --accent-dim: #12a06b;
+    --red: #ef4444;
+    --red-dim: #991b1b;
+    --yellow: #eab308;
+    --gold: #d4a017;
+    --purple: #a855f7;
+    --muted: #888;
+    --text: #e8e8e8;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --sans: 'Space Grotesk', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Hero ──────────────────────────────────────────────────── */
+  .hero {
+    text-align: center;
+    padding: 60px 24px 48px;
+    background:
+      radial-gradient(800px 400px at 50% 0%, rgba(25,211,143,0.06), transparent),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    border: 1px solid var(--accent-dim);
+    border-radius: 20px;
+    padding: 4px 14px;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero-sub {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin: 24px 0;
+    flex-wrap: wrap;
+  }
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat .num {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: var(--mono);
+    color: var(--accent);
+  }
+  .hero-stat .label {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 32px;
+    background: var(--accent);
+    color: #000;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .cta:hover { background: #1ee89e; }
+  .cta-sub {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  /* ── Sections ──────────────────────────────────────────────── */
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 48px 0; }
+  section + section { border-top: 1px solid var(--border); }
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .section-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  /* ── Sector Heatmap ────────────────────────────────────────── */
+  .heatmap {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .sector-tile {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    cursor: default;
+    transition: transform 0.15s, border-color 0.15s;
+    position: relative;
+  }
+  .sector-tile:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.15);
+  }
+  .sector-tile .etf {
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .sector-tile .sector-name {
+    font-size: 11px;
+    color: var(--muted);
+    margin: 4px 0 8px;
+  }
+  .sector-tile .verdict {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    letter-spacing: 0.5px;
+  }
+  .verdict-BULLISH { background: rgba(25,211,143,0.15); color: var(--accent); }
+  .verdict-BEARISH { background: rgba(239,68,68,0.15); color: var(--red); }
+  .verdict-MIXED { background: rgba(234,179,8,0.15); color: var(--yellow); }
+  .sector-tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #222;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .sector-tile:hover .sector-tooltip { display: block; }
+
+  /* ── Leaderboard Table ─────────────────────────────────────── */
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  thead th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    white-space: nowrap;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: rgba(255,255,255,0.02); }
+  .rank { color: var(--muted); font-family: var(--mono); width: 40px; }
+  .algo-name {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .algo-emoji { font-size: 18px; }
+  .algo-type-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.06);
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .return-pos { color: var(--accent); font-family: var(--mono); font-weight: 600; }
+  .return-neg { color: var(--red); font-family: var(--mono); font-weight: 600; }
+  .return-zero { color: var(--muted); font-family: var(--mono); }
+  .vs-spy { font-family: var(--mono); font-size: 12px; }
+  .vs-spy-pos { color: var(--accent); }
+  .vs-spy-neg { color: var(--red); }
+  .days { font-family: var(--mono); color: var(--muted); }
+  .status-beat {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    background: rgba(25,211,143,0.1);
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+  }
+  .status-lag {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--red);
+    background: rgba(239,68,68,0.1);
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+  }
+
+  /* Special algo rows */
+  .row-biscotti { border-left: 3px solid var(--gold) !important; }
+  .row-baileymol { border-left: 3px solid var(--purple) !important; }
+  .row-biscotti td:first-child { border-left: none; }
+  .row-baileymol td:first-child { border-left: none; }
+
+  /* Tooltip on special rows */
+  .name-tooltip {
+    position: relative;
+    cursor: help;
+  }
+  .name-tooltip .tip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 0;
+    background: #222;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--muted);
+    white-space: nowrap;
+    z-index: 20;
+    pointer-events: none;
+  }
+  .name-tooltip:hover .tip { display: block; }
+
+  /* Paywall tease rows */
+  .paywall-row td {
+    color: rgba(255,255,255,0.15) !important;
+    user-select: none;
+    pointer-events: none;
+  }
+  .paywall-row .algo-name { filter: blur(4px); }
+  .paywall-cta-row td {
+    text-align: center;
+    padding: 16px;
+    border-bottom: none;
+  }
+  .paywall-cta-row a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .paywall-cta-row a:hover { text-decoration: underline; }
+
+  /* ── Ticker Quick Check ────────────────────────────────────── */
+  .ticker-check {
+    max-width: 480px;
+  }
+  .ticker-input-wrap {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .ticker-input {
+    flex: 1;
+    padding: 12px 16px;
+    font-family: var(--mono);
+    font-size: 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    outline: none;
+    text-transform: uppercase;
+  }
+  .ticker-input::placeholder { color: rgba(255,255,255,0.2); }
+  .ticker-input:focus { border-color: var(--accent-dim); }
+  .ticker-btn {
+    padding: 12px 20px;
+    background: var(--accent);
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: background 0.2s;
+  }
+  .ticker-btn:hover { background: #1ee89e; }
+  .ticker-result {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+  }
+  .ticker-result.show { display: block; }
+  .ticker-result .tr-ticker {
+    font-family: var(--mono);
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .ticker-result .tr-sector {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 4px 0 12px;
+  }
+  .ticker-result .tr-verdict {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+  .ticker-result .tr-unlock {
+    display: block;
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .ticker-result .tr-unlock a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .ticker-result .tr-unlock a:hover { text-decoration: underline; }
+  .ticker-error {
+    color: var(--red);
+    font-family: var(--mono);
+    font-size: 13px;
+    display: none;
+  }
+  .ticker-error.show { display: block; }
+
+  /* ── Footer ────────────────────────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  footer a { color: var(--accent-dim); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .memorial {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-style: italic;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ── Loading ───────────────────────────────────────────────── */
+  .loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 14px;
+  }
+  .loading::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--accent-dim);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── Responsive ────────────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .hero { padding: 40px 16px 32px; }
+    .hero-stats { gap: 20px; }
+    .hero-stat .num { font-size: 24px; }
+    table { font-size: 13px; }
+    thead th, tbody td { padding: 10px 10px; }
+    .heatmap { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; }
+    .sector-tile { padding: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ Hero ═══ -->
+<div class="hero">
+  <div class="hero-badge">LIVE EXPERIMENT</div>
+  <h1><span id="signal-count">...</span> signals running</h1>
+  <p class="hero-sub">Can unconventional data sources beat the S&P 500?</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="num" id="stat-days">90</div>
+      <div class="label">Days Live</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num" id="stat-beating">--</div>
+      <div class="label">Beating SPY</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num" id="stat-sectors">11</div>
+      <div class="label">Sectors Tracked</div>
+    </div>
+  </div>
+  <a class="cta" href="#pricing">Get Full Access &mdash; $29/mo</a>
+  <span class="cta-sub">Real-time signals, full breakdowns, ticker alerts</span>
+</div>
+
+<!-- ═══ Sector Heatmap ═══ -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Sector Heatmap</h2>
+    <p class="section-sub">Composite signal across all proven algorithms. Updated nightly.</p>
+    <div class="heatmap" id="heatmap">
+      <div class="loading">Loading sectors</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Leaderboard ═══ -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Proven Signals</h2>
+    <p class="section-sub">Algorithms with 30+ days of live paper-traded history. Ranked by return.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Algorithm</th>
+            <th>Type</th>
+            <th>Return</th>
+            <th>vs SPY</th>
+            <th>Days</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard">
+          <tr><td colspan="7" class="loading">Loading leaderboard</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Ticker Quick Check ═══ -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Ticker Quick Check</h2>
+    <p class="section-sub">Look up any S&P 500 stock to see our composite signal. Free preview.</p>
+    <div class="ticker-check">
+      <div class="ticker-input-wrap">
+        <input type="text" class="ticker-input" id="ticker-input" placeholder="NVDA" maxlength="6" autocomplete="off" />
+        <button class="ticker-btn" id="ticker-btn" onclick="checkTicker()">Check</button>
+      </div>
+      <div class="ticker-error" id="ticker-error"></div>
+      <div class="ticker-result" id="ticker-result">
+        <div class="tr-ticker" id="tr-ticker"></div>
+        <div class="tr-sector" id="tr-sector"></div>
+        <div class="tr-verdict" id="tr-verdict"></div>
+        <span class="tr-unlock">Want the full breakdown? <a href="#pricing">Unlock for $29/mo</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Footer ═══ -->
+<footer>
+  <div class="wrap">
+    <div>
+      <strong>crazystockalgo.com</strong> &mdash; Updated nightly at 6:30 PM ET
+    </div>
+    <div id="footer-generated"></div>
+    <div style="margin-top:8px;">
+      Not investment advice. This is experimental research. Past signal performance does not predict future results.<br>
+      Always do your own research. Paper-traded only &mdash; no real money at risk.
+    </div>
+    <div class="memorial">
+      In loving memory of Biscotti (2008&ndash;2025). Good boy. Best algo. &hearts;
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  const DATA_PATH = 'signals/index.json';
+  const SIGNALS_PATH = 'signals/';
+
+  // Special algo config
+  const SPECIAL = {
+    'biscotti':  { emoji: '\uD83D\uDC3E', rowClass: 'row-biscotti',  tip: 'Named after Biscotti (2008\u20132025) \u2014 17.75 years of unconditional loyalty' },
+    'baileymol': { emoji: '\u26A1',       rowClass: 'row-baileymol', tip: 'The Chaos Monger \u2014 thrives on volatility spikes' },
+  };
+
+  function getSpecial(algoId) {
+    for (var key in SPECIAL) {
+      if (algoId.indexOf(key) !== -1) return SPECIAL[key];
+    }
+    return null;
+  }
+
+  function fmt(n) {
+    if (n === 0) return '0.00%';
+    return (n > 0 ? '+' : '') + n.toFixed(2) + '%';
+  }
+
+  function returnClass(n) {
+    if (n > 0) return 'return-pos';
+    if (n < 0) return 'return-neg';
+    return 'return-zero';
+  }
+
+  function escHtml(s) {
+    var d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  // ── Load data ──
+  fetch(DATA_PATH)
+    .then(function(r) { return r.json(); })
+    .then(render)
+    .catch(function(e) {
+      document.getElementById('heatmap').innerHTML = '<div style="color:#ef4444">Failed to load data. Make sure signals/index.json exists.</div>';
+      document.getElementById('leaderboard').innerHTML = '<tr><td colspan="7" style="color:#ef4444">Failed to load data.</td></tr>';
+    });
+
+  function render(data) {
+    // Hero stats
+    document.getElementById('signal-count').textContent = data.signal_count || '??';
+    var beating = 0;
+    (data.leaderboard || []).forEach(function(a) { if (a.beat_spy) beating++; });
+    document.getElementById('stat-beating').textContent = beating + '/' + (data.leaderboard || []).length;
+    document.getElementById('footer-generated').textContent = 'Last updated: ' + (data.generated || 'unknown');
+
+    // Sector heatmap
+    renderHeatmap(data.sector_summary || {});
+
+    // Leaderboard
+    renderLeaderboard(data.leaderboard || []);
+  }
+
+  function renderHeatmap(sectors) {
+    var grid = document.getElementById('heatmap');
+    var html = '';
+    var order = ['XLK','XLF','XLV','XLY','XLI','XLC','XLP','XLE','XLB','XLRE','XLU'];
+    order.forEach(function(etf) {
+      var s = sectors[etf];
+      if (!s) return;
+      html += '<div class="sector-tile">'
+        + '<div class="sector-tooltip">Composite score: ' + escHtml(s.composite) + ' bullish &bull; ' + s.bullish_pct + '% conviction</div>'
+        + '<div class="etf">' + escHtml(etf) + '</div>'
+        + '<div class="sector-name">' + escHtml(s.sector) + '</div>'
+        + '<span class="verdict verdict-' + escHtml(s.composite_label) + '">' + escHtml(s.composite_label) + '</span>'
+        + '</div>';
+    });
+    grid.innerHTML = html;
+  }
+
+  function renderLeaderboard(list) {
+    var tbody = document.getElementById('leaderboard');
+    var html = '';
+
+    list.forEach(function(a, i) {
+      var rank = i + 1;
+      var spec = getSpecial(a.algo_id);
+      var rowCls = spec ? spec.rowClass : '';
+      var emoji = spec ? '<span class="algo-emoji">' + spec.emoji + '</span>' : '';
+      var tipOpen = spec ? '<span class="name-tooltip">' : '';
+      var tipContent = spec ? '<span class="tip">' + escHtml(spec.tip) + '</span>' : '';
+      var tipClose = spec ? '</span>' : '';
+      var diff = a.ytd_pct - a.spy_pct;
+      var diffCls = diff >= 0 ? 'vs-spy-pos' : 'vs-spy-neg';
+      var statusHtml = a.beat_spy
+        ? '<span class="status-beat">BEATING SPY</span>'
+        : '<span class="status-lag">LAGGING</span>';
+
+      html += '<tr class="' + rowCls + '">'
+        + '<td class="rank">' + rank + '</td>'
+        + '<td>' + tipOpen + '<span class="algo-name">' + emoji + escHtml(a.name) + '</span>' + tipContent + tipClose + '</td>'
+        + '<td><span class="algo-type-badge">' + escHtml(a.algo_type) + '</span></td>'
+        + '<td class="' + returnClass(a.ytd_pct) + '">' + fmt(a.ytd_pct) + '</td>'
+        + '<td class="vs-spy ' + diffCls + '">' + (diff >= 0 ? '+' : '') + diff.toFixed(2) + '%</td>'
+        + '<td class="days">' + a.days_running + 'd</td>'
+        + '<td>' + statusHtml + '</td>'
+        + '</tr>';
+    });
+
+    // Paywall tease rows
+    var fakeNames = [
+      'Algo Whiskers (Mean Reverter)',
+      'Algo Shadow (Trend Surfer)',
+      'Algo Rocket (Breakout Hunter)',
+      'Algo Tidal (Flow Tracker)',
+    ];
+    fakeNames.forEach(function(name) {
+      html += '<tr class="paywall-row">'
+        + '<td class="rank">?</td>'
+        + '<td><span class="algo-name">' + escHtml(name) + '</span></td>'
+        + '<td><span class="algo-type-badge">???</span></td>'
+        + '<td class="return-pos">+?.??%</td>'
+        + '<td class="vs-spy vs-spy-pos">+?.??%</td>'
+        + '<td class="days">??d</td>'
+        + '<td><span class="status-beat">?????</span></td>'
+        + '</tr>';
+    });
+
+    html += '<tr class="paywall-cta-row">'
+      + '<td colspan="7"><a href="#pricing">\u2192 Unlock all ' + (list.length + fakeNames.length) + '+ signals for $29/mo</a></td>'
+      + '</tr>';
+
+    tbody.innerHTML = html;
+  }
+
+  // ── Ticker Quick Check ──
+  window.checkTicker = function() {
+    var input = document.getElementById('ticker-input');
+    var ticker = input.value.trim().toUpperCase();
+    var result = document.getElementById('ticker-result');
+    var error = document.getElementById('ticker-error');
+
+    result.classList.remove('show');
+    error.classList.remove('show');
+
+    if (!ticker || ticker.length < 1) {
+      error.textContent = 'Enter a ticker symbol.';
+      error.classList.add('show');
+      return;
+    }
+
+    fetch(SIGNALS_PATH + ticker + '.json')
+      .then(function(r) {
+        if (!r.ok) throw new Error('not found');
+        return r.json();
+      })
+      .then(function(d) {
+        document.getElementById('tr-ticker').textContent = d.ticker;
+        document.getElementById('tr-sector').textContent = d.sector + ' \u2022 ' + d.sector_etf;
+        var v = document.getElementById('tr-verdict');
+        v.textContent = d.composite_label;
+        v.className = 'tr-verdict verdict-' + d.composite_label;
+        result.classList.add('show');
+      })
+      .catch(function() {
+        error.textContent = ticker + ' not found. Only S&P 500 tickers are supported in the free tier.';
+        error.classList.add('show');
+      });
+  };
+
+  // Enter key triggers check
+  document.getElementById('ticker-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') window.checkTicker();
+  });
+
+})();
+</script>
+
+</body>
+</html>
