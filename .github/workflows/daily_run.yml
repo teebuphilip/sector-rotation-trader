@@ -54,6 +54,9 @@ jobs:
       - name: Daily force-rank all algos
         run: python scripts/rank_daily.py
 
+      - name: Nightly validation
+        run: python scripts/validate_nightly.py --deep || true
+
       - name: Commit updated state + dashboard
         run: |
           git config user.name  "sector-bot"

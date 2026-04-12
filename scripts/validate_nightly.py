@@ -33,6 +33,7 @@ IDEAS_DIR = ROOT / "data" / "ideas" / "runs"
 NORMAL_IDEAS_DIR = ROOT / "data" / "normal_ideas" / "runs"
 VALIDATION_CACHE_DIR = ROOT / "data" / ".validation_cache"
 SNAPSHOT_COUNT_CACHE = VALIDATION_CACHE_DIR / "snapshot_counts.json"
+RANK_HISTORY_CSV = ROOT / "data" / "rank_history.csv"
 
 # Starting capital every algo is seeded with
 SEED_EQUITY = 100_000.0
@@ -854,6 +855,70 @@ def deep_check_margin_accounting(all_states) -> Tuple[int, int, List[str]]:
 
 
 # ===================================================================
+# CHECK 7 — Rank History
+# ===================================================================
+def check_rank_history() -> str:
+    if not RANK_HISTORY_CSV.exists():
+        fail("data/rank_history.csv missing — rank_daily.py did not run")
+        return "FAIL (file missing)"
+
+    import csv as _csv
+    try:
+        with open(RANK_HISTORY_CSV, "r", encoding="utf-8") as f:
+            reader = _csv.DictReader(f)
+            rows = list(reader)
+    except Exception as e:
+        fail("data/rank_history.csv unreadable: {}".format(e))
+        return "FAIL (unreadable)"
+
+    if not rows:
+        fail("data/rank_history.csv is empty (no data rows)")
+        return "FAIL (empty)"
+
+    today_rows = [r for r in rows if r.get("date") == TODAY]
+    if not today_rows:
+        fail("data/rank_history.csv has no entries for today ({})".format(TODAY))
+        return "FAIL (no rows for today)"
+
+    # Count expected algos from state dirs
+    expected = 0
+    for state_dir in [CRAZY_STATE_DIR, NORMAL_STATE_DIR]:
+        if state_dir.exists():
+            expected += len(list(state_dir.glob("*.json")))
+
+    if len(today_rows) < expected:
+        fail(
+            "data/rank_history.csv has {} rows for today, expected {} "
+            "(partial write)".format(len(today_rows), expected)
+        )
+        return "FAIL ({}/{} rows)".format(len(today_rows), expected)
+
+    # Check for duplicates (more rows than expected = ran twice)
+    if len(today_rows) > expected:
+        warn(
+            "data/rank_history.csv has {} rows for today but only {} algos "
+            "— possible duplicate run".format(len(today_rows), expected)
+        )
+        return "WARN ({} rows, expected {})".format(len(today_rows), expected)
+
+    # Verify rank columns are present and sensible
+    problems = []
+    for r in today_rows:
+        rank_ret = r.get("rank_return", "")
+        rank_alpha = r.get("rank_alpha", "")
+        if not rank_ret or not rank_alpha:
+            problems.append("{} missing rank columns".format(r.get("algo_id", "?")))
+            break
+
+    if problems:
+        for p in problems:
+            fail("data/rank_history.csv: {}".format(p))
+        return "FAIL (bad data)"
+
+    return "PASS ({} algos ranked)".format(len(today_rows))
+
+
+# ===================================================================
 # Main
 # ===================================================================
 def _render_check(lines, label, passed, total, highlights, width=20):
@@ -933,6 +998,10 @@ def main():
     )
     for r in idea_results[1:]:
         lines.append(f"                       {r}")
+
+    # CHECK 7
+    rank_result = check_rank_history()
+    lines.append(f"  Rank History:        {rank_result}")
 
     # -----------------------------------------------------------------
     # Deep Checks (only if --deep)
