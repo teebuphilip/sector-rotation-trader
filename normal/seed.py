@@ -1,5 +1,6 @@
 from datetime import date, timedelta
 import os
+from typing import List, Optional
 
 import pandas as pd
 
@@ -13,12 +14,12 @@ def is_month_end(d: date) -> bool:
     return (pd.Timestamp(d) + pd.tseries.offsets.BMonthEnd(0)).date() == d
 
 
-def rebalance_to_target(state: dict, target: dict, prices: dict):
+def rebalance_to_target(state: dict, target: dict, prices: dict, as_of=None):
     for ticker in list(state["positions"].keys()):
         price = prices.get(ticker)
         if price is None:
             continue
-        close_position(state, ticker, price, reason="rebalance")
+        close_position(state, ticker, price, reason="rebalance", as_of=as_of)
 
     equity = total_equity(state, prices)
     for ticker, weight in target.items():
@@ -31,7 +32,7 @@ def rebalance_to_target(state: dict, target: dict, prices: dict):
         if amount <= 0:
             continue
         if state["cash"] >= amount:
-            open_position(state, ticker, price, amount, using_margin=False)
+            open_position(state, ticker, price, amount, using_margin=False, as_of=as_of)
 
 
 def seed_algos(algos):
@@ -72,20 +73,47 @@ def seed_algos(algos):
                     if len(s):
                         current_prices[t] = float(s.iloc[-1])
 
-            if is_month_end(dt.date()):
+            eom = is_month_end(dt.date())
+            if algo.should_rebalance(dt.date(), eom):
+                if hasattr(algo, "__dict__"):
+                    algo.__dict__["_state_ref"] = state
                 target = algo.compute_target(prices_df.loc[:dt], dt.date())
                 if target is not None:
-                    rebalance_to_target(state, target, current_prices)
+                    rebalance_to_target(state, target, current_prices, as_of=dt.date())
 
-            snapshot(state, current_prices, algo.name)
+            snapshot(state, current_prices, algo.name, as_of=dt.date())
 
         save_state_to(state, state_path)
         save_trade_log_to(state, trade_log_path)
         print(f"Seeded {algo.name}.")
 
 
-def seed_all():
-    seed_algos(get_normal_algos())
+def _normalize_key(value: str) -> str:
+    return value.strip().lower().replace("_", "-")
+
+
+def _filter_algos(algos, algo_ids: Optional[List[str]]):
+    if not algo_ids:
+        return algos
+    wanted = {_normalize_key(a) for a in algo_ids}
+    filtered = []
+    for algo in algos:
+        keys = {
+            _normalize_key(algo.algo_id),
+            _normalize_key(algo.name),
+            _normalize_key(algo.__class__.__name__),
+        }
+        if keys & wanted:
+            filtered.append(algo)
+    return filtered
+
+
+def seed_all(algo_ids: Optional[List[str]] = None):
+    algos = _filter_algos(get_normal_algos(), algo_ids)
+    if not algos:
+        print("✖ No matching normal algos found to seed.")
+        return
+    seed_algos(algos)
 
 
 if __name__ == "__main__":

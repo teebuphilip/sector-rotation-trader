@@ -1,0 +1,1011 @@
+#!/usr/bin/env python3
+"""
+Nightly validation — runs after all pipelines, before git commit.
+
+Exit codes:
+  0 = all clear
+  1 = warnings only
+  2 = failures (critical)
+"""
+
+import argparse
+import json
+import os
+import random
+import re
+import sys
+from collections import Counter
+from datetime import date, timedelta
+from pathlib import Path
+from typing import Optional, List, Tuple, Dict
+
+# ---------------------------------------------------------------------------
+# Paths
+# ---------------------------------------------------------------------------
+ROOT = Path(__file__).resolve().parent.parent
+CRAZY_STATE_DIR = ROOT / "data" / "crazy" / "state"
+NORMAL_STATE_DIR = ROOT / "data" / "normal" / "state"
+CRAZY_REGISTRY = ROOT / "crazy" / "algos"
+NORMAL_REGISTRY = ROOT / "normal" / "algos"
+SIGNALS_DIR = ROOT / "docs" / "signals"
+BLOCKED_FILE = ROOT / "data" / "blocked" / "algos.jsonl"
+IDEAS_DIR = ROOT / "data" / "ideas" / "runs"
+NORMAL_IDEAS_DIR = ROOT / "data" / "normal_ideas" / "runs"
+VALIDATION_CACHE_DIR = ROOT / "data" / ".validation_cache"
+SNAPSHOT_COUNT_CACHE = VALIDATION_CACHE_DIR / "snapshot_counts.json"
+
+# Starting capital every algo is seeded with
+SEED_EQUITY = 100_000.0
+MAX_BORROW = 100_000.0
+
+TODAY = date.today().isoformat()
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+failures = []  # type: List[str]
+warnings = []  # type: List[str]
+
+
+def fail(msg: str):
+    failures.append(msg)
+
+
+def warn(msg: str):
+    warnings.append(msg)
+
+
+def load_json(path: Path):
+    """Load JSON, return None on any error."""
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
+def parse_algo_ids(registry_dir: Path) -> List[str]:
+    """Extract algo_id values from algo source files (no imports)."""
+    ids = []
+    for py in registry_dir.glob("*.py"):
+        if py.name in ("__init__.py", "base.py", "registry.py"):
+            continue
+        text = py.read_text(encoding="utf-8")
+        m = re.search(r'algo_id\s*=\s*["\']([^"\']+)["\']', text)
+        if m:
+            ids.append(m.group(1))
+    return ids
+
+
+def get_blocked_algo_ids() -> set:
+    """Return set of algo_ids that are currently blocked."""
+    blocked = set()
+    if not BLOCKED_FILE.exists():
+        return blocked
+    for line in BLOCKED_FILE.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+            blocked.add(obj.get("algo_id", ""))
+        except json.JSONDecodeError:
+            continue
+    return blocked
+
+
+def load_all_states() -> Dict[Tuple[str, str], dict]:
+    """Load every algo state file once. Returns {(label, algo_id): state}."""
+    out = {}
+    for label, state_dir in [("crazy", CRAZY_STATE_DIR), ("normal", NORMAL_STATE_DIR)]:
+        if not state_dir.exists():
+            continue
+        for fp in sorted(state_dir.glob("*.json")):
+            data = load_json(fp)
+            if data is None:
+                continue
+            out[(label, fp.stem)] = data
+    return out
+
+
+def _dedupe_snapshots_by_date(snapshots: list) -> list:
+    """Keep the last snapshot per date, return in chronological order."""
+    by_date = {}
+    for s in snapshots:
+        d = s.get("date", "")
+        if d:
+            by_date[d] = s
+    return [by_date[k] for k in sorted(by_date.keys())]
+
+
+def _clip(items: list, n: int = 3) -> list:
+    """Return first n items plus a '...+N more' marker if truncated."""
+    if len(items) <= n:
+        return items
+    return items[:n] + ["...+{} more".format(len(items) - n)]
+
+
+# ===================================================================
+# CHECK 1 — State file integrity
+# ===================================================================
+def check_state_files() -> Tuple[int, int]:
+    passed = 0
+    total = 0
+
+    for state_dir in [CRAZY_STATE_DIR, NORMAL_STATE_DIR]:
+        if not state_dir.exists():
+            fail(f"State dir missing: {state_dir.relative_to(ROOT)}")
+            continue
+        for fp in sorted(state_dir.glob("*.json")):
+            total += 1
+            data = load_json(fp)
+            rel = fp.relative_to(ROOT)
+            if data is None:
+                fail(f"{rel} → invalid JSON (corrupted)")
+                continue
+
+            problems = []
+            if "positions" not in data:
+                problems.append('missing "positions" key')
+            if "daily_snapshots" not in data:
+                problems.append('missing "daily_snapshots" key')
+                # can't do further snapshot checks
+                for p in problems:
+                    fail(f"{rel} → {p}")
+                continue
+
+            snaps = data["daily_snapshots"]
+            if len(snaps) == 0:
+                problems.append("0 snapshots")
+            else:
+                latest = snaps[-1]
+                snap_date = latest.get("date", "")
+                equity = latest.get("equity", 0)
+                cash = data.get("cash", 0)
+
+                if snap_date != TODAY:
+                    problems.append(
+                        f"last snapshot: {snap_date} (STALE - missed today)"
+                    )
+                if equity <= 1000:
+                    problems.append(
+                        f"equity ${equity:,.0f} (below $1k threshold)"
+                    )
+                if equity >= 500000:
+                    problems.append(
+                        f"equity ${equity:,.0f} (above $500k threshold)"
+                    )
+                if cash < 0:
+                    problems.append(
+                        f"cash ${cash:,.2f} (negative — margin accounting bug)"
+                    )
+
+            if problems:
+                for p in problems:
+                    fail(f"{rel} → {p}")
+            else:
+                passed += 1
+
+    return passed, total
+
+
+# ===================================================================
+# CHECK 2 — Signal JSON integrity
+# ===================================================================
+def check_signals() -> str:
+    if not SIGNALS_DIR.exists():
+        fail("docs/signals/ directory missing")
+        return "FAIL (directory missing)"
+
+    index_path = SIGNALS_DIR / "index.json"
+    if not index_path.exists():
+        fail("docs/signals/index.json missing")
+        return "FAIL (index.json missing)"
+
+    idx = load_json(index_path)
+    if idx is None:
+        fail("docs/signals/index.json → invalid JSON")
+        return "FAIL (invalid JSON)"
+
+    problems = []
+    generated = idx.get("generated", "")
+    if generated != TODAY:
+        problems.append(f'generated={generated}, expected {TODAY}')
+
+    leaderboard = idx.get("leaderboard", [])
+    if not isinstance(leaderboard, list) or len(leaderboard) == 0:
+        problems.append("leaderboard is empty or missing")
+
+    sector_summary = idx.get("sector_summary", {})
+    expected_etfs = {"XLK", "XLV", "XLF", "XLY", "XLI", "XLC", "XLP", "XLE", "XLB", "XLRE", "XLU"}
+    found_etfs = set(sector_summary.keys())
+    missing_etfs = expected_etfs - found_etfs
+    if missing_etfs:
+        problems.append(f"sector_summary missing: {', '.join(sorted(missing_etfs))}")
+
+    if problems:
+        for p in problems:
+            fail(f"docs/signals/index.json → {p}")
+
+    # Spot-check 10 random ticker JSONs
+    ticker_files = [f for f in SIGNALS_DIR.glob("*.json") if f.name != "index.json"]
+    sample_size = min(10, len(ticker_files))
+    ticker_problems = []
+
+    if ticker_files:
+        sample = random.sample(ticker_files, sample_size)
+        for tf in sample:
+            td = load_json(tf)
+            rel = tf.relative_to(ROOT)
+            if td is None:
+                ticker_problems.append(f"{rel} → invalid JSON")
+                continue
+
+            tp = []
+            if "composite_label" not in td:
+                tp.append('missing "composite_label"')
+            bullish = td.get("bullish", 0)
+            bearish = td.get("bearish", 0)
+            neutral = td.get("neutral", 0)
+            total = td.get("total_signals", -1)
+            if total >= 0 and (bullish + bearish + neutral) != total:
+                tp.append(
+                    f"signal count mismatch: {bullish}+{bearish}+{neutral} != {total}"
+                )
+            gen = td.get("generated", "")
+            if gen != TODAY:
+                tp.append(f"generated={gen}, expected {TODAY}")
+            if tp:
+                for p in tp:
+                    ticker_problems.append(f"{rel} → {p}")
+
+    if ticker_problems:
+        for p in ticker_problems:
+            fail(p)
+
+    if problems or ticker_problems:
+        return "FAIL"
+
+    return f"PASS ({len(ticker_files)} tickers, {len(found_etfs)} sectors)"
+
+
+# ===================================================================
+# CHECK 3 — Algo run completeness
+# ===================================================================
+def check_algo_completeness() -> Tuple[int, int, List[str]]:
+    blocked = get_blocked_algo_ids()
+    stale = []
+    total = 0
+    ran = 0
+
+    for label, registry_dir, state_dir in [
+        ("crazy", CRAZY_REGISTRY, CRAZY_STATE_DIR),
+        ("normal", NORMAL_REGISTRY, NORMAL_STATE_DIR),
+    ]:
+        registered_ids = parse_algo_ids(registry_dir)
+        for aid in registered_ids:
+            total += 1
+            state_path = state_dir / f"{aid}.json"
+
+            if not state_path.exists():
+                if aid in blocked:
+                    # blocked algos may not have state files — still count
+                    ran += 1
+                    continue
+                fail(
+                    f"{label}/{aid} → registered but no state file at "
+                    f"{state_path.relative_to(ROOT)}"
+                )
+                continue
+
+            data = load_json(state_path)
+            if data is None:
+                fail(f"{state_path.relative_to(ROOT)} → invalid JSON")
+                continue
+
+            snaps = data.get("daily_snapshots", [])
+            if snaps and snaps[-1].get("date") == TODAY:
+                ran += 1
+            elif aid in blocked:
+                # blocked algos get a pass on staleness
+                ran += 1
+            else:
+                stale.append(aid)
+
+    return ran, total, stale
+
+
+# ===================================================================
+# CHECK 4 — Equity sanity (daily return bounds)
+# ===================================================================
+def check_equity_sanity() -> List[str]:
+    equity_warnings = []
+    for state_dir in [CRAZY_STATE_DIR, NORMAL_STATE_DIR]:
+        if not state_dir.exists():
+            continue
+        for fp in sorted(state_dir.glob("*.json")):
+            data = load_json(fp)
+            if data is None:
+                continue
+            snaps = data.get("daily_snapshots", [])
+            if len(snaps) < 2:
+                continue
+
+            today_snap = snaps[-1]
+            yesterday_snap = snaps[-2]
+            today_eq = today_snap.get("equity", 0)
+            yest_eq = yesterday_snap.get("equity", 0)
+
+            if yest_eq <= 0:
+                continue
+
+            daily_ret = (today_eq - yest_eq) / yest_eq
+            algo_name = fp.stem
+
+            if daily_ret > 0.15:
+                msg = (
+                    f"WARN: {algo_name} daily_return = +{daily_ret:.1%} "
+                    f"(above 15% threshold)\n"
+                    f"          → check for data error"
+                )
+                equity_warnings.append(msg)
+                warn(msg)
+            elif daily_ret < -0.20:
+                msg = (
+                    f"WARN: {algo_name} daily_return = {daily_ret:.1%} "
+                    f"(below -20% threshold)\n"
+                    f"          → check for data error"
+                )
+                equity_warnings.append(msg)
+                warn(msg)
+
+    return equity_warnings
+
+
+# ===================================================================
+# CHECK 5 — Blocked queue
+# ===================================================================
+def check_blocked_queue() -> str:
+    if not BLOCKED_FILE.exists():
+        return "0 algos blocked (no file)"
+
+    lines = BLOCKED_FILE.read_text(encoding="utf-8").strip().splitlines()
+    entries = []
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            entries.append(json.loads(line))
+        except json.JSONDecodeError:
+            continue
+
+    if not entries:
+        return "0 algos blocked"
+
+    # Count by blocking key
+    key_counter = Counter()
+    for e in entries:
+        for k in e.get("keys", []):
+            key_counter[k] += 1
+
+    count = len(entries)
+    if count > 20:
+        warn(f"Blocked queue has {count} entries (>20) — may need attention")
+
+    parts = ", ".join(f"{k} x{v}" for k, v in key_counter.most_common())
+    return f"{count} algos blocked ({parts})"
+
+
+# ===================================================================
+# CHECK 6 — Idea pipeline
+# ===================================================================
+def check_idea_pipeline() -> List[str]:
+    results = []
+
+    # Daily crazy ideas — must have a run today
+    today_dir = IDEAS_DIR / TODAY
+    if not today_dir.exists():
+        fail(f"No crazy idea run found for today ({TODAY})")
+        results.append(f"FAIL → No idea run found for today")
+    else:
+        # Check at least 1 idea was generated
+        raw_dir = today_dir / "raw"
+        idea_count = 0
+        if raw_dir.exists():
+            for jl in raw_dir.glob("*.jsonl"):
+                idea_count += sum(
+                    1 for line in jl.read_text(encoding="utf-8").splitlines()
+                    if line.strip()
+                )
+        if idea_count == 0:
+            fail("Crazy idea run exists but 0 ideas generated")
+            results.append("FAIL → 0 ideas generated today")
+        else:
+            results.append(f"PASS ({idea_count} crazy idea(s) today)")
+
+    # Weekly normal ideas — must have a run within last 7 days
+    if NORMAL_IDEAS_DIR.exists():
+        run_dates = sorted(
+            d.name for d in NORMAL_IDEAS_DIR.iterdir()
+            if d.is_dir() and re.match(r"\d{4}-\d{2}-\d{2}", d.name)
+        )
+        cutoff = (date.today() - timedelta(days=7)).isoformat()
+        recent = [d for d in run_dates if d >= cutoff]
+        if not recent:
+            warn("No normal_ideas run in the last 7 days")
+            results.append("WARN → no normal_ideas run this week")
+        else:
+            results.append(f"PASS (normal_ideas last run: {recent[-1]})")
+    else:
+        warn("data/normal_ideas/runs/ directory missing")
+        results.append("WARN → normal_ideas dir missing")
+
+    return results
+
+
+# ===================================================================
+# DEEP CHECK A — Position Math
+# ===================================================================
+def deep_check_position_math(all_states) -> Tuple[int, int, List[str]]:
+    """Reconcile every open position's cost basis.
+
+    We cannot verify market value without current prices (not stored in
+    state), but we CAN deterministically verify that each position's
+    stored cost equals shares * entry_price. This catches sizing bugs,
+    rounding drift, and manual state edits.
+    """
+    passed = 0
+    total = 0
+    highlights = []
+
+    for (label, algo_id), state in all_states.items():
+        total += 1
+        problems = []
+        for ticker, pos in state.get("positions", {}).items():
+            shares = pos.get("shares", 0)
+            entry_px = pos.get("entry_price", 0)
+            cost = pos.get("cost", 0)
+
+            if shares <= 0:
+                problems.append(
+                    f"{ticker}: non-positive shares {shares}"
+                )
+                continue
+            if entry_px <= 0:
+                problems.append(
+                    f"{ticker}: non-positive entry_price {entry_px}"
+                )
+                continue
+            if cost <= 0:
+                problems.append(
+                    f"{ticker}: non-positive cost {cost}"
+                )
+                continue
+
+            expected = shares * entry_px
+            # Tolerance: penny or 0.1% of cost (whichever is larger).
+            tol = max(0.01, abs(cost) * 0.001)
+            if abs(expected - cost) > tol:
+                problems.append(
+                    f"{ticker}: cost mismatch — "
+                    f"shares*entry=${expected:.2f} "
+                    f"stored_cost=${cost:.2f} "
+                    f"diff=${abs(expected - cost):.2f}"
+                )
+
+        if problems:
+            for p in problems:
+                fail(f"[deep/position_math] {label}/{algo_id} → {p}")
+                highlights.append(f"{algo_id}: {p}")
+        else:
+            passed += 1
+
+    return passed, total, _clip(highlights)
+
+
+# ===================================================================
+# DEEP CHECK B — Equity Curve Sanity
+# ===================================================================
+def deep_check_equity_curve(all_states) -> Tuple[int, int, List[str]]:
+    """Verify the whole equity curve, not just the last two points.
+
+    - Starting snapshot must be ~$100k (seed).
+    - No negative equity anywhere.
+    - No day-over-day jump >+20% or <-25% (impossible in paper trading
+      without a leverage or pricing bug).
+    """
+    passed = 0
+    total = 0
+    highlights = []
+
+    for (label, algo_id), state in all_states.items():
+        total += 1
+        snaps = _dedupe_snapshots_by_date(state.get("daily_snapshots", []))
+        problems = []
+
+        if not snaps:
+            problems.append("no snapshots")
+        else:
+            first_eq = snaps[0].get("equity", 0)
+            if abs(first_eq - SEED_EQUITY) > 100:
+                msg = (
+                    f"seed equity ${first_eq:,.2f} "
+                    f"(expected ~${SEED_EQUITY:,.0f})"
+                )
+                warn(f"[deep/equity_curve] {label}/{algo_id} → {msg}")
+                highlights.append(f"{algo_id}: {msg}")
+
+            for i, s in enumerate(snaps):
+                eq = s.get("equity", 0)
+                if eq < 0:
+                    problems.append(
+                        f"{s.get('date','?')}: negative equity ${eq:,.2f}"
+                    )
+
+            for i in range(1, len(snaps)):
+                prev = snaps[i - 1].get("equity", 0)
+                curr = snaps[i].get("equity", 0)
+                if prev <= 0:
+                    continue
+                dr = (curr - prev) / prev
+                if dr > 0.20:
+                    problems.append(
+                        f"{snaps[i].get('date','?')}: "
+                        f"+{dr:.1%} day-over-day "
+                        f"(${prev:,.0f} → ${curr:,.0f}) — leverage bug?"
+                    )
+                elif dr < -0.25:
+                    problems.append(
+                        f"{snaps[i].get('date','?')}: "
+                        f"{dr:.1%} day-over-day "
+                        f"(${prev:,.0f} → ${curr:,.0f}) — stop-loss bug?"
+                    )
+
+        if problems:
+            for p in problems:
+                fail(f"[deep/equity_curve] {label}/{algo_id} → {p}")
+                highlights.append(f"{algo_id}: {p}")
+        else:
+            passed += 1
+
+    return passed, total, _clip(highlights)
+
+
+# ===================================================================
+# DEEP CHECK C — Trade Log Integrity
+# ===================================================================
+def deep_check_trade_log(all_states) -> Tuple[int, int, List[str]]:
+    """Phantom sells, chronology, duplicates, non-positive prices."""
+    passed = 0
+    total = 0
+    highlights = []
+
+    for (label, algo_id), state in all_states.items():
+        total += 1
+        trades = state.get("trade_log", [])
+        problems = []
+
+        # Chronology
+        dates = [t.get("date", "") for t in trades]
+        if dates != sorted(dates):
+            problems.append("trade log out of chronological order")
+
+        # Non-positive prices
+        for t in trades:
+            px = t.get("price", 0)
+            if px <= 0:
+                problems.append(
+                    f"{t.get('ticker','?')} on {t.get('date','?')}: "
+                    f"non-positive price {px}"
+                )
+
+        # Duplicate (date, ticker, action) — repeat actions on same day
+        # are legit in theory (e.g. partial fills) but the current
+        # runners never do this, so they're worth flagging.
+        seen = set()
+        for t in trades:
+            key = (
+                t.get("date", ""),
+                t.get("ticker", ""),
+                t.get("action", ""),
+            )
+            if key in seen:
+                problems.append(f"duplicate trade: {key}")
+            seen.add(key)
+
+        # Phantom sells: walk in order tracking running shares.
+        # Every SELL must have enough prior shares bought.
+        running = {}  # type: Dict[str, float]
+        for t in trades:
+            ticker = t.get("ticker", "")
+            action = t.get("action", "")
+            shares = t.get("shares", 0)
+            if action == "BUY":
+                running[ticker] = running.get(ticker, 0) + shares
+            elif action == "SELL":
+                held = running.get(ticker, 0)
+                if held + 1e-4 < shares:
+                    problems.append(
+                        f"SELL {ticker} on {t.get('date','?')}: "
+                        f"held {held:.4f} shares, "
+                        f"tried to sell {shares:.4f} — phantom trade"
+                    )
+                running[ticker] = max(0.0, held - shares)
+
+        if problems:
+            for p in problems:
+                fail(f"[deep/trade_log] {label}/{algo_id} → {p}")
+                highlights.append(f"{algo_id}: {p}")
+        else:
+            passed += 1
+
+    return passed, total, _clip(highlights)
+
+
+# ===================================================================
+# DEEP CHECK D — Signal Reproducibility
+# ===================================================================
+def deep_check_signal_reproducibility(all_states) -> Tuple[int, int, List[str]]:
+    """Cross-check last signal against whether positions are held.
+
+    Fuzzy check — treats mismatches as WARNINGS, not failures, because
+    some algos legitimately hold through neutral signals.
+    """
+    passed = 0
+    total = 0
+    highlights = []
+
+    bullish_tokens = ("BULL", "RISK_ON", "BUY", "LONG", "ACCUMULATE")
+    neutral_tokens = ("HOLD", "NEUTRAL", "FLAT", "CASH")
+
+    for (label, algo_id), state in all_states.items():
+        total += 1
+        positions = set(state.get("positions", {}).keys())
+        meta = state.get("meta", {}) or {}
+        # crazy/runner.py writes meta['last_signal'] flat; normal/runner.py
+        # may vary. Accept both flat and nested-per-algo forms.
+        last_signal = meta.get("last_signal", "")
+        if not last_signal and isinstance(meta.get(algo_id), dict):
+            last_signal = meta[algo_id].get("last_signal", "")
+        last_signal_u = str(last_signal).upper()
+
+        issues = []
+
+        if positions and any(tok in last_signal_u for tok in neutral_tokens):
+            issues.append(
+                f"holds {sorted(positions)} but last signal '{last_signal}'"
+            )
+        if (not positions) and any(tok in last_signal_u for tok in bullish_tokens):
+            issues.append(
+                f"no positions but last signal '{last_signal}'"
+            )
+
+        if issues:
+            for i in issues:
+                warn(f"[deep/signal_repro] {label}/{algo_id} → {i}")
+                highlights.append(f"{algo_id}: {i}")
+        else:
+            passed += 1
+
+    return passed, total, _clip(highlights)
+
+
+# ===================================================================
+# DEEP CHECK E — Cross-Algo Sanity (snapshot count monotonicity)
+# ===================================================================
+def deep_check_cross_algo(all_states) -> Tuple[int, int, List[str]]:
+    """Snapshot count must never shrink across runs. Uses a local cache."""
+    total = len(all_states)
+    passed = 0
+    highlights = []
+
+    current = {}  # type: Dict[str, int]
+    for (label, algo_id), state in all_states.items():
+        snaps = _dedupe_snapshots_by_date(state.get("daily_snapshots", []))
+        current[f"{label}/{algo_id}"] = len(snaps)
+
+    prior = {}
+    if SNAPSHOT_COUNT_CACHE.exists():
+        cached = load_json(SNAPSHOT_COUNT_CACHE)
+        if isinstance(cached, dict):
+            prior = cached
+    else:
+        warn(
+            "[deep/cross_algo] no snapshot_counts cache — baseline being "
+            "established this run (not a failure)"
+        )
+        highlights.append("baseline cache being established")
+
+    for key, count in current.items():
+        before = prior.get(key)
+        if before is None:
+            # New algo or new cache — not a failure
+            passed += 1
+            continue
+        if count < before:
+            msg = (
+                f"lost snapshots: had {before} yesterday, have {count} "
+                f"today — DATA WAS DELETED"
+            )
+            fail(f"[deep/cross_algo] {key} → {msg}")
+            highlights.append(f"{key}: {msg}")
+        else:
+            passed += 1
+
+    # Persist fresh counts for tomorrow
+    try:
+        VALIDATION_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        with open(SNAPSHOT_COUNT_CACHE, "w", encoding="utf-8") as f:
+            json.dump(current, f, indent=2, sort_keys=True)
+    except Exception as e:
+        warn(f"[deep/cross_algo] failed to write cache: {e}")
+
+    return passed, total, _clip(highlights)
+
+
+# ===================================================================
+# DEEP CHECK F — Signal JSON vs State Consistency
+# ===================================================================
+def deep_check_signal_state_sync(all_states) -> Tuple[int, int, List[str]]:
+    """Precomputed signal JSONs must agree with actual held positions.
+
+    Gracefully skipped if docs/signals/ doesn't exist yet (precompute
+    step hasn't been built). Returns (0, 0, []) in that case.
+    """
+    if not SIGNALS_DIR.exists():
+        return (0, 0, ["SKIP (docs/signals/ not present)"])
+
+    ticker_files = [f for f in SIGNALS_DIR.glob("*.json") if f.name != "index.json"]
+    if not ticker_files:
+        return (0, 0, ["SKIP (no ticker signal files)"])
+
+    # Build map: ticker -> list of (label, algo_id) holding it
+    holders = {}  # type: Dict[str, List[str]]
+    for (label, algo_id), state in all_states.items():
+        for ticker in state.get("positions", {}).keys():
+            holders.setdefault(ticker, []).append(f"{label}/{algo_id}")
+
+    total = 0
+    passed = 0
+    highlights = []
+
+    for tf in ticker_files:
+        td = load_json(tf)
+        if td is None:
+            continue
+        ticker = tf.stem
+        # Accept multiple schema shapes since precompute_signals.py hasn't
+        # been built yet — we just do what we can with whatever fields
+        # exist.
+        breakdown = td.get("breakdown") or td.get("algos") or []
+        if not isinstance(breakdown, list):
+            continue
+
+        total += 1
+        bullish_algos = set()
+        for entry in breakdown:
+            if not isinstance(entry, dict):
+                continue
+            direction = str(entry.get("direction", "")).upper()
+            aid = entry.get("algo_id", "")
+            if aid and ("BULL" in direction or "RISK_ON" in direction or "LONG" in direction):
+                bullish_algos.add(aid)
+
+        actual = [h.split("/", 1)[1] for h in holders.get(ticker, [])]
+        missing = [a for a in actual if a not in bullish_algos]
+        if missing:
+            for m in missing:
+                msg = (
+                    f"holds {ticker} in state but not marked bullish "
+                    f"in docs/signals/{ticker}.json"
+                )
+                fail(f"[deep/signal_state_sync] {m} → {msg}")
+                highlights.append(f"{m}: {msg}")
+        else:
+            passed += 1
+
+    return passed, total, _clip(highlights)
+
+
+# ===================================================================
+# DEEP CHECK G — Margin Accounting
+# ===================================================================
+def deep_check_margin_accounting(all_states) -> Tuple[int, int, List[str]]:
+    """Regression guard against the v2 phantom-debt class of bugs."""
+    passed = 0
+    total = 0
+    highlights = []
+
+    for (label, algo_id), state in all_states.items():
+        total += 1
+        cash = state.get("cash", 0)
+        borrowed = state.get("borrowed", 0)
+        accrued = state.get("accrued_interest", 0)
+
+        problems = []
+
+        if borrowed > MAX_BORROW + 1:
+            problems.append(
+                f"borrowed ${borrowed:,.2f} exceeds limit ${MAX_BORROW:,.0f}"
+            )
+        if borrowed < -0.01:
+            problems.append(f"borrowed is negative: ${borrowed:,.2f}")
+        if accrued < -0.01:
+            problems.append(
+                f"accrued_interest negative: ${accrued:,.2f}"
+            )
+
+        # Available cash = cash - accrued_interest. Must be >= -$1 tolerance.
+        available = cash - accrued
+        if available < -1.0:
+            problems.append(
+                f"available cash negative: cash=${cash:,.2f} "
+                f"interest=${accrued:,.2f} available=${available:,.2f}"
+            )
+
+        if problems:
+            for p in problems:
+                fail(f"[deep/margin] {label}/{algo_id} → {p}")
+                highlights.append(f"{algo_id}: {p}")
+        else:
+            passed += 1
+
+    return passed, total, _clip(highlights)
+
+
+# ===================================================================
+# Main
+# ===================================================================
+def _render_check(lines, label, passed, total, highlights, width=20):
+    """Append a summary line + inline highlights for a check."""
+    tag = f"{passed}/{total} PASS" if total > 0 else "SKIP"
+    lines.append(f"  {label.ljust(width)} {tag}")
+    for h in highlights:
+        lines.append(f"    {h}")
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Nightly validation for the sector rotation pipelines."
+    )
+    parser.add_argument(
+        "--deep",
+        action="store_true",
+        help="Run deterministic deep checks in addition to surface checks.",
+    )
+    args = parser.parse_args()
+
+    mode_label = "DEEP MODE" if args.deep else ""
+    header_lines = [
+        "================================",
+        f"NIGHTLY VALIDATION — {TODAY}",
+    ]
+    if mode_label:
+        header_lines.append(mode_label)
+    header_lines.append("================================")
+    lines = list(header_lines)
+
+    # -----------------------------------------------------------------
+    # Surface Checks
+    # -----------------------------------------------------------------
+    lines.append("")
+    lines.append("Surface Checks:")
+
+    # CHECK 1
+    state_passed, state_total = check_state_files()
+    if state_total == 0:
+        lines.append("  State Files:         0 found (FAIL)")
+        fail("No state files found")
+    else:
+        lines.append(
+            f"  State Files:         {state_passed}/{state_total} PASS"
+        )
+
+    # CHECK 2
+    signal_result = check_signals()
+    lines.append(f"  Signal JSONs:        {signal_result}")
+
+    # CHECK 3
+    ran, total, stale = check_algo_completeness()
+    lines.append(f"  Algo Completeness:   {ran}/{total} ran today")
+    if stale:
+        for s in stale:
+            lines.append(f"    STALE: {s} (no snapshot today)")
+            fail(f"Algo {s} did not run today (stale)")
+
+    # CHECK 4
+    eq_warnings = check_equity_sanity()
+    if not eq_warnings:
+        lines.append("  Equity Sanity:       PASS (no wild swings)")
+    else:
+        lines.append(f"  Equity Sanity:       {len(eq_warnings)} WARNING(s)")
+        for w in eq_warnings:
+            lines.append(f"    {w}")
+
+    # CHECK 5
+    blocked_result = check_blocked_queue()
+    lines.append(f"  Blocked Queue:       {blocked_result}")
+
+    # CHECK 6
+    idea_results = check_idea_pipeline()
+    lines.append(
+        f"  Idea Pipeline:       {idea_results[0] if idea_results else 'SKIP'}"
+    )
+    for r in idea_results[1:]:
+        lines.append(f"                       {r}")
+
+    # -----------------------------------------------------------------
+    # Deep Checks (only if --deep)
+    # -----------------------------------------------------------------
+    if args.deep:
+        lines.append("")
+        lines.append("Deep Checks:")
+
+        all_states = load_all_states()
+
+        p, t, hl = deep_check_position_math(all_states)
+        _render_check(lines, "Position Math:", p, t, hl)
+
+        p, t, hl = deep_check_equity_curve(all_states)
+        _render_check(lines, "Equity Curve:", p, t, hl)
+
+        p, t, hl = deep_check_trade_log(all_states)
+        _render_check(lines, "Trade Log:", p, t, hl)
+
+        p, t, hl = deep_check_signal_reproducibility(all_states)
+        _render_check(lines, "Signal Reproducibility:", p, t, hl, width=24)
+
+        p, t, hl = deep_check_cross_algo(all_states)
+        _render_check(lines, "Cross-Algo Sanity:", p, t, hl)
+
+        p, t, hl = deep_check_signal_state_sync(all_states)
+        _render_check(lines, "Signal/State Sync:", p, t, hl)
+
+        p, t, hl = deep_check_margin_accounting(all_states)
+        _render_check(lines, "Margin Accounting:", p, t, hl)
+
+    # -----------------------------------------------------------------
+    # Detailed failure list
+    # -----------------------------------------------------------------
+    if failures:
+        lines.append("")
+        lines.append("  --- FAILURE DETAILS ---")
+        for f in failures:
+            lines.append(f"    FAIL: {f}")
+
+    # -----------------------------------------------------------------
+    # Summary
+    # -----------------------------------------------------------------
+    n_fail = len(failures)
+    n_warn = len(warnings)
+    lines.append("")
+    lines.append("================================")
+    if n_fail == 0 and n_warn == 0:
+        lines.append("STATUS: ALL CLEAR")
+    elif n_fail == 0:
+        lines.append(f"STATUS: {n_warn} WARNING(s)")
+    else:
+        parts = []
+        if n_fail:
+            parts.append(f"{n_fail} FAILURE(s)")
+        if n_warn:
+            parts.append(f"{n_warn} WARNING(s)")
+        lines.append(f"STATUS: {', '.join(parts)}")
+        if n_fail > 0:
+            lines.append("SEND ALERT EMAIL")
+    lines.append("================================")
+
+    report = "\n".join(lines)
+    print(report)
+
+    if n_fail > 0:
+        sys.exit(2)
+    elif n_warn > 0:
+        sys.exit(1)
+    else:
+        sys.exit(0)
+
+
+if __name__ == "__main__":
+    main()

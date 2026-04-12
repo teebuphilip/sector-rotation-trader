@@ -1,5 +1,6 @@
 from datetime import date, timedelta
 import os
+from typing import List, Optional
 
 import pandas as pd
 
@@ -10,12 +11,12 @@ from crazy.algos import get_crazy_algos
 from crazy.config import CRAZY_STATE_DIR, CRAZY_LOG_DIR
 
 
-def rebalance_to_target(state: dict, target: dict, prices: dict):
+def rebalance_to_target(state: dict, target: dict, prices: dict, as_of=None):
     for ticker in list(state["positions"].keys()):
         price = prices.get(ticker)
         if price is None:
             continue
-        close_position(state, ticker, price, reason="rebalance")
+        close_position(state, ticker, price, reason="rebalance", as_of=as_of)
 
     equity = total_equity(state, prices)
     for ticker, weight in target.items():
@@ -26,7 +27,7 @@ def rebalance_to_target(state: dict, target: dict, prices: dict):
             continue
         amount = equity * weight
         if state["cash"] >= amount:
-            open_position(state, ticker, price, amount, using_margin=False)
+            open_position(state, ticker, price, amount, using_margin=False, as_of=as_of)
 
 
 def seed_algos(algos):
@@ -36,6 +37,27 @@ def seed_algos(algos):
     start_date = end_date - timedelta(days=SEED_DAYS)
     trading_days = pd.bdate_range(start=start_date, end=end_date)
 
+    # If none of the algos support historical seed, skip price downloads entirely.
+    if all(not algo.supports_historical_seed for algo in algos):
+        for algo in algos:
+            state_path = os.path.join(CRAZY_STATE_DIR, f"{algo.algo_id}.json")
+            trade_log_path = os.path.join(CRAZY_LOG_DIR, algo.algo_id, "trades.json")
+            state = load_state_from(state_path)
+            state["cash"] = 100_000
+            state["positions"] = {}
+            state["trade_log"] = []
+            state["daily_snapshots"] = []
+            state["borrowed"] = 0.0
+            state["accrued_interest"] = 0.0
+            state["sim_start"] = start_date.isoformat()
+            state.setdefault("meta", {})
+            for dt in trading_days:
+                snapshot(state, {}, algo.name, as_of=dt.date())
+            save_state_to(state, state_path)
+            save_trade_log_to(state, trade_log_path)
+            print(f"Seeded {algo.name} with flat cash history (no historical data).")
+        return
+
     all_tickers = sorted({t for algo in algos for t in algo.universe()})
 
     prices_raw = safe_download(all_tickers, period="2y")
@@ -44,6 +66,7 @@ def seed_algos(algos):
         return
 
     prices_df = prices_raw["Close"] if "Close" in prices_raw.columns else prices_raw
+    available_tickers = set(prices_df.columns)
 
     for algo in algos:
         state_path = os.path.join(CRAZY_STATE_DIR, f"{algo.algo_id}.json")
@@ -61,15 +84,25 @@ def seed_algos(algos):
 
         if not algo.supports_historical_seed:
             for dt in trading_days:
-                snapshot(state, {}, algo.name)
+                snapshot(state, {}, algo.name, as_of=dt.date())
             save_state_to(state, state_path)
             save_trade_log_to(state, trade_log_path)
             print(f"Seeded {algo.name} with flat cash history (no historical data).")
             continue
 
+        algo_tickers = [t for t in algo.universe() if t in available_tickers]
+        if not algo_tickers:
+            for dt in trading_days:
+                snapshot(state, {}, algo.name, as_of=dt.date())
+            save_state_to(state, state_path)
+            save_trade_log_to(state, trade_log_path)
+            missing = [t for t in algo.universe() if t not in available_tickers]
+            print(f"Seeded {algo.name} with flat cash history (no available price data). Missing: {missing}")
+            continue
+
         for dt in trading_days:
             current_prices = {}
-            for t in algo.universe():
+            for t in algo_tickers:
                 if t in prices_df.columns:
                     s = prices_df[t].loc[prices_df.index <= dt].dropna()
                     if len(s):
@@ -79,17 +112,41 @@ def seed_algos(algos):
             target = algo.target_allocations(signal, state, dt.date())
             if target is not None and current_prices:
                 if algo.should_rebalance(dt.date(), state, signal):
-                    rebalance_to_target(state, target, current_prices)
+                    rebalance_to_target(state, target, current_prices, as_of=dt.date())
 
-            snapshot(state, current_prices, algo.name)
+            snapshot(state, current_prices, algo.name, as_of=dt.date())
 
         save_state_to(state, state_path)
         save_trade_log_to(state, trade_log_path)
         print(f"Seeded {algo.name} with historical simulation.")
 
 
-def seed_all():
-    seed_algos(get_crazy_algos())
+def _normalize_key(value: str) -> str:
+    return value.strip().lower().replace("_", "-")
+
+
+def _filter_algos(algos, algo_ids: Optional[List[str]]):
+    if not algo_ids:
+        return algos
+    wanted = {_normalize_key(a) for a in algo_ids}
+    filtered = []
+    for algo in algos:
+        keys = {
+            _normalize_key(algo.algo_id),
+            _normalize_key(algo.name),
+            _normalize_key(algo.__class__.__name__),
+        }
+        if keys & wanted:
+            filtered.append(algo)
+    return filtered
+
+
+def seed_all(algo_ids: Optional[List[str]] = None):
+    algos = _filter_algos(get_crazy_algos(), algo_ids)
+    if not algos:
+        print("✖ No matching crazy algos found to seed.")
+        return
+    seed_algos(algos)
 
 
 if __name__ == "__main__":

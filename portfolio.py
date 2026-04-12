@@ -18,6 +18,18 @@ def _today():
     return date.today().isoformat()
 
 
+def _as_of_iso(as_of):
+    """Normalize an as_of value to an ISO date string, defaulting to today."""
+    if as_of is None:
+        return _today()
+    if isinstance(as_of, str):
+        return as_of
+    if hasattr(as_of, "isoformat"):
+        # date or datetime
+        return as_of.isoformat() if isinstance(as_of, date) else as_of.date().isoformat()
+    return str(as_of)
+
+
 def load_state() -> dict:
     return load_state_from(STATE_FILE)
 
@@ -75,8 +87,18 @@ def total_equity(state: dict, current_prices: dict) -> float:
     return state["cash"] + pos_value - state["borrowed"] - state["accrued_interest"]
 
 
-def open_position(state: dict, ticker: str, price: float, amount: float, using_margin: bool = False):
+def open_position(state: dict, ticker: str, price: float, amount: float, using_margin: bool = False, as_of=None):
     """Buy $amount worth of ticker at price."""
+    # Reserve commission out of cash before sizing — otherwise a full-equity
+    # target would overdraft cash by the commission amount.
+    commission = COMMISSION_PER_TRADE if (APPLY_FEES and COMMISSION_PER_TRADE > 0) else 0.0
+    if not using_margin and commission > 0:
+        max_spend = state["cash"] - commission
+        if max_spend <= 0:
+            return
+        if amount > max_spend:
+            amount = max_spend
+
     shares = amount / price
     cost   = amount
 
@@ -86,22 +108,23 @@ def open_position(state: dict, ticker: str, price: float, amount: float, using_m
         state["cash"] -= cost
 
     fees = 0.0
-    if APPLY_FEES and COMMISSION_PER_TRADE > 0:
-        fees += COMMISSION_PER_TRADE
-        state["cash"] -= COMMISSION_PER_TRADE
-        state["fees_paid"] += COMMISSION_PER_TRADE
+    if commission > 0:
+        fees += commission
+        state["cash"] -= commission
+        state["fees_paid"] += commission
 
+    as_of_iso = _as_of_iso(as_of)
     state["positions"][ticker] = {
         "shares":         shares,
         "entry_price":    price,
-        "entry_date":     _today(),
+        "entry_date":     as_of_iso,
         "cost":           cost,
         "using_margin":   using_margin,
         "consec_below_ma":0,
     }
 
     state["trade_log"].append({
-        "date":          _today(),
+        "date":          as_of_iso,
         "action":        "BUY",
         "ticker":        ticker,
         "shares":        round(shares, 4),
@@ -112,7 +135,7 @@ def open_position(state: dict, ticker: str, price: float, amount: float, using_m
     })
 
 
-def close_position(state: dict, ticker: str, price: float, reason: str = "exit_signal"):
+def close_position(state: dict, ticker: str, price: float, reason: str = "exit_signal", as_of=None):
     """Sell position at price, settle cash/margin."""
     if ticker not in state["positions"]:
         return
@@ -133,11 +156,17 @@ def close_position(state: dict, ticker: str, price: float, reason: str = "exit_s
     proceeds = gross_proceeds - fees
     pnl      = proceeds - cost
 
+    as_of_iso = _as_of_iso(as_of)
+    try:
+        as_of_dt = date.fromisoformat(as_of_iso)
+    except Exception:
+        as_of_dt = date.today()
+
     tax = 0.0
     if APPLY_TAXES and pnl > 0:
         try:
             entry_dt = datetime.fromisoformat(pos["entry_date"])
-            hold_days = (date.today() - entry_dt.date()).days
+            hold_days = (as_of_dt - entry_dt.date()).days
         except Exception:
             hold_days = 0
         rate = TAX_RATE_LONG if hold_days >= TAX_LONG_TERM_DAYS else TAX_RATE_SHORT
@@ -174,7 +203,7 @@ def close_position(state: dict, ticker: str, price: float, reason: str = "exit_s
         pnl -= tax
 
     state["trade_log"].append({
-        "date":          _today(),
+        "date":          as_of_iso,
         "action":        "SELL",
         "ticker":        ticker,
         "shares":        round(pos["shares"], 4),
@@ -198,7 +227,7 @@ def accrue_interest(state: dict):
         state["accrued_interest"] += daily_interest
 
 
-def snapshot(state: dict, current_prices: dict, sector: str):
+def snapshot(state: dict, current_prices: dict, sector: str, as_of=None):
     """Record daily portfolio snapshot."""
     pos_details = {}
     for ticker, pos in state["positions"].items():
@@ -215,8 +244,9 @@ def snapshot(state: dict, current_prices: dict, sector: str):
 
     equity = total_equity(state, current_prices)
 
+    as_of_iso = _as_of_iso(as_of)
     state["daily_snapshots"].append({
-        "date":      _today(),
+        "date":      as_of_iso,
         "cash":      round(state["cash"], 2),
         "borrowed":  round(state["borrowed"], 2),
         "interest":  round(state["accrued_interest"], 2),
@@ -226,7 +256,7 @@ def snapshot(state: dict, current_prices: dict, sector: str):
         "num_positions": len(state["positions"]),
     })
 
-    state["last_run"] = _today()
+    state["last_run"] = as_of_iso
 
 
 def compute_analytics(state: dict) -> dict:

@@ -80,19 +80,25 @@ def run_all(dry_run: bool = False, as_of: date = None):
         state = load_state_from(state_path)
         state.setdefault("meta", {})
 
-        target = {}
+        target = None
+        rebalanced = False
         if not prices_df.empty and algo.should_rebalance(as_of, eom):
             if hasattr(algo, "__dict__"):
                 algo.__dict__["_state_ref"] = state
             target = algo.compute_target(prices_df, as_of)
             if target is not None:
                 rebalance_to_target(state, target, prices)
+                rebalanced = True
 
-        state["meta"][algo.algo_id] = {
+        prev_meta = state["meta"].get(algo.algo_id, {}) or {}
+        new_meta = {
             "name": algo.name,
             "last_run": as_of.isoformat(),
-            "last_signal": ",".join(sorted(target.keys())) if target else "CASH",
+            "last_signal": prev_meta.get("last_signal", "CASH"),
         }
+        if rebalanced:
+            new_meta["last_signal"] = ",".join(sorted(target.keys())) if target else "CASH"
+        state["meta"][algo.algo_id] = new_meta
 
         snapshot(state, prices, algo.name)
 

@@ -86,12 +86,19 @@ def run_all(dry_run: bool = False, as_of: date = None):
         signal_label = meta.get("signal_label", signal)
         target = algo.target_allocations(signal, state, as_of)
 
+        rebalanced = False
         if target is not None and prices:
             if algo.should_rebalance(as_of, state, signal_key):
                 rebalance_to_target(state, target, prices)
+                rebalanced = True
 
         meta["name"] = algo.name
-        meta["last_signal"] = signal_key
+        # Only overwrite last_signal when a rebalance actually occurred —
+        # otherwise last_signal could drift away from the held positions
+        # (e.g. a monthly-cadence algo holding stocks while today's signal
+        # is CASH).
+        if rebalanced:
+            meta["last_signal"] = signal_key
         meta["last_run"] = as_of.isoformat()
 
         snapshot(state, prices, algo.name)
