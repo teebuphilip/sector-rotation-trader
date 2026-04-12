@@ -23,7 +23,10 @@ class BiscottiAlgo(CrazyAlgoBase):
         return self._is_month_end(as_of)
 
     def compute_signal(self, as_of: date, state: dict, historical: bool = False):
-        raw = safe_download(SECTOR_ETFS, period="3mo")
+        try:
+            raw = safe_download(SECTOR_ETFS, period="3mo")
+        except Exception:
+            return "HOLD"
         if raw.empty:
             return "HOLD"
         prices = raw["Close"] if "Close" in raw.columns else raw

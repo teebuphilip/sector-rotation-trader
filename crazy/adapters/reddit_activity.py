@@ -53,10 +53,13 @@ def fetch_reddit_activity(
                 )
         return rows
 
-    data = cached_fetch(cache_path, ttl_hours=6, fetch_fn=_fetch) or []
-    df = pd.DataFrame(data)
-    if df.empty:
-        return df
-    df["date"] = pd.to_datetime(df["date"])
-    df = df.groupby("date")[["posts", "comments"]].sum().reset_index()
-    return df.sort_values("date")
+    try:
+        data = cached_fetch(cache_path, ttl_hours=6, fetch_fn=_fetch) or []
+        df = pd.DataFrame(data)
+        if df.empty:
+            return df
+        df["date"] = pd.to_datetime(df["date"])
+        df = df.groupby("date")[["posts", "comments"]].sum().reset_index()
+        return df.sort_values("date")
+    except Exception:
+        return pd.DataFrame()

@@ -137,7 +137,10 @@ class CongressAlgo(CrazyAlgoBase):
         return flow
 
     def compute_signal(self, as_of: date, state: dict, historical: bool = False):
-        df = self._fetch_trades()
+        try:
+            df = self._fetch_trades()
+        except Exception:
+            return "HOLD"
         if df.empty:
             return "HOLD"
 

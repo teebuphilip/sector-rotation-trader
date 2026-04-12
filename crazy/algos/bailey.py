@@ -30,22 +30,25 @@ class BaileyAlgo(CrazyAlgoBase):
     def _stop_loss_triggered(self, state: dict) -> bool:
         if not state.get("positions"):
             return False
-        tickers = list(state["positions"].keys())
-        raw = safe_download(tickers, period="2mo")
-        if raw.empty:
+        try:
+            tickers = list(state["positions"].keys())
+            raw = safe_download(tickers, period="2mo")
+            if raw.empty:
+                return False
+            prices = raw["Close"] if "Close" in raw.columns else raw
+            for t, pos in state["positions"].items():
+                if t not in prices.columns:
+                    continue
+                s = prices[t].dropna()
+                if s.empty:
+                    continue
+                cur = float(s.iloc[-1])
+                loss_pct = (cur - pos["entry_price"]) / pos["entry_price"]
+                if loss_pct <= -self.STOP_LOSS_PCT:
+                    return True
             return False
-        prices = raw["Close"] if "Close" in raw.columns else raw
-        for t, pos in state["positions"].items():
-            if t not in prices.columns:
-                continue
-            s = prices[t].dropna()
-            if s.empty:
-                continue
-            cur = float(s.iloc[-1])
-            loss_pct = (cur - pos["entry_price"]) / pos["entry_price"]
-            if loss_pct <= -self.STOP_LOSS_PCT:
-                return True
-        return False
+        except Exception:
+            return False
 
     def compute_signal(self, as_of: date, state: dict, historical: bool = False):
         if self._stop_loss_triggered(state):

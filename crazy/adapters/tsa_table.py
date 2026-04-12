@@ -56,5 +56,8 @@ def fetch_tsa_table() -> pd.DataFrame:
         df = df.sort_values("date")
         return df.to_dict(orient="records")
 
-    data = cached_fetch(cache_path, ttl_hours=25, fetch_fn=_fetch) or []
-    return pd.DataFrame(data)
+    try:
+        data = cached_fetch(cache_path, ttl_hours=25, fetch_fn=_fetch) or []
+        return pd.DataFrame(data)
+    except Exception:
+        return pd.DataFrame()

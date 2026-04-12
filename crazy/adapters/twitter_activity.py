@@ -57,10 +57,13 @@ def fetch_twitter_activity(
             rows.append({"date": day.isoformat(), "tweets": 1})
         return rows
 
-    data = cached_fetch(cache_path, ttl_hours=2, fetch_fn=_fetch) or []
-    df = pd.DataFrame(data)
-    if df.empty:
-        return df
-    df["date"] = pd.to_datetime(df["date"])
-    df = df.groupby("date")["tweets"].sum().reset_index()
-    return df.sort_values("date")
+    try:
+        data = cached_fetch(cache_path, ttl_hours=2, fetch_fn=_fetch) or []
+        df = pd.DataFrame(data)
+        if df.empty:
+            return df
+        df["date"] = pd.to_datetime(df["date"])
+        df = df.groupby("date")["tweets"].sum().reset_index()
+        return df.sort_values("date")
+    except Exception:
+        return pd.DataFrame()

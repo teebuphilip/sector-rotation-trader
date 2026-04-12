@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta
 
 import pandas as pd
-from sodapy import Socrata
 
 
 CITY_CONFIG = {
@@ -17,23 +16,32 @@ def fetch_311_counts(days_back: int = 7) -> dict:
     """
     Fetch recent 311 complaint counts (raw by complaint_type) across major cities.
     Returns dict of complaint_type -> count.
+    Returns empty dict on any failure.
     """
+    try:
+        from sodapy import Socrata
+    except ImportError:
+        return {}
+
     cutoff = (datetime.utcnow() - timedelta(days=days_back)).isoformat()
     counts = {}
     for _, cfg in CITY_CONFIG.items():
-        client = Socrata(cfg["domain"], None, timeout=30)
-        results = client.get(
-            cfg["endpoint"],
-            where=f"created_date > '{cutoff}'",
-            select="complaint_type",
-            limit=50000,
-        )
-        if not results:
+        try:
+            client = Socrata(cfg["domain"], None, timeout=30)
+            results = client.get(
+                cfg["endpoint"],
+                where=f"created_date > '{cutoff}'",
+                select="complaint_type",
+                limit=50000,
+            )
+            if not results:
+                continue
+            df = pd.DataFrame.from_records(results)
+            if df.empty or "complaint_type" not in df.columns:
+                continue
+            df["complaint_type"] = df["complaint_type"].astype(str)
+            for val, cnt in df["complaint_type"].value_counts().to_dict().items():
+                counts[val] = counts.get(val, 0) + int(cnt)
+        except Exception:
             continue
-        df = pd.DataFrame.from_records(results)
-        if df.empty:
-            continue
-        df["complaint_type"] = df["complaint_type"].astype(str)
-        for val, cnt in df["complaint_type"].value_counts().to_dict().items():
-            counts[val] = counts.get(val, 0) + int(cnt)
     return counts

@@ -75,7 +75,10 @@ class TSAAlgo(CrazyAlgoBase):
         return pd.DataFrame(data) if data else pd.DataFrame()
 
     def compute_signal(self, as_of: date, state: dict, historical: bool = False):
-        df = self._fetch_tsa_df()
+        try:
+            df = self._fetch_tsa_df()
+        except Exception:
+            return "HOLD"
         if df.empty:
             return "HOLD"
 
