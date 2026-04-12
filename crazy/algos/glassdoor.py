@@ -25,7 +25,7 @@ class GlassdoorAlgo(CrazyAlgoBase):
         key = os.getenv("GLASSDOOR_KEY")
         return pid, key
 
-    def _company_name(self, ticker: str) -> str | None:
+    def _company_name(self, ticker: str):
         try:
             import yfinance as yf
             info = yf.Ticker(ticker).info

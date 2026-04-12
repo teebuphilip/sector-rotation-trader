@@ -9,20 +9,181 @@ Constraints:
 - Only use data sources allowed in the spec.
 - If an API key is required, mark the algo as blocked by adding it to data/blocked/algos.jsonl and set supports_historical_seed = False.
 - Prefer deterministic, readable logic over cleverness.
-- Follow repo patterns:
-  - Crazy algos: crazy/algos/<algo_id>.py and register in crazy/algos/registry.py
-  - Normal algos: normal/algos/<algo_id>.py and register in normal/algos/registry.py
-  - Each algo class exposes: algo_id, name, universe(), compute_signal(), target_allocations(), rebalance_frequency
-  - Use cached_fetch for web data and save to CRAZY_CACHE_DIR when applicable
+- Use ONLY modules and helpers that exist in this repo (no imaginary utils).
+- If you need caching for crazy algos, use crazy.utils.cached_fetch and CRAZY_CACHE_DIR.
+- For missing API keys, use crazy.blocked.record_blocked (crazy) or normal.blocked.record_blocked (normal) if available; otherwise just return HOLD/{}.
+- Output ONLY python code for the algo file. No commentary, no markdown fences.
+- Do NOT use placeholder stubs: no `pass`, no `TODO`, no `NotImplementedError`.
+- Do NOT invent helper methods like `get_required_key`. Use `os.getenv` for keys.
+- Use correct imports/paths from THIS repo only.
+- Do NOT introduce new class attributes that are not explicitly defined in your code (e.g., no `self.signalLogic`).
+
+Allowed imports (crazy):
+- from crazy.algos.base import CrazyAlgoBase
+- from crazy.blocked import record_blocked
+- from crazy.utils import cached_fetch
+- from crazy.config import CRAZY_CACHE_DIR
+- from scanner import safe_download
+- standard library (`os`, `datetime`, `typing`, `json`)
+- pandas / numpy / requests / bs4 (if already in requirements)
+
+Allowed imports (normal):
+- from normal.algos.base import NormalAlgoBase
+- from config import SECTOR_ETFS
+- from scanner import safe_download
+- standard library (`datetime`, `typing`)
+- pandas / numpy (if already in requirements)
+
+Follow repo patterns:
+- Crazy algos: crazy/algos/<algo_id>.py and register in crazy/algos/registry.py
+- Normal algos: normal/algos/<algo_id>.py and register in normal/algos/registry.py
+- Crazy algos must subclass crazy.algos.base.CrazyAlgoBase:
+  - compute_signal(self, as_of: date, state: dict, historical: bool = False) -> str
+  - target_allocations(self, signal: str, state: dict, as_of: date) -> dict | None
+  - universe(self) -> list[str]
+- Normal algos must subclass normal.algos.base.NormalAlgoBase:
+  - compute_target(self, prices: pd.DataFrame, as_of: date) -> dict
+  - universe(self) -> list[str]
+- Use cached_fetch for web data and save to CRAZY_CACHE_DIR when applicable
 
 Scaffold:
 Use templates/algo_scaffold.py as the base.
+
+Examples (match this repo exactly):
+
+Crazy example (pattern):
+from datetime import date
+from crazy.algos.base import CrazyAlgoBase
+from crazy.blocked import record_blocked
+
+class ExampleCrazyAlgo(CrazyAlgoBase):
+    algo_id = "example-crazy"
+    name = "Example Crazy"
+    rebalance_frequency = "monthly"
+    supports_historical_seed = False
+
+    def universe(self):
+        return ["XLY", "XLK"]
+
+    def compute_signal(self, as_of: date, state: dict, historical: bool = False):
+        api_key = os.getenv("FRED_API_KEY")
+        if not api_key:
+            record_blocked(self.algo_id, self.name, ["FRED_API_KEY"], "Missing FRED_API_KEY")
+            return "HOLD"
+        return "RISK_ON"
+
+    def target_allocations(self, signal: str, state: dict, as_of: date):
+        if signal == "RISK_ON":
+            return {"XLY": 0.6, "XLK": 0.4}
+        if signal == "RISK_OFF":
+            return {"XLP": 0.6, "XLU": 0.4}
+        return None
+
+Crazy cached_fetch example (real pattern):
+import os
+import pandas as pd
+from crazy.config import CRAZY_CACHE_DIR
+from crazy.utils import cached_fetch
+
+def _fetch_df():
+    # fetch raw data and return list[dict]
+    return [{"date": "2024-01-01", "value": 1.0}]
+
+cache_path = os.path.join(CRAZY_CACHE_DIR, "example.json")
+data = cached_fetch(cache_path, ttl_hours=24, fetch_fn=_fetch_df)
+df = pd.DataFrame(data) if data else pd.DataFrame()
+
+Real repo snippet (copy this structure, adjust logic only):
+from datetime import date
+import os
+import pandas as pd
+from crazy.algos.base import CrazyAlgoBase
+from crazy.utils import cached_fetch
+from crazy.config import CRAZY_CACHE_DIR
+
+class ExampleAlgo(CrazyAlgoBase):
+    algo_id = "example"
+    name = "Example"
+    rebalance_frequency = "daily"
+    supports_historical_seed = True
+
+    def universe(self):
+        return ["XLY", "XLK"]
+
+    def _fetch_df(self):
+        cache_path = os.path.join(CRAZY_CACHE_DIR, "example.json")
+
+        def _fetch():
+            # return list[dict] with a "date" field
+            return []
+
+        data = cached_fetch(cache_path, ttl_hours=24, fetch_fn=_fetch)
+        return pd.DataFrame(data) if data else pd.DataFrame()
+
+    def compute_signal(self, as_of: date, state: dict, historical: bool = False):
+        df = self._fetch_df()
+        if df.empty:
+            return "HOLD"
+        df = df[df["date"] <= pd.Timestamp(as_of)]
+        if len(df) < 7:
+            return "HOLD"
+        df = df.copy()
+        df["ma7"] = df["value"].rolling(7).mean()
+        latest = df.iloc[-1]
+        if latest["value"] > 1.5 * latest["ma7"]:
+            return "RISK_ON"
+        return "HOLD"
+
+Adapter usage (reddit_activity):
+from crazy.adapters.reddit_activity import fetch_reddit_activity
+df = fetch_reddit_activity(subreddits=["r/gaming", "r/pcgaming", "r/games"], days_back=30)
+# df columns: date, posts, comments
+df["total"] = df["posts"] + df["comments"]
+
+Normal example (pattern):
+from datetime import date
+import pandas as pd
+from normal.algos.base import NormalAlgoBase
+from config import SECTOR_ETFS
+
+class ExampleNormalAlgo(NormalAlgoBase):
+    algo_id = "example-normal"
+    name = "Example Normal"
+    rebalance_frequency = "monthly_eom"
+
+    def universe(self):
+        return list(SECTOR_ETFS)
+
+    def compute_target(self, prices: pd.DataFrame, as_of: date):
+        monthly = prices.resample("ME").last().dropna(how="all")
+        if len(monthly) < 4:
+            return {}
+        top = monthly.iloc[-1].sort_values(ascending=False).head(3).index.tolist()
+        weight = 1.0 / len(top)
+        return {t: weight for t in top}
 
 Deliverables:
 1) The full code for the new algo file.
 2) The minimal registry change (add the algo class).
 3) If blocked, append a line to data/blocked/algos.jsonl (JSON per line):
    {"date":"YYYY-MM-DD","algo_id":"<id>","name":"<name>","required_keys":["..."]}
+
+Spec metadata:
+- SPEC PATH: <SPEC_PATH>
+- CATEGORY (inferred): <CATEGORY>
+- If CATEGORY is "normal", follow NormalAlgoBase interface.
+- If CATEGORY is "crazy" or unknown, default to CrazyAlgoBase interface.
+
+Pattern selection:
+- Choose EXACTLY ONE pattern from the taxonomy you are given.
+- If the spec cannot fit any pattern, return HOLD-only logic and mark the algo as blocked (missing data/keys).
+
+Adapter usage:
+- Use ONLY the adapters specified in ADAPTERS (do not invent new fetch logic).
+- Import adapters from crazy.adapters.<adapter_name>.
+- If multiple adapters are listed, combine their outputs inside the algo logic (no new fetch logic).
+- Use adapter_contracts from the sliced spec. Do NOT pass any kwargs not listed in allowed_kwargs.
+- Use only the columns listed in adapter_contracts.returns.
 
 Algo Spec (verbatim):
 <PASTE SPEC HERE>

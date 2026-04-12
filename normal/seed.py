@@ -50,6 +50,7 @@ def seed_algos(algos):
         return
 
     prices_df = prices_raw["Close"] if "Close" in prices_raw.columns else prices_raw
+    available_tickers = set(prices_df.columns)
 
     for algo in algos:
         state_path = os.path.join("data/normal/state", f"{algo.algo_id}.json")
@@ -65,9 +66,19 @@ def seed_algos(algos):
         state["sim_start"] = start_date.isoformat()
         state.setdefault("meta", {})
 
+        algo_tickers = [t for t in algo.universe() if t in available_tickers]
+        if not algo_tickers:
+            for dt in trading_days:
+                snapshot(state, {}, algo.name, as_of=dt.date())
+            save_state_to(state, state_path)
+            save_trade_log_to(state, trade_log_path)
+            missing = [t for t in algo.universe() if t not in available_tickers]
+            print(f"Seeded {algo.name} with flat cash history (no available price data). Missing: {missing}")
+            continue
+
         for dt in trading_days:
             current_prices = {}
-            for t in algo.universe():
+            for t in algo_tickers:
                 if t in prices_df.columns:
                     s = prices_df[t].loc[prices_df.index <= dt].dropna()
                     if len(s):
