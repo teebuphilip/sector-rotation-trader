@@ -1,0 +1,42 @@
+# Reddit Sentiment Spike Trend
+
+**Idea ID:** `reddit-sentiment-spike-trend`
+**Source:** openai / gpt-4.1-mini
+**Frequency:** daily
+
+## Thesis
+Sudden spikes in positive sentiment on Reddit's r/investing and r/stocks often precede short-term bullish momentum in related equities. By quantifying sentiment surge through keyword frequency and sentiment analysis, one can capture early retail-driven buying trends before broader institutional recognition.
+
+## Universe
+- AAPL
+- TSLA
+- AMD
+- NVDA
+- MSFT
+- AMZN
+- GME
+- PLTR
+- NFLX
+
+## Data Sources
+- Reddit API (r/investing, r/stocks)
+- Free sentiment analysis libraries (e.g., VADER, TextBlob)
+- Yahoo Finance for price data
+
+## Signal Logic
+Calculate daily sentiment score for each ticker mentioned in r/investing and r/stocks by aggregating posts/comments containing ticker symbols. A signal triggers when (1) daily sentiment score increases by at least 50% compared to the 7-day moving average, and (2) the number of mentions increases by at least 30% over the same period.
+
+## Entry / Exit
+Enter a long position at next market open after signal triggers. Exit when sentiment score falls back below the 7-day moving average or after 5 trading days, whichever comes first.
+
+## Position Sizing
+Allocate 2% of portfolio per position to limit exposure due to retail noise and potential volatility.
+
+## Risks
+High noise and false positives due to viral meme posts or coordinated pump attempts. Sentiment may not translate to price movement if fundamentals are weak or market conditions are unfavorable.
+
+## Implementation Notes
+1) Use Reddit API to fetch daily posts and comments from r/investing and r/stocks. 2) Extract ticker mentions using regex patterns (e.g., $TSLA, TSLA). 3) Apply sentiment analysis on text containing tickers to compute daily sentiment per ticker. 4) Track sentiment and mention volume over rolling 7-day windows. 5) Generate signals based on defined thresholds. 6) Integrate with price data from Yahoo Finance for entry/exit and backtesting.
+
+## Required Keys
+- None
