@@ -11,7 +11,7 @@ class OnlineAdImpressionVolatilityAlgo(CrazyAlgoBase):
     supports_historical_seed = True
 
     def universe(self):
-        return ["GOOG", "FB", "TWTR", "SNAP", "PINS"]
+        return ["GOOG", "META", "SNAP", "PINS", "TTD"]
 
     def compute_signal(self, as_of: date, state: dict, historical: bool = False):
         # === SIGNAL_LOGIC_START ===

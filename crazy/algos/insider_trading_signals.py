@@ -11,7 +11,7 @@ class InsiderTradingSignalsAlgo(CrazyAlgoBase):
     supports_historical_seed = True
 
     def universe(self):
-        return ["Russell 3000"]
+        return ["IWV"]
 
     def compute_signal(self, as_of: date, state: dict, historical: bool = False):
         # === SIGNAL_LOGIC_START ===

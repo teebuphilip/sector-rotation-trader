@@ -11,7 +11,7 @@ class CryptoDerivativeArbitrageAlgo(CrazyAlgoBase):
     supports_historical_seed = True
 
     def universe(self):
-        return ["BTC", "ETH", "LTC", "XRP", "LINK"]
+        return ["BTC-USD", "ETH-USD", "LTC-USD", "XRP-USD", "LINK-USD"]
 
     def compute_signal(self, as_of: date, state: dict, historical: bool = False):
         # === SIGNAL_LOGIC_START ===

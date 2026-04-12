@@ -11,7 +11,7 @@ class EarthquakeEnergyDemandAlgo(CrazyAlgoBase):
     supports_historical_seed = True
 
     def universe(self):
-        return ["CL1!", "NG1!", "EL1!"]
+        return ["USO", "UNG", "XLE"]
 
     def compute_signal(self, as_of: date, state: dict, historical: bool = False):
         # === SIGNAL_LOGIC_START ===

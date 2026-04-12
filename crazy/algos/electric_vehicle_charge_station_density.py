@@ -11,7 +11,7 @@ class ElectricVehicleChargeStationDensityAlgo(CrazyAlgoBase):
     supports_historical_seed = True
 
     def universe(self):
-        return ["TSLA", "CHPT", "BLNK", "VLTA"]
+        return ["TSLA", "CHPT", "BLNK", "EVGO"]
 
     def compute_signal(self, as_of: date, state: dict, historical: bool = False):
         # === SIGNAL_LOGIC_START ===

@@ -11,7 +11,7 @@ class RedditGamingThreadSpikeAlgo(CrazyAlgoBase):
     supports_historical_seed = False
 
     def universe(self):
-        return ["ATVI", "EA", "NVDA", "TTWO", "MSFT"]
+        return ["RBLX", "EA", "NVDA", "TTWO", "MSFT"]
 
     def compute_signal(self, as_of: date, state: dict, historical: bool = False):
         # === SIGNAL_LOGIC_START ===

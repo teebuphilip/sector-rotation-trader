@@ -11,7 +11,7 @@ class AirportShoppingSpreeAlgo(CrazyAlgoBase):
     supports_historical_seed = True
 
     def universe(self):
-        return ["TICKER1", "TICKER2", "TICKER3"]
+        return ["TCOM", "EXPE", "MAR"]
 
     def compute_signal(self, as_of: date, state: dict, historical: bool = False):
         # === SIGNAL_LOGIC_START ===
