@@ -54,10 +54,25 @@ jobs:
       - name: Daily force-rank all algos
         run: python scripts/rank_daily.py
 
-      - name: Nightly validation
+      - name: Nightly validation (surface)
+        id: validate_surface
+        run: |
+          python scripts/validate_nightly.py; rc=$?
+          if [ $rc -eq 2 ]; then
+            echo "surface_failed=true" >> $GITHUB_OUTPUT
+            echo "SURFACE VALIDATION FAILED (critical failures)"
+            exit 1
+          fi
+          # exit 0 (all clear) or 1 (warnings only) — both OK to continue
+          echo "surface_failed=false" >> $GITHUB_OUTPUT
+          exit 0
+
+      - name: Nightly validation (deep)
+        if: steps.validate_surface.outcome == 'success'
         run: python scripts/validate_nightly.py --deep || true
 
       - name: Commit updated state + dashboard
+        if: always()
         run: |
           git config user.name  "sector-bot"
           git config user.email "sector-bot@users.noreply.github.com"
