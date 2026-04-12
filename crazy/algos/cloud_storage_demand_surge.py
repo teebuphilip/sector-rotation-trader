@@ -15,7 +15,10 @@ class CloudStorageDemandSurgeAlgo(CrazyAlgoBase):
 
     def compute_signal(self, as_of: date, state: dict, historical: bool = False):
         # === SIGNAL_LOGIC_START ===
-        data = fetch_google_trends(keyword="cloud storage", days_back=400)
+        try:
+            data = fetch_google_trends(keyword="cloud storage", days_back=400)
+        except Exception:
+            return "HOLD"
         df = data if isinstance(data, pd.DataFrame) else pd.DataFrame()
         if df.empty:
             return "HOLD"
@@ -59,7 +62,10 @@ class CloudStorageDemandSurgeAlgo(CrazyAlgoBase):
     def target_allocations(self, signal: str, state: dict, as_of: date):
         # === ALLOCATION_LOGIC_START ===
         if signal == "RISK_ON":
-            data = fetch_google_trends(keyword="cloud storage", days_back=400)
+            try:
+                data = fetch_google_trends(keyword="cloud storage", days_back=400)
+            except Exception:
+                return {}
             df = data if isinstance(data, pd.DataFrame) else pd.DataFrame()
             if df.empty:
                 return {}

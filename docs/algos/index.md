@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-10T23:03:22
+Updated (UTC): 2026-04-12T12:56:36
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 10
+Crazy models: 33
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -26,3 +26,26 @@ Crazy models: 10
 | congress | Congress Trading Fade | daily |
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
+| reddit-gaming-thread-spike | Reddit Gaming Thread Spike | daily |
+| airport-shopping-spree | Airport Shopping Spree | daily |
+| cloud-storage-demand-surge | Cloud Storage Demand Surge | daily |
+| crypto-derivative-arbitrage | Crypto Derivative Arbitrage | daily |
+| earthquake-energy-demand | Earthquake Energy Demand Indicator | daily |
+| electric-vehicle-charge-station-density | Electric Vehicle Charge Station Density | daily |
+| insider-trading-signals | Insider Trading Signals | daily |
+| online-ad-impression-volatility | Online Ad Impression Volatility Trader | daily |
+| pet-food-supply-chain | Pet Food Supply Chain Disruption | daily |
+| reddit-emoji-sentiment-spike | Reddit Emoji Sentiment Spike | daily |
+| reddit-mentions-volatility-spike | Reddit Mentions Volatility Spike | daily |
+| reddit-sentiment-spike | Reddit Sentiment Spike | daily |
+| reddit-sentiment-spike-trend | Reddit Sentiment Spike Trend | daily |
+| reddit-sentiment-volatility-spike | Reddit Sentiment Volatility Spike | daily |
+| reddit-subreddit-mention-spike | Reddit Subreddit Mention Spike | daily |
+| reddit-subreddit-sentiment-spike | Reddit Subreddit Sentiment Spike | daily |
+| reddit-subreddit-surge-momentum | Reddit Subreddit Surge Momentum | daily |
+| reddit-volatility-spike | Reddit Volatility Spike | daily |
+| social-media-sentiment-spike | Social Media Sentiment Spike | daily |
+| superbowl-futures-trade | Superbowl Futures Trade | daily |
+| twitter-sentiment-spike | Twitter Sentiment Spike | daily |
+| volatility-spike-follow-through | Volatility Spike Follow-Through | daily |
+| weather-volatility-spike | Weather Volatility Spike | daily |
