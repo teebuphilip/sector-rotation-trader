@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-13T12:25:13
+Updated (UTC): 2026-04-13T19:18:12
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 33
+Crazy models: 35
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -49,3 +49,5 @@ Crazy models: 33
 | twitter-sentiment-spike | Twitter Sentiment Spike | daily |
 | volatility-spike-follow-through | Volatility Spike Follow-Through | daily |
 | weather-volatility-spike | Weather Volatility Spike | daily |
+| truck-tonnage | Truck Tonnage Index | monthly |
+| misery-rotation | Misery Rotation | monthly |
