@@ -40,7 +40,7 @@ DATA_PERIOD          = "1y"  # yfinance download window
 
 # Paths
 STATE_FILE           = "state.json"
-DASHBOARD_FILE       = "docs/index.html"
+DASHBOARD_FILE       = "docs/nrwise.html"
 LOG_FILE             = "docs/trades.json"
 
 # Fees & Taxes (configurable; conservative/high defaults)
