@@ -26,10 +26,13 @@ class CardboardAlgo(CrazyAlgoBase):
             record_blocked(self.algo_id, self.name, ["FRED_API_KEY"], "Missing FRED_API_KEY")
             return "HOLD"
 
-        from fredapi import Fred
-        fred = Fred(api_key=api_key)
-        box_ppi = fred.get_series("PCU3221213221213")
-        mfg_ip = fred.get_series("IPMAN")
+        try:
+            from fredapi import Fred
+            fred = Fred(api_key=api_key)
+            box_ppi = fred.get_series("PCU3221213221213")
+            mfg_ip = fred.get_series("IPMAN")
+        except Exception:
+            return "HOLD"
         df = pd.DataFrame({"box_ppi": box_ppi, "mfg_ip": mfg_ip}).dropna()
         df["box_ppi_3m_chg"] = df["box_ppi"].pct_change(3)
         df["box_ppi_accel"] = df["box_ppi_3m_chg"].diff()

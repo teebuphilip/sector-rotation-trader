@@ -34,21 +34,24 @@ class GlassdoorAlgo(CrazyAlgoBase):
             return None
 
     def _get_company_rating(self, name: str, pid: str, key: str):
-        url = "https://api.glassdoor.com/api/api.htm"
-        params = {
-            "t.p": pid,
-            "t.k": key,
-            "format": "json",
-            "v": "1",
-            "action": "employers",
-            "q": name,
-            "ps": 1,
-        }
-        r = requests.get(url, params=params, timeout=30)
-        data = r.json()
-        if data.get("response", {}).get("employers"):
-            emp = data["response"]["employers"][0]
-            return emp.get("overallRating")
+        try:
+            url = "https://api.glassdoor.com/api/api.htm"
+            params = {
+                "t.p": pid,
+                "t.k": key,
+                "format": "json",
+                "v": "1",
+                "action": "employers",
+                "q": name,
+                "ps": 1,
+            }
+            r = requests.get(url, params=params, timeout=30)
+            data = r.json()
+            if data.get("response", {}).get("employers"):
+                emp = data["response"]["employers"][0]
+                return emp.get("overallRating")
+        except Exception:
+            pass
         return None
 
     def compute_signal(self, as_of: date, state: dict, historical: bool = False):

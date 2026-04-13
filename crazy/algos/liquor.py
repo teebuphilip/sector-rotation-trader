@@ -22,9 +22,12 @@ class LiquorAlgo(CrazyAlgoBase):
             record_blocked(self.algo_id, self.name, ["FRED_API_KEY"], "Missing FRED_API_KEY")
             return "HOLD"
 
-        from fredapi import Fred
-        fred = Fred(api_key=api_key)
-        total_sales = fred.get_series("MRTSSM4453USN")
+        try:
+            from fredapi import Fred
+            fred = Fred(api_key=api_key)
+            total_sales = fred.get_series("MRTSSM4453USN")
+        except Exception:
+            return "HOLD"
         df = pd.DataFrame({"sales": total_sales}).dropna()
         if len(df) < 4:
             return "HOLD"
