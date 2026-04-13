@@ -56,7 +56,11 @@ def main() -> int:
     repo_root = Path.cwd()
     run_dir = repo_root / "data" / "ideas" / "runs" / args.date
     raw_dir = run_dir / "raw"
+    filtered_dir = run_dir / "filtered"
+    rejected_dir = run_dir / "rejected"
     raw_dir.mkdir(parents=True, exist_ok=True)
+    filtered_dir.mkdir(parents=True, exist_ok=True)
+    rejected_dir.mkdir(parents=True, exist_ok=True)
     err_dir = run_dir / "errors"
     err_dir.mkdir(parents=True, exist_ok=True)
     for p in err_dir.glob("*.txt"):
@@ -80,6 +84,13 @@ def main() -> int:
     try:
         chat_stdout = _run(["/bin/bash", str(chat_script), args.prompt], env, "chatgpt")
         chat_out.write_text(chat_stdout)
+        # schema gate
+        subprocess.run([
+            "python", "scripts/crazy_schema_gate.py",
+            "--in", str(chat_out),
+            "--out", str(filtered_dir / f"chatgpt_{args.date}.jsonl"),
+            "--rejects", str(rejected_dir / f"chatgpt_{args.date}.jsonl"),
+        ], check=False)
         err_file = err_dir / "chatgpt.txt"
         if err_file.exists():
             err_file.unlink()
@@ -91,6 +102,13 @@ def main() -> int:
     try:
         claude_stdout = _run(["/bin/bash", str(claude_script), args.prompt], env, "claude")
         claude_out.write_text(claude_stdout)
+        # schema gate
+        subprocess.run([
+            "python", "scripts/crazy_schema_gate.py",
+            "--in", str(claude_out),
+            "--out", str(filtered_dir / f"claude_{args.date}.jsonl"),
+            "--rejects", str(rejected_dir / f"claude_{args.date}.jsonl"),
+        ], check=False)
         err_file = err_dir / "claude.txt"
         if err_file.exists():
             err_file.unlink()

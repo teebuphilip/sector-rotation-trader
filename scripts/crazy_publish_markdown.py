@@ -70,7 +70,7 @@ def main() -> int:
     args = parser.parse_args()
 
     run_dir = Path("data") / "ideas" / "runs" / args.date
-    raw_dir = run_dir / "raw"
+    raw_dir = run_dir / "filtered"
     pub_dir = run_dir / "publish"
     pub_dir.mkdir(parents=True, exist_ok=True)
 

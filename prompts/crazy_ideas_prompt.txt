@@ -3,22 +3,54 @@ You are generating ONE new crazy trading signal idea.
 Return ONLY valid JSON (no markdown). The JSON must be a list with exactly 1 object.
 
 Required keys in the object:
-- idea_id: short kebab-case slug (e.g., "airport-security-surge")
-- title: short name
-- thesis: 2-4 sentences
-- data_sources: list of free public data sources (no paid tools unless explicitly required)
-- signal_logic: precise rules and thresholds
-- entry_exit: buy/sell rules
-- position_sizing: how to size positions
-- universe: list of tickers or assets
-- frequency: daily, weekly, or monthly
-- risks: failure modes and edge cases
-- implementation_notes: steps to implement in code
-- required_keys: list of API keys needed (empty if none)
+{
+  "idea": "",
+  "data": {
+    "source": "",
+    "type": "api|scrape",
+    "frequency": "daily|weekly",
+    "stable": true
+  },
+  "behavior": "",
+  "market_impact": {
+    "direction": "bullish|bearish",
+    "sector": "XLK|XLY|XLF|etc",
+    "rationale": ""
+  },
+  "trade_logic": {
+    "entry": "",
+    "exit": "",
+    "expected_frequency": "high|medium|low"
+  }
+}
 
 Constraints:
-- Use only free public data wherever possible.
-- Keep it implementable in 1-2 days.
+- Must be weird but real-world grounded.
+- Must be explainable in one sentence.
+- Must map to ONE sector ETF only.
+- Must use a real, accessible data source.
+- Keep trade logic simple (1–2 conditions).
 - Avoid ideas already used: TSA throughput, Craigslist listings, 311 calls, LinkedIn workforce report, Congress trading.
-- Do not reference any proprietary data.
 - Output must be strict JSON and parseable.
+
+Example (format only, do not reuse):
+{
+  "idea": "Rail freight volume is falling fast",
+  "data": {
+    "source": "FRED series: RAILFREIGHT (Rail Freight Carloads)",
+    "type": "api",
+    "frequency": "weekly",
+    "stable": true
+  },
+  "behavior": "Shippers are moving fewer goods, signaling weaker industrial demand and slowing production activity.",
+  "market_impact": {
+    "direction": "bearish",
+    "sector": "XLI",
+    "rationale": "Industrials are sensitive to freight volumes and cyclical demand."
+  },
+  "trade_logic": {
+    "entry": "If 4-week moving average drops >5% vs 3 months ago",
+    "exit": "After 10 trading days or if the 4-week average stops declining",
+    "expected_frequency": "low"
+  }
+}

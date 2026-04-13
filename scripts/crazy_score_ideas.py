@@ -63,7 +63,7 @@ def main() -> int:
     args = parser.parse_args()
 
     run_dir = Path("data") / "ideas" / "runs" / args.date
-    raw_dir = run_dir / "raw"
+    raw_dir = run_dir / "filtered"
 
     results = []
     for src in ["chatgpt", "claude"]:
