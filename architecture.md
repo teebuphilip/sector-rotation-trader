@@ -23,7 +23,7 @@ This repo runs a paper‑trading research lab with:
 - Entry points: `normal_run.py`, `normal_seed.py`
 
 ## Crazy Algos (Alternative Data)
-- Algo definitions: `crazy/algos/` (registered via `crazy/algos/registry.py`)
+- Algo definitions: `crazy/algos/` (registered via `data/algos_registry_crazy.txt`)
 - Runner: `crazy/runner.py`
 - Seed: `crazy/seed.py`
 - Combined dashboard: `crazy/combined_dashboard.py`
@@ -39,6 +39,24 @@ This repo runs a paper‑trading research lab with:
 - Publish markdown: `scripts/crazy_publish_markdown.py`
 - Daily stats report: `scripts/daily_stats_email.py`
 - GitHub Action: `.github/workflows/crazy_ideas_daily.yml`
+
+## Build + Seed Pipeline (Crazy)
+- Structural build: `scripts/run_structural_build.sh`
+- Builder components:
+  - `scripts/grill_algo_spec.py`
+  - `scripts/adapter_router.py`
+  - `scripts/slice_algo_spec.py`
+  - `scripts/build_structural_algo.py`
+  - `scripts/patch_algo.py`
+  - `scripts/patch_deterministic.py` (fallback)
+  - `scripts/validate_structural_algo.py`
+  - `scripts/validate_algo_llm.py`
+  - `scripts/validate_final.py`
+- Orchestrator: `scripts/run_publish_pipeline.py`
+- Triage buckets:
+  - `data/ideas/completed/`
+  - `data/ideas/failed/`
+  - `data/ideas/intervention/`
 
 ## Normal Idea Pipeline
 - Prompt: `prompts/normal_ideas_prompt.txt`
@@ -57,19 +75,30 @@ This repo runs a paper‑trading research lab with:
 - Honor pages: `docs/biscotti.html`, `docs/bailey.html`
 - Rolling 30‑day leaderboard: `docs/leaderboards/rolling_30d.md`, `docs/leaderboards/rolling_30d.json`
 - Consolidated ledgers: `docs/ledgers/normal_ledger.json`, `docs/ledgers/crazy_ledger.json`
+- Signals lookup (Product 2): `docs/signals/lookup.html`
 
 ## State + Data Layout
 - Baseline state: `state.json`
 - Normal states: `data/normal/state/<algo_id>.json`
 - Crazy states: `data/crazy/state/<algo_id>.json`
 - Idea runs: `data/ideas/runs/YYYY-MM-DD/`
+- Idea triage: `data/ideas/completed/`, `data/ideas/failed/`, `data/ideas/intervention/`
 - Blocked queue: `data/blocked/algos.jsonl`
 - Caches: `cache/`
+
+## Signals Precompute
+- Script: `precompute_signals.py`
+- Outputs: `docs/signals/`
+  - `docs/signals/<TICKER>.json`
+  - `docs/signals/_sectors.json`
+  - `docs/signals/_sectors/<ETF>.json`
+  - `docs/signals/index.json`
 
 ## Execution Flow (Daily)
 1. GitHub Action runs baseline NRWise (`daily_run.py`).
 2. Normal + crazy runners execute, auto‑seeding any new algos, then update states, dashboards, ledgers, and leaderboard.
-3. Landing/CTA pages read from `docs/` outputs.
+3. Signals are precomputed (`precompute_signals.py`) and written to `docs/signals/`.
+4. Landing/CTA pages read from `docs/` outputs.
 
 ## Commands
 - Baseline seed: `python seed.py`
@@ -81,4 +110,4 @@ This repo runs a paper‑trading research lab with:
 
 ## Notes
 - API‑key‑required algos record missing keys in `data/blocked/algos.jsonl`.
-- The idea pipeline does not implement algos yet; it only generates specs.
+- The idea pipeline generates specs, then the build+seed pipeline turns them into runnable algos.

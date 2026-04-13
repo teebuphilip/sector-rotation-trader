@@ -93,7 +93,7 @@ python crazy_run.py
 Notes:
 - LinkedIn algo will use `data/crazy/linkedin_workforce.csv` if present (columns: `date,sector,hire_rate,layoff_rate`). Otherwise it attempts a best‑effort PDF parse and may hold cash if parsing fails.
 
-Crazy algos live in `crazy/algos/` and are registered in `crazy/algos/registry.py`.
+Crazy algos live in `crazy/algos/` and are registered via the flat file `data/algos_registry_crazy.txt`.
 
 ## Blocked Queue (Missing Keys)
 
@@ -111,6 +111,46 @@ Key files:
 
 GitHub Action:
 - `.github/workflows/crazy_ideas_daily.yml`
+
+## Build + Seed Pipeline (Crazy)
+Orchestrator:
+- `scripts/run_publish_pipeline.py`
+
+What it does:
+- Routes each published idea to an adapter.
+- Builds an algo file (structural build + patch + validation).
+- Seeds it.
+- Moves the spec into `data/ideas/completed/`, `data/ideas/failed/`, or `data/ideas/intervention/`.
+
+Common usage:
+```bash
+python scripts/run_publish_pipeline.py          # uses data/ideas/runs by default
+python scripts/run_publish_pipeline.py --dry-run
+```
+
+## Adapter Routing
+Adapter routing is keyword‑based with a confidence threshold:
+- Script: `scripts/adapter_router.py`
+- If no adapter or low confidence, the idea is moved to `data/ideas/intervention/`.
+
+## Signal Precompute (Product 2)
+Nightly job to precompute per‑ticker verdicts:
+- Script: `precompute_signals.py`
+- Outputs: `docs/signals/`
+  - `docs/signals/<TICKER>.json`
+  - `docs/signals/_sectors.json`
+  - `docs/signals/_sectors/<ETF>.json`
+  - `docs/signals/index.json`
+
+Run locally:
+```bash
+python precompute_signals.py
+python precompute_signals.py --min-days 10
+python precompute_signals.py --dry-run
+```
+
+Lookup UI:
+- `docs/signals/lookup.html`
 
 ## Weekly Normal Idea Pipeline (Minimal)
 
