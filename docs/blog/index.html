@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CrazyStockAlgo Blog</title>
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --fg: #eaeaea;
+      --muted: #8b8b8b;
+      --accent: #e8e8e8;
+      --card: #141414;
+      --border: #222;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+    .container { max-width: 780px; margin: 0 auto; }
+    h1 { font-size: 1.9rem; margin: 0 0 0.35rem; }
+    .subtitle { color: var(--muted); margin: 0 0 2rem; }
+    .post-list { display: grid; gap: 1rem; }
+    .post {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.25rem 1rem;
+    }
+    .post h2 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+    .post a { color: var(--accent); text-decoration: none; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.6rem; }
+    .summary { color: #cfcfcf; font-size: 0.95rem; line-height: 1.5; }
+    .footer { margin-top: 2.5rem; color: var(--muted); font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CrazyStockAlgo Blog</h1>
+    <p class="subtitle">Build logs, experiments, and receipts.</p>
+
+    <div class="post-list">
+      <div class="post">
+        <div class="meta">Apr 12, 2026</div>
+        <h2><a href="_posts/2026-04-12-launch-log.html">Day 1: Shipping the Signals Engine</a></h2>
+        <p class="summary">
+          The system now auto‑generates new algos, runs them, and precomputes sector‑level
+          verdicts for every S&amp;P 500 ticker. This post is the exact architecture and why
+          it matters for the product.
+        </p>
+      </div>
+
+      <div class="post">
+        <div class="meta">Apr 12, 2026</div>
+        <h2><a href="_posts/2026-04-12-why-the-failures.html">Why We Publish the Failures</a></h2>
+        <p class="summary">
+          The failures are the product. This is a live research lab, not a trading service.
+          Here’s why we document every blow‑up and keep the receipts public.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer">Not investment advice. This is experimental research.</div>
+  </div>
+</body>
+</html>
