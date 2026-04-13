@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sector Rotation Trader</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0a0d12;
+    --surface:   #111520;
+    --border:    #1e2535;
+    --accent:    #00d4ff;
+    --green:     #00ff88;
+    --red:       #ff4d6d;
+    --yellow:    #ffd166;
+    --text:      #c8d6e5;
+    --muted:     #4a5568;
+    --font-mono: 'Space Mono', monospace;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface);
+  }
+  .logo {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .logo span { color: var(--muted); }
+  .last-update {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* ── Layout ── */
+  .container { max-width: 1400px; margin: 0 auto; padding: 28px 32px; }
+
+  /* ── KPI bar ── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .kpi {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .kpi-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .kpi-value {
+    font-family: var(--font-mono);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .kpi-value.green { color: var(--green); }
+  .kpi-value.red   { color: var(--red); }
+  .kpi-value.accent { color: var(--accent); }
+
+  /* ── Panels ── */
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .panel-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .panel-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .panel-body { padding: 20px; }
+
+  /* ── Chart ── */
+  .chart-wrap {
+    position: relative;
+    height: 280px;
+  }
+
+  /* ── Tables ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  tbody td {
+    padding: 9px 12px;
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    font-size: 13px;
+    color: var(--text);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: rgba(0,212,255,0.03); }
+
+  .ticker {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+    letter-spacing: 0.05em;
+    vertical-align: middle;
+  }
+  .badge.margin { background: rgba(255,209,102,0.15); color: var(--yellow); border: 1px solid var(--yellow); }
+
+  .action-buy  { font-family: var(--font-mono); font-size: 11px; font-weight:700; color: var(--green); }
+  .action-sell { font-family: var(--font-mono); font-size: 11px; font-weight:700; color: var(--red); }
+
+  .empty-state {
+    text-align: center;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 40px;
+  }
+
+  /* ── Dot indicator ── */
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .dot.green { background: var(--green); box-shadow: 0 0 6px var(--green); }
+  .dot.yellow { background: var(--yellow); }
+
+  @media (max-width: 1100px) {
+    .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+    .two-col  { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 680px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .container { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Sector<span>/</span>Rotation <span>|</span> Paper Trader</div>
+  <div class="last-update">Last run: 2026-04-12 &nbsp;·&nbsp; $100k base · $10k/trade</div>
+</header>
+
+<div class="container">
+
+  <!-- KPI Bar -->
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-label">Total Equity</div>
+      <div class="kpi-value">$100,056</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Net P&L</div>
+      <div class="kpi-value green">$+56</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Return</div>
+      <div class="kpi-value green">+0.06%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Win Rate</div>
+      <div class="kpi-value accent">40%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Leading Sector</div>
+      <div class="kpi-value accent">XLU</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Sharpe Ratio</div>
+      <div class="kpi-value red">-0.60</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Max Drawdown</div>
+      <div class="kpi-value red">-2.8%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Avg Win</div>
+      <div class="kpi-value green">$+1,238</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Avg Loss</div>
+      <div class="kpi-value red">$-790</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Realized / Unrealized</div>
+      <div class="kpi-value green">$+105 / $+0</div>
+    </div>
+  </div>
+
+  <!-- Equity Curve -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot green"></span>
+      <span class="panel-title">Equity Curve</span>
+    </div>
+    <div class="panel-body">
+      <div class="chart-wrap">
+        <canvas id="equityChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawdown Chart -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot" style="background:var(--red);box-shadow:0 0 6px var(--red)"></span>
+      <span class="panel-title">Drawdown</span>
+    </div>
+    <div class="panel-body">
+      <div class="chart-wrap" style="height:180px">
+        <canvas id="drawdownChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Positions + Sector Performance -->
+  <div class="two-col">
+    <div class="panel">
+      <div class="panel-header">
+        <span class="dot yellow"></span>
+        <span class="panel-title">Open Positions (0)</span>
+      </div>
+      <div class="panel-body" style="padding:0">
+        <div class="empty-state">No open positions</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <span class="dot yellow"></span>
+        <span class="panel-title">Portfolio Stats</span>
+      </div>
+      <div class="panel-body">
+        <table>
+          <tbody>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">CASH</td><td>$100,055.50</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">BORROWED</td><td style="color:var(--text)">$0.00</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">ACCRUED INT.</td><td style="color:var(--red)">$0.00</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">OPEN POSITIONS</td><td>0</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">TOTAL TRADES</td><td>5</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">WINNERS</td><td>2</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">WIN RATE</td><td>40.0%</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">SIM START</td><td>2026-01-07</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trade Log -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Trade Log (last 30)</span>
+    </div>
+    <div class="panel-body" style="padding:0; overflow-x:auto">
+      <table><thead><tr><th>Date</th><th>Action</th><th>Ticker</th><th>Price</th><th>Shares</th><th>Value</th><th>P&L</th><th>Notes</th></tr></thead><tbody>
+            <tr class="sell-row">
+              <td>2026-04-08</td>
+              <td><span class="action-sell">SELL</span></td>
+              <td><span class="ticker">CF</span></td>
+              <td>$126.16</td>
+              <td>95.8773</td>
+              <td>$12,085.29</td>
+              <td style="color:#00ff88">$+1,313.74 (+13.1%)</td>
+              <td>20MA_exit</td>
+            </tr>
+            <tr class="sell-row">
+              <td>2026-04-08</td>
+              <td><span class="action-sell">SELL</span></td>
+              <td><span class="ticker">MOS</span></td>
+              <td>$27.67</td>
+              <td>318.8775</td>
+              <td>$8,812.85</td>
+              <td style="color:#ff4d6d">$-1,187.15 (-11.9%)</td>
+              <td>stop_loss</td>
+            </tr>
+            <tr class="buy-row">
+              <td>2026-04-08</td>
+              <td><span class="action-buy">BUY</span></td>
+              <td><span class="ticker">MOS</span></td>
+              <td>$31.36</td>
+              <td>318.8775</td>
+              <td>$10,000.00</td>
+              <td>—</td>
+              <td>CASH</td>
+            </tr>
+            <tr class="sell-row">
+              <td>2026-04-08</td>
+              <td><span class="action-sell">SELL</span></td>
+              <td><span class="ticker">CL</span></td>
+              <td>$95.28</td>
+              <td>124.4124</td>
+              <td>$11,843.44</td>
+              <td style="color:#00ff88">$+1,161.37 (+11.6%)</td>
+              <td>20MA_exit</td>
+            </tr>
+            <tr class="sell-row">
+              <td>2026-04-08</td>
+              <td><span class="action-sell">SELL</span></td>
+              <td><span class="ticker">PM</span></td>
+              <td>$176.36</td>
+              <td>56.2264</td>
+              <td>$9,905.39</td>
+              <td style="color:#ff4d6d">$-94.61 (-0.9%)</td>
+              <td>20MA_exit</td>
+            </tr>
+            <tr class="buy-row">
+              <td>2026-04-08</td>
+              <td><span class="action-buy">BUY</span></td>
+              <td><span class="ticker">CF</span></td>
+              <td>$104.30</td>
+              <td>95.8773</td>
+              <td>$10,000.00</td>
+              <td>—</td>
+              <td>CASH</td>
+            </tr>
+            <tr class="buy-row">
+              <td>2026-04-08</td>
+              <td><span class="action-buy">BUY</span></td>
+              <td><span class="ticker">PM</span></td>
+              <td>$177.85</td>
+              <td>56.2264</td>
+              <td>$10,000.00</td>
+              <td>—</td>
+              <td>CASH</td>
+            </tr>
+            <tr class="sell-row">
+              <td>2026-04-08</td>
+              <td><span class="action-sell">SELL</span></td>
+              <td><span class="ticker">NEM</span></td>
+              <td>$112.12</td>
+              <td>79.5762</td>
+              <td>$8,911.91</td>
+              <td style="color:#ff4d6d">$-1,088.09 (-10.9%)</td>
+              <td>stop_loss</td>
+            </tr>
+            <tr class="buy-row">
+              <td>2026-04-08</td>
+              <td><span class="action-buy">BUY</span></td>
+              <td><span class="ticker">NEM</span></td>
+              <td>$125.67</td>
+              <td>79.5762</td>
+              <td>$10,000.00</td>
+              <td>—</td>
+              <td>CASH</td>
+            </tr>
+            <tr class="buy-row">
+              <td>2026-04-08</td>
+              <td><span class="action-buy">BUY</span></td>
+              <td><span class="ticker">CL</span></td>
+              <td>$80.38</td>
+              <td>124.4124</td>
+              <td>$10,000.00</td>
+              <td>—</td>
+              <td>CASH</td>
+            </tr></tbody></table>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const dates  = ["2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-10", "2026-04-12"];
+const equity = [100000.0, 99990.05, 100065.48, 100121.12, 100248.49, 100445.1, 100419.13, 100441.39, 100441.39, 100555.15, 100531.52, 100665.88, 100771.63, 100580.04, 100735.48, 101034.03, 100665.23, 100115.26, 100342.18, 100335.1, 100675.81, 100828.98, 100815.65, 100729.93, 100749.24, 101120.44, 101376.79, 101358.74, 101358.74, 101016.73, 100953.41, 100800.6, 100933.13, 101396.08, 101509.48, 101486.36, 101467.67, 101628.15, 101221.53, 100851.88, 99978.17, 100560.15, 101039.53, 100585.08, 100490.16, 101456.6, 102968.22, 101698.03, 100470.44, 100562.48, 100892.3, 100780.12, 100716.84, 100264.3, 100910.51, 101024.61, 101451.26, 101824.22, 101934.48, 101190.47, 101012.14, 101202.94, 101202.94, 101299.77, 101568.23, 100373.6, 100055.5, 100055.5, 100055.5, 100055.5, 100055.5];
+const startV = 100000.0;
+const spyData = [100000.0, 99989.85, 100651.11, 100809.18, 100607.62, 100113.11, 100385.74, 100301.62, 98259.81, 99393.83, 99912.99, 99949.23, 100456.79, 100857.04, 100846.88, 100646.76, 100346.58, 100845.44, 99992.75, 99508.39, 98265.61, 100150.81, 100633.72, 100368.33, 100345.14, 98794.92, 98864.52, 99024.03, 99522.89, 99260.41, 99978.25, 98957.34, 99676.6, 100517.71, 99959.39, 99479.39, 99535.95, 98658.61, 99354.67, 98800.72, 97505.72, 98359.87, 98201.8, 98078.54, 96589.22, 96042.52, 97019.93, 97275.14, 95917.8, 95681.43, 94309.76, 95300.01, 94980.11, 95509.41, 93803.73, 92204.2, 91895.92, 94567.14, 95279.65, 95365.45, 95816.22, 95858.39, 98299.86, 98866.96, 98801.53];
+const ddData  = [0.0, -0.01, 0.0, 0.0, 0.0, 0.0, -0.03, -0.0, -0.0, 0.0, -0.02, 0.0, 0.0, -0.19, -0.04, 0.0, -0.37, -0.91, -0.68, -0.69, -0.35, -0.2, -0.22, -0.3, -0.28, 0.0, 0.0, -0.02, -0.02, -0.36, -0.42, -0.57, -0.44, 0.0, 0.0, -0.02, -0.04, 0.0, -0.4, -0.76, -1.62, -1.05, -0.58, -1.03, -1.12, -0.17, 0.0, -1.23, -2.43, -2.34, -2.02, -2.13, -2.19, -2.63, -2.0, -1.89, -1.47, -1.11, -1.0, -1.73, -1.9, -1.71, -1.71, -1.62, -1.36, -2.52, -2.83, -2.83, -2.83, -2.83, -2.83];
+
+const ctx = document.getElementById('equityChart').getContext('2d');
+
+const grad = ctx.createLinearGradient(0, 0, 0, 280);
+grad.addColorStop(0,   'rgba(0,212,255,0.25)');
+grad.addColorStop(1,   'rgba(0,212,255,0.00)');
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: dates,
+    datasets: [
+      {
+        label: 'Portfolio Equity',
+        data: equity,
+        borderColor: '#00d4ff',
+        borderWidth: 2,
+        backgroundColor: grad,
+        fill: true,
+        tension: 0.3,
+        pointRadius: equity.length > 60 ? 0 : 3,
+        pointHoverRadius: 5,
+        pointBackgroundColor: '#00d4ff',
+      },
+      {
+        label: 'SPY Benchmark',
+        data: spyData.length ? spyData.slice(0, dates.length) : [],
+        borderColor: '#ffd166',
+        borderWidth: 1.5,
+        borderDash: [6,3],
+        fill: false,
+        tension: 0.3,
+        pointRadius: 0,
+      },
+      {
+        label: 'Starting Capital',
+        data: Array(dates.length).fill(startV),
+        borderColor: 'rgba(255,255,255,0.12)',
+        borderWidth: 1,
+        borderDash: [4,4],
+        fill: false,
+        tension: 0,
+        pointRadius: 0,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: {
+        labels: {
+          color: '#4a5568',
+          font: { family: 'Space Mono', size: 11 },
+          boxWidth: 12,
+        }
+      },
+      tooltip: {
+        backgroundColor: '#111520',
+        borderColor: '#1e2535',
+        borderWidth: 1,
+        titleColor: '#00d4ff',
+        bodyColor: '#c8d6e5',
+        titleFont: { family: 'Space Mono', size: 11 },
+        bodyFont: { family: 'DM Sans', size: 12 },
+        callbacks: {
+          label: ctx => ' $' + ctx.parsed.y.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})
+        }
+      }
+    },
+    scales: {
+      x: {
+        grid: { color: 'rgba(30,37,53,0.8)' },
+        ticks: {
+          color: '#4a5568',
+          font: { family: 'Space Mono', size: 10 },
+          maxTicksLimit: 12,
+        }
+      },
+      y: {
+        grid: { color: 'rgba(30,37,53,0.8)' },
+        ticks: {
+          color: '#4a5568',
+          font: { family: 'Space Mono', size: 10 },
+          callback: v => '$' + (v/1000).toFixed(0) + 'k'
+        }
+      }
+    }
+  }
+});
+
+// ── Drawdown Chart ──
+if (ddData.length > 0) {
+  const ddCtx = document.getElementById('drawdownChart').getContext('2d');
+  const ddGrad = ddCtx.createLinearGradient(0, 0, 0, 180);
+  ddGrad.addColorStop(0, 'rgba(255,77,109,0.00)');
+  ddGrad.addColorStop(1, 'rgba(255,77,109,0.30)');
+
+  new Chart(ddCtx, {
+    type: 'line',
+    data: {
+      labels: dates,
+      datasets: [{
+        label: 'Drawdown %',
+        data: ddData,
+        borderColor: '#ff4d6d',
+        borderWidth: 1.5,
+        backgroundColor: ddGrad,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 0,
+        pointHoverRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#111520',
+          borderColor: '#1e2535',
+          borderWidth: 1,
+          titleColor: '#ff4d6d',
+          bodyColor: '#c8d6e5',
+          titleFont: { family: 'Space Mono', size: 11 },
+          bodyFont: { family: 'DM Sans', size: 12 },
+          callbacks: { label: ctx => ' ' + ctx.parsed.y.toFixed(2) + '%' }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(30,37,53,0.8)' },
+          ticks: { color: '#4a5568', font: { family: 'Space Mono', size: 10 }, maxTicksLimit: 12 }
+        },
+        y: {
+          max: 0,
+          grid: { color: 'rgba(30,37,53,0.8)' },
+          ticks: { color: '#4a5568', font: { family: 'Space Mono', size: 10 }, callback: v => v.toFixed(0) + '%' }
+        }
+      }
+    }
+  });
+}
+</script>
+</body>
+</html>
