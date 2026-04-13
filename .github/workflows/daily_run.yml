@@ -71,8 +71,13 @@ jobs:
           exit 0
 
       - name: Nightly validation (deep)
+        id: validate_deep
         if: steps.validate_surface.outcome == 'success'
         run: python scripts/validate_nightly.py --deep || true
+
+      - name: Quality check
+        if: steps.validate_surface.outcome == 'success' && steps.validate_deep.outcome == 'success'
+        run: python scripts/quality_check.py
 
       - name: Commit updated state + dashboard
         if: always()
@@ -97,6 +102,9 @@ jobs:
           fi
           if [ -f data/rank_history.csv ]; then
             git add data/rank_history.csv
+          fi
+          if [ -d docs/quality_checks ]; then
+            git add docs/quality_checks
           fi
           git diff --cached --quiet || git commit -m "daily run $(date -u '+%Y-%m-%d') — $(python -c "
           import json
