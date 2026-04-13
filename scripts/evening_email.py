@@ -250,6 +250,53 @@ def build_report() -> str:
     else:
         lines.append("ROLLING 30D LEADERBOARD: not yet generated")
 
+    # ── 7. Blocked Algos (missing API keys) ───────────────────────
+    lines.append("")
+    blocked_file = ROOT / "data" / "blocked" / "algos.jsonl"
+    if blocked_file.exists():
+        from collections import Counter
+        seen_algos = {}
+        for line in blocked_file.read_text().splitlines():
+            s = line.strip()
+            if not s:
+                continue
+            try:
+                obj = json.loads(s)
+            except Exception:
+                continue
+            aid = obj.get("algo_id", "")
+            seen_algos[aid] = obj
+
+        unique_blocked = list(seen_algos.values())
+        if unique_blocked:
+            # Collect all unique missing keys
+            all_keys = set()
+            for entry in unique_blocked:
+                for k in entry.get("keys", []):
+                    all_keys.add(k)
+
+            lines.append("BLOCKED ALGOS ({} unique, {} missing keys):".format(
+                len(unique_blocked), len(all_keys)))
+
+            # List missing keys
+            lines.append("  Missing keys: {}".format(", ".join(sorted(all_keys))))
+
+            # Group by key
+            by_key = {}
+            for entry in unique_blocked:
+                for k in entry.get("keys", ["unknown"]):
+                    by_key.setdefault(k, []).append(
+                        entry.get("name", entry.get("algo_id", "?")))
+            for key in sorted(by_key.keys()):
+                algos = by_key[key]
+                lines.append("  {} ({}):".format(key, len(algos)))
+                for name in sorted(algos):
+                    lines.append("    - {}".format(name))
+        else:
+            lines.append("BLOCKED ALGOS: none")
+    else:
+        lines.append("BLOCKED ALGOS: none")
+
     return "\n".join(lines)
 
 
