@@ -107,16 +107,16 @@ jobs:
           git pull --rebase
           git push
 
-      - name: Prepare daily stats email
+      - name: Prepare evening email
         if: ${{ always() && env.ALERT_EMAIL_TO != '' }}
         run: |
           echo "AFH_RUN_DATE=$(date -u +%F)" >> $GITHUB_ENV
-          python scripts/daily_stats_email.py > /tmp/crazy_daily_email.txt || echo "daily_stats_email.py failed" > /tmp/crazy_daily_email.txt
-          echo "CRAZY_DAILY_EMAIL_BODY<<EOF" >> $GITHUB_ENV
-          cat /tmp/crazy_daily_email.txt >> $GITHUB_ENV
+          python scripts/evening_email.py > /tmp/evening_email.txt || echo "evening_email.py failed" > /tmp/evening_email.txt
+          echo "EVENING_EMAIL_BODY<<EOF" >> $GITHUB_ENV
+          cat /tmp/evening_email.txt >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - name: Email daily stats
+      - name: Email evening trading report
         if: ${{ always() && env.ALERT_EMAIL_TO != '' }}
         uses: dawidd6/action-send-mail@v3
         with:
@@ -124,8 +124,8 @@ jobs:
           server_port: 587
           username: ${{ secrets.ALERT_EMAIL_USER }}
           password: ${{ secrets.ALERT_EMAIL_PASS }}
-          subject: "Crazy Daily Stats — ${{ env.AFH_RUN_DATE }} — ${{ job.status }}"
-          body: ${{ env.CRAZY_DAILY_EMAIL_BODY }}
+          subject: "Evening Trading Report — ${{ env.AFH_RUN_DATE }} — ${{ job.status }}"
+          body: ${{ env.EVENING_EMAIL_BODY }}
           to: ${{ secrets.ALERT_EMAIL_TO }}
           from: ${{ secrets.ALERT_EMAIL_USER }}
 

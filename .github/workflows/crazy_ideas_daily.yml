@@ -43,13 +43,17 @@ jobs:
           python scripts/crazy_publish_markdown.py
           python scripts/compare_ideas.py --base data/ideas
           python scripts/ai_costs_aggregate.py
-          python scripts/daily_stats_email.py > /tmp/crazy_daily_email.txt
-          echo "CRAZY_DAILY_EMAIL_BODY<<EOF" >> $GITHUB_ENV
-          cat /tmp/crazy_daily_email.txt >> $GITHUB_ENV
+
+      - name: Prepare morning email
+        if: ${{ always() && env.ALERT_EMAIL_TO != '' }}
+        run: |
+          python scripts/morning_email.py > /tmp/morning_email.txt || echo "morning_email.py failed" > /tmp/morning_email.txt
+          echo "MORNING_EMAIL_BODY<<EOF" >> $GITHUB_ENV
+          cat /tmp/morning_email.txt >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
       - name: Validate email secrets
-        if: ${{ success() && env.ALERT_EMAIL_TO != '' }}
+        if: ${{ always() && env.ALERT_EMAIL_TO != '' }}
         run: |
           if [ -z "${ALERT_EMAIL_TO}" ]; then
             echo "Missing ALERT_EMAIL_TO"; exit 1; fi
@@ -70,16 +74,16 @@ jobs:
           git pull --rebase
           git push
 
-      - name: Email daily stats
-        if: ${{ success() && env.ALERT_EMAIL_TO != '' }}
+      - name: Email morning ideation report
+        if: ${{ always() && env.ALERT_EMAIL_TO != '' }}
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 587
           username: ${{ secrets.ALERT_EMAIL_USER }}
           password: ${{ secrets.ALERT_EMAIL_PASS }}
-          subject: Crazy Daily Stats — ${{ env.AFH_RUN_DATE }}
-          body: ${{ env.CRAZY_DAILY_EMAIL_BODY }}
+          subject: "Morning Ideation — ${{ env.AFH_RUN_DATE }} — ${{ job.status }}"
+          body: ${{ env.MORNING_EMAIL_BODY }}
           to: ${{ secrets.ALERT_EMAIL_TO }}
           from: ${{ secrets.ALERT_EMAIL_USER }}
 
