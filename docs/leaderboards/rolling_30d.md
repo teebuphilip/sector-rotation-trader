@@ -41,5 +41,5 @@ SPY 30D Return: +0.74%
 | 35 | Social Media Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
 | 36 | LinkedIn Layoff Propagation | crazy | +0.00% | 0.00 | 0.00% |
 | 37 | Reddit Mentions Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 38 | Algo Baileymol (Chaos Monger) | crazy | -1.94% | -1.59 | -5.69% |
-| 39 | Algo Biscotti (Unconditional Loyalty) | crazy | -2.28% | -1.98 | -4.34% |
+| 38 | Algo Baileymol (Chaos Monger) | crazy | -1.99% | -1.60 | -5.69% |
+| 39 | Algo Biscotti (Unconditional Loyalty) | crazy | -2.55% | -2.17 | -4.34% |

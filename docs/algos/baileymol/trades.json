@@ -623,6 +623,74 @@
       "pnl_pct": 2.2,
       "entry_date": "2026-04-06",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-13",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 214.7814,
+      "price": 142.62,
+      "cost": 30632.12,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-13",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 271.3448,
+      "price": 112.89,
+      "cost": 30632.12,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-13",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 214.7814,
+      "price": 142.62,
+      "proceeds": 30620.57,
+      "fees": 11.55,
+      "tax": 0.0,
+      "pnl": -11.55,
+      "pnl_pct": -0.04,
+      "entry_date": "2026-04-13",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-13",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 271.3448,
+      "price": 112.89,
+      "proceeds": 30620.55,
+      "fees": 11.56,
+      "tax": 0.0,
+      "pnl": -11.56,
+      "pnl_pct": -0.04,
+      "entry_date": "2026-04-13",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-13",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 214.6808,
+      "price": 142.62,
+      "cost": 30617.78,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-13",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 271.2178,
+      "price": 112.89,
+      "cost": 30617.78,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -653,7 +721,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 99980.1
     },
     {
       "date": "2026-01-13",
@@ -663,7 +732,8 @@
       "equity": 99803.35,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 99780.19227896759
     },
     {
       "date": "2026-01-14",
@@ -673,7 +743,8 @@
       "equity": 99803.35,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 99289.74895192412
     },
     {
       "date": "2026-01-15",
@@ -683,7 +754,8 @@
       "equity": 99803.35,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 99560.13622569779
     },
     {
       "date": "2026-01-16",
@@ -693,7 +765,8 @@
       "equity": 99803.35,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 99476.71737702428
     },
     {
       "date": "2026-01-19",
@@ -722,7 +795,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 99476.71737702428
     },
     {
       "date": "2026-01-20",
@@ -751,7 +825,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 97451.69115689854
     },
     {
       "date": "2026-01-21",
@@ -780,7 +855,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 98576.38884291836
     },
     {
       "date": "2026-01-22",
@@ -809,7 +885,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 99091.27599635902
     },
     {
       "date": "2026-01-23",
@@ -819,7 +896,8 @@
       "equity": 99785.55,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 99127.22435322117
     },
     {
       "date": "2026-01-26",
@@ -848,7 +926,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 99630.60697619691
     },
     {
       "date": "2026-01-27",
@@ -877,7 +956,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 100027.56168956922
     },
     {
       "date": "2026-01-28",
@@ -906,7 +986,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 100017.49192457162
     },
     {
       "date": "2026-01-29",
@@ -935,7 +1016,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 99819.01896900652
     },
     {
       "date": "2026-01-30",
@@ -945,7 +1027,8 @@
       "equity": 98928.67,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 99521.30073341673
     },
     {
       "date": "2026-02-02",
@@ -974,7 +1057,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 100016.05715910428
     },
     {
       "date": "2026-02-03",
@@ -1003,7 +1087,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 99170.38174638845
     },
     {
       "date": "2026-02-04",
@@ -1032,7 +1117,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 98690.00818434262
     },
     {
       "date": "2026-02-05",
@@ -1061,7 +1147,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 97457.44782325208
     },
     {
       "date": "2026-02-06",
@@ -1071,7 +1158,8 @@
       "equity": 96871.9,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 99327.14087649573
     },
     {
       "date": "2026-02-09",
@@ -1100,7 +1188,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 99806.07967307424
     },
     {
       "date": "2026-02-10",
@@ -1129,7 +1218,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 99542.87502887931
     },
     {
       "date": "2026-02-11",
@@ -1158,7 +1248,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 99519.87477019154
     },
     {
       "date": "2026-02-12",
@@ -1187,7 +1278,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 97982.40474169038
     },
     {
       "date": "2026-02-13",
@@ -1197,7 +1289,8 @@
       "equity": 95598.72,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 98051.43192448004
     },
     {
       "date": "2026-02-16",
@@ -1226,7 +1319,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 98051.43192448004
     },
     {
       "date": "2026-02-17",
@@ -1255,7 +1349,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 98209.63462229677
     },
     {
       "date": "2026-02-18",
@@ -1284,7 +1379,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 98704.39104798433
     },
     {
       "date": "2026-02-19",
@@ -1313,7 +1409,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 98444.06473696615
     },
     {
       "date": "2026-02-20",
@@ -1323,7 +1420,8 @@
       "equity": 95973.5,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 99155.99888274675
     },
     {
       "date": "2026-02-23",
@@ -1352,7 +1450,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 98143.48577268388
     },
     {
       "date": "2026-02-24",
@@ -1381,7 +1480,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 98856.83707944752
     },
     {
       "date": "2026-02-25",
@@ -1410,7 +1510,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 99691.02556618267
     },
     {
       "date": "2026-02-26",
@@ -1439,7 +1540,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 99137.29411821881
     },
     {
       "date": "2026-02-27",
@@ -1449,7 +1551,8 @@
       "equity": 96301.61,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 98661.24245705918
     },
     {
       "date": "2026-03-02",
@@ -1478,7 +1581,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 98717.33914615872
     },
     {
       "date": "2026-03-03",
@@ -1507,7 +1611,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 97847.21110480354
     },
     {
       "date": "2026-03-04",
@@ -1536,7 +1641,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 98537.5533506373
     },
     {
       "date": "2026-03-05",
@@ -1565,7 +1671,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 97988.15260580178
     },
     {
       "date": "2026-03-06",
@@ -1575,7 +1682,8 @@
       "equity": 95468.32,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 96703.8086542558
     },
     {
       "date": "2026-03-09",
@@ -1604,7 +1712,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 97550.93643692322
     },
     {
       "date": "2026-03-10",
@@ -1633,7 +1742,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 97394.15970233169
     },
     {
       "date": "2026-03-11",
@@ -1662,7 +1772,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 97271.91416361924
     },
     {
       "date": "2026-03-12",
@@ -1691,7 +1802,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 95794.84512061956
     },
     {
       "date": "2026-03-13",
@@ -1701,7 +1813,8 @@
       "equity": 93715.44,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 95252.63580760491
     },
     {
       "date": "2026-03-16",
@@ -1730,7 +1843,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 96222.00912898478
     },
     {
       "date": "2026-03-17",
@@ -1759,7 +1873,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 96475.12640369782
     },
     {
       "date": "2026-03-18",
@@ -1788,7 +1903,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 95128.94670118303
     },
     {
       "date": "2026-03-19",
@@ -1817,7 +1933,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 94894.51658651364
     },
     {
       "date": "2026-03-20",
@@ -1827,7 +1944,8 @@
       "equity": 91645.15,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 93534.13006519974
     },
     {
       "date": "2026-03-23",
@@ -1856,7 +1974,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 94516.24023094286
     },
     {
       "date": "2026-03-24",
@@ -1885,7 +2004,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 94198.96341333847
     },
     {
       "date": "2026-03-25",
@@ -1914,7 +2034,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 94723.91152953463
     },
     {
       "date": "2026-03-26",
@@ -1943,7 +2064,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 93032.2614278705
     },
     {
       "date": "2026-03-27",
@@ -1953,7 +2075,8 @@
       "equity": 88802.45,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 91445.88614209066
     },
     {
       "date": "2026-03-30",
@@ -1982,7 +2105,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 91140.1402616776
     },
     {
       "date": "2026-03-31",
@@ -2011,7 +2135,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 93789.3950869927
     },
     {
       "date": "2026-04-01",
@@ -2040,7 +2165,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 94496.04788749482
     },
     {
       "date": "2026-04-02",
@@ -2069,7 +2195,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 94581.13916217319
     },
     {
       "date": "2026-04-03",
@@ -2079,7 +2206,8 @@
       "equity": 90449.22,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 94581.13916217319
     },
     {
       "date": "2026-04-06",
@@ -2108,7 +2236,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 95028.20503999612
     },
     {
       "date": "2026-04-07",
@@ -2137,7 +2266,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 95070.0244923595
     },
     {
       "date": "2026-04-08",
@@ -2166,7 +2296,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 97491.4156756348
     },
     {
       "date": "2026-04-09",
@@ -2195,7 +2326,8 @@
         }
       },
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
+      "num_positions": 2,
+      "spy_equity": 98053.85254106601
     },
     {
       "date": "2026-04-10",
@@ -2205,7 +2337,8 @@
       "equity": 91896.35,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 97988.96241207782
     },
     {
       "date": "2026-04-12",
@@ -2215,7 +2348,8 @@
       "equity": 91896.35,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 97988.96241207782
     },
     {
       "date": "2026-04-12",
@@ -2225,7 +2359,66 @@
       "equity": 91896.35,
       "positions": {},
       "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
+      "num_positions": 0,
+      "spy_equity": 97988.96241207782
+    },
+    {
+      "date": "2026-04-13",
+      "cash": 30612.22,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91876.45,
+      "positions": {
+        "XLK": {
+          "shares": 214.7814,
+          "entry_price": 142.62,
+          "current_price": 142.62,
+          "market_value": 30632.12,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-13",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 271.3448,
+          "entry_price": 112.89,
+          "current_price": 112.89,
+          "market_value": 30632.12,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-13",
+          "margin": false
+        }
+      },
+      "sector": "Algo Baileymol (Chaos Monger)",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-13",
+      "cash": 30597.88,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91833.44,
+      "positions": {
+        "XLK": {
+          "shares": 214.6808,
+          "entry_price": 142.62,
+          "current_price": 142.62,
+          "market_value": 30617.78,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-13",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 271.2178,
+          "entry_price": 112.89,
+          "current_price": 112.89,
+          "market_value": 30617.78,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-13",
+          "margin": false
+        }
+      },
+      "sector": "Algo Baileymol (Chaos Monger)",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-11"
