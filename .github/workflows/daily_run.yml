@@ -76,6 +76,7 @@ jobs:
         run: python scripts/validate_nightly.py --deep || true
 
       - name: Quality check
+        id: quality_check
         if: steps.validate_surface.outcome == 'success' && steps.validate_deep.outcome == 'success'
         run: python scripts/quality_check.py
 
@@ -123,6 +124,13 @@ jobs:
         run: |
           echo "AFH_RUN_DATE=$(date -u +%F)" >> $GITHUB_ENV
           python scripts/evening_email.py > /tmp/evening_email.txt || echo "evening_email.py failed" > /tmp/evening_email.txt
+          QC_FILE="docs/quality_checks/quality_check_$(date -u +%F).md"
+          if [ -f "$QC_FILE" ]; then
+            echo "" >> /tmp/evening_email.txt
+            echo "=================================================" >> /tmp/evening_email.txt
+            echo "" >> /tmp/evening_email.txt
+            cat "$QC_FILE" >> /tmp/evening_email.txt
+          fi
           echo "EVENING_EMAIL_BODY<<EOF" >> $GITHUB_ENV
           cat /tmp/evening_email.txt >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
