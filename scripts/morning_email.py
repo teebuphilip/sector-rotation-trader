@@ -194,19 +194,52 @@ def build_report() -> str:
         lines.append("Normal Ideas: no runs found")
     lines.append("")
 
-    # AI costs
+    # AI costs — read from all source files + aggregated
+    import math
     cost_date = actual_date or run_date
     lines.append("AI Costs ({}):".format(cost_date))
-    chat_cost = _daily_cost(Path("logs/ai_costs_chatgpt_ideas.csv"), cost_date)
-    claude_cost = _daily_cost(Path("logs/ai_costs_claude_ideas.csv"), cost_date)
-    normal_chat = _daily_cost(Path("logs/ai_costs_chatgpt_normal.csv"), cost_date)
-    normal_claude = _daily_cost(Path("logs/ai_costs_claude_normal.csv"), cost_date)
-    total = chat_cost + claude_cost + normal_chat + normal_claude
-    lines.append("  ChatGPT (crazy):  ${:.2f}".format(chat_cost))
-    lines.append("  Claude  (crazy):  ${:.2f}".format(claude_cost))
-    lines.append("  ChatGPT (normal): ${:.2f}".format(normal_chat))
-    lines.append("  Claude  (normal): ${:.2f}".format(normal_claude))
-    lines.append("  Total:            ${:.2f}".format(total))
+
+    cost_by_provider = {}  # provider -> total
+    cost_files = [
+        Path("logs/ai_costs_chatgpt_ideas.csv"),
+        Path("logs/ai_costs_claude_ideas.csv"),
+        Path("logs/ai_costs_chatgpt_normal.csv"),
+        Path("logs/ai_costs_claude_normal.csv"),
+        Path("logs/ai_costs_aggregated.csv"),
+    ]
+    seen_rows = set()
+    for cf in cost_files:
+        if not cf.exists():
+            continue
+        import csv as _csv
+        with cf.open("r", encoding="utf-8", errors="replace") as f:
+            reader = _csv.DictReader(f)
+            for row in reader:
+                if row.get("date") != cost_date:
+                    continue
+                # Dedupe by (date, time, provider, model)
+                key = (row.get("date"), row.get("time"), row.get("provider"), row.get("model"))
+                if key in seen_rows:
+                    continue
+                seen_rows.add(key)
+                provider = row.get("provider", "unknown")
+                try:
+                    cost = float(row.get("cost_usd", 0))
+                except ValueError:
+                    cost = 0.0
+                cost_by_provider[provider] = cost_by_provider.get(provider, 0.0) + cost
+
+    def _ceil_cent(v):
+        """Round up to nearest cent."""
+        return math.ceil(v * 100) / 100.0
+
+    total = sum(cost_by_provider.values())
+    if cost_by_provider:
+        for provider in sorted(cost_by_provider.keys()):
+            lines.append("  {:10s} ${:.2f}".format(provider + ":", _ceil_cent(cost_by_provider[provider])))
+    else:
+        lines.append("  No cost data found for today")
+    lines.append("  Total:     ${:.2f}".format(_ceil_cent(total)))
 
     # New algos
     lines.append("")
@@ -234,6 +267,49 @@ def build_report() -> str:
             lines.append("New algos added today: none")
     else:
         lines.append("New algos added today: none")
+
+    # Blocked algos (missing API keys)
+    lines.append("")
+    blocked_file = Path("data/blocked/algos.jsonl")
+    if blocked_file.exists():
+        from collections import Counter
+        blocked_entries = []
+        key_counter = Counter()
+        for line in blocked_file.read_text().splitlines():
+            s = line.strip()
+            if not s:
+                continue
+            try:
+                obj = json.loads(s)
+            except Exception:
+                continue
+            blocked_entries.append(obj)
+            for k in obj.get("keys", []):
+                key_counter[k] += 1
+
+        # Dedupe by algo_id (keep latest entry per algo)
+        seen_algos = {}
+        for entry in blocked_entries:
+            aid = entry.get("algo_id", "")
+            seen_algos[aid] = entry
+        unique_blocked = list(seen_algos.values())
+
+        if unique_blocked:
+            lines.append("Blocked Algos ({} unique):".format(len(unique_blocked)))
+            # Group by missing key
+            by_key = {}
+            for entry in unique_blocked:
+                for k in entry.get("keys", ["unknown"]):
+                    by_key.setdefault(k, []).append(entry.get("name", entry.get("algo_id", "?")))
+            for key in sorted(by_key.keys()):
+                algos = by_key[key]
+                lines.append("  {} ({}):".format(key, len(algos)))
+                for name in sorted(algos):
+                    lines.append("    - {}".format(name))
+        else:
+            lines.append("Blocked Algos: none")
+    else:
+        lines.append("Blocked Algos: none")
 
     return "\n".join(lines)
 
