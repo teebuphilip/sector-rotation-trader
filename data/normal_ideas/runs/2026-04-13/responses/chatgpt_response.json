@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-DUA8KsSIcrew6Pyrd2WaTki01TadG",
+  "object": "chat.completion",
+  "created": 1776081164,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[\n  {\n    \"idea_id\": \"sector-rotation-momentum-value\",\n    \"title\": \"Sector Rotation with Momentum and Value Filter\",\n    \"thesis\": \"This model rotates investments among US equity sectors based on a combination of momentum and value signals. It selects sectors exhibiting strong 3-month price momentum but only invests if the sector's price-to-earnings (P/E) ratio is below the median, aiming to avoid overvalued sectors. This hybrid approach balances trend-following with valuation discipline to improve risk-adjusted returns.\",\n    \"data_sources\": [\n      \"yfinance (sector ETFs price data)\",\n      \"yfinance (sector ETFs fundamental data including P/E)\",\n      \"FRED (optional macroeconomic indicators for risk management)\"\n    ],\n    \"signal_logic\": \"Calculate 3-month total return momentum for each sector ETF. Calculate the current P/E ratio from fundamental data. Select sectors with momentum in the top quartile and P/E below the median of all sectors.\",\n    \"entry_exit\": \"Enter long positions in up to 3 sectors meeting the momentum and value criteria at the monthly rebalance date. Exit sectors if they fall below the momentum or value threshold at the next rebalance.\",\n    \"position_sizing\": \"Allocate equal weight to each selected sector, dividing capital equally among up to 3 sectors. If fewer than 3 sectors qualify, allocate equally among those.\",\n    \"universe\": [\n      \"XLY\",  \"XLP\",  \"XLE\",  \"XLF\",  \"XLV\",  \"XLI\",  \"XLB\",  \"XLRE\",  \"XLK\",  \"XLU\"\n    ],\n    \"frequency\": \"monthly\",\n    \"risks\": \"Periods where momentum and value signals conflict may lead to missed opportunities. Overreliance on P/E ratio can be misleading during earnings recessions or structural sector changes. Sector ETFs may have tracking errors and liquidity constraints.\",\n    \"implementation_notes\": \"Use yfinance to download monthly adjusted close prices and calculate 3-month returns for each sector ETF. Extract P/E ratios from yfinance fundamentals or estimate from earnings data. At each monthly rebalance, filter sectors by momentum and P/E criteria, then allocate equally. Track positions and update monthly.\",\n    \"required_keys\": []\n  }\n]",
+        "refusal": null,
+        "annotations": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 235,
+    "completion_tokens": 472,
+    "total_tokens": 707,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "service_tier": "default",
+  "system_fingerprint": "fp_283a574ac4"
+}
