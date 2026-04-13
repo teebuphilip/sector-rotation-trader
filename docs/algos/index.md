@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-13T20:57:10
+Updated (UTC): 2026-04-13T23:10:05
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 36
+Crazy models: 42
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -52,3 +52,9 @@ Crazy models: 36
 | truck-tonnage | Truck Tonnage Index | monthly |
 | misery-rotation | Misery Rotation | monthly |
 | uber-mobility | Uber Mobility Index | weekly |
+| job-posting-acceleration | Job Posting Acceleration | monthly |
+| bankruptcy-filing-rate | Bankruptcy Filing Rate | monthly |
+| small-business-formation | Small Business Formation | monthly |
+| credit-card-delinquency | Credit Card Delinquency | quarterly |
+| consumer-sentiment | Consumer Sentiment | monthly |
+| retail-sales-momentum | Retail Sales Momentum | monthly |

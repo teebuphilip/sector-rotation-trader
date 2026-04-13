@@ -2,18 +2,6 @@
   {
     "date": "2026-01-30",
     "action": "BUY",
-    "ticker": "XLF",
-    "shares": 1880.6893,
-    "price": 53.1667,
-    "cost": 99990.05,
-    "margin": false,
-    "fees": 9.95,
-    "algo_id": "biscotti",
-    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
-  },
-  {
-    "date": "2026-01-30",
-    "action": "BUY",
     "ticker": "XLK",
     "shares": 173.9719,
     "price": 143.7013,
@@ -72,6 +60,18 @@
     "algo_name": "Faber Momentum Rotation"
   },
   {
+    "date": "2026-01-30",
+    "action": "BUY",
+    "ticker": "XLF",
+    "shares": 1880.6893,
+    "price": 53.1667,
+    "cost": 99990.05,
+    "margin": false,
+    "fees": 9.95,
+    "algo_id": "biscotti",
+    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
+  },
+  {
     "date": "2026-02-16",
     "action": "BUY",
     "ticker": "XLE",
@@ -126,34 +126,6 @@
     "reason": "rebalance",
     "algo_id": "baileymol",
     "algo_name": "Algo Baileymol (Chaos Monger)"
-  },
-  {
-    "date": "2026-02-27",
-    "action": "SELL",
-    "ticker": "XLF",
-    "shares": 1880.6893,
-    "price": 51.167,
-    "proceeds": 96213.88,
-    "fees": 15.33,
-    "tax": 0.0,
-    "pnl": -3776.17,
-    "pnl_pct": -3.78,
-    "entry_date": "2026-01-30",
-    "reason": "rebalance",
-    "algo_id": "biscotti",
-    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
-  },
-  {
-    "date": "2026-02-27",
-    "action": "BUY",
-    "ticker": "XLF",
-    "shares": 1880.1954,
-    "price": 51.167,
-    "cost": 96203.93,
-    "margin": false,
-    "fees": 9.95,
-    "algo_id": "biscotti",
-    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
   },
   {
     "date": "2026-02-27",
@@ -294,6 +266,34 @@
     "fees": 9.95,
     "algo_id": "faber",
     "algo_name": "Faber Momentum Rotation"
+  },
+  {
+    "date": "2026-02-27",
+    "action": "SELL",
+    "ticker": "XLF",
+    "shares": 1880.6893,
+    "price": 51.167,
+    "proceeds": 96213.88,
+    "fees": 15.33,
+    "tax": 0.0,
+    "pnl": -3776.17,
+    "pnl_pct": -3.78,
+    "entry_date": "2026-01-30",
+    "reason": "rebalance",
+    "algo_id": "biscotti",
+    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
+  },
+  {
+    "date": "2026-02-27",
+    "action": "BUY",
+    "ticker": "XLF",
+    "shares": 1880.1954,
+    "price": 51.167,
+    "cost": 96203.93,
+    "margin": false,
+    "fees": 9.95,
+    "algo_id": "biscotti",
+    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
   },
   {
     "date": "2026-03-02",
@@ -490,34 +490,6 @@
   {
     "date": "2026-03-31",
     "action": "SELL",
-    "ticker": "XLF",
-    "shares": 1880.1954,
-    "price": 49.37,
-    "proceeds": 92810.09,
-    "fees": 15.16,
-    "tax": 0.0,
-    "pnl": -3393.84,
-    "pnl_pct": -3.53,
-    "entry_date": "2026-02-27",
-    "reason": "rebalance",
-    "algo_id": "biscotti",
-    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
-  },
-  {
-    "date": "2026-03-31",
-    "action": "BUY",
-    "ticker": "XLI",
-    "shares": 573.7967,
-    "price": 161.73,
-    "cost": 92800.14,
-    "margin": false,
-    "fees": 9.95,
-    "algo_id": "biscotti",
-    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
-  },
-  {
-    "date": "2026-03-31",
-    "action": "SELL",
     "ticker": "XLI",
     "shares": 143.8932,
     "price": 161.73,
@@ -630,6 +602,34 @@
     "reason": "rebalance",
     "algo_id": "faber",
     "algo_name": "Faber Momentum Rotation"
+  },
+  {
+    "date": "2026-03-31",
+    "action": "SELL",
+    "ticker": "XLF",
+    "shares": 1880.1954,
+    "price": 49.37,
+    "proceeds": 92810.09,
+    "fees": 15.16,
+    "tax": 0.0,
+    "pnl": -3393.84,
+    "pnl_pct": -3.53,
+    "entry_date": "2026-02-27",
+    "reason": "rebalance",
+    "algo_id": "biscotti",
+    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
+  },
+  {
+    "date": "2026-03-31",
+    "action": "BUY",
+    "ticker": "XLI",
+    "shares": 573.7967,
+    "price": 161.73,
+    "cost": 92800.14,
+    "margin": false,
+    "fees": 9.95,
+    "algo_id": "biscotti",
+    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
   },
   {
     "date": "2026-04-06",
@@ -826,5 +826,61 @@
     "reason": "20MA_exit",
     "algo_id": "nrwise",
     "algo_name": "NRWise Acceleration"
+  },
+  {
+    "date": "2026-04-13",
+    "action": "SELL",
+    "ticker": "XLK",
+    "shares": 247.1199,
+    "price": 145.61,
+    "proceeds": 35971.31,
+    "fees": 11.82,
+    "tax": 802.99,
+    "pnl": 1367.26,
+    "pnl_pct": 4.05,
+    "entry_date": "2026-04-06",
+    "reason": "rebalance",
+    "algo_id": "baileymol",
+    "algo_name": "Algo Baileymol (Chaos Monger)"
+  },
+  {
+    "date": "2026-04-13",
+    "action": "SELL",
+    "ticker": "XLY",
+    "shares": 309.9877,
+    "price": 113.92,
+    "proceeds": 35301.99,
+    "fees": 11.81,
+    "tax": 555.34,
+    "pnl": 945.59,
+    "pnl_pct": 2.8,
+    "entry_date": "2026-04-06",
+    "reason": "rebalance",
+    "algo_id": "baileymol",
+    "algo_name": "Algo Baileymol (Chaos Monger)"
+  },
+  {
+    "date": "2026-04-13",
+    "action": "BUY",
+    "ticker": "XLK",
+    "shares": 237.3833,
+    "price": 145.61,
+    "cost": 34565.38,
+    "margin": false,
+    "fees": 9.95,
+    "algo_id": "baileymol",
+    "algo_name": "Algo Baileymol (Chaos Monger)"
+  },
+  {
+    "date": "2026-04-13",
+    "action": "BUY",
+    "ticker": "XLY",
+    "shares": 303.418,
+    "price": 113.92,
+    "cost": 34565.38,
+    "margin": false,
+    "fees": 9.95,
+    "algo_id": "baileymol",
+    "algo_name": "Algo Baileymol (Chaos Monger)"
   }
 ]
