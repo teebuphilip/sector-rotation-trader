@@ -60,7 +60,7 @@ jobs:
       - name: Nightly validation (surface)
         id: validate_surface
         run: |
-          python scripts/validate_nightly.py; rc=$?
+          rc=0; python scripts/validate_nightly.py || rc=$?
           if [ $rc -eq 2 ]; then
             echo "surface_failed=true" >> $GITHUB_OUTPUT
             echo "SURFACE VALIDATION FAILED (critical failures)"
@@ -131,9 +131,9 @@ jobs:
             echo "" >> /tmp/evening_email.txt
             cat "$QC_FILE" >> /tmp/evening_email.txt
           fi
-          echo "EVENING_EMAIL_BODY<<EOF" >> $GITHUB_ENV
+          echo "EVENING_EMAIL_BODY<<EVENING_EMAIL_END_7x9" >> $GITHUB_ENV
           cat /tmp/evening_email.txt >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          echo "EVENING_EMAIL_END_7x9" >> $GITHUB_ENV
 
       - name: Email evening trading report
         if: ${{ always() && env.ALERT_EMAIL_TO != '' }}
