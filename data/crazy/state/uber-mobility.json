@@ -676,18 +676,28 @@
       "positions": {},
       "sector": "Uber Mobility Index",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-15",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Uber Mobility Index",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-12",
-  "last_run": "2026-04-13",
+  "last_run": "2026-04-15",
   "meta": {
     "uber-mobility": {
       "name": "Uber Mobility Index",
-      "last_run": "2026-04-13",
-      "mobility_index": 92,
-      "roc_4w": -0.0213,
-      "uber_interest": 79,
-      "lyft_interest": 13,
+      "last_run": "2026-04-15",
+      "mobility_index": 95,
+      "roc_4w": -0.0206,
+      "uber_interest": 81,
+      "lyft_interest": 14,
       "signal_label": "HOLD",
       "signal_key": "HOLD"
     }
