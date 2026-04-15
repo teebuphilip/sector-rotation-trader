@@ -1,29 +1,29 @@
 {
-  "as_of": "2026-04-15T13:32:32.347104",
-  "spy_ret_30d": null,
+  "as_of": "2026-04-15T23:10:13.063948",
+  "spy_ret_30d": 0.049058348078137914,
   "entries": [
-    {
-      "algo_id": "biscotti",
-      "name": "Algo Biscotti (Unconditional Loyalty)",
-      "category": "standard",
-      "ret_30d": 0.0785957734143039,
-      "sharpe_30d": 4.031746818146949,
-      "max_dd_30d": -0.031009334599850523
-    },
     {
       "algo_id": "baileymol",
       "name": "Algo Baileymol (Chaos Monger)",
       "category": "standard",
-      "ret_30d": 0.06154161912624012,
-      "sharpe_30d": 4.710580519621981,
+      "ret_30d": 0.07254356489249236,
+      "sharpe_30d": 5.34619217572097,
       "max_dd_30d": -0.012719058256177891
+    },
+    {
+      "algo_id": "biscotti",
+      "name": "Algo Biscotti (Unconditional Loyalty)",
+      "category": "standard",
+      "ret_30d": 0.0650937615315792,
+      "sharpe_30d": 3.152575968390155,
+      "max_dd_30d": -0.031009334599850523
     },
     {
       "algo_id": "dmsr",
       "name": "Antonacci Dual Momentum Sector Rotation",
       "category": "standard",
-      "ret_30d": 0.020210072822318903,
-      "sharpe_30d": 2.0263247734513548,
+      "ret_30d": 0.020518509846002786,
+      "sharpe_30d": 2.003670771018805,
       "max_dd_30d": -0.016342083047611863
     },
     {
@@ -31,15 +31,31 @@
       "name": "Faber Momentum Rotation",
       "category": "standard",
       "ret_30d": 0.01470912122832968,
-      "sharpe_30d": 1.3963228312831895,
+      "sharpe_30d": 1.3463733959292026,
       "max_dd_30d": -0.013793570426934458
+    },
+    {
+      "algo_id": "consumer-sentiment",
+      "name": "Consumer Sentiment",
+      "category": "crazy",
+      "ret_30d": 0.011361699999999919,
+      "sharpe_30d": 1.8928467601124521,
+      "max_dd_30d": -0.0001989999999999418
+    },
+    {
+      "algo_id": "baileymol",
+      "name": "Algo Baileymol (Chaos Monger)",
+      "category": "crazy",
+      "ret_30d": 0.0033441353325074363,
+      "sharpe_30d": 0.003970969625772094,
+      "max_dd_30d": -0.05690228004983178
     },
     {
       "algo_id": "nrwise",
       "name": "NRWise Acceleration",
       "category": "standard",
       "ret_30d": 0.0005550000000000832,
-      "sharpe_30d": -0.45548822156163354,
+      "sharpe_30d": -0.4520511528725564,
       "max_dd_30d": -0.028923195914234492
     },
     {
@@ -358,32 +374,16 @@
       "algo_id": "liquor",
       "name": "Liquor Store Leading Indicator",
       "category": "crazy",
-      "ret_30d": -0.00019899999999994922,
-      "sharpe_30d": -73.02580500544423,
-      "max_dd_30d": -0.0001989999999999418
-    },
-    {
-      "algo_id": "consumer-sentiment",
-      "name": "Consumer Sentiment",
-      "category": "crazy",
-      "ret_30d": -0.00019899999999994922,
-      "sharpe_30d": -73.02580500544423,
-      "max_dd_30d": -0.0001989999999999418
-    },
-    {
-      "algo_id": "baileymol",
-      "name": "Algo Baileymol (Chaos Monger)",
-      "category": "crazy",
-      "ret_30d": -0.00694828131469305,
-      "sharpe_30d": -0.6734263376437384,
-      "max_dd_30d": -0.05690228004983178
+      "ret_30d": -0.00562039999999997,
+      "sharpe_30d": -5.9103495768751495,
+      "max_dd_30d": -0.005620399999999936
     },
     {
       "algo_id": "biscotti",
       "name": "Algo Biscotti (Unconditional Loyalty)",
       "category": "crazy",
-      "ret_30d": -0.036159091478347505,
-      "sharpe_30d": -2.8620823950743395,
+      "ret_30d": -0.0410096803723804,
+      "sharpe_30d": -3.161856726349414,
       "max_dd_30d": -0.04342199668891029
     }
   ]
