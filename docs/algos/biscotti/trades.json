@@ -61,16 +61,6 @@
   ],
   "daily_snapshots": [
     {
-      "date": "2026-01-12",
-      "cash": 100000,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 100000.0,
-      "positions": {},
-      "sector": "Algo Biscotti (Unconditional Loyalty)",
-      "num_positions": 0
-    },
-    {
       "date": "2026-01-13",
       "cash": 100000,
       "borrowed": 0.0,
@@ -1241,18 +1231,18 @@
       "num_positions": 1
     },
     {
-      "date": "2026-04-15",
+      "date": "2026-04-14",
       "cash": -0.0,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 95432.51,
+      "equity": 95069.39,
       "positions": {
         "XLP": {
           "shares": 1171.3823,
           "entry_price": 81.98,
-          "current_price": 81.47,
-          "market_value": 95432.51,
-          "unrealized_pnl": -597.41,
+          "current_price": 81.16,
+          "market_value": 95069.39,
+          "unrealized_pnl": -960.53,
           "entry_date": "2026-03-31",
           "margin": false
         }
@@ -1261,5 +1251,5 @@
       "num_positions": 1
     }
   ],
-  "sim_start": "2026-01-12"
+  "sim_start": "2026-01-13"
 }

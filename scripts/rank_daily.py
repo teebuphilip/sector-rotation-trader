@@ -46,7 +46,29 @@ COLUMNS = [
 ]
 
 
+def get_spy_ytd() -> float:
+    """Fetch SPY YTD return percentage."""
+    try:
+        import yfinance as yf
+        spy = yf.download("SPY", start="2026-01-01", progress=False)
+        if spy.empty:
+            return 0.0
+        first = spy["Close"].iloc[0]
+        last = spy["Close"].iloc[-1]
+        # Handle Series vs scalar
+        if hasattr(first, "iloc"):
+            first = first.iloc[0]
+        if hasattr(last, "iloc"):
+            last = last.iloc[0]
+        return ((float(last) / float(first)) - 1) * 100
+    except Exception:
+        return 0.0
+
+
 def load_algo_entries() -> list:
+    spy_pct = get_spy_ytd()
+    print("  SPY YTD: {:+.2f}%".format(spy_pct))
+
     entries = []
     for state_dir, algo_type in [
         (CRAZY_STATE_DIR, "crazy"),
@@ -69,12 +91,9 @@ def load_algo_entries() -> list:
 
             eq0 = s0.get("equity", 100_000)
             eq1 = s1.get("equity", 100_000)
-            sp0 = s0.get("spy_equity", eq0)
-            sp1 = s1.get("spy_equity", eq0)
 
             ytd = ((eq1 - eq0) / eq0 * 100) if eq0 else 0.0
-            spy = ((sp1 - sp0) / sp0 * 100) if sp0 else 0.0
-            alpha = ytd - spy
+            alpha = ytd - spy_pct
 
             # Best-effort name from meta
             meta = data.get("meta", {})
@@ -89,10 +108,10 @@ def load_algo_entries() -> list:
                 "algo_type": algo_type,
                 "name": name,
                 "ytd_pct": round(ytd, 2),
-                "spy_pct": round(spy, 2),
+                "spy_pct": round(spy_pct, 2),
                 "alpha_pct": round(alpha, 2),
                 "equity": round(eq1, 2),
-                "beat_spy": ytd > spy,
+                "beat_spy": ytd > spy_pct,
                 "days_running": len(snaps),
             })
 
