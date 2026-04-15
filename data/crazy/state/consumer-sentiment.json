@@ -1,11 +1,49 @@
 {
-  "cash": 100000,
+  "cash": 24980.100000000002,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 0.0,
+  "fees_paid": 19.9,
   "taxes_paid": 0.0,
-  "positions": {},
-  "trade_log": [],
+  "positions": {
+    "XLY": {
+      "shares": 343.5245548034782,
+      "entry_price": 116.44000244140625,
+      "entry_date": "2026-04-15",
+      "cost": 40000.0,
+      "using_margin": false,
+      "consec_below_ma": 0
+    },
+    "XLK": {
+      "shares": 236.58239436532557,
+      "entry_price": 147.94000244140625,
+      "entry_date": "2026-04-15",
+      "cost": 35000.0,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
+  "trade_log": [
+    {
+      "date": "2026-04-15",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 343.5246,
+      "price": 116.44,
+      "cost": 40000.0,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-15",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 236.5824,
+      "price": 147.94,
+      "cost": 35000.0,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-01-13",
@@ -676,6 +714,35 @@
       "positions": {},
       "sector": "Consumer Sentiment",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-15",
+      "cash": 24980.1,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99980.1,
+      "positions": {
+        "XLY": {
+          "shares": 343.5246,
+          "entry_price": 116.44,
+          "current_price": 116.44,
+          "market_value": 40000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-15",
+          "margin": false
+        },
+        "XLK": {
+          "shares": 236.5824,
+          "entry_price": 147.94,
+          "current_price": 147.94,
+          "market_value": 35000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-15",
+          "margin": false
+        }
+      },
+      "sector": "Consumer Sentiment",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-13",
@@ -683,7 +750,12 @@
   "meta": {
     "consumer-sentiment": {
       "name": "Consumer Sentiment",
-      "last_run": "2026-04-15"
+      "last_run": "2026-04-15",
+      "sentiment_level": 56.6,
+      "delta_3m": 5.6,
+      "signal_label": "BULLISH",
+      "signal_key": "BULLISH",
+      "last_signal": "BULLISH"
     }
   }
 }

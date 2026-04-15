@@ -1,11 +1,49 @@
 {
-  "cash": 100000,
+  "cash": 19980.100000000002,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 0.0,
+  "fees_paid": 19.9,
   "taxes_paid": 0.0,
-  "positions": {},
-  "trade_log": [],
+  "positions": {
+    "XLP": {
+      "shares": 613.7228335685113,
+      "entry_price": 81.47000122070312,
+      "entry_date": "2026-04-15",
+      "cost": 50000.0,
+      "using_margin": false,
+      "consec_below_ma": 0
+    },
+    "XLU": {
+      "shares": 645.5777751655088,
+      "entry_price": 46.470001220703125,
+      "entry_date": "2026-04-15",
+      "cost": 30000.0,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
+  "trade_log": [
+    {
+      "date": "2026-04-15",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 613.7228,
+      "price": 81.47,
+      "cost": 50000.0,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-15",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 645.5778,
+      "price": 46.47,
+      "cost": 30000.0,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-01-13",
@@ -676,6 +714,35 @@
       "positions": {},
       "sector": "Liquor Store Leading Indicator",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-15",
+      "cash": 19980.1,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99980.1,
+      "positions": {
+        "XLP": {
+          "shares": 613.7228,
+          "entry_price": 81.47,
+          "current_price": 81.47,
+          "market_value": 50000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-15",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 645.5778,
+          "entry_price": 46.47,
+          "current_price": 46.47,
+          "market_value": 30000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-15",
+          "margin": false
+        }
+      },
+      "sector": "Liquor Store Leading Indicator",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-13",
@@ -683,7 +750,8 @@
   "meta": {
     "liquor": {
       "name": "Liquor Store Leading Indicator",
-      "last_run": "2026-04-15"
+      "last_run": "2026-04-15",
+      "last_signal": "RISK_OFF"
     }
   }
 }
