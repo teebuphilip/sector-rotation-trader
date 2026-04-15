@@ -116,7 +116,7 @@ jobs:
           eq    = snap.get('equity', 0)
           print(f'sector={snap.get(\"sector\",\"—\")} | {len(buys)}B {len(sells)}S | equity=\${eq:,.0f}')
           ")"
-          git pull --rebase
+          git pull --rebase --autostash
           git push
 
       - name: Prepare evening email
@@ -131,9 +131,6 @@ jobs:
             echo "" >> /tmp/evening_email.txt
             cat "$QC_FILE" >> /tmp/evening_email.txt
           fi
-          echo "EVENING_EMAIL_BODY<<EVENING_EMAIL_END_7x9" >> $GITHUB_ENV
-          cat /tmp/evening_email.txt >> $GITHUB_ENV
-          echo "EVENING_EMAIL_END_7x9" >> $GITHUB_ENV
 
       - name: Email evening trading report
         if: ${{ always() && env.ALERT_EMAIL_TO != '' }}
@@ -144,7 +141,7 @@ jobs:
           username: ${{ secrets.ALERT_EMAIL_USER }}
           password: ${{ secrets.ALERT_EMAIL_PASS }}
           subject: "Evening Trading Report — ${{ env.AFH_RUN_DATE }} — ${{ job.status }}"
-          body: ${{ env.EVENING_EMAIL_BODY }}
+          body: file:///tmp/evening_email.txt
           to: ${{ secrets.ALERT_EMAIL_TO }}
           from: ${{ secrets.ALERT_EMAIL_USER }}
 
