@@ -1,61 +1,94 @@
 # Sector Rotation Trader
 
-Paper trading system implementing the sector rotation strategy from NRWise / DataDrivenInvestor. Designed as a realistic simulator so that if the strategy proves profitable, it can transition to live trading with minimal surprises.
+Sector Rotation Trader is a public paper-trading lab for testing sector rotation, academic baseline strategies, and weird alternative-data trading signals. The repo runs daily simulations, publishes dashboards from `docs/`, generates new signal ideas, builds selected ideas into runnable algos, and now produces a separate content layer from validated system outputs.
 
-## Strategy Rules
+This is research infrastructure. It is not investment advice.
 
-- $100k base capital, $10k max per position
-- Up to $100k additional margin when fully deployed and signal fires
-- 8.5% annual margin rate (daily accrual, settled proportionally on position close)
-- Sector scan daily: leading SPDR ETF by 3M-6M performance spread (acceleration)
-- Entry: price > 10-day high + volume > 150% of 20-day avg + BB expanding (all 3 required)
-- Exit: 2 consecutive closes below 20-day MA OR 8% hard stop-loss (whichever hits first)
+## What This Repo Does
 
-**Simulation window:** 6 months live tracking (seeded with 90 days historical)
+The system has four major loops:
 
----
+1. **Baseline trading loop**: runs the original NRWise-style sector rotation model.
+2. **Algo lab loop**: runs normal academic algos and crazy alternative-data algos.
+3. **Idea-to-algo loop**: generates structured ideas, validates them, routes them to adapters, builds Python algo files, seeds them, and triages the result.
+4. **Content loop**: independently reads validated reports and turns them into short public-facing content without inventing new facts.
 
-## Recent Improvements (v2)
+The daily public output lives under `docs/` and is intended for GitHub Pages.
 
-### Bug Fixes
-- **Margin repayment**: Fixed phantom debt bug where losing margin positions left unpaid borrowed principal. Shortfall now correctly deducted from cash.
-- **Interest settlement**: Accrued interest is now settled proportionally when closing margin positions (previously accumulated forever without being deducted).
-- **Available cash**: `available_cash()` now subtracts accrued interest, preventing entries with money owed to margin.
+## Strategy Rules: Baseline NRWise
 
-### Risk Management (New)
-- **8% hard stop-loss** (`STOP_LOSS_PCT`): Positions are force-exited if price drops 8% below entry, regardless of MA signal.
-- **15% drawdown circuit breaker** (`MAX_DRAWDOWN_PCT`): No new entries when portfolio equity is >15% below its peak. Existing positions still managed normally.
-- **Sector concentration limit** (`MAX_POSITIONS_PER_SECTOR = 5`): Prevents loading up on correlated positions in the same sector.
+The root strategy is a realistic paper-trading simulator using SPDR sector ETFs and sector holdings.
 
-### Robustness
-- **Retry logic on data downloads**: All yfinance calls now retry once after 30s on failure. Graceful degradation (skip run instead of crash) if data is unavailable.
-- **Stale ticker fix**: Replaced PXD (acquired 2024) with FANG in XLE holdings.
-- **GitHub Actions failure alerts**: Workflow now auto-creates a GitHub issue with log link on any run failure.
+Rules:
 
-### Dashboard & Analytics (New)
-- **Sharpe Ratio**: Annualized, risk-free rate 4.5%
-- **Max Drawdown %**: Peak-to-trough tracking
-- **Avg Win / Avg Loss**: Per-trade breakdown
-- **Drawdown chart**: Separate chart showing drawdown % over time
-- **SPY benchmark overlay**: Portfolio equity vs. SPY (normalized to $100k) on the same chart
-- **Redesigned KPI grid**: 10 metrics across 2 rows
+- `$100k` base capital.
+- `$10k` max per position.
+- Up to `$100k` additional margin when fully deployed and signal fires.
+- `8.5%` annual margin rate with daily accrual and proportional settlement on position close.
+- Daily sector scan chooses the leading SPDR ETF by 3M-6M performance spread/acceleration.
+- Entry requires price above 10-day high, volume above 150% of 20-day average, and Bollinger Band expansion.
+- Exit occurs after 2 consecutive closes below the 20-day moving average or an 8% hard stop-loss.
+- Drawdown circuit breaker blocks new entries when equity is more than 15% below peak.
+- Sector concentration limits avoid excessive exposure to one sector.
 
-### Operational
-- **`--dry-run` flag**: `python daily_run.py --dry-run` runs the full pipeline without saving state or generating the dashboard. Useful for testing config changes.
-- **Failure notifications**: GitHub Actions creates an issue automatically if the daily run fails.
+Simulation state is stored in `state.json` and rendered to `docs/index.html`.
 
----
+## Repo Layout
 
-## Not Yet Implemented
+Core baseline:
 
-- **Tax simulation (advanced)**: No wash sale rule detection or capital gains carryforward. Basic short/long estimated tax is now supported.
-- **Slippage model**: Entries/exits use closing price with no bid-ask spread or slippage estimate.
-- **Additional entry filters**: RSI, MACD, or ATR-based filters to improve signal quality.
-- **Profit-taking exit**: No rule to take profits at a target % (e.g., exit if up 25% in 5 days).
-- **Monthly P&L breakdown**: Dashboard doesn't show month-by-month performance.
-- **Auto-refresh ticker lists**: SECTOR_STOCKS is static; should periodically pull actual ETF holdings.
+- `config.py`: baseline strategy configuration.
+- `scanner.py`: ETF/stock downloads and sector scan helpers.
+- `signals.py`: baseline entry/exit logic.
+- `portfolio.py`: cash, positions, margin, taxes, analytics.
+- `dashboard.py`: baseline dashboard generation.
+- `daily_run.py`: baseline daily orchestration.
+- `seed.py`: baseline historical bootstrap.
+- `state.json`: baseline live paper state.
 
----
+Normal algos:
+
+- `normal/algos/`: academic/standard algo implementations.
+- `normal/runner.py`: normal algo runner.
+- `normal/seed.py`: normal algo historical seed.
+- `normal/ledger.py`: normal consolidated ledger.
+- `normal_run.py`: normal run entry point.
+- `normal_seed.py`: normal seed entry point.
+
+Crazy algos:
+
+- `crazy/algos/`: alternative-data algo implementations.
+- `data/algos_registry_crazy.txt`: flat-file crazy algo registry.
+- `crazy/runner.py`: crazy algo runner.
+- `crazy/seed.py`: crazy algo historical/best-effort seed.
+- `crazy/ledger.py`: crazy consolidated ledger.
+- `crazy/combined_dashboard.py`: crazy dashboard/index output.
+- `crazy/blocked.py`: missing-key blocked queue writer.
+- `crazy_run.py`: crazy run entry point.
+- `crazy_seed.py`: crazy seed entry point.
+
+Adapters:
+
+- `crazy/adapters/`: stable adapter functions used by generated crazy algos.
+- `scripts/adapter_router.py`: maps an idea/spec to one or more known adapters.
+- `docs/taxonomy.md`: taxonomy of known crazy data patterns and valid examples.
+
+Public outputs:
+
+- `docs/index.html`: baseline dashboard.
+- `docs/landing.html`: public landing/CTA page.
+- `docs/leaderboards/`: rolling 30-day leaderboard outputs.
+- `docs/signals/`: precomputed ticker/sector signal lookup data.
+- `docs/signals/lookup.html`: ticker lookup UI.
+- `docs/algos/<algo_id>/`: crazy algo dashboards.
+- `docs/normal/<algo_id>/`: normal algo dashboards.
+- `docs/blog/`: blog/build-log scaffold.
+- `docs/ledgers/`: consolidated normal/crazy ledger JSON.
+
+Reports and content:
+
+- `reports/deep_validation/`: standalone validation reports for content generation.
+- `content/`: generated text content for daily posts, spotlights, failures, calls, and weekly summaries.
 
 ## Setup
 
@@ -63,245 +96,472 @@ Paper trading system implementing the sector rotation strategy from NRWise / Dat
 git clone https://github.com/teebuphilip/sector-rotation-trader.git
 cd sector-rotation-trader
 pip install -r requirements.txt
-
-# Run once to bootstrap 90-day historical state (baseline)
-python seed.py
-
-# Normal/crazy algos auto-seed on first run,
-# but you can force a full seed if needed:
-python normal_seed.py
-python crazy_seed.py
-
-# Commit the generated state.json
-git add state.json docs/
-git commit -m "seed: bootstrap 90-day historical state"
-git push
 ```
 
-## Crazy Algos (No-Key Set)
-
-Separate runner for the no‑API‑key “crazy” algos (TSA, Craigslist, 311, LinkedIn PDF, Congress).
+Bootstrap baseline state:
 
 ```bash
-# Seed 90-day history (best-effort; some algos require live data)
-python crazy_seed.py
+python seed.py
+```
 
-# Daily run (writes per‑algo dashboards + combined overview)
+Bootstrap normal/crazy algos:
+
+```bash
+python normal_seed.py
+python crazy_seed.py
+```
+
+Run the daily systems locally:
+
+```bash
+python daily_run.py
+python normal_run.py
 python crazy_run.py
 ```
 
-Notes:
-- LinkedIn algo will use `data/crazy/linkedin_workforce.csv` if present (columns: `date,sector,hire_rate,layoff_rate`). Otherwise it attempts a best‑effort PDF parse and may hold cash if parsing fails.
+Dry-run baseline only:
 
-Crazy algos live in `crazy/algos/` and are registered via the flat file `data/algos_registry_crazy.txt`.
+```bash
+python daily_run.py --dry-run
+```
 
-## Blocked Queue (Missing Keys)
+## Common Commands
 
-Blocked algos are recorded here:
-- `data/blocked/algos.jsonl`
+Baseline:
 
-## Daily Crazy Idea Pipeline (Minimal)
+```bash
+python seed.py
+python daily_run.py
+python daily_run.py --dry-run
+```
 
-Generates one new “crazy idea” from ChatGPT and Claude daily, stores JSON + Markdown, and scores for completeness.
+Normal algos:
+
+```bash
+python normal_seed.py
+python normal_run.py
+```
+
+Crazy algos:
+
+```bash
+python crazy_seed.py
+python crazy_run.py
+```
+
+Seed one generated crazy algo:
+
+```bash
+python crazy_seed.py --algo-file crazy/algos/reddit_gaming_thread_spike.py
+```
+
+Build published crazy ideas:
+
+```bash
+python scripts/run_publish_pipeline.py --dry-run
+python scripts/run_publish_pipeline.py
+```
+
+Run standalone content engine:
+
+```bash
+scripts/run_content_engine.sh
+scripts/run_content_engine.sh --date 2026-04-15
+```
+
+## Idea Generation Pipeline
+
+The crazy idea pipeline is intentionally gated before anything reaches the build harness.
+
+Flow:
+
+```text
+LLM idea generation
+-> strict schema gate
+-> scoring
+-> markdown publishing
+-> adapter routing
+-> structural build
+-> seed
+-> triage
+```
+
+The required crazy idea schema follows:
+
+```text
+IDEA -> DATA -> BEHAVIOR -> MARKET IMPACT -> TRADE LOGIC
+```
+
+This prevents vague ideas from entering the build stage. The LLM must identify:
+
+- a weird but real-world idea;
+- a real, accessible data source;
+- the behavior happening in the real world;
+- the sector and directional market impact;
+- simple deterministic entry and exit logic.
 
 Key files:
-- Prompt: `prompts/crazy_ideas_prompt.txt`
-- Run artifacts: `data/ideas/runs/YYYY-MM-DD/`
-- Published markdown: `docs/ideas/YYYY-MM-DD.md`
+
+- `prompts/crazy_ideas_prompt.txt`: strict schema generation prompt.
+- `scripts/crazy_generate_ideas.py`: runs ChatGPT + Claude generators and schema gate.
+- `scripts/crazy_schema_gate.py`: deterministic schema validator/normalizer.
+- `scripts/crazy_score_ideas.py`: scores accepted ideas.
+- `scripts/crazy_publish_markdown.py`: publishes accepted ideas to markdown.
+- `data/ideas/runs/YYYY-MM-DD/raw/`: raw LLM JSONL.
+- `data/ideas/runs/YYYY-MM-DD/filtered/`: schema-accepted ideas.
+- `data/ideas/runs/YYYY-MM-DD/rejected/`: schema-rejected ideas.
+- `data/ideas/runs/YYYY-MM-DD/publish/`: markdown specs waiting for build.
 
 GitHub Action:
+
 - `.github/workflows/crazy_ideas_daily.yml`
 
-## Build + Seed Pipeline (Crazy)
-Orchestrator:
-- `scripts/run_publish_pipeline.py`
+Normal ideas have a smaller weekly pipeline:
 
-What it does:
-- Routes each published idea to an adapter.
-- Builds an algo file (structural build + patch + validation).
-- Seeds it.
-- Moves the spec into `data/ideas/completed/`, `data/ideas/failed/`, or `data/ideas/intervention/`.
+- `prompts/normal_ideas_prompt.txt`
+- `scripts/normal_generate_ideas.py`
+- `scripts/normal_score_ideas.py`
+- `scripts/normal_publish_markdown.py`
+- `.github/workflows/normal_ideas_weekly.yml`
 
-Common usage:
+## Adapter Routing
+
+Generated crazy algos must be built against stable adapters, not arbitrary hallucinated data fetching code.
+
+Adapter routing:
+
 ```bash
-python scripts/run_publish_pipeline.py          # uses data/ideas/runs by default
+python scripts/adapter_router.py --spec-file path/to/spec.md
+```
+
+The router scores every known adapter and returns JSON similar to:
+
+```json
+{
+  "adapters": ["reddit_activity"],
+  "scores": {"reddit_activity": 5, "price_only": 3},
+  "top_score": 5,
+  "confidence": "ok"
+}
+```
+
+Rules:
+
+- Exit code `0`: usable adapter found.
+- Exit code `1`: no adapter or confidence too low.
+- Low-confidence ideas are moved to `data/ideas/intervention/` for manual adapter review.
+
+Known adapter families include Reddit, Twitter/social search, weather, earthquakes, Google Trends, FRED, TSA tables, Socrata/311, HTML tables, RSS counts, OpenChargeMap, and price-only fallback.
+
+## Build + Seed Pipeline: Crazy
+
+Main orchestrator:
+
+```bash
+python scripts/run_publish_pipeline.py
+```
+
+Default input root:
+
+```text
+data/ideas/runs
+```
+
+The script scans nested `publish/` directories and skips specs already moved into completed, failed, or intervention queues.
+
+Dry run:
+
+```bash
 python scripts/run_publish_pipeline.py --dry-run
 ```
 
-## Adapter Routing
-Adapter routing is keyword‑based with a confidence threshold:
-- Script: `scripts/adapter_router.py`
-- If no adapter or low confidence, the idea is moved to `data/ideas/intervention/`.
+Per-spec build flow:
 
-## Signal Precompute (Product 2)
-Nightly job to precompute per‑ticker verdicts:
-- Script: `precompute_signals.py`
-- Outputs: `docs/signals/`
-  - `docs/signals/<TICKER>.json`
-  - `docs/signals/_sectors.json`
-  - `docs/signals/_sectors/<ETF>.json`
-  - `docs/signals/index.json`
+```text
+adapter route
+-> structural build
+-> final validation
+-> seed
+-> move spec
+```
+
+Structural builder:
+
+```bash
+scripts/run_structural_build.sh --spec-file SPEC.md --output-path crazy/algos/new_algo.py
+```
+
+Builder components:
+
+- `scripts/grill_algo_spec.py`: turns loose markdown into a tighter JSON spec.
+- `scripts/slice_algo_spec.py`: breaks the spec into smaller build slices.
+- `scripts/build_structural_algo.py`: writes a structurally valid algo shell.
+- `scripts/patch_algo.py`: LLM patch pass for intent-specific logic.
+- `scripts/patch_deterministic.py`: deterministic fallback when LLM patching is not reliable.
+- `scripts/validate_structural_algo.py`: structural checks.
+- `scripts/validate_algo_llm.py`: LLM intent/spec check.
+- `scripts/validate_final.py`: compile and final sanity checks.
+
+Triage buckets:
+
+- `data/ideas/completed/YYYY-MM-DD/`: built and seeded.
+- `data/ideas/failed/YYYY-MM-DD/`: build or seed failed.
+- `data/ideas/intervention/YYYY-MM-DD/`: no adapter, low confidence, or requires manual review.
+
+## Crazy Algo Registry
+
+Crazy algos are registered through a flat text file instead of hand-editing Python imports:
+
+```text
+data/algos_registry_crazy.txt
+```
+
+Format:
+
+```text
+module_name:ClassName
+```
+
+Example:
+
+```text
+reddit_gaming_thread_spike:RedditGamingThreadSpikeAlgo
+```
+
+Registry loader:
+
+- `crazy/algos/registry.py`
+
+Helper:
+
+- `scripts/rebuild_registry_crazy.py`
+
+This makes generated algos friendlier for automation and GitHub workflows.
+
+## Seeding Behavior
+
+The seeders are best-effort and designed not to block the entire lab.
+
+Crazy seeding:
+
+```bash
+python crazy_seed.py
+python crazy_seed.py --algo-file crazy/algos/specific_algo.py
+```
+
+Important behavior:
+
+- Historical-capable algos simulate history.
+- Live-only or no-history algos get flat cash history.
+- Missing API keys are recorded in `data/blocked/algos.jsonl`.
+- Delisted/unavailable tickers are filtered where possible.
+- Seed failures in the publish pipeline move the source spec to `data/ideas/failed/`.
+
+Blocked key cleanup:
+
+```bash
+python scripts/cleanup_blocked_keys.py --dry-run
+python scripts/cleanup_blocked_keys.py
+```
+
+The cleanup script removes blocked entries for keys now present in the environment and prints algo id, name, and required keys.
+
+## Signal Precompute: Product 2
+
+`precompute_signals.py` converts seeded/running algo states into per-ticker and per-sector verdict files.
 
 Run locally:
+
 ```bash
 python precompute_signals.py
 python precompute_signals.py --min-days 10
 python precompute_signals.py --dry-run
+python precompute_signals.py --no-wiki
 ```
 
+Outputs:
+
+- `docs/signals/<TICKER>.json`
+- `docs/signals/_sectors.json`
+- `docs/signals/_sectors/<ETF>.json`
+- `docs/signals/index.json`
+
 Lookup UI:
+
 - `docs/signals/lookup.html`
 
-## Weekly Normal Idea Pipeline (Minimal)
+SPY benchmark backfill helper:
 
-Generates one new “normal” academic idea from ChatGPT and Claude weekly, stores JSON + Markdown, and scores for completeness.
+```bash
+python scripts/backfill_spy_equity.py
+```
 
-Key files:
-- Prompt: `prompts/normal_ideas_prompt.txt`
-- Run artifacts: `data/normal_ideas/runs/YYYY-MM-DD/`
-- Published markdown: `docs/normal_ideas/YYYY-MM-DD.md`
+This repairs old state snapshots that lack `spy_equity`, which affects "beating SPY" counts.
 
-GitHub Action:
-- `.github/workflows/normal_ideas_weekly.yml`
+## Ranking and Tactical Reporting
 
-## Daily Pipeline Email
+There are two separate ranking concepts. They should not be confused.
 
-Script:
-- `scripts/daily_stats_email.py`
+Force rank:
 
-Email delivery (same as AFH) requires GitHub secrets:
-- `ALERT_EMAIL_TO`
-- `ALERT_EMAIL_USER`
-- `ALERT_EMAIL_PASS`
+- Source: `data/rank_history.csv`.
+- Script: `scripts/rank_daily.py`.
+- Meaning: full-window/since-seed rank.
+- Use: long-term trust, promotion/demotion, kill review.
+
+Rolling 30D leaderboard:
+
+- Source: `docs/leaderboards/rolling_30d.json` and `.md`.
+- Script: `scripts/rolling_30d_leaderboard.py`.
+- Meaning: recent trailing 30-day performance.
+- Use: tactical spotlight and recent momentum.
+
+An algo can be weak on force rank but strong over rolling 30D. That is not a contradiction. It means the algo is recently recovering or recently hot but is not yet strong on the full-window record.
+
+Evening/tactical email:
+
+- `scripts/evening_email.py`: post-close tactical email.
+- `scripts/daily_stats_email.py`: broader daily stats email.
+
+## Standalone Content Engine
+
+The content engine is deliberately separate from the tactical run.
+
+Flow:
+
+```text
+existing artifacts
+-> deep validation report
+-> deterministic content templates
+-> text files under content/
+```
+
+Run:
+
+```bash
+scripts/run_content_engine.sh
+```
+
+Scripts:
+
+- `scripts/write_deep_validation_report.py`
+- `scripts/generate_content.py`
+- `scripts/run_content_engine.sh`
+
+Inputs:
+
+- `data/rank_history.csv`
+- `docs/leaderboards/rolling_30d.json`
+- `docs/signals/index.json`
+
+Outputs:
+
+- `reports/deep_validation/YYYY-MM-DD.md`
+- `reports/deep_validation/YYYY-MM-DD.json`
+- `reports/deep_validation/latest.md`
+- `reports/deep_validation/latest.json`
+- `content/daily/YYYY-MM-DD.txt`
+- `content/signal_of_day/YYYY-MM-DD.txt`
+- `content/failures/YYYY-MM-DD.txt`
+- `content/call_of_day/YYYY-MM-DD.txt`
+- `content/weekly/YYYY-WW.txt`
+
+Principle:
+
+```text
+If it is not in the validation report, it does not exist.
+```
+
+The generator does not recompute strategy metrics and does not use an LLM. It formats already-validated facts.
+
+Detailed documentation:
+
+- `content-generation.md`
+
+## Blog and Public Site
+
+The public pages are served from `docs/` via GitHub Pages.
+
+Important pages:
+
+- `docs/landing.html`: main CTA landing page.
+- `docs/blog/index.html`: blog/build-log index.
+- `docs/blog/_posts/`: individual posts.
+- `docs/biscotti.html`: Algo Biscotti page.
+- `docs/bailey.html`: Algo Baileymol page.
+- `docs/leaderboard.html`: public leaderboard page.
+- `docs/signals/lookup.html`: ticker signal lookup.
+
+Future website separation can copy curated `docs/` and `content/` files into another repo without moving the lab internals.
+
+## GitHub Actions
+
+Primary workflows:
+
+- `.github/workflows/daily_run.yml`: after-market daily run.
+- `.github/workflows/crazy_ideas_daily.yml`: daily crazy idea generation.
+- `.github/workflows/normal_ideas_weekly.yml`: weekly normal idea generation.
+
+The daily run currently handles baseline, normal algos, crazy algos, dashboards, ledgers, rolling leaderboard, signal precompute, and email reporting. The standalone content engine is intentionally not wired into that flow yet.
+
+Manual trigger:
+
+```text
+GitHub -> Actions -> Daily Sector Rotation Run -> Run workflow
+```
 
 ## Required Secrets
 
 LLM access:
+
 - `OPENAI_API_KEY`
 - `ANTHROPIC_API_KEY`
 
 Email delivery:
+
 - `ALERT_EMAIL_TO`
 - `ALERT_EMAIL_USER`
 - `ALERT_EMAIL_PASS`
 
-### Gmail App Password (for `ALERT_EMAIL_PASS`)
+Optional data/API stability:
 
-Gmail does not allow your normal password for SMTP. You must create an **App Password**:
-1. Go to `myaccount.google.com` → **Security**.
-2. Under **How you sign in to Google**, enable **2‑Step Verification** (must be ON).
-3. Go back to **Security** → **App passwords**.
-4. **Select app** → `Mail`.
-5. **Select device** → `Other (Custom name)` → type `sector-rotation-trader`.
-6. Click **Generate**.
-7. Copy the 16‑character password shown (you can remove spaces).
-8. Set that value as the GitHub secret `ALERT_EMAIL_PASS`.
+- `FRED_API_KEY`
+- `SOCRATA_APP_TOKEN`
+- provider-specific keys for any blocked algos in `data/blocked/algos.jsonl`
 
-## 30-Day Rolling Leaderboard
+### Gmail App Password
 
-Generated daily by the algo runners and written to:
-- `docs/leaderboards/rolling_30d.md`
-- `docs/leaderboards/rolling_30d.json`
+Gmail does not allow your normal password for SMTP. Create an app password:
 
-## Landing Page
-
-CTA landing page (links to the two products + latest winners):
-- `docs/landing.html`
-
-## Architecture
-
-Repo layout and workflow overview:
-- `architecture.md`
-
-## What This Is (And Isn’t)
-
-This is a public experiment: we run weird alternative‑data trading signals every day, publish the receipts, and refuse to hide the failures. It’s research, not advice. The goal is to see which ugly signals survive real time and which die in public.
-
-What this is:
-- A live, timestamped paper‑trading lab
-- Daily algo ideas (ChatGPT + Claude) with full specs
-- Public ledgers, dashboards, and failure logs
-
-What this isn’t:
-- Investment advice
-- A promise of performance
-
-If you’re here, you’re either curious, skeptical, or both. That’s the right mindset.
-
-## Algo Biscotti Page
-
-Dedicated page for Algo Biscotti:
-- `docs/biscotti.html`
-
-## Algo Baileymol Page
-
-Dedicated page for Algo Baileymol:
-- `docs/bailey.html`
+1. Go to `myaccount.google.com` -> `Security`.
+2. Enable `2-Step Verification`.
+3. Go to `Security` -> `App passwords`.
+4. Select `Mail`.
+5. Select device `Other` and name it `sector-rotation-trader`.
+6. Generate the app password.
+7. Set it as the GitHub secret `ALERT_EMAIL_PASS`.
 
 ## GitHub Pages
 
-1. Go to repo **Settings > Pages**
-2. Source: **Deploy from branch**
-3. Branch: `main`, folder: `/docs`
-4. Dashboard URL: `https://teebuphilip.github.io/sector-rotation-trader/`
+1. Go to repo `Settings > Pages`.
+2. Source: `Deploy from branch`.
+3. Branch: `main`, folder: `/docs`.
+4. Dashboard URL: `https://teebuphilip.github.io/sector-rotation-trader/`.
 
-## GitHub Actions
+## What This Is And Is Not
 
-Runs automatically at **6:30 PM ET Mon-Fri** after market close.
+This is:
 
-Manual trigger: **Actions > Daily Sector Rotation Run > Run workflow**
+- a live, timestamped paper-trading lab;
+- a place to test weird alternative-data trading signals;
+- a public record of winners, losers, failures, and rebuilds;
+- a content source for public posts grounded in validated system outputs.
 
-This workflow now runs:
-- Baseline NRWise (`daily_run.py`)
-- Normal algos (`normal_run.py`, auto-seeds new algos)
-- Crazy algos (`crazy_run.py`, auto-seeds new algos)
+This is not:
 
----
+- investment advice;
+- a promise of performance;
+- a hidden production trading engine;
+- an LLM that invents market stories after the fact.
 
-## Files
-
-| File | Purpose |
-|------|---------|
-| `config.py` | All tunable parameters (capital, signals, risk limits) |
-| `scanner.py` | Sector ETF momentum scan + stock leadership filter + `safe_download()` helper |
-| `signals.py` | Entry (BB + volume + breakout) and exit (20MA + stop-loss) logic |
-| `portfolio.py` | State management: cash, margin, positions, P&L, analytics |
-| `dashboard.py` | HTML dashboard generator (equity curve, drawdown, SPY overlay) |
-| `daily_run.py` | Main daily orchestration script (supports `--dry-run`) |
-| `seed.py` | One-time 90-day historical bootstrap |
-| `state.json` | Live portfolio state (auto-committed daily) |
-| `docs/index.html` | Dashboard (served via GitHub Pages) |
-| `docs/trades.json` | Full trade log (consumed by dashboard) |
-
-## Config Parameters
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `STARTING_CASH` | $100,000 | Base portfolio cash |
-| `MAX_POSITION_SIZE` | $10,000 | Max $ per trade |
-| `MAX_BORROW` | $100,000 | Max margin borrowing |
-| `BORROW_RATE_ANNUAL` | 8.5% | Annual margin interest rate |
-| `STOP_LOSS_PCT` | 8% | Hard stop-loss per position |
-| `MAX_DRAWDOWN_PCT` | 15% | Portfolio drawdown circuit breaker |
-| `MAX_POSITIONS_PER_SECTOR` | 5 | Max open positions per sector |
-| `BREAKOUT_LOOKBACK` | 10 days | Price breakout window |
-| `VOLUME_MULT` | 1.5x | Volume surge threshold |
-| `BB_PERIOD` / `BB_STD` | 20 / 2.0 | Bollinger Band parameters |
-| `EXIT_MA_PERIOD` | 20 days | Exit moving average |
-| `EXIT_CONSEC_DAYS` | 2 | Consecutive closes below MA to exit |
-
-## Sector ETF Map
-
-| ETF | Sector | Top Holdings Tracked |
-|-----|--------|----------------------|
-| XLK | Technology | AAPL, MSFT, NVDA, AVGO, ORCL... |
-| XLV | Healthcare | UNH, JNJ, LLY, ABBV, MRK... |
-| XLF | Financials | BRK-B, JPM, V, MA, BAC... |
-| XLY | Consumer Discretionary | AMZN, TSLA, HD, MCD, NKE... |
-| XLI | Industrials | GE, RTX, CAT, HON, UNP... |
-| XLC | Communication | META, GOOGL, NFLX, DIS... |
-| XLP | Consumer Staples | PG, KO, PEP, COST, WMT... |
-| XLE | Energy | XOM, CVX, COP, EOG, SLB... |
-| XLB | Materials | LIN, APD, SHW, FCX, NEM... |
-| XLRE | Real Estate | PLD, AMT, EQIX, CCI, PSA... |
-| XLU | Utilities | NEE, DUK, SO, D, AEP... |
+The lab's credibility comes from running many signals, keeping the receipts, and not hiding the failures.

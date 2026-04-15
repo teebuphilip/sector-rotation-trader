@@ -1,8 +1,12 @@
-Daily crazy idea generation runs (ChatGPT + Claude) and writes JSONL specs to `data/ideas/runs/`, publishing Markdown to `docs/ideas/` (normal ideas run weekly to `data/normal_ideas/` and `docs/normal_ideas/`).
-Baseline, normal, and crazy runners update per‑algo state, dashboards, ledgers, and the rolling 30‑day leaderboard in `docs/`.
-Crazy algos live in `crazy/algos/` (one file per algo) and are registered via `data/algos_registry_crazy.txt`.
-Published specs are triaged and built by `scripts/run_publish_pipeline.py`, which routes to adapters, builds/patches, seeds, and moves specs into `data/ideas/completed/`, `data/ideas/failed/`, or `data/ideas/intervention/`.
-Each algo has its own state JSON under `data/normal/state/` or `data/crazy/state/`, plus consolidated ledgers in `docs/ledgers/` (new algos auto‑seed on first run).
-Public pages and CTAs are served from `docs/`, including landing, honor pages, dashboards, and leaderboards.
-Signals are precomputed nightly by `precompute_signals.py` into `docs/signals/` for the ticker lookup UI (`docs/signals/lookup.html`).
-Data is segregated per model: each algo has its own state JSON and dashboard, with consolidated ledgers split into normal vs crazy.
+Sector Rotation Trader is a paper-trading lab with four loops: baseline NRWise, normal/crazy algo execution, LLM idea-to-algo build, and standalone content generation.
+Baseline state lives in `state.json`; normal and crazy algo states live under `data/normal/state/` and `data/crazy/state/`.
+Normal algos are conventional baselines in `normal/algos/`; crazy algos are alternative-data strategies in `crazy/algos/` and are registered through `data/algos_registry_crazy.txt`.
+Crazy idea generation forces every LLM idea through `IDEA -> DATA -> BEHAVIOR -> MARKET IMPACT -> TRADE LOGIC` using `scripts/crazy_schema_gate.py` before it can be published or built.
+Published crazy specs are processed by `scripts/run_publish_pipeline.py`: adapter route, structural build, patch/validate, seed, then move to `data/ideas/completed/`, `data/ideas/failed/`, or `data/ideas/intervention/`.
+Adapters in `crazy/adapters/` are the approved data access layer; low-confidence or missing adapter matches are parked for manual intervention.
+Daily tactical output writes dashboards, ledgers, rank history, rolling 30D leaderboards, and precomputed ticker/sector signals under `docs/`.
+Force rank (`data/rank_history.csv`) is full-window/since-seed performance; rolling 30D (`docs/leaderboards/rolling_30d.json`) is recent momentum, so they can disagree without being contradictory.
+`precompute_signals.py` writes `docs/signals/` for the ticker lookup product, including sector summaries and per-ticker JSON files.
+The standalone content engine is separate from the tactical run: `scripts/run_content_engine.sh` reads rank history, rolling 30D, and signal precompute outputs, writes `reports/deep_validation/`, then renders deterministic text files under `content/`.
+Content generation uses the deep validation JSON as truth and does not recompute metrics or use an LLM.
+Public pages and CTAs are served from `docs/`, while generated content lives in `content/` and can later be copied to a separate website repo.
