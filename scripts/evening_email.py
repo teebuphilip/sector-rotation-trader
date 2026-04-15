@@ -107,7 +107,8 @@ def build_report() -> str:
     if rank_csv.exists():
         with rank_csv.open("r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
-            today_rows = [r for r in reader if r.get("date") == run_date]
+            today_rows = [r for r in reader
+                          if r.get("date") == run_date and r.get("algo_type") == "crazy"]
 
         if today_rows:
             by_return = sorted(today_rows,
@@ -116,7 +117,7 @@ def build_report() -> str:
             beating = sum(1 for r in by_return
                           if r.get("beat_spy", "").lower() == "true")
 
-            lines.append("FORCE RANKINGS ({} algos):".format(len(by_return)))
+            lines.append("CRAZY FORCE RANKINGS ({} algos):".format(len(by_return)))
             lines.append("  Beating SPY: {}/{}".format(beating, len(by_return)))
             lines.append("")
             lines.append("  Top 10 by Return:")
