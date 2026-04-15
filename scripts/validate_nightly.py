@@ -228,7 +228,7 @@ def check_signals() -> str:
             fail(f"docs/signals/index.json → {p}")
 
     # Spot-check 10 random ticker JSONs
-    ticker_files = [f for f in SIGNALS_DIR.glob("*.json") if f.name != "index.json"]
+    ticker_files = [f for f in SIGNALS_DIR.glob("*.json") if f.name != "index.json" and not f.name.startswith("_")]
     sample_size = min(10, len(ticker_files))
     ticker_problems = []
 
@@ -756,7 +756,7 @@ def deep_check_signal_state_sync(all_states) -> Tuple[int, int, List[str]]:
     if not SIGNALS_DIR.exists():
         return (0, 0, ["SKIP (docs/signals/ not present)"])
 
-    ticker_files = [f for f in SIGNALS_DIR.glob("*.json") if f.name != "index.json"]
+    ticker_files = [f for f in SIGNALS_DIR.glob("*.json") if f.name != "index.json" and not f.name.startswith("_")]
     if not ticker_files:
         return (0, 0, ["SKIP (no ticker signal files)"])
 
