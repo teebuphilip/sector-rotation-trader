@@ -148,9 +148,25 @@ def append_csv(entries: list, as_of: date):
             writer.writerow(row)
 
 
+def already_ran_today(as_of: date) -> bool:
+    """Check if we already have rows for today — prevent duplicates."""
+    if not CSV_PATH.exists():
+        return False
+    with open(CSV_PATH) as f:
+        reader = csv.DictReader(f)
+        for r in reader:
+            if r.get("date") == as_of.isoformat():
+                return True
+    return False
+
+
 def main():
     today = date.today()
     print("=== rank_daily.py — {} ===".format(today))
+
+    if already_ran_today(today):
+        print("  Already ranked today. Skipping to prevent duplicates.")
+        return
 
     entries = load_algo_entries()
     if not entries:
@@ -159,14 +175,6 @@ def main():
 
     ranked = assign_ranks(entries)
     append_csv(ranked, today)
-
-    # Check for duplicate dates (idempotency warning)
-    if CSV_PATH.exists():
-        with open(CSV_PATH) as f:
-            reader = csv.DictReader(f)
-            dates_today = sum(1 for r in reader if r.get("date") == today.isoformat())
-        if dates_today > len(entries):
-            print("  WARNING: {} already has entries for today. Possible duplicate run.".format(today))
 
     # Print summary
     beating = sum(1 for e in ranked if e["beat_spy"])
