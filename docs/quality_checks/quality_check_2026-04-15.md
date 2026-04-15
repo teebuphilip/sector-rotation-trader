@@ -1,52 +1,53 @@
 # Quality Check — 2026-04-15
 
 ## SPY Benchmark
-- Current Price: $694.46
-- YTD Return: +1.93%
-- YTD High: $694.46
+- Current Price: $695.56
+- YTD Return: +2.09%
+- YTD High: $695.56
 - YTD Low: $631.97
-- Max Drawdown: -9.00%
+- Max Drawdown: -9.14%
 
 ## Baseline (NRWise)
 - Equity: $100,055.50 (+0.06%)
-- Sector: XLU
+- Sector: none
 - Last Snapshot: 2026-04-15
-- Snapshots: 74
+- Snapshots: 76
 - Trades: 10
 - Positions: 0
-- Alpha vs SPY: -1.87%
+- Alpha vs SPY: -2.04%
 
 ## Normal Algos
   Algo                        Equity       YTD     Alpha  Trades      Signal    Last Run
   --------------------------------------------------------------------------------------
-  baileymol              $104,993.95     4.99%     3.06%      26        HOLD  2026-04-15
-  faber                  $103,846.61     3.85%     1.92%       8        HOLD  2026-04-15
-  dmsr                   $102,736.45     2.74%     0.81%      15        HOLD  2026-04-15
-  simple_monthly         $100,000.00     0.00%    -1.93%       0        HOLD  2026-04-15
-  biscotti                $99,467.66    -0.53%    -2.46%       5        HOLD  2026-04-15
+  baileymol              $104,993.95     4.99%     2.90%      26        HOLD  2026-04-15
+  faber                  $103,846.61     3.85%     1.75%       8        HOLD  2026-04-15
+  dmsr                   $102,736.45     2.74%     0.64%      15        HOLD  2026-04-15
+  simple_monthly         $100,000.00     0.00%    -2.09%       0        HOLD  2026-04-15
+  biscotti                $99,467.66    -0.53%    -2.62%       5        HOLD  2026-04-15
 
-## Crazy Algos — Active (2/42)
+## Crazy Algos — Active (4/42)
   Algo                        Equity       YTD     Alpha  Trades      Signal    Last Run
   --------------------------------------------------------------------------------------
-  biscotti                $95,432.51    -4.57%    -6.50%       5        HOLD  2026-04-15
-  baileymol               $93,228.46    -6.77%    -8.70%      50        HOLD  2026-04-15
+  consumer-sentiment      $99,980.10    -0.02%    -2.11%       2        HOLD  2026-04-15
+  liquor                  $99,980.10    -0.02%    -2.11%       2        HOLD  2026-04-15
+  biscotti                $95,432.51    -4.57%    -6.66%       5        HOLD  2026-04-15
+  baileymol               $93,228.46    -6.77%    -8.86%      50        HOLD  2026-04-15
 
-## Crazy Algos — Idle (40/42)
+## Crazy Algos — Idle (38/42)
   These algos are running but have never triggered a signal.
 
   airport-shopping-spree               bankruptcy-filing-rate               calls311                             cardboard                          
-  cloud-storage-demand-surge           congress                             consumer-sentiment                   craigslist                         
-  credit-card-delinquency              crypto-derivative-arbitrage          earthquake-energy-demand             electric-vehicle-charge-station-density
-  glassdoor                            insider-trading-signals              job-posting-acceleration             linkedin                           
-  liquor                               misery-rotation                      online-ad-impression-volatility      pet-food-supply-chain              
-  reddit-emoji-sentiment-spike         reddit-gaming-thread-spike           reddit-mentions-volatility-spike     reddit-sentiment-spike-trend       
-  reddit-sentiment-spike               reddit-sentiment-volatility-spike    reddit-subreddit-mention-spike       reddit-subreddit-sentiment-spike   
-  reddit-subreddit-surge-momentum      reddit-volatility-spike              retail-sales-momentum                small-business-formation           
-  social-media-sentiment-spike         superbowl-futures-trade              truck-tonnage                        tsa                                
-  twitter-sentiment-spike              uber-mobility                        volatility-spike-follow-through      weather-volatility-spike           
+  cloud-storage-demand-surge           congress                             craigslist                           credit-card-delinquency            
+  crypto-derivative-arbitrage          earthquake-energy-demand             electric-vehicle-charge-station-density  glassdoor                          
+  insider-trading-signals              job-posting-acceleration             linkedin                             misery-rotation                    
+  online-ad-impression-volatility      pet-food-supply-chain                reddit-emoji-sentiment-spike         reddit-gaming-thread-spike         
+  reddit-mentions-volatility-spike     reddit-sentiment-spike-trend         reddit-sentiment-spike               reddit-sentiment-volatility-spike  
+  reddit-subreddit-mention-spike       reddit-subreddit-sentiment-spike     reddit-subreddit-surge-momentum      reddit-volatility-spike            
+  retail-sales-momentum                small-business-formation             social-media-sentiment-spike         superbowl-futures-trade            
+  truck-tonnage                        tsa                                  twitter-sentiment-spike              uber-mobility                      
+  volatility-spike-follow-through      weather-volatility-spike           
 
 ## Blocked Algos
-- **FRED_API_KEY** (10 algos): Bankruptcy Filing Rate, Cardboard Box Index, Consumer Sentiment, Credit Card Delinquency, Job Posting Acceleration, Liquor Store Leading Indicator, Misery Rotation, Retail Sales Momentum, Small Business Formation, Truck Tonnage Index
 - **GLASSDOOR_KEY** (1 algos): Glassdoor Misery Gradient
 - **GLASSDOOR_PARTNER_ID** (1 algos): Glassdoor Misery Gradient
 
@@ -61,7 +62,9 @@
 - POSITIONS WITH HOLD: dmsr has 3 positions but signal is HOLD
 - POSITIONS WITH HOLD: baileymol has 2 positions but signal is HOLD
 - POSITIONS WITH HOLD: biscotti has 1 positions but signal is HOLD
+- POSITIONS WITH HOLD: consumer-sentiment has 2 positions but signal is HOLD
+- POSITIONS WITH HOLD: liquor has 2 positions but signal is HOLD
 - CHURNING: baileymol has 50 trades but is down -6.77% — overtrading?
 
 ---
-_Generated by `scripts/quality_check.py` at 2026-04-15 12:02 UTC_
+_Generated by `scripts/quality_check.py` at 2026-04-15 13:33 UTC_

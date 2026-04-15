@@ -1,14 +1,14 @@
 # 30-Day Rolling Leaderboard
 
-SPY 30D Return: +4.08%
+SPY 30D Return: n/a
 
 | Rank | Algo | Category | 30D Return | 30D Sharpe | 30D Max DD |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Algo Biscotti (Unconditional Loyalty) | standard | +7.86% | 4.13 | -3.10% |
-| 2 | Algo Baileymol (Chaos Monger) | standard | +6.15% | 4.83 | -1.27% |
-| 3 | Antonacci Dual Momentum Sector Rotation | standard | +2.02% | 2.09 | -1.63% |
-| 4 | Faber Momentum Rotation | standard | +1.47% | 1.45 | -1.38% |
-| 5 | NRWise Acceleration | standard | +0.06% | -0.45 | -2.89% |
+| 1 | Algo Biscotti (Unconditional Loyalty) | standard | +7.86% | 4.03 | -3.10% |
+| 2 | Algo Baileymol (Chaos Monger) | standard | +6.15% | 4.71 | -1.27% |
+| 3 | Antonacci Dual Momentum Sector Rotation | standard | +2.02% | 2.03 | -1.63% |
+| 4 | Faber Momentum Rotation | standard | +1.47% | 1.40 | -1.38% |
+| 5 | NRWise Acceleration | standard | +0.06% | -0.46 | -2.89% |
 | 6 | Quantified Simple Monthly Rotation | standard | +0.00% | 0.00 | 0.00% |
 | 7 | Reddit Subreddit Mention Spike | crazy | +0.00% | 0.00 | 0.00% |
 | 8 | Cardboard Box Index | crazy | +0.00% | 0.00 | 0.00% |
@@ -48,7 +48,7 @@ SPY 30D Return: +4.08%
 | 42 | Volatility Spike Follow-Through | crazy | +0.00% | 0.00 | 0.00% |
 | 43 | Retail Sales Momentum | crazy | +0.00% | 0.00 | 0.00% |
 | 44 | Reddit Subreddit Surge Momentum | crazy | +0.00% | 0.00 | 0.00% |
-| 45 | Liquor Store Leading Indicator | crazy | -0.02% | -71.63 | -0.02% |
-| 46 | Consumer Sentiment | crazy | -0.02% | -71.63 | -0.02% |
-| 47 | Algo Baileymol (Chaos Monger) | crazy | -0.69% | -0.68 | -5.69% |
-| 48 | Algo Biscotti (Unconditional Loyalty) | crazy | -3.62% | -2.91 | -4.34% |
+| 45 | Liquor Store Leading Indicator | crazy | -0.02% | -73.03 | -0.02% |
+| 46 | Consumer Sentiment | crazy | -0.02% | -73.03 | -0.02% |
+| 47 | Algo Baileymol (Chaos Monger) | crazy | -0.69% | -0.67 | -5.69% |
+| 48 | Algo Biscotti (Unconditional Loyalty) | crazy | -3.62% | -2.86 | -4.34% |
