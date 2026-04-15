@@ -132,15 +132,24 @@ def assign_ranks(entries: list) -> list:
     return by_return
 
 
-def append_csv(entries: list, as_of: date):
-    file_exists = CSV_PATH.exists() and CSV_PATH.stat().st_size > 0
+def write_csv(entries: list, as_of: date):
+    """Write today's rows, replacing any existing rows for today."""
+    today_str = as_of.isoformat()
 
-    with open(CSV_PATH, "a", newline="") as f:
+    # Read existing rows, drop today's
+    prior_rows = []
+    if CSV_PATH.exists() and CSV_PATH.stat().st_size > 0:
+        with open(CSV_PATH) as f:
+            reader = csv.DictReader(f)
+            prior_rows = [r for r in reader if r.get("date") != today_str]
+
+    # Write all rows back + today's fresh entries
+    with open(CSV_PATH, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=COLUMNS)
-        if not file_exists:
-            writer.writeheader()
+        writer.writeheader()
+        writer.writerows(prior_rows)
         for e in entries:
-            row = {"date": as_of.isoformat()}
+            row = {"date": today_str}
             for col in COLUMNS:
                 if col == "date":
                     continue
@@ -148,25 +157,9 @@ def append_csv(entries: list, as_of: date):
             writer.writerow(row)
 
 
-def already_ran_today(as_of: date) -> bool:
-    """Check if we already have rows for today — prevent duplicates."""
-    if not CSV_PATH.exists():
-        return False
-    with open(CSV_PATH) as f:
-        reader = csv.DictReader(f)
-        for r in reader:
-            if r.get("date") == as_of.isoformat():
-                return True
-    return False
-
-
 def main():
     today = date.today()
     print("=== rank_daily.py — {} ===".format(today))
-
-    if already_ran_today(today):
-        print("  Already ranked today. Skipping to prevent duplicates.")
-        return
 
     entries = load_algo_entries()
     if not entries:
@@ -174,7 +167,7 @@ def main():
         return
 
     ranked = assign_ranks(entries)
-    append_csv(ranked, today)
+    write_csv(ranked, today)
 
     # Print summary
     beating = sum(1 for e in ranked if e["beat_spy"])
