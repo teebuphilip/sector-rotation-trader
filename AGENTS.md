@@ -23,6 +23,11 @@ Sector Rotation Trader is a Python paper-trading simulator for a sector rotation
 - Normal algos seed: `python normal_seed.py`
 - Normal algos daily run: `python normal_run.py`
 
+## Communication Style
+- Always start substantive replies with a short TL;DR first.
+- Put the main answer or recommendation before supporting detail.
+- Keep the TL;DR concrete and action-oriented, not decorative.
+
 ## Conventions
 - Prefer small, targeted edits and keep existing behavior unless asked to change strategy rules.
 - Avoid modifying `state.json` and `docs/` unless explicitly requested or running the pipeline.

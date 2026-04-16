@@ -56,6 +56,7 @@ def _daily_post(report: Dict[str, Any]) -> str:
 
     lines.append(f"Daily Signal Board - {d}")
     lines.append("")
+    lines.append("This is the lab notebook version: winners, losers, caveats, and the weird stuff we named on purpose.")
     lines.append("Force rank is full-window/since-seed. Rolling 30D is recent momentum.")
     lines.append("")
     lines.append("Top force-ranked signals:")
@@ -72,7 +73,7 @@ def _daily_post(report: Dict[str, Any]) -> str:
         lines.append("")
         lines.append("Notable divergence:")
         for drow in divs[:3]:
-            lines.append(f"- {_safe_name(drow)}: force #{drow.get('force_rank')}, rolling 30D #{drow.get('rolling_30d_rank')}")
+            lines.append(f"- {_safe_name(drow)}: force #{drow.get('force_rank')}, rolling 30D #{drow.get('rolling_30d_rank')}. That split matters.")
 
     lines.append("")
     lines.append("System:")
@@ -90,6 +91,7 @@ def _signal_of_day(report: Dict[str, Any]) -> str:
 
     lines = [f"Signal of the Day - {d}", "", str(signal.get("name", "unknown")), ""]
     lines.append(str(signal.get("reason", "Selected by validation report.")))
+    lines.append("This is not a victory lap. It is the weird little signal the current report says is most interesting today.")
     if signal.get("ret_30d") is not None:
         lines.append(f"30D return: {_pct(signal.get('ret_30d'), 100)}")
     if signal.get("spy_delta_30d") is not None:
@@ -99,6 +101,7 @@ def _signal_of_day(report: Dict[str, Any]) -> str:
     if signal.get("caveat"):
         lines.append("")
         lines.append(f"Caveat: {signal.get('caveat')}. Rolling momentum is not the same as full-window validation.")
+        lines.append("That is exactly why we keep both numbers visible.")
     return "\n".join(lines) + "\n"
 
 
@@ -106,7 +109,7 @@ def _failure_report(report: Dict[str, Any]) -> str:
     d = report["report_date"]
     failure = (report.get("content_facts") or {}).get("failure_of_day") or {}
     bottom = (report.get("force_rank") or {}).get("bottom_5") or []
-    lines = [f"Failure Report - {d}", ""]
+    lines = [f"Failure Report - {d}", "", "The ugly ones stay in the notebook too. That is the whole deal.", ""]
 
     if failure:
         lines.append(f"Failure of the day: {failure.get('name')}")
@@ -138,6 +141,7 @@ def _call_of_day(report: Dict[str, Any]) -> str:
         lines.append(f"Composite: {call.get('composite')}")
         lines.append(f"Bullish: {call.get('bullish_pct')}%")
         lines.append(f"Reason: {call.get('reason')}")
+        lines.append("This is a sector read from current signal consensus, not a prediction guarantee.")
     else:
         lines.append("No sector call selected by validation report.")
 
@@ -164,6 +168,7 @@ def _weekly_summary(report: Dict[str, Any]) -> str:
 
     lines = [f"Weekly Summary - {week_id}", ""]
     lines.append("Current report snapshot. Weekly aggregation is not enabled yet.")
+    lines.append("So this is honest but incomplete: useful for context, not a full weekly verdict.")
     lines.append("")
     lines.append("Top recent signals:")
     for i, r in enumerate(rolling[:5], 1):

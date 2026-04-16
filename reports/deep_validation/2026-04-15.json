@@ -9,13 +9,13 @@
       "stance": "MIXED"
     },
     "failure_of_day": {
-      "algo_id": "biscotti",
-      "alpha_pct": -0.53,
-      "name": "Algo Biscotti (Unconditional Loyalty)",
-      "rank_return": 45,
+      "algo_id": "baileymol",
+      "alpha_pct": -6.77,
+      "name": "Algo Baileymol (Chaos Monger)",
+      "rank_return": 47,
       "reason": "Lowest full-window force rank",
       "status": "FAILING",
-      "ytd_pct": -0.53
+      "ytd_pct": -6.77
     },
     "notable_divergences": [
       {
@@ -29,16 +29,6 @@
         "ytd_pct": -0.53
       },
       {
-        "algo_id": "simple_monthly",
-        "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
-        "force_rank": 44,
-        "name": "Quantified Simple Monthly Rotation",
-        "rank_gap": 38,
-        "ret_30d": 0.0,
-        "rolling_30d_rank": 6,
-        "ytd_pct": 0.0
-      },
-      {
         "algo_id": "bankruptcy-filing-rate",
         "explanation": "Strong full-window force rank but weaker recent 30D rank.",
         "force_rank": 5,
@@ -49,23 +39,33 @@
         "ytd_pct": 0.0
       },
       {
-        "algo_id": "consumer-sentiment",
-        "explanation": "Strong full-window force rank but weaker recent 30D rank.",
-        "force_rank": 10,
-        "name": "Consumer Sentiment",
-        "rank_gap": -36,
-        "ret_30d": -0.00019899999999994922,
-        "rolling_30d_rank": 46,
+        "algo_id": "simple_monthly",
+        "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
+        "force_rank": 42,
+        "name": "Quantified Simple Monthly Rotation",
+        "rank_gap": 36,
+        "ret_30d": 0.0,
+        "rolling_30d_rank": 6,
         "ytd_pct": 0.0
       },
       {
         "algo_id": "twitter-sentiment-spike",
         "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
-        "force_rank": 40,
+        "force_rank": 38,
         "name": "Twitter Sentiment Spike",
-        "rank_gap": 28,
+        "rank_gap": 26,
         "ret_30d": 0.0,
         "rolling_30d_rank": 12,
+        "ytd_pct": 0.0
+      },
+      {
+        "algo_id": "calls311",
+        "explanation": "Strong full-window force rank but weaker recent 30D rank.",
+        "force_rank": 6,
+        "name": "311 Call Rotation",
+        "rank_gap": -24,
+        "ret_30d": 0.0,
+        "rolling_30d_rank": 30,
         "ytd_pct": 0.0
       }
     ],
@@ -78,7 +78,7 @@
       "rank_type": "rolling_30d",
       "reason": "Ranked #1 on rolling 30D leaderboard",
       "ret_30d": 0.0785957734143039,
-      "spy_delta_30d": 0.03775072824498005
+      "spy_delta_30d": null
     }
   },
   "definitions": {
@@ -99,16 +99,6 @@
         "ytd_pct": -0.53
       },
       {
-        "algo_id": "simple_monthly",
-        "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
-        "force_rank": 44,
-        "name": "Quantified Simple Monthly Rotation",
-        "rank_gap": 38,
-        "ret_30d": 0.0,
-        "rolling_30d_rank": 6,
-        "ytd_pct": 0.0
-      },
-      {
         "algo_id": "bankruptcy-filing-rate",
         "explanation": "Strong full-window force rank but weaker recent 30D rank.",
         "force_rank": 5,
@@ -119,23 +109,33 @@
         "ytd_pct": 0.0
       },
       {
-        "algo_id": "consumer-sentiment",
-        "explanation": "Strong full-window force rank but weaker recent 30D rank.",
-        "force_rank": 10,
-        "name": "Consumer Sentiment",
-        "rank_gap": -36,
-        "ret_30d": -0.00019899999999994922,
-        "rolling_30d_rank": 46,
+        "algo_id": "simple_monthly",
+        "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
+        "force_rank": 42,
+        "name": "Quantified Simple Monthly Rotation",
+        "rank_gap": 36,
+        "ret_30d": 0.0,
+        "rolling_30d_rank": 6,
         "ytd_pct": 0.0
       },
       {
         "algo_id": "twitter-sentiment-spike",
         "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
-        "force_rank": 40,
+        "force_rank": 38,
         "name": "Twitter Sentiment Spike",
-        "rank_gap": 28,
+        "rank_gap": 26,
         "ret_30d": 0.0,
         "rolling_30d_rank": 12,
+        "ytd_pct": 0.0
+      },
+      {
+        "algo_id": "calls311",
+        "explanation": "Strong full-window force rank but weaker recent 30D rank.",
+        "force_rank": 6,
+        "name": "311 Call Rotation",
+        "rank_gap": -24,
+        "ret_30d": 0.0,
+        "rolling_30d_rank": 30,
         "ytd_pct": 0.0
       }
     ],
@@ -146,6 +146,33 @@
     "biggest_movers": {
       "down": [
         {
+          "algo_id": "baileymol",
+          "alpha_pct": -6.77,
+          "name": "Algo Baileymol (Chaos Monger)",
+          "previous_rank_return": 2,
+          "rank_change": -45,
+          "rank_return": 47,
+          "ytd_pct": -6.77
+        },
+        {
+          "algo_id": "consumer-sentiment",
+          "alpha_pct": -0.02,
+          "name": "Consumer Sentiment",
+          "previous_rank_return": 10,
+          "rank_change": -33,
+          "rank_return": 43,
+          "ytd_pct": -0.02
+        },
+        {
+          "algo_id": "liquor",
+          "alpha_pct": -0.02,
+          "name": "Liquor Store Leading Indicator",
+          "previous_rank_return": 20,
+          "rank_change": -24,
+          "rank_return": 44,
+          "ytd_pct": -0.02
+        },
+        {
           "algo_id": "faber",
           "alpha_pct": 3.85,
           "name": "Faber Momentum Rotation",
@@ -153,84 +180,97 @@
           "rank_change": -1,
           "rank_return": 2,
           "ytd_pct": 3.85
+        },
+        {
+          "algo_id": "biscotti",
+          "alpha_pct": -4.57,
+          "name": "Algo Biscotti (Unconditional Loyalty)",
+          "previous_rank_return": 45,
+          "rank_change": -1,
+          "rank_return": 46,
+          "ytd_pct": -4.57
         }
       ],
       "up": [
         {
-          "algo_id": "baileymol",
-          "alpha_pct": 4.99,
-          "name": "Algo Baileymol (Chaos Monger)",
-          "previous_rank_return": 2,
-          "rank_change": 1,
-          "rank_return": 1,
-          "ytd_pct": 4.99
+          "algo_id": "misery-rotation",
+          "alpha_pct": 0.0,
+          "name": "Misery Rotation",
+          "previous_rank_return": 21,
+          "rank_change": 2,
+          "rank_return": 19,
+          "ytd_pct": 0.0
+        },
+        {
+          "algo_id": "online-ad-impression-volatility",
+          "alpha_pct": 0.0,
+          "name": "Online Ad Impression Volatility Trader",
+          "previous_rank_return": 22,
+          "rank_change": 2,
+          "rank_return": 20,
+          "ytd_pct": 0.0
+        },
+        {
+          "algo_id": "pet-food-supply-chain",
+          "alpha_pct": 0.0,
+          "name": "Pet Food Supply Chain Disruption",
+          "previous_rank_return": 23,
+          "rank_change": 2,
+          "rank_return": 21,
+          "ytd_pct": 0.0
+        },
+        {
+          "algo_id": "reddit-emoji-sentiment-spike",
+          "alpha_pct": 0.0,
+          "name": "Reddit Emoji Sentiment Spike",
+          "previous_rank_return": 24,
+          "rank_change": 2,
+          "rank_return": 22,
+          "ytd_pct": 0.0
+        },
+        {
+          "algo_id": "reddit-gaming-thread-spike",
+          "alpha_pct": 0.0,
+          "name": "Reddit Gaming Thread Spike",
+          "previous_rank_return": 25,
+          "rank_change": 2,
+          "rank_return": 23,
+          "ytd_pct": 0.0
         }
       ]
     },
     "bottom_5": [
       {
-        "algo_id": "uber-mobility",
+        "algo_id": "consumer-sentiment",
         "algo_type": "crazy",
-        "alpha_pct": 0.0,
+        "alpha_pct": -0.02,
         "beat_spy": false,
         "date": "2026-04-15",
-        "days_running": 68,
-        "equity": 100000.0,
-        "name": "Uber Mobility Index",
-        "previous_rank_return": 41,
-        "rank_alpha": 41,
-        "rank_change": 0,
-        "rank_return": 41,
-        "spy_pct": 0.0,
-        "ytd_pct": 0.0
-      },
-      {
-        "algo_id": "volatility-spike-follow-through",
-        "algo_type": "crazy",
-        "alpha_pct": 0.0,
-        "beat_spy": false,
-        "date": "2026-04-15",
-        "days_running": 67,
-        "equity": 100000.0,
-        "name": "Volatility Spike Follow-Through",
-        "previous_rank_return": 42,
-        "rank_alpha": 42,
-        "rank_change": 0,
-        "rank_return": 42,
-        "spy_pct": 0.0,
-        "ytd_pct": 0.0
-      },
-      {
-        "algo_id": "weather-volatility-spike",
-        "algo_type": "crazy",
-        "alpha_pct": 0.0,
-        "beat_spy": false,
-        "date": "2026-04-15",
-        "days_running": 67,
-        "equity": 100000.0,
-        "name": "Weather Volatility Spike",
-        "previous_rank_return": 43,
+        "days_running": 69,
+        "equity": 99980.1,
+        "name": "Consumer Sentiment",
+        "previous_rank_return": 10,
         "rank_alpha": 43,
-        "rank_change": 0,
+        "rank_change": -33,
         "rank_return": 43,
         "spy_pct": 0.0,
-        "ytd_pct": 0.0
+        "ytd_pct": -0.02
       },
       {
-        "algo_id": "simple_monthly",
-        "algo_type": "normal",
-        "alpha_pct": 0.0,
+        "algo_id": "liquor",
+        "algo_type": "crazy",
+        "alpha_pct": -0.02,
         "beat_spy": false,
         "date": "2026-04-15",
-        "days_running": 68,
-        "equity": 100000.0,
-        "name": "Quantified Simple Monthly Rotation",
-        "previous_rank_return": 44,
+        "days_running": 69,
+        "equity": 99980.1,
+        "name": "Liquor Store Leading Indicator",
+        "previous_rank_return": 20,
         "rank_alpha": 44,
-        "rank_change": 0,
+        "rank_change": -24,
         "rank_return": 44,
         "spy_pct": 0.0,
-        "ytd_pct": 0.0
+        "ytd_pct": -0.02
       },
       {
         "algo_id": "biscotti",
@@ -238,7 +278,7 @@
         "alpha_pct": -0.53,
         "beat_spy": false,
         "date": "2026-04-15",
-        "days_running": 68,
+        "days_running": 71,
         "equity": 99467.66,
         "name": "Algo Biscotti (Unconditional Loyalty)",
         "previous_rank_return": 45,
@@ -247,6 +287,38 @@
         "rank_return": 45,
         "spy_pct": 0.0,
         "ytd_pct": -0.53
+      },
+      {
+        "algo_id": "biscotti",
+        "algo_type": "crazy",
+        "alpha_pct": -4.57,
+        "beat_spy": false,
+        "date": "2026-04-15",
+        "days_running": 69,
+        "equity": 95432.51,
+        "name": "Algo Biscotti (Unconditional Loyalty)",
+        "previous_rank_return": 45,
+        "rank_alpha": 46,
+        "rank_change": -1,
+        "rank_return": 46,
+        "spy_pct": 0.0,
+        "ytd_pct": -4.57
+      },
+      {
+        "algo_id": "baileymol",
+        "algo_type": "crazy",
+        "alpha_pct": -6.77,
+        "beat_spy": false,
+        "date": "2026-04-15",
+        "days_running": 69,
+        "equity": 93228.46,
+        "name": "Algo Baileymol (Chaos Monger)",
+        "previous_rank_return": 2,
+        "rank_alpha": 47,
+        "rank_change": -45,
+        "rank_return": 47,
+        "spy_pct": 0.0,
+        "ytd_pct": -6.77
       }
     ],
     "definition": "Full-window/since-seed rank; not the same as recent 30D performance.",
@@ -257,7 +329,7 @@
         "alpha_pct": 4.99,
         "beat_spy": true,
         "date": "2026-04-15",
-        "days_running": 68,
+        "days_running": 71,
         "equity": 104993.95,
         "name": "Algo Baileymol (Chaos Monger)",
         "previous_rank_return": 2,
@@ -273,7 +345,7 @@
         "alpha_pct": 3.85,
         "beat_spy": true,
         "date": "2026-04-15",
-        "days_running": 68,
+        "days_running": 71,
         "equity": 103846.61,
         "name": "Faber Momentum Rotation",
         "previous_rank_return": 1,
@@ -289,7 +361,7 @@
         "alpha_pct": 2.74,
         "beat_spy": true,
         "date": "2026-04-15",
-        "days_running": 68,
+        "days_running": 71,
         "equity": 102736.45,
         "name": "Antonacci Dual Momentum Sector Rotation",
         "previous_rank_return": 3,
@@ -305,7 +377,7 @@
         "alpha_pct": 0.0,
         "beat_spy": false,
         "date": "2026-04-15",
-        "days_running": 67,
+        "days_running": 69,
         "equity": 100000.0,
         "name": "Airport Shopping Spree",
         "previous_rank_return": 4,
@@ -321,7 +393,7 @@
         "alpha_pct": 0.0,
         "beat_spy": false,
         "date": "2026-04-15",
-        "days_running": 67,
+        "days_running": 69,
         "equity": 100000.0,
         "name": "Bankruptcy Filing Rate",
         "previous_rank_return": 5,
@@ -337,7 +409,7 @@
         "alpha_pct": 0.0,
         "beat_spy": false,
         "date": "2026-04-15",
-        "days_running": 67,
+        "days_running": 69,
         "equity": 100000.0,
         "name": "311 Call Rotation",
         "previous_rank_return": 6,
@@ -353,7 +425,7 @@
         "alpha_pct": 0.0,
         "beat_spy": false,
         "date": "2026-04-15",
-        "days_running": 67,
+        "days_running": 69,
         "equity": 100000.0,
         "name": "Cardboard Box Index",
         "previous_rank_return": 7,
@@ -369,7 +441,7 @@
         "alpha_pct": 0.0,
         "beat_spy": false,
         "date": "2026-04-15",
-        "days_running": 67,
+        "days_running": 69,
         "equity": 100000.0,
         "name": "Cloud Storage Demand Surge",
         "previous_rank_return": 8,
@@ -385,7 +457,7 @@
         "alpha_pct": 0.0,
         "beat_spy": false,
         "date": "2026-04-15",
-        "days_running": 67,
+        "days_running": 69,
         "equity": 100000.0,
         "name": "Congress Trading Fade",
         "previous_rank_return": 9,
@@ -396,27 +468,27 @@
         "ytd_pct": 0.0
       },
       {
-        "algo_id": "consumer-sentiment",
+        "algo_id": "craigslist",
         "algo_type": "crazy",
         "alpha_pct": 0.0,
         "beat_spy": false,
         "date": "2026-04-15",
-        "days_running": 67,
+        "days_running": 69,
         "equity": 100000.0,
-        "name": "Consumer Sentiment",
-        "previous_rank_return": 10,
+        "name": "Craigslist Desperation Index",
+        "previous_rank_return": 11,
         "rank_alpha": 10,
-        "rank_change": 0,
+        "rank_change": 1,
         "rank_return": 10,
         "spy_pct": 0.0,
         "ytd_pct": 0.0
       }
     ]
   },
-  "generated_at": "2026-04-15T16:34:53.269131Z",
+  "generated_at": "2026-04-15T20:46:51.635068Z",
   "report_date": "2026-04-15",
   "rolling_30d": {
-    "as_of": "2026-04-15T12:29:09.224757",
+    "as_of": "2026-04-15T13:32:32.347104",
     "bottom_5": [
       {
         "algo_id": "reddit-subreddit-surge-momentum",
@@ -427,7 +499,7 @@
         "ret_30d": 0.0,
         "rolling_30d_rank": 44,
         "sharpe_30d": 0.0,
-        "spy_delta_30d": -0.04084504516932386
+        "spy_delta_30d": null
       },
       {
         "algo_id": "liquor",
@@ -437,8 +509,8 @@
         "name": "Liquor Store Leading Indicator",
         "ret_30d": -0.00019899999999994922,
         "rolling_30d_rank": 45,
-        "sharpe_30d": -71.62616675961104,
-        "spy_delta_30d": -0.041044045169323806
+        "sharpe_30d": -73.02580500544423,
+        "spy_delta_30d": null
       },
       {
         "algo_id": "consumer-sentiment",
@@ -448,8 +520,8 @@
         "name": "Consumer Sentiment",
         "ret_30d": -0.00019899999999994922,
         "rolling_30d_rank": 46,
-        "sharpe_30d": -71.62616675961104,
-        "spy_delta_30d": -0.041044045169323806
+        "sharpe_30d": -73.02580500544423,
+        "spy_delta_30d": null
       },
       {
         "algo_id": "baileymol",
@@ -459,8 +531,8 @@
         "name": "Algo Baileymol (Chaos Monger)",
         "ret_30d": -0.00694828131469305,
         "rolling_30d_rank": 47,
-        "sharpe_30d": -0.6751462300642288,
-        "spy_delta_30d": -0.04779332648401691
+        "sharpe_30d": -0.6734263376437384,
+        "spy_delta_30d": null
       },
       {
         "algo_id": "biscotti",
@@ -470,12 +542,12 @@
         "name": "Algo Biscotti (Unconditional Loyalty)",
         "ret_30d": -0.036159091478347505,
         "rolling_30d_rank": 48,
-        "sharpe_30d": -2.909578150409119,
-        "spy_delta_30d": -0.07700413664767136
+        "sharpe_30d": -2.8620823950743395,
+        "spy_delta_30d": null
       }
     ],
     "definition": "Trailing 30-day return rank; useful for recent momentum and tactical spotlight.",
-    "spy_ret_30d": 0.04084504516932386,
+    "spy_ret_30d": null,
     "top_10": [
       {
         "algo_id": "biscotti",
@@ -485,8 +557,8 @@
         "name": "Algo Biscotti (Unconditional Loyalty)",
         "ret_30d": 0.0785957734143039,
         "rolling_30d_rank": 1,
-        "sharpe_30d": 4.127897554424961,
-        "spy_delta_30d": 0.03775072824498005
+        "sharpe_30d": 4.031746818146949,
+        "spy_delta_30d": null
       },
       {
         "algo_id": "baileymol",
@@ -496,8 +568,8 @@
         "name": "Algo Baileymol (Chaos Monger)",
         "ret_30d": 0.06154161912624012,
         "rolling_30d_rank": 2,
-        "sharpe_30d": 4.829627250858834,
-        "spy_delta_30d": 0.020696573956916264
+        "sharpe_30d": 4.710580519621981,
+        "spy_delta_30d": null
       },
       {
         "algo_id": "dmsr",
@@ -507,8 +579,8 @@
         "name": "Antonacci Dual Momentum Sector Rotation",
         "ret_30d": 0.020210072822318903,
         "rolling_30d_rank": 3,
-        "sharpe_30d": 2.0908096189284557,
-        "spy_delta_30d": -0.020634972347004954
+        "sharpe_30d": 2.0263247734513548,
+        "spy_delta_30d": null
       },
       {
         "algo_id": "faber",
@@ -518,8 +590,8 @@
         "name": "Faber Momentum Rotation",
         "ret_30d": 0.01470912122832968,
         "rolling_30d_rank": 4,
-        "sharpe_30d": 1.4487985910854317,
-        "spy_delta_30d": -0.026135923940994177
+        "sharpe_30d": 1.3963228312831895,
+        "spy_delta_30d": null
       },
       {
         "algo_id": "nrwise",
@@ -529,8 +601,8 @@
         "name": "NRWise Acceleration",
         "ret_30d": 0.0005550000000000832,
         "rolling_30d_rank": 5,
-        "sharpe_30d": -0.4515382541563672,
-        "spy_delta_30d": -0.040290045169323774
+        "sharpe_30d": -0.45548822156163354,
+        "spy_delta_30d": null
       },
       {
         "algo_id": "simple_monthly",
@@ -541,7 +613,7 @@
         "ret_30d": 0.0,
         "rolling_30d_rank": 6,
         "sharpe_30d": 0.0,
-        "spy_delta_30d": -0.04084504516932386
+        "spy_delta_30d": null
       },
       {
         "algo_id": "reddit-subreddit-mention-spike",
@@ -552,7 +624,7 @@
         "ret_30d": 0.0,
         "rolling_30d_rank": 7,
         "sharpe_30d": 0.0,
-        "spy_delta_30d": -0.04084504516932386
+        "spy_delta_30d": null
       },
       {
         "algo_id": "cardboard",
@@ -563,7 +635,7 @@
         "ret_30d": 0.0,
         "rolling_30d_rank": 8,
         "sharpe_30d": 0.0,
-        "spy_delta_30d": -0.04084504516932386
+        "spy_delta_30d": null
       },
       {
         "algo_id": "reddit-sentiment-spike-trend",
@@ -574,7 +646,7 @@
         "ret_30d": 0.0,
         "rolling_30d_rank": 9,
         "sharpe_30d": 0.0,
-        "spy_delta_30d": -0.04084504516932386
+        "spy_delta_30d": null
       },
       {
         "algo_id": "crypto-derivative-arbitrage",
@@ -585,7 +657,7 @@
         "ret_30d": 0.0,
         "rolling_30d_rank": 10,
         "sharpe_30d": 0.0,
-        "spy_delta_30d": -0.04084504516932386
+        "spy_delta_30d": null
       }
     ]
   },
@@ -772,7 +844,7 @@
       }
     ],
     "signal_count": 47,
-    "ticker_count": 105,
+    "ticker_count": 104,
     "top_bearish_etfs": [
       "XLC",
       "XLB",
@@ -788,10 +860,10 @@
   "system_state": {
     "beating_spy_force_rank": 3,
     "rolling_30d_algos": 48,
-    "rolling_30d_beating_spy": 2,
+    "rolling_30d_beating_spy": 0,
     "sectors_computed": 11,
     "signals_generated": 47,
-    "tickers_covered": 105,
-    "total_force_ranked": 45
+    "tickers_covered": 104,
+    "total_force_ranked": 47
   }
 }

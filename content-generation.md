@@ -16,6 +16,77 @@ If it is not in the deep validation report, it does not exist.
 
 The content system must not invent metrics, recompute returns, infer unstated causes, or add market commentary not present in the validation report.
 
+
+## Voice System
+
+The content voice has four fixed attributes. These are used for deterministic templates today and should be used by any future LLM rewrite pass.
+
+### Honest
+
+Is:
+
+- says what happened plainly;
+- shows losses, weak signals, caveats, and failures;
+- explains when a signal is only recently strong but still weak on force rank.
+
+Is not:
+
+- hiding failures;
+- spinning losses;
+- pretending every signal works;
+- using fake certainty.
+
+### Curious
+
+Is:
+
+- treats weird signals as experiments;
+- says what is being tested and what surprised us;
+- uses plain-English observations.
+
+Is not:
+
+- claiming expertise the lab has not earned;
+- academic posturing;
+- overly formal market commentary;
+- pretending a thesis is proven before the data earns it.
+
+### Human
+
+Is:
+
+- sounds like a real person running a public trading lab;
+- keeps names like Biscotti and Baileymol;
+- uses direct language instead of corporate polish.
+
+Is not:
+
+- corporate;
+- guru-speak;
+- "our proprietary algorithm" language;
+- empty finance influencer language.
+
+### Transparent
+
+Is:
+
+- shows winners and losers;
+- explains exactly why something was flagged, killed, or promoted;
+- names the metric being used: force rank, rolling 30D, sector consensus, SPY delta.
+
+Is not:
+
+- only showing winners;
+- burying bad results;
+- blending force rank and rolling 30D into one vague leaderboard;
+- omitting caveats.
+
+Reusable future LLM prompt:
+
+- `prompts/content_voice_prompt.txt`
+
+Current V1 note: the active content generator does not call an LLM. The voice rules are implemented through deterministic wording and documented for any future rewrite layer.
+
 ## Current Flow
 
 ```text
@@ -199,6 +270,69 @@ That means it has strong recent momentum despite weak full-window validation.
 ```
 
 The content engine surfaces that as a divergence instead of hiding it.
+
+
+
+
+## Brand Operating Principle
+
+The pipeline writes. The human reviews. The shipped content should still sound like the guy who was sitting with his dog reading a Medium article as a lark.
+
+That is the brand:
+
+```text
+automated lab notes with a human owner,
+not polished content marketing
+```
+
+The operating model is:
+
+```text
+content pipeline generates drafts
+Sunday review decides what ships
+public content keeps the lab-notebook voice
+```
+
+Automation is allowed. Marketing bot voice is not.
+
+## Forbidden And Preferred Language
+
+Never write:
+
+- `cutting-edge`
+- `revolutionary`
+- `game-changing`
+- `proprietary algorithm`
+- `AI-powered signals`
+- `our platform`
+- `leverage`
+- `synergy`
+- `robust`
+- `seamless`
+- `unlock your potential`
+- anything that sounds like a LinkedIn post from 2019
+
+Always prefer:
+
+- `weird` over `unconventional`
+- `we had no idea` over `exploratory`
+- `killed it` over `deprecated`
+- `broke` over `experienced degradation`
+- `Biscotti` over `our mean reversion algo`
+
+## Final Voice Test
+
+Any future LLM rewrite or human review should apply this test before publishing:
+
+```text
+Does this sound like it was written by a marketing team,
+or by a guy who named an algo after his dead dog?
+
+If it sounds like a marketing team, rewrite it.
+If it sounds like that guy, ship it.
+```
+
+This is not permission to be sloppy. It means the content should feel specific, human, honest, and allergic to polished finance-marketing language.
 
 ## Content Types
 
