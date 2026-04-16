@@ -116,7 +116,7 @@ def slice_spec(spec: Dict[str, Any], adapters: list[str]) -> Dict[str, Any]:
             base["adapter_contracts"]["price_only"] = {
                 "func": "fetch_prices",
                 "allowed_kwargs": ["tickers", "period"],
-                "returns": ["Close"],
+                "returns": ["date", "value"],
             }
 
     return {"adapters": adapters, "sliced_spec": base}

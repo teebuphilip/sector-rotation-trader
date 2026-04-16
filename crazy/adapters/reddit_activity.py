@@ -3,7 +3,6 @@ from datetime import datetime, timedelta
 from typing import Iterable
 
 import pandas as pd
-import requests
 
 from crazy.config import CRAZY_CACHE_DIR
 from crazy.utils import cached_fetch
@@ -22,6 +21,11 @@ def fetch_reddit_activity(
     cache_path = os.path.join(CRAZY_CACHE_DIR, cache_key)
 
     def _fetch():
+        try:
+            import requests
+        except Exception:
+            return []
+
         rows = []
         headers = {"User-Agent": "sector-rotation-trader/1.0"}
         cutoff = datetime.utcnow().date() - timedelta(days=days_back)
@@ -55,11 +59,11 @@ def fetch_reddit_activity(
 
     try:
         data = cached_fetch(cache_path, ttl_hours=6, fetch_fn=_fetch) or []
-        df = pd.DataFrame(data)
+        df = pd.DataFrame(data, columns=["date", "posts", "comments"])
         if df.empty:
             return df
         df["date"] = pd.to_datetime(df["date"])
         df = df.groupby("date")[["posts", "comments"]].sum().reset_index()
         return df.sort_values("date")
     except Exception:
-        return pd.DataFrame()
+        return pd.DataFrame(columns=["date", "posts", "comments"])
