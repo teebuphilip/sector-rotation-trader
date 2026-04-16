@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/reddit_subreddit_sentiment_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161119/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Adapter output columns used in code ('posts', 'comments') do not match spec's required columns ('date', 'posts', 'comments') but 'average_sentiment' and 'daily_volume' metrics required by spec are not directly provided by adapter output and are derived incorrectly.",
+      "Spec signal logic requires 'daily_volume' > 1.5 * 7_day_average_volume AND 'average_sentiment' > 0.3 for entry, but code uses 'posts' as daily_volume and calculates average_sentiment as comments/posts which may not reflect sentiment properly as per spec intent.",
+      "Exit condition in spec is 'daily sentiment drops below 0 OR daily volume falls below 0.8 * 7_day_average_volume', but code uses avg_sentiment < 0.3 instead of < 0, which is stricter and not aligned with spec.",
+      "Code uses hardcoded subreddits ['r/gaming', 'r/pcgaming', 'r/games'] which is not specified or allowed in spec; spec universe is equities, not subreddits.",
+      "Signal logic indentation errors (e.g. missing indentation on return statements) likely cause runtime errors.",
+      "Position sizing logic matches spec allocation per asset (5%) and max total exposure (20%), but no check to ensure total exposure does not exceed max if universe changes; however, this is acceptable given fixed universe.",
+      "Overall, signal logic partially follows spec intent but with incorrect thresholds and metrics derivation, and adapter usage is inconsistent with spec."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1009,
+    "output_tokens": 332
+  },
+  "cost_usd": 0.0058425
+}

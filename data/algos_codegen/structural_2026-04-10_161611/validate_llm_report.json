@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/airport_shopping_spree.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161611/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause incorrect logic flow and likely runtime errors.",
+      "In compute_signal, the exit condition uses spread <= 0, which matches spec intent, but the spec states exit on signal reversal; logic is acceptable but indentation breaks it.",
+      "In target_allocations, indentation errors cause unreachable code and incorrect branching.",
+      "In target_allocations, the weight_per_ticker calculation clamps max weight to 0.20 / len(universe), which is stricter than spec but acceptable; however, indentation prevents correct execution.",
+      "The code imports the correct adapter 'fetch_tsa_table' from 'crazy.adapters.tsa_table' and uses the adapter output columns 'yoy_pct' and 'throughput_yoy' correctly.",
+      "Signal names RISK_ON/RISK_OFF/HOLD are acceptable per instructions."
+    ]
+  },
+  "usage": {
+    "input_tokens": 907,
+    "output_tokens": 192
+  },
+  "cost_usd": 0.0041875
+}

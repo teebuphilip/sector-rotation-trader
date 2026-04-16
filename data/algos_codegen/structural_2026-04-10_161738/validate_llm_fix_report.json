@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/crypto_derivative_arbitrage.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161738/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal and target_allocations methods causing logic blocks to be incorrectly structured.",
+      "No explicit handling of position state persistence beyond instance attributes, which may not persist across calls as expected.",
+      "Signal logic uses RISK_ON/RISK_OFF/HOLD which is acceptable, but indentation errors prevent correct execution of the intended logic.",
+      "Adapter import and usage of 'fetch_prices' with 'Close' column is correct.",
+      "Signal and allocation logic follows spec intent to buy low price asset and sell high price asset based on spread thresholds."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1027,
+    "output_tokens": 115
+  },
+  "cost_usd": 0.0037175
+}

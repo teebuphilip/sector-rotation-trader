@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/crypto_derivative_arbitrage.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161738/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "fetch_prices is called without required kwargs 'tickers' and 'period' as per adapter contract.",
+      "compute_signal does not identify which asset to buy or sell; it only returns a generic signal without specifying positions per asset.",
+      "target_allocations equally weights all assets on RISK_ON, but spec requires buying the lower priced asset and selling the higher priced asset to capture the spread.",
+      "No logic to differentiate buy/sell allocations per asset based on price spread, violating entry logic in spec.",
+      "Indentation errors in compute_signal (e.g., missing indentation under if statements) which would cause runtime errors."
+    ]
+  },
+  "usage": {
+    "input_tokens": 847,
+    "output_tokens": 133
+  },
+  "cost_usd": 0.0034475
+}

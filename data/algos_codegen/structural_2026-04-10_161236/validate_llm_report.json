@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/reddit_volatility_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161236/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method causing logic blocks to be incorrectly nested or unreachable.",
+      "fetch_reddit_activity returns columns ['date', 'posts', 'comments'] per adapter contract, but code treats DataFrame columns as tickers, which is incorrect.",
+      "Signal logic uses reddit mentions increase pct per ticker, but adapter returns aggregated reddit activity data, not per ticker data, violating spec intent.",
+      "IV data fetching and exit logic appear consistent with spec, but signal trigger logic is flawed due to misuse of adapter output.",
+      "Allocation logic divides 2% allocation equally across all universe tickers on RISK_ON, which is not per spec (spec implies 2% per position, not split)."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1164,
+    "output_tokens": 147
+  },
+  "cost_usd": 0.00438
+}

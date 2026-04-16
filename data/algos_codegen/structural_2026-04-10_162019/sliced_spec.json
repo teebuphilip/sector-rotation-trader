@@ -1,0 +1,57 @@
+{
+  "adapters": [
+    "google_trends",
+    "twitter_activity"
+  ],
+  "sliced_spec": {
+    "id": "online-ad-impression-volatility",
+    "name": "Online Ad Impression Volatility Trader",
+    "frequency": "daily",
+    "universe": [
+      "GOOG",
+      "FB",
+      "TWTR",
+      "SNAP",
+      "PINS"
+    ],
+    "entry_exit": {
+      "entry": "Buy when daily impression volume jumps more than 10%.",
+      "exit": "Sell when impression volume reverts back to normal levels within 3 days."
+    },
+    "signal_logic": {
+      "trigger": "Monitor daily changes in ad impressions for the universe. Generate a buy signal when daily impression volume increases by more than 10% compared to the prior day, indicating a volatility spike."
+    },
+    "position_sizing": {
+      "method": "Size positions proportionally to the magnitude of the impression spike, with larger positions allocated for changes of 20% or more."
+    },
+    "data_sources": {
+      "google_trends": "",
+      "twitter": {}
+    },
+    "adapter_contracts": {
+      "google_trends": {
+        "func": "fetch_google_trends",
+        "allowed_kwargs": [
+          "keyword",
+          "days_back"
+        ],
+        "returns": [
+          "date",
+          "interest"
+        ]
+      },
+      "twitter_activity": {
+        "func": "fetch_twitter_activity",
+        "allowed_kwargs": [
+          "query",
+          "days_back",
+          "cache_key"
+        ],
+        "returns": [
+          "date",
+          "tweets"
+        ]
+      }
+    }
+  }
+}

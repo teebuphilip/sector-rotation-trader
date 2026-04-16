@@ -1,0 +1,48 @@
+{
+  "adapters": [
+    "twitter_activity"
+  ],
+  "sliced_spec": {
+    "id": "social-media-sentiment-spike",
+    "name": "Social Media Sentiment Spike",
+    "frequency": "daily",
+    "universe": [
+      "AAPL",
+      "TSLA",
+      "AMZN",
+      "MSFT",
+      "NVDA",
+      "NFLX",
+      "GOOGL",
+      "META"
+    ],
+    "entry_exit": {
+      "entry": "Buy at market open the day after a sentiment spike signal.",
+      "exit": "Sell when sentiment reverts below the 7-day average or after 5 trading days, whichever comes first."
+    },
+    "signal_logic": {
+      "trigger": "Signal triggers when the daily sentiment score for a ticker increases by more than 30% compared to its 7-day moving average sentiment score, with at least 100 posts mentioning the ticker that day."
+    },
+    "position_sizing": {
+      "allocation_per_position": "2% of portfolio",
+      "max_simultaneous_positions": 10
+    },
+    "data_sources": {
+      "twitter": {}
+    },
+    "adapter_contracts": {
+      "twitter_activity": {
+        "func": "fetch_twitter_activity",
+        "allowed_kwargs": [
+          "query",
+          "days_back",
+          "cache_key"
+        ],
+        "returns": [
+          "date",
+          "tweets"
+        ]
+      }
+    }
+  }
+}

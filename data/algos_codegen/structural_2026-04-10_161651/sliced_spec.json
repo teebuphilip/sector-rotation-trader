@@ -1,0 +1,49 @@
+{
+  "adapters": [
+    "google_trends"
+  ],
+  "sliced_spec": {
+    "id": "cloud-storage-demand-surge",
+    "name": "Cloud Storage Demand Surge",
+    "frequency": "daily",
+    "universe": [
+      "BOX",
+      "DROPBOX",
+      "GOOGL",
+      "MSFT"
+    ],
+    "entry_exit": {
+      "entry": "Enter long positions in leading cloud storage providers when search and web traffic signals indicate a demand surge.",
+      "exit": "Exit positions when the signals show a sustained decline in demand."
+    },
+    "signal_logic": {
+      "trigger": {
+        "description": "Identify spikes in Google Trends search interest for cloud storage terms exceeding the 90th percentile of the past 12 months, confirmed by correlated increases in Alexa web traffic rankings and user signups reported in SEC filings.",
+        "conditions": [
+          "Google Trends search interest > 90th percentile of past 12 months",
+          "Alexa web traffic rankings show increase for cloud storage providers",
+          "SEC filings indicate increased user signups and revenue growth"
+        ]
+      }
+    },
+    "position_sizing": {
+      "description": "Size positions based on the strength of the demand signal, allocating a larger percentage of the portfolio when the demand surge is more pronounced."
+    },
+    "data_sources": {
+      "google_trends": "cloud storage related search terms"
+    },
+    "adapter_contracts": {
+      "google_trends": {
+        "func": "fetch_google_trends",
+        "allowed_kwargs": [
+          "keyword",
+          "days_back"
+        ],
+        "returns": [
+          "date",
+          "interest"
+        ]
+      }
+    }
+  }
+}

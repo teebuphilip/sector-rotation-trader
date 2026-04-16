@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/weather_volatility_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161513/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal and target_allocations methods cause logic blocks to be incorrectly structured.",
+      "In compute_signal, the rolling std dev is calculated on 'temp_max' which matches adapter output columns, correct.",
+      "Signal logic correctly implements the 20% spike trigger and exit conditions per spec intent.",
+      "In target_allocations, allocation is linearly scaled with spike magnitude as per spec, base allocation 5% used correctly.",
+      "Allocation is evenly distributed across entire universe including non-VIX ETFs (SPY, QQQ), but spec states to buy only VIX-related ETFs or options proxies (VXX, UVXY).",
+      "No filtering to restrict allocations only to VIX-related ETFs (VXX, UVXY) as required by entry logic in spec.",
+      "Signal names RISK_ON/RISK_OFF/HOLD are acceptable and treated correctly as BUY/SELL/HOLD.",
+      "Adapter import and usage of fetch_weather_series with expected columns is correct."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1266,
+    "output_tokens": 221
+  },
+  "cost_usd": 0.005375
+}

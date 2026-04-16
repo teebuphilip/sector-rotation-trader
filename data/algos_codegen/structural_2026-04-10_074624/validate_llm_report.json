@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/reddit_gaming_thread_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_074624/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be unreachable or incorrect.",
+      "compute_signal does not handle the case when data is empty properly due to indentation.",
+      "Signal logic does not strictly follow spec intent: 'Buy on day of spike detection' means signal should trigger exactly when pct_increase > 0.5, but current logic may return HOLD prematurely due to misplaced returns.",
+      "Exit logic is implemented but position tracking via self.position_entry_date is simplistic and may not persist correctly across calls; spec expects exit after 5 trading days or activity below 7-day MA, which is attempted but position management is not robust.",
+      "target_allocations allocates 5% per signal but multiplies by number of targets before capping at 20%, which can lead to total allocation > 20% if more than 4 targets; spec states max total exposure is 20%, so allocation logic is correct but could be clearer.",
+      "Code uses correct adapter 'fetch_reddit_activity' from 'reddit_activity' and uses adapter output columns 'posts' and 'comments' correctly.",
+      "Overall, indentation and control flow issues in compute_signal prevent correct signal generation per spec."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1004,
+    "output_tokens": 262
+  },
+  "cost_usd": 0.00513
+}

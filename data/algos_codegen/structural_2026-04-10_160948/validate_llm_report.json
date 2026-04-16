@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/reddit_sentiment_volatility_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_160948/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports fetch_reddit_activity from crazy.adapters.reddit_activity as required by spec adapter_contracts.",
+      "Code uses fetch_reddit_activity output but expects columns ['date', 'ticker', 'sentiment_score'], which is NOT in the adapter contract returns ['date', 'posts', 'comments'].",
+      "Spec adapter returns do NOT include 'ticker' or 'sentiment_score' columns, so code's use of these columns is inconsistent with adapter contract.",
+      "Signal logic correctly implements volatility spike as rolling 3-day std dev > 90th percentile and contrarian entry based on avg sentiment sign, matching spec intent.",
+      "Exit logic correctly exits when volatility drops below 50th percentile or after 5 trading days, matching spec intent.",
+      "Allocation logic uses 5% per position, max 20%, halves allocation if avg daily volume < 1 million, matching spec intent.",
+      "Signal names RISK_ON/RISK_OFF/HOLD are acceptable per instructions.",
+      "Overall fail due to mismatch between adapter contract output columns and code's expected columns for signal computation."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1804,
+    "output_tokens": 241
+  },
+  "cost_usd": 0.00692
+}

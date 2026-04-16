@@ -1,0 +1,65 @@
+{
+  "adapters": [
+    "html_table"
+  ],
+  "sliced_spec": {
+    "id": "insider-trading-signals",
+    "name": "Insider Trading Signals",
+    "frequency": "daily",
+    "universe": [
+      "Russell 3000"
+    ],
+    "entry_exit": {
+      "entry": "Buy when insider buying threshold is met (large insider buy transaction).",
+      "exit": "Sell when insider selling threshold is met (large insider sell transaction)."
+    },
+    "signal_logic": {
+      "trigger": {
+        "description": "Monitor SEC filings for insider buy/sell transactions. Identify large transactions over $100,000 by C-level executives or directors. Generate buy signal when insiders are buying, sell signal when insiders are selling.",
+        "conditions": [
+          {
+            "transaction_type": "buy",
+            "transaction_size_min": 100000,
+            "insider_roles": [
+              "C-level executive",
+              "director"
+            ],
+            "signal": "buy"
+          },
+          {
+            "transaction_type": "sell",
+            "transaction_size_min": 100000,
+            "insider_roles": [
+              "C-level executive",
+              "director"
+            ],
+            "signal": "sell"
+          }
+        ]
+      }
+    },
+    "position_sizing": {
+      "method": "Size positions based on transaction size and confidence in signal. Larger transactions by senior insiders warrant larger position sizes.",
+      "factors": [
+        "transaction_size",
+        "insider_role",
+        "signal_confidence"
+      ]
+    },
+    "data_sources": {
+      "html_table": {}
+    },
+    "adapter_contracts": {
+      "html_table": {
+        "func": "fetch_html_table",
+        "allowed_kwargs": [
+          "url",
+          "table_index"
+        ],
+        "returns": [
+          "table"
+        ]
+      }
+    }
+  }
+}

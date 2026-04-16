@@ -1,0 +1,41 @@
+{
+  "adapters": [
+    "tsa_table"
+  ],
+  "sliced_spec": {
+    "id": "airport-shopping-spree",
+    "name": "Airport Shopping Spree",
+    "frequency": "daily",
+    "universe": [
+      "TICKER1",
+      "TICKER2",
+      "TICKER3"
+    ],
+    "entry_exit": {
+      "entry": "Enter long positions in airport retail stocks when the signal is triggered",
+      "exit": "Exit positions when the signal reverses"
+    },
+    "signal_logic": {
+      "trigger": "When airport retail sales growth exceeds passenger traffic growth by more than 5%"
+    },
+    "position_sizing": {
+      "method": "Proportional to the strength of the signal",
+      "description": "Larger positions taken when the spread between retail sales growth and passenger traffic growth is wider"
+    },
+    "data_sources": {
+      "tsa": {}
+    },
+    "adapter_contracts": {
+      "tsa_table": {
+        "func": "fetch_tsa_table",
+        "allowed_kwargs": [],
+        "returns": [
+          "date",
+          "throughput",
+          "throughput_yoy",
+          "yoy_pct"
+        ]
+      }
+    }
+  }
+}

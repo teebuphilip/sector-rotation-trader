@@ -1,0 +1,34 @@
+{
+  "id": "twitter-sentiment-spike",
+  "name": "Twitter Sentiment Spike",
+  "frequency": "daily",
+  "universe": [
+    "AAPL",
+    "TSLA",
+    "AMZN",
+    "MSFT",
+    "GOOGL",
+    "NFLX",
+    "NVDA",
+    "META",
+    "AMD",
+    "BABA"
+  ],
+  "data_sources": {
+    "twitter_api": "",
+    "price_volume_data": ""
+  },
+  "signal_logic": {
+    "trigger": "Calculate daily sentiment score for each ticker from tweets mentioning its ticker symbol or company name. Generate a 7-day moving average of sentiment scores. Signal triggers when daily sentiment changes by more than \u00b130% compared to the 7-day average."
+  },
+  "entry_exit": {
+    "entry": "Buy if sentiment spikes positively by >30%, sell/short if sentiment drops negatively by >30%.",
+    "exit": "Close position when sentiment returns to within \u00b110% of the 7-day average or after 5 trading days, whichever comes first."
+  },
+  "position_sizing": {
+    "max_portfolio_allocation_percent": 5
+  },
+  "required_keys": [
+    "twitter_api_key"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/reddit_sentiment_spike_trend.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_160808/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports 'fetch_reddit_activity' from 'reddit_activity' adapter as required - PASS.",
+      "Code uses columns 'daily_sentiment_score' and 'mention_count' which are NOT in the adapter's returns ['date', 'posts', 'comments'] - FAIL.",
+      "Signal logic uses 'daily_sentiment_score' and 'mention_count' increase over 7-day MA as trigger conditions - matches spec intent - PASS.",
+      "Exit logic checks sentiment falls below 7-day MA or time elapsed >=5 days with OR logic - matches spec intent - PASS.",
+      "Position sizing allocates 2% portfolio equally across universe - matches spec intent - PASS.",
+      "Overall fail due to use of output columns not provided by adapter contract."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1340,
+    "output_tokens": 157
+  },
+  "cost_usd": 0.00492
+}

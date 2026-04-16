@@ -1,0 +1,26 @@
+{
+  "id": "airport-shopping-spree",
+  "name": "Airport Shopping Spree",
+  "frequency": "daily",
+  "universe": [
+    "TICKER1",
+    "TICKER2",
+    "TICKER3"
+  ],
+  "data_sources": {
+    "airport_retail_sales": "Transportation Security Administration (TSA)",
+    "passenger_traffic": "Federal Aviation Administration (FAA)"
+  },
+  "signal_logic": {
+    "trigger": "When airport retail sales growth exceeds passenger traffic growth by more than 5%"
+  },
+  "entry_exit": {
+    "entry": "Enter long positions in airport retail stocks when the signal is triggered",
+    "exit": "Exit positions when the signal reverses"
+  },
+  "position_sizing": {
+    "method": "Proportional to the strength of the signal",
+    "description": "Larger positions taken when the spread between retail sales growth and passenger traffic growth is wider"
+  },
+  "required_keys": []
+}

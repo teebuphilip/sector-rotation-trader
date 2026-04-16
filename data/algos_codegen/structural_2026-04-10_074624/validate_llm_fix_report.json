@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/reddit_gaming_thread_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_074624/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be unreachable or incorrect.",
+      "compute_signal returns string signals ('HOLD', 'RISK_ON', 'RISK_OFF') instead of boolean or expected signal format per spec.",
+      "Signal logic triggers 'RISK_ON' only if pct_increase > 0.5, which matches spec trigger (>50%), but signal naming is inconsistent with spec intent.",
+      "Position exit logic correctly checks activity below 7-day MA or after 5 days, but uses 'RISK_OFF' signal instead of 'SELL' or similar as per spec intent.",
+      "target_allocations uses correct allocation per signal (5%) and max total exposure (20%), and allocates only to specified universe subset (ATVI, EA, NVDA).",
+      "Adapter 'fetch_reddit_activity' is correctly imported and used with allowed kwargs and output columns ('date', 'posts', 'comments').",
+      "Signal strings ('RISK_ON', 'RISK_OFF', 'HOLD') do not clearly match spec entry/exit naming ('Buy', 'Sell'), potentially causing integration issues."
+    ]
+  },
+  "usage": {
+    "input_tokens": 967,
+    "output_tokens": 249
+  },
+  "cost_usd": 0.0049075
+}

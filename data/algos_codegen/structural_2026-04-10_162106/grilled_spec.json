@@ -1,0 +1,32 @@
+{
+  "id": "pet-food-supply-chain",
+  "name": "Pet Food Supply Chain Disruption",
+  "frequency": "monthly",
+  "universe": [
+    "PETS",
+    "CHWY",
+    "CENT",
+    "CENTA"
+  ],
+  "data_sources": {
+    "usda_pet_food_production": "US Department of Agriculture (USDA) reports on pet food production and inventory",
+    "freight_transportation_index": "Federal Reserve's Freight Transportation Services Index",
+    "google_trends_pet_food_searches": "Google Trends data on pet food-related searches"
+  },
+  "signal_logic": {
+    "trigger": {
+      "pet_food_production_decline": "If USDA monthly pet food production index drops by more than 5% year-over-year",
+      "freight_transportation_index_drop": "If Freight Transportation Services Index falls by more than 3% month-over-month",
+      "pet_food_search_spike": "If Google Trends index for pet food-related searches increases by more than 20% month-over-month"
+    }
+  },
+  "entry_exit": {
+    "entry": "If 2 out of 3 signals are triggered, enter long positions in major pet food manufacturers",
+    "exit": "If all 3 signals return to normal levels, exit long positions"
+  },
+  "position_sizing": {
+    "method": "Equal-weight positions",
+    "notes": "Sizing based on overall portfolio risk tolerance"
+  },
+  "required_keys": []
+}

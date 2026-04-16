@@ -1,0 +1,47 @@
+{
+  "id": "reddit-volatility-spike",
+  "name": "Reddit Volatility Spike",
+  "frequency": "daily",
+  "universe": [
+    "AAPL",
+    "TSLA",
+    "GME",
+    "AMC",
+    "MSFT",
+    "NVDA",
+    "AMD",
+    "NFLX",
+    "META",
+    "GOOGL"
+  ],
+  "data_sources": {
+    "reddit": "Pushshift Reddit API",
+    "implied_volatility": "Yahoo Finance",
+    "price_volume": "Alpha Vantage"
+  },
+  "signal_logic": {
+    "trigger": {
+      "reddit_mentions_increase_pct": 100,
+      "reddit_communities": [
+        "r/stocks",
+        "r/investing"
+      ],
+      "implied_volatility_increase_pct": 10,
+      "conditions": "both",
+      "exit_conditions": {
+        "iv_below_5day_ma": true,
+        "max_holding_days": 5,
+        "exit_rule": "whichever comes first"
+      }
+    }
+  },
+  "entry_exit": {
+    "entry": "Buy at market open the day after the signal triggers",
+    "exit": "Sell when IV drops below its 5-day moving average or after 5 trading days, whichever comes first"
+  },
+  "position_sizing": {
+    "allocation_pct": 2,
+    "allocation_basis": "portfolio capital"
+  },
+  "required_keys": []
+}

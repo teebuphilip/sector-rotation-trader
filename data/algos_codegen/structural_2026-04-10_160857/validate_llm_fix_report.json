@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/reddit_sentiment_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_160857/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports fetch_reddit_activity from reddit_activity adapter as required.",
+      "Code uses adapter output columns 'date', 'posts', 'comments', and also 'sentiment_score' and 'ticker' which are NOT in the adapter contract.",
+      "Adapter contract for reddit_activity specifies returns: ['date', 'posts', 'comments'] only; 'sentiment_score' and 'ticker' columns are used but not guaranteed by spec.",
+      "Signal logic partially matches spec intent: checks sentiment score increase >40% and mention volume >50, but uses aggregated sums in compute_signal instead of per-ticker checks as spec implies.",
+      "Exit logic in compute_signal checks per-position sentiment and days held correctly per spec.",
+      "Allocation logic correctly limits max concurrent positions to 5 and allocates 2% per position as per spec.",
+      "Allocation logic correctly filters tickers by sentiment increase >40% and mention volume >50 and excludes already held positions.",
+      "Overall, failure due to use of columns 'sentiment_score' and 'ticker' not defined in adapter contract, violating strict adapter output usage requirement."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1512,
+    "output_tokens": 246
+  },
+  "cost_usd": 0.00624
+}

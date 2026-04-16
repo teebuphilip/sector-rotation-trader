@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/online_ad_impression_volatility.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_162019/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports fetch_google_trends but does not import fetch_twitter_activity from crazy.adapters.twitter_activity as required by the spec.",
+      "Code calls fetch_twitter_activity() but this function is not imported, violating adapter import contract.",
+      "Code uses 'keyword' column in google_trends data but spec adapter contract for google_trends returns only ['date', 'interest'], no 'keyword' column.",
+      "Code uses 'tweets' column from twitter_activity data, which matches spec, but does not handle adapter contract allowed kwargs or confirm correct usage.",
+      "Signal logic includes twitter activity filter (tweets >= median) which is not specified in the sliced spec signal_logic; spec only requires buy on >10% impression volume jump.",
+      "Position sizing logic uses fixed weights 0.4 and 0.2 scaled by spike proportion, but spec requires sizing proportional to magnitude with larger positions for changes >=20%, no fixed multipliers specified.",
+      "Exit logic correctly sells when pct_change <= 0 within 3 days, matching spec exit condition.",
+      "Overall, adapter imports and usage do not fully comply with sliced spec adapter contracts and data columns, and signal logic adds twitter filter not in spec."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1617,
+    "output_tokens": 264
+  },
+  "cost_usd": 0.0066825
+}

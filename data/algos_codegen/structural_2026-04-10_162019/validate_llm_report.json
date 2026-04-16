@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/online_ad_impression_volatility.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_162019/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports only fetch_google_trends adapter but spec requires both google_trends and twitter_activity adapters.",
+      "Code uses 'keyword' column which is not specified in the google_trends adapter contract (which returns only 'date' and 'interest').",
+      "Signal logic does not handle twitter_activity data or its columns ('date', 'tweets') as per spec.",
+      "Position sizing logic uses a cap of 50% spike which is not specified in the spec.",
+      "Signal logic and allocation logic rely solely on google_trends data, ignoring twitter_activity adapter output as required by spec."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1324,
+    "output_tokens": 141
+  },
+  "cost_usd": 0.00472
+}

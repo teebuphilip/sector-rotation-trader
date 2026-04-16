@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/reddit_sentiment_volatility_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_160948/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports fetch_reddit_activity from crazy.adapters.reddit_activity as required by spec adapter_contracts.",
+      "Code uses adapter output columns incorrectly: spec adapter returns ['date', 'posts', 'comments'], but code expects 'ticker' and 'sentiment_score' columns which are not provided by the adapter.",
+      "Signal logic assumes 'ticker' and 'sentiment_score' columns exist in adapter output, which violates the adapter contract and spec data format.",
+      "Signal logic correctly implements volatility spike detection (rolling 3-day std dev) and 90th percentile threshold trigger as per spec.",
+      "Entry logic partially correct: enters long if volatility spike and avg sentiment negative, short if volatility spike and avg sentiment positive (contrarian), but both entry signals return 'RISK_ON' without distinguishing long vs short; spec intent is contrarian long/short but code conflates both as 'RISK_ON' which is acceptable per instructions.",
+      "Exit logic correctly exits when volatility drops below 50th percentile or after 5 trading days.",
+      "Position sizing logic follows spec: 5% per position, max 20%, halves allocation if avg daily volume below 1 million shares.",
+      "Overall, main failure is mismatch between adapter output columns and code expectations, which is critical and causes spec non-compliance."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1804,
+    "output_tokens": 288
+  },
+  "cost_usd": 0.00739
+}

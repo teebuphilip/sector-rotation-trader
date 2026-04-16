@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/superbowl_futures_trade.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_162154/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports only fetch_google_trends adapter but uses fetch_twitter_activity without import.",
+      "rebalance_frequency is set to 'daily' but spec requires 'monthly'.",
+      "Signal logic uses twitter_activity adapter output columns correctly but adapter not imported.",
+      "Signal logic checks rising trends for both google_trends and twitter_activity as per spec intent.",
+      "Position sizing allocates 5% total correctly across universe.",
+      "Signal logic time windows roughly match spec but entry window is 2 months before Superbowl, spec says monitor starting 3 months before.",
+      "Indentation errors in code (e.g. return statements inside if blocks) - likely a formatting issue but could cause runtime errors."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1183,
+    "output_tokens": 163
+  },
+  "cost_usd": 0.0045875
+}

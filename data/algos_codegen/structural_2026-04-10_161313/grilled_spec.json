@@ -1,0 +1,34 @@
+{
+  "id": "social-media-sentiment-spike",
+  "name": "Social Media Sentiment Spike",
+  "frequency": "daily",
+  "universe": [
+    "AAPL",
+    "TSLA",
+    "AMZN",
+    "MSFT",
+    "NVDA",
+    "NFLX",
+    "GOOGL",
+    "META"
+  ],
+  "data_sources": {
+    "twitter_api": "free tier",
+    "reddit_api": "Pushshift Reddit API",
+    "news_sentiment_api": "Finnhub News Sentiment API (free tier)"
+  },
+  "signal_logic": {
+    "trigger": "Signal triggers when the daily sentiment score for a ticker increases by more than 30% compared to its 7-day moving average sentiment score, with at least 100 posts mentioning the ticker that day."
+  },
+  "entry_exit": {
+    "entry": "Buy at market open the day after a sentiment spike signal.",
+    "exit": "Sell when sentiment reverts below the 7-day average or after 5 trading days, whichever comes first."
+  },
+  "position_sizing": {
+    "allocation_per_position": "2% of portfolio",
+    "max_simultaneous_positions": 10
+  },
+  "required_keys": [
+    "Twitter API key"
+  ]
+}

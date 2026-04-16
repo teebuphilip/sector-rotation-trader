@@ -1,0 +1,32 @@
+{
+  "id": "crypto-derivative-arbitrage",
+  "name": "Crypto Derivative Arbitrage",
+  "frequency": "daily",
+  "universe": [
+    "BTC",
+    "ETH",
+    "LTC",
+    "XRP",
+    "LINK"
+  ],
+  "data_sources": {
+    "CoinGecko API": "",
+    "CoinMarketCap API": "",
+    "Yahoo Finance API": ""
+  },
+  "signal_logic": {
+    "trigger": "Monitor the price spread between spot crypto prices and derivative contract prices on major crypto exchanges. When the spread exceeds a certain threshold, execute a trade to capture the arbitrage opportunity."
+  },
+  "entry_exit": {
+    "entry": "Buy the asset with the lower price and sell the asset with the higher price to capture the spread.",
+    "exit": "Close the position once the spread narrows to the target threshold."
+  },
+  "position_sizing": {
+    "description": "Size positions based on the magnitude of the price spread and overall market liquidity. Smaller position sizes are recommended for less liquid markets."
+  },
+  "required_keys": [
+    "CoinGecko API key",
+    "CoinMarketCap API key",
+    "Yahoo Finance API key"
+  ]
+}

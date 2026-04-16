@@ -1,0 +1,25 @@
+{
+  "file": "crazy/algos/reddit_subreddit_surge_momentum.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161156/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports correct adapter 'fetch_reddit_activity' from 'crazy.adapters.reddit_activity'.",
+      "Code uses adapter output columns 'date' and 'posts' correctly.",
+      "Signal logic mostly follows spec intent: uses daily posts, 3-day moving average, and triggers when posts > 2 * MA3 and MA3 > 20.",
+      "Exit condition in code is 'posts < ma3' which matches spec 'mentions fall below 3-day moving average'.",
+      "Signal logic uses previous day data for entry signal, aligning with 'enter at market open the day after surge'.",
+      "Position sizing uses 5% allocation per signal and max 3 concurrent positions as per spec.",
+      "Volatility adjustment attempts to reduce allocation by 50% if VIX > 25, but VIX data is fetched from 'r/volatility' subreddit posts, which is not specified in the spec and likely incorrect source for VIX.",
+      "Spec requires VIX level for volatility adjustment, but code uses 'posts' count from a subreddit instead of a proper VIX data source.",
+      "Indentation errors in code (e.g. missing indentation after if statements) would cause runtime errors, indicating implementation issues.",
+      "Overall logic is close but volatility adjustment implementation is incorrect and code formatting errors present."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1203,
+    "output_tokens": 291
+  },
+  "cost_usd": 0.0059175
+}

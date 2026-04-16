@@ -1,0 +1,27 @@
+{
+  "file": "crazy/algos/reddit_subreddit_surge_momentum.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161156/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports correct adapter 'fetch_reddit_activity' from 'reddit_activity'.",
+      "Code uses adapter output columns 'date' and 'posts' correctly.",
+      "Signal logic mostly follows spec intent: triggers RISK_ON when today's posts > 2 * 3-day MA and 3-day MA > 20, which matches >100% increase and avg >20 condition.",
+      "Exit condition triggers RISK_OFF when posts < 3-day MA, matching spec exit condition.",
+      "Position sizing uses 5% allocation per signal and max 3 concurrent positions as per spec.",
+      "Volatility adjustment reduces allocation by 50% if VIX (fetched from 'r/volatility' posts) > 25, matching spec intent.",
+      "ISSUE: Signal logic does not aggregate mentions across the specified subreddits (r/wallstreetbets, r/investing, r/stocks) per ticker cashtag as required by spec; it uses total posts without ticker-level granularity.",
+      "ISSUE: Spec requires daily count of ticker cashtag mentions, but code uses total posts without ticker filtering or cashtag mention counting.",
+      "ISSUE: Spec requires entry at market open the day after surge; code signal triggers on same day data without explicit next-day entry logic.",
+      "ISSUE: Exit condition includes 'or after 5 trading days' which is said to be handled externally; code does not show handling or state tracking for 5-day exit.",
+      "ISSUE: VIX is fetched from 'r/volatility' posts, but spec states VIX > 25; posts count may not represent VIX index level, so volatility adjustment logic may be incorrect or misaligned with spec.",
+      "ISSUE: Indentation errors in code (e.g. return statements inside compute_signal and target_allocations) may cause runtime errors."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1166,
+    "output_tokens": 401
+  },
+  "cost_usd": 0.006925
+}

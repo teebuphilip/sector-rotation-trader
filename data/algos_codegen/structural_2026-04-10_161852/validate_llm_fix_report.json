@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/electric_vehicle_charge_station_density.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161852/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec requires 'monthly'.",
+      "compute_signal method does not pass required kwargs (e.g., country_code, max_results) to fetch_openchargemap_counts as per adapter contract.",
+      "compute_signal uses 'count' column correctly but does not handle empty or insufficient data with correct indentation (syntax error in code).",
+      "compute_signal logic mostly matches spec intent but indentation errors and inconsistent returns may cause runtime issues.",
+      "target_allocations calls fetch_openchargemap_counts without required kwargs and does not handle empty data with correct indentation (syntax error).",
+      "target_allocations uses recent_change for sizing but does not scale allocation by rate of change beyond equal weighting; spec expects sizing proportional to rate of change per region, but code allocates equally across universe without regional differentiation.",
+      "target_allocations returns empty dict for RISK_OFF and default, which matches spec exit logic.",
+      "Overall code imports correct adapter and uses adapter output columns 'date' and 'count' correctly, but indentation and rebalance frequency issues cause failure."
+    ]
+  },
+  "usage": {
+    "input_tokens": 982,
+    "output_tokens": 239
+  },
+  "cost_usd": 0.004845
+}

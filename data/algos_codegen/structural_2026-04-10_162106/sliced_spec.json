@@ -1,0 +1,60 @@
+{
+  "adapters": [
+    "fred_series",
+    "google_trends"
+  ],
+  "sliced_spec": {
+    "id": "pet-food-supply-chain",
+    "name": "Pet Food Supply Chain Disruption",
+    "frequency": "monthly",
+    "universe": [
+      "PETS",
+      "CHWY",
+      "CENT",
+      "CENTA"
+    ],
+    "entry_exit": {
+      "entry": "If 2 out of 3 signals are triggered, enter long positions in major pet food manufacturers",
+      "exit": "If all 3 signals return to normal levels, exit long positions"
+    },
+    "signal_logic": {
+      "trigger": {
+        "pet_food_production_decline": "If USDA monthly pet food production index drops by more than 5% year-over-year",
+        "freight_transportation_index_drop": "If Freight Transportation Services Index falls by more than 3% month-over-month",
+        "pet_food_search_spike": "If Google Trends index for pet food-related searches increases by more than 20% month-over-month"
+      }
+    },
+    "position_sizing": {
+      "method": "Equal-weight positions",
+      "notes": "Sizing based on overall portfolio risk tolerance"
+    },
+    "data_sources": {
+      "fred": {},
+      "google_trends": {}
+    },
+    "adapter_contracts": {
+      "fred_series": {
+        "func": "fetch_fred_series",
+        "allowed_kwargs": [
+          "series_id",
+          "api_key"
+        ],
+        "returns": [
+          "date",
+          "value"
+        ]
+      },
+      "google_trends": {
+        "func": "fetch_google_trends",
+        "allowed_kwargs": [
+          "keyword",
+          "days_back"
+        ],
+        "returns": [
+          "date",
+          "interest"
+        ]
+      }
+    }
+  }
+}

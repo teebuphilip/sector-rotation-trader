@@ -1,0 +1,54 @@
+{
+  "adapters": [
+    "google_trends",
+    "twitter_activity"
+  ],
+  "sliced_spec": {
+    "id": "superbowl-futures-trade",
+    "name": "Superbowl Futures Trade",
+    "frequency": "monthly",
+    "universe": [
+      "SPY"
+    ],
+    "entry_exit": {
+      "entry": "Enter a long position in SPY 2 months before the Superbowl if the signal triggers.",
+      "exit": "Exit the position 1 week after the Superbowl."
+    },
+    "signal_logic": {
+      "trigger": "Monitor Google search trends for keywords related to 'Superbowl tickets' starting 3 months before the Superbowl. Track social media sentiment from Twitter and Reddit around Superbowl ticket sales using natural language processing. If both search interest and positive sentiment are rising steadily, generate a composite signal indicating growing consumer confidence and an impending market rally."
+    },
+    "position_sizing": {
+      "allocation": "5%",
+      "method": "Allocate 5% of the portfolio to this trade."
+    },
+    "data_sources": {
+      "google_trends": "",
+      "twitter": {}
+    },
+    "adapter_contracts": {
+      "google_trends": {
+        "func": "fetch_google_trends",
+        "allowed_kwargs": [
+          "keyword",
+          "days_back"
+        ],
+        "returns": [
+          "date",
+          "interest"
+        ]
+      },
+      "twitter_activity": {
+        "func": "fetch_twitter_activity",
+        "allowed_kwargs": [
+          "query",
+          "days_back",
+          "cache_key"
+        ],
+        "returns": [
+          "date",
+          "tweets"
+        ]
+      }
+    }
+  }
+}

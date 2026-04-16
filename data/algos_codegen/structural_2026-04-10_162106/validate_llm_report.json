@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/pet_food_supply_chain.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_162106/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Rebalance frequency is 'daily' but spec requires 'monthly'.",
+      "Code imports only 'fetch_fred_series' from 'crazy.adapters.fred_series' but also uses 'fetch_google_trends' without importing it from 'crazy.adapters.google_trends'.",
+      "Signal logic uses 'value' column for fred_series data which matches spec, and 'interest' column for google_trends which matches spec.",
+      "Signal logic correctly implements the 3 triggers with correct thresholds and time comparisons as per spec.",
+      "Entry/exit logic matches spec intent: enter long if 2+ triggers, exit if 0 triggers, else hold.",
+      "Position sizing uses equal weights across universe, matching spec.",
+      "Indentation errors in code (e.g. inside compute_signal) would cause runtime errors but not a spec mismatch.",
+      "Overall, main failures are missing import of google_trends adapter and incorrect rebalance frequency."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1609,
+    "output_tokens": 212
+  },
+  "cost_usd": 0.0061425
+}

@@ -1,0 +1,84 @@
+{
+  "adapters": [
+    "reddit_activity"
+  ],
+  "sliced_spec": {
+    "id": "reddit-sentiment-spike-trend",
+    "name": "Reddit Sentiment Spike Trend",
+    "frequency": "daily",
+    "universe": [
+      "AAPL",
+      "TSLA",
+      "AMD",
+      "NVDA",
+      "MSFT",
+      "AMZN",
+      "GME",
+      "PLTR",
+      "NFLX"
+    ],
+    "entry_exit": {
+      "entry": {
+        "action": "enter_long",
+        "timing": "next_market_open_after_signal"
+      },
+      "exit": {
+        "conditions": [
+          {
+            "metric": "daily_sentiment_score",
+            "comparison": "falls_below",
+            "reference_period": "7-day_moving_average"
+          },
+          {
+            "condition": "time_elapsed",
+            "value": 5,
+            "unit": "trading_days"
+          }
+        ],
+        "logic": "or",
+        "action": "exit_position"
+      }
+    },
+    "signal_logic": {
+      "trigger": {
+        "conditions": [
+          {
+            "metric": "daily_sentiment_score",
+            "comparison": "increase",
+            "threshold_percent": 50,
+            "reference_period": "7-day_moving_average"
+          },
+          {
+            "metric": "mention_count",
+            "comparison": "increase",
+            "threshold_percent": 30,
+            "reference_period": "7-day_moving_average"
+          }
+        ],
+        "logic": "and"
+      }
+    },
+    "position_sizing": {
+      "allocation_percent": 2,
+      "allocation_basis": "portfolio"
+    },
+    "data_sources": {
+      "reddit": {}
+    },
+    "adapter_contracts": {
+      "reddit_activity": {
+        "func": "fetch_reddit_activity",
+        "allowed_kwargs": [
+          "subreddits",
+          "days_back",
+          "cache_key"
+        ],
+        "returns": [
+          "date",
+          "posts",
+          "comments"
+        ]
+      }
+    }
+  }
+}

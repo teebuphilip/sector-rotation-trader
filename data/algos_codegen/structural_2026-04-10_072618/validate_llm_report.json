@@ -1,0 +1,19 @@
+{
+  "file": "crazy/algos/reddit_gaming_thread_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_072618/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Allocation per signal is 20% total exposure divided equally, but spec requires 5% allocation per signal with max total exposure 20%.",
+      "Signal logic uses correct adapter and output columns, and spike condition matches spec.",
+      "Exit logic correctly checks activity below 7-day moving average or after 5 days.",
+      "Adapter import and usage conform to spec."
+    ]
+  },
+  "usage": {
+    "input_tokens": 942,
+    "output_tokens": 96
+  },
+  "cost_usd": 0.003315
+}

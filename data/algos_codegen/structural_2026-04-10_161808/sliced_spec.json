@@ -1,0 +1,40 @@
+{
+  "adapters": [
+    "earthquake_activity"
+  ],
+  "sliced_spec": {
+    "id": "earthquake-energy-demand",
+    "name": "Earthquake Energy Demand Indicator",
+    "frequency": "daily",
+    "universe": [
+      "CL1!",
+      "NG1!",
+      "EL1!"
+    ],
+    "entry_exit": {
+      "entry": "Buy or sell energy-related assets based on the direction and magnitude of the post-earthquake energy demand shift.",
+      "exit": "Exit positions when the energy demand normalizes or the impact of the earthquake event subsides."
+    },
+    "signal_logic": {
+      "trigger": "When a significant earthquake is detected by USGS in a region, monitor EIA's real-time electricity demand data for that region. A sudden spike or drop in energy demand over the following 1-2 days signals the scale of the event's impact."
+    },
+    "position_sizing": {
+      "method": "Scale position size based on the earthquake's magnitude and the resulting energy demand change. Larger earthquakes with bigger demand impacts warrant larger positions."
+    },
+    "data_sources": {
+      "earthquake": {}
+    },
+    "adapter_contracts": {
+      "earthquake_activity": {
+        "func": "fetch_earthquake_activity",
+        "allowed_kwargs": [
+          "days_back"
+        ],
+        "returns": [
+          "date",
+          "quakes"
+        ]
+      }
+    }
+  }
+}

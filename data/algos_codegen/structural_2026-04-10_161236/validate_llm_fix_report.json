@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/reddit_volatility_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161236/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be incorrect or unreachable.",
+      "fetch_reddit_activity is called with correct kwargs and adapter import is correct.",
+      "Signal logic correctly sums 'posts' and 'comments' columns as per adapter contract.",
+      "Signal logic checks reddit_mentions_increase_pct >= 100 and implied_volatility_increase_pct >= 10 as required.",
+      "Exit logic correctly implements selling when IV drops below 5-day MA or after 5 days, whichever comes first.",
+      "Allocation logic uses 2% allocation on RISK_ON (BUY) and zero allocation on RISK_OFF (SELL), matching spec.",
+      "However, indentation errors cause early returns and likely incorrect behavior, failing strict logic validation."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1202,
+    "output_tokens": 171
+  },
+  "cost_usd": 0.004715
+}

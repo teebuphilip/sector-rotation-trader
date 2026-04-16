@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/volatility_spike_follow_through.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161426/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "fetch_prices() is called without required arguments 'tickers' and 'period' as per adapter contract.",
+      "fetch_prices() output is expected to have only 'Close' column per adapter contract, but code uses 'implied_volatility_percentile_30d' which is not provided by 'price_only' adapter.",
+      "Signal logic depends on 'implied_volatility_percentile_30d' which is not part of the 'price_only' adapter output, violating adapter contract.",
+      "Signal logic uses 'implied_volatility_percentile_30d' column which is not available from the adapter, thus signal computation does not follow spec intent.",
+      "Allocation logic repeats same invalid assumptions about data columns and adapter output.",
+      "fetch_prices() calls lack required 'tickers' and 'period' keyword arguments as per adapter contract.",
+      "Indentation errors in code (e.g. inside compute_signal and loops) may cause runtime errors."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1601,
+    "output_tokens": 214
+  },
+  "cost_usd": 0.0061425
+}

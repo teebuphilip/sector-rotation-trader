@@ -1,0 +1,79 @@
+{
+  "id": "reddit-sentiment-spike-trend",
+  "name": "Reddit Sentiment Spike Trend",
+  "frequency": "daily",
+  "universe": [
+    "AAPL",
+    "TSLA",
+    "AMD",
+    "NVDA",
+    "MSFT",
+    "AMZN",
+    "GME",
+    "PLTR",
+    "NFLX"
+  ],
+  "data_sources": {
+    "reddit_api": {
+      "subreddits": [
+        "r/investing",
+        "r/stocks"
+      ]
+    },
+    "sentiment_analysis": {
+      "libraries": [
+        "VADER",
+        "TextBlob"
+      ]
+    },
+    "price_data": {
+      "provider": "Yahoo Finance"
+    }
+  },
+  "signal_logic": {
+    "trigger": {
+      "conditions": [
+        {
+          "metric": "daily_sentiment_score",
+          "comparison": "increase",
+          "threshold_percent": 50,
+          "reference_period": "7-day_moving_average"
+        },
+        {
+          "metric": "mention_count",
+          "comparison": "increase",
+          "threshold_percent": 30,
+          "reference_period": "7-day_moving_average"
+        }
+      ],
+      "logic": "and"
+    }
+  },
+  "entry_exit": {
+    "entry": {
+      "action": "enter_long",
+      "timing": "next_market_open_after_signal"
+    },
+    "exit": {
+      "conditions": [
+        {
+          "metric": "daily_sentiment_score",
+          "comparison": "falls_below",
+          "reference_period": "7-day_moving_average"
+        },
+        {
+          "condition": "time_elapsed",
+          "value": 5,
+          "unit": "trading_days"
+        }
+      ],
+      "logic": "or",
+      "action": "exit_position"
+    }
+  },
+  "position_sizing": {
+    "allocation_percent": 2,
+    "allocation_basis": "portfolio"
+  },
+  "required_keys": []
+}

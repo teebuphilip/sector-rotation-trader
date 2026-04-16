@@ -1,0 +1,61 @@
+{
+  "adapters": [
+    "reddit_activity"
+  ],
+  "sliced_spec": {
+    "id": "reddit-subreddit-sentiment-spike",
+    "name": "Reddit Subreddit Sentiment Spike",
+    "frequency": "daily",
+    "universe": [
+      "SPY",
+      "GME",
+      "AMC",
+      "AAPL",
+      "TSLA",
+      "MSFT"
+    ],
+    "entry_exit": {
+      "entry": "Buy at next market open when signal triggers",
+      "exit": "Sell when daily sentiment drops below 0 OR daily volume falls below 0.8 * 7_day_average_volume"
+    },
+    "signal_logic": {
+      "trigger": {
+        "conditions": [
+          {
+            "metric": "daily_volume",
+            "comparison": ">",
+            "threshold": "1.5 * 7_day_average_volume"
+          },
+          {
+            "metric": "average_sentiment",
+            "comparison": ">",
+            "threshold": 0.3
+          }
+        ],
+        "logic": "AND"
+      }
+    },
+    "position_sizing": {
+      "allocation_per_asset": "5% of portfolio",
+      "max_total_exposure": "20% of portfolio"
+    },
+    "data_sources": {
+      "reddit": {}
+    },
+    "adapter_contracts": {
+      "reddit_activity": {
+        "func": "fetch_reddit_activity",
+        "allowed_kwargs": [
+          "subreddits",
+          "days_back",
+          "cache_key"
+        ],
+        "returns": [
+          "date",
+          "posts",
+          "comments"
+        ]
+      }
+    }
+  }
+}

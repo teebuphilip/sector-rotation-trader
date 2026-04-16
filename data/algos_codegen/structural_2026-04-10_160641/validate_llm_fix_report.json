@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/reddit_emoji_sentiment_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_160641/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports correct adapter 'fetch_reddit_activity' from 'reddit_activity'.",
+      "Code uses adapter output columns 'date', but also uses 'bullish_emoji_ratio', 'bearish_emoji_ratio', and 'mention_volume' which are NOT in the adapter contract returns ['date', 'posts', 'comments'].",
+      "Signal logic uses percentage change > 150% and >= 50% thresholds as per spec, mapping RISK_ON to BUY and RISK_OFF to SELL correctly.",
+      "Position sizing uses 2% allocation per position as per spec.",
+      "Indentation errors in code (e.g. missing indentation after if statements) but not counted as spec logic failure."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1007,
+    "output_tokens": 144
+  },
+  "cost_usd": 0.0039575
+}

@@ -1,0 +1,37 @@
+{
+  "id": "reddit-emoji-sentiment-spike",
+  "name": "Reddit Emoji Sentiment Spike",
+  "frequency": "daily",
+  "universe": [
+    "AAPL",
+    "TSLA",
+    "AMD",
+    "GME",
+    "AMC",
+    "NVDA",
+    "MSFT",
+    "NFLX"
+  ],
+  "data_sources": {
+    "reddit_api": "public endpoints",
+    "price_volume_data": "Yahoo Finance"
+  },
+  "signal_logic": {
+    "trigger": {
+      "buy": {
+        "condition": "bullish_emoji_ratio_day_over_day_increase > 150% AND mention_volume_day_over_day_increase >= 50%"
+      },
+      "sell": {
+        "condition": "bearish_emoji_ratio_day_over_day_increase > 150% AND mention_volume_day_over_day_increase >= 50%"
+      }
+    }
+  },
+  "entry_exit": {
+    "entry": "Buy at next market open after bullish emoji ratio spike",
+    "exit": "Sell at next market open after bearish emoji ratio spike or after 5 trading days, whichever comes first"
+  },
+  "position_sizing": {
+    "allocation_per_position": "2% of portfolio"
+  },
+  "required_keys": []
+}

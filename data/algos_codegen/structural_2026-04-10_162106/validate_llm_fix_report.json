@@ -1,0 +1,24 @@
+{
+  "file": "crazy/algos/pet_food_supply_chain.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_162106/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Rebalance frequency is 'daily' but spec requires 'monthly'.",
+      "Code imports only 'fetch_fred_series' from 'crazy.adapters.fred_series' but also uses 'fetch_google_trends' without import.",
+      "fetch_google_trends is used but not imported from 'crazy.adapters.google_trends' as required by spec.",
+      "Signal logic uses correct columns ('date', 'value' for fred_series and 'date', 'interest' for google_trends).",
+      "Signal logic correctly implements triggers per spec: >5% YoY drop for pet food production, >3% MoM drop for freight index, >20% MoM increase for search spike.",
+      "Entry logic matches spec: enter long if 2 or more triggers active (RISK_ON).",
+      "Exit logic matches spec: exit long if all 3 signals normal (RISK_OFF).",
+      "Position sizing uses equal weight across universe as per spec.",
+      "Indentation errors in code (e.g. inside if statements) but not part of spec validation."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1609,
+    "output_tokens": 240
+  },
+  "cost_usd": 0.0064225
+}

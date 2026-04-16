@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/reddit_subreddit_mention_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161041/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports fetch_reddit_activity from crazy.adapters.reddit_activity as required.",
+      "Code uses adapter output columns not matching the adapter contract: adapter returns ['date', 'posts', 'comments'], but code expects 'mention_count', 'price', 'sma_20', 'sma_14_mentions' columns which are not provided by the adapter.",
+      "Signal logic assumes columns and metrics not defined or returned by the adapter, violating the adapter contract.",
+      "Signal logic correctly implements the spec intent for entry and exit conditions based on mention count spike and price vs SMA, but on data columns not provided by adapter.",
+      "Position sizing logic correctly allocates 5% per position on BUY (RISK_ON) and no allocation on SELL (RISK_OFF) or HOLD.",
+      "Overall fail due to mismatch between adapter contract and code's expected data columns."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1333,
+    "output_tokens": 196
+  },
+  "cost_usd": 0.0052925
+}

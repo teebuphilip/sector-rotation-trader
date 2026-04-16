@@ -1,0 +1,32 @@
+{
+  "id": "online-ad-impression-volatility",
+  "name": "Online Ad Impression Volatility Trader",
+  "frequency": "daily",
+  "universe": [
+    "GOOG",
+    "FB",
+    "TWTR",
+    "SNAP",
+    "PINS"
+  ],
+  "data_sources": {
+    "google_trends": "",
+    "twitter_api": "",
+    "facebook_ad_library_api": ""
+  },
+  "signal_logic": {
+    "trigger": "Monitor daily changes in ad impressions for the universe. Generate a buy signal when daily impression volume increases by more than 10% compared to the prior day, indicating a volatility spike."
+  },
+  "entry_exit": {
+    "entry": "Buy when daily impression volume jumps more than 10%.",
+    "exit": "Sell when impression volume reverts back to normal levels within 3 days."
+  },
+  "position_sizing": {
+    "method": "Size positions proportionally to the magnitude of the impression spike, with larger positions allocated for changes of 20% or more."
+  },
+  "required_keys": [
+    "Google Trends API key",
+    "Twitter API key",
+    "Facebook Ad Library API key"
+  ]
+}

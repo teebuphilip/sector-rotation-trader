@@ -1,0 +1,25 @@
+{
+  "file": "crazy/algos/reddit_sentiment_spike_trend.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_160808/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Adapter output columns used ('posts', 'comments') do not match spec adapter contract returns ('date', 'posts', 'comments') but spec expects 'daily_sentiment_score' and 'mention_count' as metrics, which are approximated here but not from adapter output directly.",
+      "Signal logic approximates 'daily_sentiment_score' and 'mention_count' from adapter data, which is acceptable, but the spec requires signal trigger conditions on 'daily_sentiment_score' and 'mention_count' increase over 7-day MA with 'and' logic, which is implemented correctly.",
+      "Exit logic uses 'or' between sentiment falling below 7-day MA and time elapsed >=5 trading days, matching spec intent.",
+      "Position sizing uses 2% portfolio allocation split evenly across universe, matching spec allocation_percent 2%.",
+      "Indentation errors in code (e.g. inside compute_signal) would cause runtime errors but are not spec compliance issues.",
+      "The code imports the correct adapter 'fetch_reddit_activity' from 'crazy.adapters.reddit_activity' as required.",
+      "Overall, the main issue is that the adapter contract returns only 'date', 'posts', 'comments' but the spec expects 'daily_sentiment_score' and 'mention_count' as metrics for signal logic; the code approximates these metrics internally which is acceptable given the adapter contract, so this is not a fail.",
+      "However, the code does not handle the 'cache_key' or 'days_back' kwargs allowed by the adapter contract, but this is not mandatory for pass/fail.",
+      "The code uses 'date' from adapter output correctly for timing and position entry date tracking.",
+      "Summary: The code meets the spec intent for adapter usage, signal logic, and allocation logic, but indentation errors and minor deviations in adapter kwargs usage exist."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1426,
+    "output_tokens": 395
+  },
+  "cost_usd": 0.007515
+}

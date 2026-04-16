@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/insider_trading_signals.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161929/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code does not pass correct kwargs to fetch_html_table (missing url or table_index as per adapter contract).",
+      "Indentation errors in compute_signal and target_allocations methods cause logic to be unreachable or incorrect.",
+      "In compute_signal, 'transaction_size' column is used but spec uses 'transaction_size_min' as a condition; code assumes 'transaction_size' column exists but spec does not explicitly define columns\u2014adapter output columns not fully verified.",
+      "In compute_signal, logic returns 'RISK_OFF' on any large sell and 'RISK_ON' on any large buy, which matches spec intent, but no check for insider roles case normalization consistency.",
+      "In target_allocations, allocation logic uses insider_role weights and transaction_size for sizing, consistent with spec factors.",
+      "target_allocations returns empty dict on RISK_OFF and HOLD signals, consistent with spec (sell means exit, so no long allocation).",
+      "Overall, code uses correct adapter 'fetch_html_table' from 'html_table' adapter as required.",
+      "However, critical indentation errors and missing adapter kwargs usage cause failure to meet spec implementation standards."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1330,
+    "output_tokens": 251
+  },
+  "cost_usd": 0.005835
+}

@@ -1,0 +1,42 @@
+{
+  "id": "reddit-subreddit-mention-spike",
+  "name": "Reddit Subreddit Mention Spike",
+  "frequency": "daily",
+  "universe": [
+    "TSLA",
+    "AAPL",
+    "GME",
+    "AMC",
+    "NVDA",
+    "MSFT",
+    "AMD"
+  ],
+  "data_sources": {
+    "reddit_api": "https://pushshift.io/",
+    "price_data": "Yahoo Finance"
+  },
+  "signal_logic": {
+    "trigger": {
+      "mention_spike": {
+        "description": "Today's mention count exceeds 14-day moving average by at least 150%",
+        "metric": "daily mention count",
+        "baseline": "14-day moving average",
+        "threshold": 1.5
+      },
+      "price_confirmation": {
+        "description": "Price is above its 20-day simple moving average",
+        "metric": "price",
+        "baseline": "20-day SMA",
+        "condition": "price > 20-day SMA"
+      }
+    }
+  },
+  "entry_exit": {
+    "entry": "When mention count spike condition is met and price > 20-day SMA",
+    "exit": "When mention counts revert below the 14-day moving average or price falls below the 20-day SMA"
+  },
+  "position_sizing": {
+    "allocation_per_position": "5% of portfolio"
+  },
+  "required_keys": []
+}

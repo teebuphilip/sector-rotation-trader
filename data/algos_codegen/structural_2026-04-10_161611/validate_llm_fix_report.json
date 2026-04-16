@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/airport_shopping_spree.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161611/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be unreachable or incorrect.",
+      "In compute_signal, exit condition uses spread <= 0, which is stricter than spec's 'signal reverses' but acceptable if consistent; however, HOLD condition is ambiguous.",
+      "In target_allocations, repeated calls to fetch_tsa_table may cause inconsistency; better to pass data from signal computation or cache.",
+      "In target_allocations, weight_per_ticker calculation divides spread by 100, assuming spread is in percent points; spec does not clarify units, but this is reasonable.",
+      "Weight capping at 0.20 / len(universe) is arbitrary and not specified in spec; spec only says proportional to strength, no max cap mentioned.",
+      "In target_allocations, signal == 'RISK_OFF' returns empty dict, which matches exit logic (no positions).",
+      "Overall, code uses correct adapter (fetch_tsa_table from tsa_table), uses adapter output columns ('yoy_pct', 'throughput_yoy'), and signal/alloc logic aligns with spec intent except for indentation and minor style issues."
+    ]
+  },
+  "usage": {
+    "input_tokens": 907,
+    "output_tokens": 250
+  },
+  "cost_usd": 0.0047675
+}

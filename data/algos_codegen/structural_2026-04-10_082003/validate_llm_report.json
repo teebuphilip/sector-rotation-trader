@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/reddit_gaming_thread_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_082003/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be unreachable or incorrect.",
+      "In compute_signal, 'days_held' calculation uses latest['date'] which is a Timestamp, but position['entry_date'] is likely a date; potential type mismatch.",
+      "In compute_signal, the exit condition returns 'RISK_OFF' correctly, but the logic flow is broken due to indentation, causing early returns and unreachable code.",
+      "In target_allocations, allocation per signal is 20% total divided by targets, but spec requires 5% per signal with max 20% total exposure; allocation logic does not follow spec intent.",
+      "In target_allocations, on 'RISK_OFF' signal, should sell (i.e., zero allocation), which is correctly done.",
+      "Adapter import and usage is correct, and output columns 'posts' and 'comments' are used properly."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1044,
+    "output_tokens": 202
+  },
+  "cost_usd": 0.00463
+}

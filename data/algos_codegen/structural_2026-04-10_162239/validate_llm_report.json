@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/reddit_mentions_volatility_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_162239/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "fetch_prices is called without required kwargs 'tickers' and 'period' as per adapter contract",
+      "Code does not use 'Close' column explicitly from adapter output; it assumes df['Close'] but fetch_prices returns only 'Close' column per spec",
+      "Signal logic does not implement mention count spike detection or 5-day moving average of mentions as required",
+      "Signal logic does not implement combined condition of mention spike and volatility elevation for entry",
+      "Exit logic is incomplete: no tracking of days since entry and no exit on volatility dropping below 80% of 30-day average before 5 days",
+      "Allocation logic uses correct weights and signal mapping but indentation is incorrect (likely a bug)"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1226,
+    "output_tokens": 151
+  },
+  "cost_usd": 0.004575
+}

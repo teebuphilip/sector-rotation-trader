@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/earthquake_energy_demand.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161808/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports fetch_earthquake_activity from crazy.adapters.earthquake_activity - correct adapter import.",
+      "Code uses fetch_earthquake_activity output but expects columns 'magnitude' and 'date' which are not in the adapter contract returns ['date', 'quakes'].",
+      "Signal logic uses 'magnitude' and 'date' fields from adapter output, but adapter contract specifies returns as ['date', 'quakes'], no 'magnitude' field documented.",
+      "Signal logic does not handle 'quakes' field structure as per adapter contract; unclear if 'quakes' contains magnitude info or if additional processing is needed.",
+      "Signal logic partially matches spec intent: triggers on magnitude >=5 and demand change >5% or <-5% within 2 days, exit after 2 days or demand normalizes - logic mostly correct but relies on unavailable 'magnitude' field.",
+      "Position sizing scales allocation by magnitude and demand change, consistent with spec intent.",
+      "Indentation errors in compute_signal method (e.g. missing indentation after if statements) - code would not run as is."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1088,
+    "output_tokens": 246
+  },
+  "cost_usd": 0.00518
+}

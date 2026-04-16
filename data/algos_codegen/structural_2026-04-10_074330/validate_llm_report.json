@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/reddit_gaming_thread_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_074330/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code indentation is incorrect causing syntax errors (e.g., missing indentation inside if statements).",
+      "In compute_signal, the check for required columns uses 'if 'date' not in df' which is invalid; should be 'if 'date' not in df.columns'.",
+      "Signal logic uses 'return \"HOLD\"' but spec does not define 'HOLD' as a valid signal; spec implies only entry (buy) and exit (sell) signals.",
+      "Position state management uses attributes 'self.position' and 'self.entry_date' without initialization or persistence mechanism, which may cause incorrect behavior.",
+      "Signal logic correctly triggers on >50% increase over 7-day moving average but does not explicitly handle the case when data is missing or incomplete beyond returning 'HOLD'.",
+      "Allocation logic only allocates to ['ATVI', 'EA', 'NVDA'] which matches spec entry stocks, but does not consider max total exposure properly if universe size or positions change.",
+      "Allocation logic returns empty dict on 'RISK_OFF' which aligns with exit logic, but spec exit is 'Sell when activity falls below 7-day MA or after 5 days' - code matches this but signal naming is inconsistent with spec intent.",
+      "Adapter import and usage is correct and uses correct output columns ('date', 'posts', 'comments')."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1010,
+    "output_tokens": 298
+  },
+  "cost_usd": 0.005505
+}

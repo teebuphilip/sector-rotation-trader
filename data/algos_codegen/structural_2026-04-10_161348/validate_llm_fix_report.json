@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/twitter_sentiment_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161348/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code does not import or use 'sentiment' column from adapter output; adapter contract returns only 'date' and 'tweets', but code uses 'ticker' and 'sentiment' columns which are not specified.",
+      "Signal logic uses 'ticker' and 'sentiment' columns which are not part of the adapter contract output.",
+      "Signal logic does not calculate sentiment score from tweets as per spec; spec requires calculating daily sentiment score from tweets mentioning ticker/company name, but code assumes sentiment scores are directly available.",
+      "Signal logic does not implement the 7-day moving average of sentiment scores correctly from raw tweets; it uses 'sentiment' column directly instead of computing sentiment from tweets.",
+      "Signal logic's entry and exit conditions roughly match spec intent but rely on unavailable data columns, making implementation inconsistent with spec.",
+      "Position exit signal returns 'RISK_OFF' which is acceptable as SELL, but the code does not explicitly close positions after 5 trading days correctly if days_held counting is not managed externally.",
+      "Allocation logic correctly caps max allocation at 5% total portfolio divided equally, matching spec."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1167,
+    "output_tokens": 248
+  },
+  "cost_usd": 0.0053975
+}

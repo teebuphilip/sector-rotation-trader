@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/earthquake_energy_demand.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161808/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Adapter output columns used in code ('magnitude') do not match the spec adapter contract returns ('date', 'quakes').",
+      "Code uses 'magnitude' and 'date' fields from adapter output, but spec adapter returns only 'date' and 'quakes' without defined structure for 'magnitude'.",
+      "Signal logic indentation errors and unreachable code paths detected (e.g., multiple returns without proper else/elif).",
+      "Signal logic does not clearly implement monitoring of energy demand spike/drop over 1-2 days as per spec; demand change threshold logic partially matches but is not clearly tied to 'quakes' data structure.",
+      "Position sizing scales weight by magnitude and demand change, which aligns with spec intent, but base_weight calculation divides 0.20 by universe length without explanation; spec states scaling by magnitude and demand impact but no fixed base weight specified.",
+      "Signal names RISK_ON/RISK_OFF/HOLD are acceptable, but logic around exit conditions (demand normalization and days since quake) is not clearly separated and may cause incorrect exits.",
+      "Code imports correct adapter 'fetch_earthquake_activity' from 'earthquake_activity' as required."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1123,
+    "output_tokens": 262
+  },
+  "cost_usd": 0.0054275
+}

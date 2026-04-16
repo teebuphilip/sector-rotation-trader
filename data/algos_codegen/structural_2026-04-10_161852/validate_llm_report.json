@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/electric_vehicle_charge_station_density.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161852/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec requires 'monthly'",
+      "compute_signal does not accept or pass allowed kwargs (country_code, max_results) to fetch_openchargemap_counts",
+      "compute_signal uses 'count' column correctly but does not handle empty or insufficient data robustly (e.g. pct_change on small data)",
+      "compute_signal logic roughly matches spec intent but uses strict recent_change > prev_change which may be too strict; spec expects detecting accelerating density growth",
+      "target_allocations calls fetch_openchargemap_counts again without kwargs, ignoring spec adapter contract",
+      "target_allocations uses recent_change * len(universe) as total_change which is not meaningful for position sizing based on rate of change",
+      "position sizing logic does not size positions differently per region or stock based on rate of change; it applies uniform weight",
+      "signal names RISK_ON/RISK_OFF/HOLD are acceptable but allocation logic does not fully follow spec intent for sizing positions based on rate of change"
+    ]
+  },
+  "usage": {
+    "input_tokens": 916,
+    "output_tokens": 207
+  },
+  "cost_usd": 0.00436
+}

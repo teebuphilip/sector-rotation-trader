@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/reddit_emoji_sentiment_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_160641/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports correct adapter 'fetch_reddit_activity' from 'reddit_activity'.",
+      "Code uses output columns 'date', but also uses 'bullish_emoji_ratio', 'bearish_emoji_ratio', and 'mention_volume' which are NOT in the adapter contract returns (only 'date', 'posts', 'comments' are allowed).",
+      "Signal logic uses pct_change() on columns not specified in adapter returns, violating spec contract.",
+      "Signal logic correctly implements buy condition as bullish_emoji_ratio_day_over_day_increase > 150% and mention_volume_day_over_day_increase >= 50%.",
+      "Signal logic correctly implements sell condition as bearish_emoji_ratio_day_over_day_increase > 150% and mention_volume_day_over_day_increase >= 50%, or days held >= 5.",
+      "Allocation logic uses 2% total portfolio allocation divided equally across universe, which is stricter than spec (spec says 2% per position).",
+      "Allocation logic does not allocate 2% per position but splits 2% total across all positions, which does not follow spec intent."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1023,
+    "output_tokens": 226
+  },
+  "cost_usd": 0.0048175
+}

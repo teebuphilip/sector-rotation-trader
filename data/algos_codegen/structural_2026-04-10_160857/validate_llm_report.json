@@ -1,0 +1,25 @@
+{
+  "file": "crazy/algos/reddit_sentiment_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_160857/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports fetch_reddit_activity from reddit_activity adapter - correct.",
+      "Code uses adapter output columns 'date', 'posts', 'comments' - correct.",
+      "Code uses 'sentiment_score' and 'ticker' columns which are NOT in adapter contract returns - missing in spec.",
+      "Signal logic checks sentiment_score increase >40% and mention_volume >50 - matches spec trigger condition.",
+      "Signal logic exit condition checks sentiment_score < 80% of peak or held >=5 days - matches spec exit condition.",
+      "Universe matches spec universe exactly - correct.",
+      "Position sizing uses 2% allocation per position and max 5 concurrent positions - matches spec.",
+      "Signal names RISK_ON/RISK_OFF/HOLD are acceptable per instructions.",
+      "However, code assumes 'sentiment_score' and 'ticker' columns exist in adapter data, but adapter contract only returns 'date', 'posts', 'comments' - missing required data columns for correct logic.",
+      "Therefore, code does not fully comply with adapter contract and spec data requirements."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1516,
+    "output_tokens": 236
+  },
+  "cost_usd": 0.00615
+}

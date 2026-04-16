@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/social_media_sentiment_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161313/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports fetch_twitter_activity from crazy.adapters.twitter_activity as required.",
+      "Code uses 'tweets' and 'date' columns from adapter output, but also expects 'ticker' and 'sentiment_score' columns which are NOT in the adapter contract returns.",
+      "Signal logic requires 'ticker' and 'sentiment_score' columns which are not provided by the adapter; this violates adapter contract usage.",
+      "Signal logic correctly implements trigger: sentiment increase > 30% over 7-day avg and at least 100 posts (tweets) for entry (RISK_ON).",
+      "Exit logic correctly implements exit when sentiment reverts below 7-day avg or after 5 trading days since entry (RISK_OFF).",
+      "Signal aggregation logic returns RISK_ON if any RISK_ON, else RISK_OFF if any RISK_OFF, else HOLD, consistent with spec intent.",
+      "Position sizing allocates 2% per position and limits to max 10 positions, consistent with spec.",
+      "Overall, failure due to use of columns ('ticker', 'sentiment_score') not provided by the adapter 'twitter_activity' per spec."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1246,
+    "output_tokens": 254
+  },
+  "cost_usd": 0.005655
+}

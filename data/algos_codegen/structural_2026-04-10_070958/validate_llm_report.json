@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/reddit_gaming_thread_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_070958/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Adapter output columns 'date', 'posts', 'comments' are used correctly.",
+      "Adapter 'fetch_reddit_activity' from 'reddit_activity' is correctly imported and used.",
+      "Signal logic correctly calculates total_activity and compares today's activity to 7-day moving average with >50% increase condition.",
+      "Universe matches spec exactly.",
+      "Allocation logic uses 5% per signal and max 20% total exposure as per spec.",
+      "Exit logic missing: no implementation to sell when activity falls below 7-day moving average or after 5 trading days.",
+      "Signal returns 'RISK_ON' and 'HOLD' but allocation logic expects 'RISK_OFF' for exit; inconsistent signal naming for exit condition.",
+      "Allocation logic returns None for signals other than 'RISK_ON' or 'RISK_OFF', should return empty dict for 'HOLD' to avoid errors."
+    ]
+  },
+  "usage": {
+    "input_tokens": 897,
+    "output_tokens": 203
+  },
+  "cost_usd": 0.0042725
+}

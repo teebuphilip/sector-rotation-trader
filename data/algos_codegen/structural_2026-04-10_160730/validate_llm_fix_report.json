@@ -1,0 +1,27 @@
+{
+  "file": "crazy/algos/reddit_gaming_thread_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_160730/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be unreachable or incorrect.",
+      "In compute_signal, the exit condition returns 'RISK_OFF' but target_allocations returns empty dict for 'RISK_OFF', which is correct as per spec (SELL = no allocation).",
+      "In target_allocations, 'RISK_OFF' returns empty dict, which means SELL/no allocation, consistent with spec.",
+      "In target_allocations, allocation is only to ATVI, EA, NVDA which matches spec entry stocks.",
+      "Position sizing logic caps total exposure at 20% and allocates 5% per signal, consistent with spec.",
+      "Adapter import is correct: from crazy.adapters.reddit_activity import fetch_reddit_activity.",
+      "Adapter output columns 'posts' and 'comments' are used correctly to compute total_activity.",
+      "Signal logic triggers on >50% increase over 7-day MA, consistent with spec.",
+      "Exit logic matches spec: sell when activity falls below 7-day MA or after 5 days.",
+      "However, indentation errors in compute_signal prevent correct execution and signal returns.",
+      "No handling of 'HOLD' as no action is consistent with spec.",
+      "Overall logic matches spec intent but code formatting errors cause failure."
+    ]
+  },
+  "usage": {
+    "input_tokens": 982,
+    "output_tokens": 280
+  },
+  "cost_usd": 0.005255
+}

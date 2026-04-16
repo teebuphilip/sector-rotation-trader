@@ -1,0 +1,52 @@
+{
+  "adapters": [
+    "reddit_activity"
+  ],
+  "sliced_spec": {
+    "id": "reddit-subreddit-surge-momentum",
+    "name": "Reddit Subreddit Surge Momentum",
+    "frequency": "daily",
+    "universe": [
+      "AAPL",
+      "TSLA",
+      "AMC",
+      "GME",
+      "NVDA",
+      "MSFT",
+      "AMD",
+      "NIO",
+      "PLTR",
+      "NFLX"
+    ],
+    "entry_exit": {
+      "entry": "Enter a long position at market open the day after the surge.",
+      "exit": "Exit when mentions fall below the 3-day moving average or after 5 trading days, whichever comes first."
+    },
+    "signal_logic": {
+      "trigger": "Calculate daily count of ticker cashtag mentions in r/wallstreetbets, r/investing, and r/stocks. Compute 3-day moving average of mentions. Signal triggers when daily mentions increase by more than 100% compared to the 3-day moving average and the average mentions are above 20 posts per day."
+    },
+    "position_sizing": {
+      "allocation_per_signal": "5% of portfolio",
+      "max_concurrent_positions": 3,
+      "volatility_adjustment": "Reduce size by 50% if VIX is above 25"
+    },
+    "data_sources": {
+      "reddit": {}
+    },
+    "adapter_contracts": {
+      "reddit_activity": {
+        "func": "fetch_reddit_activity",
+        "allowed_kwargs": [
+          "subreddits",
+          "days_back",
+          "cache_key"
+        ],
+        "returns": [
+          "date",
+          "posts",
+          "comments"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/reddit_gaming_thread_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_080604/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be unreachable or incorrect.",
+      "compute_signal does not handle 'days_held' calculation correctly due to indentation, leading to potential misclassification of exit signals.",
+      "compute_signal returns 'RISK_OFF' on exit condition but target_allocations returns empty dict on 'RISK_OFF', which is correct as per spec (SELL = no allocation).",
+      "Signal logic correctly uses 'posts' and 'comments' columns from adapter output.",
+      "Adapter 'fetch_reddit_activity' is correctly imported from 'crazy.adapters.reddit_activity'.",
+      "Allocation logic correctly allocates 5% per signal to ATVI, EA, NVDA and caps total exposure at 20%.",
+      "Signal names differ from spec but mapping is acceptable per instructions.",
+      "Overall logic intent matches spec but code indentation errors break the logic flow."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1101,
+    "output_tokens": 201
+  },
+  "cost_usd": 0.0047625
+}

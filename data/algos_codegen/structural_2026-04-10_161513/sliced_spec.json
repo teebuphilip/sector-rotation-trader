@@ -1,0 +1,45 @@
+{
+  "adapters": [
+    "weather_series"
+  ],
+  "sliced_spec": {
+    "id": "weather-volatility-spike",
+    "name": "Weather Volatility Spike",
+    "frequency": "daily",
+    "universe": [
+      "VXX",
+      "UVXY",
+      "SPY",
+      "QQQ"
+    ],
+    "entry_exit": {
+      "entry": "When a volatility spike signal is triggered, buy VIX-related ETFs or options proxies.",
+      "exit": "When the 3-day moving average of forecast volatility drops back below the 7-day average, close the position."
+    },
+    "signal_logic": {
+      "trigger": "Calculate the daily standard deviation of temperature forecasts over the next 7 days for major economic cities. If the 3-day moving average of this standard deviation rises by more than 20% compared to the previous week's average, trigger a volatility spike signal."
+    },
+    "position_sizing": {
+      "base_allocation_percent": 5,
+      "scaling": "Linear scaling with the magnitude of the volatility spike. For example, if the spike is 40% above baseline, allocate 10%."
+    },
+    "data_sources": {
+      "weather": {}
+    },
+    "adapter_contracts": {
+      "weather_series": {
+        "func": "fetch_weather_series",
+        "allowed_kwargs": [
+          "latitude",
+          "longitude",
+          "days_back"
+        ],
+        "returns": [
+          "date",
+          "temp_max",
+          "precipitation"
+        ]
+      }
+    }
+  }
+}

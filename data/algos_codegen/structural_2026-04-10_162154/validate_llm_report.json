@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/superbowl_futures_trade.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_162154/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Adapter import missing: fetch_twitter_activity from crazy.adapters.twitter_activity is not imported.",
+      "Rebalance frequency is 'daily' but spec requires 'monthly'.",
+      "Signal logic uses only google_trends and twitter_activity adapters output columns correctly, but the rising_interest and rising_sentiment checks have incorrect zip usage (should compare consecutive pairs, current code compares incorrectly).",
+      "Signal logic does not handle 'reddit' data as per spec (though spec mentions Reddit, code ignores it).",
+      "Signal logic date checks use 'today' (current date) instead of 'as_of' parameter, which may cause inconsistency.",
+      "Signal logic's rising_interest and rising_sentiment checks use 'all(x < y for x, y in zip(interest[-3:], interest[-2:]))' which is incorrect; zip arguments should be offset by one to compare consecutive elements.",
+      "Position sizing allocation divides 5% by universe length (which is 1), acceptable but spec states 'Allocate 5% of portfolio', so this is acceptable.",
+      "Signal logic returns 'RISK_ON', 'RISK_OFF', 'HOLD' which is acceptable per instructions."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1131,
+    "output_tokens": 260
+  },
+  "cost_usd": 0.0054275
+}

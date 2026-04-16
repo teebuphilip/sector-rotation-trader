@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/volatility_spike_follow_through.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161426/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports correct adapter 'price_only' and uses 'fetch_prices' as per adapter contract.",
+      "Code uses 'Close' column from adapter output as required.",
+      "Code expects 'implied_volatility_percentile_30d' column which is not provided by 'price_only' adapter; this violates adapter contract.",
+      "Signal logic correctly implements IV spike detection and next-day price move conditions as per spec.",
+      "Exit logic implements time-based exit after 3 days and stop loss of 1% retracement as per spec.",
+      "Allocation logic allocates 2% total divided equally among universe tickers on RISK_ON signal, which does not match spec requiring 2% per position (i.e., 2% per ticker triggering entry).",
+      "Signal names RISK_ON/RISK_OFF/HOLD are acceptable and treated correctly.",
+      "Overall, failure due to use of non-adapter columns and incorrect allocation sizing."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1411,
+    "output_tokens": 212
+  },
+  "cost_usd": 0.0056475
+}

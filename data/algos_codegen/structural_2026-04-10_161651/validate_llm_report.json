@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/cloud_storage_demand_surge.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161651/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code does not use or reference Alexa web traffic rankings or SEC filings data as required by the spec signal logic.",
+      "fetch_google_trends is called without required allowed kwargs 'keyword' and 'days_back' as per adapter contract.",
+      "Signal logic only uses Google Trends interest, missing multi-condition confirmation from Alexa and SEC filings.",
+      "Position sizing logic uses only Google Trends interest strength; no integration of other signals as per spec.",
+      "Indentation errors in code (e.g. missing indentation after if statements) - may cause runtime errors."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1318,
+    "output_tokens": 132
+  },
+  "cost_usd": 0.004615
+}

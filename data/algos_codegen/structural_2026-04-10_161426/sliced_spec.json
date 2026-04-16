@@ -1,0 +1,71 @@
+{
+  "adapters": [
+    "price_only"
+  ],
+  "sliced_spec": {
+    "id": "volatility-spike-follow-through",
+    "name": "Volatility Spike Follow-Through",
+    "frequency": "daily",
+    "universe": [
+      "SPY",
+      "AAPL",
+      "TSLA",
+      "MSFT",
+      "AMZN",
+      "NVDA",
+      "GOOG",
+      "META",
+      "NFLX",
+      "AMD"
+    ],
+    "entry_exit": {
+      "entry": {
+        "long": "Buy if IV spikes and next-day price moves up >= 1.5%",
+        "short": "Short if IV spikes and next-day price moves down >= 1.5%"
+      },
+      "exit": {
+        "time_based": "Close position after 3 trading days",
+        "stop_loss": "Close position if price retraces 1% against position"
+      }
+    },
+    "signal_logic": {
+      "trigger": {
+        "description": "Identify stocks where the implied volatility percentile (30-day) jumps above 80% compared to previous day with at least 15% IV increase. On following trading day, if price moves at least 1.5% in direction of IV spike, trigger entry.",
+        "conditions": [
+          {
+            "metric": "implied_volatility_percentile_30d",
+            "threshold": 80,
+            "change": {
+              "min_percent_increase": 15,
+              "period": "1 day"
+            }
+          },
+          {
+            "metric": "price_change_next_day",
+            "threshold_percent": 1.5,
+            "direction": "same_as_IV_spike"
+          }
+        ]
+      }
+    },
+    "position_sizing": {
+      "allocation_percent": 2,
+      "description": "Allocate 2% of portfolio capital per position to limit risk from volatility whipsaws"
+    },
+    "data_sources": {
+      "price": {}
+    },
+    "adapter_contracts": {
+      "price_only": {
+        "func": "fetch_prices",
+        "allowed_kwargs": [
+          "tickers",
+          "period"
+        ],
+        "returns": [
+          "Close"
+        ]
+      }
+    }
+  }
+}

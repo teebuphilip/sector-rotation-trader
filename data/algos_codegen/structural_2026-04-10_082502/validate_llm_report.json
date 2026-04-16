@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/reddit_gaming_thread_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_082502/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be unreachable or incorrect.",
+      "compute_signal does not use 'as_of' date to filter or align data, potentially causing incorrect signal timing.",
+      "position attribute usage is unclear; no initialization shown, may cause errors.",
+      "In compute_signal, exit condition checks days_held using df date instead of as_of; inconsistent date handling.",
+      "target_allocations returns empty dict on RISK_OFF (SELL) signal, but spec expects SELL action (no allocation is acceptable).",
+      "Overall logic matches spec intent but code style and indentation errors prevent correct execution."
+    ]
+  },
+  "usage": {
+    "input_tokens": 999,
+    "output_tokens": 146
+  },
+  "cost_usd": 0.0039575
+}

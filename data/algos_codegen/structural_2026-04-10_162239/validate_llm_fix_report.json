@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/reddit_mentions_volatility_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_162239/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be unreachable or incorrect.",
+      "Mention counts are simulated as zeros, so mention spike condition never triggers as per spec requirement.",
+      "Volatility elevation logic uses vol_10d > vol_30d, but spec requires vol_10d > 30-day average volatility (correct), this is implemented correctly.",
+      "Exit condition correctly checks for 5 days or vol_10d < 0.8 * vol_30d, matching spec.",
+      "Adapter 'price_only' is correctly imported and fetch_prices used with correct kwargs and output column 'Close'.",
+      "Signal names RISK_ON/RISK_OFF/HOLD are acceptable as per instructions.",
+      "Allocation logic correctly assigns 5% per signal on RISK_ON and empty on RISK_OFF/HOLD.",
+      "Overall logic intent matches spec but code indentation errors and mention count simulation as zeros means no actual entry signal can trigger."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1337,
+    "output_tokens": 214
+  },
+  "cost_usd": 0.0054825
+}

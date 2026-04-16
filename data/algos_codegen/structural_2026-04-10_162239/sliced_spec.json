@@ -1,0 +1,56 @@
+{
+  "adapters": [
+    "price_only"
+  ],
+  "sliced_spec": {
+    "id": "reddit-mentions-volatility-spike",
+    "name": "Reddit Mentions Volatility Spike",
+    "frequency": "daily",
+    "universe": [
+      "AAPL",
+      "TSLA",
+      "GME",
+      "AMC",
+      "MSFT",
+      "NVDA",
+      "AMD",
+      "NFLX",
+      "META",
+      "BABA"
+    ],
+    "entry_exit": {
+      "entry": "Buy at close on day mention spike combined with elevated volatility is detected",
+      "exit": "Exit after 5 trading days or if realized volatility drops below 80% of 30-day average before 5 days"
+    },
+    "signal_logic": {
+      "trigger": {
+        "steps": [
+          "Calculate daily count of ticker mentions on r/wallstreetbets",
+          "Compute 5-day moving average of mention counts",
+          "Identify days where mention count > 2x 5-day moving average",
+          "Calculate 10-day realized volatility (std dev of log returns)",
+          "Confirm 10-day volatility > 30-day average volatility",
+          "Signal triggers when both mention spike and volatility elevation occur simultaneously"
+        ]
+      }
+    },
+    "position_sizing": {
+      "allocation_per_signal": "5% of portfolio capital"
+    },
+    "data_sources": {
+      "price": {}
+    },
+    "adapter_contracts": {
+      "price_only": {
+        "func": "fetch_prices",
+        "allowed_kwargs": [
+          "tickers",
+          "period"
+        ],
+        "returns": [
+          "Close"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/reddit_subreddit_sentiment_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161119/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Adapter output columns used incorrectly: spec adapter returns ['date', 'posts', 'comments'], but code uses 'comments' / 'posts' ratio as 'average_sentiment' which is not defined in spec and no sentiment metric is provided by adapter.",
+      "Signal logic does not follow spec intent: spec requires 'average_sentiment' > 0.3, but code uses 'comments' / 'posts' ratio as proxy, which is not equivalent.",
+      "Exit condition uses 'comments' / 'posts' < 0 as sentiment < 0, but 'comments' count cannot be negative, so logic is flawed.",
+      "Position sizing logic allocates 20% total exposure (0.20) divided equally, but spec states allocation_per_asset is 5% and max_total_exposure is 20%, so per asset allocation should be 5%, not 20%/N.",
+      "Indentation errors in code (e.g. missing indentation in if blocks) but not counted as fail since focus is on logic."
+    ]
+  },
+  "usage": {
+    "input_tokens": 977,
+    "output_tokens": 217
+  },
+  "cost_usd": 0.0046125
+}

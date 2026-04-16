@@ -1,0 +1,24 @@
+{
+  "file": "crazy/algos/weather_volatility_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161513/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal and target_allocations methods cause logic to be unreachable or incorrect.",
+      "In compute_signal, rolling std dev is calculated on 'temp_max' but spec requires std dev of temperature forecasts over next 7 days for major economic cities; code uses only one series without multiple cities or forecast horizon.",
+      "Signal logic uses rolling std dev and moving averages but does not clearly separate current 3-day MA vs previous week's average as per spec; 7-day MA is used but not explicitly previous week's average of std dev.",
+      "Allocation logic correctly uses linear scaling with spike magnitude but base allocation percent is hardcoded as 0.05 (5%) which matches spec; however, spike_ratio calculation is (latest_ma_3d / latest_ma_7d) - 1 which aligns with spec intent.",
+      "Adapter import and usage is correct (fetch_weather_series from weather_series).",
+      "Output columns used ('temp_max') are consistent with adapter contract.",
+      "Signal names RISK_ON/RISK_OFF/HOLD are acceptable per instructions.",
+      "Universe matches spec.",
+      "Entry and exit logic roughly follows spec intent but lack of multiple city data and forecast horizon means signal logic is incomplete per spec."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1294,
+    "output_tokens": 271
+  },
+  "cost_usd": 0.005945
+}

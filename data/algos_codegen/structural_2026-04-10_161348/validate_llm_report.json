@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/twitter_sentiment_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161348/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code does not import or use 'sentiment' column from adapter output; adapter contract returns only 'date' and 'tweets', but code uses 'ticker' and 'sentiment' columns which are not specified in adapter contract.",
+      "Signal logic uses 'ticker' and 'sentiment' columns which are not part of the adapter's specified return columns ('date', 'tweets').",
+      "Signal logic does not parse or extract sentiment scores from 'tweets' data as per adapter contract; spec requires calculating daily sentiment score from tweets, but code assumes 'sentiment' column directly.",
+      "Indentation errors in code (e.g., missing indentation after if statements) which would cause runtime errors.",
+      "Signal logic correctly implements entry (>30% change triggers buy/sell) and exit (within \u00b110% or after 5 days) conditions as per spec intent.",
+      "Allocation logic correctly caps max portfolio allocation at 5% total, distributing evenly across universe on BUY signal, and no allocation on SELL/HOLD.",
+      "Signal names differ (RISK_ON/RISK_OFF/HOLD) but mapping to BUY/SELL/HOLD is acceptable per instructions."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1167,
+    "output_tokens": 256
+  },
+  "cost_usd": 0.0054775
+}

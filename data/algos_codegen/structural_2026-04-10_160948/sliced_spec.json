@@ -1,0 +1,48 @@
+{
+  "adapters": [
+    "reddit_activity"
+  ],
+  "sliced_spec": {
+    "id": "reddit-sentiment-volatility-spike",
+    "name": "Reddit Sentiment Volatility Spike",
+    "frequency": "daily",
+    "universe": [
+      "AAPL",
+      "TSLA",
+      "AMZN",
+      "MSFT",
+      "GME",
+      "NVDA"
+    ],
+    "entry_exit": {
+      "entry": "Enter long if volatility spike occurs and average sentiment score that day is negative (contrarian long). Enter short if volatility spike occurs and average sentiment score is positive (contrarian short).",
+      "exit": "Exit positions when sentiment volatility drops below the 50th percentile or after 5 trading days."
+    },
+    "signal_logic": {
+      "trigger": "Calculate daily sentiment scores per ticker from r/investing posts/comments. Compute rolling 3-day standard deviation (volatility) of sentiment scores. Signal triggers when volatility spikes above the 90th percentile of historical volatility for that ticker."
+    },
+    "position_sizing": {
+      "allocation_per_position": "5%",
+      "max_total_exposure": "20%",
+      "adjustment": "Reduce position size by half if average daily volume is below 1 million shares."
+    },
+    "data_sources": {
+      "reddit": "Pushshift Reddit API"
+    },
+    "adapter_contracts": {
+      "reddit_activity": {
+        "func": "fetch_reddit_activity",
+        "allowed_kwargs": [
+          "subreddits",
+          "days_back",
+          "cache_key"
+        ],
+        "returns": [
+          "date",
+          "posts",
+          "comments"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "reddit-sentiment-spike",
+  "name": "Reddit Sentiment Spike",
+  "frequency": "daily",
+  "universe": [
+    "AAPL",
+    "TSLA",
+    "AMD",
+    "MSFT",
+    "NVDA",
+    "AMZN",
+    "GOOGL",
+    "META",
+    "NFLX",
+    "BABA"
+  ],
+  "data_sources": {
+    "reddit_api": "Pushshift Reddit API",
+    "reddit_content": "Reddit public posts and comments"
+  },
+  "signal_logic": {
+    "trigger": {
+      "description": "Identify tickers with a daily sentiment score increase exceeding 40% compared to the previous day and mention volume above 50 posts/comments.",
+      "conditions": {
+        "sentiment_score_increase_percent": ">40",
+        "mention_volume": ">50"
+      }
+    }
+  },
+  "entry_exit": {
+    "entry": "Buy at next market open when sentiment spike is confirmed.",
+    "exit": "Sell when sentiment score drops below 80% of spike day's peak or after 5 trading days, whichever is earlier."
+  },
+  "position_sizing": {
+    "allocation_per_position_percent": 2,
+    "max_concurrent_positions": 5
+  },
+  "required_keys": []
+}

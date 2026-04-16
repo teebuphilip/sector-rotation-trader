@@ -1,0 +1,19 @@
+{
+  "file": "crazy/algos/reddit_gaming_thread_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_082003/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be unreachable or incorrect (e.g., missing indentation after if statements).",
+      "Signal logic does not correctly implement the exit condition: it returns HOLD if pct_increase <= 0.5 but should return RISK_OFF if activity falls below 7-day MA or after 5 days.",
+      "Allocation logic returns empty dict on RISK_OFF signal instead of selling (should be no allocation, which is correct, but spec expects SELL action which is interpreted as no allocation, so this is acceptable).",
+      "Overall signal logic flow is broken due to indentation, causing incorrect signal outputs."
+    ]
+  },
+  "usage": {
+    "input_tokens": 985,
+    "output_tokens": 134
+  },
+  "cost_usd": 0.0038025
+}

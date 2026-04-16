@@ -1,0 +1,25 @@
+{
+  "file": "crazy/algos/reddit_gaming_thread_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_082502/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be unreachable or incorrect.",
+      "compute_signal does not handle 'self.position' initialization or existence check safely.",
+      "compute_signal uses 'self.position' but no clear state management shown; may cause errors.",
+      "compute_signal returns 'RISK_OFF' on exit condition but allocation logic returns empty dict for 'RISK_OFF' which is correct as per spec (SELL = no position), so this is okay.",
+      "compute_signal uses correct adapter 'fetch_reddit_activity' and uses correct columns 'posts' and 'comments'.",
+      "Signal logic correctly triggers when activity > 1.5 * 7-day MA (50% increase).",
+      "Allocation logic correctly allocates 5% per signal to gaming hardware/publisher stocks (ATVI, EA, NVDA) capped at 20%.",
+      "Allocation logic returns empty dict on 'RISK_OFF' (SELL) and other signals (HOLD), which matches spec intent.",
+      "Universe matches spec exactly.",
+      "Overall logic intent matches spec but code indentation and state handling issues prevent correct execution."
+    ]
+  },
+  "usage": {
+    "input_tokens": 999,
+    "output_tokens": 250
+  },
+  "cost_usd": 0.0049975
+}

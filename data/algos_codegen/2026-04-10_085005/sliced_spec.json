@@ -1,0 +1,34 @@
+{
+  "adapters": [
+    "reddit_activity"
+  ],
+  "sliced_spec": {
+    "id": "reddit-gaming-thread-spike",
+    "name": "Reddit Gaming Thread Spike",
+    "frequency": "daily",
+    "universe": [
+      "ATVI",
+      "EA",
+      "NVDA",
+      "TTWO",
+      "MSFT"
+    ],
+    "entry_exit": {
+      "entry": "Buy gaming hardware or publisher stocks (e.g., ATVI, EA, NVDA) on day of spike detection.",
+      "exit": "Sell when activity falls below the 7-day moving average or after 5 trading days, whichever comes first."
+    },
+    "signal_logic": {
+      "trigger": {
+        "description": "Signal triggers when combined daily posts plus comments in target subreddits rise more than 50% compared to the 7-day moving average.",
+        "condition": "((today_total_activity - moving_average_7d) / moving_average_7d) > 0.5"
+      }
+    },
+    "position_sizing": {
+      "per_signal_allocation": "5%",
+      "max_total_exposure": "20%"
+    },
+    "data_sources": {
+      "reddit": {}
+    }
+  }
+}

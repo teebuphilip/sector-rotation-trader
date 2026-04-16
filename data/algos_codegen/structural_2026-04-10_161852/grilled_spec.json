@@ -1,0 +1,28 @@
+{
+  "id": "electric-vehicle-charge-station-density",
+  "name": "Electric Vehicle Charge Station Density",
+  "frequency": "monthly",
+  "universe": [
+    "TSLA",
+    "CHPT",
+    "BLNK",
+    "VLTA"
+  ],
+  "data_sources": {
+    "U.S. Department of Energy Alternative Fuels Data Center": "",
+    "OpenChargeMap API": ""
+  },
+  "signal_logic": {
+    "trigger": "Calculate the density of electric vehicle charge stations per square mile or square kilometer in a given region. Monitor changes in charge station density over time to identify regions with accelerating EV adoption."
+  },
+  "entry_exit": {
+    "entry": "Enter long positions in companies with exposure to regions with increasing charge station density.",
+    "exit": "Exit positions as density growth slows or levels off."
+  },
+  "position_sizing": {
+    "method": "Size positions based on the rate of change in charge station density. Larger positions for regions with rapidly increasing density, smaller positions for regions with slower growth."
+  },
+  "required_keys": [
+    "OpenChargeMap API key"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/insider_trading_signals.py",
+  "spec": "data/algos_codegen/structural_2026-04-10_161929/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method causing logic to be unreachable or incorrect.",
+      "Code does not handle signal_confidence or insider_role weighting in position sizing as per spec.",
+      "Position sizing is fixed 0.20/len(universe) rather than based on transaction size and insider role as required.",
+      "Signal logic returns RISK_OFF on any sell transaction regardless of buy presence, which may prematurely exit; spec intent is to buy on large buys and sell on large sells, but code prioritizes sell over buy without considering multiple signals.",
+      "No evidence of using adapter output columns correctly due to indentation and filtering issues."
+    ]
+  },
+  "usage": {
+    "input_tokens": 948,
+    "output_tokens": 130
+  },
+  "cost_usd": 0.00367
+}
