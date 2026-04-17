@@ -10,6 +10,9 @@ from .weather_series import fetch_weather_series
 from .earthquake_activity import fetch_earthquake_activity
 from .google_trends import fetch_google_trends
 from .openchargemap import fetch_openchargemap_counts
+from .eia_electricity import fetch_eia_electricity
+from .port_container_volume import fetch_port_container_volume
+from .bts_airline_load_factor import fetch_bts_airline_load_factor
 
 __all__ = [
     "fetch_reddit_activity",
@@ -24,4 +27,7 @@ __all__ = [
     "fetch_earthquake_activity",
     "fetch_google_trends",
     "fetch_openchargemap_counts",
+    "fetch_eia_electricity",
+    "fetch_port_container_volume",
+    "fetch_bts_airline_load_factor",
 ]

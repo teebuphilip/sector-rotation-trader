@@ -22,6 +22,9 @@ ADAPTER_FUNCS = {
     "rss_count": "fetch_rss_counts",
     "html_table": "fetch_html_table",
     "price_only": "fetch_prices",
+    "eia_electricity": "fetch_eia_electricity",
+    "port_container_volume": "fetch_port_container_volume",
+    "bts_airline_load_factor": "fetch_bts_airline_load_factor",
 }
 
 
@@ -61,6 +64,8 @@ def main() -> int:
     adapter_args = ""
     if adapter == "reddit_activity":
         adapter_args = "subreddits=[\"r/gaming\", \"r/pcgaming\", \"r/games\"]"
+    elif adapter == "eia_electricity":
+        adapter_args = "api_key=\"\""
 
     code = f"""from datetime import date
 import pandas as pd

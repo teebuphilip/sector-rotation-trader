@@ -21,6 +21,9 @@ ADAPTER_KEYWORDS = {
     "google_trends": ["google trends", "trends", "search interest", "search volume"],
     "rss_count": ["rss", "feed", "news feed"],
     "html_table": ["html table", "scrape", "table", "web table", "insider", "form 4", "sec", "capitol trades"],
+    "eia_electricity": ["eia", "electricity", "power demand", "electric power", "grid demand"],
+    "port_container_volume": ["port of los angeles", "container", "containers", "teu", "shipping volume", "port volume"],
+    "bts_airline_load_factor": ["bts", "airline load factor", "airline traffic", "air traffic", "aviation traffic", "t-100"],
     "price_only": ["price", "momentum", "returns", "yahoo finance", "technical"],
 }
 
@@ -57,6 +60,12 @@ def route_text(text: str) -> list[str]:
         multi_adapters.add("google_trends")
     if "twitter" in text_l or "x.com" in text_l or "tweet" in text_l or "social media" in text_l:
         multi_adapters.add("twitter_activity")
+    if "eia" in text_l or "electricity" in text_l or "power demand" in text_l:
+        multi_adapters.add("eia_electricity")
+    if "port of los angeles" in text_l or "teu" in text_l or "container volume" in text_l:
+        multi_adapters.add("port_container_volume")
+    if "bts" in text_l or "airline load factor" in text_l or "airline traffic" in text_l:
+        multi_adapters.add("bts_airline_load_factor")
     if multi_adapters:
         return sorted(list(set(top) | multi_adapters))
 
@@ -66,6 +75,9 @@ def route_text(text: str) -> list[str]:
     # Tie-breaker priority (AFH-style)
     priority = [
         "html_table",
+        "eia_electricity",
+        "port_container_volume",
+        "bts_airline_load_factor",
         "fred_series",
         "earthquake_activity",
         "openchargemap",

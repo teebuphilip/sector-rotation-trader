@@ -118,6 +118,27 @@ def slice_spec(spec: Dict[str, Any], adapters: list[str]) -> Dict[str, Any]:
                 "allowed_kwargs": ["tickers", "period"],
                 "returns": ["date", "value"],
             }
+        elif adapter == "eia_electricity":
+            base["data_sources"]["eia"] = data_sources.get("eia", {})
+            base["adapter_contracts"]["eia_electricity"] = {
+                "func": "fetch_eia_electricity",
+                "allowed_kwargs": ["api_key", "respondent", "days_back", "type_id"],
+                "returns": ["date", "value"],
+            }
+        elif adapter == "port_container_volume":
+            base["data_sources"]["port_container_volume"] = data_sources.get("port_container_volume", {})
+            base["adapter_contracts"]["port_container_volume"] = {
+                "func": "fetch_port_container_volume",
+                "allowed_kwargs": [],
+                "returns": ["date", "value", "total_teus"],
+            }
+        elif adapter == "bts_airline_load_factor":
+            base["data_sources"]["bts_airline_load_factor"] = data_sources.get("bts_airline_load_factor", {})
+            base["adapter_contracts"]["bts_airline_load_factor"] = {
+                "func": "fetch_bts_airline_load_factor",
+                "allowed_kwargs": [],
+                "returns": ["date", "value"],
+            }
 
     return {"adapters": adapters, "sliced_spec": base}
 
