@@ -64,8 +64,22 @@
     letter-spacing: 0.08em;
   }
   td.name { font-weight: 600; }
+  tr.idle td { color: rgba(230, 243, 238, 0.62); }
+  tr.idle td.name { color: rgba(230, 243, 238, 0.82); }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
+  .lab-note {
+    margin-bottom: 18px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 12px;
+    background: rgba(255, 107, 107, 0.08);
+    color: var(--text);
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .lab-note strong { color: var(--warn); }
   .disclaimer {
     margin-top: 18px;
     color: var(--muted);
@@ -84,9 +98,16 @@
 <body>
   <header>
     <h1>Crazy Algos — Portfolio Overview</h1>
-    <p>Last updated: 2026-04-16</p>
+    <p>Last updated: 2026-04-17</p>
   </header>
   <div class="wrap">
+    <div class="lab-note">
+      <strong>38 of 42 crazy algos are currently idle.</strong>
+      Idle means the algo is running but has no recorded trades in its current state history.
+      That is not a crash; it means the trigger has not fired yet, the adapter returned no usable signal,
+      or the strategy is still waiting for live evidence.
+      Active algos: 4.
+    </div>
     <div class="card">
       <table>
         <thead>
@@ -97,428 +118,514 @@
             <th>Sharpe</th>
             <th>Max DD</th>
             <th>Signal</th>
+            <th>Trades</th>
+            <th>Status</th>
             <th>Dashboard</th>
           </tr>
         </thead>
         <tbody>
           
-        <tr>
+        <tr class="idle">
           <td class="name">TSA Body Count</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/tsa/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Cardboard Box Index</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/cardboard/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Craigslist Desperation Index</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
-          <td>NEUTRAL</td>
+          <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/craigslist/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Glassdoor Misery Gradient</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/glassdoor/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">311 Call Rotation</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/calls311/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="active">
           <td class="name">Liquor Store Leading Indicator</td>
           <td>$99,878</td>
           <td style="color:#ff6b6b">$-122</td>
           <td>-3.71</td>
           <td>-0.56%</td>
           <td>RISK_OFF</td>
+          <td>2</td>
+          <td>Active</td>
           <td><a href="../algos/liquor/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">LinkedIn Layoff Propagation</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/linkedin/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Congress Trading Fade</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/congress/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="active">
           <td class="name">Algo Biscotti (Unconditional Loyalty)</td>
           <td>$95,386</td>
           <td style="color:#ff6b6b">$-4,614</td>
           <td>-1.56</td>
           <td>-11.85%</td>
           <td>BUY:XLV</td>
+          <td>5</td>
+          <td>Active</td>
           <td><a href="../algos/biscotti/index.html">Open</a></td>
         </tr>
         
-        <tr>
-          <td class="name">Algo Baileymol (Chaos Monger)</td>
+        <tr class="active">
+          <td class="name">Chaos Rotation Lab</td>
           <td>$94,409</td>
           <td style="color:#ff6b6b">$-5,591</td>
           <td>-1.90</td>
           <td>-11.51%</td>
           <td>TOP:XLK,XLY,XLE</td>
+          <td>50</td>
+          <td>Active</td>
           <td><a href="../algos/baileymol/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Reddit Gaming Thread Spike</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/reddit-gaming-thread-spike/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Airport Shopping Spree</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/airport-shopping-spree/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Cloud Storage Demand Surge</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/cloud-storage-demand-surge/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Crypto Derivative Arbitrage</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/crypto-derivative-arbitrage/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Earthquake Energy Demand Indicator</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/earthquake-energy-demand/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Electric Vehicle Charge Station Density</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/electric-vehicle-charge-station-density/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Insider Trading Signals</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/insider-trading-signals/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Online Ad Impression Volatility Trader</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/online-ad-impression-volatility/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Pet Food Supply Chain Disruption</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/pet-food-supply-chain/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Reddit Emoji Sentiment Spike</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/reddit-emoji-sentiment-spike/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Reddit Mentions Volatility Spike</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/reddit-mentions-volatility-spike/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Reddit Sentiment Spike</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/reddit-sentiment-spike/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Reddit Sentiment Spike Trend</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/reddit-sentiment-spike-trend/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Reddit Sentiment Volatility Spike</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/reddit-sentiment-volatility-spike/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Reddit Subreddit Mention Spike</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/reddit-subreddit-mention-spike/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Reddit Subreddit Sentiment Spike</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/reddit-subreddit-sentiment-spike/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Reddit Subreddit Surge Momentum</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/reddit-subreddit-surge-momentum/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Reddit Volatility Spike</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/reddit-volatility-spike/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Social Media Sentiment Spike</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/social-media-sentiment-spike/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Superbowl Futures Trade</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/superbowl-futures-trade/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Twitter Sentiment Spike</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/twitter-sentiment-spike/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Volatility Spike Follow-Through</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/volatility-spike-follow-through/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Weather Volatility Spike</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/weather-volatility-spike/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Truck Tonnage Index</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/truck-tonnage/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Misery Rotation</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/misery-rotation/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Uber Mobility Index</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/uber-mobility/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Job Posting Acceleration</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/job-posting-acceleration/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Bankruptcy Filing Rate</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/bankruptcy-filing-rate/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Small Business Formation</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/small-business-formation/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Credit Card Delinquency</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/credit-card-delinquency/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="active">
           <td class="name">Consumer Sentiment</td>
           <td>$101,354</td>
           <td style="color:#0dd39b">$+1,354</td>
           <td>0.17</td>
           <td>-0.02%</td>
           <td>BULLISH</td>
+          <td>2</td>
+          <td>Active</td>
           <td><a href="../algos/consumer-sentiment/index.html">Open</a></td>
         </tr>
         
-        <tr>
+        <tr class="idle">
           <td class="name">Retail Sales Momentum</td>
           <td>$100,000</td>
           <td style="color:#0dd39b">$+0</td>
           <td>0.00</td>
           <td>0.00%</td>
           <td>HOLD</td>
+          <td>0</td>
+          <td>Idle / never fired</td>
           <td><a href="../algos/retail-sales-momentum/index.html">Open</a></td>
         </tr>
         

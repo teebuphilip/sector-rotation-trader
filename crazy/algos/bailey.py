@@ -9,7 +9,7 @@ from .base import CrazyAlgoBase
 
 class BaileyAlgo(CrazyAlgoBase):
     algo_id = "baileymol"
-    name = "Algo Baileymol (Chaos Monger)"
+    name = "Chaos Rotation Lab"
     rebalance_frequency = "weekly"
     supports_historical_seed = True
 

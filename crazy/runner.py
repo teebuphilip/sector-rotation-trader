@@ -129,6 +129,7 @@ def run_all(dry_run: bool = False, as_of: date = None):
             "sharpe": analytics.get("sharpe", 0.0),
             "max_drawdown_pct": analytics.get("max_drawdown_pct", 0.0),
             "last_signal": signal_label,
+            "num_trades": len(state.get("trade_log", [])),
         })
 
     if not dry_run:

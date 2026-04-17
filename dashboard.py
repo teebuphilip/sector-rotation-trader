@@ -440,7 +440,7 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
       <span class="panel-title">Trade Log (last 30)</span>
     </div>
     <div class="panel-body" style="padding:0; overflow-x:auto">
-      {'<table><thead><tr><th>Date</th><th>Action</th><th>Ticker</th><th>Price</th><th>Shares</th><th>Value</th><th>P&L</th><th>Notes</th></tr></thead><tbody>' + trade_rows + '</tbody></table>' if state['trade_log'] else '<div class="empty-state">No trades yet</div>'}
+      {'<table><thead><tr><th>Date</th><th>Action</th><th>Ticker</th><th>Price</th><th>Shares</th><th>Value</th><th>P&L</th><th>Notes</th></tr></thead><tbody>' + trade_rows + '</tbody></table>' if state['trade_log'] else '<div class="empty-state">No trades yet — this signal is running, but it has never fired in the current state history.</div>'}
     </div>
   </div>
 

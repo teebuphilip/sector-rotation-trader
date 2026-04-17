@@ -167,7 +167,8 @@ def build_report():
     lines.append("")
 
     lines.append("## Crazy Algos — Idle ({}/{})".format(len(idle), len(crazies)))
-    lines.append("  These algos are running but have never triggered a signal.")
+    lines.append("  These algos are running but have no recorded trades in the current state history.")
+    lines.append("  That is not a crash; it means the trigger has not fired yet, the adapter returned no usable signal, or the strategy is still waiting for live evidence.")
     lines.append("")
     for i in range(0, len(idle), 4):
         chunk = idle[i:i+4]
