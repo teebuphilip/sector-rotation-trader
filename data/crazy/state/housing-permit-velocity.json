@@ -666,6 +666,16 @@
       "positions": {},
       "sector": "Housing Permit Velocity",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-17",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Housing Permit Velocity",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-16",
@@ -673,7 +683,11 @@
   "meta": {
     "housing-permit-velocity": {
       "name": "Housing Permit Velocity",
-      "last_run": "2026-04-17"
+      "last_run": "2026-04-17",
+      "series_id": "PERMIT",
+      "permits_3m_chg": -0.0177,
+      "signal_label": "HOLD",
+      "signal_key": "HOLD"
     }
   }
 }

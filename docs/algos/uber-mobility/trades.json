@@ -1,5 +1,26 @@
 {
-  "trade_log": [],
+  "trade_log": [
+    {
+      "date": "2026-04-17",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 332.1983,
+      "price": 120.41,
+      "cost": 40000.0,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-17",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 226.7574,
+      "price": 154.35,
+      "cost": 35000.0,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-01-16",
@@ -660,6 +681,35 @@
       "positions": {},
       "sector": "Uber Mobility Index",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-17",
+      "cash": 24980.1,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99980.1,
+      "positions": {
+        "XLY": {
+          "shares": 332.1983,
+          "entry_price": 120.41,
+          "current_price": 120.41,
+          "market_value": 40000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-17",
+          "margin": false
+        },
+        "XLK": {
+          "shares": 226.7574,
+          "entry_price": 154.35,
+          "current_price": 154.35,
+          "market_value": 35000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-17",
+          "margin": false
+        }
+      },
+      "sector": "Uber Mobility Index",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16"

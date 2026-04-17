@@ -1,11 +1,49 @@
 {
-  "cash": 100000,
+  "cash": 24980.100000000002,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 0.0,
+  "fees_paid": 19.9,
   "taxes_paid": 0.0,
-  "positions": {},
-  "trade_log": [],
+  "positions": {
+    "XLY": {
+      "shares": 332.1983122951038,
+      "entry_price": 120.41000366210938,
+      "entry_date": "2026-04-17",
+      "cost": 40000.0,
+      "using_margin": false,
+      "consec_below_ma": 0
+    },
+    "XLK": {
+      "shares": 226.75736064776746,
+      "entry_price": 154.35000610351562,
+      "entry_date": "2026-04-17",
+      "cost": 35000.0,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
+  "trade_log": [
+    {
+      "date": "2026-04-17",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 332.1983,
+      "price": 120.41,
+      "cost": 40000.0,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-17",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 226.7574,
+      "price": 154.35,
+      "cost": 35000.0,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-01-16",
@@ -666,6 +704,35 @@
       "positions": {},
       "sector": "Uber Mobility Index",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-17",
+      "cash": 24980.1,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99980.1,
+      "positions": {
+        "XLY": {
+          "shares": 332.1983,
+          "entry_price": 120.41,
+          "current_price": 120.41,
+          "market_value": 40000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-17",
+          "margin": false
+        },
+        "XLK": {
+          "shares": 226.7574,
+          "entry_price": 154.35,
+          "current_price": 154.35,
+          "market_value": 35000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-17",
+          "margin": false
+        }
+      },
+      "sector": "Uber Mobility Index",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16",
@@ -674,12 +741,13 @@
     "uber-mobility": {
       "name": "Uber Mobility Index",
       "last_run": "2026-04-17",
-      "mobility_index": 91,
-      "roc_4w": -0.0109,
-      "uber_interest": 78,
-      "lyft_interest": 13,
-      "signal_label": "HOLD",
-      "signal_key": "HOLD"
+      "mobility_index": 103,
+      "roc_4w": 0.1444,
+      "uber_interest": 85,
+      "lyft_interest": 18,
+      "signal_label": "RISK_ON",
+      "signal_key": "RISK_ON",
+      "last_signal": "RISK_ON"
     }
   }
 }

@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-17T18:02:57
+Updated (UTC): 2026-04-17T23:08:36
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 49
+Crazy models: 52
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -65,3 +65,6 @@ Crazy models: 49
 | lumber-momentum | Lumber Momentum | monthly |
 | yield-curve-regime | Yield Curve Regime | monthly |
 | high-yield-spread-regime | High Yield Spread Regime | monthly |
+| electricity-consumption | Electricity Consumption | weekly |
+| port-container-volume | Port Container Volume | monthly |
+| airline-load-factor | Airline Load Factor Proxy | monthly |

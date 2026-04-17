@@ -2,22 +2,22 @@
   "ticker": "EOG",
   "sector": "Energy",
   "sector_etf": "XLE",
-  "composite": "1 of 8",
+  "composite": "1 of 9",
   "composite_label": "BEARISH",
   "composite_color": "red",
   "bullish": 1,
-  "bearish": 7,
-  "neutral": 39,
-  "total_signals": 47,
-  "total_active": 8,
-  "bullish_pct": 12,
+  "bearish": 8,
+  "neutral": 48,
+  "total_signals": 57,
+  "total_active": 9,
+  "bullish_pct": 11,
   "breakdown": [
     {
       "algo_id": "reddit-subreddit-mention-spike",
       "name": "Reddit Subreddit Mention Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -26,7 +26,7 @@
       "name": "Cardboard Box Index",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -35,7 +35,7 @@
       "name": "Reddit Sentiment Spike Trend",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -44,7 +44,7 @@
       "name": "Crypto Derivative Arbitrage",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -53,7 +53,16 @@
       "name": "Congress Trading Fade",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "port-container-volume",
+      "name": "Port Container Volume",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -62,7 +71,16 @@
       "name": "Twitter Sentiment Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "yield-curve-regime",
+      "name": "Yield Curve Regime",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -71,7 +89,7 @@
       "name": "TSA Body Count",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -80,7 +98,7 @@
       "name": "Cloud Storage Demand Surge",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -88,18 +106,18 @@
       "algo_id": "liquor",
       "name": "Liquor Store Leading Indicator",
       "algo_type": "crazy",
-      "direction": "BEARISH",
-      "days_running": 71,
-      "ytd_pct": -0.12,
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
       "beat_spy": false
     },
     {
       "algo_id": "uber-mobility",
       "name": "Uber Mobility Index",
       "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 71,
-      "ytd_pct": 0.0,
+      "direction": "BEARISH",
+      "days_running": 67,
+      "ytd_pct": -0.02,
       "beat_spy": false
     },
     {
@@ -107,7 +125,7 @@
       "name": "Reddit Volatility Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -116,7 +134,7 @@
       "name": "Electric Vehicle Charge Station Density",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -125,7 +143,7 @@
       "name": "Craigslist Desperation Index",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -133,9 +151,18 @@
       "algo_id": "consumer-sentiment",
       "name": "Consumer Sentiment",
       "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "mortgage-rate-housing-proxy",
+      "name": "Mortgage Rate Housing Proxy",
+      "algo_type": "crazy",
       "direction": "BEARISH",
-      "days_running": 71,
-      "ytd_pct": 1.35,
+      "days_running": 67,
+      "ytd_pct": -0.02,
       "beat_spy": false
     },
     {
@@ -143,7 +170,7 @@
       "name": "Earthquake Energy Demand Indicator",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -152,7 +179,7 @@
       "name": "LinkedIn Layoff Propagation",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -161,7 +188,7 @@
       "name": "Small Business Formation",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -170,7 +197,25 @@
       "name": "Airport Shopping Spree",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "freight-rail-carloads",
+      "name": "Freight Rail Carloads",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "airline-load-factor",
+      "name": "Airline Load Factor Proxy",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -179,7 +224,7 @@
       "name": "Misery Rotation",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -188,8 +233,17 @@
       "name": "Reddit Sentiment Volatility Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "lumber-momentum",
+      "name": "Lumber Momentum",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 67,
+      "ytd_pct": -0.02,
       "beat_spy": false
     },
     {
@@ -197,7 +251,7 @@
       "name": "Credit Card Delinquency",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -206,7 +260,7 @@
       "name": "Superbowl Futures Trade",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -215,7 +269,7 @@
       "name": "Reddit Emoji Sentiment Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -224,7 +278,7 @@
       "name": "Truck Tonnage Index",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -233,7 +287,7 @@
       "name": "Reddit Subreddit Sentiment Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -242,7 +296,7 @@
       "name": "311 Call Rotation",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -251,7 +305,7 @@
       "name": "Reddit Sentiment Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -260,7 +314,16 @@
       "name": "Job Posting Acceleration",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "housing-permit-velocity",
+      "name": "Housing Permit Velocity",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -269,7 +332,7 @@
       "name": "Social Media Sentiment Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -278,7 +341,7 @@
       "name": "Reddit Gaming Thread Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -287,7 +350,7 @@
       "name": "Pet Food Supply Chain Disruption",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -296,7 +359,7 @@
       "name": "Weather Volatility Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -305,7 +368,7 @@
       "name": "Insider Trading Signals",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -314,7 +377,7 @@
       "name": "Glassdoor Misery Gradient",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -323,7 +386,7 @@
       "name": "Reddit Mentions Volatility Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -332,17 +395,44 @@
       "name": "Online Ad Impression Volatility Trader",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
     {
       "algo_id": "baileymol",
-      "name": "Algo Baileymol (Chaos Monger)",
+      "name": "Chaos Rotation Lab",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": -5.61,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "electricity-consumption",
+      "name": "Electricity Consumption",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "copper-momentum",
+      "name": "Copper Momentum",
       "algo_type": "crazy",
       "direction": "BEARISH",
-      "days_running": 71,
-      "ytd_pct": -5.59,
+      "days_running": 67,
+      "ytd_pct": -0.02,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "high-yield-spread-regime",
+      "name": "High Yield Spread Regime",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
       "beat_spy": false
     },
     {
@@ -350,7 +440,7 @@
       "name": "Bankruptcy Filing Rate",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -359,7 +449,7 @@
       "name": "Volatility Spike Follow-Through",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -368,7 +458,7 @@
       "name": "Retail Sales Momentum",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -377,7 +467,7 @@
       "name": "Reddit Subreddit Surge Momentum",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -386,8 +476,8 @@
       "name": "Algo Biscotti (Unconditional Loyalty)",
       "algo_type": "crazy",
       "direction": "BEARISH",
-      "days_running": 71,
-      "ytd_pct": -4.61,
+      "days_running": 67,
+      "ytd_pct": -3.41,
       "beat_spy": false
     },
     {
@@ -395,8 +485,8 @@
       "name": "Antonacci Dual Momentum Sector Rotation",
       "algo_type": "normal",
       "direction": "BULLISH",
-      "days_running": 73,
-      "ytd_pct": 3.3,
+      "days_running": 74,
+      "ytd_pct": 3.59,
       "beat_spy": false
     },
     {
@@ -404,7 +494,7 @@
       "name": "Quantified Simple Monthly Rotation",
       "algo_type": "normal",
       "direction": "NEUTRAL",
-      "days_running": 73,
+      "days_running": 74,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -413,7 +503,7 @@
       "name": "Faber Momentum Rotation",
       "algo_type": "normal",
       "direction": "BEARISH",
-      "days_running": 73,
+      "days_running": 74,
       "ytd_pct": 3.85,
       "beat_spy": false
     },
@@ -422,8 +512,8 @@
       "name": "Algo Baileymol (Chaos Monger)",
       "algo_type": "normal",
       "direction": "BEARISH",
-      "days_running": 73,
-      "ytd_pct": 6.32,
+      "days_running": 74,
+      "ytd_pct": 7.72,
       "beat_spy": false
     },
     {
@@ -431,11 +521,12 @@
       "name": "Algo Biscotti (Unconditional Loyalty)",
       "algo_type": "normal",
       "direction": "BEARISH",
-      "days_running": 73,
-      "ytd_pct": -2.27,
+      "days_running": 74,
+      "ytd_pct": -0.44,
       "beat_spy": false
     }
   ],
-  "generated": "2026-04-16",
+  "generated": "2026-04-17",
+  "lab_started": "2026-01-11",
   "disclaimer": "Not investment advice. This is experimental research. Past signal performance does not predict future results. Always do your own research."
 }
