@@ -32,6 +32,7 @@ ROOT_DIR       = Path(__file__).parent
 SIGNALS_DIR    = ROOT_DIR / "docs" / "signals"
 CRAZY_STATE_DIR = ROOT_DIR / "data" / "crazy" / "state"
 NORMAL_STATE_DIR = ROOT_DIR / "data" / "normal" / "state"
+BLOCKED_ALGOS_FILE = ROOT_DIR / "data" / "blocked" / "algos.jsonl"
 DISCLAIMER     = (
     "Not investment advice. This is experimental research. "
     "Past signal performance does not predict future results. "
@@ -188,6 +189,31 @@ def get_lab_start(states: list[dict]) -> str:
         if snapshots and snapshots[0].get("date"):
             starts.append(str(snapshots[0]["date"]))
     return sorted(starts)[0] if starts else "unknown"
+
+
+def load_blocked_algos() -> list[dict]:
+    """Return latest blocked-key record for each algo."""
+    if not BLOCKED_ALGOS_FILE.exists():
+        return []
+    latest = {}
+    for line in BLOCKED_ALGOS_FILE.read_text(encoding="utf-8").splitlines():
+        s = line.strip()
+        if not s:
+            continue
+        try:
+            obj = json.loads(s)
+        except Exception:
+            continue
+        algo_id = obj.get("algo_id")
+        if algo_id:
+            latest[algo_id] = {
+                "timestamp": obj.get("timestamp", ""),
+                "algo_id": algo_id,
+                "name": obj.get("name", algo_id),
+                "keys": obj.get("keys", []),
+                "reason": obj.get("reason", ""),
+            }
+    return sorted(latest.values(), key=lambda x: x["algo_id"])
 
 
 def get_current_positions(state_data: dict) -> set[str]:
@@ -348,9 +374,11 @@ def main(min_days: int = 30, dry_run: bool = False, use_wiki: bool = True):
     all_states = load_algo_states()
     proven     = [s for s in all_states if s["days"] >= min_days]
     lab_start  = get_lab_start(all_states)
+    blocked_algos = load_blocked_algos()
     print(f"  Total algos: {len(all_states)}")
     print(f"  Proven (>= {min_days} days): {len(proven)}")
     print(f"  Lab started: {lab_start}")
+    print(f"  Blocked algos: {len(blocked_algos)}")
 
     if not proven:
         print("  No proven algos yet — exiting. Run with --min-days 1 to include all.")
@@ -494,6 +522,8 @@ def main(min_days: int = 30, dry_run: bool = False, use_wiki: bool = True):
         "sector_summary":   sectors_output,
         "leaderboard":      leaderboard[:20],   # top 20 for free tier
         "ticker_index":     ticker_index,        # used by free ticker search
+        "idle_algos":       sum(1 for s in all_states if len(s.get("trade_log", [])) == 0),
+        "blocked_algos":    blocked_algos,
         "disclaimer":       DISCLAIMER,
     }
 

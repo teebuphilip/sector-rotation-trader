@@ -66,6 +66,15 @@
   td.name { font-weight: 600; }
   tr.idle td { color: rgba(230, 243, 238, 0.62); }
   tr.idle td.name { color: rgba(230, 243, 238, 0.82); }
+  tr.section-row td {
+    padding-top: 18px;
+    color: var(--warn);
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(255, 107, 107, 0.08);
+  }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
   .lab-note {
@@ -125,6 +134,58 @@
         </thead>
         <tbody>
           
+        <tr class="section-row"><td colspan="9">Active crazy algos (4)</td></tr>
+        
+        <tr class="active">
+          <td class="name">Liquor Store Leading Indicator</td>
+          <td>$99,878</td>
+          <td style="color:#ff6b6b">$-122</td>
+          <td>-3.71</td>
+          <td>-0.56%</td>
+          <td>RISK_OFF</td>
+          <td>2</td>
+          <td>Active</td>
+          <td><a href="../algos/liquor/index.html">Open</a></td>
+        </tr>
+        
+        <tr class="active">
+          <td class="name">Algo Biscotti (Unconditional Loyalty)</td>
+          <td>$95,386</td>
+          <td style="color:#ff6b6b">$-4,614</td>
+          <td>-1.56</td>
+          <td>-11.85%</td>
+          <td>BUY:XLV</td>
+          <td>5</td>
+          <td>Active</td>
+          <td><a href="../algos/biscotti/index.html">Open</a></td>
+        </tr>
+        
+        <tr class="active">
+          <td class="name">Chaos Rotation Lab</td>
+          <td>$94,409</td>
+          <td style="color:#ff6b6b">$-5,591</td>
+          <td>-1.90</td>
+          <td>-11.51%</td>
+          <td>TOP:XLK,XLY,XLE</td>
+          <td>50</td>
+          <td>Active</td>
+          <td><a href="../algos/baileymol/index.html">Open</a></td>
+        </tr>
+        
+        <tr class="active">
+          <td class="name">Consumer Sentiment</td>
+          <td>$101,354</td>
+          <td style="color:#0dd39b">$+1,354</td>
+          <td>0.17</td>
+          <td>-0.02%</td>
+          <td>BULLISH</td>
+          <td>2</td>
+          <td>Active</td>
+          <td><a href="../algos/consumer-sentiment/index.html">Open</a></td>
+        </tr>
+        
+        <tr class="section-row"><td colspan="9">Idle / never fired (38)</td></tr>
+        
         <tr class="idle">
           <td class="name">TSA Body Count</td>
           <td>$100,000</td>
@@ -185,18 +246,6 @@
           <td><a href="../algos/calls311/index.html">Open</a></td>
         </tr>
         
-        <tr class="active">
-          <td class="name">Liquor Store Leading Indicator</td>
-          <td>$99,878</td>
-          <td style="color:#ff6b6b">$-122</td>
-          <td>-3.71</td>
-          <td>-0.56%</td>
-          <td>RISK_OFF</td>
-          <td>2</td>
-          <td>Active</td>
-          <td><a href="../algos/liquor/index.html">Open</a></td>
-        </tr>
-        
         <tr class="idle">
           <td class="name">LinkedIn Layoff Propagation</td>
           <td>$100,000</td>
@@ -219,30 +268,6 @@
           <td>0</td>
           <td>Idle / never fired</td>
           <td><a href="../algos/congress/index.html">Open</a></td>
-        </tr>
-        
-        <tr class="active">
-          <td class="name">Algo Biscotti (Unconditional Loyalty)</td>
-          <td>$95,386</td>
-          <td style="color:#ff6b6b">$-4,614</td>
-          <td>-1.56</td>
-          <td>-11.85%</td>
-          <td>BUY:XLV</td>
-          <td>5</td>
-          <td>Active</td>
-          <td><a href="../algos/biscotti/index.html">Open</a></td>
-        </tr>
-        
-        <tr class="active">
-          <td class="name">Chaos Rotation Lab</td>
-          <td>$94,409</td>
-          <td style="color:#ff6b6b">$-5,591</td>
-          <td>-1.90</td>
-          <td>-11.51%</td>
-          <td>TOP:XLK,XLY,XLE</td>
-          <td>50</td>
-          <td>Active</td>
-          <td><a href="../algos/baileymol/index.html">Open</a></td>
         </tr>
         
         <tr class="idle">
@@ -605,18 +630,6 @@
           <td><a href="../algos/credit-card-delinquency/index.html">Open</a></td>
         </tr>
         
-        <tr class="active">
-          <td class="name">Consumer Sentiment</td>
-          <td>$101,354</td>
-          <td style="color:#0dd39b">$+1,354</td>
-          <td>0.17</td>
-          <td>-0.02%</td>
-          <td>BULLISH</td>
-          <td>2</td>
-          <td>Active</td>
-          <td><a href="../algos/consumer-sentiment/index.html">Open</a></td>
-        </tr>
-        
         <tr class="idle">
           <td class="name">Retail Sales Momentum</td>
           <td>$100,000</td>
@@ -629,6 +642,7 @@
           <td><a href="../algos/retail-sales-momentum/index.html">Open</a></td>
         </tr>
         
+    
         </tbody>
       </table>
     </div>

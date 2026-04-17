@@ -15,13 +15,14 @@ def generate_combined_dashboard(summaries):
     lab_starts = sorted(s.get("sim_start") for s in summaries if s.get("sim_start"))
     lab_start = lab_starts[0] if lab_starts else "unknown"
 
-    rows = ""
+    active_rows = ""
+    idle_rows = ""
     for s in summaries:
         pnl_color = "#0dd39b" if s["net_pnl"] >= 0 else "#ff6b6b"
         is_idle = s.get("num_trades", 0) == 0 and abs(s.get("net_pnl", 0.0)) < 0.005
         status = "Idle / never fired" if is_idle else "Active"
         status_class = "idle" if is_idle else "active"
-        rows += f"""
+        row = f"""
         <tr class="{status_class}">
           <td class="name">{s['name']}</td>
           <td>${s['equity']:,.0f}</td>
@@ -34,6 +35,17 @@ def generate_combined_dashboard(summaries):
           <td><a href="../algos/{s['algo_id']}/index.html">Open</a></td>
         </tr>
         """
+        if is_idle:
+            idle_rows += row
+        else:
+            active_rows += row
+
+    rows = f"""
+        <tr class="section-row"><td colspan="9">Active crazy algos ({active_count})</td></tr>
+        {active_rows or '<tr><td colspan="9">No active crazy algos yet.</td></tr>'}
+        <tr class="section-row"><td colspan="9">Idle / never fired ({idle_count})</td></tr>
+        {idle_rows or '<tr><td colspan="9">No idle crazy algos.</td></tr>'}
+    """
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -103,6 +115,15 @@ def generate_combined_dashboard(summaries):
   td.name {{ font-weight: 600; }}
   tr.idle td {{ color: rgba(230, 243, 238, 0.62); }}
   tr.idle td.name {{ color: rgba(230, 243, 238, 0.82); }}
+  tr.section-row td {{
+    padding-top: 18px;
+    color: var(--warn);
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(255, 107, 107, 0.08);
+  }}
   a {{ color: var(--accent); text-decoration: none; }}
   a:hover {{ text-decoration: underline; }}
   .lab-note {{

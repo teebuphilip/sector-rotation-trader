@@ -58,6 +58,8 @@
   .counts-row { display: flex; gap: 1.5rem; font-size: 0.82rem; color: #666;
                 margin-bottom: 1.25rem; }
   .counts-row span { display: flex; align-items: center; gap: 0.3rem; }
+  .context-row { color: #666; font-size: 0.78rem; line-height: 1.5;
+                 margin: -0.35rem 0 1.25rem; }
   .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
   .dot.green  { background: #4ade80; }
   .dot.red    { background: #f87171; }
@@ -139,6 +141,7 @@
       <span><span class="dot red"></span><span id="v-bear">0</span> bearish</span>
       <span><span class="dot yellow"></span><span id="v-neut">0</span> neutral</span>
     </div>
+    <div class="context-row" id="v-context"></div>
 
     <!-- Paid: full breakdown | Free: paywall -->
     <div class="breakdown-section" id="breakdown-section"></div>
@@ -225,6 +228,11 @@ function renderVerdict(ticker, data) {
   document.getElementById('v-bull').textContent = data.bullish || 0;
   document.getElementById('v-bear').textContent = data.bearish || 0;
   document.getElementById('v-neut').textContent = data.neutral || 0;
+  const totalSignals = data.total_signals || 0;
+  const activeSignals = data.total_active || 0;
+  const neutralSignals = data.neutral || 0;
+  document.getElementById('v-context').textContent =
+    `${activeSignals} of ${totalSignals} signals contributed a bullish/bearish read; ${neutralSignals} are neutral/HOLD. Generated ${data.generated || 'unknown'}.`;
 
   // Breakdown or paywall
   const section = document.getElementById('breakdown-section');

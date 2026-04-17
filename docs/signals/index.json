@@ -833,5 +833,18 @@
     }
   },
   "disclaimer": "Not investment advice. This is experimental research. Past signal performance does not predict future results. Always do your own research.",
-  "lab_started": "2026-01-11"
+  "lab_started": "2026-01-11",
+  "blocked_algos": [
+    {
+      "timestamp": "2026-04-16T23:08:52",
+      "algo_id": "glassdoor",
+      "name": "Glassdoor Misery Gradient",
+      "keys": [
+        "GLASSDOOR_PARTNER_ID",
+        "GLASSDOOR_KEY"
+      ],
+      "reason": "Missing Glassdoor keys"
+    }
+  ],
+  "idle_algos": 39
 }

@@ -409,7 +409,34 @@
     color: rgba(255,255,255,0.3);
   }
 
-  /* ── Loading ───────────────────────────────────────────────── */
+
+  .blocked-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .blocked-card strong { color: var(--text); }
+  .blocked-list {
+    margin-top: 12px;
+    display: grid;
+    gap: 8px;
+  }
+  .blocked-item {
+    padding: 10px 12px;
+    border: 1px solid rgba(239,68,68,0.20);
+    border-radius: 8px;
+    background: rgba(239,68,68,0.06);
+  }
+  .blocked-item code {
+    font-family: var(--mono);
+    color: var(--gold);
+  }
+
+  /* ── Wait State ─────────────────────────────────────────────── */
   .loading {
     text-align: center;
     padding: 60px 20px;
@@ -494,7 +521,7 @@
     <h2 class="section-title">Sector Heatmap</h2>
     <p class="section-sub">Composite signal across all proven algorithms. Updated nightly.</p>
     <div class="heatmap" id="heatmap">
-      <div class="loading">Loading sectors</div>
+      <div class="loading">Waiting for sector data</div>
     </div>
   </div>
 </section>
@@ -524,7 +551,7 @@
           </tr>
         </thead>
         <tbody id="leaderboard">
-          <tr><td colspan="7" class="loading">Loading leaderboard</td></tr>
+          <tr><td colspan="7" class="loading">Waiting for leaderboard data</td></tr>
         </tbody>
       </table>
     </div>
@@ -548,6 +575,18 @@
         <div class="tr-verdict" id="tr-verdict"></div>
         <span class="tr-unlock">Want the full breakdown? <a href="#pricing">Unlock for $29/mo</a></span>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- === Blocked / Missing Keys === -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Blocked / Missing Keys</h2>
+    <p class="section-sub">Broken experiments stay visible. If an adapter needs a key we do not have, it belongs here until fixed.</p>
+    <div class="blocked-card" id="blocked-card">
+      No blocked algo data loaded yet. If this stays empty after the page renders, check <code>docs/signals/index.json</code>.
     </div>
   </div>
 </section>
@@ -628,6 +667,30 @@
 
     // Leaderboard
     renderLeaderboard(data.leaderboard || []);
+    renderBlocked(data.blocked_algos || [], data.idle_algos, data.total_algos);
+  }
+
+
+  function renderBlocked(blocked, idleCount, totalCount) {
+    var card = document.getElementById('blocked-card');
+    if (!card) return;
+    blocked = blocked || [];
+    var html = '<strong>' + blocked.length + ' blocked algo' + (blocked.length === 1 ? '' : 's') + '</strong>';
+    if (typeof idleCount === 'number' && typeof totalCount === 'number') {
+      html += ' &middot; <strong>' + idleCount + ' idle / never-fired algo' + (idleCount === 1 ? '' : 's') + '</strong> out of ' + totalCount + ' total tracked.';
+    }
+    html += '<br>Blocked means the strategy is known, but the data source is missing credentials or otherwise unavailable. Idle means it is running but has not fired in current state history.';
+    if (blocked.length) {
+      html += '<div class="blocked-list">';
+      blocked.forEach(function(b) {
+        var keys = (b.keys || []).map(escHtml).join(', ') || 'unknown key';
+        html += '<div class="blocked-item"><strong>' + escHtml(b.name || b.algo_id || 'unknown') + '</strong>'
+          + ' <code>' + keys + '</code><br>'
+          + escHtml(b.reason || 'Missing data access') + '</div>';
+      });
+      html += '</div>';
+    }
+    card.innerHTML = html;
   }
 
   function renderHeatmap(sectors) {

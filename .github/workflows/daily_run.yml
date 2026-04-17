@@ -55,6 +55,9 @@ jobs:
       - name: Pre-compute signal verdicts
         run: python precompute_signals.py --min-days 30
 
+      - name: Check public HTML placeholders
+        run: python scripts/check_public_html_placeholders.py
+
       - name: Generate rolling leaderboard
         run: python scripts/rolling_30d_leaderboard.py
 
