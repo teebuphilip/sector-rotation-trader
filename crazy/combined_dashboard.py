@@ -90,6 +90,13 @@ def generate_combined_dashboard(summaries):
   td.name {{ font-weight: 600; }}
   a {{ color: var(--accent); text-decoration: none; }}
   a:hover {{ text-decoration: underline; }}
+  .disclaimer {{
+    margin-top: 18px;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 11px;
+    line-height: 1.7;
+  }}
   @media (max-width: 760px) {{
     table, thead, tbody, th, td, tr {{ display: block; }}
     tr {{ margin-bottom: 14px; }}
@@ -121,6 +128,10 @@ def generate_combined_dashboard(summaries):
           {rows}
         </tbody>
       </table>
+    </div>
+    <div class="disclaimer">
+      Not investment advice. This is experimental research. Past signal performance does not predict future results.<br>
+      Always do your own research. Paper-traded only &mdash; no real money at risk.
     </div>
   </div>
 </body>

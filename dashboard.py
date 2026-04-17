@@ -298,6 +298,18 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
   .dot.green {{ background: var(--green); box-shadow: 0 0 6px var(--green); }}
   .dot.yellow {{ background: var(--yellow); }}
 
+  .disclaimer {{
+    margin-top: 28px;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: rgba(17, 21, 32, 0.72);
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1.7;
+  }}
+
   @media (max-width: 1100px) {{
     .kpi-grid {{ grid-template-columns: repeat(3, 1fr); }}
     .two-col  {{ grid-template-columns: 1fr; }}
@@ -430,6 +442,11 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
     <div class="panel-body" style="padding:0; overflow-x:auto">
       {'<table><thead><tr><th>Date</th><th>Action</th><th>Ticker</th><th>Price</th><th>Shares</th><th>Value</th><th>P&L</th><th>Notes</th></tr></thead><tbody>' + trade_rows + '</tbody></table>' if state['trade_log'] else '<div class="empty-state">No trades yet</div>'}
     </div>
+  </div>
+
+  <div class="disclaimer">
+    Not investment advice. This is experimental research. Past signal performance does not predict future results.<br>
+    Always do your own research. Paper-traded only &mdash; no real money at risk.
   </div>
 
 </div>
