@@ -6,7 +6,7 @@ run the full proven signal stack against that sector, and write a
 pre-computed verdict JSON to docs/signals/<TICKER>.json.
 
 Also writes:
-  docs/signals/index.json   — meta + leaderboard (free tier data)
+  docs/signals/index.json   — meta + public preview leaderboard
   docs/signals/_sectors.json — per-sector composite (for ETF lookups)
 
 Called from GitHub Actions after crazy_run.py completes.
@@ -482,7 +482,7 @@ def main(min_days: int = 30, dry_run: bool = False, use_wiki: bool = True):
 
     print(f"  Written: {written}  Skipped: {skipped}  Errors: {errors}")
 
-    # 6. Write index.json (free tier data + leaderboard)
+    # 6. Write index.json (public preview data + leaderboard)
     print("\n[5/5] Writing index.json...")
 
     # Build leaderboard from proven algos
@@ -520,7 +520,7 @@ def main(min_days: int = 30, dry_run: bool = False, use_wiki: bool = True):
         "top_bullish_etfs": top_bullish,
         "top_bearish_etfs": top_bearish,
         "sector_summary":   sectors_output,
-        "leaderboard":      leaderboard[:20],   # top 20 for free tier
+        "leaderboard":      leaderboard[:20],   # top 20 for public preview
         "ticker_index":     ticker_index,        # used by free ticker search
         "idle_algos":       sum(1 for s in all_states if len(s.get("trade_log", [])) == 0),
         "blocked_algos":    blocked_algos,

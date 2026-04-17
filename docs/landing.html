@@ -89,6 +89,47 @@
   }
   .winners li:last-child { border-bottom: none; }
   .muted { color: var(--muted); font-size: 12px; }
+  .waitlist {
+    margin-top: 16px;
+    border: 1px solid rgba(25, 211, 143, 0.28);
+  }
+  .waitlist-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .waitlist-form input {
+    min-width: 0;
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 8px;
+    background: #0f1c18;
+    color: var(--text);
+    padding: 10px 12px;
+    font: inherit;
+    font-size: 14px;
+  }
+  .waitlist-form button {
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--accent);
+    padding: 10px 12px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .waitlist-form button:hover { background: rgba(25, 211, 143, 0.1); }
+  .notice {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  @media (max-width: 560px) {
+    .waitlist-form { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -102,13 +143,13 @@
       <div class="card">
         <h2>Product 1: Daily Crazy Models Feed</h2>
         <p>Every day we run a new, slightly unhinged trading signal. You get the full spec, the timestamps, and the ugly failures along with the wins.</p>
-        <a class="cta" href="#" title="Link this to the product when ready">Join the daily feed</a>
+        <a class="cta" href="#waitlist">Join our mailing list</a>
       </div>
 
       <div class="card">
         <h2>Product 2: Model‑Fit Scoring</h2>
         <p>Drop in a stock or sector. We score it against the live model library and show whether the chaos agrees or not.</p>
-        <a class="cta" href="#" title="Link this to the product when ready">Check model fit</a>
+        <a class="cta" href="#waitlist">Join our mailing list</a>
       </div>
 
       <div class="card winners">
@@ -131,6 +172,32 @@
         <h2>Build Log</h2>
         <p>Ship notes, failures, and receipts. This is the public lab notebook.</p>
         <a class="cta" href="blog/index.html">Read the blog</a>
+      </div>
+    </div>
+
+    <div class="card waitlist" id="waitlist">
+      <h2>Waitlist</h2>
+      <p>Get the weekly lab note: what fired, what broke, what got killed, and what Biscotti is doing.</p>
+      <form
+        class="waitlist-form"
+        id="mailerlite-waitlist-form"
+        action="https://assets.mailerlite.com/jsonp/2275606/forms/185025288971748377/subscribe"
+        method="post"
+        target="mailerlite-waitlist-frame"
+      >
+        <input type="email" name="fields[email]" placeholder="you@example.com" autocomplete="email" required />
+        <input type="hidden" name="fields[source]" value="landing" />
+        <input type="hidden" name="ml-submit" value="1" />
+        <input type="hidden" name="anticsrf" value="true" />
+        <button type="submit">Join waitlist</button>
+      </form>
+      <iframe
+        name="mailerlite-waitlist-frame"
+        title="Mailing list signup"
+        style="display:none"
+      ></iframe>
+      <div class="notice" id="waitlist-notice">
+        No hype. Weekly notes from the paper-trading lab.
       </div>
     </div>
   </div>
@@ -158,6 +225,27 @@
     const ul = document.getElementById('winners-list');
     if (ul) ul.innerHTML = '<li class="muted">Leaderboard not available</li>';
   }
+})();
+
+(function() {
+  const form = document.getElementById('mailerlite-waitlist-form');
+  const notice = document.getElementById('waitlist-notice');
+  if (!form) return;
+  const configured = form.action && !form.action.includes('MAILERLITE_FORM_ACTION_URL');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    if (!configured) {
+      if (notice) {
+        notice.textContent = 'Waitlist form is not live yet. MailerLite setup still needs the real form action URL.';
+      }
+      return;
+    }
+    form.submit();
+    form.reset();
+    if (notice) {
+      notice.textContent = 'You are on the list. If MailerLite asks for confirmation, check your inbox.';
+    }
+  });
 })();
 </script>
 </body>

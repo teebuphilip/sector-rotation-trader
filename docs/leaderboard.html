@@ -511,8 +511,8 @@
       <div class="label">Sectors Tracked</div>
     </div>
   </div>
-  <a class="cta" href="#pricing">Get Full Access &mdash; $29/mo</a>
-  <span class="cta-sub">Real-time signals, full breakdowns, ticker alerts</span>
+  <a class="cta" href="landing.html#waitlist">Join our mailing list</a>
+  <span class="cta-sub">Weekly lab notes, launch updates, and what broke</span>
 </div>
 
 <!-- ═══ Sector Heatmap ═══ -->
@@ -573,7 +573,7 @@
         <div class="tr-ticker" id="tr-ticker"></div>
         <div class="tr-sector" id="tr-sector"></div>
         <div class="tr-verdict" id="tr-verdict"></div>
-        <span class="tr-unlock">Want the full breakdown? <a href="#pricing">Unlock for $29/mo</a></span>
+        <span class="tr-unlock">Want the full breakdown later? <a href="landing.html#waitlist">Join our mailing list</a></span>
       </div>
     </div>
   </div>
@@ -739,7 +739,7 @@
         + '</tr>';
     });
 
-    // Paywall tease rows
+    // Mailing-list tease rows
     var fakeNames = [
       'Algo Whiskers (Mean Reverter)',
       'Algo Shadow (Trend Surfer)',
@@ -759,7 +759,7 @@
     });
 
     html += '<tr class="paywall-cta-row">'
-      + '<td colspan="7"><a href="#pricing">\u2192 Unlock all ' + (list.length + fakeNames.length) + '+ signals for $29/mo</a></td>'
+      + '<td colspan="7"><a href="landing.html#waitlist">\u2192 Join our mailing list for launch updates</a></td>'
       + '</tr>';
 
     tbody.innerHTML = html;
@@ -795,7 +795,7 @@
         result.classList.add('show');
       })
       .catch(function() {
-        error.textContent = ticker + ' not found. Only S&P 500 tickers are supported in the free tier.';
+        error.textContent = ticker + ' not found. Only S&P 500 tickers are supported in the public preview.';
         error.classList.add('show');
       });
   };

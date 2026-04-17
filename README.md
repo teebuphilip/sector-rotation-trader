@@ -485,6 +485,7 @@ The public pages are served from `docs/` via GitHub Pages.
 Important pages:
 
 - `docs/landing.html`: main CTA landing page.
+- `docs/marketing/mailerlite_setup.md`: manual MailerLite/waitlist setup checklist.
 - `docs/blog/index.html`: blog/build-log index.
 - `docs/blog/_posts/`: individual posts.
 - `docs/biscotti.html`: Algo Biscotti page.
@@ -528,6 +529,12 @@ Optional data/API stability:
 - `FRED_API_KEY`
 - `SOCRATA_APP_TOKEN`
 - provider-specific keys for any blocked algos in `data/blocked/algos.jsonl`
+
+Marketing/waitlist:
+
+- MailerLite setup is manual until the account and embedded form exist.
+- Repo-side setup instructions live in `docs/marketing/mailerlite_setup.md`.
+- The public waitlist slot lives in `docs/landing.html`.
 
 ### Gmail App Password
 

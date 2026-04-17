@@ -143,7 +143,7 @@
     </div>
     <div class="context-row" id="v-context"></div>
 
-    <!-- Paid: full breakdown | Free: paywall -->
+    <!-- Public preview: full breakdown comes later -->
     <div class="breakdown-section" id="breakdown-section"></div>
   </div>
 
@@ -160,14 +160,14 @@
 <script>
 // ── Config ──────────────────────────────────────────────────────────────────
 const SIGNALS_BASE = '/signals';   // adjust if deploying to subpath
-const IS_PAID = checkPaidStatus(); // replace with your auth check
+const IS_PAID = checkPaidStatus(); // replace with auth check after launch access exists
 const DEFAULT_DISCLAIMER =
   'Not investment advice. This is experimental research. Past signal performance does not predict future results. ' +
   'Always do your own research. Paper-traded only — no real money at risk.';
 
 function checkPaidStatus() {
-  // Check for auth cookie set by your Stripe unlock flow
-  // Return true if paid subscriber
+  // Check for auth cookie after paid access exists.
+  // Until launch access exists, visitors should join the mailing list.
   const cookies = Object.fromEntries(
     document.cookie.split('; ').map(c => c.split('='))
   );
@@ -234,7 +234,7 @@ function renderVerdict(ticker, data) {
   document.getElementById('v-context').textContent =
     `${activeSignals} of ${totalSignals} signals contributed a bullish/bearish read; ${neutralSignals} are neutral/HOLD. Generated ${data.generated || 'unknown'}.`;
 
-  // Breakdown or paywall
+  // Breakdown or mailing-list prompt
   const section = document.getElementById('breakdown-section');
   if (IS_PAID && data.breakdown && data.breakdown.length) {
     section.innerHTML = renderBreakdown(data.breakdown);
@@ -274,8 +274,8 @@ function renderBreakdown(breakdown) {
 function renderPaywall() {
   return `
     <div class="paywall">
-      <p>See the full breakdown — which signals say what and why.</p>
-      <a href="/subscribe">Unlock for $29/month →</a>
+      <p>Full signal breakdowns come later. For now, get the lab notes and launch updates.</p>
+      <a href="../landing.html#waitlist">Join our mailing list</a>
     </div>
   `;
 }
