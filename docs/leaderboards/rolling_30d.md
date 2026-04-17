@@ -1,5 +1,7 @@
 # 30-Day Rolling Leaderboard
 
+Force rank is the full-window, since-seed paper-traded ranking. Rolling 30D is recent momentum. A signal can lead one list and lag the other; that split is expected and visible on purpose.
+
 SPY 30D Return: +4.89%
 
 | Rank | Algo | Category | 30D Return | 30D Sharpe | 30D Max DD |

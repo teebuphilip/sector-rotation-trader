@@ -173,7 +173,16 @@ def main() -> int:
     (out_dir / "rolling_30d.json").write_text(json.dumps(out_json, indent=2))
 
     # Markdown summary
-    lines = ["# 30-Day Rolling Leaderboard", "", f"SPY 30D Return: {spy_ret:+.2%}" if spy_ret is not None else "SPY 30D Return: n/a", "", "| Rank | Algo | Category | 30D Return | 30D Sharpe | 30D Max DD |", "| --- | --- | --- | --- | --- | --- |"]
+    lines = [
+        "# 30-Day Rolling Leaderboard",
+        "",
+        "Force rank is the full-window, since-seed paper-traded ranking. Rolling 30D is recent momentum. A signal can lead one list and lag the other; that split is expected and visible on purpose.",
+        "",
+        f"SPY 30D Return: {spy_ret:+.2%}" if spy_ret is not None else "SPY 30D Return: n/a",
+        "",
+        "| Rank | Algo | Category | 30D Return | 30D Sharpe | 30D Max DD |",
+        "| --- | --- | --- | --- | --- | --- |",
+    ]
     for i, e in enumerate(entries_sorted, start=1):
         r = e.get("ret_30d")
         s = e.get("sharpe_30d")

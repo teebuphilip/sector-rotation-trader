@@ -431,6 +431,26 @@
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
+
+  .rank-note {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.035);
+    padding: 14px 16px;
+    margin: 14px 0 18px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .rank-note strong { color: var(--text); }
+  .rank-note code {
+    font-family: var(--mono);
+    color: var(--gold);
+    background: rgba(255,204,102,0.08);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
   /* ── Responsive ────────────────────────────────────────────── */
   @media (max-width: 600px) {
     .hero { padding: 40px 16px 32px; }
@@ -484,6 +504,12 @@
   <div class="wrap">
     <h2 class="section-title">Proven Signals</h2>
     <p class="section-sub">Algorithms with 30+ days of live paper-traded history. Ranked by return.</p>
+    <div class="rank-note">
+      <strong>How to read this:</strong>
+      <code>Force rank</code> is the full-window, since-seed paper-traded ranking. It tells us what has held up across the whole lab history.
+      <code>Rolling 30D</code> is recent momentum. A signal can look great over 30 days and still rank poorly over the full window, or the other way around.
+      We show both because hiding that split would be dishonest.
+    </div>
     <div class="table-wrap">
       <table>
         <thead>
