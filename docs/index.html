@@ -533,6 +533,7 @@
       <strong>crazystockalgo.com</strong> &mdash; Updated nightly at 6:30 PM ET
     </div>
     <div id="footer-generated"></div>
+    <div id="footer-lab-started"></div>
     <div style="margin-top:8px;">
       Not investment advice. This is experimental research. Past signal performance does not predict future results.<br>
       Always do your own research. Paper-traded only &mdash; no real money at risk.
@@ -594,6 +595,7 @@
     (data.leaderboard || []).forEach(function(a) { if (a.beat_spy) beating++; });
     document.getElementById('stat-beating').textContent = beating + '/' + (data.leaderboard || []).length;
     document.getElementById('footer-generated').textContent = 'Last updated: ' + (data.generated || 'unknown');
+    document.getElementById('footer-lab-started').textContent = 'Lab started: ' + (data.lab_started || 'unknown');
 
     // Sector heatmap
     renderHeatmap(data.sector_summary || {});

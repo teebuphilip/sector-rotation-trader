@@ -12,6 +12,8 @@ def generate_combined_dashboard(summaries):
         if s.get("num_trades", 0) == 0 and abs(s.get("net_pnl", 0.0)) < 0.005
     )
     active_count = len(summaries) - idle_count
+    lab_starts = sorted(s.get("sim_start") for s in summaries if s.get("sim_start"))
+    lab_start = lab_starts[0] if lab_starts else "unknown"
 
     rows = ""
     for s in summaries:
@@ -133,7 +135,7 @@ def generate_combined_dashboard(summaries):
 <body>
   <header>
     <h1>Crazy Algos — Portfolio Overview</h1>
-    <p>Last updated: {date.today()}</p>
+    <p>Lab started: {lab_start} · Last updated: {date.today()}</p>
   </header>
   <div class="wrap">
     <div class="lab-note">

@@ -119,6 +119,7 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
     sector_str = strategy_value or sector or "—"
     label_str = strategy_label or "Leading Sector"
     title_str = title or "Sector<span>/</span>Rotation <span>|</span> Paper Trader"
+    lab_start = state.get("sim_start") or (snap_dates[0] if snap_dates else "unknown")
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -324,7 +325,7 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
 
 <header>
   <div class="logo">{title_str}</div>
-  <div class="last-update">Last run: {date.today()} &nbsp;·&nbsp; $100k base · $10k/trade</div>
+  <div class="last-update">Lab started: {lab_start} &nbsp;·&nbsp; Last run: {date.today()} &nbsp;·&nbsp; $100k base · $10k/trade</div>
 </header>
 
 <div class="container">

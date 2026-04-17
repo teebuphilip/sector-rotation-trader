@@ -175,6 +175,21 @@ def load_algo_states() -> list[dict]:
     return states
 
 
+def get_lab_start(states: list[dict]) -> str:
+    """Earliest state start date across all loaded algos."""
+    starts = []
+    for state in states:
+        data = state.get("data", {})
+        sim_start = data.get("sim_start")
+        if sim_start:
+            starts.append(str(sim_start))
+            continue
+        snapshots = state.get("snapshots", [])
+        if snapshots and snapshots[0].get("date"):
+            starts.append(str(snapshots[0]["date"]))
+    return sorted(starts)[0] if starts else "unknown"
+
+
 def get_current_positions(state_data: dict) -> set[str]:
     """Return set of ETFs currently held by this algo."""
     return set(state_data.get("positions", {}).keys())
@@ -332,8 +347,10 @@ def main(min_days: int = 30, dry_run: bool = False, use_wiki: bool = True):
     print("\n[1/5] Loading algo states...")
     all_states = load_algo_states()
     proven     = [s for s in all_states if s["days"] >= min_days]
+    lab_start  = get_lab_start(all_states)
     print(f"  Total algos: {len(all_states)}")
     print(f"  Proven (>= {min_days} days): {len(proven)}")
+    print(f"  Lab started: {lab_start}")
 
     if not proven:
         print("  No proven algos yet — exiting. Run with --min-days 1 to include all.")
@@ -357,6 +374,7 @@ def main(min_days: int = 30, dry_run: bool = False, use_wiki: bool = True):
         payload = {
             **verdict,
             "generated":    today.isoformat(),
+            "lab_started":  lab_start,
             "disclaimer":   DISCLAIMER,
         }
         if not dry_run:
@@ -372,8 +390,9 @@ def main(min_days: int = 30, dry_run: bool = False, use_wiki: bool = True):
 
     if not dry_run:
         write_json(SIGNALS_DIR / "_sectors.json", {
-            "generated": today.isoformat(),
-            "sectors":   sectors_output,
+            "generated":   today.isoformat(),
+            "lab_started": lab_start,
+            "sectors":     sectors_output,
         })
         print(f"  Wrote _sectors.json")
 
@@ -411,6 +430,7 @@ def main(min_days: int = 30, dry_run: bool = False, use_wiki: bool = True):
                 "bullish_pct":     verdict["bullish_pct"],
                 "breakdown":       verdict["breakdown"],
                 "generated":       today.isoformat(),
+                "lab_started":     lab_start,
                 "disclaimer":      DISCLAIMER,
             }
 
@@ -465,6 +485,7 @@ def main(min_days: int = 30, dry_run: bool = False, use_wiki: bool = True):
 
     index = {
         "generated":        today.isoformat(),
+        "lab_started":      lab_start,
         "signal_count":     len(proven),
         "total_algos":      len(all_states),
         "ticker_count":     written,
