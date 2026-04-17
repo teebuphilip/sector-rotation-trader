@@ -1,4 +1,5 @@
 import os
+import warnings
 from datetime import date
 
 import pandas as pd
@@ -24,7 +25,9 @@ class UberMobilityAlgo(CrazyAlgoBase):
             from pytrends.request import TrendReq
             pytrends = TrendReq(hl="en-US", tz=360)
             pytrends.build_payload(["uber", "lyft"], timeframe="today 3-m", geo="US")
-            df = pytrends.interest_over_time()
+            with warnings.catch_warnings():
+                warnings.filterwarnings("ignore", category=FutureWarning, module="pytrends")
+                df = pytrends.interest_over_time()
         except Exception:
             return "HOLD"
 

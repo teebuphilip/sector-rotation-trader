@@ -1,4 +1,6 @@
 from datetime import datetime, timedelta, date
+import logging
+import os
 
 import numpy as np
 import pandas as pd
@@ -59,7 +61,16 @@ class Calls311Algo(CrazyAlgoBase):
 
     def _fetch_city(self, domain: str, endpoint: str, days_back: int = 7):
         from sodapy import Socrata
-        client = Socrata(domain, None, timeout=30)
+        app_token = os.getenv("SOCRATA_APP_TOKEN")
+        if app_token:
+            client = Socrata(domain, app_token, timeout=30)
+        else:
+            previous_disable = logging.root.manager.disable
+            logging.disable(logging.WARNING)
+            try:
+                client = Socrata(domain, None, timeout=30)
+            finally:
+                logging.disable(previous_disable)
         cutoff = (datetime.utcnow() - timedelta(days=days_back)).isoformat()
         results = client.get(
             endpoint,

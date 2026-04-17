@@ -86,7 +86,8 @@ class CraigslistAlgo(CrazyAlgoBase):
             for i in range(1, 5):
                 week_end = as_of - timedelta(days=7 * i)
                 baseline_weeks.append(self._compute_city_week_total(history, week_end, city, days=7))
-            baseline = np.mean([v for v in baseline_weeks if v > 0]) if baseline_weeks else 0
+            positive_baseline = [v for v in baseline_weeks if v > 0]
+            baseline = np.mean(positive_baseline) if positive_baseline else 0
             city_scores[city] = (current_week - baseline) / baseline if baseline else 0
 
         distressed = sum(1 for v in city_scores.values() if v > self.DISTRESS_THRESHOLD)

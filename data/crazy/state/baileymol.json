@@ -1,27 +1,10 @@
 {
-  "cash": 30672.8597485202,
+  "cash": 94394.23790837714,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 2321.6017101990224,
-  "taxes_paid": 9427.970708782843,
-  "positions": {
-    "XLK": {
-      "shares": 210.7874433065432,
-      "entry_price": 145.61000061035156,
-      "entry_date": "2026-04-13",
-      "cost": 30692.7597485202,
-      "using_margin": false,
-      "consec_below_ma": 0
-    },
-    "XLY": {
-      "shares": 269.4238083027557,
-      "entry_price": 113.91999816894531,
-      "entry_date": "2026-04-13",
-      "cost": 30692.7597485202,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "fees_paid": 3447.125394740988,
+  "taxes_paid": 17810.60788584062,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-01-19",
@@ -618,39 +601,37 @@
       "cost": 30692.76,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-17",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 210.7874,
+      "price": 154.165,
+      "proceeds": 32484.41,
+      "fees": 11.64,
+      "tax": 662.91,
+      "pnl": 1128.74,
+      "pnl_pct": 3.68,
+      "entry_date": "2026-04-13",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-17",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 269.4238,
+      "price": 121.075,
+      "proceeds": 32608.82,
+      "fees": 11.66,
+      "tax": 708.94,
+      "pnl": 1207.12,
+      "pnl_pct": 3.93,
+      "entry_date": "2026-04-13",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
-    {
-      "date": "2026-01-13",
-      "cash": 100000,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 100000.0,
-      "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
-    },
-    {
-      "date": "2026-01-14",
-      "cash": 100000,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 100000.0,
-      "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
-    },
-    {
-      "date": "2026-01-15",
-      "cash": 100000,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 100000.0,
-      "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 0
-    },
     {
       "date": "2026-01-16",
       "cash": 100000,
@@ -658,7 +639,7 @@
       "interest": 0.0,
       "equity": 100000.0,
       "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 0
     },
     {
@@ -687,7 +668,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -716,7 +697,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -745,7 +726,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -774,7 +755,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -784,7 +765,7 @@
       "interest": 0.0,
       "equity": 99982.24,
       "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 0
     },
     {
@@ -813,7 +794,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -842,7 +823,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -871,7 +852,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -900,7 +881,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -910,7 +891,7 @@
       "interest": 0.0,
       "equity": 99123.75,
       "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 0
     },
     {
@@ -939,7 +920,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -968,7 +949,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -997,7 +978,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1026,7 +1007,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1036,7 +1017,7 @@
       "interest": 0.0,
       "equity": 97063.01,
       "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 0
     },
     {
@@ -1065,7 +1046,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1094,7 +1075,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1123,7 +1104,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1152,7 +1133,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1162,7 +1143,7 @@
       "interest": 0.0,
       "equity": 95787.39,
       "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 0
     },
     {
@@ -1191,7 +1172,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1220,7 +1201,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1249,7 +1230,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1278,7 +1259,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1288,7 +1269,7 @@
       "interest": 0.0,
       "equity": 96162.97,
       "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 0
     },
     {
@@ -1317,7 +1298,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1346,7 +1327,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1375,7 +1356,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1404,7 +1385,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1414,7 +1395,7 @@
       "interest": 0.0,
       "equity": 96491.79,
       "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 0
     },
     {
@@ -1443,7 +1424,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1472,7 +1453,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1501,7 +1482,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1530,7 +1511,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1540,7 +1521,7 @@
       "interest": 0.0,
       "equity": 95656.94,
       "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 0
     },
     {
@@ -1569,7 +1550,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1598,7 +1579,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1627,7 +1608,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1656,7 +1637,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1666,7 +1647,7 @@
       "interest": 0.0,
       "equity": 93900.67,
       "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 0
     },
     {
@@ -1695,7 +1676,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1724,7 +1705,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1753,7 +1734,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1782,7 +1763,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1792,7 +1773,7 @@
       "interest": 0.0,
       "equity": 91826.36,
       "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 0
     },
     {
@@ -1821,7 +1802,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1850,7 +1831,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1879,7 +1860,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1908,7 +1889,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1918,7 +1899,7 @@
       "interest": 0.0,
       "equity": 88978.13,
       "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 0
     },
     {
@@ -1947,7 +1928,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -1976,7 +1957,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -2005,7 +1986,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -2034,7 +2015,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -2044,7 +2025,7 @@
       "interest": 0.0,
       "equity": 90628.21,
       "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 0
     },
     {
@@ -2073,7 +2054,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -2102,7 +2083,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -2131,7 +2112,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -2160,7 +2141,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -2170,7 +2151,7 @@
       "interest": 0.0,
       "equity": 92078.28,
       "positions": {},
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 0
     },
     {
@@ -2199,7 +2180,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -2207,35 +2188,6 @@
       "cash": 30672.86,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 92732.23,
-      "positions": {
-        "XLK": {
-          "shares": 210.7874,
-          "entry_price": 145.61,
-          "current_price": 146.57,
-          "market_value": 30895.12,
-          "unrealized_pnl": 202.36,
-          "entry_date": "2026-04-13",
-          "margin": false
-        },
-        "XLY": {
-          "shares": 269.4238,
-          "entry_price": 113.92,
-          "current_price": 115.67,
-          "market_value": 31164.25,
-          "unrealized_pnl": 471.49,
-          "entry_date": "2026-04-13",
-          "margin": false
-        }
-      },
-      "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
-    },
-    {
-      "date": "2026-04-15",
-      "cash": 30672.86,
-      "borrowed": 0.0,
-      "interest": 0.0,
       "equity": 93228.46,
       "positions": {
         "XLK": {
@@ -2257,65 +2209,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
-    },
-    {
-      "date": "2026-04-15",
-      "cash": 30672.86,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 93228.46,
-      "positions": {
-        "XLK": {
-          "shares": 210.7874,
-          "entry_price": 145.61,
-          "current_price": 147.94,
-          "market_value": 31183.89,
-          "unrealized_pnl": 491.14,
-          "entry_date": "2026-04-13",
-          "margin": false
-        },
-        "XLY": {
-          "shares": 269.4238,
-          "entry_price": 113.92,
-          "current_price": 116.44,
-          "market_value": 31371.71,
-          "unrealized_pnl": 678.95,
-          "entry_date": "2026-04-13",
-          "margin": false
-        }
-      },
-      "sector": "Algo Baileymol (Chaos Monger)",
-      "num_positions": 2
-    },
-    {
-      "date": "2026-04-15",
-      "cash": 30672.86,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 93228.46,
-      "positions": {
-        "XLK": {
-          "shares": 210.7874,
-          "entry_price": 145.61,
-          "current_price": 147.94,
-          "market_value": 31183.89,
-          "unrealized_pnl": 491.14,
-          "entry_date": "2026-04-13",
-          "margin": false
-        },
-        "XLY": {
-          "shares": 269.4238,
-          "entry_price": 113.92,
-          "current_price": 116.44,
-          "market_value": 31371.71,
-          "unrealized_pnl": 678.95,
-          "entry_date": "2026-04-13",
-          "margin": false
-        }
-      },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -2344,7 +2238,7 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
     },
     {
@@ -2373,12 +2267,22 @@
           "margin": false
         }
       },
-      "sector": "Algo Baileymol (Chaos Monger)",
+      "sector": "Chaos Rotation Lab",
       "num_positions": 2
+    },
+    {
+      "date": "2026-04-17",
+      "cash": 94394.24,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 94394.24,
+      "positions": {},
+      "sector": "Chaos Rotation Lab",
+      "num_positions": 0
     }
   ],
-  "sim_start": "2026-01-13",
-  "last_run": "2026-04-16",
+  "sim_start": "2026-01-16",
+  "last_run": "2026-04-17",
   "meta": {
     "baileymol": {
       "target_sectors": [
@@ -2386,11 +2290,11 @@
         "XLY",
         "XLE"
       ],
-      "signal_label": "TOP:XLK,XLY,XLE",
-      "signal_key": "XLK|XLY|XLE",
-      "name": "Algo Baileymol (Chaos Monger)",
-      "last_run": "2026-04-16",
-      "last_signal": "XLK|XLY|XLI"
+      "signal_label": "FRIDAY_EXIT",
+      "signal_key": "FRIDAY_EXIT",
+      "name": "Chaos Rotation Lab",
+      "last_run": "2026-04-17",
+      "last_signal": "FRIDAY_EXIT"
     }
   }
 }

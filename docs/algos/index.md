@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-16T23:09:20
+Updated (UTC): 2026-04-17T18:02:57
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 42
+Crazy models: 49
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -25,7 +25,7 @@ Crazy models: 42
 | linkedin | LinkedIn Layoff Propagation | monthly |
 | congress | Congress Trading Fade | daily |
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
-| baileymol | Algo Baileymol (Chaos Monger) | weekly |
+| baileymol | Chaos Rotation Lab | weekly |
 | reddit-gaming-thread-spike | Reddit Gaming Thread Spike | daily |
 | airport-shopping-spree | Airport Shopping Spree | daily |
 | cloud-storage-demand-surge | Cloud Storage Demand Surge | daily |
@@ -58,3 +58,10 @@ Crazy models: 42
 | credit-card-delinquency | Credit Card Delinquency | quarterly |
 | consumer-sentiment | Consumer Sentiment | monthly |
 | retail-sales-momentum | Retail Sales Momentum | monthly |
+| freight-rail-carloads | Freight Rail Carloads | monthly |
+| housing-permit-velocity | Housing Permit Velocity | monthly |
+| mortgage-rate-housing-proxy | Mortgage Rate Housing Proxy | monthly |
+| copper-momentum | Copper Momentum | monthly |
+| lumber-momentum | Lumber Momentum | monthly |
+| yield-curve-regime | Yield Curve Regime | monthly |
+| high-yield-spread-regime | High Yield Spread Regime | monthly |

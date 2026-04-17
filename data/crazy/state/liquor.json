@@ -1,80 +1,12 @@
 {
-  "cash": 19980.100000000002,
+  "cash": 100000,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
   "fees_paid": 19.9,
   "taxes_paid": 0.0,
-  "positions": {
-    "XLP": {
-      "shares": 613.7228335685113,
-      "entry_price": 81.47000122070312,
-      "entry_date": "2026-04-15",
-      "cost": 50000.0,
-      "using_margin": false,
-      "consec_below_ma": 0
-    },
-    "XLU": {
-      "shares": 645.5777751655088,
-      "entry_price": 46.470001220703125,
-      "entry_date": "2026-04-15",
-      "cost": 30000.0,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
-  "trade_log": [
-    {
-      "date": "2026-04-15",
-      "action": "BUY",
-      "ticker": "XLP",
-      "shares": 613.7228,
-      "price": 81.47,
-      "cost": 50000.0,
-      "margin": false,
-      "fees": 9.95
-    },
-    {
-      "date": "2026-04-15",
-      "action": "BUY",
-      "ticker": "XLU",
-      "shares": 645.5778,
-      "price": 46.47,
-      "cost": 30000.0,
-      "margin": false,
-      "fees": 9.95
-    }
-  ],
+  "positions": {},
+  "trade_log": [],
   "daily_snapshots": [
-    {
-      "date": "2026-01-13",
-      "cash": 100000,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 100000.0,
-      "positions": {},
-      "sector": "Liquor Store Leading Indicator",
-      "num_positions": 0
-    },
-    {
-      "date": "2026-01-14",
-      "cash": 100000,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 100000.0,
-      "positions": {},
-      "sector": "Liquor Store Leading Indicator",
-      "num_positions": 0
-    },
-    {
-      "date": "2026-01-15",
-      "cash": 100000,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 100000.0,
-      "positions": {},
-      "sector": "Liquor Store Leading Indicator",
-      "num_positions": 0
-    },
     {
       "date": "2026-01-16",
       "cash": 100000,
@@ -716,128 +648,32 @@
       "num_positions": 0
     },
     {
-      "date": "2026-04-15",
-      "cash": 19980.1,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 99980.1,
-      "positions": {
-        "XLP": {
-          "shares": 613.7228,
-          "entry_price": 81.47,
-          "current_price": 81.47,
-          "market_value": 50000.0,
-          "unrealized_pnl": 0.0,
-          "entry_date": "2026-04-15",
-          "margin": false
-        },
-        "XLU": {
-          "shares": 645.5778,
-          "entry_price": 46.47,
-          "current_price": 46.47,
-          "market_value": 30000.0,
-          "unrealized_pnl": 0.0,
-          "entry_date": "2026-04-15",
-          "margin": false
-        }
-      },
-      "sector": "Liquor Store Leading Indicator",
-      "num_positions": 2
-    },
-    {
-      "date": "2026-04-15",
-      "cash": 19980.1,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 99980.1,
-      "positions": {
-        "XLP": {
-          "shares": 613.7228,
-          "entry_price": 81.47,
-          "current_price": 81.47,
-          "market_value": 50000.0,
-          "unrealized_pnl": 0.0,
-          "entry_date": "2026-04-15",
-          "margin": false
-        },
-        "XLU": {
-          "shares": 645.5778,
-          "entry_price": 46.47,
-          "current_price": 46.47,
-          "market_value": 30000.0,
-          "unrealized_pnl": 0.0,
-          "entry_date": "2026-04-15",
-          "margin": false
-        }
-      },
-      "sector": "Liquor Store Leading Indicator",
-      "num_positions": 2
-    },
-    {
-      "date": "2026-04-15",
-      "cash": 19980.1,
-      "borrowed": 0.0,
-      "interest": 0.0,
-      "equity": 99437.96,
-      "positions": {
-        "XLP": {
-          "shares": 613.7228,
-          "entry_price": 81.47,
-          "current_price": 81.06,
-          "market_value": 49748.37,
-          "unrealized_pnl": -251.63,
-          "entry_date": "2026-04-15",
-          "margin": false
-        },
-        "XLU": {
-          "shares": 645.5778,
-          "entry_price": 46.47,
-          "current_price": 46.02,
-          "market_value": 29709.49,
-          "unrealized_pnl": -290.51,
-          "entry_date": "2026-04-15",
-          "margin": false
-        }
-      },
-      "sector": "Liquor Store Leading Indicator",
-      "num_positions": 2
-    },
-    {
       "date": "2026-04-16",
-      "cash": 19980.1,
+      "cash": 100000,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 99878.08,
-      "positions": {
-        "XLP": {
-          "shares": 613.7228,
-          "entry_price": 81.47,
-          "current_price": 81.43,
-          "market_value": 49975.45,
-          "unrealized_pnl": -24.55,
-          "entry_date": "2026-04-15",
-          "margin": false
-        },
-        "XLU": {
-          "shares": 645.5778,
-          "entry_price": 46.47,
-          "current_price": 46.35,
-          "market_value": 29922.53,
-          "unrealized_pnl": -77.47,
-          "entry_date": "2026-04-15",
-          "margin": false
-        }
-      },
+      "equity": 100000.0,
+      "positions": {},
       "sector": "Liquor Store Leading Indicator",
-      "num_positions": 2
+      "num_positions": 0
+    },
+    {
+      "date": "2026-04-17",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Liquor Store Leading Indicator",
+      "num_positions": 0
     }
   ],
-  "sim_start": "2026-01-13",
-  "last_run": "2026-04-16",
+  "sim_start": "2026-01-16",
+  "last_run": "2026-04-17",
   "meta": {
     "liquor": {
       "name": "Liquor Store Leading Indicator",
-      "last_run": "2026-04-16",
+      "last_run": "2026-04-17",
       "last_signal": "RISK_OFF"
     }
   }

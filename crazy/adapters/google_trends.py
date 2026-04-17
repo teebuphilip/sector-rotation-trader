@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+import warnings
 
 import pandas as pd
 
@@ -16,7 +17,9 @@ def fetch_google_trends(keyword: str, days_back: int = 30) -> pd.DataFrame:
         start = end - timedelta(days=days_back)
         timeframe = f"{start.strftime('%Y-%m-%d')} {end.strftime('%Y-%m-%d')}"
         pytrends.build_payload([keyword], timeframe=timeframe)
-        df = pytrends.interest_over_time()
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", category=FutureWarning, module="pytrends")
+            df = pytrends.interest_over_time()
         if df.empty:
             return pd.DataFrame()
         df = df.reset_index().rename(columns={keyword: "interest", "date": "date"})

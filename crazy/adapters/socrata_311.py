@@ -1,4 +1,6 @@
 from datetime import datetime, timedelta
+import logging
+import os
 
 import pandas as pd
 
@@ -27,7 +29,16 @@ def fetch_311_counts(days_back: int = 7) -> dict:
     counts = {}
     for _, cfg in CITY_CONFIG.items():
         try:
-            client = Socrata(cfg["domain"], None, timeout=30)
+            app_token = os.getenv("SOCRATA_APP_TOKEN")
+            if app_token:
+                client = Socrata(cfg["domain"], app_token, timeout=30)
+            else:
+                previous_disable = logging.root.manager.disable
+                logging.disable(logging.WARNING)
+                try:
+                    client = Socrata(cfg["domain"], None, timeout=30)
+                finally:
+                    logging.disable(previous_disable)
             results = client.get(
                 cfg["endpoint"],
                 where=f"created_date > '{cutoff}'",
