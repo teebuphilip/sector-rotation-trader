@@ -59,6 +59,14 @@ def _idea_to_md(idea: dict) -> str:
 ## Implementation Notes
 {idea.get('implementation_notes','')}
 
+## High Action Metadata
+- Expected Fire Rate: {idea.get('expected_fire_rate','')}
+- Historical Backfill: {idea.get('historical_backfill','')}
+- Minimum History Months: {idea.get('minimum_history_months','')}
+- Adapter Status: {idea.get('adapter_status','')}
+- Trigger Sensitivity: {idea.get('trigger_sensitivity','')}
+- Why It Should Fire Soon: {idea.get('reason_it_will_fire_in_30_days','')}
+
 ## Required Keys
 {_list(idea.get('required_keys', [])) or '- None'}
 """
@@ -73,6 +81,8 @@ def main() -> int:
     raw_dir = run_dir / "filtered"
     pub_dir = run_dir / "publish"
     pub_dir.mkdir(parents=True, exist_ok=True)
+    for stale in pub_dir.glob("*.md"):
+        stale.unlink()
 
     combined_md = []
 

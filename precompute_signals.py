@@ -34,9 +34,13 @@ CRAZY_STATE_DIR = ROOT_DIR / "data" / "crazy" / "state"
 NORMAL_STATE_DIR = ROOT_DIR / "data" / "normal" / "state"
 BLOCKED_ALGOS_FILE = ROOT_DIR / "data" / "blocked" / "algos.jsonl"
 DISCLAIMER     = (
-    "Not investment advice. This is experimental research. "
-    "Past signal performance does not predict future results. "
-    "Always do your own research."
+    "This is an experimental signal lab. Not financial advice. "
+    "Signals are research outputs, not recommendations to buy, sell, or hold any asset. "
+    "Signals can and will fail. Past performance does not guarantee future results. "
+    "Results are simulated/model outputs and may not reflect slippage, fees, liquidity, execution delays, or market impact. "
+    "Third-party data may be incomplete, delayed, inaccurate, or revised. "
+    "Do your own research and consult a qualified professional before making investment decisions. "
+    "Paper-traded only — no real money at risk."
 )
 
 # ── Sector ETF map ─────────────────────────────────────────────────────────────

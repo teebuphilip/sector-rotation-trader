@@ -187,8 +187,10 @@ def generate_combined_dashboard(summaries):
       </table>
     </div>
     <div class="disclaimer">
-      Not investment advice. This is experimental research. Past signal performance does not predict future results.<br>
-      Always do your own research. Paper-traded only &mdash; no real money at risk.
+      <strong>Signal Lab Notice:</strong> This is an experimental signal lab. Signals are generated, tracked, and evaluated as research outputs. Many signals will fail, and some may only appear to work because of randomness or limited sample size.<br>
+      <strong>Not financial advice:</strong> Nothing here is a recommendation to buy, sell, or hold any asset. Past performance does not guarantee future results.<br>
+      <strong>Performance/data disclosure:</strong> Results are model outputs from simulated or simplified conditions and may not reflect slippage, fees, liquidity, execution delays, or market impact. Third-party data may be incomplete, delayed, inaccurate, or revised.<br>
+      <strong>Your responsibility:</strong> Do your own research and consult a qualified professional before making investment decisions. Paper-traded only &mdash; no real money at risk.
     </div>
   </div>
 </body>

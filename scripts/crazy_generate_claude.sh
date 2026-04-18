@@ -2,6 +2,7 @@
 set -euo pipefail
 
 MODEL="${ANTHROPIC_MODEL:-claude-3-haiku-20240307}"
+MAX_TOKENS="${ANTHROPIC_MAX_TOKENS:-4096}"
 PROMPT_FILE="${1:-prompts/crazy_ideas_prompt.txt}"
 TMP_JSON="$(mktemp)"
 RESPONSE_DIR="${RESPONSE_DIR:-}"
@@ -22,7 +23,7 @@ HTTP_CODE=$(curl -sS -w "%{http_code}" \
   -H "content-type: application/json" \
   -d "{
     \"model\": \"$MODEL\",
-    \"max_tokens\": 2000,
+    \"max_tokens\": $MAX_TOKENS,
     \"messages\": [
       {\"role\": \"user\", \"content\": $ESCAPED_PROMPT}
     ]
@@ -41,29 +42,7 @@ if [[ "$HTTP_CODE" != "200" ]]; then
   exit 1
 fi
 
-if ! python3 - <<'PY' "$TMP_JSON" "$MODEL"; then
-import json
-import sys
-
-src = sys.argv[1]
-model = sys.argv[2]
-raw = open(src).read().strip()
-if not raw:
-    raise SystemExit("Empty Claude response")
-
-obj = json.loads(raw)
-if isinstance(obj, dict) and "error" in obj:
-    raise SystemExit(f"Claude API error: {obj['error']}")
-text = obj["content"][0]["text"]
-ideas = json.loads(text)
-
-for item in ideas:
-    if not isinstance(item, dict):
-        continue
-    item["source_provider"] = "anthropic"
-    item["source_model"] = model
-    print(json.dumps(item, ensure_ascii=False))
-PY
+if ! python3 scripts/json_array_to_jsonl.py "$TMP_JSON" "$MODEL" "anthropic" 15; then
   if [[ -n "$RESPONSE_DIR" ]]; then
     mkdir -p "$RESPONSE_DIR"
     cp "$TMP_JSON" "$RESPONSE_DIR/claude_response.json"

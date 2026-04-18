@@ -45,6 +45,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", default=_today_iso())
     parser.add_argument("--prompt", default="prompts/crazy_ideas_prompt.txt")
+    parser.add_argument("--schema-mode", choices=["standard", "high-action"], default="standard")
     args = parser.parse_args()
 
     try:
@@ -68,6 +69,16 @@ def main() -> int:
 
     chat_out = raw_dir / f"chatgpt_{args.date}.jsonl"
     claude_out = raw_dir / f"claude_{args.date}.jsonl"
+    for stale in [
+        chat_out,
+        claude_out,
+        filtered_dir / f"chatgpt_{args.date}.jsonl",
+        filtered_dir / f"claude_{args.date}.jsonl",
+        rejected_dir / f"chatgpt_{args.date}.jsonl",
+        rejected_dir / f"claude_{args.date}.jsonl",
+    ]:
+        if stale.exists():
+            stale.unlink()
 
     chat_script = Path("scripts/crazy_generate_chatgpt.sh")
     claude_script = Path("scripts/crazy_generate_claude.sh")
@@ -90,6 +101,7 @@ def main() -> int:
             "--in", str(chat_out),
             "--out", str(filtered_dir / f"chatgpt_{args.date}.jsonl"),
             "--rejects", str(rejected_dir / f"chatgpt_{args.date}.jsonl"),
+            "--mode", args.schema_mode,
         ], check=False)
         err_file = err_dir / "chatgpt.txt"
         if err_file.exists():
@@ -108,6 +120,7 @@ def main() -> int:
             "--in", str(claude_out),
             "--out", str(filtered_dir / f"claude_{args.date}.jsonl"),
             "--rejects", str(rejected_dir / f"claude_{args.date}.jsonl"),
+            "--mode", args.schema_mode,
         ], check=False)
         err_file = err_dir / "claude.txt"
         if err_file.exists():

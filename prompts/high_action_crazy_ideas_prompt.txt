@@ -1,0 +1,91 @@
+You are generating HIGH-ACTION crazy trading signal ideas.
+
+Return ONLY valid JSON (no markdown). The JSON must be a list with exactly 15 objects.
+
+Goal:
+Generate weird but frequently observable signals that can plausibly fire within 30 days. These are "shots on goal" for a paper-trading lab, not rare museum pieces.
+
+Hard constraints:
+- Use daily or weekly data only.
+- Must be historically backfillable for at least 12 months.
+- Must use an existing adapter/data family whenever possible.
+- Must map to exactly ONE sector ETF.
+- Must have simple deterministic entry/exit logic.
+- Expected fire rate must be daily, weekly, or monthly. Never rare.
+- Trigger sensitivity must be high or medium. Never low.
+- Entry threshold should be loose enough to fire several times per year.
+- Prefer signals that are likely to produce a position within 30 days.
+- Avoid fragile one-off event data.
+- Avoid ideas already used: TSA throughput, Craigslist listings, 311 calls, LinkedIn workforce report, Congress trading, Reddit gaming thread spike, Port of Los Angeles TEU, EIA electricity demand, BTS airline traffic.
+
+Existing adapter/data families to prefer:
+- price_only: Yahoo Finance ETF/stock price, returns, volume, momentum, drawdown, volatility.
+- fred_series: FRED macro series with an API key.
+- google_trends: Google Trends weekly search interest.
+- weather_series: Open-Meteo daily weather.
+- earthquake_activity: USGS earthquake activity.
+- openchargemap: EV charger counts.
+- tsa_table: TSA throughput.
+- html_table: stable public tables.
+- rss_count: RSS/news feed counts.
+- eia_electricity: EIA electricity demand.
+- port_container_volume: Port container volume.
+- bts_airline_load_factor: BTS airline traffic/load-factor proxy.
+
+Required keys in every object:
+{
+  "idea": "",
+  "data": {
+    "source": "",
+    "type": "api|scrape",
+    "frequency": "daily|weekly",
+    "stable": true
+  },
+  "behavior": "",
+  "market_impact": {
+    "direction": "bullish|bearish",
+    "sector": "XLK|XLY|XLF|XLI|XLP|XLV|XLE|XLB|XLU|XLRE|XLC",
+    "rationale": ""
+  },
+  "trade_logic": {
+    "entry": "",
+    "exit": "",
+    "expected_frequency": "high|medium"
+  },
+  "expected_fire_rate": "daily|weekly|monthly",
+  "historical_backfill": true,
+  "minimum_history_months": 12,
+  "adapter_status": "existing",
+  "trigger_sensitivity": "high|medium",
+  "reason_it_will_fire_in_30_days": ""
+}
+
+Good example format, do not reuse:
+{
+  "idea": "Semiconductor tantrum bounce",
+  "data": {
+    "source": "Yahoo Finance daily prices for SOXX and SPY through price_only adapter",
+    "type": "api",
+    "frequency": "daily",
+    "stable": true
+  },
+  "behavior": "Semiconductors are selling off faster than the broad market, which often creates short-term mean reversion pressure in technology leadership.",
+  "market_impact": {
+    "direction": "bullish",
+    "sector": "XLK",
+    "rationale": "Semiconductors are a major technology risk appetite proxy."
+  },
+  "trade_logic": {
+    "entry": "If SOXX underperforms SPY by more than 2% over 5 trading days and closes above its prior day close",
+    "exit": "After 5 trading days or once SOXX outperforms SPY over 3 trading days",
+    "expected_frequency": "medium"
+  },
+  "expected_fire_rate": "monthly",
+  "historical_backfill": true,
+  "minimum_history_months": 24,
+  "adapter_status": "existing",
+  "trigger_sensitivity": "medium",
+  "reason_it_will_fire_in_30_days": "Daily ETF relative moves frequently cross 2% over rolling 5-day windows, especially in volatile sectors."
+}
+
+Output must be strict JSON and parseable.

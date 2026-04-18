@@ -2,6 +2,7 @@
 set -euo pipefail
 
 MODEL="${OPENAI_MODEL:-gpt-4.1-mini}"
+MAX_TOKENS="${OPENAI_MAX_TOKENS:-6000}"
 PROMPT_FILE="${1:-prompts/crazy_ideas_prompt.txt}"
 TMP_JSON="$(mktemp)"
 RESPONSE_DIR="${RESPONSE_DIR:-}"
@@ -16,8 +17,10 @@ PROMPT="$(cat "$PROMPT_FILE")"
 REQUEST_JSON=$(jq -n \
   --arg model "$MODEL" \
   --arg prompt "$PROMPT" \
+  --arg max_tokens "$MAX_TOKENS" \
   '{
     model: $model,
+    max_tokens: ($max_tokens | tonumber),
     temperature: 0.7,
     messages: [{ role: "user", content: $prompt }]
   }'
@@ -43,27 +46,7 @@ if [[ "$HTTP_CODE" != "200" ]]; then
   exit 1
 fi
 
-if ! python3 - <<'PY' "$TMP_JSON" "$MODEL"; then
-import json
-import sys
-
-src = sys.argv[1]
-model = sys.argv[2]
-
-with open(src) as f:
-    raw = f.read().strip()
-
-obj = json.loads(raw)
-content = obj["choices"][0]["message"]["content"]
-ideas = json.loads(content)
-
-for item in ideas:
-    if not isinstance(item, dict):
-        continue
-    item["source_provider"] = "openai"
-    item["source_model"] = model
-    print(json.dumps(item, ensure_ascii=False))
-PY
+if ! python3 scripts/json_array_to_jsonl.py "$TMP_JSON" "$MODEL" "openai" 15; then
   if [[ -n "$RESPONSE_DIR" ]]; then
     mkdir -p "$RESPONSE_DIR"
     cp "$TMP_JSON" "$RESPONSE_DIR/chatgpt_response.json"
