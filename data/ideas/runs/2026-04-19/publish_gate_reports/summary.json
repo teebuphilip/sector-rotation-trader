@@ -1,0 +1,304 @@
+{
+  "publish_dir": "data/ideas/runs/2026-04-19/publish",
+  "output_dir": "data/ideas/runs/2026-04-19",
+  "model": "gpt-4.1-mini",
+  "dry_run": false,
+  "move": false,
+  "counts": {
+    "BUILD": 15,
+    "INTERVENTION": 8,
+    "REJECT": 0
+  },
+  "costs": {
+    "openai": 0.0709,
+    "total": 0.0709
+  },
+  "files": [
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlb-daily-volatility-contraction-breakout.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/chatgpt_xlb-daily-volatility-contraction-breakout.md",
+      "reason": "Spec is deterministic, uses valid price_only adapter for daily volatility breakout on XLB.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.0030775
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlb-weekly-rss-news-count-spike-on-commodity-shortage.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/chatgpt_xlb-weekly-rss-news-count-spike-on-commodity-shortage.md",
+      "reason": "Spec is clear, uses a valid rss_count adapter with matching data source and frequency.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.00308
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlc-weekly-google-trends-surge-in-5g-rollout.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/chatgpt_xlc-weekly-google-trends-surge-in-5g-rollout.md",
+      "reason": "Spec is clear, uses existing google_trends adapter with weekly frequency and deterministic routing.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.003105
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xle-weekly-drawdown-rebound-signal.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/chatgpt_xle-weekly-drawdown-rebound-signal.md",
+      "reason": "Spec is deterministic, uses valid price_only adapter for weekly XLE prices, and is structurally sound.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.003095
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlf-intraday-volatility-spike-followed-by-weekly-fade.md",
+      "decision": "INTERVENTION",
+      "target": "data/ideas/runs/2026-04-19/intervention/chatgpt_xlf-intraday-volatility-spike-followed-by-weekly-fade.md",
+      "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+      "risk_flags": [
+        "adapter mapping uncertain",
+        "low_adapter_confidence",
+        "requires intraday volatility data",
+        "requires short position",
+        "short_trade_not_supported",
+        "weekly and daily frequency mismatch"
+      ],
+      "cost_usd": 0.003295
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlf-weekly-fed-funds-rate-surprise-reaction.md",
+      "decision": "INTERVENTION",
+      "target": "data/ideas/runs/2026-04-19/intervention/chatgpt_xlf-weekly-fed-funds-rate-surprise-reaction.md",
+      "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+      "risk_flags": [
+        "entry logic not supported",
+        "low adapter routing confidence",
+        "low_adapter_confidence",
+        "requires short position",
+        "short_trade_not_supported"
+      ],
+      "cost_usd": 0.0030425
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xli-weekly-industrial-production-acceleration.md",
+      "decision": "INTERVENTION",
+      "target": "data/ideas/runs/2026-04-19/intervention/chatgpt_xli-weekly-industrial-production-acceleration.md",
+      "reason": "Weekly interpolation of monthly FRED data requires new adapter support.",
+      "risk_flags": [
+        "frequency mismatch monthly to weekly",
+        "low adapter routing confidence",
+        "low_adapter_confidence",
+        "requires interpolation adapter"
+      ],
+      "cost_usd": 0.0030425
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlk-momentum-surge-after-3-day-volume-spike.md",
+      "decision": "INTERVENTION",
+      "target": "data/ideas/runs/2026-04-19/intervention/chatgpt_xlk-momentum-surge-after-3-day-volume-spike.md",
+      "reason": "price_only currently provides close/value data, not volume.",
+      "risk_flags": [
+        "adapter_mismatch",
+        "needs_manual_review",
+        "price_only_volume_gap",
+        "volume_required"
+      ],
+      "cost_usd": 0.0031575
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlp-daily-grocery-price-inflation-spike.md",
+      "decision": "INTERVENTION",
+      "target": "data/ideas/runs/2026-04-19/intervention/chatgpt_xlp-daily-grocery-price-inflation-spike.md",
+      "reason": "FRED monthly CPI data requires interpolation to daily, needing a new adapter or preprocessing step",
+      "risk_flags": [
+        "adapter does not natively support daily food CPI",
+        "data frequency mismatch",
+        "interpolation required"
+      ],
+      "cost_usd": 0.0031725
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlre-daily-earthquake-activity-selloff.md",
+      "decision": "INTERVENTION",
+      "target": "data/ideas/runs/2026-04-19/intervention/chatgpt_xlre-daily-earthquake-activity-selloff.md",
+      "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+      "risk_flags": [
+        "no volume data",
+        "potential data source instability",
+        "requires short position",
+        "short_trade_not_supported"
+      ],
+      "cost_usd": 0.0030525
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlre-daily-new-ev-charger-installations-spike.md",
+      "decision": "INTERVENTION",
+      "target": "data/ideas/runs/2026-04-19/intervention/chatgpt_xlre-daily-new-ev-charger-installations-spike.md",
+      "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts",
+        "short_trade_not_supported"
+      ],
+      "cost_usd": 0.0030325
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlu-daily-electricity-demand-surge.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/chatgpt_xlu-daily-electricity-demand-surge.md",
+      "reason": "Spec is clear, deterministic, uses a real adapter matching the data source, and is buildable as is.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.0031
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlu-weekly-cold-snap-weather-correlation.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/chatgpt_xlu-weekly-cold-snap-weather-correlation.md",
+      "reason": "Spec is clear, deterministic, uses a valid weather adapter, and is buildable as is.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.0030425
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlv-google-trends-flu-search-spike.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/chatgpt_xlv-google-trends-flu-search-spike.md",
+      "reason": "Spec is clear, deterministic, uses a valid existing adapter with matching data source.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.0030425
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/chatgpt_xly-daily-retail-volume-surge-on-low-volatility-day.md",
+      "decision": "INTERVENTION",
+      "target": "data/ideas/runs/2026-04-19/intervention/chatgpt_xly-daily-retail-volume-surge-on-low-volatility-day.md",
+      "reason": "price_only currently provides close/value data, not volume.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "price_only_volume_gap",
+        "regime shifts"
+      ],
+      "cost_usd": 0.0030975
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/claude_electricity-enlightenment.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/claude_electricity-enlightenment.md",
+      "reason": "Spec is clear, uses a real adapter with matching data source and frequency.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.0030325
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/claude_ev-euphoria.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/claude_ev-euphoria.md",
+      "reason": "Spec is clear, uses a real adapter with matching data source and deterministic routing.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.0030575
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/claude_google-gusts.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/claude_google-gusts.md",
+      "reason": "Spec is clear, deterministic, uses a valid existing adapter with appropriate frequency and data source.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.0030575
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/claude_heartland-harvest.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/claude_heartland-harvest.md",
+      "reason": "Spec is clear, uses a real adapter matching the data source, and is deterministic.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.00303
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/claude_retail-roulette.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/claude_retail-roulette.md",
+      "reason": "Spec is deterministic, uses a valid price_only adapter for daily Yahoo Finance prices, and logic is clear.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.003025
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/claude_rss-roar.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/claude_rss-roar.md",
+      "reason": "Spec is clear, deterministic, uses the correct rss_count adapter, and is buildable as is.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.0031
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/claude_tremor-tension.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/claude_tremor-tension.md",
+      "reason": "Spec is clear, uses a valid adapter for earthquake data, and is structurally sound.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.00305
+    },
+    {
+      "file": "data/ideas/runs/2026-04-19/publish/claude_weather-windfall.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-04-19/build/claude_weather-windfall.md",
+      "reason": "Spec is clear, deterministic, uses a valid weather adapter with appropriate data and logic.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.0031125
+    }
+  ]
+}

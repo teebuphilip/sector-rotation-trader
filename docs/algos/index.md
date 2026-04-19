@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-19T13:47:48
+Updated (UTC): 2026-04-19T14:54:12
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 63
+Crazy models: 77
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -79,3 +79,17 @@ Crazy models: 63
 | utility-power-grid-stress | Utility Power Grid Stress | weekly |
 | weather-disruption-ripple-effects | Weather Disruption Ripple Effects | daily |
 | work-from-home-frenzy | Work From Home Frenzy | weekly |
+| xlb-daily-volatility-contraction-breakout | Xlb Daily Volatility Contraction Breakout | daily |
+| xlb-weekly-rss-news-count-spike-on-commodity-shortage | Xlb Weekly Rss News Count Spike On Commodity Shortage | weekly |
+| xlc-weekly-google-trends-surge-in-5g-rollout | Xlc Weekly Google Trends Surge In 5g Rollout | weekly |
+| xle-weekly-drawdown-rebound-signal | Xle Weekly Drawdown Rebound Signal | weekly |
+| xlu-daily-electricity-demand-surge | Xlu Daily Electricity Demand Surge | daily |
+| xlu-weekly-cold-snap-weather-correlation | Xlu Weekly Cold Snap Weather Correlation | weekly |
+| xlv-google-trends-flu-search-spike | Xlv Google Trends Flu Search Spike | weekly |
+| electricity-enlightenment | Electricity Enlightenment | weekly |
+| ev-euphoria | Ev Euphoria | daily |
+| google-gusts | Google Gusts | weekly |
+| retail-roulette | Retail Roulette | daily |
+| rss-roar | Rss Roar | daily |
+| tremor-tension | Tremor Tension | daily |
+| weather-windfall | Weather Windfall | daily |

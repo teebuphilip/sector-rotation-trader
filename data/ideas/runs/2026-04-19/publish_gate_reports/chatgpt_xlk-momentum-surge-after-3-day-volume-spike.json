@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlk-momentum-surge-after-3-day-volume-spike.md",
+  "target_file": "data/ideas/runs/2026-04-19/intervention/chatgpt_xlk-momentum-surge-after-3-day-volume-spike.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "price_only currently provides close/value data, not volume.",
+    "risk_flags": [
+      "adapter_mismatch",
+      "needs_manual_review",
+      "price_only_volume_gap",
+      "volume_required"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 951,
+    "output_tokens": 78
+  },
+  "cost_usd": 0.0031575,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Volume data is required but the selected adapter is price_only without volume support.\",\n  \"risk_flags\": [\"volume_required\", \"adapter_mismatch\", \"needs_manual_review\"]\n}\n```"
+}

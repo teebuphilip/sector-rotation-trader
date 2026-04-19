@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlre-daily-earthquake-activity-selloff.md",
+  "target_file": "data/ideas/runs/2026-04-19/intervention/chatgpt_xlre-daily-earthquake-activity-selloff.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "no volume data",
+      "potential data source instability",
+      "requires short position",
+      "short_trade_not_supported"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity"
+      ],
+      "scores": {
+        "earthquake_activity": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 905,
+    "output_tokens": 79
+  },
+  "cost_usd": 0.0030525,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is not supported by current algo envelope.\",\n  \"risk_flags\": [\"requires short position\", \"potential data source instability\", \"no volume data\"]\n}\n```"
+}

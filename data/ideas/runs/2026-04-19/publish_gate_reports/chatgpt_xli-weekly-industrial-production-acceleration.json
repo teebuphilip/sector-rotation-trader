@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-19/publish/chatgpt_xli-weekly-industrial-production-acceleration.md",
+  "target_file": "data/ideas/runs/2026-04-19/intervention/chatgpt_xli-weekly-industrial-production-acceleration.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Weekly interpolation of monthly FRED data requires new adapter support.",
+    "risk_flags": [
+      "frequency mismatch monthly to weekly",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "requires interpolation adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 901,
+    "output_tokens": 79
+  },
+  "cost_usd": 0.0030425,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Weekly interpolation of monthly FRED data requires new adapter support.\",\n  \"risk_flags\": [\"low adapter routing confidence\", \"requires interpolation adapter\", \"frequency mismatch monthly to weekly\"]\n}\n```"
+}

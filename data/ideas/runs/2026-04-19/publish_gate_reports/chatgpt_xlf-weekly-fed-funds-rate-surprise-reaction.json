@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlf-weekly-fed-funds-rate-surprise-reaction.md",
+  "target_file": "data/ideas/runs/2026-04-19/intervention/chatgpt_xlf-weekly-fed-funds-rate-surprise-reaction.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "entry logic not supported",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "requires short position",
+      "short_trade_not_supported"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 901,
+    "output_tokens": 79
+  },
+  "cost_usd": 0.0030425,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is not supported by current algo envelope.\",\n  \"risk_flags\": [\"requires short position\", \"low adapter routing confidence\", \"entry logic not supported\"]\n}\n```"
+}

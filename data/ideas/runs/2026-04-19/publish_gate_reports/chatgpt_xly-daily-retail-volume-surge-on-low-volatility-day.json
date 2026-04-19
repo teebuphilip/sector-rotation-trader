@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-04-19/publish/chatgpt_xly-daily-retail-volume-surge-on-low-volatility-day.md",
+  "target_file": "data/ideas/runs/2026-04-19/intervention/chatgpt_xly-daily-retail-volume-surge-on-low-volatility-day.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "price_only currently provides close/value data, not volume.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "price_only_volume_gap",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 935,
+    "output_tokens": 76
+  },
+  "cost_usd": 0.0030975,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is deterministic, uses valid price and volume data from a supported adapter.\",\n  \"risk_flags\": [\"false positives\", \"regime shifts\", \"data source instability\"]\n}\n```"
+}

@@ -1,0 +1,14 @@
+{
+  "spec_file": "data/ideas/runs/2026-04-19/build/chatgpt_xlb-daily-volatility-contraction-breakout.md",
+  "out": "crazy/algos/xlb_daily_volatility_contraction_breakout.py",
+  "adapter": "price_only",
+  "idea_id": "xlb-daily-volatility-contraction-breakout",
+  "name": "Xlb Daily Volatility Contraction Breakout",
+  "universe": [
+    "XLB"
+  ],
+  "frequency": "daily",
+  "threshold": 0.5,
+  "direction": "up",
+  "hold_days": 10
+}

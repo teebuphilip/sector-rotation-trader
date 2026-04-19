@@ -1,0 +1,32 @@
+{
+  "source_file": "data/ideas/runs/2026-04-19/publish/claude_tremor-tension.md",
+  "target_file": "data/ideas/runs/2026-04-19/build/claude_tremor-tension.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a valid adapter for earthquake data, and is structurally sound.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity"
+      ],
+      "scores": {
+        "earthquake_activity": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 900,
+    "output_tokens": 80
+  },
+  "cost_usd": 0.00305,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid adapter for earthquake data, and is structurally sound.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

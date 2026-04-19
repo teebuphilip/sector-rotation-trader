@@ -1,0 +1,32 @@
+{
+  "source_file": "data/ideas/runs/2026-04-19/publish/claude_retail-roulette.md",
+  "target_file": "data/ideas/runs/2026-04-19/build/claude_retail-roulette.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "Spec is deterministic, uses a valid price_only adapter for daily Yahoo Finance prices, and logic is clear.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 898,
+    "output_tokens": 78
+  },
+  "cost_usd": 0.003025,
+  "raw_llm_response": "{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is deterministic, uses a valid price_only adapter for daily Yahoo Finance prices, and logic is clear.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}"
+}

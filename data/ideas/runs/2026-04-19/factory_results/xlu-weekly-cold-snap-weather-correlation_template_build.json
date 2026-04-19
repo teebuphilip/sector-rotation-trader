@@ -1,0 +1,14 @@
+{
+  "spec_file": "data/ideas/runs/2026-04-19/build/chatgpt_xlu-weekly-cold-snap-weather-correlation.md",
+  "out": "crazy/algos/xlu_weekly_cold_snap_weather_correlation.py",
+  "adapter": "weather_series",
+  "idea_id": "xlu-weekly-cold-snap-weather-correlation",
+  "name": "Xlu Weekly Cold Snap Weather Correlation",
+  "universe": [
+    "XLU"
+  ],
+  "frequency": "weekly",
+  "threshold": 0.1,
+  "direction": "down",
+  "hold_days": 14
+}

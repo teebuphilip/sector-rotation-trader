@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-04-19/publish/chatgpt_xlf-intraday-volatility-spike-followed-by-weekly-fade.md",
+  "target_file": "data/ideas/runs/2026-04-19/intervention/chatgpt_xlf-intraday-volatility-spike-followed-by-weekly-fade.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "adapter mapping uncertain",
+      "low_adapter_confidence",
+      "requires intraday volatility data",
+      "requires short position",
+      "short_trade_not_supported",
+      "weekly and daily frequency mismatch"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 930,
+    "output_tokens": 97
+  },
+  "cost_usd": 0.003295,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Spec requires shorting and volume/volatility data not fully supported by current adapters\",\n  \"risk_flags\": [\n    \"requires short position\",\n    \"requires intraday volatility data\",\n    \"weekly and daily frequency mismatch\",\n    \"adapter mapping uncertain\"\n  ]\n}\n```"
+}
