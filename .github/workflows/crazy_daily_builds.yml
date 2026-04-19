@@ -35,6 +35,7 @@ jobs:
       FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
       EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
       SOCRATA_APP_TOKEN: ${{ secrets.SOCRATA_APP_TOKEN }}
+      ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
 
     steps:
       - name: Checkout repo
@@ -162,6 +163,24 @@ jobs:
           git diff --cached --quiet || git commit -m "daily: crazy build factory $RUN_DATE"
           git pull --rebase --autostash
           git push
+
+      - name: Prepare build email
+        if: ${{ always() && env.ALERT_EMAIL_TO != '' }}
+        run: |
+          python scripts/crazy_build_email.py > /tmp/crazy_build_email.txt || echo "crazy_build_email.py failed" > /tmp/crazy_build_email.txt
+
+      - name: Email build report
+        if: ${{ always() && env.ALERT_EMAIL_TO != '' }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.ALERT_EMAIL_USER }}
+          password: ${{ secrets.ALERT_EMAIL_PASS }}
+          subject: "Crazy Build Factory - ${{ env.RUN_DATE }} - ${{ job.status }}"
+          body: file:///tmp/crazy_build_email.txt
+          to: ${{ secrets.ALERT_EMAIL_TO }}
+          from: ${{ secrets.ALERT_EMAIL_USER }}
 
       - name: Assess factory result
         if: always()
