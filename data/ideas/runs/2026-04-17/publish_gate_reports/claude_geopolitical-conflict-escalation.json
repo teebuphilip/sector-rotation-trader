@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-04-17/publish/claude_geopolitical-conflict-escalation.md",
+  "target_file": "data/ideas/runs/2026-04-17/intervention/claude_geopolitical-conflict-escalation.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": true,
+    "reason": "Selected adapter measures earthquakes, not geopolitical conflict or war data.",
+    "risk_flags": [
+      "adapter mismatch",
+      "adapter_behavior_mismatch",
+      "causal incoherence",
+      "invalid data source"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity"
+      ],
+      "scores": {
+        "earthquake_activity": 3,
+        "html_table": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 922,
+    "output_tokens": 88
+  },
+  "cost_usd": 0.003185,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"REJECT\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Geopolitical conflict escalation is not causally linked to seismic activity; earthquake_activity adapter is invalid for this use case.\",\n  \"risk_flags\": [\"invalid data source\", \"causal incoherence\", \"adapter mismatch\"]\n}\n```"
+}

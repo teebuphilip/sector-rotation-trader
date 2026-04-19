@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-17/publish/chatgpt_consumer-discretionary-weekly-volume-price-divergence.md",
+  "target_file": "data/ideas/runs/2026-04-17/intervention/chatgpt_consumer-discretionary-weekly-volume-price-divergence.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "price_only currently provides close/value data, not volume.",
+    "risk_flags": [
+      "entry logic depends on volume threshold",
+      "price_only_volume_gap",
+      "volume data required but price_only adapter lacks volume",
+      "weekly frequency requires volume aggregation"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 906,
+    "output_tokens": 90
+  },
+  "cost_usd": 0.003165,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"The price_only adapter does not provide volume data required for the signal logic.\",\n  \"risk_flags\": [\"volume data required but price_only adapter lacks volume\", \"weekly frequency requires volume aggregation\", \"entry logic depends on volume threshold\"]\n}\n```"
+}

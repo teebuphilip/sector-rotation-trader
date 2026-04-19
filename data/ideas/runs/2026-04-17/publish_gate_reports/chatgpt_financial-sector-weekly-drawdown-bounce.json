@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-17/publish/chatgpt_financial-sector-weekly-drawdown-bounce.md",
+  "target_file": "data/ideas/runs/2026-04-17/build/chatgpt_financial-sector-weekly-drawdown-bounce.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, deterministic, uses a valid price_only adapter for weekly XLF prices.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 890,
+    "output_tokens": 79
+  },
+  "cost_usd": 0.003015,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses a valid price_only adapter for weekly XLF prices.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

@@ -1,0 +1,14 @@
+{
+  "spec_file": "data/ideas/intervention/2026-04-17/chatgpt_utilities-sector-weekly-temperature-drop-signal.md",
+  "out": "crazy/algos/utilities_sector_weekly_temperature_drop_signal.py",
+  "adapter": "weather_series",
+  "idea_id": "utilities-sector-weekly-temperature-drop-signal",
+  "name": "Utilities Sector Weekly Temperature Drop Signal",
+  "universe": [
+    "XLU"
+  ],
+  "frequency": "weekly",
+  "threshold": 0.03,
+  "direction": "down",
+  "hold_days": 14
+}

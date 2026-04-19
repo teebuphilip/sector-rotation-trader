@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-17/publish/claude_work-from-home-frenzy.md",
+  "target_file": "data/ideas/runs/2026-04-17/build/claude_work-from-home-frenzy.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a valid adapter with matching data source and frequency.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 3,
+        "html_table": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 922,
+    "output_tokens": 77
+  },
+  "cost_usd": 0.003075,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid adapter with matching data source and frequency.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

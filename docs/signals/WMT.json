@@ -2,104 +2,23 @@
   "ticker": "WMT",
   "sector": "Consumer Defensive",
   "sector_etf": "XLP",
-  "composite": "2 of 8",
+  "composite": "1 of 5",
   "composite_label": "BEARISH",
   "composite_color": "red",
-  "bullish": 2,
-  "bearish": 6,
-  "neutral": 49,
-  "total_signals": 57,
-  "total_active": 8,
-  "bullish_pct": 25,
+  "bullish": 1,
+  "bearish": 4,
+  "neutral": 63,
+  "total_signals": 68,
+  "total_active": 5,
+  "bullish_pct": 20,
   "breakdown": [
     {
-      "algo_id": "reddit-subreddit-mention-spike",
-      "name": "Reddit Subreddit Mention Spike",
+      "algo_id": "baileymol",
+      "name": "Chaos Rotation Lab",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "cardboard",
-      "name": "Cardboard Box Index",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "reddit-sentiment-spike-trend",
-      "name": "Reddit Sentiment Spike Trend",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "crypto-derivative-arbitrage",
-      "name": "Crypto Derivative Arbitrage",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "congress",
-      "name": "Congress Trading Fade",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "port-container-volume",
-      "name": "Port Container Volume",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "twitter-sentiment-spike",
-      "name": "Twitter Sentiment Spike",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "yield-curve-regime",
-      "name": "Yield Curve Regime",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "tsa",
-      "name": "TSA Body Count",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "cloud-storage-demand-surge",
-      "name": "Cloud Storage Demand Surge",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
+      "days_running": 69,
+      "ytd_pct": -5.61,
       "beat_spy": false
     },
     {
@@ -107,337 +26,13 @@
       "name": "Liquor Store Leading Indicator",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
     {
-      "algo_id": "uber-mobility",
-      "name": "Uber Mobility Index",
-      "algo_type": "crazy",
-      "direction": "BEARISH",
-      "days_running": 67,
-      "ytd_pct": -0.02,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "reddit-volatility-spike",
-      "name": "Reddit Volatility Spike",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "electric-vehicle-charge-station-density",
-      "name": "Electric Vehicle Charge Station Density",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "craigslist",
-      "name": "Craigslist Desperation Index",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "consumer-sentiment",
-      "name": "Consumer Sentiment",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "mortgage-rate-housing-proxy",
-      "name": "Mortgage Rate Housing Proxy",
-      "algo_type": "crazy",
-      "direction": "BULLISH",
-      "days_running": 67,
-      "ytd_pct": -0.02,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "earthquake-energy-demand",
-      "name": "Earthquake Energy Demand Indicator",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "linkedin",
-      "name": "LinkedIn Layoff Propagation",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "small-business-formation",
-      "name": "Small Business Formation",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "airport-shopping-spree",
-      "name": "Airport Shopping Spree",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "freight-rail-carloads",
-      "name": "Freight Rail Carloads",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "airline-load-factor",
-      "name": "Airline Load Factor Proxy",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "misery-rotation",
-      "name": "Misery Rotation",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "reddit-sentiment-volatility-spike",
-      "name": "Reddit Sentiment Volatility Spike",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "lumber-momentum",
-      "name": "Lumber Momentum",
-      "algo_type": "crazy",
-      "direction": "BEARISH",
-      "days_running": 67,
-      "ytd_pct": -0.02,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "credit-card-delinquency",
-      "name": "Credit Card Delinquency",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "superbowl-futures-trade",
-      "name": "Superbowl Futures Trade",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "reddit-emoji-sentiment-spike",
-      "name": "Reddit Emoji Sentiment Spike",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "truck-tonnage",
-      "name": "Truck Tonnage Index",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "reddit-subreddit-sentiment-spike",
-      "name": "Reddit Subreddit Sentiment Spike",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "calls311",
-      "name": "311 Call Rotation",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "reddit-sentiment-spike",
-      "name": "Reddit Sentiment Spike",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "job-posting-acceleration",
-      "name": "Job Posting Acceleration",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "housing-permit-velocity",
-      "name": "Housing Permit Velocity",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "social-media-sentiment-spike",
-      "name": "Social Media Sentiment Spike",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "reddit-gaming-thread-spike",
-      "name": "Reddit Gaming Thread Spike",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "pet-food-supply-chain",
-      "name": "Pet Food Supply Chain Disruption",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "weather-volatility-spike",
-      "name": "Weather Volatility Spike",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "insider-trading-signals",
-      "name": "Insider Trading Signals",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "glassdoor",
-      "name": "Glassdoor Misery Gradient",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "reddit-mentions-volatility-spike",
-      "name": "Reddit Mentions Volatility Spike",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "online-ad-impression-volatility",
-      "name": "Online Ad Impression Volatility Trader",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "baileymol",
-      "name": "Chaos Rotation Lab",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": -5.61,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "electricity-consumption",
-      "name": "Electricity Consumption",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "copper-momentum",
-      "name": "Copper Momentum",
-      "algo_type": "crazy",
-      "direction": "BEARISH",
-      "days_running": 67,
-      "ytd_pct": -0.02,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "high-yield-spread-regime",
-      "name": "High Yield Spread Regime",
-      "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 67,
-      "ytd_pct": 0.0,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "bankruptcy-filing-rate",
-      "name": "Bankruptcy Filing Rate",
+      "algo_id": "utilities-sector-weekly-temperature-drop-signal",
+      "name": "Utilities Sector Weekly Temperature Drop Signal",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 67,
@@ -449,13 +44,13 @@
       "name": "Volatility Spike Follow-Through",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
     {
-      "algo_id": "retail-sales-momentum",
-      "name": "Retail Sales Momentum",
+      "algo_id": "fintech-disruption-wave",
+      "name": "Fintech Disruption Wave",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 67,
@@ -463,11 +58,65 @@
       "beat_spy": false
     },
     {
-      "algo_id": "reddit-subreddit-surge-momentum",
-      "name": "Reddit Subreddit Surge Momentum",
+      "algo_id": "calls311",
+      "name": "311 Call Rotation",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "job-posting-acceleration",
+      "name": "Job Posting Acceleration",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "reddit-subreddit-mention-spike",
+      "name": "Reddit Subreddit Mention Spike",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "reddit-volatility-spike",
+      "name": "Reddit Volatility Spike",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "lumber-momentum",
+      "name": "Lumber Momentum",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "congress",
+      "name": "Congress Trading Fade",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "reddit-emoji-sentiment-spike",
+      "name": "Reddit Emoji Sentiment Spike",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -476,18 +125,468 @@
       "name": "Algo Biscotti (Unconditional Loyalty)",
       "algo_type": "crazy",
       "direction": "BULLISH",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": -3.41,
       "beat_spy": false
     },
     {
-      "algo_id": "dmsr",
-      "name": "Antonacci Dual Momentum Sector Rotation",
+      "algo_id": "high-yield-spread-regime",
+      "name": "High Yield Spread Regime",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "credit-card-delinquency",
+      "name": "Credit Card Delinquency",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "pet-food-supply-chain",
+      "name": "Pet Food Supply Chain Disruption",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "port-container-volume",
+      "name": "Port Container Volume",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "insider-trading-signals",
+      "name": "Insider Trading Signals",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "work-from-home-frenzy",
+      "name": "Work From Home Frenzy",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weather-volatility-spike",
+      "name": "Weather Volatility Spike",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "copper-momentum",
+      "name": "Copper Momentum",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "yield-curve-regime",
+      "name": "Yield Curve Regime",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "retail-sales-momentum",
+      "name": "Retail Sales Momentum",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "reddit-sentiment-spike-trend",
+      "name": "Reddit Sentiment Spike Trend",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "twitter-sentiment-spike",
+      "name": "Twitter Sentiment Spike",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "ev-charging-boom",
+      "name": "Ev Charging Boom",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "online-ad-impression-volatility",
+      "name": "Online Ad Impression Volatility Trader",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "tsa",
+      "name": "TSA Body Count",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "cardboard",
+      "name": "Cardboard Box Index",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "cloud-storage-demand-surge",
+      "name": "Cloud Storage Demand Surge",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "reddit-subreddit-sentiment-spike",
+      "name": "Reddit Subreddit Sentiment Spike",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "consumer-sentiment",
+      "name": "Consumer Sentiment",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "global-tech-earnings-momentum",
+      "name": "Global Tech Earnings Momentum",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "earthquake-energy-demand",
+      "name": "Earthquake Energy Demand Indicator",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "real-estate-sector-weekly-google-trends-home-buying-surge",
+      "name": "Real Estate Sector Weekly Google Trends Home Buying Surge",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": -0.05,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "reddit-gaming-thread-spike",
+      "name": "Reddit Gaming Thread Spike",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "freight-rail-carloads",
+      "name": "Freight Rail Carloads",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "housing-permit-velocity",
+      "name": "Housing Permit Velocity",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "superbowl-futures-trade",
+      "name": "Superbowl Futures Trade",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "electric-vehicle-charge-station-density",
+      "name": "Electric Vehicle Charge Station Density",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "craigslist",
+      "name": "Craigslist Desperation Index",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "port-congestion-squeeze",
+      "name": "Port Congestion Squeeze",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "crypto-derivative-arbitrage",
+      "name": "Crypto Derivative Arbitrage",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "misery-rotation",
+      "name": "Misery Rotation",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "airport-shopping-spree",
+      "name": "Airport Shopping Spree",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "uber-mobility",
+      "name": "Uber Mobility Index",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 69,
+      "ytd_pct": -0.02,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "mortgage-rate-housing-proxy",
+      "name": "Mortgage Rate Housing Proxy",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "reddit-sentiment-spike",
+      "name": "Reddit Sentiment Spike",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "glassdoor",
+      "name": "Glassdoor Misery Gradient",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "reddit-subreddit-surge-momentum",
+      "name": "Reddit Subreddit Surge Momentum",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "airline-load-factor",
+      "name": "Airline Load Factor Proxy",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "airport-security-surge",
+      "name": "Airport Security Surge",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "retail-rush-ahead-of-holidays",
+      "name": "Retail Rush Ahead Of Holidays",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "reddit-sentiment-volatility-spike",
+      "name": "Reddit Sentiment Volatility Spike",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "truck-tonnage",
+      "name": "Truck Tonnage Index",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weather-disruption-ripple-effects",
+      "name": "Weather Disruption Ripple Effects",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "electricity-consumption",
+      "name": "Electricity Consumption",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "social-media-sentiment-spike",
+      "name": "Social Media Sentiment Spike",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "linkedin",
+      "name": "LinkedIn Layoff Propagation",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "small-business-formation",
+      "name": "Small Business Formation",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "bankruptcy-filing-rate",
+      "name": "Bankruptcy Filing Rate",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "utility-power-grid-stress",
+      "name": "Utility Power Grid Stress",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "reddit-mentions-volatility-spike",
+      "name": "Reddit Mentions Volatility Spike",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "baileymol",
+      "name": "Algo Baileymol (Chaos Monger)",
       "algo_type": "normal",
       "direction": "BEARISH",
       "days_running": 74,
-      "ytd_pct": 3.59,
-      "beat_spy": false
+      "ytd_pct": 7.72,
+      "beat_spy": true
     },
     {
       "algo_id": "simple_monthly",
@@ -499,24 +598,6 @@
       "beat_spy": false
     },
     {
-      "algo_id": "faber",
-      "name": "Faber Momentum Rotation",
-      "algo_type": "normal",
-      "direction": "NEUTRAL",
-      "days_running": 74,
-      "ytd_pct": 3.85,
-      "beat_spy": false
-    },
-    {
-      "algo_id": "baileymol",
-      "name": "Algo Baileymol (Chaos Monger)",
-      "algo_type": "normal",
-      "direction": "BEARISH",
-      "days_running": 74,
-      "ytd_pct": 7.72,
-      "beat_spy": false
-    },
-    {
       "algo_id": "biscotti",
       "name": "Algo Biscotti (Unconditional Loyalty)",
       "algo_type": "normal",
@@ -524,9 +605,27 @@
       "days_running": 74,
       "ytd_pct": -0.44,
       "beat_spy": false
+    },
+    {
+      "algo_id": "dmsr",
+      "name": "Antonacci Dual Momentum Sector Rotation",
+      "algo_type": "normal",
+      "direction": "BEARISH",
+      "days_running": 74,
+      "ytd_pct": 3.59,
+      "beat_spy": true
+    },
+    {
+      "algo_id": "faber",
+      "name": "Faber Momentum Rotation",
+      "algo_type": "normal",
+      "direction": "NEUTRAL",
+      "days_running": 74,
+      "ytd_pct": 3.85,
+      "beat_spy": true
     }
   ],
-  "generated": "2026-04-17",
+  "generated": "2026-04-19",
   "lab_started": "2026-01-11",
-  "disclaimer": "Not investment advice. This is experimental research. Past signal performance does not predict future results. Always do your own research."
+  "disclaimer": "This is an experimental signal lab. Not financial advice. Signals are research outputs, not recommendations to buy, sell, or hold any asset. Signals can and will fail. Past performance does not guarantee future results. Results are simulated/model outputs and may not reflect slippage, fees, liquidity, execution delays, or market impact. Third-party data may be incomplete, delayed, inaccurate, or revised. Do your own research and consult a qualified professional before making investment decisions. Paper-traded only \u2014 no real money at risk."
 }

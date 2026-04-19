@@ -1,0 +1,14 @@
+{
+  "spec_file": "data/ideas/intervention/2026-04-17/claude_airport-security-surge.md",
+  "out": "crazy/algos/airport_security_surge.py",
+  "adapter": "tsa_table",
+  "idea_id": "airport-security-surge",
+  "name": "Airport Security Surge",
+  "universe": [
+    "XLI"
+  ],
+  "frequency": "daily",
+  "threshold": 0.2,
+  "direction": "up",
+  "hold_days": 5
+}

@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-17T23:08:36
+Updated (UTC): 2026-04-19T13:47:48
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 52
+Crazy models: 63
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -68,3 +68,14 @@ Crazy models: 52
 | electricity-consumption | Electricity Consumption | weekly |
 | port-container-volume | Port Container Volume | monthly |
 | airline-load-factor | Airline Load Factor Proxy | monthly |
+| real-estate-sector-weekly-google-trends-home-buying-surge | Real Estate Sector Weekly Google Trends Home Buying Surge | weekly |
+| utilities-sector-weekly-temperature-drop-signal | Utilities Sector Weekly Temperature Drop Signal | weekly |
+| airport-security-surge | Airport Security Surge | daily |
+| ev-charging-boom | Ev Charging Boom | weekly |
+| fintech-disruption-wave | Fintech Disruption Wave | daily |
+| global-tech-earnings-momentum | Global Tech Earnings Momentum | weekly |
+| port-congestion-squeeze | Port Congestion Squeeze | weekly |
+| retail-rush-ahead-of-holidays | Retail Rush Ahead Of Holidays | weekly |
+| utility-power-grid-stress | Utility Power Grid Stress | weekly |
+| weather-disruption-ripple-effects | Weather Disruption Ripple Effects | daily |
+| work-from-home-frenzy | Work From Home Frenzy | weekly |

@@ -24,6 +24,11 @@ def _extract_run_date(path: Path) -> str:
         idx = parts.index("runs")
         if idx + 1 < len(parts):
             return parts[idx + 1]
+    for bucket in ("failed", "completed", "intervention"):
+        if bucket in parts:
+            idx = parts.index(bucket)
+            if idx + 1 < len(parts):
+                return parts[idx + 1]
     return _today_iso()
 
 
@@ -55,6 +60,10 @@ def _append_registry_line(module_name: str, class_name: str, dry_run: bool) -> N
 def _publish_dirs(root: Path, date: str | None) -> list[Path]:
     if root.name == "publish":
         return [root]
+    if root.name in {"build", "intervention", "reject"}:
+        return [root]
+    if root.exists() and any(root.glob("*.md")):
+        return [root]
     if date:
         candidate = root / date / "publish" if root.name == "runs" else root / "publish"
         return [candidate] if candidate.exists() else []
@@ -66,6 +75,9 @@ def _publish_dirs(root: Path, date: str | None) -> list[Path]:
 def _move(src: Path, dest_dir: Path, dry_run: bool) -> Path:
     dest_dir.mkdir(parents=True, exist_ok=True)
     dest = dest_dir / src.name
+    if src.resolve() == dest.resolve():
+        print(f"[move] already in place: {src}")
+        return dest
     if dry_run:
         print(f"[dry-run] move {src} -> {dest}")
         return dest
@@ -82,8 +94,18 @@ def _write_result(path: Path, result: dict, dry_run: bool) -> None:
     path.write_text(json.dumps(result, indent=2, sort_keys=True), encoding="utf-8")
 
 
-def _completed_or_triaged(spec_file: Path, run_date: str) -> bool:
-    for base in ["data/ideas/completed", "data/ideas/intervention", "data/ideas/failed"]:
+def _completed_or_triaged(
+    spec_file: Path,
+    run_date: str,
+    retry_failed: bool = False,
+    retry_intervention: bool = False,
+) -> bool:
+    bases = ["data/ideas/completed"]
+    if not retry_intervention:
+        bases.append("data/ideas/intervention")
+    if not retry_failed:
+        bases.append("data/ideas/failed")
+    for base in bases:
         if (Path(base) / run_date / spec_file.name).exists():
             return True
     return False
@@ -98,6 +120,19 @@ def _print_proc(label: str, proc: subprocess.CompletedProcess, verbose: bool) ->
         print(f"[{label}] stderr:\n{proc.stderr}", end="" if proc.stderr.endswith("\n") else "\n")
 
 
+def _failure_excerpt(proc: subprocess.CompletedProcess) -> str:
+    text = (proc.stderr.strip() or proc.stdout.strip() or "command_failed").strip()
+    return text[-3000:]
+
+
+def _used_deterministic_fallback(proc: subprocess.CompletedProcess) -> bool:
+    combined = f"{proc.stdout}\n{proc.stderr}"
+    return (
+        "[done] deterministic fallback complete" in combined
+        or "[step] patch (deterministic fallback)" in combined
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Full crazy idea -> algo factory with hard gates.")
     parser.add_argument("--date", default=_today_iso())
@@ -108,8 +143,11 @@ def main() -> int:
     parser.add_argument("--skip-generate", action="store_true", help="Use existing publish specs instead of generating high-action ideas first")
     parser.add_argument("--build-only", action="store_true", help="Build algos but do not seed/run/move to completed")
     parser.add_argument("--seed-only", action="store_true", help="Seed existing built algos for publish specs; do not build")
+    parser.add_argument("--template-build", action="store_true", help="Use deterministic adapter templates instead of LLM structural build")
     parser.add_argument("--skip-run", action="store_true", help="Skip final crazy_run/precompute after seeding")
     parser.add_argument("--max-failures", type=int, default=5)
+    parser.add_argument("--retry-failed", action="store_true", help="Do not skip specs already present in data/ideas/failed/<date>")
+    parser.add_argument("--retry-intervention", action="store_true", help="Do not skip specs already present in data/ideas/intervention/<date>")
     parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args()
 
@@ -178,7 +216,12 @@ def main() -> int:
 
         print(f"[spec] {spec_file}")
 
-        if _completed_or_triaged(spec_file, run_date):
+        if _completed_or_triaged(
+            spec_file,
+            run_date,
+            retry_failed=args.retry_failed,
+            retry_intervention=args.retry_intervention,
+        ):
             result["status"] = "skipped_already_triaged"
             summary["skipped"] += 1
             print(f"[skip] already triaged: {spec_file}")
@@ -212,22 +255,45 @@ def main() -> int:
                 result["built"] = True
                 summary["built"] += 1
             else:
-                build_proc = _run([
-                    "scripts/run_structural_build.sh",
-                    "--spec-file", str(spec_file),
-                    "--output-path", str(algo_path),
-                ])
+                if args.template_build:
+                    build_proc = _run([
+                        "python",
+                        "scripts/build_template_algo.py",
+                        "--spec-file", str(spec_file),
+                        "--output-path", str(algo_path),
+                        "--adapter", adapters[0],
+                        "--report", str(results_root / f"{idea_id}_template_build.json"),
+                    ])
+                else:
+                    build_proc = _run([
+                        "scripts/run_structural_build.sh",
+                        "--spec-file", str(spec_file),
+                        "--output-path", str(algo_path),
+                    ])
                 _print_proc("build", build_proc, args.verbose)
                 if build_proc.returncode != 0 or not algo_path.exists() or algo_path.stat().st_size == 0:
                     result["status"] = "failed_build"
-                    result["errors"].append(build_proc.stderr.strip() or build_proc.stdout[-2000:] or "build_failed")
+                    excerpt = _failure_excerpt(build_proc)
+                    result["errors"].append(excerpt)
                     summary["failed"] += 1
                     failures += 1
+                    print(f"[error] build failed for {idea_id}")
+                    print(excerpt)
                     _move(spec_file, Path("data/ideas/failed") / run_date, args.dry_run)
                     _write_result(result_path, result, args.dry_run)
                     if failures >= args.max_failures:
                         print(f"[stop] max failures reached: {failures}")
                         break
+                    continue
+                if _used_deterministic_fallback(build_proc):
+                    result["status"] = "intervention_fallback_used"
+                    result["errors"].append(
+                        "deterministic_fallback_used_after_llm_validation_failure"
+                    )
+                    summary["intervention"] += 1
+                    print(f"[intervention] fallback used for {idea_id}; not seeding")
+                    _move(spec_file, Path("data/ideas/intervention") / run_date, args.dry_run)
+                    _write_result(result_path, result, args.dry_run)
                     continue
                 result["built"] = True
                 summary["built"] += 1
@@ -246,7 +312,12 @@ def main() -> int:
         else:
             seed_proc = _run(["python", "crazy_seed.py", "--algo-file", str(algo_path)])
             _print_proc("seed", seed_proc, args.verbose)
-            if seed_proc.returncode != 0:
+            seed_failed = (
+                seed_proc.returncode != 0
+                or "No matching crazy algos found to seed" in seed_proc.stdout
+                or "failed to load" in seed_proc.stdout
+            )
+            if seed_failed:
                 result["status"] = "failed_seed"
                 result["errors"].append(seed_proc.stderr.strip() or seed_proc.stdout[-2000:] or "seed_failed")
                 summary["failed"] += 1

@@ -1,26 +1,5 @@
 {
-  "trade_log": [
-    {
-      "date": "2026-04-17",
-      "action": "BUY",
-      "ticker": "XLP",
-      "shares": 485.0837,
-      "price": 82.46,
-      "cost": 40000.0,
-      "margin": false,
-      "fees": 9.95
-    },
-    {
-      "date": "2026-04-17",
-      "action": "BUY",
-      "ticker": "XLU",
-      "shares": 649.9133,
-      "price": 46.16,
-      "cost": 30000.0,
-      "margin": false,
-      "fees": 9.95
-    }
-  ],
+  "trade_log": [],
   "daily_snapshots": [
     {
       "date": "2026-01-16",
@@ -684,32 +663,33 @@
     },
     {
       "date": "2026-04-17",
-      "cash": 29980.1,
+      "cash": 100000,
       "borrowed": 0.0,
       "interest": 0.0,
-      "equity": 99980.1,
-      "positions": {
-        "XLP": {
-          "shares": 485.0837,
-          "entry_price": 82.46,
-          "current_price": 82.46,
-          "market_value": 40000.0,
-          "unrealized_pnl": 0.0,
-          "entry_date": "2026-04-17",
-          "margin": false
-        },
-        "XLU": {
-          "shares": 649.9133,
-          "entry_price": 46.16,
-          "current_price": 46.16,
-          "market_value": 30000.0,
-          "unrealized_pnl": 0.0,
-          "entry_date": "2026-04-17",
-          "margin": false
-        }
-      },
+      "equity": 100000.0,
+      "positions": {},
       "sector": "Mortgage Rate Housing Proxy",
-      "num_positions": 2
+      "num_positions": 0
+    },
+    {
+      "date": "2026-04-19",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Mortgage Rate Housing Proxy",
+      "num_positions": 0
+    },
+    {
+      "date": "2026-04-19",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Mortgage Rate Housing Proxy",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-16"

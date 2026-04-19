@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-17/publish/claude_airport-security-surge.md",
+  "target_file": "data/ideas/runs/2026-04-17/build/claude_airport-security-surge.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "tsa_table",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a real adapter with matching data source and deterministic routing.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "tsa_table"
+      ],
+      "scores": {
+        "tsa_table": 3,
+        "html_table": 2
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 888,
+    "output_tokens": 77
+  },
+  "cost_usd": 0.00299,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"tsa_table\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a real adapter with matching data source and deterministic routing.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

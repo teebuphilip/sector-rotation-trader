@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-17/publish/chatgpt_tech-sector-volume-spike-after-3-day-price-dip.md",
+  "target_file": "data/ideas/runs/2026-04-17/intervention/chatgpt_tech-sector-volume-spike-after-3-day-price-dip.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "price_only currently provides close/value data, not volume.",
+    "risk_flags": [
+      "potential data source mismatch",
+      "price_only_volume_gap",
+      "volume required but adapter is price_only"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 941,
+    "output_tokens": 77
+  },
+  "cost_usd": 0.0031225,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"price_only adapter does not provide volume data required for the signal\",\n  \"risk_flags\": [\"volume required but adapter is price_only\", \"potential data source mismatch\"]\n}\n```"
+}

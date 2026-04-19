@@ -1,0 +1,32 @@
+{
+  "source_file": "data/ideas/runs/2026-04-17/publish/chatgpt_consumer-discretionary-weekly-google-trends-surge.md",
+  "target_file": "data/ideas/runs/2026-04-17/build/chatgpt_consumer-discretionary-weekly-google-trends-surge.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, deterministic, uses existing google_trends adapter with appropriate weekly frequency.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 907,
+    "output_tokens": 79
+  },
+  "cost_usd": 0.0030575,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses existing google_trends adapter with appropriate weekly frequency.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

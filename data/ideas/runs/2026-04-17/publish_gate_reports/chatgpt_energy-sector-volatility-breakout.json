@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-17/publish/chatgpt_energy-sector-volatility-breakout.md",
+  "target_file": "data/ideas/runs/2026-04-17/intervention/chatgpt_energy-sector-volatility-breakout.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "Volatility calculation and volume requirements need manual review for adapter compatibility.",
+    "risk_flags": [
+      "entry/exit logic needs clarification",
+      "volatility calculation not native",
+      "volume data not confirmed"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 911,
+    "output_tokens": 83
+  },
+  "cost_usd": 0.0031075,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Volatility calculation and volume requirements need manual review for adapter compatibility.\",\n  \"risk_flags\": [\"volatility calculation not native\", \"volume data not confirmed\", \"entry/exit logic needs clarification\"]\n}\n```"
+}

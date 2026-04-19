@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-04-17/publish/chatgpt_electric-vehicle-charger-count-surge-impacts-tech-sector.md",
+  "target_file": "data/ideas/runs/2026-04-17/build/chatgpt_electric-vehicle-charger-count-surge-impacts-tech-sector.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "openchargemap",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a real adapter with matching data source and deterministic routing.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "openchargemap"
+      ],
+      "scores": {
+        "openchargemap": 3,
+        "html_table": 1,
+        "price_only": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 922,
+    "output_tokens": 78
+  },
+  "cost_usd": 0.003085,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"openchargemap\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a real adapter with matching data source and deterministic routing.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

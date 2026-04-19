@@ -1,0 +1,14 @@
+{
+  "spec_file": "data/ideas/intervention/2026-04-17/claude_utility-power-grid-stress.md",
+  "out": "crazy/algos/utility_power_grid_stress.py",
+  "adapter": "eia_electricity",
+  "idea_id": "utility-power-grid-stress",
+  "name": "Utility Power Grid Stress",
+  "universe": [
+    "XLU"
+  ],
+  "frequency": "weekly",
+  "threshold": 0.05,
+  "direction": "up",
+  "hold_days": 14
+}

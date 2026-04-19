@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-17/publish/chatgpt_basic-materials-sector-price-momentum-reversal.md",
+  "target_file": "data/ideas/runs/2026-04-17/intervention/chatgpt_basic-materials-sector-price-momentum-reversal.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "position sizing includes short exposure",
+      "requires shorting",
+      "short_trade_not_supported"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 898,
+    "output_tokens": 77
+  },
+  "cost_usd": 0.003015,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is not supported by current long/flat adapter logic.\",\n  \"risk_flags\": [\"requires shorting\", \"position sizing includes short exposure\"]\n}\n```"
+}

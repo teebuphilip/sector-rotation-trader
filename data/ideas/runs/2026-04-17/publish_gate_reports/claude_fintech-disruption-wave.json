@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-17/publish/claude_fintech-disruption-wave.md",
+  "target_file": "data/ideas/runs/2026-04-17/build/claude_fintech-disruption-wave.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a valid rss_count adapter for FinTech news counts, and is deterministic.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "rss_count"
+      ],
+      "scores": {
+        "rss_count": 2,
+        "html_table": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 914,
+    "output_tokens": 81
+  },
+  "cost_usd": 0.003095,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid rss_count adapter for FinTech news counts, and is deterministic.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

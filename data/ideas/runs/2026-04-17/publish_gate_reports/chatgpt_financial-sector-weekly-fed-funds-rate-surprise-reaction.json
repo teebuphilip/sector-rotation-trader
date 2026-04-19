@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-04-17/publish/chatgpt_financial-sector-weekly-fed-funds-rate-surprise-reaction.md",
+  "target_file": "data/ideas/runs/2026-04-17/intervention/chatgpt_financial-sector-weekly-fed-funds-rate-surprise-reaction.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "FRED provides observed series, not consensus surprise data.",
+    "risk_flags": [
+      "fred_consensus_surprise_gap",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "missing consensus data source",
+      "requires new adapter for consensus"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 902,
+    "output_tokens": 82
+  },
+  "cost_usd": 0.003075,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter provides market consensus data for Fed funds rate surprise comparison.\",\n  \"risk_flags\": [\"low adapter routing confidence\", \"missing consensus data source\", \"requires new adapter for consensus\"]\n}\n```"
+}

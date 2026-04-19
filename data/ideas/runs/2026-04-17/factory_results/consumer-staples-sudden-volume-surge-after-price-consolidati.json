@@ -1,0 +1,13 @@
+{
+  "adapter": "price_only",
+  "algo_file": "crazy/algos/consumer_staples_sudden_volume_surge_after_price_consolidati.py",
+  "built": false,
+  "errors": [
+    "value'.\n- Signal logic attempts to compute daily range and volume but adapter output does not provide required columns, so signal logic does not follow spec intent.\n- Signal logic partially implements entry and exit conditions but on incorrect data columns, thus failing spec requirements.\n- Position sizing uses 5% allocation per signal and max exposure is not explicitly enforced but 5% per signal with single ticker is acceptable.\n- Signal names RISK_ON/RISK_OFF/HOLD are acceptable as per instructions.\n- Overall, failure due to adapter output columns mismatch and incorrect signal logic implementation.\n[validate-llm] wrote data/algos_codegen/structural_2026-04-19_063724/validate_llm_report.json\n[step] patch (fix)\n[patch][openai] cost=$0.005895\n[patch] wrote data/algos_codegen/structural_2026-04-19_063724/patch_fix_report.json\n[step] validate llm (fix)\n[validate-llm][openai] cost=$0.003842\nFAIL\n- Code imports the correct adapter and uses its output columns correctly (date, value).\n- Signal logic does not implement the entry condition from the spec (7-day range <0.5% and volume surge) because volume data is unavailable; it only implements exit logic.\n- Entry logic always returns HOLD due to missing volume and range data, which does not follow the spec intent to enter on the specified trigger.\n- Exit logic correctly follows the spec intent (exit after 10 days or 5% price gain).\n- Position sizing logic matches spec allocation per signal (5%) and max exposure (20%) is implied by code structure.\n- Overall, failure to implement the entry trigger condition means the code does not fully follow the spec intent.\n[validate-llm] wrote data/algos_codegen/structural_2026-04-19_063724/validate_llm_fix_report.json\n[error] LLM validation failed after fix pass; skipping final validation.\n[step] patch (deterministic fallback)\n[patch-deterministic] applied\n[step] validate final (fallback)\nFAIL\n- missing_risk_off_exit\n- missing_allocation_per_signal_5pct\n- missing_max_total_exposure_20pct\n"
+  ],
+  "idea_id": "consumer-staples-sudden-volume-surge-after-price-consolidati",
+  "run_ok": null,
+  "seeded": false,
+  "spec_file": "data/ideas/runs/2026-04-17/build/chatgpt_consumer-staples-sudden-volume-surge-after-price-consolidati.md",
+  "status": "failed_build"
+}
