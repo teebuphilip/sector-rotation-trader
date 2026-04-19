@@ -54,7 +54,7 @@ def route_text(text: str) -> list[str]:
 
     # Allow multi-adapter combos for known multi-source specs
     multi_adapters = set()
-    if "fred" in text_l or "federal reserve" in text_l or "freight transportation" in text_l or "usda" in text_l:
+    if "fred" in text_l or "federal reserve" in text_l or "freight transportation" in text_l:
         multi_adapters.add("fred_series")
     if "google trends" in text_l or "search interest" in text_l or "search volume" in text_l:
         multi_adapters.add("google_trends")

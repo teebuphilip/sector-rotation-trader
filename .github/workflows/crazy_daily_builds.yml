@@ -163,8 +163,34 @@ jobs:
           git pull --rebase --autostash
           git push
 
-      - name: Fail if factory failed
-        if: steps.autogen.outcome == 'failure'
+      - name: Assess factory result
+        if: always()
         run: |
-          echo "Factory step failed. Generated artifacts were committed where possible; inspect the workflow summary and factory_results."
-          exit 1
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          run_date = os.environ["RUN_DATE"]
+          summary_path = Path(f"data/ideas/runs/{run_date}/factory_results/summary.json")
+          if not summary_path.exists():
+              raise SystemExit("Factory summary missing; build pipeline did not produce a result.")
+
+          summary = json.loads(summary_path.read_text())
+          completed = int(summary.get("completed") or 0)
+          seeded = int(summary.get("seeded") or 0)
+          failed = int(summary.get("failed") or 0)
+          run_ok = summary.get("run_ok", True)
+
+          print(
+              f"factory completed={completed} seeded={seeded} "
+              f"failed={failed} run_ok={run_ok}"
+          )
+
+          if run_ok is False:
+              raise SystemExit("Factory built algos, but final crazy_run/precompute failed.")
+          if completed == 0 or seeded == 0:
+              raise SystemExit("Factory produced no seeded algos; this is a real failure.")
+          if failed:
+              print("Factory had parked/failed specs, but seeded usable algos. Treating as success.")
+          PY

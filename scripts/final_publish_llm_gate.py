@@ -20,6 +20,17 @@ from adapter_router import route_text, score_text
 
 VALID_DECISIONS = {"BUILD", "INTERVENTION", "REJECT"}
 DEFAULT_MODEL = "gpt-4.1-mini"
+TEMPLATE_SUPPORTED_ADAPTERS = {
+    "earthquake_activity",
+    "openchargemap",
+    "google_trends",
+    "rss_count",
+    "weather_series",
+    "tsa_table",
+    "price_only",
+    "eia_electricity",
+    "port_container_volume",
+}
 
 
 SYSTEM_PROMPT = """You are the final buildability gate for a high-action trading signal lab.
@@ -130,7 +141,8 @@ def _default_output_dir(publish_dir: Path) -> Path:
 
 def _deterministic_override(markdown: str, route: Dict[str, Any]) -> Dict[str, Any]:
     text = markdown.lower()
-    adapters = set(route.get("adapters") or [])
+    adapter_list = route.get("adapters") or []
+    adapters = set(adapter_list)
     flags = []
     decision = None
     reason = None
@@ -166,6 +178,12 @@ def _deterministic_override(markdown: str, route: Dict[str, Any]) -> Dict[str, A
         decision = "INTERVENTION"
         reason = "FRED provides observed series, not consensus surprise data."
         flags.append("fred_consensus_surprise_gap")
+
+    if adapter_list and adapter_list[0] not in TEMPLATE_SUPPORTED_ADAPTERS:
+        decision = "INTERVENTION"
+        reason = f"Template builder does not support {adapter_list[0]} yet."
+        needs_new_adapter = True
+        flags.append("unsupported_template_adapter")
 
     if "price_only" in adapters and "volume" in text:
         decision = "INTERVENTION"
