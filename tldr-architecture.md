@@ -15,3 +15,4 @@ Force rank (`data/rank_history.csv`) is full-window/since-seed performance; roll
 The standalone content engine is separate from tactical and experiment workflows: `scripts/run_content_engine.sh` reads rank history, rolling 30D, and signal precompute outputs, writes `reports/deep_validation/`, then renders deterministic text files under `content/`.
 Content generation uses the deep validation JSON as truth and does not recompute metrics or use an LLM.
 Public pages and CTAs are served from `docs/`, while generated content lives in `content/` and can later be copied to a separate website repo.
+Professional Backtest V1 is a reusable engine under `backtest/` plus `scripts/run_professional_backtest.py`; it reviews every algo, runs only honest price-based long/cash sector ETF backtests, executes next trading day open with slippage, compares to SPY, and labels unsupported non-price/live-only strategies instead of faking metrics.

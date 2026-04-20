@@ -469,6 +469,58 @@ Evening/tactical email:
 - `scripts/evening_email.py`: post-close tactical email.
 - `scripts/daily_stats_email.py`: broader daily stats email.
 
+
+## Professional Backtest V1
+
+The professional backtest layer is separate from seed/bootstrap. Seed initializes algo state; the V1 backtest grades only what can be honestly tested with price history.
+
+V1 scope:
+
+```text
+sector ETF / SPY price history
+signal after close
+execute next trading day open
+5 bps default slippage
+long/cash only
+SPY benchmark
+```
+
+Run one algo:
+
+```bash
+python scripts/run_professional_backtest.py --algo-id xle-weekly-drawdown-rebound-signal
+```
+
+Run all normal and crazy algos through the classifier/backtester:
+
+```bash
+python scripts/run_professional_backtest.py --family all
+```
+
+Outputs:
+
+```text
+reports/backtests/latest.json
+reports/backtests/latest.md
+reports/backtests/algos/<algo_id>/metrics.json
+reports/backtests/algos/<algo_id>/summary.md
+reports/backtests/algos/<algo_id>/equity_curve.csv
+reports/backtests/algos/<algo_id>/trades.csv
+```
+
+Labels:
+
+```text
+BACKTEST_PASS
+BACKTEST_WEAK
+BACKTEST_FAIL
+INSUFFICIENT_ACTIVITY
+UNSUPPORTED_DATA
+UNSUPPORTED_SHORT
+```
+
+Important: V1 reviews every algo, but only price-compatible long/cash strategies get a real backtest grade. Google Trends, Reddit, FRED revisions, weather, 311, RSS, and other non-price sources remain live-only or unsupported until we have point-in-time historical data.
+
 ## Standalone Content Engine
 
 The content engine is deliberately separate from the tactical run.

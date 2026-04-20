@@ -418,6 +418,40 @@ Use:
 
 These rankings can disagree. That is expected. A signal can be poor since seed but strong over the last 30 days.
 
+
+## Professional Backtest V1 Architecture
+
+The backtest system is a reusable engine, not one-off code per algo. It loads existing normal/crazy algo plugins, classifies whether each can be honestly tested under V1 rules, then runs only supported algos.
+
+Files:
+
+- `backtest/classifier.py`: decides `BACKTESTABLE`, `UNSUPPORTED_DATA`, or `UNSUPPORTED_SHORT`.
+- `backtest/price_data.py`: downloads/caches OHLCV price data and builds the price-only adapter envelope.
+- `backtest/engine.py`: no-lookahead simulation loop, next-open execution, slippage, long/cash rebalancing.
+- `backtest/metrics.py`: SPY comparison, alpha, drawdown, Sharpe, trade count, win rate, turnover, labels.
+- `backtest/report.py`: per-algo and master JSON/Markdown/CSV outputs.
+- `scripts/run_professional_backtest.py`: CLI entry point.
+
+V1 method:
+
+```text
+signal computed after close on day T
+-> target queued
+-> trade executes at next trading day open T+1
+-> slippage applied
+-> daily equity marked at close
+-> compared to SPY buy-and-hold
+```
+
+V1 intentionally rejects or parks:
+
+- native short exposure;
+- non-sector/non-SPY tickers;
+- non-price adapters without point-in-time historical data;
+- direct live downloads that cannot be proven point-in-time safe.
+
+This is the credibility layer: generated does not mean trusted, seeded does not mean proven, and only backtestable signals get a professional V1 grade.
+
 ## Tactical Email Architecture
 
 Scripts:
