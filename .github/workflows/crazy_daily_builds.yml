@@ -2,8 +2,9 @@ name: Crazy Daily Build Factory
 
 on:
   schedule:
-    # Morning UTC, separate from the after-close tactical run.
-    - cron: "45 10 * * *"
+    # Runs after the after-close strategic run has had time to finish.
+    # Daily Sector Rotation Run starts at 22:30 UTC on weekdays.
+    - cron: "30 23 * * 1-5"
   workflow_dispatch:
     inputs:
       run_date:
