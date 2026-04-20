@@ -105,6 +105,30 @@
       "cost": 4998.81,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-20",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 41.5149,
+      "price": 120.41,
+      "proceeds": 4988.6,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -10.21,
+      "pnl_pct": -0.2,
+      "entry_date": "2026-04-19",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-20",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 41.5065,
+      "price": 120.41,
+      "cost": 4997.8,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -822,6 +846,36 @@
           "market_value": 4998.81,
           "unrealized_pnl": 0.0,
           "entry_date": "2026-04-19",
+          "margin": false
+        }
+      },
+      "sector": "Retail Roulette",
+      "num_positions": 1
+    },
+    {
+      "date": "2026-04-20",
+      "cash": 99956.01,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99956.01,
+      "positions": {},
+      "sector": "Retail Roulette",
+      "num_positions": 0
+    },
+    {
+      "date": "2026-04-20",
+      "cash": 94948.26,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99946.06,
+      "positions": {
+        "XLY": {
+          "shares": 41.5065,
+          "entry_price": 120.41,
+          "current_price": 120.41,
+          "market_value": 4997.8,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-20",
           "margin": false
         }
       },

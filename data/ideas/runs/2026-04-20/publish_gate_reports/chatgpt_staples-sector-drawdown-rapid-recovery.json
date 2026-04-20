@@ -1,0 +1,32 @@
+{
+  "source_file": "data/ideas/runs/2026-04-20/publish/chatgpt_staples-sector-drawdown-rapid-recovery.md",
+  "target_file": "data/ideas/runs/2026-04-20/build/chatgpt_staples-sector-drawdown-rapid-recovery.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "Spec is deterministic, uses valid price_only adapter for daily XLP prices, and logic is clear.",
+    "risk_flags": [
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 931,
+    "output_tokens": 72
+  },
+  "cost_usd": 0.0030475,
+  "raw_llm_response": "{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is deterministic, uses valid price_only adapter for daily XLP prices, and logic is clear.\",\n  \"risk_flags\": [\"false positives\", \"regime shifts\"]\n}"
+}

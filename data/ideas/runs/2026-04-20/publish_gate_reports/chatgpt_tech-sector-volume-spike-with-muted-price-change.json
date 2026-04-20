@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-20/publish/chatgpt_tech-sector-volume-spike-with-muted-price-change.md",
+  "target_file": "data/ideas/runs/2026-04-20/intervention/chatgpt_tech-sector-volume-spike-with-muted-price-change.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "price_only currently provides close/value data, not volume.",
+    "risk_flags": [
+      "potential_data_source_mismatch",
+      "price_only_volume_gap",
+      "volume_required_but_adapter_price_only"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 945,
+    "output_tokens": 82
+  },
+  "cost_usd": 0.0031825,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Volume data is required but the selected adapter is price_only which may not provide volume.\",\n  \"risk_flags\": [\"volume_required_but_adapter_price_only\", \"potential_data_source_mismatch\"]\n}\n```"
+}

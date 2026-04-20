@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-20/publish/claude_crypto-capitulation-countdown.md",
+  "target_file": "data/ideas/runs/2026-04-20/build/claude_crypto-capitulation-countdown.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "Spec is deterministic, uses valid price_only adapter for BTC-USD and SPY daily prices, and logic is clear.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 929,
+    "output_tokens": 85
+  },
+  "cost_usd": 0.0031725,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is deterministic, uses valid price_only adapter for BTC-USD and SPY daily prices, and logic is clear.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

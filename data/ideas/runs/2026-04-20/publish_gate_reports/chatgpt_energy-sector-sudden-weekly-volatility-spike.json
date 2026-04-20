@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-04-20/publish/chatgpt_energy-sector-sudden-weekly-volatility-spike.md",
+  "target_file": "data/ideas/runs/2026-04-20/intervention/chatgpt_energy-sector-sudden-weekly-volatility-spike.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": true,
+    "reason": "Realized volatility is not directly provided by price_only adapter and requires a volatility-specific adapter.",
+    "risk_flags": [
+      "adapter mismatch",
+      "requires realized volatility data",
+      "volume not specified",
+      "weekly frequency"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 897,
+    "output_tokens": 86
+  },
+  "cost_usd": 0.0031025,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Realized volatility is not directly provided by price_only adapter and requires a volatility-specific adapter.\",\n  \"risk_flags\": [\"requires realized volatility data\", \"adapter mismatch\", \"weekly frequency\", \"volume not specified\"]\n}\n```"
+}

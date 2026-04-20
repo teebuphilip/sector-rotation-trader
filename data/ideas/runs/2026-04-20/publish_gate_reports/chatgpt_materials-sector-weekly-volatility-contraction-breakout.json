@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-20/publish/chatgpt_materials-sector-weekly-volatility-contraction-breakout.md",
+  "target_file": "data/ideas/runs/2026-04-20/intervention/chatgpt_materials-sector-weekly-volatility-contraction-breakout.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": true,
+    "reason": "Realized volatility is required but price_only adapter does not provide volatility data.",
+    "risk_flags": [
+      "adapter mismatch",
+      "requires realized volatility",
+      "weekly frequency"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 910,
+    "output_tokens": 77
+  },
+  "cost_usd": 0.003045,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Realized volatility is required but price_only adapter does not provide volatility data.\",\n  \"risk_flags\": [\"requires realized volatility\", \"adapter mismatch\", \"weekly frequency\"]\n}\n```"
+}

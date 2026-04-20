@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-04-20/publish/chatgpt_real-estate-weekly-google-trends-surge-for-mortgage-rates.md",
+  "target_file": "data/ideas/runs/2026-04-20/intervention/chatgpt_real-estate-weekly-google-trends-surge-for-mortgage-rates.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "adapter matches data source",
+      "requires short position",
+      "short_trade_not_supported",
+      "volume data not needed"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 3,
+        "html_table": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 934,
+    "output_tokens": 80
+  },
+  "cost_usd": 0.003135,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is not supported by current algo envelope.\",\n  \"risk_flags\": [\"requires short position\", \"volume data not needed\", \"adapter matches data source\"]\n}\n```"
+}

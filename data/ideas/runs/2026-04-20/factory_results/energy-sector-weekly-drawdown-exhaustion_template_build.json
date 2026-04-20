@@ -1,0 +1,14 @@
+{
+  "spec_file": "data/ideas/runs/2026-04-20/build/chatgpt_energy-sector-weekly-drawdown-exhaustion.md",
+  "out": "crazy/algos/energy_sector_weekly_drawdown_exhaustion.py",
+  "adapter": "price_only",
+  "idea_id": "energy-sector-weekly-drawdown-exhaustion",
+  "name": "Energy Sector Weekly Drawdown Exhaustion",
+  "universe": [
+    "XLE"
+  ],
+  "frequency": "weekly",
+  "threshold": 0.08,
+  "direction": "down",
+  "hold_days": 28
+}

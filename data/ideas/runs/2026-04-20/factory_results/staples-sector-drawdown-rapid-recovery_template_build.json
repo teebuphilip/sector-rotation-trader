@@ -1,0 +1,14 @@
+{
+  "spec_file": "data/ideas/runs/2026-04-20/build/chatgpt_staples-sector-drawdown-rapid-recovery.md",
+  "out": "crazy/algos/staples_sector_drawdown_rapid_recovery.py",
+  "adapter": "price_only",
+  "idea_id": "staples-sector-drawdown-rapid-recovery",
+  "name": "Staples Sector Drawdown Rapid Recovery",
+  "universe": [
+    "XLP"
+  ],
+  "frequency": "daily",
+  "threshold": 0.03,
+  "direction": "up",
+  "hold_days": 5
+}

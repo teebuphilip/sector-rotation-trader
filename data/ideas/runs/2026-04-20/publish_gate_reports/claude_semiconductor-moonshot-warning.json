@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-20/publish/claude_semiconductor-moonshot-warning.md",
+  "target_file": "data/ideas/runs/2026-04-20/build/claude_semiconductor-moonshot-warning.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "Spec is deterministic, uses valid price_only adapter for daily price data, and logic is clear.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 910,
+    "output_tokens": 80
+  },
+  "cost_usd": 0.003075,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is deterministic, uses valid price_only adapter for daily price data, and logic is clear.\",\n  \"risk_flags\": [\"false positives\", \"regime shifts\", \"data source instability\"]\n}\n```"
+}

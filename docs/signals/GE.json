@@ -2,22 +2,22 @@
   "ticker": "GE",
   "sector": "Industrials",
   "sector_etf": "XLI",
-  "composite": "4 of 11",
+  "composite": "5 of 13",
   "composite_label": "MIXED",
   "composite_color": "yellow",
-  "bullish": 4,
-  "bearish": 7,
-  "neutral": 71,
-  "total_signals": 82,
-  "total_active": 11,
-  "bullish_pct": 36,
+  "bullish": 5,
+  "bearish": 8,
+  "neutral": 84,
+  "total_signals": 97,
+  "total_active": 13,
+  "bullish_pct": 38,
   "breakdown": [
     {
       "algo_id": "reddit-subreddit-mention-spike",
       "name": "Reddit Subreddit Mention Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -26,8 +26,17 @@
       "name": "Cardboard Box Index",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "semiconductor-moonshot-warning",
+      "name": "Semiconductor Moonshot Warning",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.05,
       "beat_spy": false
     },
     {
@@ -35,8 +44,17 @@
       "name": "Ev Euphoria",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "consumer-discretionary-google-trends-surge-for-sale-keywords",
+      "name": "Consumer Discretionary Google Trends Surge For Sale Keywords",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": -0.04,
       "beat_spy": false
     },
     {
@@ -44,7 +62,7 @@
       "name": "Reddit Sentiment Spike Trend",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -53,7 +71,7 @@
       "name": "Crypto Derivative Arbitrage",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -62,7 +80,7 @@
       "name": "Congress Trading Fade",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -71,7 +89,7 @@
       "name": "Port Container Volume",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -80,7 +98,7 @@
       "name": "Twitter Sentiment Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -89,8 +107,8 @@
       "name": "Retail Roulette",
       "algo_type": "crazy",
       "direction": "BEARISH",
-      "days_running": 67,
-      "ytd_pct": -0.03,
+      "days_running": 69,
+      "ytd_pct": -0.05,
       "beat_spy": false
     },
     {
@@ -98,7 +116,7 @@
       "name": "Yield Curve Regime",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -107,7 +125,7 @@
       "name": "TSA Body Count",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -116,7 +134,7 @@
       "name": "Cloud Storage Demand Surge",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -125,7 +143,7 @@
       "name": "Liquor Store Leading Indicator",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -134,7 +152,7 @@
       "name": "Uber Mobility Index",
       "algo_type": "crazy",
       "direction": "BEARISH",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": -0.02,
       "beat_spy": false
     },
@@ -143,7 +161,7 @@
       "name": "Reddit Volatility Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -152,7 +170,7 @@
       "name": "Electric Vehicle Charge Station Density",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -161,7 +179,7 @@
       "name": "Craigslist Desperation Index",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -170,7 +188,7 @@
       "name": "Consumer Sentiment",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -179,7 +197,7 @@
       "name": "Mortgage Rate Housing Proxy",
       "algo_type": "crazy",
       "direction": "BEARISH",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": -0.02,
       "beat_spy": false
     },
@@ -188,7 +206,16 @@
       "name": "Airport Security Surge",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 69,
+      "days_running": 71,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "lumber-futures-rollercoaster",
+      "name": "Lumber Futures Rollercoaster",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -197,7 +224,7 @@
       "name": "Port Congestion Squeeze",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 69,
+      "days_running": 71,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -206,7 +233,7 @@
       "name": "Earthquake Energy Demand Indicator",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -215,7 +242,7 @@
       "name": "LinkedIn Layoff Propagation",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -224,7 +251,7 @@
       "name": "Small Business Formation",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -233,7 +260,7 @@
       "name": "Airport Shopping Spree",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -242,7 +269,7 @@
       "name": "Global Tech Earnings Momentum",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 69,
+      "days_running": 71,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -251,7 +278,7 @@
       "name": "Freight Rail Carloads",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -260,7 +287,7 @@
       "name": "Airline Load Factor Proxy",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -269,7 +296,7 @@
       "name": "Misery Rotation",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -278,13 +305,31 @@
       "name": "Reddit Sentiment Volatility Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
     {
       "algo_id": "xlu-weekly-cold-snap-weather-correlation",
       "name": "Xlu Weekly Cold Snap Weather Correlation",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 69,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "earthquake-aftershock-amplifier",
+      "name": "Earthquake Aftershock Amplifier",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.05,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "ev-charging-station-stampede",
+      "name": "Ev Charging Station Stampede",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 67,
@@ -296,7 +341,7 @@
       "name": "Ev Charging Boom",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 69,
+      "days_running": 71,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -305,8 +350,26 @@
       "name": "Real Estate Sector Weekly Google Trends Home Buying Surge",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 69,
+      "days_running": 71,
       "ytd_pct": -0.05,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "technology-sector-daily-ev-charger-count-surge",
+      "name": "Technology Sector Daily Ev Charger Count Surge",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "crypto-capitulation-countdown",
+      "name": "Crypto Capitulation Countdown",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
       "beat_spy": false
     },
     {
@@ -314,7 +377,7 @@
       "name": "Tremor Tension",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": -0.14,
       "beat_spy": false
     },
@@ -323,7 +386,7 @@
       "name": "Lumber Momentum",
       "algo_type": "crazy",
       "direction": "BEARISH",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": -0.02,
       "beat_spy": false
     },
@@ -332,7 +395,7 @@
       "name": "Credit Card Delinquency",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -341,7 +404,7 @@
       "name": "Superbowl Futures Trade",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -350,7 +413,7 @@
       "name": "Reddit Emoji Sentiment Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -359,7 +422,7 @@
       "name": "Truck Tonnage Index",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -368,7 +431,7 @@
       "name": "Rss Roar",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -377,7 +440,7 @@
       "name": "Reddit Subreddit Sentiment Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -386,7 +449,7 @@
       "name": "311 Call Rotation",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -395,7 +458,7 @@
       "name": "Reddit Sentiment Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -404,8 +467,17 @@
       "name": "Job Posting Acceleration",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "materials-sector-weekly-positive-correlation-breakdown-with-",
+      "name": "Materials Sector Weekly Positive Correlation Breakdown With Xlb",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.03,
       "beat_spy": false
     },
     {
@@ -413,7 +485,7 @@
       "name": "Housing Permit Velocity",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -422,7 +494,7 @@
       "name": "Xlb Daily Volatility Contraction Breakout",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -431,7 +503,7 @@
       "name": "Retail Rush Ahead Of Holidays",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 69,
+      "days_running": 71,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -440,8 +512,17 @@
       "name": "Utility Power Grid Stress",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 69,
+      "days_running": 71,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "healthcare-sector-google-trends-spike-in-flu-symptoms",
+      "name": "Healthcare Sector Google Trends Spike In Flu Symptoms",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": -0.08,
       "beat_spy": false
     },
     {
@@ -449,7 +530,7 @@
       "name": "Xlc Weekly Google Trends Surge In 5g Rollout",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": -0.41,
       "beat_spy": false
     },
@@ -458,8 +539,17 @@
       "name": "Xlu Daily Electricity Demand Surge",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": -0.1,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "solar-storm-scorcher",
+      "name": "Solar Storm Scorcher",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.0,
       "beat_spy": false
     },
     {
@@ -467,7 +557,7 @@
       "name": "Xlv Google Trends Flu Search Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -476,7 +566,7 @@
       "name": "Social Media Sentiment Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -485,7 +575,7 @@
       "name": "Reddit Gaming Thread Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -494,7 +584,7 @@
       "name": "Pet Food Supply Chain Disruption",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -503,7 +593,7 @@
       "name": "Weather Volatility Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -512,7 +602,16 @@
       "name": "Insider Trading Signals",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "energy-sector-weekly-drawdown-exhaustion",
+      "name": "Energy Sector Weekly Drawdown Exhaustion",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -521,8 +620,17 @@
       "name": "Glassdoor Misery Gradient",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "staples-sector-drawdown-rapid-recovery",
+      "name": "Staples Sector Drawdown Rapid Recovery",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": 0.02,
       "beat_spy": false
     },
     {
@@ -530,7 +638,7 @@
       "name": "Reddit Mentions Volatility Spike",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -539,7 +647,7 @@
       "name": "Online Ad Impression Volatility Trader",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -547,9 +655,9 @@
       "algo_id": "baileymol",
       "name": "Chaos Rotation Lab",
       "algo_type": "crazy",
-      "direction": "NEUTRAL",
-      "days_running": 71,
-      "ytd_pct": -5.61,
+      "direction": "BEARISH",
+      "days_running": 73,
+      "ytd_pct": -5.67,
       "beat_spy": false
     },
     {
@@ -557,7 +665,7 @@
       "name": "Google Gusts",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -566,7 +674,16 @@
       "name": "Utilities Sector Weekly Temperature Drop Signal",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 69,
+      "days_running": 71,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "financial-sector-momentum-divergence-with-spy",
+      "name": "Financial Sector Momentum Divergence With Spy",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -575,8 +692,8 @@
       "name": "Electricity Consumption",
       "algo_type": "crazy",
       "direction": "BULLISH",
-      "days_running": 71,
-      "ytd_pct": -0.02,
+      "days_running": 73,
+      "ytd_pct": -0.11,
       "beat_spy": false
     },
     {
@@ -584,7 +701,7 @@
       "name": "Copper Momentum",
       "algo_type": "crazy",
       "direction": "BULLISH",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": -0.02,
       "beat_spy": false
     },
@@ -593,7 +710,7 @@
       "name": "Weather Disruption Ripple Effects",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 69,
+      "days_running": 71,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -602,8 +719,17 @@
       "name": "High Yield Spread Regime",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "industrial-sector-weekly-earthquake-activity-correlation-dip",
+      "name": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
+      "algo_type": "crazy",
+      "direction": "BULLISH",
+      "days_running": 67,
+      "ytd_pct": -0.02,
       "beat_spy": false
     },
     {
@@ -611,7 +737,7 @@
       "name": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -620,7 +746,7 @@
       "name": "Bankruptcy Filing Rate",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -629,7 +755,7 @@
       "name": "Volatility Spike Follow-Through",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -638,7 +764,7 @@
       "name": "Electricity Enlightenment",
       "algo_type": "crazy",
       "direction": "BEARISH",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": -0.14,
       "beat_spy": false
     },
@@ -647,7 +773,7 @@
       "name": "Retail Sales Momentum",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -656,7 +782,7 @@
       "name": "Reddit Subreddit Surge Momentum",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -665,7 +791,7 @@
       "name": "Weather Windfall",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -674,7 +800,7 @@
       "name": "Work From Home Frenzy",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 69,
+      "days_running": 71,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -683,8 +809,17 @@
       "name": "Fintech Disruption Wave",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 69,
+      "days_running": 71,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "utilities-sector-negative-price-gap-fill",
+      "name": "Utilities Sector Negative Price Gap Fill",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 67,
+      "ytd_pct": -0.08,
       "beat_spy": false
     },
     {
@@ -692,7 +827,7 @@
       "name": "Xle Weekly Drawdown Rebound Signal",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
-      "days_running": 67,
+      "days_running": 69,
       "ytd_pct": -0.33,
       "beat_spy": false
     },
@@ -701,7 +836,7 @@
       "name": "Algo Biscotti (Unconditional Loyalty)",
       "algo_type": "crazy",
       "direction": "BEARISH",
-      "days_running": 71,
+      "days_running": 73,
       "ytd_pct": -3.41,
       "beat_spy": false
     },
@@ -751,7 +886,7 @@
       "beat_spy": false
     }
   ],
-  "generated": "2026-04-19",
+  "generated": "2026-04-20",
   "lab_started": "2026-01-11",
   "disclaimer": "This is an experimental signal lab. Not financial advice. Signals are research outputs, not recommendations to buy, sell, or hold any asset. Signals can and will fail. Past performance does not guarantee future results. Results are simulated/model outputs and may not reflect slippage, fees, liquidity, execution delays, or market impact. Third-party data may be incomplete, delayed, inaccurate, or revised. Do your own research and consult a qualified professional before making investment decisions. Paper-traded only \u2014 no real money at risk."
 }

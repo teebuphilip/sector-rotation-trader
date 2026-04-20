@@ -1,0 +1,14 @@
+{
+  "spec_file": "data/ideas/runs/2026-04-20/build/chatgpt_utilities-sector-negative-price-gap-fill.md",
+  "out": "crazy/algos/utilities_sector_negative_price_gap_fill.py",
+  "adapter": "price_only",
+  "idea_id": "utilities-sector-negative-price-gap-fill",
+  "name": "Utilities Sector Negative Price Gap Fill",
+  "universe": [
+    "XLU"
+  ],
+  "frequency": "daily",
+  "threshold": 0.015,
+  "direction": "up",
+  "hold_days": 5
+}

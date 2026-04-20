@@ -1,0 +1,14 @@
+{
+  "spec_file": "data/ideas/runs/2026-04-20/build/chatgpt_financial-sector-momentum-divergence-with-spy.md",
+  "out": "crazy/algos/financial_sector_momentum_divergence_with_spy.py",
+  "adapter": "price_only",
+  "idea_id": "financial-sector-momentum-divergence-with-spy",
+  "name": "Financial Sector Momentum Divergence With Spy",
+  "universe": [
+    "XLF"
+  ],
+  "frequency": "daily",
+  "threshold": 0.1,
+  "direction": "up",
+  "hold_days": 7
+}

@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-20/publish/claude_airline-headwinds.md",
+  "target_file": "data/ideas/runs/2026-04-20/intervention/claude_airline-headwinds.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "bts_airline_load_factor",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support bts_airline_load_factor yet.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "bts_airline_load_factor"
+      ],
+      "scores": {
+        "tsa_table": 1,
+        "google_trends": 1,
+        "bts_airline_load_factor": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 946,
+    "output_tokens": 81
+  },
+  "cost_usd": 0.003175,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"bts_airline_load_factor\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid existing adapter with matching data source and frequency.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-19T14:54:12
+Updated (UTC): 2026-04-20T12:13:40
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 77
+Crazy models: 92
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -93,3 +93,18 @@ Crazy models: 77
 | rss-roar | Rss Roar | daily |
 | tremor-tension | Tremor Tension | daily |
 | weather-windfall | Weather Windfall | daily |
+| consumer-discretionary-google-trends-surge-for-sale-keywords | Consumer Discretionary Google Trends Surge For Sale Keywords | weekly |
+| energy-sector-weekly-drawdown-exhaustion | Energy Sector Weekly Drawdown Exhaustion | weekly |
+| financial-sector-momentum-divergence-with-spy | Financial Sector Momentum Divergence With Spy | daily |
+| healthcare-sector-google-trends-spike-in-flu-symptoms | Healthcare Sector Google Trends Spike In Flu Symptoms | weekly |
+| industrial-sector-weekly-earthquake-activity-correlation-dip | Industrial Sector Weekly Earthquake Activity Correlation Dip | weekly |
+| materials-sector-weekly-positive-correlation-breakdown-with- | Materials Sector Weekly Positive Correlation Breakdown With Xlb | weekly |
+| staples-sector-drawdown-rapid-recovery | Staples Sector Drawdown Rapid Recovery | daily |
+| technology-sector-daily-ev-charger-count-surge | Technology Sector Daily Ev Charger Count Surge | daily |
+| utilities-sector-negative-price-gap-fill | Utilities Sector Negative Price Gap Fill | daily |
+| crypto-capitulation-countdown | Crypto Capitulation Countdown | daily |
+| earthquake-aftershock-amplifier | Earthquake Aftershock Amplifier | daily |
+| ev-charging-station-stampede | Ev Charging Station Stampede | weekly |
+| lumber-futures-rollercoaster | Lumber Futures Rollercoaster | daily |
+| semiconductor-moonshot-warning | Semiconductor Moonshot Warning | daily |
+| solar-storm-scorcher | Solar Storm Scorcher | daily |

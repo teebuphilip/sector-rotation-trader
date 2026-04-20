@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-20/publish/chatgpt_technology-sector-daily-ev-charger-count-surge.md",
+  "target_file": "data/ideas/runs/2026-04-20/build/chatgpt_technology-sector-daily-ev-charger-count-surge.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "openchargemap",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a real adapter with matching data source and deterministic routing.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "openchargemap"
+      ],
+      "scores": {
+        "openchargemap": 2,
+        "html_table": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 903,
+    "output_tokens": 78
+  },
+  "cost_usd": 0.0030375,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"openchargemap\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a real adapter with matching data source and deterministic routing.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}
