@@ -1,0 +1,33 @@
+{
+  "id": "industrial-sector-earthquake-activity-correlation",
+  "name": "Industrial Sector Earthquake Activity Correlation",
+  "frequency": "weekly",
+  "universe": [
+    "XLI"
+  ],
+  "data_sources": {
+    "earthquake_activity": {
+      "provider": "USGS",
+      "description": "Weekly counts of earthquake activity near US industrial hubs mapped to XLI",
+      "update_frequency": "weekly"
+    }
+  },
+  "signal_logic": {
+    "trigger": {
+      "type": "percentage_increase",
+      "metric": "weekly_earthquake_count",
+      "scope": "top_5_US_industrial_metro_areas",
+      "threshold": 50,
+      "comparison": "week_over_week"
+    }
+  },
+  "entry_exit": {
+    "entry": "If weekly earthquake count near top 5 US industrial metro areas increases 50% week-over-week",
+    "exit": "After 3 weeks or price recovers 4%"
+  },
+  "position_sizing": {
+    "allocation_per_signal": 0.05,
+    "max_total_exposure": 0.2
+  },
+  "required_keys": []
+}

@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/utilities_sector_weekly_temperature_drop_signal.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075437/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec frequency is 'weekly'",
+      "compute_signal does not pass required kwargs (latitude, longitude, days_back) to fetch_weather_series as per adapter contract",
+      "compute_signal uses 'date' column but does not ensure it is datetime type before dt accessor",
+      "compute_signal indentation errors (return statements not properly indented)",
+      "position_sizing max_total_exposure (20%) not enforced in target_allocations",
+      "signal logic correctly implements temp drop >5F but exit logic is inside compute_signal signal returns which may conflict with spec intent (exit should be separate from signal generation)"
+    ]
+  },
+  "usage": {
+    "input_tokens": 791,
+    "output_tokens": 135
+  },
+  "cost_usd": 0.0033275
+}

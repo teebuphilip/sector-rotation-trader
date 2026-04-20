@@ -1,0 +1,33 @@
+{
+  "id": "financial-sector-weekly-drawdown-bounce",
+  "name": "Financial Sector Weekly Drawdown Bounce",
+  "frequency": "weekly",
+  "universe": [
+    "XLF"
+  ],
+  "data_sources": {
+    "price_only": {
+      "provider": "Yahoo Finance",
+      "symbols": [
+        "XLF"
+      ],
+      "frequency": "weekly"
+    }
+  },
+  "signal_logic": {
+    "trigger": {
+      "condition": "weekly_return < -0.04",
+      "symbol": "XLF",
+      "action": "enter_long_next_week"
+    }
+  },
+  "entry_exit": {
+    "entry": "If XLF weekly return < -4%, enter long next week",
+    "exit": "Exit after 2 weeks or 3% gain"
+  },
+  "position_sizing": {
+    "allocation_per_signal": 0.05,
+    "max_total_exposure": 0.2
+  },
+  "required_keys": []
+}

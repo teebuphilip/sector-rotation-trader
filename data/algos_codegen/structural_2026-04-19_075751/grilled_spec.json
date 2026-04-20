@@ -1,0 +1,40 @@
+{
+  "id": "weather-disruption-ripple-effects",
+  "name": "Weather Disruption Ripple Effects",
+  "frequency": "daily",
+  "universe": [
+    "XLE"
+  ],
+  "data_sources": {
+    "weather_series": "Open-Meteo"
+  },
+  "signal_logic": {
+    "trigger": {
+      "conditions": [
+        {
+          "metric": "daily_max_wind_speed",
+          "location": "major_transportation_hub",
+          "operator": ">",
+          "value": 40,
+          "unit": "mph"
+        },
+        {
+          "metric": "daily_max_temperature_deviation",
+          "operator": ">",
+          "value": 10,
+          "unit": "degrees"
+        }
+      ],
+      "logic": "or"
+    }
+  },
+  "entry_exit": {
+    "entry": "If the daily maximum wind speed at a major transportation hub exceeds 40 mph or the daily maximum temperature deviates more than 10 degrees from normal",
+    "exit": "After 7 trading days or when weather conditions return to normal"
+  },
+  "position_sizing": {
+    "allocation_per_signal": 0.05,
+    "max_total_exposure": 0.2
+  },
+  "required_keys": []
+}

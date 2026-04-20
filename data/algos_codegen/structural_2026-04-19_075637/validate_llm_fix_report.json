@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/port_congestion_squeeze.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075637/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec requires 'weekly'",
+      "signal logic uses 'date' column but spec requires weekly frequency and week-over-week change",
+      "no explicit handling of weekly aggregation or ensuring weekly frequency",
+      "position_start_date is stored as attribute but no persistence or state management shown",
+      "signal logic returns 'RISK_ON', 'RISK_OFF', 'HOLD' which is acceptable, but logic for exit condition uses latest_change < 5% which matches spec",
+      "allocation logic uses 5% per signal which matches spec, but no enforcement of max_total_exposure 20%"
+    ]
+  },
+  "usage": {
+    "input_tokens": 796,
+    "output_tokens": 133
+  },
+  "cost_usd": 0.00332
+}

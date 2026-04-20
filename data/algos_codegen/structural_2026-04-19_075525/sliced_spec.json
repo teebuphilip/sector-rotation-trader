@@ -1,0 +1,42 @@
+{
+  "adapters": [
+    "openchargemap"
+  ],
+  "sliced_spec": {
+    "id": "ev-charging-boom",
+    "name": "Ev Charging Boom",
+    "frequency": "weekly",
+    "universe": [
+      "XLB"
+    ],
+    "entry_exit": {
+      "entry": "weekly_growth_rate_ev_chargers > 0.03",
+      "exit": "weeks_since_entry >= 4 OR weekly_growth_rate_ev_chargers < 0.02"
+    },
+    "signal_logic": {
+      "trigger": {
+        "condition": "weekly_growth_rate_ev_chargers > 0.03"
+      }
+    },
+    "position_sizing": {
+      "allocation_per_signal": 0.05,
+      "max_total_exposure": 0.2
+    },
+    "data_sources": {
+      "openchargemap": {}
+    },
+    "adapter_contracts": {
+      "openchargemap": {
+        "func": "fetch_openchargemap_counts",
+        "allowed_kwargs": [
+          "country_code",
+          "max_results"
+        ],
+        "returns": [
+          "date",
+          "count"
+        ]
+      }
+    }
+  }
+}

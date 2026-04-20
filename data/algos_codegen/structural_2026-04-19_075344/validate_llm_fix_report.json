@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/consumer_discretionary_weekly_google_trends_surge.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075344/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec frequency is 'weekly'",
+      "signal logic uses latest single pct_change but spec requires weekly increase of at least 15% (weekly frequency mismatch)",
+      "no explicit handling of weekly aggregation from daily data",
+      "position tracking uses internal attribute _position which may not persist correctly across calls",
+      "no validation that fetch_google_trends is called with correct allowed kwargs only (days_back=21 is acceptable but not explicitly weekly)"
+    ]
+  },
+  "usage": {
+    "input_tokens": 953,
+    "output_tokens": 103
+  },
+  "cost_usd": 0.0034125
+}

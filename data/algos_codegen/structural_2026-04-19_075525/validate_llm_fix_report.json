@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/ev_charging_boom.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075525/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec requires 'weekly'",
+      "compute_signal method indentation errors causing logic blocks to be incorrect",
+      "compute_signal uses 'pct_change()' on 'count' but spec requires 'weekly_growth_rate_ev_chargers' > 0.03 as entry and < 0.02 as exit; pct_change() without resampling may not reflect weekly growth",
+      "weeks_since_entry logic partially correct but increment happens only if weeks_since_entry > 0; initial entry sets weeks_since_entry=1 but no increment on subsequent weeks before exit",
+      "target_allocations uses allocation_per_signal=0.05 and max_total_exposure=0.2 is not enforced (no aggregation or max exposure check)",
+      "signal names RISK_ON/RISK_OFF/HOLD are acceptable but indentation errors in signal logic cause incorrect flow",
+      "adapter import and usage correct, uses fetch_openchargemap_counts and 'count' column as per adapter contract"
+    ]
+  },
+  "usage": {
+    "input_tokens": 873,
+    "output_tokens": 220
+  },
+  "cost_usd": 0.0043825
+}

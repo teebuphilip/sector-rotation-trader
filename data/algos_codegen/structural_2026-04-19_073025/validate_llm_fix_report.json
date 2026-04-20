@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/industrial_sector_earthquake_activity_correlation.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_073025/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec requires 'weekly'",
+      "code uses 'metro_area' column which is not in adapter contract (adapter returns only 'date' and 'quakes')",
+      "signal logic assumes data includes top 5 industrial metro areas but adapter contract does not provide this data or scope filtering",
+      "entry and exit logic is reversed: entry logic is before exit logic, so exit logic is unreachable",
+      "signal logic does not strictly follow spec intent: exit logic should trigger after 3 weeks or 4% price recovery, but code only checks exit after entry signal and does not handle holding state properly"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1114,
+    "output_tokens": 136
+  },
+  "cost_usd": 0.004145
+}

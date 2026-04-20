@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/basic_materials_sector_price_momentum_reversal.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_074858/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "fetch_prices is called without required kwargs 'tickers' as per adapter contract",
+      "DataFrame filtering and indexing logic is incorrect and inconsistent with adapter output columns ('date', 'value')",
+      "Position dictionary access is incorrect: pos.get(symbol) returns None, should check pos.get(symbol) dict for 'entry_date' and 'entry_price'",
+      "Exit condition price retracement logic is reversed: spec requires exit if price retracement > 3% (price dropped by 3%), code checks if price increased by >3%",
+      "Indentation errors in code cause logic blocks to be malformed",
+      "Signal logic does not strictly follow spec: entry is short position on >6% gain, but code treats RISK_ON as buy (long) instead of short",
+      "Allocation logic uses 5% allocation on RISK_ON but spec implies entering short position, allocation logic does not reflect short position sizing or max exposure constraints"
+    ]
+  },
+  "usage": {
+    "input_tokens": 973,
+    "output_tokens": 191
+  },
+  "cost_usd": 0.0043425
+}

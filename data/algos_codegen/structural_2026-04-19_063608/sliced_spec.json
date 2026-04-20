@@ -1,0 +1,40 @@
+{
+  "adapters": [
+    "rss_count"
+  ],
+  "sliced_spec": {
+    "id": "communications-sector-rss-news-count-spike",
+    "name": "Communications Sector Rss News Count Spike",
+    "frequency": "weekly",
+    "universe": [
+      "XLC"
+    ],
+    "entry_exit": {
+      "entry": "weekly RSS news mentions rise >40% compared to prior 4-week average",
+      "exit": "after 3 weeks or 4% price gain"
+    },
+    "signal_logic": {
+      "trigger": "weekly RSS news mentions rise >40% compared to prior 4-week average"
+    },
+    "position_sizing": {
+      "allocation_per_signal": "5%",
+      "max_total_exposure": "20%"
+    },
+    "data_sources": {
+      "rss": {}
+    },
+    "adapter_contracts": {
+      "rss_count": {
+        "func": "fetch_rss_counts",
+        "allowed_kwargs": [
+          "feed_urls",
+          "days_back"
+        ],
+        "returns": [
+          "date",
+          "count"
+        ]
+      }
+    }
+  }
+}

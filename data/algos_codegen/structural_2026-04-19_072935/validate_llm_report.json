@@ -1,0 +1,24 @@
+{
+  "file": "crazy/algos/financial_sector_weekly_drawdown_bounce.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_072935/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Rebalance frequency is 'daily' but spec frequency is 'weekly'.",
+      "fetch_prices() called without required kwargs 'tickers' and 'period'.",
+      "Weekly return calculation uses pct_change() on 'value' without resampling to weekly frequency.",
+      "Signal logic does not explicitly ensure 'weekly_return' is for XLF or aligned with weekly data.",
+      "Position tracking uses 'entry_date' and 'entry_price' but no validation if these are set correctly or updated per spec.",
+      "Allocation logic returns empty dict on 'RISK_OFF' instead of explicit SELL action; spec expects exit after 2 weeks or 3% gain, which is handled by signal but allocation logic should reflect no position (empty dict is acceptable).",
+      "Signal names differ from spec but mapping is acceptable per instructions.",
+      "Adapter output columns 'date' and 'value' are used correctly.",
+      "Overall signal and allocation logic roughly follow spec intent but rebalance frequency and data fetching are incorrect."
+    ]
+  },
+  "usage": {
+    "input_tokens": 896,
+    "output_tokens": 225
+  },
+  "cost_usd": 0.00449
+}

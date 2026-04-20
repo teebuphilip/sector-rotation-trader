@@ -1,0 +1,48 @@
+{
+  "adapters": [
+    "google_trends"
+  ],
+  "sliced_spec": {
+    "id": "retail-rush-ahead-of-holidays",
+    "name": "Retail Rush Ahead Of Holidays",
+    "frequency": "weekly",
+    "universe": [
+      "XLY"
+    ],
+    "entry_exit": {
+      "entry": "search_interest > 1.4 * average_search_interest_last_4_weeks",
+      "exit": "after 6 weeks OR search_interest < 1.2 * average_search_interest_last_4_weeks"
+    },
+    "signal_logic": {
+      "trigger": {
+        "condition": "search_interest > 1.4 * average_search_interest_last_4_weeks",
+        "description": "Google Trends search interest for holiday gift ideas rises 40% above the prior 4-week average"
+      }
+    },
+    "position_sizing": {
+      "allocation_per_signal": 0.05,
+      "max_total_exposure": 0.2
+    },
+    "data_sources": {
+      "google_trends": {
+        "metric": "holiday gift ideas",
+        "frequency": "weekly",
+        "adapter": "google_trends",
+        "description": "Weekly search interest for holiday gift ideas"
+      }
+    },
+    "adapter_contracts": {
+      "google_trends": {
+        "func": "fetch_google_trends",
+        "allowed_kwargs": [
+          "keyword",
+          "days_back"
+        ],
+        "returns": [
+          "date",
+          "interest"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/real_estate_sector_weekly_google_trends_home_buying_surge.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075410/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec frequency is 'weekly'",
+      "compute_signal does not handle 'days_back' argument for fetch_google_trends as per adapter contract",
+      "compute_signal groups by 'date' and sums 'interest' separately for each keyword, then adds series; spec requires combined weekly search interest for both keywords combined before pct_change calculation",
+      "signal logic pct_change threshold comparison uses '> 15' but spec states 'rises more than 15%', so '> 15' is correct but exit condition uses 'pct_change <= 15' which may not fully capture 'normalizes' intent",
+      "target_allocations uses fixed allocation 0.05 per asset but does not cap total exposure at 0.2 if universe size or positions change; logic is simplistic but acceptable given universe size 1",
+      "code indentation errors (e.g. missing indentation after if statements) likely cause runtime errors"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1053,
+    "output_tokens": 195
+  },
+  "cost_usd": 0.0045825
+}

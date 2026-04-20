@@ -1,0 +1,24 @@
+{
+  "id": "electric-vehicle-charger-count-surge-impacts-tech-sector",
+  "name": "Electric Vehicle Charger Count Surge Impacts Tech Sector",
+  "frequency": "daily",
+  "universe": [
+    "XLK"
+  ],
+  "data_sources": {
+    "ev_charger_counts": "OpenChargeMap",
+    "equity_prices": "XLK prices"
+  },
+  "signal_logic": {
+    "trigger": "If daily EV charger count increases >2% vs prior day for 3 consecutive days"
+  },
+  "entry_exit": {
+    "entry": "If daily EV charger count increases >2% vs prior day for 3 consecutive days",
+    "exit": "After 7 trading days or 4% XLK gain"
+  },
+  "position_sizing": {
+    "allocation_per_signal": "5%",
+    "max_total_exposure": "20%"
+  },
+  "required_keys": []
+}

@@ -1,0 +1,68 @@
+{
+  "id": "consumer-discretionary-weekly-volume-price-divergence",
+  "name": "Consumer Discretionary Weekly Volume-price Divergence",
+  "frequency": "weekly",
+  "universe": [
+    "XLY"
+  ],
+  "data_sources": {
+    "price": "Yahoo Finance",
+    "volume": "Yahoo Finance",
+    "adapter": "price_only",
+    "api": "weekly"
+  },
+  "signal_logic": {
+    "trigger": {
+      "conditions": [
+        {
+          "metric": "weekly_price_return",
+          "operator": "<",
+          "value": -0.03
+        },
+        {
+          "metric": "weekly_volume",
+          "operator": ">",
+          "value": "1.2 * prior_4_week_avg_volume"
+        }
+      ],
+      "logic": "AND"
+    }
+  },
+  "entry_exit": {
+    "entry": {
+      "conditions": [
+        {
+          "metric": "weekly_price_return",
+          "operator": "<",
+          "value": -0.03
+        },
+        {
+          "metric": "weekly_volume",
+          "operator": ">",
+          "value": "1.2 * prior_4_week_avg_volume"
+        }
+      ],
+      "logic": "AND"
+    },
+    "exit": {
+      "conditions": [
+        {
+          "type": "time",
+          "value": 3,
+          "unit": "weeks"
+        },
+        {
+          "metric": "price_rebound",
+          "operator": ">=",
+          "value": 0.05
+        }
+      ],
+      "logic": "OR"
+    }
+  },
+  "position_sizing": {
+    "allocation_per_signal": 0.05,
+    "max_total_exposure": 0.2
+  },
+  "required_keys": []
+}

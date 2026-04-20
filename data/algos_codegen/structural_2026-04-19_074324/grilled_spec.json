@@ -1,0 +1,32 @@
+{
+  "id": "basic-materials-sector-price-momentum-reversal",
+  "name": "Basic Materials Sector Price Momentum Reversal",
+  "frequency": "daily",
+  "universe": [
+    "XLB"
+  ],
+  "data_sources": {
+    "price_only": {
+      "provider": "Yahoo Finance",
+      "frequency": "daily",
+      "symbols": [
+        "XLB"
+      ]
+    }
+  },
+  "signal_logic": {
+    "trigger": {
+      "condition": "XLB price gain > 6% over past 7 days",
+      "action": "enter short next day"
+    }
+  },
+  "entry_exit": {
+    "entry": "If XLB gains >6% over past 7 days, enter short next day",
+    "exit": "After 5 days or 3% price retracement"
+  },
+  "position_sizing": {
+    "allocation_per_signal": "5%",
+    "max_total_exposure": "20%"
+  },
+  "required_keys": []
+}

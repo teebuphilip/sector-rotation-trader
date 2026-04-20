@@ -1,0 +1,42 @@
+{
+  "adapters": [
+    "price_only"
+  ],
+  "sliced_spec": {
+    "id": "consumer-staples-sudden-volume-surge-after-price-consolidati",
+    "name": "Consumer Staples Sudden Volume Surge After Price Consolidation",
+    "frequency": "daily",
+    "universe": [
+      "XLP"
+    ],
+    "entry_exit": {
+      "entry": "If XLP daily range < 0.5% for 7 consecutive days AND volume on day 8 > 120% of 20-day average volume",
+      "exit": "After 10 days OR 5% price gain"
+    },
+    "signal_logic": {
+      "trigger": {
+        "condition": "XLP daily range < 0.5% for 7 consecutive days AND volume on day 8 > 120% of 20-day average volume"
+      }
+    },
+    "position_sizing": {
+      "allocation_per_signal": "5%",
+      "max_total_exposure": "20%"
+    },
+    "data_sources": {
+      "price": "Yahoo Finance"
+    },
+    "adapter_contracts": {
+      "price_only": {
+        "func": "fetch_prices",
+        "allowed_kwargs": [
+          "tickers",
+          "period"
+        ],
+        "returns": [
+          "date",
+          "value"
+        ]
+      }
+    }
+  }
+}

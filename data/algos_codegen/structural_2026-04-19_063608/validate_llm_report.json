@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/communications_sector_rss_news_count_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_063608/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec requires 'weekly'",
+      "compute_signal logic mixes signal generation and exit logic; exit logic should be separate from signal trigger",
+      "signal trigger uses >40% increase but includes exit logic before entry check, causing possible incorrect signals",
+      "indentation errors in compute_signal (e.g. return statements not properly indented)",
+      "target_allocations logic does not cap total exposure correctly if multiple positions exist (sum of current_positions.values() may not reflect total exposure accurately)",
+      "target_allocations returns allocation for all universe tickers without checking if signal is HOLD (should return empty)"
+    ]
+  },
+  "usage": {
+    "input_tokens": 990,
+    "output_tokens": 134
+  },
+  "cost_usd": 0.003815
+}

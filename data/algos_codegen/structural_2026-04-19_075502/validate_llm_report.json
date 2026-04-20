@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/airport_security_surge.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075502/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be unreachable or incorrect.",
+      "In compute_signal, exit condition uses throughput < 0.9 * avg_prior_7d, but spec exit is throughput < 0.1 * avg_prior_7d (10%, not 90%).",
+      "In compute_signal, entry condition is checked after return statements for exit conditions, making entry unreachable when in position.",
+      "In target_allocations, allocation per signal is 5% and max total exposure 20%, but per_asset calculation uses min(weight, max_exposure / n) which is correct; no issue here.",
+      "Overall, adapter import and usage of columns ('date', 'throughput') is correct."
+    ]
+  },
+  "usage": {
+    "input_tokens": 871,
+    "output_tokens": 169
+  },
+  "cost_usd": 0.0038675
+}

@@ -1,0 +1,43 @@
+{
+  "adapters": [
+    "price_only"
+  ],
+  "sliced_spec": {
+    "id": "basic-materials-sector-price-momentum-reversal",
+    "name": "Basic Materials Sector Price Momentum Reversal",
+    "frequency": "daily",
+    "universe": [
+      "XLB"
+    ],
+    "entry_exit": {
+      "entry": "If XLB gains >6% over past 7 days, enter short next day",
+      "exit": "After 5 days or 3% price retracement"
+    },
+    "signal_logic": {
+      "trigger": {
+        "condition": "XLB price gain > 6% over past 7 days",
+        "action": "enter short next day"
+      }
+    },
+    "position_sizing": {
+      "allocation_per_signal": "5%",
+      "max_total_exposure": "20%"
+    },
+    "data_sources": {
+      "price": {}
+    },
+    "adapter_contracts": {
+      "price_only": {
+        "func": "fetch_prices",
+        "allowed_kwargs": [
+          "tickers",
+          "period"
+        ],
+        "returns": [
+          "date",
+          "value"
+        ]
+      }
+    }
+  }
+}

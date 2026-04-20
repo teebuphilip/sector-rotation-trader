@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/basic_materials_sector_price_momentum_reversal.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_074324/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "fetch_prices() called without required arguments 'tickers' and 'period' as per adapter contract.",
+      "Signal logic returns 'RISK_ON' to enter position, but spec requires entering short position; code does not explicitly indicate short position handling.",
+      "Exit condition retracement logic uses positive retracement >3% to exit short, which is correct, but no explicit short position sizing or sign handling in allocations.",
+      "Allocation logic returns positive 5% allocation on 'RISK_ON', but spec requires entering short position; allocation should reflect short exposure (negative allocation).",
+      "Indentation errors in code (e.g., missing indentation after if statements) may cause runtime errors."
+    ]
+  },
+  "usage": {
+    "input_tokens": 963,
+    "output_tokens": 160
+  },
+  "cost_usd": 0.0040075
+}

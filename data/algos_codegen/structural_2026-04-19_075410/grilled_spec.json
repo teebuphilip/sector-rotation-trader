@@ -1,0 +1,40 @@
+{
+  "id": "real-estate-sector-weekly-google-trends-home-buying-surge",
+  "name": "Real Estate Sector Weekly Google Trends Home Buying Surge",
+  "frequency": "weekly",
+  "universe": [
+    "XLRE"
+  ],
+  "data_sources": {
+    "google_trends": {
+      "queries": [
+        "house for sale",
+        "mortgage rates"
+      ],
+      "frequency": "weekly",
+      "mapping": "XLRE"
+    }
+  },
+  "signal_logic": {
+    "trigger": {
+      "type": "percentage_increase",
+      "description": "Combined weekly search interest for 'house for sale' and 'mortgage rates' rises more than 15% week-over-week",
+      "threshold": 15,
+      "comparison_period": "week-over-week",
+      "metrics": [
+        "house for sale",
+        "mortgage rates"
+      ],
+      "aggregation": "combined"
+    }
+  },
+  "entry_exit": {
+    "entry": "If weekly combined search interest for 'house for sale' and 'mortgage rates' rises more than 15% week-over-week",
+    "exit": "After 4 weeks or when combined search interest normalizes"
+  },
+  "position_sizing": {
+    "allocation_per_signal": 0.05,
+    "max_total_exposure": 0.2
+  },
+  "required_keys": []
+}

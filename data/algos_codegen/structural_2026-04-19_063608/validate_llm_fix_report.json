@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/communications_sector_rss_news_count_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_063608/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec requires 'weekly'.",
+      "Signal logic uses 'latest_date - 1 week' and 'latest_date - 5 weeks' for recent and prior periods, but spec requires comparing weekly RSS news mentions rise >40% compared to prior 4-week average (should be aligned to weekly frequency).",
+      "Signal logic returns 'RISK_OFF' to exit after 3 weeks or 4% price gain, which matches spec exit condition, but the holding period calculation and price gain check are done before checking increase_pct > 0.4, causing early exit logic to run even if no position is held.",
+      "Indentation errors in code (e.g. missing indentation after if statements) which may cause logic errors.",
+      "Adapter import and usage is correct (fetch_rss_counts from rss_count), and output columns 'date' and 'count' are used properly.",
+      "Position sizing uses 5% allocation per signal and max total exposure 20%, consistent with spec.",
+      "Signal names RISK_ON/RISK_OFF/HOLD are acceptable per instructions."
+    ]
+  },
+  "usage": {
+    "input_tokens": 972,
+    "output_tokens": 247
+  },
+  "cost_usd": 0.0049
+}

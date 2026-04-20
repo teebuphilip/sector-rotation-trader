@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/consumer_discretionary_weekly_google_trends_surge.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_063631/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Rebalance frequency is 'daily' but spec requires 'weekly'.",
+      "fetch_google_trends() called without required 'keyword' argument as per adapter contract.",
+      "Signal logic uses 'latest_change >= 15' for entry which matches spec, but does not handle empty or insufficient data robustly.",
+      "Signal logic tracks position duration using dates from data but does not ensure 'date' is datetime type or handle missing dates.",
+      "Signal logic returns 'RISK_OFF' on exit, which maps to SELL, acceptable.",
+      "Allocation logic correctly uses 5% per signal and max exposure 20% is not enforced in code (no max exposure logic).",
+      "Overall, missing enforcement of max_total_exposure of 20%.",
+      "Signal logic and allocation logic use correct columns 'date' and 'interest' from adapter output."
+    ]
+  },
+  "usage": {
+    "input_tokens": 971,
+    "output_tokens": 195
+  },
+  "cost_usd": 0.0043775
+}

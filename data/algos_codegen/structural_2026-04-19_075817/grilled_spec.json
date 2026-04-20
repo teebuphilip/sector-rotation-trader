@@ -1,0 +1,28 @@
+{
+  "id": "work-from-home-frenzy",
+  "name": "Work From Home Frenzy",
+  "frequency": "weekly",
+  "universe": [
+    "XLY"
+  ],
+  "data_sources": {
+    "google_trends": {
+      "metric": "weekly search interest",
+      "topic": "remote work tools"
+    }
+  },
+  "signal_logic": {
+    "trigger": {
+      "condition": "Google Trends search interest for remote work tools rises 30% above the prior 4-week average"
+    }
+  },
+  "entry_exit": {
+    "entry": "If Google Trends search interest for remote work tools rises 30% above the prior 4-week average",
+    "exit": "After 3 weeks or when search interest falls below 10% above the prior 4-week average"
+  },
+  "position_sizing": {
+    "allocation_per_signal": "5%",
+    "max_total_exposure": "20%"
+  },
+  "required_keys": []
+}

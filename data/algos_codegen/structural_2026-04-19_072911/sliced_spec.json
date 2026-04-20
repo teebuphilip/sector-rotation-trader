@@ -1,0 +1,40 @@
+{
+  "adapters": [
+    "openchargemap"
+  ],
+  "sliced_spec": {
+    "id": "electric-vehicle-charger-count-surge-impacts-tech-sector",
+    "name": "Electric Vehicle Charger Count Surge Impacts Tech Sector",
+    "frequency": "daily",
+    "universe": [
+      "XLK"
+    ],
+    "entry_exit": {
+      "entry": "If daily EV charger count increases >2% vs prior day for 3 consecutive days",
+      "exit": "After 7 trading days or 4% XLK gain"
+    },
+    "signal_logic": {
+      "trigger": "If daily EV charger count increases >2% vs prior day for 3 consecutive days"
+    },
+    "position_sizing": {
+      "allocation_per_signal": "5%",
+      "max_total_exposure": "20%"
+    },
+    "data_sources": {
+      "openchargemap": {}
+    },
+    "adapter_contracts": {
+      "openchargemap": {
+        "func": "fetch_openchargemap_counts",
+        "allowed_kwargs": [
+          "country_code",
+          "max_results"
+        ],
+        "returns": [
+          "date",
+          "count"
+        ]
+      }
+    }
+  }
+}

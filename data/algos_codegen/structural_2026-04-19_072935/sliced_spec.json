@@ -1,0 +1,44 @@
+{
+  "adapters": [
+    "price_only"
+  ],
+  "sliced_spec": {
+    "id": "financial-sector-weekly-drawdown-bounce",
+    "name": "Financial Sector Weekly Drawdown Bounce",
+    "frequency": "weekly",
+    "universe": [
+      "XLF"
+    ],
+    "entry_exit": {
+      "entry": "If XLF weekly return < -4%, enter long next week",
+      "exit": "Exit after 2 weeks or 3% gain"
+    },
+    "signal_logic": {
+      "trigger": {
+        "condition": "weekly_return < -0.04",
+        "symbol": "XLF",
+        "action": "enter_long_next_week"
+      }
+    },
+    "position_sizing": {
+      "allocation_per_signal": 0.05,
+      "max_total_exposure": 0.2
+    },
+    "data_sources": {
+      "price": {}
+    },
+    "adapter_contracts": {
+      "price_only": {
+        "func": "fetch_prices",
+        "allowed_kwargs": [
+          "tickers",
+          "period"
+        ],
+        "returns": [
+          "date",
+          "value"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/real_estate_sector_weekly_google_trends_home_buying_surge.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075410/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Rebalance frequency is 'daily' but spec requires 'weekly'.",
+      "fetch_google_trends called without required keyword argument(s) for specified queries ('house for sale', 'mortgage rates').",
+      "Signal logic does not explicitly handle fetching data separately for each keyword and combining; spec expects combined interest of two specific queries.",
+      "Signal logic uses combined interest pct_change > 15% as entry, but exit condition pct_change <= 15% is ambiguous for 'normalizes' and may cause premature exit; spec expects exit after 4 weeks or normalization.",
+      "Indentation errors in code (e.g. missing indentation after if statements) - likely a formatting issue but affects logic correctness.",
+      "Position sizing logic uses min(4, len(universe)) to calculate weight, but spec max_total_exposure is 0.2 and allocation_per_signal is 0.05; with universe size 1, weight calculation is inconsistent with spec intent.",
+      "Signal names RISK_ON/RISK_OFF/HOLD are acceptable but code must strictly follow spec logic which is not fully met."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1013,
+    "output_tokens": 243
+  },
+  "cost_usd": 0.0049625
+}

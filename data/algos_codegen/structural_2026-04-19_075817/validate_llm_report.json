@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/work_from_home_frenzy.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075817/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Rebalance frequency is 'daily' but spec requires 'weekly'.",
+      "fetch_google_trends called without required keyword arguments 'keyword' and 'days_back'.",
+      "Signal logic uses '> 1.30 * prior_4w_avg' for entry, but spec requires 'rises 30% above prior 4-week average' (>= 1.30 * prior_4w_avg is acceptable, minor).",
+      "Signal logic exit condition uses 'current_interest < 1.10 * prior_4w_avg' but spec states 'falls below 10% above prior 4-week average' (correct).",
+      "Signal logic tracks position state with instance variables but does not reset or handle state persistence explicitly; may cause issues but not a strict fail.",
+      "Allocation logic uses 5% per signal and max 20% total exposure, matching spec, but no check for multiple signals (universe size is 1, so no issue)."
+    ]
+  },
+  "usage": {
+    "input_tokens": 945,
+    "output_tokens": 220
+  },
+  "cost_usd": 0.0045625
+}

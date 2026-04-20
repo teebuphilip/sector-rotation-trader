@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/global_tech_earnings_momentum.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075609/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Rebalance frequency is 'daily' but spec requires 'weekly'.",
+      "fetch_google_trends called without required kwargs 'keyword' and 'days_back'.",
+      "Signal logic uses last week interest as df['interest'].iloc[-1], but spec implies using current week interest relative to prior 4-week average excluding last 2 weeks; indexing may be off or unclear.",
+      "Signal logic indentation errors and inconsistent returns may cause incorrect flow.",
+      "weeks_in_position increment and reset logic does not fully match spec: exit after 2 weeks or interest falls below 10% above prior 4-week average, but code increments weeks_in_position before checking exit condition, potentially off by one week.",
+      "Allocation logic correctly uses 5% per signal and max 20% total exposure, but does not handle HOLD explicitly (acceptable)."
+    ]
+  },
+  "usage": {
+    "input_tokens": 952,
+    "output_tokens": 192
+  },
+  "cost_usd": 0.0043
+}

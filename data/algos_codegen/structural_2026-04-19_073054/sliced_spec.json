@@ -1,0 +1,38 @@
+{
+  "adapters": [
+    "port_container_volume"
+  ],
+  "sliced_spec": {
+    "id": "industrial-sector-weekly-container-port-volume-drop",
+    "name": "Industrial Sector Weekly Container Port Volume Drop",
+    "frequency": "weekly",
+    "universe": [
+      "XLI"
+    ],
+    "entry_exit": {
+      "entry": "weekly container volume drops >10% week-over-week",
+      "exit": "after 3 weeks or 5% price recovery"
+    },
+    "signal_logic": {
+      "trigger": "weekly container volume drops >10% week-over-week"
+    },
+    "position_sizing": {
+      "allocation_per_signal": "5%",
+      "max_total_exposure": "20%"
+    },
+    "data_sources": {
+      "port_container_volume": {}
+    },
+    "adapter_contracts": {
+      "port_container_volume": {
+        "func": "fetch_port_container_volume",
+        "allowed_kwargs": [],
+        "returns": [
+          "date",
+          "value",
+          "total_teus"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/global_tech_earnings_momentum.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075609/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Rebalance frequency is 'daily' but spec requires 'weekly'.",
+      "fetch_google_trends called with days_back=8, which may be insufficient for 6 weeks of data needed for prior 4-week average calculation.",
+      "Signal logic uses last_week_interest = df['interest'].iloc[-1], but spec requires weekly data aligned with rebalance frequency.",
+      "Signal logic indentation errors and inconsistent return statements may cause incorrect behavior.",
+      "Position sizing logic correctly uses 5% per signal and max 20% total exposure, but since universe size is 1, max exposure check is redundant but acceptable.",
+      "Signal logic correctly implements entry at 20% above prior 4-week average and exit after 2 weeks or below 10% above prior 4-week average, matching spec intent.",
+      "Code imports correct adapter and uses adapter output column 'interest' as per adapter contract."
+    ]
+  },
+  "usage": {
+    "input_tokens": 974,
+    "output_tokens": 204
+  },
+  "cost_usd": 0.004475
+}

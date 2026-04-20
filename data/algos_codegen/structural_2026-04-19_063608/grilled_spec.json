@@ -1,0 +1,23 @@
+{
+  "id": "communications-sector-rss-news-count-spike",
+  "name": "Communications Sector Rss News Count Spike",
+  "frequency": "weekly",
+  "universe": [
+    "XLC"
+  ],
+  "data_sources": {
+    "rss_feed_counts": "weekly counts of major telecom and media news mentions mapped to XLC"
+  },
+  "signal_logic": {
+    "trigger": "weekly RSS news mentions rise >40% compared to prior 4-week average"
+  },
+  "entry_exit": {
+    "entry": "weekly RSS news mentions rise >40% compared to prior 4-week average",
+    "exit": "after 3 weeks or 4% price gain"
+  },
+  "position_sizing": {
+    "allocation_per_signal": "5%",
+    "max_total_exposure": "20%"
+  },
+  "required_keys": []
+}

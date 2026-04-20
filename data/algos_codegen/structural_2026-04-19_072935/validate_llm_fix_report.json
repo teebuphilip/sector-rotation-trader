@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/financial_sector_weekly_drawdown_bounce.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_072935/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Rebalance frequency is 'daily' but spec requires 'weekly'.",
+      "Signal logic uses 'weekly_return' from 'value' column which is correct, but the code returns 'RISK_ON'/'RISK_OFF' instead of BUY/SELL (acceptable).",
+      "Signal logic correctly implements entry condition: enter long next week if last weekly return < -4%.",
+      "Exit condition correctly implemented: exit after 2 weeks or 3% gain.",
+      "Allocation logic uses 0.05 allocation per signal, matching spec allocation_per_signal.",
+      "Max total exposure (0.2) is not enforced in allocation logic.",
+      "Indentation errors in code (e.g. missing indentation after if statements) - may cause runtime errors.",
+      "Adapter import and usage correct: imports fetch_prices from crazy.adapters.price_only and uses 'date' and 'value' columns as per adapter contract."
+    ]
+  },
+  "usage": {
+    "input_tokens": 906,
+    "output_tokens": 206
+  },
+  "cost_usd": 0.004325
+}

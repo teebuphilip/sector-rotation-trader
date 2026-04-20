@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/weather_disruption_ripple_effects.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075751/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports the correct adapter 'fetch_weather_series' from 'weather_series'.",
+      "Code uses columns 'daily_max_wind_speed', 'location', and 'daily_max_temperature_deviation' which are NOT in the adapter contract returns (which only include 'date', 'temp_max', 'precipitation').",
+      "Signal logic checks 'daily_max_wind_speed' and 'daily_max_temperature_deviation' but adapter contract returns 'temp_max' and no wind speed or temperature deviation columns.",
+      "Signal logic filters by 'location' column which is not in adapter contract returns.",
+      "Signal logic correctly implements 'or' logic for entry conditions as per spec.",
+      "Exit logic correctly implements exit after 7 days or when conditions normalize.",
+      "Allocation logic uses allocation_per_signal=0.05 and max_total_exposure=0.2 correctly, scaled by universe size.",
+      "Overall, code fails because it uses columns not provided by the adapter contract, violating the spec's adapter contract."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1027,
+    "output_tokens": 208
+  },
+  "cost_usd": 0.0046475
+}

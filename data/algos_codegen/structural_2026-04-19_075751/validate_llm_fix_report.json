@@ -1,0 +1,24 @@
+{
+  "file": "crazy/algos/weather_disruption_ripple_effects.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075751/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports the correct adapter 'fetch_weather_series' from 'weather_series'.",
+      "Code uses adapter output columns 'temp_max' and 'precipitation', but does NOT use 'daily_max_wind_speed' or 'daily_max_temperature_deviation' as required by spec.",
+      "Signal logic approximates wind condition using 'precipitation' > 0.5 instead of 'daily_max_wind_speed' > 40 mph at major transportation hub.",
+      "Signal logic approximates temperature deviation from a fixed normal (70) instead of using 'daily_max_temperature_deviation' > 10 degrees as per spec.",
+      "Signal logic does not check location 'major_transportation_hub' as required by spec.",
+      "Signal logic uses 'RISK_ON' for entry and 'RISK_OFF' for exit which is acceptable, but the entry/exit conditions do not strictly follow spec intent due to proxy usage.",
+      "Position exit logic correctly exits after 7 days or when conditions return to normal, consistent with spec.",
+      "Allocation logic uses allocation_per_signal=0.05 and max_total_exposure=0.2 correctly, scaled by universe size.",
+      "Overall, the main failure is that the code does not use the required signal columns and conditions from the adapter output as per spec."
+    ]
+  },
+  "usage": {
+    "input_tokens": 977,
+    "output_tokens": 287
+  },
+  "cost_usd": 0.0053125
+}

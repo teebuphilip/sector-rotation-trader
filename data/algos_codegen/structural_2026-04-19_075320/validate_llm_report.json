@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/communications_sector_rss_news_count_spike.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075320/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec requires 'weekly'",
+      "compute_signal does not handle empty or missing data robustly (e.g. no feed_urls or days_back kwargs passed to fetch_rss_counts)",
+      "compute_signal indentation errors (return statements not properly indented)",
+      "compute_signal uses latest_date from rss_count data for weeks_held calculation, but spec implies weekly frequency and consistent date handling needed",
+      "target_allocations returns empty dict on RISK_OFF (SELL) which is correct, but max_total_exposure of 20% is not enforced anywhere",
+      "position sizing logic does not enforce max_total_exposure of 20% as per spec"
+    ]
+  },
+  "usage": {
+    "input_tokens": 886,
+    "output_tokens": 144
+  },
+  "cost_usd": 0.003655
+}

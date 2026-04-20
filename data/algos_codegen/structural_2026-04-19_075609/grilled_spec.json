@@ -1,0 +1,30 @@
+{
+  "id": "global-tech-earnings-momentum",
+  "name": "Global Tech Earnings Momentum",
+  "frequency": "weekly",
+  "universe": [
+    "XLK"
+  ],
+  "data_sources": {
+    "google_trends": {
+      "metric": "weekly search interest for tech company earnings reports",
+      "adapter": "google_trends",
+      "api": "weekly",
+      "notes": ""
+    }
+  },
+  "signal_logic": {
+    "trigger": {
+      "condition": "Google Trends search interest for tech earnings reports rises 20% above the prior 4-week average"
+    }
+  },
+  "entry_exit": {
+    "entry": "If Google Trends search interest for tech earnings reports rises 20% above the prior 4-week average",
+    "exit": "After 2 weeks or when search interest falls below 10% above the prior 4-week average"
+  },
+  "position_sizing": {
+    "allocation_per_signal": "5%",
+    "max_total_exposure": "20%"
+  },
+  "required_keys": []
+}

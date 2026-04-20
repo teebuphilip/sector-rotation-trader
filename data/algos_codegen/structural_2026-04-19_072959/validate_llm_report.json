@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/healthcare_sector_google_trends_flu_surge.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_072959/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec frequency is 'weekly'",
+      "fetch_google_trends called without required 'keyword' argument",
+      "compute_signal does not pass 'keyword' to fetch_google_trends as per adapter contract",
+      "signal logic uses >20% increase correctly but exit condition uses latest_change <= 0.20 instead of <= 0 (normalizes should be <=20% increase, so <=0.20 is correct but logic indentation and returns are inconsistent)",
+      "Indentation errors in compute_signal method (e.g. return statements and if blocks not properly indented)",
+      "target_allocations logic correctly uses 5% allocation per signal and max 20% total exposure, but no handling of multiple signals beyond universe size (universe size is 1, so logic is okay)",
+      "No explicit use of adapter output columns 'date' and 'interest' is correct, but fetch_google_trends call missing required kwargs",
+      "Overall code logic mostly matches spec intent except for rebalance frequency and adapter call"
+    ]
+  },
+  "usage": {
+    "input_tokens": 926,
+    "output_tokens": 234
+  },
+  "cost_usd": 0.004655
+}

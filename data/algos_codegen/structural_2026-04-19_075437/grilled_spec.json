@@ -1,0 +1,23 @@
+{
+  "id": "utilities-sector-weekly-temperature-drop-signal",
+  "name": "Utilities Sector Weekly Temperature Drop Signal",
+  "frequency": "weekly",
+  "universe": [
+    "XLU"
+  ],
+  "data_sources": {
+    "temperature": "Open-Meteo daily temperature for US regions weighted to XLU holdings"
+  },
+  "signal_logic": {
+    "trigger": "If average weekly temperature drops >5\u00b0F compared to prior week"
+  },
+  "entry_exit": {
+    "entry": "If average weekly temperature drops >5\u00b0F compared to prior week",
+    "exit": "After 2 weeks or 3% price gain"
+  },
+  "position_sizing": {
+    "allocation_per_signal": "5%",
+    "max_total_exposure": "20%"
+  },
+  "required_keys": []
+}

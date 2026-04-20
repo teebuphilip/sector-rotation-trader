@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/healthcare_sector_google_trends_flu_surge.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_072959/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec frequency is 'weekly'",
+      "compute_signal method indentation is incorrect causing logic errors",
+      "compute_signal does not pass 'days_back' argument to fetch_google_trends as allowed by adapter contract",
+      "exit condition uses latest_change <= 0.20 but spec exit is after 4 weeks or interest normalizes (should be <= 0, i.e. no >20% increase)",
+      "missing handling of 'historical' parameter in fetch_google_trends call",
+      "target_allocations logic is correct but indentation issues present in code"
+    ]
+  },
+  "usage": {
+    "input_tokens": 930,
+    "output_tokens": 126
+  },
+  "cost_usd": 0.003585
+}

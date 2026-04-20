@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/retail_rush_ahead_of_holidays.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075658/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec requires 'weekly'",
+      "fetch_google_trends called without required keyword argument 'keyword'",
+      "code uses 'date' column from adapter output but adapter contract specifies 'date' is returned; usage is correct",
+      "signal logic mostly matches spec but entry_date tracking and weeks_held calculation may cause state issues if algo is re-instantiated (not strictly failing)",
+      "allocation per signal is 0.05 matching spec, max_total_exposure logic not enforced in code"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1009,
+    "output_tokens": 112
+  },
+  "cost_usd": 0.0036425
+}

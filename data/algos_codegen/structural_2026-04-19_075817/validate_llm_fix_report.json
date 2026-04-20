@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/work_from_home_frenzy.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075817/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Rebalance frequency is 'daily' but spec requires 'weekly'.",
+      "Signal logic uses last 5 weeks but spec requires prior 4-week average comparison.",
+      "Signal logic increments _weeks_in_position only when _in_position is True, but initial entry sets _weeks_in_position=1; this may cause off-by-one in exit timing.",
+      "Signal logic returns 'RISK_OFF' on exit, which is correct, but the exit condition is '>=3 weeks or interest < 1.10 * prior_4w_avg' which matches spec intent.",
+      "Allocation logic uses 5% per signal and max 20% total exposure, matching spec, but max exposure check is redundant since universe size is 1; logic is acceptable.",
+      "Code imports correct adapter and uses correct output columns ('date', 'interest')."
+    ]
+  },
+  "usage": {
+    "input_tokens": 955,
+    "output_tokens": 193
+  },
+  "cost_usd": 0.0043175
+}

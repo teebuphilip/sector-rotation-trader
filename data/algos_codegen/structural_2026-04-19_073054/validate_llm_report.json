@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/industrial_sector_weekly_container_port_volume_drop.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_073054/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec frequency is 'weekly'",
+      "compute_signal logic uses daily data without resampling to weekly frequency",
+      "compute_signal uses 'date' and 'total_teus' columns correctly but does not ensure weekly aggregation",
+      "position sizing logic uses 5% allocation per signal and max 20% total exposure correctly",
+      "signal logic roughly follows spec intent but lacks explicit weekly container volume drop >10% check (pct_change on total_teus is used but no weekly aggregation)",
+      "exit logic checks 3 weeks or 5% price recovery correctly",
+      "indentation errors in code (e.g. missing indentation inside if blocks) - may cause runtime errors"
+    ]
+  },
+  "usage": {
+    "input_tokens": 972,
+    "output_tokens": 166
+  },
+  "cost_usd": 0.00409
+}

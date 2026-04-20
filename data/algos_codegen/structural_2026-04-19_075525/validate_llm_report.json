@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/ev_charging_boom.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075525/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Rebalance frequency is 'daily' but spec requires 'weekly'.",
+      "Signal logic indentation errors causing incorrect control flow.",
+      "Signal logic uses pct_change() for weekly growth rate but does not ensure data is weekly or handle missing weeks.",
+      "Signal logic uses 'weeks_since_entry' from context but spec implies it should be tracked in state or managed explicitly; unclear if context usage aligns with spec intent.",
+      "Allocation logic uses 0.05 per signal which matches allocation_per_signal, but does not enforce max_total_exposure of 0.2 (no aggregation logic shown).",
+      "Code imports correct adapter and uses adapter output columns correctly."
+    ]
+  },
+  "usage": {
+    "input_tokens": 851,
+    "output_tokens": 154
+  },
+  "cost_usd": 0.0036675
+}

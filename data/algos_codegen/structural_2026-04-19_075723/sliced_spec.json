@@ -1,0 +1,42 @@
+{
+  "adapters": [
+    "eia_electricity"
+  ],
+  "sliced_spec": {
+    "id": "utility-power-grid-stress",
+    "name": "Utility Power Grid Stress",
+    "frequency": "weekly",
+    "universe": [
+      "XLU"
+    ],
+    "entry_exit": {
+      "entry": "If the weekly change in electricity demand exceeds 5% above the prior 4-week average",
+      "exit": "After 2 weeks or when the weekly change falls below 2% above the prior 4-week average"
+    },
+    "signal_logic": {
+      "trigger": "If the weekly change in electricity demand exceeds 5% above the prior 4-week average"
+    },
+    "position_sizing": {
+      "allocation_per_signal": "5%",
+      "max_total_exposure": "20%"
+    },
+    "data_sources": {
+      "eia": {}
+    },
+    "adapter_contracts": {
+      "eia_electricity": {
+        "func": "fetch_eia_electricity",
+        "allowed_kwargs": [
+          "api_key",
+          "respondent",
+          "days_back",
+          "type_id"
+        ],
+        "returns": [
+          "date",
+          "value"
+        ]
+      }
+    }
+  }
+}

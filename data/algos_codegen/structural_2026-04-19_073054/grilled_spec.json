@@ -1,0 +1,23 @@
+{
+  "id": "industrial-sector-weekly-container-port-volume-drop",
+  "name": "Industrial Sector Weekly Container Port Volume Drop",
+  "frequency": "weekly",
+  "universe": [
+    "XLI"
+  ],
+  "data_sources": {
+    "port_container_volume_weekly": ""
+  },
+  "signal_logic": {
+    "trigger": "weekly container volume drops >10% week-over-week"
+  },
+  "entry_exit": {
+    "entry": "weekly container volume drops >10% week-over-week",
+    "exit": "after 3 weeks or 5% price recovery"
+  },
+  "position_sizing": {
+    "allocation_per_signal": "5%",
+    "max_total_exposure": "20%"
+  },
+  "required_keys": []
+}

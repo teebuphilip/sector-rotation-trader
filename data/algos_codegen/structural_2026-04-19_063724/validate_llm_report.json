@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/consumer_staples_sudden_volume_surge_after_price_consolidati.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_063724/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports fetch_prices from crazy.adapters.price_only - correct adapter import.",
+      "Code uses columns 'high', 'low', 'close', 'volume' from fetch_prices output - violates adapter contract which only returns 'date' and 'value'.",
+      "Signal logic attempts to compute daily range and volume but adapter output does not provide required columns, so signal logic does not follow spec intent.",
+      "Signal logic partially implements entry and exit conditions but on incorrect data columns, thus failing spec requirements.",
+      "Position sizing uses 5% allocation per signal and max exposure is not explicitly enforced but 5% per signal with single ticker is acceptable.",
+      "Signal names RISK_ON/RISK_OFF/HOLD are acceptable as per instructions.",
+      "Overall, failure due to adapter output columns mismatch and incorrect signal logic implementation."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1162,
+    "output_tokens": 164
+  },
+  "cost_usd": 0.004545
+}

@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/industrial_sector_earthquake_activity_correlation.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_073025/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Rebalance frequency is 'daily' but spec requires 'weekly'.",
+      "fetch_earthquake_activity called without allowed kwargs (e.g., 'days_back') - no evidence of correct usage.",
+      "Signal logic does not explicitly scope 'weekly_earthquake_count' to 'top_5_US_industrial_metro_areas' as required by spec.",
+      "Signal logic uses raw 'quakes' column but spec expects 'weekly_earthquake_count' aggregated for top 5 industrial metro areas.",
+      "Signal logic does not explicitly aggregate or filter data to top 5 US industrial metro areas before computing increase.",
+      "Position sizing logic uses min(0.05, 0.20 / len(universe)) which is incorrect; spec states allocation_per_signal=0.05 and max_total_exposure=0.2, no division by universe size.",
+      "Signal logic mixes entry and exit logic in compute_signal but does not clearly separate entry trigger and exit conditions as per spec.",
+      "No evidence that the code uses adapter output columns exactly as per contract; 'date' and 'quakes' are used but no validation of data scope or aggregation."
+    ]
+  },
+  "usage": {
+    "input_tokens": 994,
+    "output_tokens": 259
+  },
+  "cost_usd": 0.005075
+}

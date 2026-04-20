@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/industrial_sector_weekly_container_port_volume_drop.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_073054/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec frequency is 'weekly'",
+      "price_change calculation uses self.price() without clarity if it matches spec intent",
+      "signal logic indentation errors and inconsistent handling of entry/exit conditions",
+      "no explicit check for 'weekly container volume drops >10%' as trigger, pct_change < -0.10 is correct but code structure is confusing",
+      "allocation logic does not enforce max_total_exposure of 20% strictly if multiple signals accumulate (depends on current_allocation implementation)"
+    ]
+  },
+  "usage": {
+    "input_tokens": 968,
+    "output_tokens": 113
+  },
+  "cost_usd": 0.00355
+}

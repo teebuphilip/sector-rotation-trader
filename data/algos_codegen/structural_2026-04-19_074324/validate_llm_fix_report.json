@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/basic_materials_sector_price_momentum_reversal.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_074324/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be unreachable or incorrect.",
+      "Signal logic uses 'RISK_ON' for short entry but allocation uses negative weight which is correct; however, spec states 'enter short next day' on gain >6%, code uses gain_pct >6 correctly but timing of entry (next day) is not explicitly handled.",
+      "Exit logic checks for 5 days or 3% retracement but retracement sign logic is inverted: retracement >3% means price increased >3%, which is correct for short exit, so logic is correct.",
+      "Allocation logic returns empty dict on 'RISK_OFF' which is correct (exit position).",
+      "Code imports correct adapter and uses correct output columns ('date', 'value').",
+      "Position sizing max exposure (20%) is not enforced in code, only allocation per signal (5%) is implemented; missing max_total_exposure enforcement."
+    ]
+  },
+  "usage": {
+    "input_tokens": 983,
+    "output_tokens": 190
+  },
+  "cost_usd": 0.0043575
+}

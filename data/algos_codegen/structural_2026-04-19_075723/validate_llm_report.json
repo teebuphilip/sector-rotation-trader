@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/utility_power_grid_stress.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075723/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Rebalance frequency is 'daily' but spec requires 'weekly'.",
+      "Signal logic incorrectly compares recent_change > prior_4wk_avg * 1.05 instead of recent_change > 5% above prior 4-week average (should be recent_change > prior_4wk_avg + 0.05).",
+      "Exit condition logic uses weeks_in_position >= 2 OR recent_change < prior_4wk_avg * 1.02, but spec requires exit after 2 weeks OR when weekly change falls below 2% above prior 4-week average (should be recent_change < prior_4wk_avg + 0.02).",
+      "Allocation per signal is 20% total divided by universe size, but spec requires 5% allocation per signal with max total exposure 20%.",
+      "Signal logic uses 'weekly_change' as pct_change of 'value' but does not confirm 'value' is weekly electricity demand; assuming correct adapter usage but logic for threshold comparison is incorrect."
+    ]
+  },
+  "usage": {
+    "input_tokens": 891,
+    "output_tokens": 226
+  },
+  "cost_usd": 0.0044875
+}

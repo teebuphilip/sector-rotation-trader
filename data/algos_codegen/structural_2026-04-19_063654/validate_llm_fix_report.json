@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/consumer_discretionary_weekly_volume_price_divergence.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_063654/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Incorrect rebalance_frequency: spec requires weekly but code uses daily.",
+      "Code uses 'volume' column which is not provided by 'price_only' adapter (only 'date' and 'value' columns are returned).",
+      "Code calculates 'weekly_price_return' from 'value' column but spec expects weekly frequency data; code does not resample or ensure weekly frequency.",
+      "Entry and exit logic mostly matches spec but code relies on unavailable 'volume' data, violating adapter contract.",
+      "Signal logic uses correct conditions but on unavailable data, so logic cannot be fulfilled as per spec.",
+      "Allocation logic caps allocation_per_signal at max_total_exposure incorrectly; should accumulate signals up to max_total_exposure, but code just uses min(0.05,0.20) which is always 0.05 (not a failure but simplistic)."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1196,
+    "output_tokens": 179
+  },
+  "cost_usd": 0.00478
+}

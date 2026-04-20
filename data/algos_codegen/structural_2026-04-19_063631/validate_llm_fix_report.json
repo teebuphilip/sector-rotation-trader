@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/consumer_discretionary_weekly_google_trends_surge.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_063631/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec frequency is 'weekly'.",
+      "fetch_google_trends called without 'days_back' argument, which may be needed for weekly data.",
+      "Signal logic uses latest pct_change but does not ensure data is weekly or that pct_change is week-over-week increase.",
+      "Signal logic returns 'RISK_OFF' on exit, spec expects SELL (treated as RISK_OFF) but code does not explicitly clear position start date correctly in all branches.",
+      "Indentation errors in code (e.g. return statements and if blocks) - likely a formatting issue but affects logic correctness.",
+      "Allocation logic calculates total_allocation as weight * len(universe) but universe is fixed at one ticker, so no max exposure breach possible; logic is acceptable but could be simplified.",
+      "Overall, rebalance frequency mismatch and potential data frequency mismatch cause failure."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1043,
+    "output_tokens": 201
+  },
+  "cost_usd": 0.0046175
+}

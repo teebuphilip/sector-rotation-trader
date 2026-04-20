@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/fintech_disruption_wave.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075549/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be incorrect or unreachable.",
+      "compute_signal does not handle empty or insufficient data correctly due to indentation.",
+      "Position holding logic is nested incorrectly, causing early returns and skipping entry signal check.",
+      "Adapter import and usage is correct, output columns used correctly.",
+      "Signal to allocation mapping follows spec intent (RISK_ON=BUY 5%, RISK_OFF=SELL no allocation, HOLD no action)."
+    ]
+  },
+  "usage": {
+    "input_tokens": 809,
+    "output_tokens": 96
+  },
+  "cost_usd": 0.0029825
+}

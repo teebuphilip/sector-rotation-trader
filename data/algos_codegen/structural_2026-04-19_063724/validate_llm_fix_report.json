@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/consumer_staples_sudden_volume_surge_after_price_consolidati.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_063724/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Code imports the correct adapter and uses its output columns correctly (date, value).",
+      "Signal logic does not implement the entry condition from the spec (7-day range <0.5% and volume surge) because volume data is unavailable; it only implements exit logic.",
+      "Entry logic always returns HOLD due to missing volume and range data, which does not follow the spec intent to enter on the specified trigger.",
+      "Exit logic correctly follows the spec intent (exit after 10 days or 5% price gain).",
+      "Position sizing logic matches spec allocation per signal (5%) and max exposure (20%) is implied by code structure.",
+      "Overall, failure to implement the entry trigger condition means the code does not fully follow the spec intent."
+    ]
+  },
+  "usage": {
+    "input_tokens": 897,
+    "output_tokens": 160
+  },
+  "cost_usd": 0.0038425
+}

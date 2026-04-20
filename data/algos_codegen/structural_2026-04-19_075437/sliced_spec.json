@@ -1,0 +1,42 @@
+{
+  "adapters": [
+    "weather_series"
+  ],
+  "sliced_spec": {
+    "id": "utilities-sector-weekly-temperature-drop-signal",
+    "name": "Utilities Sector Weekly Temperature Drop Signal",
+    "frequency": "weekly",
+    "universe": [
+      "XLU"
+    ],
+    "entry_exit": {
+      "entry": "If average weekly temperature drops >5\u00b0F compared to prior week",
+      "exit": "After 2 weeks or 3% price gain"
+    },
+    "signal_logic": {
+      "trigger": "If average weekly temperature drops >5\u00b0F compared to prior week"
+    },
+    "position_sizing": {
+      "allocation_per_signal": "5%",
+      "max_total_exposure": "20%"
+    },
+    "data_sources": {
+      "weather": {}
+    },
+    "adapter_contracts": {
+      "weather_series": {
+        "func": "fetch_weather_series",
+        "allowed_kwargs": [
+          "latitude",
+          "longitude",
+          "days_back"
+        ],
+        "returns": [
+          "date",
+          "temp_max",
+          "precipitation"
+        ]
+      }
+    }
+  }
+}

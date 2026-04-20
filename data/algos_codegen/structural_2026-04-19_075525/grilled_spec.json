@@ -1,0 +1,30 @@
+{
+  "id": "ev-charging-boom",
+  "name": "Ev Charging Boom",
+  "frequency": "weekly",
+  "universe": [
+    "XLB"
+  ],
+  "data_sources": {
+    "ev_charger_count": {
+      "provider": "OpenChargeMap",
+      "adapter": "openchargemap",
+      "type": "api",
+      "frequency": "weekly"
+    }
+  },
+  "signal_logic": {
+    "trigger": {
+      "condition": "weekly_growth_rate_ev_chargers > 0.03"
+    }
+  },
+  "entry_exit": {
+    "entry": "weekly_growth_rate_ev_chargers > 0.03",
+    "exit": "weeks_since_entry >= 4 OR weekly_growth_rate_ev_chargers < 0.02"
+  },
+  "position_sizing": {
+    "allocation_per_signal": 0.05,
+    "max_total_exposure": 0.2
+  },
+  "required_keys": []
+}

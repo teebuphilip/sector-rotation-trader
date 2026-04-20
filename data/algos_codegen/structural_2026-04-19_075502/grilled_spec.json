@@ -1,0 +1,23 @@
+{
+  "id": "airport-security-surge",
+  "name": "Airport Security Surge",
+  "frequency": "daily",
+  "universe": [
+    "XLI"
+  ],
+  "data_sources": {
+    "tsa_table": "tsa throughput data"
+  },
+  "signal_logic": {
+    "trigger": "If the daily TSA throughput exceeds the prior 7-day average by 20%"
+  },
+  "entry_exit": {
+    "entry": "If the daily TSA throughput exceeds the prior 7-day average by 20%",
+    "exit": "After 5 trading days or when the daily throughput falls below 10% of the prior 7-day average"
+  },
+  "position_sizing": {
+    "allocation_per_signal": "5%",
+    "max_total_exposure": "20%"
+  },
+  "required_keys": []
+}

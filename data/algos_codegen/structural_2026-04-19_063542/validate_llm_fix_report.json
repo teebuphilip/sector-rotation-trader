@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/basic_materials_sector_price_momentum_reversal.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_063542/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be unreachable or incorrect.",
+      "In compute_signal, prices are filtered by df.index == symbol which is incorrect; should filter by 'symbol' column if present.",
+      "Signal logic uses 'RISK_ON' for entry (BUY) and 'RISK_OFF' for exit (SELL) which aligns with spec intent, but indentation errors prevent correct execution.",
+      "Allocation logic returns empty dict on 'RISK_OFF' signal, which is correct (SELL means no position).",
+      "Code imports correct adapter 'price_only' and uses its output columns 'date' and 'value' as per adapter contract."
+    ]
+  },
+  "usage": {
+    "input_tokens": 972,
+    "output_tokens": 137
+  },
+  "cost_usd": 0.0038
+}

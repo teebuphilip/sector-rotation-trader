@@ -1,0 +1,23 @@
+{
+  "file": "crazy/algos/utilities_sector_weekly_temperature_drop_signal.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075437/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec frequency is 'weekly'",
+      "signal logic uses position_age() and position_return() for exit, but spec exit is 'After 2 weeks or 3% price gain' - position_age() usage is ambiguous if it counts weeks; no explicit weekly handling",
+      "signal logic computes temp_drop as prior week minus last week, but spec says 'If average weekly temperature drops >5\u00b0F compared to prior week' - logic matches but indentation errors in code may cause malfunction",
+      "code indentation errors in compute_signal and target_allocations methods (e.g. missing indentation on return statements) likely cause runtime errors",
+      "adapter import and usage correct (fetch_weather_series from crazy.adapters.weather_series), and output columns used correctly",
+      "allocation logic matches spec allocation_per_signal 5% and max_total_exposure 20% not explicitly enforced but no violation",
+      "universe matches spec",
+      "signal names differ but allowed per instructions"
+    ]
+  },
+  "usage": {
+    "input_tokens": 811,
+    "output_tokens": 221
+  },
+  "cost_usd": 0.0042375
+}

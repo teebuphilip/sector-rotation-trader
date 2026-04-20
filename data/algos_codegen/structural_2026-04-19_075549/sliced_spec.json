@@ -1,0 +1,42 @@
+{
+  "adapters": [
+    "rss_count"
+  ],
+  "sliced_spec": {
+    "id": "fintech-disruption-wave",
+    "name": "Fintech Disruption Wave",
+    "frequency": "daily",
+    "universe": [
+      "XLF"
+    ],
+    "entry_exit": {
+      "entry": "daily FinTech news article count > prior 7-day average * 1.3",
+      "exit": "after 10 trading days OR daily news count < prior 7-day average * 1.1"
+    },
+    "signal_logic": {
+      "trigger": {
+        "condition": "daily FinTech news article count > prior 7-day average * 1.3"
+      }
+    },
+    "position_sizing": {
+      "allocation_per_signal": "5%",
+      "max_total_exposure": "20%"
+    },
+    "data_sources": {
+      "rss": {}
+    },
+    "adapter_contracts": {
+      "rss_count": {
+        "func": "fetch_rss_counts",
+        "allowed_kwargs": [
+          "feed_urls",
+          "days_back"
+        ],
+        "returns": [
+          "date",
+          "count"
+        ]
+      }
+    }
+  }
+}

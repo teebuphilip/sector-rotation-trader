@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/consumer_discretionary_weekly_google_trends_surge.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075344/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "rebalance_frequency is 'daily' but spec frequency is 'weekly'",
+      "fetch_google_trends called without required keyword argument 'keyword' per adapter contract",
+      "signal logic uses 'interest' column but does not filter or ensure data is for keyword 'shopping' as required",
+      "position tracking (_position) is instance attribute which may not persist correctly across calls",
+      "no handling of 'days_back' argument in fetch_google_trends call",
+      "signal logic and allocation logic indentation is incorrect (code formatting issue)"
+    ]
+  },
+  "usage": {
+    "input_tokens": 945,
+    "output_tokens": 113
+  },
+  "cost_usd": 0.0034925
+}

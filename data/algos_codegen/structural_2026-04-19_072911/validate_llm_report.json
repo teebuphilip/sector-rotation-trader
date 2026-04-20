@@ -1,0 +1,22 @@
+{
+  "file": "crazy/algos/electric_vehicle_charger_count_surge_impacts_tech_sector.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_072911/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be incorrect or unreachable.",
+      "compute_signal does not handle empty or insufficient data correctly due to indentation.",
+      "Exit condition logic is nested inside entry condition block, preventing proper exit signal generation.",
+      "Position holding days calculation uses df['date'].iloc[-1] which may be a pd.Timestamp, but pos['entry_date'] type is unclear; potential type mismatch not handled.",
+      "Allocation logic correctly uses 5% per signal and no allocation for exit/hold, matching spec.",
+      "Adapter import and usage of fetch_openchargemap_counts with 'date' and 'count' columns is correct.",
+      "Signal names RISK_ON/RISK_OFF/HOLD are acceptable per instructions."
+    ]
+  },
+  "usage": {
+    "input_tokens": 952,
+    "output_tokens": 171
+  },
+  "cost_usd": 0.00409
+}

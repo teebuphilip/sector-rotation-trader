@@ -1,0 +1,45 @@
+{
+  "adapters": [
+    "earthquake_activity"
+  ],
+  "sliced_spec": {
+    "id": "industrial-sector-earthquake-activity-correlation",
+    "name": "Industrial Sector Earthquake Activity Correlation",
+    "frequency": "weekly",
+    "universe": [
+      "XLI"
+    ],
+    "entry_exit": {
+      "entry": "If weekly earthquake count near top 5 US industrial metro areas increases 50% week-over-week",
+      "exit": "After 3 weeks or price recovers 4%"
+    },
+    "signal_logic": {
+      "trigger": {
+        "type": "percentage_increase",
+        "metric": "weekly_earthquake_count",
+        "scope": "top_5_US_industrial_metro_areas",
+        "threshold": 50,
+        "comparison": "week_over_week"
+      }
+    },
+    "position_sizing": {
+      "allocation_per_signal": 0.05,
+      "max_total_exposure": 0.2
+    },
+    "data_sources": {
+      "earthquake": {}
+    },
+    "adapter_contracts": {
+      "earthquake_activity": {
+        "func": "fetch_earthquake_activity",
+        "allowed_kwargs": [
+          "days_back"
+        ],
+        "returns": [
+          "date",
+          "quakes"
+        ]
+      }
+    }
+  }
+}

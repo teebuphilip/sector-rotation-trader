@@ -1,0 +1,21 @@
+{
+  "file": "crazy/algos/retail_rush_ahead_of_holidays.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_075658/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Rebalance frequency is 'daily' but spec requires 'weekly'.",
+      "Signal logic does not correctly implement exit condition: exit should occur after 6 weeks OR search_interest < 1.2 * average_search_interest_last_4_weeks, but current logic only checks exit if entry condition is met or if position exists, potentially missing some cases.",
+      "Signal logic uses 'latest[\"date\"]' for weeks held calculation, but 'date' column is not guaranteed to be present or correctly used from adapter output as per contract (adapter returns 'date' and 'interest', but code does not ensure 'date' is datetime).",
+      "Signal logic uses last 4 weeks as df['interest'].iloc[-5:-1], which is 4 weeks but indexing is fragile; no validation if data is weekly or sorted.",
+      "Position sizing matches allocation_per_signal=0.05 but max_total_exposure=0.2 is not enforced anywhere in code.",
+      "Code imports correct adapter and uses correct output columns ('interest'), but 'date' usage and rebalance frequency mismatch cause failure."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1014,
+    "output_tokens": 245
+  },
+  "cost_usd": 0.004985
+}

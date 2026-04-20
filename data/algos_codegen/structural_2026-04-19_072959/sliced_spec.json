@@ -1,0 +1,46 @@
+{
+  "adapters": [
+    "google_trends"
+  ],
+  "sliced_spec": {
+    "id": "healthcare-sector-google-trends-flu-surge",
+    "name": "Healthcare Sector Google Trends Flu Surge",
+    "frequency": "weekly",
+    "universe": [
+      "XLV"
+    ],
+    "entry_exit": {
+      "entry": "If weekly flu-related search interest rises >20% week-over-week",
+      "exit": "After 4 weeks or search interest normalizes"
+    },
+    "signal_logic": {
+      "trigger": {
+        "condition": "weekly flu-related search interest rises >20% week-over-week"
+      }
+    },
+    "position_sizing": {
+      "allocation_per_signal": "5%",
+      "max_total_exposure": "20%"
+    },
+    "data_sources": {
+      "google_trends": {
+        "keyword": "flu symptoms",
+        "frequency": "weekly",
+        "mapped_to": "XLV"
+      }
+    },
+    "adapter_contracts": {
+      "google_trends": {
+        "func": "fetch_google_trends",
+        "allowed_kwargs": [
+          "keyword",
+          "days_back"
+        ],
+        "returns": [
+          "date",
+          "interest"
+        ]
+      }
+    }
+  }
+}

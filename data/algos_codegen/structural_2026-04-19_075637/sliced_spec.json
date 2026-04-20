@@ -1,0 +1,40 @@
+{
+  "adapters": [
+    "port_container_volume"
+  ],
+  "sliced_spec": {
+    "id": "port-congestion-squeeze",
+    "name": "Port Congestion Squeeze",
+    "frequency": "weekly",
+    "universe": [
+      "XLI"
+    ],
+    "entry_exit": {
+      "entry": "week-over-week change in port container volume > 10%",
+      "exit": "after 4 weeks or when week-over-week change in port container volume < 5%"
+    },
+    "signal_logic": {
+      "trigger": {
+        "condition": "week-over-week change in port container volume > 10%"
+      }
+    },
+    "position_sizing": {
+      "allocation_per_signal": "5%",
+      "max_total_exposure": "20%"
+    },
+    "data_sources": {
+      "port_container_volume": "port_container_volume"
+    },
+    "adapter_contracts": {
+      "port_container_volume": {
+        "func": "fetch_port_container_volume",
+        "allowed_kwargs": [],
+        "returns": [
+          "date",
+          "value",
+          "total_teus"
+        ]
+      }
+    }
+  }
+}

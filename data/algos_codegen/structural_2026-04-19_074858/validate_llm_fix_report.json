@@ -1,0 +1,20 @@
+{
+  "file": "crazy/algos/basic_materials_sector_price_momentum_reversal.py",
+  "spec": "data/algos_codegen/structural_2026-04-19_074858/sliced_spec.json",
+  "model": "gpt-4.1-mini",
+  "verdict": {
+    "pass": false,
+    "issues": [
+      "Indentation errors in compute_signal method cause logic to be unreachable or incorrect.",
+      "Signal logic does not strictly follow spec: spec requires entering short if price gain >6% over 7 days, but code returns RISK_ON (BUY) for that condition, which is opposite since short means SELL.",
+      "Exit logic is reversed: spec exit is after 5 days or 3% price retracement, but code treats RISK_OFF as SELL (correct), yet entry signal is RISK_ON (BUY) which conflicts with short entry.",
+      "Position sizing allocation is negative (-0.05) for RISK_ON, which aligns with short, but signal naming is inconsistent with spec intent.",
+      "Code imports correct adapter and uses correct output columns, but indentation and logic errors prevent correct behavior."
+    ]
+  },
+  "usage": {
+    "input_tokens": 1024,
+    "output_tokens": 165
+  },
+  "cost_usd": 0.00421
+}

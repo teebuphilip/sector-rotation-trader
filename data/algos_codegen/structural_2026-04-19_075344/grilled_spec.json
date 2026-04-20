@@ -1,0 +1,32 @@
+{
+  "id": "consumer-discretionary-weekly-google-trends-surge",
+  "name": "Consumer Discretionary Weekly Google Trends Surge",
+  "frequency": "weekly",
+  "universe": [
+    "XLY"
+  ],
+  "data_sources": {
+    "google_trends": {
+      "keywords": [
+        "shopping",
+        "discount"
+      ],
+      "frequency": "weekly",
+      "mapped_to": "XLY"
+    }
+  },
+  "signal_logic": {
+    "trigger": {
+      "condition": "weekly search interest for 'shopping' increases by at least 15% week-over-week"
+    }
+  },
+  "entry_exit": {
+    "entry": "Enter when weekly search interest for 'shopping' increases by at least 15% week-over-week",
+    "exit": "Exit after 3 weeks or when weekly search interest reverts below 5% increase week-over-week"
+  },
+  "position_sizing": {
+    "allocation_per_signal": "5%",
+    "max_total_exposure": "20%"
+  },
+  "required_keys": []
+}
