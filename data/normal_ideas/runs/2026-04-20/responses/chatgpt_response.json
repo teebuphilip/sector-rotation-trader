@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-DWhU3mSPw2yllFuyu03vkOJwhXvWo",
+  "object": "chat.completion",
+  "created": 1776686019,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[\n  {\n    \"idea_id\": \"value-momentum-combo\",\n    \"title\": \"Value-Momentum Combo\",\n    \"thesis\": \"Combining value and momentum factors can exploit market inefficiencies by buying undervalued stocks with strong recent performance. Value identifies stocks trading below their fundamental worth, while momentum captures continuation of price trends. This dual-factor approach aims to enhance returns and reduce drawdowns compared to single-factor strategies.\",\n    \"data_sources\": [\"yfinance\", \"FRED\"],\n    \"signal_logic\": \"Rank stocks monthly by their trailing 12-month price momentum (excluding the most recent month) and their price-to-book (P/B) ratio. Select the top 30% lowest P/B (value) and top 30% highest momentum stocks. The intersection of these two groups forms the buy list.\",\n    \"entry_exit\": \"Enter positions in stocks that are in both top momentum and value groups at the start of each month. Exit positions if the stock falls out of either top 30% group on the next monthly rebalance.\",\n    \"position_sizing\": \"Equal-weight all positions monthly. If fewer than 10 stocks meet criteria, allocate equally among those selected.\",\n    \"universe\": [\"SPY\", \"QQQ\", \"DIA\", \"IWM\", \"EEM\", \"EFA\", \"VNQ\", \"XLF\", \"XLY\", \"XLC\", \"XLI\", \"XLE\", \"XLV\", \"XLB\", \"XLU\"],\n    \"frequency\": \"monthly\",\n    \"risks\": \"Momentum crashes during sudden reversals can cause sharp losses. Value traps where low P/B stocks continue to underperform. Limited diversification if few stocks qualify. Data lookahead bias if momentum excludes most recent month is not properly implemented.\",\n    \"implementation_notes\": \"1. Download monthly price data for universe using yfinance. 2. Calculate trailing 12-month returns excluding last month for momentum. 3. Retrieve latest price-to-book ratios from yfinance fundamentals or approximate using balance sheet data. 4. Rank stocks by momentum and P/B each month. 5. Select intersection of top 30% momentum and bottom 30% P/B stocks. 6. Generate monthly buy/sell signals based on membership changes. 7. Backtest with equal weighting and track performance.\",\n    \"required_keys\": []\n  }\n]",
+        "refusal": null,
+        "annotations": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 235,
+    "completion_tokens": 487,
+    "total_tokens": 722,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "service_tier": "default",
+  "system_fingerprint": "fp_283a574ac4"
+}
