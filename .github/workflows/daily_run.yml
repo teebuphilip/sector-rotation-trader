@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   daily-run:
@@ -158,6 +159,6 @@ jobs:
           gh issue create \
             --title "Daily run failed $(date -u '+%Y-%m-%d')" \
             --body "The daily sector rotation run failed. Check [workflow logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})." \
-            --label "bug"
+            --label "bug" || echo "Issue creation failed; continuing"
         env:
           GH_TOKEN: ${{ github.token }}
