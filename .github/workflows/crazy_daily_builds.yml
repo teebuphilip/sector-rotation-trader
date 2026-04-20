@@ -1,9 +1,9 @@
 name: Crazy Daily Build Factory
 
 on:
-  schedule:
-    # Runs after Crazy Idea Daily, which starts at 09:15 UTC.
-    - cron: "45 9 * * *"
+  workflow_run:
+    workflows: ["Daily Sector Rotation Run"]
+    types: [completed]
   workflow_dispatch:
     inputs:
       run_date:
@@ -25,6 +25,7 @@ concurrency:
 
 jobs:
   build-signals:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -76,13 +77,23 @@ jobs:
             echo "BUILD_LIMIT=0" >> "$GITHUB_ENV"
           fi
 
-      - name: Generate high-action ideas
-        run: python scripts/crazy_generate_high_action_ideas.py --date "$RUN_DATE"
+      - name: Verify published idea specs exist
+        run: |
+          if [ ! -d "data/ideas/runs/$RUN_DATE/publish" ]; then
+            echo "Missing publish specs for $RUN_DATE. Crazy Idea Daily must run before experiment activation."
+            exit 1
+          fi
+          count=$(find "data/ideas/runs/$RUN_DATE/publish" -name '*.md' | wc -l | tr -d ' ')
+          echo "Published specs: $count"
+          if [ "$count" = "0" ]; then
+            echo "No publish specs found for $RUN_DATE"
+            exit 1
+          fi
 
       - name: Final publish gate
         run: python scripts/final_publish_llm_gate.py --date "$RUN_DATE" --model "${OPENAI_MODEL:-gpt-4.1-mini}"
 
-      - name: Build, seed, and run accepted specs
+      - name: Build and seed accepted experiment specs
         id: autogen
         continue-on-error: true
         run: |
@@ -96,22 +107,52 @@ jobs:
             --skip-generate \
             --publish-root "data/ideas/runs/$RUN_DATE/build" \
             --template-build \
+            --skip-run \
             --max-failures 5 \
             --verbose \
             $LIMIT_ARGS
 
-      - name: Ensure dashboards and signals are current
+      - name: Run newly seeded experiment algos only
         if: always()
         run: |
-          python crazy_run.py
+          python - <<'PY' > /tmp/new_crazy_algo_ids.txt
+          import json
+          import os
+          from pathlib import Path
+
+          root = Path("data/ideas/runs") / os.environ["RUN_DATE"] / "factory_results"
+          ids = []
+          for path in sorted(root.glob("*.json")):
+              if path.name == "summary.json" or path.name.endswith("_template_build.json"):
+                  continue
+              data = json.loads(path.read_text())
+              if data.get("seeded") and data.get("idea_id"):
+                  ids.append(data["idea_id"])
+          print("\n".join(ids))
+          PY
+          if [ ! -s /tmp/new_crazy_algo_ids.txt ]; then
+            echo "No newly seeded experiment algos to run."
+            exit 1
+          fi
+          while IFS= read -r algo_id; do
+            [ -z "$algo_id" ] && continue
+            echo "[experiment] running $algo_id"
+            python crazy_run.py --algo-id "$algo_id" --skip-combined
+          done < /tmp/new_crazy_algo_ids.txt
+
+      - name: Rebuild aggregate experiment outputs
+        if: always()
+        run: |
+          python scripts/rebuild_crazy_combined_dashboard.py
           python precompute_signals.py --min-days 30
           python scripts/rolling_30d_leaderboard.py
+          python scripts/update_algos_index.py
 
       - name: Validate generated public files
         if: always()
         run: |
           python scripts/check_public_html_placeholders.py
-          python -m py_compile scripts/autogen_crazy_factory.py scripts/build_template_algo.py scripts/final_publish_llm_gate.py
+          python -m py_compile scripts/autogen_crazy_factory.py scripts/build_template_algo.py scripts/final_publish_llm_gate.py scripts/rebuild_crazy_combined_dashboard.py crazy/runner.py crazy_run.py
 
       - name: Summarize build
         if: always()
@@ -207,7 +248,7 @@ jobs:
           )
 
           if run_ok is False:
-              raise SystemExit("Factory built algos, but final crazy_run/precompute failed.")
+              raise SystemExit("Factory built algos, but final experiment run/precompute failed.")
           if completed == 0 or seeded == 0:
               raise SystemExit("Factory produced no seeded algos; this is a real failure.")
           if failed:

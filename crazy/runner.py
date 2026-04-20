@@ -14,7 +14,7 @@ from crazy.algos import get_crazy_algos
 from crazy.config import CRAZY_STATE_DIR, CRAZY_DASHBOARD_DIR, CRAZY_LOG_DIR
 from crazy.combined_dashboard import generate_combined_dashboard
 from crazy.ledger import write_crazy_ledger
-from crazy.seed import seed_algos
+from crazy.seed import seed_algos, _filter_algos
 import subprocess
 
 
@@ -45,10 +45,14 @@ def rebalance_to_target(state: dict, target: dict, prices: dict):
             open_position(state, ticker, price, amount, using_margin=False)
 
 
-def run_all(dry_run: bool = False, as_of: date = None):
+def run_all(dry_run: bool = False, as_of: date = None, algo_ids=None, update_combined: bool = True):
     as_of = as_of or date.today()
 
-    algos = get_crazy_algos()
+    algos = _filter_algos(get_crazy_algos(), algo_ids)
+    if not algos:
+        print("No matching crazy algos found to run.")
+        return
+
     summaries = []
     if not dry_run:
         to_seed = []
@@ -93,7 +97,7 @@ def run_all(dry_run: bool = False, as_of: date = None):
                 rebalanced = True
 
         meta["name"] = algo.name
-        # Only overwrite last_signal when a rebalance actually occurred —
+        # Only overwrite last_signal when a rebalance actually occurred --
         # otherwise last_signal could drift away from the held positions
         # (e.g. a monthly-cadence algo holding stocks while today's signal
         # is CASH).
@@ -133,7 +137,7 @@ def run_all(dry_run: bool = False, as_of: date = None):
             "sim_start": state.get("sim_start") or (state["daily_snapshots"][0]["date"] if state["daily_snapshots"] else None),
         })
 
-    if not dry_run:
+    if not dry_run and update_combined:
         generate_combined_dashboard(summaries)
         write_crazy_ledger()
         _run_post_script("scripts/rolling_30d_leaderboard.py")
@@ -142,7 +146,7 @@ def run_all(dry_run: bool = False, as_of: date = None):
 
 def _run_post_script(script: str):
     """Run a post-pipeline helper script. Logs failures loudly but does
-    not abort the run — an index/leaderboard failure should not kill
+    not abort the run -- an index/leaderboard failure should not kill
     a trading pipeline that already committed state."""
     result = subprocess.run(
         ["python", script],
@@ -176,9 +180,36 @@ def _log_new_algos(category: str, algos: list, as_of: date):
             }) + "\n")
 
 
-if __name__ == "__main__":
+def _algo_ids_from_args(args):
+    algo_ids = []
+    if args.algo_id:
+        algo_ids.extend(args.algo_id)
+    if args.algo_file:
+        for path in args.algo_file:
+            stem = Path(path).stem
+            algo_ids.append(stem.replace("_", "-"))
+    return algo_ids or None
+
+
+def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--algo-id", action="append", help="Algo id/name/class to run (repeatable)")
+    parser.add_argument("--algo-file", action="append", help="Algo .py file to run (repeatable)")
+    parser.add_argument(
+        "--skip-combined",
+        action="store_true",
+        help="Run only selected algo dashboards/state and skip combined dashboard/ledger rebuild",
+    )
     args = parser.parse_args()
 
-    run_all(dry_run=args.dry_run)
+    run_all(
+        dry_run=args.dry_run,
+        algo_ids=_algo_ids_from_args(args),
+        update_combined=not args.skip_combined,
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

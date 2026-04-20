@@ -1,4 +1,4 @@
-from crazy.runner import run_all
+from crazy.runner import main
 
 if __name__ == "__main__":
-    run_all()
+    raise SystemExit(main())
