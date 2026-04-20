@@ -6,12 +6,13 @@ This is research infrastructure. It is not investment advice.
 
 ## What This Repo Does
 
-The system has four major loops:
+The system has five major loops:
 
-1. **Baseline trading loop**: runs the original NRWise-style sector rotation model.
-2. **Algo lab loop**: runs normal academic algos and crazy alternative-data algos.
-3. **Idea-to-algo loop**: generates structured ideas, validates them, routes them to adapters, builds Python algo files, seeds them, and triages the result.
-4. **Content loop**: independently reads validated reports and turns them into short public-facing content without inventing new facts.
+1. **Core book loop**: after market close, runs baseline NRWise, normal algos, crazy algos, validation, dashboards, and the core email.
+2. **Algo lab loop**: keeps normal academic algos and crazy alternative-data algos running as paper-traded experiments.
+3. **Idea generation loop**: silently generates high-action crazy ideas into dated run folders; it does not email and does not mutate trading state.
+4. **Experiment activation loop**: runs only after the core book succeeds, gates published ideas, builds/seeds accepted experiments, runs only the new algos, and sends the experiment email.
+5. **Content loop**: independently reads validated reports and turns them into short public-facing content without inventing new facts.
 
 The daily public output lives under `docs/` and is intended for GitHub Pages.
 
@@ -155,11 +156,25 @@ Seed one generated crazy algo:
 python crazy_seed.py --algo-file crazy/algos/reddit_gaming_thread_spike.py
 ```
 
-Build published crazy ideas:
+Build published crazy ideas manually:
 
 ```bash
-python scripts/run_publish_pipeline.py --dry-run
-python scripts/run_publish_pipeline.py
+python scripts/final_publish_llm_gate.py --date 2026-04-17
+python scripts/autogen_crazy_factory.py \
+  --date 2026-04-17 \
+  --skip-generate \
+  --publish-root data/ideas/runs/2026-04-17/build \
+  --template-build \
+  --skip-run \
+  --verbose
+```
+
+Run one generated experiment algo without touching the whole crazy book:
+
+```bash
+python crazy_run.py --algo-id work-from-home-frenzy --skip-combined
+python scripts/rebuild_crazy_combined_dashboard.py
+python precompute_signals.py --min-days 30
 ```
 
 Run standalone content engine:
@@ -171,20 +186,31 @@ scripts/run_content_engine.sh --date 2026-04-15
 
 ## Idea Generation Pipeline
 
-The crazy idea pipeline is intentionally gated before anything reaches the build harness.
+The crazy idea pipeline is intentionally split into two jobs so idea generation cannot break the core book.
 
-Flow:
+Morning idea flow:
 
 ```text
-LLM idea generation
+LLM high-action idea generation
 -> strict schema gate
 -> scoring
 -> markdown publishing
--> adapter routing
--> structural build
--> seed
--> triage
+-> commit idea artifacts
 ```
+
+Post-core experiment activation flow:
+
+```text
+core book succeeds
+-> final publish LLM gate
+-> deterministic template build
+-> seed accepted experiments
+-> run only newly seeded algos
+-> rebuild aggregate crazy outputs
+-> experiment email
+```
+
+The morning idea job does not email and does not mutate trading state. The experiment activation job runs only after `.github/workflows/daily_run.yml` succeeds.
 
 The required crazy idea schema follows:
 
@@ -203,14 +229,21 @@ This prevents vague ideas from entering the build stage. The LLM must identify:
 Key files:
 
 - `prompts/crazy_ideas_prompt.txt`: strict schema generation prompt.
+- `prompts/high_action_crazy_ideas_prompt.txt`: daily high-action prompt for more shots on goal.
 - `scripts/crazy_generate_ideas.py`: runs ChatGPT + Claude generators and schema gate.
+- `scripts/crazy_generate_high_action_ideas.py`: daily high-action wrapper used by GitHub Actions.
 - `scripts/crazy_schema_gate.py`: deterministic schema validator/normalizer.
 - `scripts/crazy_score_ideas.py`: scores accepted ideas.
 - `scripts/crazy_publish_markdown.py`: publishes accepted ideas to markdown.
 - `data/ideas/runs/YYYY-MM-DD/raw/`: raw LLM JSONL.
 - `data/ideas/runs/YYYY-MM-DD/filtered/`: schema-accepted ideas.
 - `data/ideas/runs/YYYY-MM-DD/rejected/`: schema-rejected ideas.
-- `data/ideas/runs/YYYY-MM-DD/publish/`: markdown specs waiting for build.
+- `data/ideas/runs/YYYY-MM-DD/publish/`: markdown specs waiting for final gate.
+- `data/ideas/runs/YYYY-MM-DD/build/`: specs approved for build.
+- `data/ideas/runs/YYYY-MM-DD/intervention/`: specs needing manual review.
+- `data/ideas/runs/YYYY-MM-DD/reject/`: specs rejected by the final gate.
+- `data/ideas/runs/YYYY-MM-DD/factory_results/`: build/seed result summaries.
+- `data/algos_codegen/structural_*/`: retained build/debug artifacts for review.
 
 GitHub Action:
 
@@ -255,43 +288,54 @@ Known adapter families include Reddit, Twitter/social search, weather, earthquak
 
 ## Build + Seed Pipeline: Crazy
 
-Main orchestrator:
+The current production path uses a deterministic template builder after final LLM gate approval. The older structural LLM builder is retained for experiments and forensic review, but the daily factory favors templates because adapter + spec type should be plug-and-play.
+
+Final gate:
 
 ```bash
-python scripts/run_publish_pipeline.py
+python scripts/final_publish_llm_gate.py --date YYYY-MM-DD
 ```
 
-Default input root:
-
-```text
-data/ideas/runs
-```
-
-The script scans nested `publish/` directories and skips specs already moved into completed, failed, or intervention queues.
-
-Dry run:
+Main factory:
 
 ```bash
-python scripts/run_publish_pipeline.py --dry-run
+python scripts/autogen_crazy_factory.py \
+  --date YYYY-MM-DD \
+  --skip-generate \
+  --publish-root data/ideas/runs/YYYY-MM-DD/build \
+  --template-build \
+  --skip-run
 ```
 
-Per-spec build flow:
+Factory flow:
 
 ```text
-adapter route
--> structural build
--> final validation
--> seed
--> move spec
+read build-approved markdown specs
+-> adapter route
+-> deterministic template build
+-> append registry line
+-> seed accepted algo
+-> move spec to completed/failed/intervention
+-> write factory_results summary
 ```
 
-Structural builder:
+Experiment activation then runs only the newly seeded algos:
+
+```text
+factory_results seeded ids
+-> crazy_run.py --algo-id ID --skip-combined
+-> rebuild_crazy_combined_dashboard.py
+-> precompute_signals.py
+-> rolling_30d_leaderboard.py
+```
+
+Older structural builder command, retained for manual/debug work:
 
 ```bash
 scripts/run_structural_build.sh --spec-file SPEC.md --output-path crazy/algos/new_algo.py
 ```
 
-Builder components:
+Builder/debug components:
 
 - `scripts/grill_algo_spec.py`: turns loose markdown into a tighter JSON spec.
 - `scripts/slice_algo_spec.py`: breaks the spec into smaller build slices.
@@ -306,7 +350,9 @@ Triage buckets:
 
 - `data/ideas/completed/YYYY-MM-DD/`: built and seeded.
 - `data/ideas/failed/YYYY-MM-DD/`: build or seed failed.
-- `data/ideas/intervention/YYYY-MM-DD/`: no adapter, low confidence, or requires manual review.
+- `data/ideas/intervention/YYYY-MM-DD/`: no adapter, low confidence, short/native unsupported, or requires manual review.
+- `data/algos_codegen/structural_*/`: retained build reports, patch reports, and validation reports. These are intentionally kept for now.
+- `data/algos/new_algos.jsonl`: lightweight audit log of algos noticed by the runner as new.
 
 ## Crazy Algo Registry
 
@@ -499,11 +545,20 @@ Future website separation can copy curated `docs/` and `content/` files into ano
 
 Primary workflows:
 
-- `.github/workflows/daily_run.yml`: after-market daily run.
-- `.github/workflows/crazy_ideas_daily.yml`: daily crazy idea generation.
+- `.github/workflows/daily_run.yml`: after-market core book run. This is the priority workflow.
+- `.github/workflows/crazy_ideas_daily.yml`: morning high-action crazy idea generation. Silent; no email.
+- `.github/workflows/crazy_daily_builds.yml`: experiment activation. Triggered by successful completion of the core book workflow, not by schedule.
 - `.github/workflows/normal_ideas_weekly.yml`: weekly normal idea generation.
 
-The daily run currently handles baseline, normal algos, crazy algos, dashboards, ledgers, rolling leaderboard, signal precompute, and email reporting. The standalone content engine is intentionally not wired into that flow yet.
+Workflow order:
+
+```text
+09:15 UTC: Crazy Idea Daily writes candidate specs
+22:30 UTC: Daily Sector Rotation Run executes the core book
+after core success: Crazy Daily Build Factory gates/builds/seeds/runs only new experiments
+```
+
+The daily run handles baseline, normal algos, existing crazy algos, dashboards, ledgers, rolling leaderboard, signal precompute, validation, and core email reporting. The experiment workflow is downstream and only runs if the core book succeeds. The standalone content engine is intentionally not wired into that flow yet.
 
 Manual trigger:
 
@@ -527,7 +582,9 @@ Email delivery:
 Optional data/API stability:
 
 - `FRED_API_KEY`
+- `EIA_API_KEY`
 - `SOCRATA_APP_TOKEN`
+- `OPENCHARGEMAP_API_KEY`
 - provider-specific keys for any blocked algos in `data/blocked/algos.jsonl`
 
 Marketing/waitlist:

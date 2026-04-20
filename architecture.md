@@ -2,12 +2,13 @@
 
 ## Executive Summary
 
-Sector Rotation Trader is a paper-trading lab with four independent but related systems:
+Sector Rotation Trader is a paper-trading lab with five independent but related systems:
 
-1. **Trading execution**: baseline NRWise, normal algos, and crazy algos run daily and update state.
-2. **Idea generation and build**: LLM-generated ideas are forced through a schema gate, routed to adapters, built into Python algos, seeded, and triaged.
-3. **Signal publishing**: dashboards, ledgers, rolling leaderboards, and ticker/sector signal files are written under `docs/`.
-4. **Content generation**: a standalone flow reads validated artifacts, writes a deep validation report, and renders short content from that report only.
+1. **Core book execution**: baseline NRWise, normal algos, and existing crazy algos run after market close and update state.
+2. **Idea generation**: high-action LLM ideas are generated silently into dated folders with schema validation.
+3. **Experiment activation**: only after the core book succeeds, approved ideas are gated, built, seeded, run narrowly, and reported by email.
+4. **Signal publishing**: dashboards, ledgers, rolling leaderboards, and ticker/sector signal files are written under `docs/`.
+5. **Content generation**: a standalone flow reads validated artifacts, writes a deep validation report, and renders short content from that report only.
 
 The core architectural rule is separation of concerns:
 
@@ -22,11 +23,15 @@ The content layer does not recompute metrics and does not invent narratives.
 ## System Map
 
 ```text
-baseline NRWise -+
-normal algos ----+--> state files --> dashboards / ledgers / rank history
-crazy algos -----+
+09:15 UTC high-action ideas --> schema gate --> publish specs
 
-LLM ideas --> schema gate --> publish specs --> adapter router --> structural build --> seed --> triage
+22:30 UTC core book:
+baseline NRWise -+
+normal algos ----+--> state files --> dashboards / ledgers / rank history / core email
+existing crazies -+
+
+after core success:
+publish specs --> final gate --> template build --> seed --> run only new experiments --> experiment email
 
 rank history + rolling 30D + signal precompute --> deep validation report --> content files
 ```
@@ -157,7 +162,7 @@ Routing behavior:
 
 ## Idea Generation Architecture
 
-The crazy idea pipeline is structured to avoid garbage-in/garbage-out.
+The crazy idea pipeline is structured to avoid garbage-in/garbage-out and is separated from trading-state mutation. The morning workflow only produces candidate artifacts. It does not email and does not run any trading simulation.
 
 Required sequence:
 
@@ -168,7 +173,9 @@ IDEA -> DATA -> BEHAVIOR -> MARKET IMPACT -> TRADE LOGIC
 Files:
 
 - `prompts/crazy_ideas_prompt.txt`: strict generation prompt.
+- `prompts/high_action_crazy_ideas_prompt.txt`: daily high-action generation prompt.
 - `scripts/crazy_generate_ideas.py`: ChatGPT + Claude orchestration.
+- `scripts/crazy_generate_high_action_ideas.py`: high-action wrapper used by the daily idea workflow.
 - `scripts/crazy_schema_gate.py`: deterministic schema validation.
 - `scripts/crazy_score_ideas.py`: idea scoring.
 - `scripts/crazy_publish_markdown.py`: markdown publishing.
@@ -180,23 +187,54 @@ data/ideas/runs/YYYY-MM-DD/raw/
 data/ideas/runs/YYYY-MM-DD/filtered/
 data/ideas/runs/YYYY-MM-DD/rejected/
 data/ideas/runs/YYYY-MM-DD/publish/
+data/ideas/runs/YYYY-MM-DD/build/
+data/ideas/runs/YYYY-MM-DD/intervention/
+data/ideas/runs/YYYY-MM-DD/reject/
+data/ideas/runs/YYYY-MM-DD/factory_results/
 ```
 
-The schema gate rejects ideas before build if they lack real data, clear behavior, sector impact, or deterministic trade logic.
+The schema gate rejects ideas before build if they lack real data, clear behavior, sector impact, or deterministic trade logic. The final publish gate performs a second LLM-assisted check before specs are moved into `build/`, `intervention/`, or `reject/`.
 
 ## Build + Seed Architecture
 
-The build pipeline turns published markdown specs into runnable crazy algo files.
+The build pipeline turns gated markdown specs into runnable crazy algo files. The production path now favors deterministic template builds. The older structural LLM builder remains available for manual/debug work and its artifacts are retained for review.
 
 Primary orchestrator:
 
-- `scripts/run_publish_pipeline.py`
+- `scripts/autogen_crazy_factory.py`
 
-Single-spec builder:
+Production builder:
+
+- `scripts/build_template_algo.py`
+
+Manual/debug structural builder:
 
 - `scripts/run_structural_build.sh`
 
-Builder stages:
+Production stages:
+
+```text
+read specs from data/ideas/runs/YYYY-MM-DD/build
+-> adapter route
+-> deterministic template build
+-> append registry entry
+-> seed accepted algo
+-> move spec to completed/failed/intervention
+-> write factory_results summary
+```
+
+Experiment activation stages:
+
+```text
+factory_results seeded ids
+-> crazy_run.py --algo-id ID --skip-combined
+-> rebuild_crazy_combined_dashboard.py
+-> precompute_signals.py
+-> rolling_30d_leaderboard.py
+-> experiment email
+```
+
+Structural/debug stages:
 
 ```text
 grill spec
@@ -220,6 +258,9 @@ Builder components:
 - `scripts/validate_structural_algo.py`
 - `scripts/validate_algo_llm.py`
 - `scripts/validate_final.py`
+- `scripts/final_publish_llm_gate.py`
+- `scripts/build_template_algo.py`
+- `scripts/rebuild_crazy_combined_dashboard.py`
 
 Triage outputs:
 
@@ -233,6 +274,7 @@ Failure policy:
 - Build failure -> failed.
 - Seed failure -> failed.
 - Successful build + seed -> completed.
+- Native short specs currently require intervention unless explicitly supported by the template builder.
 
 ## State Layout
 
@@ -262,7 +304,8 @@ Generated idea run artifacts:
 
 Build artifacts:
 
-- `data/algos_codegen/`
+- `data/algos_codegen/`: retained LLM/structural build reports for review.
+- `data/algos/new_algos.jsonl`: audit log of newly noticed algos; retained pending cleanup/retention decision.
 
 Validation cache:
 
@@ -442,25 +485,41 @@ Detailed doc:
 
 Primary workflows:
 
-- `.github/workflows/daily_run.yml`: runs baseline, normal, crazy, dashboards, ledgers, signal precompute, validation/email steps.
-- `.github/workflows/crazy_ideas_daily.yml`: generates and publishes crazy ideas.
+- `.github/workflows/daily_run.yml`: core book run; runs baseline, normal, existing crazy, dashboards, ledgers, signal precompute, validation, and core email steps.
+- `.github/workflows/crazy_ideas_daily.yml`: morning high-action idea generation; silent, no email, no trading-state mutation.
+- `.github/workflows/crazy_daily_builds.yml`: experiment activation; triggered by successful completion of the core book workflow.
 - `.github/workflows/normal_ideas_weekly.yml`: generates and publishes normal ideas.
 
 The content engine is not wired into the daily workflow yet by design. It can be run locally or added later as a separate workflow/job.
 
 ## Execution Flow: Daily Tactical Run
 
-Current tactical flow:
+Current core tactical flow:
 
 ```text
-baseline seed/run as needed
--> daily_run.py
+daily_run.py
 -> normal_run.py
 -> crazy_run.py
--> rolling_30d_leaderboard.py
+-> cleanup_blocked_keys.py
 -> precompute_signals.py
--> validate_nightly.py / email scripts
+-> rolling_30d_leaderboard.py
+-> rank_daily.py
+-> validate_nightly.py / quality_check.py
+-> core email
 -> docs/ updated
+```
+
+Current experiment activation flow:
+
+```text
+core workflow success
+-> final_publish_llm_gate.py
+-> autogen_crazy_factory.py --template-build --skip-run
+-> crazy_run.py --algo-id NEW_ID --skip-combined
+-> rebuild_crazy_combined_dashboard.py
+-> precompute_signals.py
+-> rolling_30d_leaderboard.py
+-> experiment email
 ```
 
 ## Execution Flow: Standalone Content Run
@@ -482,6 +541,7 @@ This flow consumes existing outputs. It does not trigger trading, seeding, idea 
 
 ## Operational Principles
 
+- The core book is the priority workflow; experiments only activate after core success.
 - Generated algos should be structurally valid first; strategy polish is secondary.
 - Adapters are preferred over generated data-fetching code.
 - Low-confidence adapter matches go to intervention.
@@ -490,3 +550,4 @@ This flow consumes existing outputs. It does not trigger trading, seeding, idea 
 - Force rank and rolling 30D are separate concepts.
 - Content generation is deterministic and report-driven.
 - Public credibility comes from publishing winners and failures.
+- Codegen logs and failed/intervention artifacts are retained temporarily until a cleanup/retention script exists.
