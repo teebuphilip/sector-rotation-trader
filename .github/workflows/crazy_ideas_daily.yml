@@ -12,7 +12,6 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     env:
-      ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
@@ -44,11 +43,6 @@ jobs:
           python scripts/compare_ideas.py --base data/ideas
           python scripts/ai_costs_aggregate.py
 
-      - name: Prepare morning email
-        if: ${{ always() && env.ALERT_EMAIL_TO != '' }}
-        run: |
-          python scripts/morning_email.py > /tmp/morning_email.txt || echo "morning_email.py failed" > /tmp/morning_email.txt
-
       - name: Commit results
         run: |
           git config user.name "github-actions"
@@ -60,32 +54,3 @@ jobs:
           git commit -m "daily: crazy idea run" || echo "No changes to commit"
           git pull --rebase --autostash
           git push
-
-      - name: Email morning ideation report
-        if: ${{ always() && env.ALERT_EMAIL_TO != '' }}
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 587
-          username: ${{ secrets.ALERT_EMAIL_USER }}
-          password: ${{ secrets.ALERT_EMAIL_PASS }}
-          subject: "Morning Ideation — ${{ env.AFH_RUN_DATE }} — ${{ job.status }}"
-          body: file:///tmp/morning_email.txt
-          to: ${{ secrets.ALERT_EMAIL_TO }}
-          from: ${{ secrets.ALERT_EMAIL_USER }}
-
-      - name: Email alert on failure
-        if: ${{ failure() && env.ALERT_EMAIL_TO != '' }}
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 587
-          username: ${{ secrets.ALERT_EMAIL_USER }}
-          password: ${{ secrets.ALERT_EMAIL_PASS }}
-          subject: Crazy Ideas Pipeline FAILED — ${{ env.AFH_RUN_DATE }}
-          body: |
-            The Crazy Ideas pipeline failed.
-            Repo: ${{ github.repository }}
-            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          to: ${{ secrets.ALERT_EMAIL_TO }}
-          from: ${{ secrets.ALERT_EMAIL_USER }}
