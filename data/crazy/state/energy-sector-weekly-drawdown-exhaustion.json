@@ -676,15 +676,25 @@
       "positions": {},
       "sector": "Energy Sector Weekly Drawdown Exhaustion",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-20",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Energy Sector Weekly Drawdown Exhaustion",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-19",
   "last_run": "2026-04-20",
   "meta": {
     "energy-sector-weekly-drawdown-exhaustion": {
-      "latest_value": 55.02,
-      "prior_avg": 59.1076,
-      "signal_change": -0.0692,
+      "latest_value": 55.07,
+      "prior_avg": 58.9021,
+      "signal_change": -0.0651,
       "signal_label": "HOLD",
       "name": "Energy Sector Weekly Drawdown Exhaustion",
       "last_signal": "HOLD",
