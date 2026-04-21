@@ -86,6 +86,32 @@ def _sector_heatmap_html(sector_summary: dict) -> str:
     return "\n".join(parts) if parts else '<div class="loading">No sector data</div>'
 
 
+def _comparator_badges_html(payload: dict | None) -> str:
+    if not isinstance(payload, dict):
+        return '<span class="comparator-na">n/a</span>'
+    signals = payload.get("signals") or {}
+    if not isinstance(signals, dict) or not signals:
+        return '<span class="comparator-na">n/a</span>'
+    label_map = {"momentum_5d": "5D", "momentum_20d": "20D"}
+    badges = []
+    for key in ("momentum_5d", "momentum_20d"):
+        row = signals.get(key)
+        if not isinstance(row, dict):
+            continue
+        direction = str(row.get("direction") or "NEUTRAL")
+        cls = "comp-neutral"
+        if direction == "UP":
+            cls = "comp-up"
+        elif direction == "DOWN":
+            cls = "comp-down"
+        badges.append(f'<span class="comp-badge {cls}">{label_map.get(key, key)} {direction}</span>')
+    if not badges:
+        return '<span class="comparator-na">n/a</span>'
+    etf = payload.get("primary_etf")
+    title = f'Current comparator directions for {etf}' if etf else 'Current comparator directions'
+    return f'<div class="comparator-pack" title="{_e(title)}">' + ''.join(badges) + '</div>'
+
+
 def _leaderboard_rows_html(algos: list) -> str:
     rows = []
     for i, a in enumerate(algos):
@@ -120,6 +146,8 @@ def _leaderboard_rows_html(algos: list) -> str:
             else '<span class="status-lag">LAGGING</span>'
         )
 
+        comparator_html = _comparator_badges_html(a.get('comparator'))
+
         rows.append(
             f'<tr class="{row_cls}{paywall_cls}">'
             f'<td class="rank">{rank}</td>'
@@ -127,6 +155,7 @@ def _leaderboard_rows_html(algos: list) -> str:
             f'<td><span class="algo-type-badge">{_e(a.get("algo_type",""))}</span></td>'
             f'<td class="{_ret_class(ytd)}">{_fmt(ytd)}</td>'
             f'<td class="vs-spy {diff_cls}">{diff_str}</td>'
+            f'<td>{comparator_html}</td>'
             f'<td class="days">{_e(a.get("days_running",""))}d</td>'
             f'<td>{status_html}</td>'
             f'</tr>'
@@ -134,7 +163,7 @@ def _leaderboard_rows_html(algos: list) -> str:
 
     rows.append(
         '<tr class="paywall-cta-row">'
-        '<td colspan="7"><a href="landing.html#waitlist">'
+        '<td colspan="8"><a href="landing.html#waitlist">'
         '&rarr; Join our mailing list for launch updates</a></td>'
         '</tr>'
     )
@@ -243,6 +272,12 @@ CSS = """
   .days { font-family: var(--mono); color: var(--muted); }
   .status-beat { font-family: var(--mono); font-size: 11px; color: var(--accent); background: rgba(25,211,143,0.1); padding: 3px 8px; border-radius: 4px; letter-spacing: 0.3px; }
   .status-lag { font-family: var(--mono); font-size: 11px; color: var(--red); background: rgba(239,68,68,0.1); padding: 3px 8px; border-radius: 4px; letter-spacing: 0.3px; }
+  .comparator-pack { display: flex; gap: 6px; flex-wrap: wrap; }
+  .comp-badge { font-family: var(--mono); font-size: 10px; padding: 3px 6px; border-radius: 4px; letter-spacing: 0.3px; border: 1px solid rgba(255,255,255,0.08); }
+  .comp-up { color: var(--accent); background: rgba(25,211,143,0.1); }
+  .comp-down { color: var(--red); background: rgba(239,68,68,0.1); }
+  .comp-neutral { color: var(--yellow); background: rgba(234,179,8,0.12); }
+  .comparator-na { color: var(--muted); font-family: var(--mono); font-size: 11px; }
   .row-biscotti { border-left: 3px solid var(--gold) !important; }
   .row-baileymol { border-left: 3px solid var(--purple) !important; }
   .name-tooltip { position: relative; cursor: help; }
@@ -383,6 +418,7 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
       <code>Rolling 30D</code> is recent momentum. A signal can look great over 30 days
       and still rank poorly over the full window, or the other way around.
       We show both because hiding that split would be dishonest.
+      <code>Comparators</code> shows the current 5-day and 20-day momentum direction on the algo's primary sector ETF when that mapping is clean enough to show.
       Some signals are backtested under strict V1 rules. Others are live-only because the historical data is not clean enough to backfill honestly.
     </div>
     <div class="table-wrap">
@@ -390,7 +426,7 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
         <thead>
           <tr>
             <th>#</th><th>Algorithm</th><th>Type</th>
-            <th>Return</th><th>vs SPY</th><th>Days</th><th>Status</th>
+            <th>Return</th><th>vs SPY</th><th>Comparators</th><th>Days</th><th>Status</th>
           </tr>
         </thead>
         <tbody>

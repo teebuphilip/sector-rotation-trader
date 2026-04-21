@@ -16,6 +16,8 @@ RANK_HISTORY_PATH = ROOT / 'data' / 'rank_history.csv'
 PUBLIC_DIR = ROOT / 'docs' / 'data' / 'public'
 BENCHMARKS_DIR = PUBLIC_DIR / 'benchmarks'
 PUBLIC_SIGNALS_DIR = PUBLIC_DIR / 'signals'
+COMPARISON_PATH = ROOT / 'docs' / 'comparison' / 'today.json'
+SECTOR_ETFS = {'XLK', 'XLF', 'XLY', 'XLP', 'XLU', 'XLV', 'XLI', 'XLB', 'XLRE', 'XLC', 'XLE'}
 
 
 def _load_json(path: Path) -> Any:
@@ -71,6 +73,59 @@ def _copy_signal_json_tree() -> int:
     return copied
 
 
+
+
+def _load_comparison_doc() -> dict[str, Any]:
+    data = _load_json(COMPARISON_PATH)
+    return data if isinstance(data, dict) else {}
+
+
+def _primary_sector_etf(item: dict[str, Any]) -> str | None:
+    universe = item.get('universe') or []
+    if not isinstance(universe, list):
+        return None
+    matches = [str(x).strip().upper() for x in universe if str(x).strip().upper() in SECTOR_ETFS]
+    if len(matches) == 1:
+        return matches[0]
+    return None
+
+
+def _comparator_summary(item: dict[str, Any], comparison_doc: dict[str, Any]) -> dict[str, Any] | None:
+    primary_etf = _primary_sector_etf(item)
+    comparators = comparison_doc.get('comparators') if isinstance(comparison_doc, dict) else None
+    if not primary_etf or not isinstance(comparators, dict):
+        return None
+
+    current = {}
+    available = 0
+    positive = 0
+    for name, payload in comparators.items():
+        if not isinstance(payload, dict):
+            continue
+        row = payload.get(primary_etf)
+        if not isinstance(row, dict):
+            continue
+        direction = row.get('direction')
+        if direction not in {'UP', 'DOWN', 'NEUTRAL'}:
+            continue
+        current[name] = {
+            'direction': direction,
+            'confidence': row.get('confidence'),
+            'return_pct': row.get('return_pct'),
+        }
+        available += 1
+        if direction == 'UP':
+            positive += 1
+
+    if not current:
+        return None
+
+    return {
+        'primary_etf': primary_etf,
+        'signals': current,
+        'summary': 'both_up' if available >= 2 and positive == available else ('mixed' if available else 'n/a'),
+    }
+
 def _rank_map() -> dict[tuple[str, str], dict[str, Any]]:
     out: dict[tuple[str, str], dict[str, Any]] = {}
     if not RANK_HISTORY_PATH.exists():
@@ -122,6 +177,7 @@ def _strip_algo_row(
     rank: dict[str, Any] | None,
     rolling: dict[str, Any] | None,
     spy_ret_30d: float | None,
+    comparison_doc: dict[str, Any] | None,
 ) -> dict[str, Any]:
     spy_pct = _to_float((rank or {}).get('spy_pct'))
     alpha_pct = _to_float((rank or {}).get('alpha_pct'))
@@ -136,6 +192,8 @@ def _strip_algo_row(
     spy_delta_30d = None
     if ret_30d is not None and spy_ret_30d is not None:
         spy_delta_30d = round((ret_30d - spy_ret_30d) * 100.0, 2)
+
+    comparator_summary = _comparator_summary(item, comparison_doc or {})
 
     return {
         'key': item.get('key'),
@@ -155,6 +213,7 @@ def _strip_algo_row(
         'spy_delta_30d_pct': spy_delta_30d,
         'last_snapshot': item.get('last_snapshot'),
         'new_algo_date': item.get('new_algo_date'),
+        'comparator': comparator_summary,
     }
 
 
@@ -209,6 +268,7 @@ def main() -> int:
 
     rank_rows = _rank_map()
     rolling_rows, rolling_doc = _rolling_map()
+    comparison_doc = _load_comparison_doc()
 
     spy_ret_30d = _to_float((rolling_doc or {}).get('spy_ret_30d'))
 
@@ -218,7 +278,7 @@ def main() -> int:
             continue
         rank = rank_rows.get((str(item.get('algo_type') or ''), str(item.get('algo_id') or '')))
         rolling = rolling_rows.get((str(item.get('algo_type') or ''), str(item.get('algo_id') or '')))
-        public_algos.append(_strip_algo_row(item, rank, rolling, spy_ret_30d))
+        public_algos.append(_strip_algo_row(item, rank, rolling, spy_ret_30d, comparison_doc))
     public_algos = _sort_public_rows(public_algos)
 
     def project_block(block: dict[str, Any]) -> dict[str, Any]:
@@ -228,7 +288,7 @@ def main() -> int:
                 continue
             rank = rank_rows.get((str(item.get('algo_type') or ''), str(item.get('algo_id') or '')))
             rolling = rolling_rows.get((str(item.get('algo_type') or ''), str(item.get('algo_id') or '')))
-            rows.append(_strip_algo_row(item, rank, rolling, spy_ret_30d))
+            rows.append(_strip_algo_row(item, rank, rolling, spy_ret_30d, comparison_doc))
         return {
             'generated_at': block.get('generated_at'),
             'algos': _sort_public_rows(rows),
@@ -242,7 +302,7 @@ def main() -> int:
                 continue
             rank = rank_rows.get((str(item.get('algo_type') or ''), str(item.get('algo_id') or '')))
             rolling = rolling_rows.get((str(item.get('algo_type') or ''), str(item.get('algo_id') or '')))
-            rows.append(_strip_algo_row(item, rank, rolling, spy_ret_30d))
+            rows.append(_strip_algo_row(item, rank, rolling, spy_ret_30d, comparison_doc))
         public_families['families'][family_name] = {
             'family': payload.get('family', family_name),
             'count': payload.get('count', 0),
@@ -269,6 +329,7 @@ def main() -> int:
                 rank_rows.get((str(item.get('algo_type') or ''), str(item.get('algo_id') or ''))),
                 rolling_rows.get((str(item.get('algo_type') or ''), str(item.get('algo_id') or ''))),
                 spy_ret_30d,
+                comparison_doc,
             )
             for item in daily_summary.get('top_live_ytd', [])
             if isinstance(item, dict)

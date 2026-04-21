@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-04-21 (session 7 — leaderboard comparator badges)
+
+### feat: show comparator context on the public leaderboard
+- Added comparator summaries to the public artifact layer so leaderboard rows can carry simple baseline context when a clean sector-ETF mapping exists.
+- `scripts/build_public_pages.py` now renders a compact `Comparators` column on `docs/leaderboard.html`.
+- Current comparator badges are `5D` and `20D`, driven from `docs/comparison/today.json` when the nightly comparison run has produced data.
+- If comparator data is missing or an algo cannot be cleanly mapped to a primary sector ETF, the page shows `n/a` instead of inventing a grade.
+
+Files: `scripts/build_public_artifacts.py`, `scripts/build_public_pages.py`, `docs/data/public/leaderboard.json`, `docs/leaderboard.html`
+
+## 2026-04-21 (session 6 — Kronos postpone + momentum baseline)
+
+### feat: nightly comparator suite (comparison_nightly.py)
+- `scripts/comparison_nightly.py` runs all baseline comparators against all 11 sector ETFs nightly.
+- Current comparators: `momentum_5d` (5-day return) and `momentum_20d` (20-day return). Adding Kronos or any other baseline is one function + one COMPARATORS entry.
+- Outputs `docs/comparison/today.json` and `docs/comparison/history.json` with a `comparators` dict keyed by name.
+- Wired into `daily_run.yml` with `continue-on-error: true` — never blocks the main pipeline.
+- Algo grading can score against all comparators simultaneously; an algo beating both momentum_5d and Kronos = strongest ALPHA signal.
+
+### chore: postpone all Kronos tasks pending server provisioning
+- Moved 5 Kronos CSV tasks to POSTPONED. NeoQuasar/Kronos-mini is not hosted on HuggingFace Inference API (local-only model requiring torch). Running it in GitHub Actions free tier would OOM.
+- When the $6.99/mo server is provisioned, uncomment `_run_kronos` in `comparison_nightly.py` — zero other changes.
+
+Files: `scripts/comparison_nightly.py`, `.github/workflows/daily_run.yml`, `crazystockalgo_execution_plan.csv`
+
 ## 2026-04-21 (session 5 — morning stats email)
 
 ### chore: shift morning stats email trigger to 08:30 UTC (3:30am EST)
