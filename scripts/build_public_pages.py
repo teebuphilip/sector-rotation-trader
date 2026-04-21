@@ -1000,6 +1000,10 @@ def build_main():
     out_landing.write_text(build_landing(leaderboard, daily), encoding="utf-8")
     print(f"[pages] wrote {out_landing}")
 
+    out_index = REPO / "docs" / "index.html"
+    out_index.write_text(build_landing(leaderboard, daily), encoding="utf-8")
+    print(f"[pages] wrote {out_index}")
+
     out_premium = REPO / "docs" / "premium.html"
     out_premium.write_text(build_premium(daily, leaderboard), encoding="utf-8")
     print(f"[pages] wrote {out_premium}")

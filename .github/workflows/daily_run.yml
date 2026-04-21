@@ -124,7 +124,7 @@ jobs:
           if [ -d docs/data/public ]; then
             git add docs/data/public
           fi
-          git add docs/leaderboard.html docs/landing.html docs/premium.html docs/families.html docs/daily.html docs/legal.html || true
+          git add docs/index.html docs/leaderboard.html docs/landing.html docs/premium.html docs/families.html docs/daily.html docs/legal.html || true
           if [ -d data/product ]; then
             git add data/product
           fi

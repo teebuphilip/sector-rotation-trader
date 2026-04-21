@@ -212,7 +212,7 @@ jobs:
           git add data/crazy/state docs/algos docs/crazy
           git add data/product || true
           git add docs/data/public || true
-          git add docs/leaderboard.html docs/landing.html docs/premium.html docs/families.html docs/daily.html docs/legal.html || true
+          git add docs/index.html docs/leaderboard.html docs/landing.html docs/premium.html docs/families.html docs/daily.html docs/legal.html || true
           git add reports/backtests || true
           git add docs/signals docs/leaderboards docs/ledgers || true
           if [ -d data/blocked ]; then
