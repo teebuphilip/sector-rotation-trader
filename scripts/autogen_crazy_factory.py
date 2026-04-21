@@ -297,7 +297,6 @@ def main() -> int:
                     continue
                 result["built"] = True
                 summary["built"] += 1
-                _append_registry_line(module_name, _class_name_from_idea_id(idea_id), args.dry_run)
             built_algo_files.append(algo_path)
 
         if args.build_only:
@@ -333,6 +332,8 @@ def main() -> int:
 
         result["status"] = "completed_pending_run" if args.skip_run else "completed"
         summary["completed"] += 1
+        if not args.seed_only:
+            _append_registry_line(module_name, _class_name_from_idea_id(idea_id), args.dry_run)
         _move(spec_file, Path("data/ideas/completed") / run_date, args.dry_run)
         _write_result(result_path, result, args.dry_run)
 

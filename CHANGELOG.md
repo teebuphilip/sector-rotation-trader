@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-04-21 (session 3 — P1 operational pipeline fixes)
+
+### fix: registry entry now written only after seed succeeds, not after build
+- `autogen_crazy_factory.py` was appending to `data/algos_registry_crazy.txt` immediately after a successful build, before `crazy_seed.py` ran.
+- If seed failed, the algo was in the registry but unloadable — silently skipped on every future run.
+- Registry append now happens only after both build and seed succeed (just before spec is moved to completed/).
+- `--seed-only` mode skips the append since the algo was already registered in a prior build run.
+
+Files: `scripts/autogen_crazy_factory.py`
+
+### fix: single LLM generator failure now prints a warning
+- `crazy_generate_high_action_ideas.py` previously swallowed ChatGPT or Claude failures silently — error written to file, nothing on stderr.
+- Now prints `[warn] <generator> generator failed: <reason>` to stderr on each individual failure.
+- Both-fail path already returned exit code 1; this adds visibility for the partial-failure case.
+
+Files: `scripts/crazy_generate_high_action_ideas.py`
+
 ## 2026-04-21 (session 2 — P0 operational pipeline fixes)
 
 ### fix: state.json corruption no longer crashes the daily run

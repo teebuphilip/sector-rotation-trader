@@ -191,6 +191,7 @@ def main() -> int:
     except Exception as exc:
         _write_error(run_dir, "chatgpt", exc)
         (raw_dir / f"chatgpt_{args.date}.jsonl").write_text("")
+        print(f"[warn] ChatGPT generator failed: {exc}", file=sys.stderr)
 
     try:
         claude_stdout = _run_capture(["/bin/bash", "scripts/crazy_generate_claude.sh", claude_prompt], env, "claude")
@@ -200,6 +201,7 @@ def main() -> int:
     except Exception as exc:
         _write_error(run_dir, "claude", exc)
         (raw_dir / f"claude_{args.date}.jsonl").write_text("")
+        print(f"[warn] Claude generator failed: {exc}", file=sys.stderr)
 
     if not success:
         print(f"Both generators failed. See {run_dir / 'errors'}", file=sys.stderr)
