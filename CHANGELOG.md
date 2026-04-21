@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-21 (session 9 — morning email comparator section)
+
+### feat: daily_stats_email now reports comparator context
+- Added a comparator section to `scripts/daily_stats_email.py`.
+- If `docs/comparison/today.json` exists, the morning email now reports comparator direction counts plus mapped algos that look comparator-aligned or like potential comparator beaters.
+- If comparator output is missing, the email says so explicitly instead of implying the data exists.
+
+Files: `scripts/daily_stats_email.py`, `CHANGELOG.md`
+
 ## 2026-04-21 (session 8 — margin interest closeout fix)
 
 ### fix: margin interest allocation no longer depends on close order

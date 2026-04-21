@@ -8,6 +8,95 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 
+SECTOR_ETFS = {"XLK", "XLF", "XLY", "XLP", "XLU", "XLV", "XLI", "XLB", "XLRE", "XLC", "XLE"}
+
+
+def _primary_sector_etf(item: dict) -> str | None:
+    universe = item.get("universe") or []
+    if not isinstance(universe, list):
+        return None
+    matches = [str(x).strip().upper() for x in universe if str(x).strip().upper() in SECTOR_ETFS]
+    if len(matches) == 1:
+        return matches[0]
+    return None
+
+
+def _load_algos_index() -> list[dict]:
+    payload = _load_json(Path("data/product/algos_index.json"))
+    if not isinstance(payload, dict):
+        return []
+    algos = payload.get("algos") or []
+    return [a for a in algos if isinstance(a, dict)]
+
+
+def _comparator_section(lines: list[str]) -> None:
+    comparison = _load_json(Path("docs/comparison/today.json"))
+    if not isinstance(comparison, dict):
+        lines.append("")
+        lines.append("Comparator snapshot: missing")
+        return
+
+    comparators = comparison.get("comparators") or {}
+    if not isinstance(comparators, dict) or not comparators:
+        lines.append("")
+        lines.append("Comparator snapshot: empty")
+        return
+
+    lines.append("")
+    lines.append("Comparator snapshot:")
+    for name, payload in sorted(comparators.items()):
+        if not isinstance(payload, dict):
+            continue
+        counts = {"UP": 0, "DOWN": 0, "NEUTRAL": 0}
+        for row in payload.values():
+            if not isinstance(row, dict):
+                continue
+            direction = str(row.get("direction") or "NEUTRAL")
+            if direction in counts:
+                counts[direction] += 1
+        lines.append(f"- {name}: UP {counts['UP']} / DOWN {counts['DOWN']} / NEUTRAL {counts['NEUTRAL']}")
+
+    algos = _load_algos_index()
+    beaters = []
+    aligned = []
+    for algo in algos:
+        etf = _primary_sector_etf(algo)
+        if not etf:
+            continue
+        ytd = algo.get("ytd_pct")
+        try:
+            ytdf = float(ytd)
+        except Exception:
+            continue
+        signals = {}
+        for name, payload in comparators.items():
+            if not isinstance(payload, dict):
+                continue
+            row = payload.get(etf)
+            if isinstance(row, dict) and row.get("direction") in {"UP", "DOWN", "NEUTRAL"}:
+                signals[name] = row.get("direction")
+        if not signals:
+            continue
+        dirs = set(signals.values())
+        row = f"{algo.get('name', algo.get('algo_id', '?'))} [{etf}] {ytdf:+.2f}% :: " + ", ".join(f"{k}={v}" for k, v in sorted(signals.items()))
+        if ytdf > 0 and dirs <= {"DOWN", "NEUTRAL"} and "DOWN" in dirs:
+            beaters.append(row)
+        elif ytdf > 0 and dirs == {"UP"}:
+            aligned.append(row)
+
+    if beaters:
+        lines.append("- Potential comparator beaters (positive YTD while mapped comparators are not UP):")
+        for row in sorted(beaters)[:10]:
+            lines.append(f"  - {row}")
+    else:
+        lines.append("- Potential comparator beaters: none today")
+
+    if aligned:
+        lines.append("- Comparator-aligned leaders:")
+        for row in sorted(aligned)[:10]:
+            lines.append(f"  - {row}")
+
+
 def _latest_run_dir(base: Path) -> Path | None:
     if not base.exists():
         return None
@@ -356,6 +445,8 @@ def _build_report() -> str:
             lines.append("Force Rank: no rows for today")
     else:
         lines.append("Force Rank: rank_history.csv missing")
+
+    _comparator_section(lines)
 
     # ── Validation summary ────────────────────────────────────────────
     lines.append("")
