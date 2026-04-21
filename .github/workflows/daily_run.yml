@@ -65,6 +65,9 @@ jobs:
       - name: Daily force-rank all algos
         run: python scripts/rank_daily.py
 
+      - name: Build public artifact contract
+        run: python scripts/build_public_artifacts.py
+
       - name: Nightly validation (surface)
         id: validate_surface
         run: |
@@ -114,6 +117,9 @@ jobs:
           fi
           if [ -d docs/quality_checks ]; then
             git add docs/quality_checks
+          fi
+          if [ -d docs/data/public ]; then
+            git add docs/data/public
           fi
           if [ -d data/product ]; then
             git add data/product

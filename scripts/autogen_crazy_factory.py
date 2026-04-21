@@ -340,6 +340,9 @@ def main() -> int:
         if args.dry_run:
             print("[dry-run] python crazy_run.py")
             print("[dry-run] python precompute_signals.py")
+            print("[dry-run] python scripts/update_algos_index.py")
+            print("[dry-run] python scripts/build_product_index.py")
+            print("[dry-run] python scripts/build_public_artifacts.py")
         else:
             print("[step] run crazy pipeline once")
             run_proc = _run(["python", "crazy_run.py"])
@@ -349,6 +352,15 @@ def main() -> int:
             pre_proc = _run(["python", "precompute_signals.py"])
             _print_proc("precompute", pre_proc, True)
             run_ok = run_ok and pre_proc.returncode == 0
+            print("[step] rebuild product/public artifacts")
+            for label, cmd in [
+                ("update_algos_index", ["python", "scripts/update_algos_index.py"]),
+                ("build_product_index", ["python", "scripts/build_product_index.py"]),
+                ("build_public_artifacts", ["python", "scripts/build_public_artifacts.py"]),
+            ]:
+                proc = _run(cmd)
+                _print_proc(label, proc, True)
+                run_ok = run_ok and proc.returncode == 0
             summary["run_ok"] = run_ok
             if not run_ok:
                 summary["failed"] += 1

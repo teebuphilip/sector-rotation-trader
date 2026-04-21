@@ -328,6 +328,10 @@ Current evidence model:
 
 This product layer is what future public pages, operator summaries, and premium/private surfaces should read from.
 
+Public contract generator:
+
+- `scripts/build_public_artifacts.py`
+
 ## Public vs Private Split
 
 The July ship target assumes a static public site plus a later premium layer. The public site should be generated from a small, stable contract and pushed to a separate public repo.
@@ -346,6 +350,10 @@ Public JSON target shape:
 - `docs/data/public/signals/<symbol>.json`
 
 Static public pages should be rendered from those files every night.
+
+Generator:
+
+- `scripts/build_public_artifacts.py`
 
 Internal/private artifacts must stay out of the public repo:
 

@@ -15,6 +15,7 @@ Force rank (`data/rank_history.csv`) is full-window/since-seed performance; roll
 `precompute_signals.py` writes `docs/signals/` for the ticker lookup product, including sector summaries and per-ticker JSON files.
 `scripts/build_product_index.py` writes the derived product layer under `data/product/`, including `algos_index.json`, `families.json`, `watchlist.json`, `promoted.json`, `graveyard.json`, and `daily_summary.json`.
 The product layer adds `family`, `status`, and `evidence_class` so public pages, operator summaries, and later premium surfaces do not have to scrape raw pipeline outputs.
+`scripts/build_public_artifacts.py` converts that private product layer plus signals/leaderboards into a stable nightly public contract under `docs/data/public/`.
 The standalone content engine is separate from tactical and experiment workflows: `scripts/run_content_engine.sh` reads rank history, rolling 30D, and signal precompute outputs, writes `reports/deep_validation/`, then renders deterministic text files under `content/`.
 Content generation uses the deep validation JSON as truth and does not recompute metrics or use an LLM.
 Public pages and CTAs are served from `docs/`, while generated content lives in `content/`; the target architecture is to publish only stripped public JSON plus static rendered pages to a separate website repo.
