@@ -32,7 +32,7 @@ Rules:
 - Drawdown circuit breaker blocks new entries when equity is more than 15% below peak.
 - Sector concentration limits avoid excessive exposure to one sector.
 
-Simulation state is stored in `state.json` and rendered to `docs/index.html`.
+Simulation state is stored in `state.json` and rendered to the baseline dashboard at `docs/nrwise.html`. The public site homepage is separately generated at `docs/index.html`.
 
 ## Repo Layout
 
@@ -76,14 +76,21 @@ Adapters:
 
 Public outputs:
 
-- `docs/index.html`: baseline dashboard.
-- `docs/landing.html`: public landing/CTA page.
+- `docs/nrwise.html`: baseline NRWise dashboard.
+- `docs/index.html`: public homepage.
+- `docs/landing.html`: public landing page alias.
+- `docs/leaderboard.html`: public leaderboard page.
+- `docs/families.html`: public crazy-family overview page.
+- `docs/daily.html`: nightly public snapshot page.
+- `docs/premium.html`: premium teaser page.
+- `docs/legal.html`: public disclaimer/legal page.
+- `docs/blog/`: blog/build-log pages.
+- `docs/data/public/`: nightly stripped public JSON contract.
 - `docs/leaderboards/`: rolling 30-day leaderboard outputs.
-- `docs/signals/`: precomputed ticker/sector signal lookup data.
+- `docs/signals/`: private-side precompute outputs used to derive public-safe signal JSON.
 - `docs/signals/lookup.html`: ticker lookup UI.
 - `docs/algos/<algo_id>/`: crazy algo dashboards.
 - `docs/normal/<algo_id>/`: normal algo dashboards.
-- `docs/blog/`: blog/build-log scaffold.
 - `docs/ledgers/`: consolidated normal/crazy ledger JSON.
 
 Reports and content:
@@ -193,6 +200,8 @@ Morning idea flow:
 ```text
 LLM high-action idea generation
 -> strict schema gate
+-> anti-duplicate prompt context
+-> deterministic dedupe
 -> scoring
 -> markdown publishing
 -> commit idea artifacts
@@ -218,7 +227,7 @@ The required crazy idea schema follows:
 IDEA -> DATA -> BEHAVIOR -> MARKET IMPACT -> TRADE LOGIC
 ```
 
-This prevents vague ideas from entering the build stage. The LLM must identify:
+This prevents vague ideas from entering the build stage. The generators now also receive compact recent-idea and existing-algo history so ChatGPT and Claude are both pushed away from cosmetic repeats before the deterministic dedupe step runs. The LLM must identify:
 
 - a weird but real-world idea;
 - a real, accessible data source;
@@ -233,10 +242,13 @@ Key files:
 - `scripts/crazy_generate_ideas.py`: runs ChatGPT + Claude generators and schema gate.
 - `scripts/crazy_generate_high_action_ideas.py`: daily high-action wrapper used by GitHub Actions.
 - `scripts/crazy_schema_gate.py`: deterministic schema validator/normalizer.
+- `scripts/dedup_crazy_ideas.py`: deterministic duplicate filter against current run, existing algos, and recent idea history.
 - `scripts/crazy_score_ideas.py`: scores accepted ideas.
 - `scripts/crazy_publish_markdown.py`: publishes accepted ideas to markdown.
 - `data/ideas/runs/YYYY-MM-DD/raw/`: raw LLM JSONL.
 - `data/ideas/runs/YYYY-MM-DD/filtered/`: schema-accepted ideas.
+- `data/ideas/runs/YYYY-MM-DD/deduped/`: post-dedupe ideas used for score/publish.
+- `data/ideas/runs/YYYY-MM-DD/duplicates/`: duplicate reports and removals.
 - `data/ideas/runs/YYYY-MM-DD/rejected/`: schema-rejected ideas.
 - `data/ideas/runs/YYYY-MM-DD/publish/`: markdown specs waiting for final gate.
 - `data/ideas/runs/YYYY-MM-DD/build/`: specs approved for build.
@@ -582,16 +594,19 @@ The public pages are served from `docs/` via GitHub Pages.
 
 Important pages:
 
-- `docs/landing.html`: main CTA landing page.
-- `docs/marketing/mailerlite_setup.md`: manual MailerLite/waitlist setup checklist.
+- `docs/index.html`: public homepage served at the site root.
+- `docs/landing.html`: public landing page alias generated from the same source as `docs/index.html`.
+- `docs/leaderboard.html`: public leaderboard/proof page.
+- `docs/families.html`: public crazy-family structure page.
+- `docs/daily.html`: nightly public snapshot page.
+- `docs/premium.html`: premium teaser page for the July paid layer.
+- `docs/legal.html`: public disclaimer/legal page.
 - `docs/blog/index.html`: blog/build-log index.
 - `docs/blog/_posts/`: individual posts.
-- `docs/biscotti.html`: Algo Biscotti page.
-- `docs/bailey.html`: Algo Baileymol page.
-- `docs/leaderboard.html`: public leaderboard page.
 - `docs/signals/lookup.html`: ticker signal lookup.
+- `docs/marketing/mailerlite_setup.md`: manual MailerLite/waitlist setup checklist.
 
-Future website separation can copy curated `docs/` and `content/` files into another repo without moving the lab internals.
+The public JSON contract that feeds those pages is generated nightly under `docs/data/public/`. Per-signal public JSON is now teaser-safe and does not expose the full internal breakdown payload.
 
 ## GitHub Actions
 
@@ -662,7 +677,7 @@ Gmail does not allow your normal password for SMTP. Create an app password:
 1. Go to repo `Settings > Pages`.
 2. Source: `Deploy from branch`.
 3. Branch: `main`, folder: `/docs`.
-4. Dashboard URL: `https://teebuphilip.github.io/sector-rotation-trader/`.
+4. Site URL: `https://teebuphilip.github.io/sector-rotation-trader/` (root serves `docs/index.html`).
 
 ## What This Is And Is Not
 

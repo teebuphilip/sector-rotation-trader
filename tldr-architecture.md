@@ -1,24 +1,23 @@
 Sector Rotation Trader is a paper-trading lab with five loops: core book execution, normal/crazy algo execution, high-action idea generation, post-core experiment activation, and standalone content generation.
 The repo is also the private system of record; the public website should be a static rendered view generated nightly from stripped public-safe JSON.
 The core book is the priority workflow: `daily_run.yml` runs after market close and handles baseline NRWise, normal algos, existing crazy algos, dashboards, ledgers, signal precompute, validation, ranking, and the core email.
-Crazy idea generation is separate and silent: `crazy_ideas_daily.yml` runs in the morning, generates high-action ideas, schema-gates them, scores them, publishes markdown specs, commits artifacts, and sends no email.
+Baseline state lives in `state.json`; the baseline dashboard is `docs/nrwise.html`; the public homepage is `docs/index.html`.
+Crazy idea generation is separate and silent: `crazy_ideas_daily.yml` runs in the morning, generates high-action ideas, schema-gates them, injects anti-duplicate history context into the model prompts, dedupes the results, scores them, publishes markdown specs, commits artifacts, and sends no email.
 Experiment activation is downstream: `crazy_daily_builds.yml` triggers only after `Daily Sector Rotation Run` completes successfully.
 The experiment workflow runs `final_publish_llm_gate.py`, moves approved specs to `build/`, builds with deterministic templates, seeds accepted algos, runs only the newly seeded algos with `crazy_run.py --algo-id ... --skip-combined`, rebuilds aggregate outputs, and sends the experiment email.
-Baseline state lives in `state.json`; normal and crazy algo states live under `data/normal/state/` and `data/crazy/state/`.
 Normal algos are conventional baselines in `normal/algos/`; crazy algos are alternative-data strategies in `crazy/algos/` and are registered through `data/algos_registry_crazy.txt`.
 Crazy ideas must follow `IDEA -> DATA -> BEHAVIOR -> MARKET IMPACT -> TRADE LOGIC` before they can be published or built, and they now carry an explicit `family` field for product grouping.
 Adapters in `crazy/adapters/` are the approved data access layer; low-confidence, missing-adapter, unsupported-native-short, or otherwise questionable specs are parked for intervention.
 The production build path is template-first: adapter route plus markdown spec type should be enough to produce a runnable algo without asking an LLM to write bespoke strategy code.
 Older structural LLM build artifacts are retained under `data/algos_codegen/structural_*` for review until a cleanup/retention script exists.
-Failed/intervention generated attempts and specs are retained temporarily because they may be useful for debugging, adapter expansion, or future side projects.
 Force rank (`data/rank_history.csv`) is full-window/since-seed performance; rolling 30D (`docs/leaderboards/rolling_30d.json`) is recent momentum, so they can disagree without being contradictory.
-`precompute_signals.py` writes `docs/signals/` for the ticker lookup product, including sector summaries and per-ticker JSON files.
+`precompute_signals.py` writes `docs/signals/` for the lookup product, including sector summaries and per-ticker JSON files.
 `scripts/build_product_index.py` writes the derived product layer under `data/product/`, including `algos_index.json`, `families.json`, `watchlist.json`, `promoted.json`, `graveyard.json`, and `daily_summary.json`.
 The product layer adds `family`, `status`, and `evidence_class` so public pages, operator summaries, and later premium surfaces do not have to scrape raw pipeline outputs.
 `scripts/build_public_artifacts.py` converts that private product layer plus signals/leaderboards into a stable nightly public contract under `docs/data/public/`.
+The stripped public contract feeds the static public pages: `docs/index.html`, `docs/leaderboard.html`, `docs/families.html`, `docs/daily.html`, `docs/premium.html`, `docs/legal.html`, and `docs/blog/index.html`.
+Public per-signal JSON is teaser-safe and does not expose the full internal per-algo breakdown.
 The standalone content engine is separate from tactical and experiment workflows: `scripts/run_content_engine.sh` reads rank history, rolling 30D, and signal precompute outputs, writes `reports/deep_validation/`, then renders deterministic text files under `content/`.
 Content generation uses the deep validation JSON as truth and does not recompute metrics or use an LLM.
-Public pages and CTAs are served from `docs/`, while generated content lives in `content/`; the target architecture is to publish only stripped public JSON plus static rendered pages to a separate website repo.
-The intended public contract is a nightly-generated set such as `docs/data/public/daily.json`, `leaderboard.json`, family/watchlist/promoted/graveyard JSON, benchmark JSON, and stripped per-signal JSON.
 Free should contain proof and narrative: blog, stripped leaderboard, families, promoted/watchlist summaries, failures, and public daily reports. Paid should contain the usable depth layer: full leaderboard, per-algo detail, trade history, equity curves, and later premium downloads.
 Professional Backtest V1 is a reusable engine under `backtest/` plus `scripts/run_professional_backtest.py`; it reviews every algo, runs only honest price-based long/cash sector ETF backtests, executes next trading day open with slippage, compares to SPY, and labels unsupported non-price/live-only strategies instead of faking metrics.

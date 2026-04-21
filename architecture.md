@@ -63,13 +63,13 @@ Files:
 - `scanner.py`: data download and sector scan.
 - `signals.py`: entry/exit rules.
 - `portfolio.py`: positions, cash, margin, taxes, analytics.
-- `dashboard.py`: writes `docs/index.html` and dashboard data.
+- `dashboard.py`: writes the baseline dashboard and trade data.
 - `state.json`: baseline state.
 
 Outputs:
 
 - `state.json`
-- `docs/index.html`
+- `docs/nrwise.html`
 - `docs/trades.json`
 
 ## Normal Algos
@@ -199,6 +199,8 @@ Run layout:
 ```text
 data/ideas/runs/YYYY-MM-DD/raw/
 data/ideas/runs/YYYY-MM-DD/filtered/
+data/ideas/runs/YYYY-MM-DD/deduped/
+data/ideas/runs/YYYY-MM-DD/duplicates/
 data/ideas/runs/YYYY-MM-DD/rejected/
 data/ideas/runs/YYYY-MM-DD/publish/
 data/ideas/runs/YYYY-MM-DD/build/
@@ -207,7 +209,7 @@ data/ideas/runs/YYYY-MM-DD/reject/
 data/ideas/runs/YYYY-MM-DD/factory_results/
 ```
 
-The schema gate rejects ideas before build if they lack real data, clear behavior, sector impact, or deterministic trade logic. The final publish gate performs a second LLM-assisted check before specs are moved into `build/`, `intervention/`, or `reject/`.
+The schema gate rejects ideas before build if they lack real data, clear behavior, sector impact, or deterministic trade logic. After that, the pipeline appends anti-duplicate history context to the generator prompts and runs a deterministic dedupe gate before score/publish. The final publish gate performs a second LLM-assisted check before specs are moved into `build/`, `intervention/`, or `reject/`.
 
 High-action crazy ideas now also carry an explicit `family` field so the lab can be grouped and surfaced systematically instead of as a flat list of unrelated experiments.
 
@@ -349,7 +351,7 @@ Public JSON target shape:
 - `docs/data/public/signals/index.json`
 - `docs/data/public/signals/<symbol>.json`
 
-Static public pages should be rendered from those files every night.
+Static public pages should be rendered from those files every night. The public per-signal payload is intentionally teaser-safe and does not expose the full internal per-algo breakdown.
 
 Generator:
 
@@ -409,7 +411,7 @@ Public-facing files are generated under `docs/`.
 
 Dashboards:
 
-- `docs/index.html`: baseline dashboard.
+- `docs/nrwise.html`: baseline dashboard.
 - `docs/normal/<algo_id>/index.html`: normal algo dashboards.
 - `docs/algos/<algo_id>/index.html`: crazy algo dashboards.
 - `docs/crazy/index.html`: combined crazy dashboard.
@@ -423,12 +425,17 @@ Leaderboards and ledgers:
 
 Marketing/site:
 
-- `docs/landing.html`
+- `docs/index.html`: public homepage.
+- `docs/landing.html`: homepage alias generated from the same source.
+- `docs/leaderboard.html`: public proof page.
+- `docs/families.html`: public family/grouping page.
+- `docs/daily.html`: nightly public snapshot page.
+- `docs/premium.html`: premium teaser page.
+- `docs/legal.html`: public disclaimer/legal page.
 - `docs/blog/index.html`
 - `docs/blog/_posts/`
 - `docs/biscotti.html`
 - `docs/bailey.html`
-- `docs/leaderboard.html`
 
 ## Signal Precompute Architecture
 
