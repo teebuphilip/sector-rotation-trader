@@ -1,5 +1,26 @@
 {
-  "trade_log": [],
+  "trade_log": [
+    {
+      "date": "2026-04-21",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 336.2192,
+      "price": 118.97,
+      "cost": 40000.0,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-21",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 226.259,
+      "price": 154.69,
+      "cost": 35000.0,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-01-16",
@@ -809,6 +830,35 @@
       "positions": {},
       "sector": "Retail Sales Momentum",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-21",
+      "cash": 24980.1,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99980.1,
+      "positions": {
+        "XLY": {
+          "shares": 336.2192,
+          "entry_price": 118.97,
+          "current_price": 118.97,
+          "market_value": 40000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-21",
+          "margin": false
+        },
+        "XLK": {
+          "shares": 226.259,
+          "entry_price": 154.69,
+          "current_price": 154.69,
+          "market_value": 35000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-21",
+          "margin": false
+        }
+      },
+      "sector": "Retail Sales Momentum",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16"

@@ -1,5 +1,16 @@
 {
-  "trade_log": [],
+  "trade_log": [
+    {
+      "date": "2026-04-21",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 610.9482,
+      "price": 81.84,
+      "cost": 50000.0,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-01-16",
@@ -809,6 +820,26 @@
       "positions": {},
       "sector": "Insider Trading Signals",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-21",
+      "cash": 49990.05,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99990.05,
+      "positions": {
+        "XLP": {
+          "shares": 610.9482,
+          "entry_price": 81.84,
+          "current_price": 81.84,
+          "market_value": 50000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-21",
+          "margin": false
+        }
+      },
+      "sector": "Insider Trading Signals",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-16"

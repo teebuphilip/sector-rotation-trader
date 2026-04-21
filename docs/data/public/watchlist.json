@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T10:27:17Z",
+  "generated_at": "2026-04-21T23:11:12Z",
   "algos": [
     {
       "key": "normal:baileymol",
@@ -10,14 +10,14 @@
       "status": "promoted",
       "evidence_class": "v1_backtested",
       "rebalance_frequency": "weekly",
-      "ytd_pct": 6.12,
-      "days_running": 75,
+      "ytd_pct": 5.88,
+      "days_running": 76,
       "beat_spy": true,
-      "spy_pct": 4.02,
-      "alpha_pct": 2.09,
-      "ret_30d_pct": 6.91,
-      "spy_delta_30d_pct": -1.22,
-      "last_snapshot": "2026-04-20",
+      "spy_pct": 3.34,
+      "alpha_pct": 2.54,
+      "ret_30d_pct": 6.68,
+      "spy_delta_30d_pct": -0.75,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
       "comparator": null
     },
@@ -31,13 +31,13 @@
       "evidence_class": "v1_backtested",
       "rebalance_frequency": "monthly_eom",
       "ytd_pct": 3.85,
-      "days_running": 75,
-      "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -0.18,
+      "days_running": 76,
+      "beat_spy": true,
+      "spy_pct": 3.34,
+      "alpha_pct": 0.5,
       "ret_30d_pct": 1.22,
-      "spy_delta_30d_pct": -6.91,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -6.21,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
       "comparator": null
     },
@@ -50,94 +50,14 @@
       "status": "promoted",
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "monthly_eom",
-      "ytd_pct": 3.71,
-      "days_running": 75,
-      "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -0.31,
-      "ret_30d_pct": 3.56,
-      "spy_delta_30d_pct": -4.58,
-      "last_snapshot": "2026-04-20",
-      "new_algo_date": null,
-      "comparator": null
-    },
-    {
-      "key": "crazy:lumber-momentum",
-      "algo_type": "crazy",
-      "algo_id": "lumber-momentum",
-      "name": "Lumber Momentum",
-      "family": "macro_input_pressure",
-      "status": "live_only",
-      "evidence_class": "live_receipts_only",
-      "rebalance_frequency": "monthly",
-      "ytd_pct": 0.41,
-      "days_running": 74,
-      "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -3.61,
-      "ret_30d_pct": 0.41,
-      "spy_delta_30d_pct": -7.73,
-      "last_snapshot": "2026-04-20",
-      "new_algo_date": null,
-      "comparator": null
-    },
-    {
-      "key": "crazy:copper-momentum",
-      "algo_type": "crazy",
-      "algo_id": "copper-momentum",
-      "name": "Copper Momentum",
-      "family": "macro_input_pressure",
-      "status": "live_only",
-      "evidence_class": "live_receipts_only",
-      "rebalance_frequency": "monthly",
-      "ytd_pct": 0.36,
-      "days_running": 74,
-      "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -3.66,
-      "ret_30d_pct": 0.36,
-      "spy_delta_30d_pct": -7.78,
-      "last_snapshot": "2026-04-20",
-      "new_algo_date": null,
-      "comparator": null
-    },
-    {
-      "key": "crazy:electricity-consumption",
-      "algo_type": "crazy",
-      "algo_id": "electricity-consumption",
-      "name": "Electricity Consumption",
-      "family": "macro_input_pressure",
-      "status": "live_only",
-      "evidence_class": "live_receipts_only",
-      "rebalance_frequency": "weekly",
-      "ytd_pct": 0.23,
-      "days_running": 74,
-      "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -3.79,
-      "ret_30d_pct": 0.23,
-      "spy_delta_30d_pct": -7.91,
-      "last_snapshot": "2026-04-20",
-      "new_algo_date": null,
-      "comparator": null
-    },
-    {
-      "key": "crazy:semiconductor-moonshot-warning",
-      "algo_type": "crazy",
-      "algo_id": "semiconductor-moonshot-warning",
-      "name": "Semiconductor Moonshot Warning",
-      "family": "macro_input_pressure",
-      "status": "backtest_weak",
-      "evidence_class": "v1_backtested",
-      "rebalance_frequency": "daily",
-      "ytd_pct": 0.05,
-      "days_running": 68,
-      "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -3.98,
-      "ret_30d_pct": 0.05,
-      "spy_delta_30d_pct": -8.09,
-      "last_snapshot": "2026-04-20",
+      "ytd_pct": 3.68,
+      "days_running": 76,
+      "beat_spy": true,
+      "spy_pct": 3.34,
+      "alpha_pct": 0.34,
+      "ret_30d_pct": 3.53,
+      "spy_delta_30d_pct": -3.9,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
       "comparator": null
     },
@@ -151,15 +71,65 @@
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "daily",
       "ytd_pct": 0.05,
-      "days_running": 68,
+      "days_running": 69,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -3.98,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.29,
       "ret_30d_pct": 0.06,
-      "spy_delta_30d_pct": -8.08,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.37,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
-      "comparator": null
+      "comparator": {
+        "primary_etf": "XLE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "key": "crazy:semiconductor-moonshot-warning",
+      "algo_type": "crazy",
+      "algo_id": "semiconductor-moonshot-warning",
+      "name": "Semiconductor Moonshot Warning",
+      "family": "macro_input_pressure",
+      "status": "backtest_weak",
+      "evidence_class": "v1_backtested",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.05,
+      "days_running": 69,
+      "beat_spy": false,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.3,
+      "ret_30d_pct": 0.05,
+      "spy_delta_30d_pct": -7.39,
+      "last_snapshot": "2026-04-21",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLK",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
     },
     {
       "key": "crazy:materials-sector-weekly-positive-correlation-breakdown-with-",
@@ -171,15 +141,30 @@
       "evidence_class": "v1_backtested",
       "rebalance_frequency": "weekly",
       "ytd_pct": 0.03,
-      "days_running": 68,
+      "days_running": 69,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.0,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.32,
       "ret_30d_pct": 0.0,
-      "spy_delta_30d_pct": -8.14,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.43,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
-      "comparator": null
+      "comparator": {
+        "primary_etf": "XLB",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
     },
     {
       "key": "crazy:staples-sector-drawdown-rapid-recovery",
@@ -191,53 +176,68 @@
       "evidence_class": "v1_backtested",
       "rebalance_frequency": "daily",
       "ytd_pct": 0.02,
-      "days_running": 68,
+      "days_running": 69,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.0,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.32,
       "ret_30d_pct": 0.0,
-      "spy_delta_30d_pct": -8.14,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.43,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
-      "comparator": null
+      "comparator": {
+        "primary_etf": "XLP",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
     },
     {
-      "key": "crazy:xlb-weekly-rss-news-count-spike-on-commodity-shortage",
+      "key": "crazy:insider-trading-signals",
       "algo_type": "crazy",
-      "algo_id": "xlb-weekly-rss-news-count-spike-on-commodity-shortage",
-      "name": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
-      "family": "attention_sentiment",
+      "algo_id": "insider-trading-signals",
+      "name": "Insider Trading Signals",
+      "family": "political_insider_filing",
       "status": "live_only",
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "weekly",
       "ytd_pct": -0.01,
-      "days_running": 70,
+      "days_running": 75,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.03,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.35,
       "ret_30d_pct": -0.01,
-      "spy_delta_30d_pct": -8.15,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.44,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
       "comparator": null
     },
     {
-      "key": "crazy:google-gusts",
+      "key": "crazy:retail-sales-momentum",
       "algo_type": "crazy",
-      "algo_id": "google-gusts",
-      "name": "Google Gusts",
-      "family": "macro_input_pressure",
+      "algo_id": "retail-sales-momentum",
+      "name": "Retail Sales Momentum",
+      "family": "consumer_stress",
       "status": "live_only",
       "evidence_class": "live_receipts_only",
-      "rebalance_frequency": "weekly",
-      "ytd_pct": -0.01,
-      "days_running": 70,
+      "rebalance_frequency": "monthly",
+      "ytd_pct": -0.02,
+      "days_running": 75,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.03,
-      "ret_30d_pct": -0.01,
-      "spy_delta_30d_pct": -8.15,
-      "last_snapshot": "2026-04-20",
+      "spy_pct": 3.34,
+      "alpha_pct": -3.36,
+      "ret_30d_pct": -0.02,
+      "spy_delta_30d_pct": -7.45,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
       "comparator": null
     },
@@ -251,14 +251,49 @@
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "weekly",
       "ytd_pct": -0.02,
-      "days_running": 68,
+      "days_running": 69,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.04,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.36,
       "ret_30d_pct": -0.02,
-      "spy_delta_30d_pct": -8.16,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.45,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "key": "crazy:finra-dark-pool-signal",
+      "algo_type": "crazy",
+      "algo_id": "finra-dark-pool-signal",
+      "name": "FINRA Dark Pool Signal",
+      "family": "political_insider_filing",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.02,
+      "days_running": 66,
+      "beat_spy": false,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.36,
+      "ret_30d_pct": -0.02,
+      "spy_delta_30d_pct": -7.45,
+      "last_snapshot": "2026-04-21",
+      "new_algo_date": "2026-04-21",
       "comparator": null
     },
     {
@@ -271,15 +306,30 @@
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "weekly",
       "ytd_pct": -0.04,
-      "days_running": 68,
+      "days_running": 69,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.06,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.38,
       "ret_30d_pct": -0.01,
-      "spy_delta_30d_pct": -8.15,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.44,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
-      "comparator": null
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
     },
     {
       "key": "crazy:real-estate-sector-weekly-google-trends-home-buying-surge",
@@ -291,15 +341,30 @@
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "weekly",
       "ytd_pct": -0.05,
-      "days_running": 72,
+      "days_running": 73,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.07,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.39,
       "ret_30d_pct": 0.0,
-      "spy_delta_30d_pct": -8.14,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.43,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
-      "comparator": null
+      "comparator": {
+        "primary_etf": "XLRE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
     },
     {
       "key": "crazy:utilities-sector-negative-price-gap-fill",
@@ -311,15 +376,30 @@
       "evidence_class": "v1_backtested",
       "rebalance_frequency": "daily",
       "ytd_pct": -0.08,
-      "days_running": 68,
+      "days_running": 69,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.1,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.42,
       "ret_30d_pct": -0.06,
-      "spy_delta_30d_pct": -8.2,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.49,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
-      "comparator": null
+      "comparator": {
+        "primary_etf": "XLU",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
     },
     {
       "key": "crazy:healthcare-sector-google-trends-spike-in-flu-symptoms",
@@ -331,15 +411,65 @@
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "weekly",
       "ytd_pct": -0.08,
-      "days_running": 68,
+      "days_running": 69,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.11,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.42,
       "ret_30d_pct": 0.0,
-      "spy_delta_30d_pct": -8.14,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.43,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
-      "comparator": null
+      "comparator": {
+        "primary_etf": "XLV",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "key": "crazy:google-gusts",
+      "algo_type": "crazy",
+      "algo_id": "google-gusts",
+      "name": "Google Gusts",
+      "family": "macro_input_pressure",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.09,
+      "days_running": 71,
+      "beat_spy": false,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.43,
+      "ret_30d_pct": -0.09,
+      "spy_delta_30d_pct": -7.52,
+      "last_snapshot": "2026-04-21",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLC",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
     },
     {
       "key": "crazy:xlu-daily-electricity-demand-surge",
@@ -351,15 +481,30 @@
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "daily",
       "ytd_pct": -0.1,
-      "days_running": 70,
+      "days_running": 71,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.12,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.44,
       "ret_30d_pct": -0.03,
-      "spy_delta_30d_pct": -8.17,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.46,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
-      "comparator": null
+      "comparator": {
+        "primary_etf": "XLU",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
     },
     {
       "key": "crazy:tremor-tension",
@@ -371,15 +516,30 @@
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "daily",
       "ytd_pct": -0.14,
-      "days_running": 70,
+      "days_running": 71,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.16,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.48,
       "ret_30d_pct": -0.13,
-      "spy_delta_30d_pct": -8.26,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.56,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
-      "comparator": null
+      "comparator": {
+        "primary_etf": "XLV",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
     },
     {
       "key": "crazy:electricity-enlightenment",
@@ -391,15 +551,30 @@
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "weekly",
       "ytd_pct": -0.14,
-      "days_running": 70,
+      "days_running": 71,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.17,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.48,
       "ret_30d_pct": -0.08,
-      "spy_delta_30d_pct": -8.22,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.51,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
-      "comparator": null
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
     },
     {
       "key": "crazy:uber-mobility",
@@ -410,34 +585,74 @@
       "status": "live_only",
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "weekly",
-      "ytd_pct": -0.15,
-      "days_running": 74,
+      "ytd_pct": -0.49,
+      "days_running": 75,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.17,
-      "ret_30d_pct": -0.15,
-      "spy_delta_30d_pct": -8.29,
-      "last_snapshot": "2026-04-20",
+      "spy_pct": 3.34,
+      "alpha_pct": -3.83,
+      "ret_30d_pct": -0.49,
+      "spy_delta_30d_pct": -7.92,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
       "comparator": null
     },
     {
-      "key": "normal:biscotti",
-      "algo_type": "normal",
-      "algo_id": "biscotti",
-      "name": "Algo Biscotti (Unconditional Loyalty)",
-      "family": "core_rotation",
-      "status": "promoted",
-      "evidence_class": "v1_backtested",
-      "rebalance_frequency": "monthly_eom",
-      "ytd_pct": -0.22,
+      "key": "crazy:copper-momentum",
+      "algo_type": "crazy",
+      "algo_id": "copper-momentum",
+      "name": "Copper Momentum",
+      "family": "macro_input_pressure",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "monthly",
+      "ytd_pct": -0.53,
       "days_running": 75,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.24,
-      "ret_30d_pct": 7.71,
-      "spy_delta_30d_pct": -0.42,
-      "last_snapshot": "2026-04-20",
+      "spy_pct": 3.34,
+      "alpha_pct": -3.88,
+      "ret_30d_pct": -0.53,
+      "spy_delta_30d_pct": -7.96,
+      "last_snapshot": "2026-04-21",
+      "new_algo_date": null,
+      "comparator": null
+    },
+    {
+      "key": "crazy:lumber-momentum",
+      "algo_type": "crazy",
+      "algo_id": "lumber-momentum",
+      "name": "Lumber Momentum",
+      "family": "macro_input_pressure",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "monthly",
+      "ytd_pct": -0.67,
+      "days_running": 75,
+      "beat_spy": false,
+      "spy_pct": 3.34,
+      "alpha_pct": -4.01,
+      "ret_30d_pct": -0.67,
+      "spy_delta_30d_pct": -8.1,
+      "last_snapshot": "2026-04-21",
+      "new_algo_date": null,
+      "comparator": null
+    },
+    {
+      "key": "crazy:electricity-consumption",
+      "algo_type": "crazy",
+      "algo_id": "electricity-consumption",
+      "name": "Electricity Consumption",
+      "family": "macro_input_pressure",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.72,
+      "days_running": 75,
+      "beat_spy": false,
+      "spy_pct": 3.34,
+      "alpha_pct": -4.06,
+      "ret_30d_pct": -0.72,
+      "spy_delta_30d_pct": -8.15,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
       "comparator": null
     },
@@ -450,34 +665,34 @@
       "status": "live_only",
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "monthly",
-      "ytd_pct": -0.32,
-      "days_running": 74,
+      "ytd_pct": -1.11,
+      "days_running": 75,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.34,
-      "ret_30d_pct": -0.32,
-      "spy_delta_30d_pct": -8.46,
-      "last_snapshot": "2026-04-20",
+      "spy_pct": 3.34,
+      "alpha_pct": -4.45,
+      "ret_30d_pct": -1.11,
+      "spy_delta_30d_pct": -8.54,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
       "comparator": null
     },
     {
-      "key": "crazy:xlc-weekly-google-trends-surge-in-5g-rollout",
-      "algo_type": "crazy",
-      "algo_id": "xlc-weekly-google-trends-surge-in-5g-rollout",
-      "name": "Xlc Weekly Google Trends Surge In 5g Rollout",
-      "family": "attention_sentiment",
-      "status": "live_only",
-      "evidence_class": "live_receipts_only",
-      "rebalance_frequency": "weekly",
-      "ytd_pct": -0.41,
-      "days_running": 70,
+      "key": "normal:biscotti",
+      "algo_type": "normal",
+      "algo_id": "biscotti",
+      "name": "Algo Biscotti (Unconditional Loyalty)",
+      "family": "core_rotation",
+      "status": "promoted",
+      "evidence_class": "v1_backtested",
+      "rebalance_frequency": "monthly_eom",
+      "ytd_pct": -1.63,
+      "days_running": 76,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.43,
-      "ret_30d_pct": 0.04,
-      "spy_delta_30d_pct": -8.1,
-      "last_snapshot": "2026-04-20",
+      "spy_pct": 3.34,
+      "alpha_pct": -4.97,
+      "ret_30d_pct": 6.19,
+      "spy_delta_30d_pct": -1.24,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
       "comparator": null
     },
@@ -490,14 +705,14 @@
       "status": "live_only",
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "monthly_eom",
-      "ytd_pct": -3.49,
-      "days_running": 74,
+      "ytd_pct": -4.13,
+      "days_running": 75,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -7.51,
-      "ret_30d_pct": 1.46,
-      "spy_delta_30d_pct": -6.67,
-      "last_snapshot": "2026-04-20",
+      "spy_pct": 3.34,
+      "alpha_pct": -7.48,
+      "ret_30d_pct": 0.79,
+      "spy_delta_30d_pct": -6.64,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
       "comparator": null
     },
@@ -510,15 +725,55 @@
       "status": "live_only",
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "weekly",
-      "ytd_pct": -5.82,
-      "days_running": 74,
+      "ytd_pct": -6.03,
+      "days_running": 75,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -9.84,
-      "ret_30d_pct": 2.58,
-      "spy_delta_30d_pct": -5.56,
-      "last_snapshot": "2026-04-20",
+      "spy_pct": 3.34,
+      "alpha_pct": -9.37,
+      "ret_30d_pct": 2.36,
+      "spy_delta_30d_pct": -5.08,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
+      "comparator": null
+    },
+    {
+      "key": "crazy:vix-term-structure",
+      "algo_type": "crazy",
+      "algo_id": "vix-term-structure",
+      "name": "VIX Term Structure",
+      "family": "attention_sentiment",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -6.16,
+      "days_running": 66,
+      "beat_spy": false,
+      "spy_pct": 3.34,
+      "alpha_pct": -9.5,
+      "ret_30d_pct": 4.08,
+      "spy_delta_30d_pct": -3.35,
+      "last_snapshot": "2026-04-21",
+      "new_algo_date": "2026-04-21",
+      "comparator": null
+    },
+    {
+      "key": "crazy:vix-fear-rotation",
+      "algo_type": "crazy",
+      "algo_id": "vix-fear-rotation",
+      "name": "VIX Fear Rotation",
+      "family": "attention_sentiment",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -7.95,
+      "days_running": 66,
+      "beat_spy": false,
+      "spy_pct": 3.34,
+      "alpha_pct": -11.29,
+      "ret_30d_pct": 0.84,
+      "spy_delta_30d_pct": -6.59,
+      "last_snapshot": "2026-04-21",
+      "new_algo_date": "2026-04-21",
       "comparator": null
     },
     {
@@ -531,13 +786,13 @@
       "evidence_class": "needs_history",
       "rebalance_frequency": "monthly_eom",
       "ytd_pct": 0.0,
-      "days_running": 75,
+      "days_running": 76,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.02,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.34,
       "ret_30d_pct": 0.0,
-      "spy_delta_30d_pct": -8.14,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.43,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
       "comparator": null
     },
@@ -551,15 +806,30 @@
       "evidence_class": "v1_backtested",
       "rebalance_frequency": "weekly",
       "ytd_pct": 0.0,
-      "days_running": 68,
+      "days_running": 69,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.02,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.34,
       "ret_30d_pct": 0.0,
-      "spy_delta_30d_pct": -8.14,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.43,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
-      "comparator": null
+      "comparator": {
+        "primary_etf": "XLE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
     }
   ]
 }

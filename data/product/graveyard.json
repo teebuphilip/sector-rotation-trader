@@ -1,6 +1,54 @@
 {
-  "generated_at": "2026-04-21T10:27:17Z",
+  "generated_at": "2026-04-21T23:11:12Z",
   "algos": [
+    {
+      "key": "crazy:xlb-weekly-rss-news-count-spike-on-commodity-shortage",
+      "algo_type": "crazy",
+      "algo_id": "xlb-weekly-rss-news-count-spike-on-commodity-shortage",
+      "name": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
+      "family": "attention_sentiment",
+      "status": "parked",
+      "evidence_class": "pending_seed",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLB"
+      ],
+      "equity": 99935.79,
+      "ytd_pct": -0.06,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-04-21",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": "UNSUPPORTED_DATA",
+      "backtest_reason": "Uses non-price adapter: crazy.adapters.rss_count",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:xlc-weekly-google-trends-surge-in-5g-rollout",
+      "algo_type": "crazy",
+      "algo_id": "xlc-weekly-google-trends-surge-in-5g-rollout",
+      "name": "Xlc Weekly Google Trends Surge In 5g Rollout",
+      "family": "attention_sentiment",
+      "status": "parked",
+      "evidence_class": "pending_seed",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLC"
+      ],
+      "equity": 99592.39,
+      "ytd_pct": -0.41,
+      "trade_count": 46,
+      "positions": 0,
+      "last_snapshot": "2026-04-21",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": "UNSUPPORTED_DATA",
+      "backtest_reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
     {
       "key": "crazy:retail-roulette",
       "algo_type": "crazy",
@@ -17,7 +65,7 @@
       "ytd_pct": -0.09,
       "trade_count": 12,
       "positions": 0,
-      "last_snapshot": "2026-04-20",
+      "last_snapshot": "2026-04-21",
       "last_signal": null,
       "new_algo_date": null,
       "backtest_status": "BACKTEST_FAIL",
@@ -26,13 +74,37 @@
       "backtest_trade_count": 87
     },
     {
+      "key": "crazy:xlb-daily-volatility-contraction-breakout",
+      "algo_type": "crazy",
+      "algo_id": "xlb-daily-volatility-contraction-breakout",
+      "name": "Xlb Daily Volatility Contraction Breakout",
+      "family": "macro_input_pressure",
+      "status": "parked",
+      "evidence_class": "pending_seed",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLB"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-04-21",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": "INSUFFICIENT_ACTIVITY",
+      "backtest_reason": "Backtest completed",
+      "backtest_alpha_vs_spy_pct": -50.97,
+      "backtest_trade_count": 0
+    },
+    {
       "key": "crazy:xle-weekly-drawdown-rebound-signal",
       "algo_type": "crazy",
       "algo_id": "xle-weekly-drawdown-rebound-signal",
       "name": "Xle Weekly Drawdown Rebound Signal",
       "family": "macro_input_pressure",
-      "status": "failed",
-      "evidence_class": "v1_backtested",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "universe": [
         "XLE"
@@ -41,13 +113,61 @@
       "ytd_pct": -0.33,
       "trade_count": 32,
       "positions": 0,
-      "last_snapshot": "2026-04-20",
+      "last_snapshot": "2026-04-21",
       "last_signal": null,
       "new_algo_date": null,
       "backtest_status": "BACKTEST_FAIL",
       "backtest_reason": "Backtest completed",
       "backtest_alpha_vs_spy_pct": -51.35,
       "backtest_trade_count": 74
+    },
+    {
+      "key": "crazy:energy-sector-sudden-weekly-volatility-spike",
+      "algo_type": "crazy",
+      "algo_id": "energy-sector-sudden-weekly-volatility-spike",
+      "name": "Energy Sector Sudden Weekly Volatility Spike",
+      "family": "political_insider_filing",
+      "status": "parked",
+      "evidence_class": "pending_seed",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLE"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-04-21",
+      "last_signal": null,
+      "new_algo_date": "2026-04-21",
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:materials-sector-weekly-volatility-contraction-breakout",
+      "algo_type": "crazy",
+      "algo_id": "materials-sector-weekly-volatility-contraction-breakout",
+      "name": "Materials Sector Weekly Volatility Contraction Breakout",
+      "family": "political_insider_filing",
+      "status": "parked",
+      "evidence_class": "pending_seed",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLB"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-04-21",
+      "last_signal": null,
+      "new_algo_date": "2026-04-21",
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
     }
   ]
 }

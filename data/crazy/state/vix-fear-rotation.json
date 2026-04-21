@@ -1,0 +1,3346 @@
+{
+  "cash": 23074.550541220055,
+  "borrowed": 0.0,
+  "accrued_interest": 0.0,
+  "fees_paid": 1285.1590839595742,
+  "taxes_paid": 2732.088405359196,
+  "positions": {
+    "XLK": {
+      "shares": 239.39824687256979,
+      "entry_price": 154.35000610351562,
+      "entry_date": "2026-04-17",
+      "cost": 36951.120865952085,
+      "using_margin": false,
+      "consec_below_ma": 0
+    },
+    "XLY": {
+      "shares": 268.5178122611616,
+      "entry_price": 120.41000366210938,
+      "entry_date": "2026-04-17",
+      "cost": 32332.230757708072,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
+  "trade_log": [
+    {
+      "date": "2026-01-21",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 278.4906,
+      "price": 143.6314,
+      "cost": 40000.0,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-21",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 288.8823,
+      "price": 121.1566,
+      "cost": 35000.0,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-22",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 278.4906,
+      "price": 144.7001,
+      "proceeds": 40285.57,
+      "fees": 12.05,
+      "tax": 105.66,
+      "pnl": 179.91,
+      "pnl_pct": 0.45,
+      "entry_date": "2026-01-21",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-01-22",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 288.8823,
+      "price": 122.3742,
+      "proceeds": 35339.93,
+      "fees": 11.8,
+      "tax": 125.77,
+      "pnl": 214.15,
+      "pnl_pct": 0.61,
+      "entry_date": "2026-01-21",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-01-22",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 277.4681,
+      "price": 144.7001,
+      "cost": 40149.67,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-22",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 287.0782,
+      "price": 122.3742,
+      "cost": 35130.96,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-23",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 277.4681,
+      "price": 144.9098,
+      "proceeds": 40195.82,
+      "fees": 12.04,
+      "tax": 17.08,
+      "pnl": 29.07,
+      "pnl_pct": 0.07,
+      "entry_date": "2026-01-22",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-01-23",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 287.0782,
+      "price": 122.8831,
+      "proceeds": 35265.27,
+      "fees": 11.8,
+      "tax": 49.7,
+      "pnl": 84.62,
+      "pnl_pct": 0.24,
+      "entry_date": "2026-01-22",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-01-23",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 277.3255,
+      "price": 144.9098,
+      "cost": 40187.18,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-23",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 286.1563,
+      "price": 122.8831,
+      "cost": 35163.78,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-26",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 277.3255,
+      "price": 145.8986,
+      "proceeds": 40449.34,
+      "fees": 12.06,
+      "tax": 97.0,
+      "pnl": 165.16,
+      "pnl_pct": 0.41,
+      "entry_date": "2026-01-23",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-01-26",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 286.1563,
+      "price": 122.0748,
+      "proceeds": 34920.68,
+      "fees": 11.78,
+      "tax": 0.0,
+      "pnl": -243.1,
+      "pnl_pct": -0.69,
+      "entry_date": "2026-01-23",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-01-26",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 275.1777,
+      "price": 145.8986,
+      "cost": 40148.04,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-26",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 287.7707,
+      "price": 122.0748,
+      "cost": 35129.54,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-27",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 275.1777,
+      "price": 147.8661,
+      "proceeds": 40677.4,
+      "fees": 12.07,
+      "tax": 195.86,
+      "pnl": 333.5,
+      "pnl_pct": 0.83,
+      "entry_date": "2026-01-26",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-01-27",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 287.7707,
+      "price": 122.444,
+      "proceeds": 35224.0,
+      "fees": 11.8,
+      "tax": 34.95,
+      "pnl": 59.51,
+      "pnl_pct": 0.17,
+      "entry_date": "2026-01-26",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-01-27",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 272.5254,
+      "price": 147.8661,
+      "cost": 40297.29,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-27",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 287.9693,
+      "price": 122.444,
+      "cost": 35260.13,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-28",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 272.5254,
+      "price": 149.0447,
+      "proceeds": 40606.4,
+      "fees": 12.06,
+      "tax": 114.37,
+      "pnl": 194.74,
+      "pnl_pct": 0.48,
+      "entry_date": "2026-01-27",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-01-28",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 287.9693,
+      "price": 121.5259,
+      "proceeds": 34983.94,
+      "fees": 11.79,
+      "tax": 0.0,
+      "pnl": -276.19,
+      "pnl_pct": -0.78,
+      "entry_date": "2026-01-27",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-01-28",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 270.0985,
+      "price": 149.0447,
+      "cost": 40256.75,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-28",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 289.8531,
+      "price": 121.5259,
+      "cost": 35224.66,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-29",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 270.0985,
+      "price": 146.6876,
+      "proceeds": 39608.1,
+      "fees": 12.01,
+      "tax": 0.0,
+      "pnl": -648.65,
+      "pnl_pct": -1.61,
+      "entry_date": "2026-01-28",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-01-29",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 289.8531,
+      "price": 120.947,
+      "proceeds": 35045.09,
+      "fees": 11.79,
+      "tax": 0.0,
+      "pnl": -179.57,
+      "pnl_pct": -0.51,
+      "entry_date": "2026-01-28",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-01-29",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 272.1259,
+      "price": 146.6876,
+      "cost": 39917.5,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-29",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 288.786,
+      "price": 120.947,
+      "cost": 34927.81,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-30",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 272.1259,
+      "price": 143.7013,
+      "proceeds": 39092.87,
+      "fees": 11.99,
+      "tax": 0.0,
+      "pnl": -824.63,
+      "pnl_pct": -2.07,
+      "entry_date": "2026-01-29",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-01-30",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 288.786,
+      "price": 120.9271,
+      "proceeds": 34910.27,
+      "fees": 11.78,
+      "tax": 0.0,
+      "pnl": -17.55,
+      "pnl_pct": -0.05,
+      "entry_date": "2026-01-29",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-01-30",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 275.3814,
+      "price": 143.7013,
+      "cost": 39572.67,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-01-30",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 286.3386,
+      "price": 120.9271,
+      "cost": 34626.09,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-02-02",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 275.3814,
+      "price": 145.0796,
+      "proceeds": 39940.19,
+      "fees": 12.03,
+      "tax": 135.98,
+      "pnl": 231.54,
+      "pnl_pct": 0.59,
+      "entry_date": "2026-01-30",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-02-02",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 286.3386,
+      "price": 121.7255,
+      "proceeds": 34842.92,
+      "fees": 11.78,
+      "tax": 80.23,
+      "pnl": 136.61,
+      "pnl_pct": 0.39,
+      "entry_date": "2026-01-30",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-02-02",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 273.7254,
+      "price": 145.0796,
+      "cost": 39711.97,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-02-02",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 285.4618,
+      "price": 121.7255,
+      "cost": 34747.97,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-02-03",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 273.7254,
+      "price": 141.9036,
+      "proceeds": 38830.63,
+      "fees": 11.97,
+      "tax": 0.0,
+      "pnl": -881.34,
+      "pnl_pct": -2.22,
+      "entry_date": "2026-02-02",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-02-03",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 285.4618,
+      "price": 120.7474,
+      "proceeds": 34457.02,
+      "fees": 11.76,
+      "tax": 0.0,
+      "pnl": -290.95,
+      "pnl_pct": -0.84,
+      "entry_date": "2026-02-02",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-02-03",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 276.4912,
+      "price": 141.9036,
+      "cost": 39235.09,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-02-03",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 284.3183,
+      "price": 120.7474,
+      "cost": 34330.71,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-02-06",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 276.4912,
+      "price": 140.9547,
+      "proceeds": 38960.77,
+      "fees": 11.98,
+      "tax": 0.0,
+      "pnl": -274.32,
+      "pnl_pct": -0.7,
+      "entry_date": "2026-02-03",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-02-06",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 284.3183,
+      "price": 117.7534,
+      "proceeds": 33467.75,
+      "fees": 11.71,
+      "tax": 0.0,
+      "pnl": -862.95,
+      "pnl_pct": -2.51,
+      "entry_date": "2026-02-03",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-02-06",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 275.0686,
+      "price": 140.9547,
+      "cost": 38772.22,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-02-06",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 288.1079,
+      "price": 117.7534,
+      "cost": 33925.69,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-02-09",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 275.0686,
+      "price": 143.172,
+      "proceeds": 39370.12,
+      "fees": 12.0,
+      "tax": 221.22,
+      "pnl": 376.67,
+      "pnl_pct": 0.97,
+      "entry_date": "2026-02-06",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-02-09",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 288.1079,
+      "price": 117.3143,
+      "proceeds": 33787.46,
+      "fees": 11.73,
+      "tax": 0.0,
+      "pnl": -138.24,
+      "pnl_pct": -0.41,
+      "entry_date": "2026-02-06",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-02-09",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 271.4193,
+      "price": 143.172,
+      "cost": 38859.64,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-02-09",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 289.8382,
+      "price": 117.3143,
+      "cost": 34002.18,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-02-10",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 271.4193,
+      "price": 142.373,
+      "proceeds": 38630.81,
+      "fees": 11.96,
+      "tax": 0.0,
+      "pnl": -228.83,
+      "pnl_pct": -0.59,
+      "entry_date": "2026-02-09",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-02-10",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 289.8382,
+      "price": 118.0928,
+      "proceeds": 34216.05,
+      "fees": 11.75,
+      "tax": 79.13,
+      "pnl": 134.74,
+      "pnl_pct": 0.4,
+      "entry_date": "2026-02-09",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-02-10",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 272.6222,
+      "price": 142.373,
+      "cost": 38814.04,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-02-10",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 287.5899,
+      "price": 118.0928,
+      "cost": 33962.29,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-02-11",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 272.6222,
+      "price": 142.7925,
+      "proceeds": 38916.42,
+      "fees": 11.98,
+      "tax": 37.88,
+      "pnl": 64.5,
+      "pnl_pct": 0.17,
+      "entry_date": "2026-02-10",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-02-11",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 287.5899,
+      "price": 117.5239,
+      "proceeds": 33786.96,
+      "fees": 11.73,
+      "tax": 0.0,
+      "pnl": -175.32,
+      "pnl_pct": -0.52,
+      "entry_date": "2026-02-10",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-02-11",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 271.4552,
+      "price": 142.7925,
+      "cost": 38761.75,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-02-11",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 288.5926,
+      "price": 117.5239,
+      "cost": 33916.53,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-02-25",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 271.4552,
+      "price": 142.8324,
+      "proceeds": 38760.62,
+      "fees": 11.97,
+      "tax": 0.0,
+      "pnl": -1.13,
+      "pnl_pct": -0.0,
+      "entry_date": "2026-02-11",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-02-25",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 288.5926,
+      "price": 116.8553,
+      "proceeds": 33711.84,
+      "fees": 11.72,
+      "tax": 0.0,
+      "pnl": -204.69,
+      "pnl_pct": -0.6,
+      "entry_date": "2026-02-11",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-02-25",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 270.7471,
+      "price": 142.8324,
+      "cost": 38671.46,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-02-25",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 289.5679,
+      "price": 116.8553,
+      "cost": 33837.53,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-09",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 270.7471,
+      "price": 139.5864,
+      "proceeds": 37780.71,
+      "fees": 11.92,
+      "tax": 0.0,
+      "pnl": -890.75,
+      "pnl_pct": -2.3,
+      "entry_date": "2026-02-25",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-09",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 289.5679,
+      "price": 114.3603,
+      "proceeds": 33103.37,
+      "fees": 11.69,
+      "tax": 0.0,
+      "pnl": -734.16,
+      "pnl_pct": -2.17,
+      "entry_date": "2026-02-25",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-09",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 444.661,
+      "price": 85.4888,
+      "cost": 38013.54,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-09",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 714.9283,
+      "price": 46.5247,
+      "cost": 33261.84,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-12",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 444.661,
+      "price": 83.7784,
+      "proceeds": 37241.05,
+      "fees": 11.95,
+      "tax": 0.0,
+      "pnl": -772.48,
+      "pnl_pct": -2.03,
+      "entry_date": "2026-03-09",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-12",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 714.9283,
+      "price": 46.1772,
+      "proceeds": 33001.54,
+      "fees": 11.82,
+      "tax": 0.0,
+      "pnl": -260.3,
+      "pnl_pct": -0.78,
+      "entry_date": "2026-03-09",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-12",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 448.7129,
+      "price": 83.7784,
+      "cost": 37592.46,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-12",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 712.3306,
+      "price": 46.1772,
+      "cost": 32893.4,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-13",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 448.7129,
+      "price": 84.2657,
+      "proceeds": 37799.12,
+      "fees": 11.98,
+      "tax": 76.46,
+      "pnl": 130.2,
+      "pnl_pct": 0.35,
+      "entry_date": "2026-03-12",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-13",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 712.3306,
+      "price": 46.634,
+      "proceeds": 33206.97,
+      "fees": 11.82,
+      "tax": 116.02,
+      "pnl": 197.55,
+      "pnl_pct": 0.6,
+      "entry_date": "2026-03-12",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-13",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 447.5796,
+      "price": 84.2657,
+      "cost": 37715.6,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-13",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 707.6635,
+      "price": 46.634,
+      "cost": 33001.15,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-18",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 447.5796,
+      "price": 82.1774,
+      "proceeds": 36769.02,
+      "fees": 11.92,
+      "tax": 0.0,
+      "pnl": -946.58,
+      "pnl_pct": -2.51,
+      "entry_date": "2026-03-13",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-18",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 707.6635,
+      "price": 46.4056,
+      "proceeds": 32827.71,
+      "fees": 11.8,
+      "tax": 0.0,
+      "pnl": -173.44,
+      "pnl_pct": -0.53,
+      "entry_date": "2026-03-13",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-18",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 453.4046,
+      "price": 82.1774,
+      "cost": 37259.63,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-18",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 702.549,
+      "price": 46.4056,
+      "cost": 32602.18,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-20",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 453.4046,
+      "price": 80.835,
+      "proceeds": 36639.04,
+      "fees": 11.92,
+      "tax": 0.0,
+      "pnl": -620.59,
+      "pnl_pct": -1.67,
+      "entry_date": "2026-03-18",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-20",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 702.549,
+      "price": 44.34,
+      "proceeds": 31139.31,
+      "fees": 11.72,
+      "tax": 0.0,
+      "pnl": -1462.87,
+      "pnl_pct": -4.49,
+      "entry_date": "2026-03-18",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-20",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 450.5263,
+      "price": 80.835,
+      "cost": 36418.29,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-20",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 718.6739,
+      "price": 44.34,
+      "cost": 31866.0,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-23",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 450.5263,
+      "price": 81.18,
+      "proceeds": 36561.81,
+      "fees": 11.91,
+      "tax": 53.1,
+      "pnl": 90.42,
+      "pnl_pct": 0.25,
+      "entry_date": "2026-03-20",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-23",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 718.6739,
+      "price": 44.78,
+      "proceeds": 32170.44,
+      "fees": 11.77,
+      "tax": 112.64,
+      "pnl": 191.8,
+      "pnl_pct": 0.6,
+      "entry_date": "2026-03-20",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-23",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 449.9041,
+      "price": 81.18,
+      "cost": 36523.21,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-23",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 713.6627,
+      "price": 44.78,
+      "cost": 31957.81,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-24",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 449.9041,
+      "price": 81.11,
+      "proceeds": 36479.81,
+      "fees": 11.91,
+      "tax": 0.0,
+      "pnl": -43.4,
+      "pnl_pct": -0.12,
+      "entry_date": "2026-03-23",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-24",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 713.6627,
+      "price": 45.09,
+      "proceeds": 32167.28,
+      "fees": 11.77,
+      "tax": 77.5,
+      "pnl": 131.96,
+      "pnl_pct": 0.41,
+      "entry_date": "2026-03-23",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-24",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 450.631,
+      "price": 81.11,
+      "cost": 36550.68,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-24",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 709.2891,
+      "price": 45.09,
+      "cost": 31981.84,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-25",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 450.631,
+      "price": 81.51,
+      "proceeds": 36719.01,
+      "fees": 11.92,
+      "tax": 62.28,
+      "pnl": 106.05,
+      "pnl_pct": 0.29,
+      "entry_date": "2026-03-24",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-25",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 709.2891,
+      "price": 45.25,
+      "proceeds": 32083.56,
+      "fees": 11.77,
+      "tax": 37.64,
+      "pnl": 64.08,
+      "pnl_pct": 0.2,
+      "entry_date": "2026-03-24",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-25",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 449.1568,
+      "price": 81.51,
+      "cost": 36610.77,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-25",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 707.9431,
+      "price": 45.25,
+      "cost": 32034.42,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-26",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 449.1568,
+      "price": 81.14,
+      "proceeds": 36432.67,
+      "fees": 11.91,
+      "tax": 0.0,
+      "pnl": -178.1,
+      "pnl_pct": -0.49,
+      "entry_date": "2026-03-25",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-26",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 707.9431,
+      "price": 45.33,
+      "proceeds": 32079.29,
+      "fees": 11.77,
+      "tax": 16.6,
+      "pnl": 28.27,
+      "pnl_pct": 0.09,
+      "entry_date": "2026-03-25",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-26",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 450.3683,
+      "price": 81.14,
+      "cost": 36542.88,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-26",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 705.3832,
+      "price": 45.33,
+      "cost": 31975.02,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-27",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 450.3683,
+      "price": 81.78,
+      "proceeds": 36819.19,
+      "fees": 11.93,
+      "tax": 102.23,
+      "pnl": 174.07,
+      "pnl_pct": 0.48,
+      "entry_date": "2026-03-26",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-27",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 705.3832,
+      "price": 45.59,
+      "proceeds": 32146.65,
+      "fees": 11.77,
+      "tax": 63.5,
+      "pnl": 108.13,
+      "pnl_pct": 0.34,
+      "entry_date": "2026-03-26",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-27",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 448.1267,
+      "price": 81.78,
+      "cost": 36647.8,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-27",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 703.3741,
+      "price": 45.59,
+      "cost": 32066.82,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-30",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 448.1267,
+      "price": 81.88,
+      "proceeds": 36680.69,
+      "fees": 11.92,
+      "tax": 12.17,
+      "pnl": 20.72,
+      "pnl_pct": 0.06,
+      "entry_date": "2026-03-27",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-30",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 703.3741,
+      "price": 45.92,
+      "proceeds": 32287.16,
+      "fees": 11.78,
+      "tax": 81.52,
+      "pnl": 138.81,
+      "pnl_pct": 0.43,
+      "entry_date": "2026-03-27",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-30",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 448.2615,
+      "price": 81.88,
+      "cost": 36703.65,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-30",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 699.3837,
+      "price": 45.92,
+      "cost": 32115.7,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-31",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 448.2615,
+      "price": 81.98,
+      "proceeds": 36736.56,
+      "fees": 11.92,
+      "tax": 12.18,
+      "pnl": 20.73,
+      "pnl_pct": 0.06,
+      "entry_date": "2026-03-30",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-31",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 699.3837,
+      "price": 45.89,
+      "proceeds": 32082.95,
+      "fees": 11.76,
+      "tax": 0.0,
+      "pnl": -32.75,
+      "pnl_pct": -0.1,
+      "entry_date": "2026-03-30",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-03-31",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 447.559,
+      "price": 81.98,
+      "cost": 36690.89,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-03-31",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 699.5975,
+      "price": 45.89,
+      "cost": 32104.53,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-07",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 447.559,
+      "price": 81.26,
+      "proceeds": 36356.74,
+      "fees": 11.9,
+      "tax": 0.0,
+      "pnl": -334.15,
+      "pnl_pct": -0.91,
+      "entry_date": "2026-03-31",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-07",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 699.5975,
+      "price": 46.27,
+      "proceeds": 32358.6,
+      "fees": 11.78,
+      "tax": 94.01,
+      "pnl": 160.06,
+      "pnl_pct": 0.5,
+      "entry_date": "2026-03-31",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-07",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 450.5697,
+      "price": 81.26,
+      "cost": 36613.3,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-07",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 692.3845,
+      "price": 46.27,
+      "cost": 32036.63,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-16",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 450.5697,
+      "price": 81.43,
+      "proceeds": 36677.97,
+      "fees": 11.92,
+      "tax": 23.93,
+      "pnl": 40.75,
+      "pnl_pct": 0.11,
+      "entry_date": "2026-04-07",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-16",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 692.3845,
+      "price": 46.35,
+      "proceeds": 32080.26,
+      "fees": 11.76,
+      "tax": 16.14,
+      "pnl": 27.49,
+      "pnl_pct": 0.09,
+      "entry_date": "2026-04-07",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-16",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 240.9724,
+      "price": 152.02,
+      "cost": 36632.63,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-16",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 272.4947,
+      "price": 117.63,
+      "cost": 32053.55,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-17",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 240.9724,
+      "price": 154.35,
+      "proceeds": 37182.21,
+      "fees": 11.88,
+      "tax": 203.35,
+      "pnl": 346.24,
+      "pnl_pct": 0.95,
+      "entry_date": "2026-04-16",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-17",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 272.4947,
+      "price": 120.41,
+      "proceeds": 32799.41,
+      "fees": 11.67,
+      "tax": 275.97,
+      "pnl": 469.89,
+      "pnl_pct": 1.47,
+      "entry_date": "2026-04-16",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-17",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 239.3982,
+      "price": 154.35,
+      "cost": 36951.12,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-17",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 268.5178,
+      "price": 120.41,
+      "cost": 32332.23,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
+  "daily_snapshots": [
+    {
+      "date": "2026-01-20",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "VIX Fear Rotation",
+      "num_positions": 0
+    },
+    {
+      "date": "2026-01-21",
+      "cash": 24980.1,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99980.1,
+      "positions": {
+        "XLK": {
+          "shares": 278.4906,
+          "entry_price": 143.6314,
+          "current_price": 143.6314,
+          "market_value": 40000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-21",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 288.8823,
+          "entry_price": 121.1566,
+          "current_price": 121.1566,
+          "market_value": 35000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-21",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-01-22",
+      "cash": 25073.64,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100354.26,
+      "positions": {
+        "XLK": {
+          "shares": 277.4681,
+          "entry_price": 144.7001,
+          "current_price": 144.7001,
+          "market_value": 40149.67,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-22",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 287.0782,
+          "entry_price": 122.3742,
+          "current_price": 122.3742,
+          "market_value": 35130.96,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-22",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-01-23",
+      "cash": 25097.09,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100448.06,
+      "positions": {
+        "XLK": {
+          "shares": 277.3255,
+          "entry_price": 144.9098,
+          "current_price": 144.9098,
+          "market_value": 40187.18,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-23",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 286.1563,
+          "entry_price": 122.8831,
+          "current_price": 122.8831,
+          "market_value": 35163.78,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-23",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-01-26",
+      "cash": 25072.63,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100350.21,
+      "positions": {
+        "XLK": {
+          "shares": 275.1777,
+          "entry_price": 145.8986,
+          "current_price": 145.8986,
+          "market_value": 40148.04,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-26",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 287.7707,
+          "entry_price": 122.0748,
+          "current_price": 122.0748,
+          "market_value": 35129.54,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-26",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-01-27",
+      "cash": 25165.9,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100723.32,
+      "positions": {
+        "XLK": {
+          "shares": 272.5254,
+          "entry_price": 147.8661,
+          "current_price": 147.8661,
+          "market_value": 40297.29,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-27",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 287.9693,
+          "entry_price": 122.444,
+          "current_price": 122.444,
+          "market_value": 35260.13,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-27",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-01-28",
+      "cash": 25140.57,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100621.97,
+      "positions": {
+        "XLK": {
+          "shares": 270.0985,
+          "entry_price": 149.0447,
+          "current_price": 149.0447,
+          "market_value": 40256.75,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-28",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 289.8531,
+          "entry_price": 121.5259,
+          "current_price": 121.5259,
+          "market_value": 35224.66,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-28",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-01-29",
+      "cash": 24928.54,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99773.85,
+      "positions": {
+        "XLK": {
+          "shares": 272.1259,
+          "entry_price": 146.6876,
+          "current_price": 146.6876,
+          "market_value": 39917.5,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-29",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 288.786,
+          "entry_price": 120.947,
+          "current_price": 120.947,
+          "market_value": 34927.81,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-29",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-01-30",
+      "cash": 24713.02,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 98911.78,
+      "positions": {
+        "XLK": {
+          "shares": 275.3814,
+          "entry_price": 143.7013,
+          "current_price": 143.7013,
+          "market_value": 39572.67,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-30",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 286.3386,
+          "entry_price": 120.9271,
+          "current_price": 120.9271,
+          "market_value": 34626.09,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-01-30",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-02",
+      "cash": 24800.08,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99260.02,
+      "positions": {
+        "XLK": {
+          "shares": 273.7254,
+          "entry_price": 145.0796,
+          "current_price": 145.0796,
+          "market_value": 39711.97,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-02-02",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 285.4618,
+          "entry_price": 121.7255,
+          "current_price": 121.7255,
+          "market_value": 34747.97,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-02-02",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-03",
+      "cash": 24502.03,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 98067.83,
+      "positions": {
+        "XLK": {
+          "shares": 276.4912,
+          "entry_price": 141.9036,
+          "current_price": 141.9036,
+          "market_value": 39235.09,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-02-03",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 284.3183,
+          "entry_price": 120.7474,
+          "current_price": 120.7474,
+          "market_value": 34330.71,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-02-03",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-04",
+      "cash": 24502.03,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 96721.75,
+      "positions": {
+        "XLK": {
+          "shares": 276.4912,
+          "entry_price": 141.9036,
+          "current_price": 137.9485,
+          "market_value": 38141.54,
+          "unrealized_pnl": -1093.55,
+          "entry_date": "2026-02-03",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 284.3183,
+          "entry_price": 120.7474,
+          "current_price": 119.8592,
+          "market_value": 34078.17,
+          "unrealized_pnl": -252.54,
+          "entry_date": "2026-02-03",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-05",
+      "cash": 24502.03,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 95299.24,
+      "positions": {
+        "XLK": {
+          "shares": 276.4912,
+          "entry_price": 141.9036,
+          "current_price": 135.4616,
+          "market_value": 37453.94,
+          "unrealized_pnl": -1781.15,
+          "entry_date": "2026-02-03",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 284.3183,
+          "entry_price": 120.7474,
+          "current_price": 117.2744,
+          "market_value": 33343.26,
+          "unrealized_pnl": -987.44,
+          "entry_date": "2026-02-03",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-06",
+      "cash": 24212.74,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 96910.65,
+      "positions": {
+        "XLK": {
+          "shares": 275.0686,
+          "entry_price": 140.9547,
+          "current_price": 140.9547,
+          "market_value": 38772.22,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-02-06",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 288.1079,
+          "entry_price": 117.7534,
+          "current_price": 117.7534,
+          "market_value": 33925.69,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-02-06",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-09",
+      "cash": 24267.37,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 97129.19,
+      "positions": {
+        "XLK": {
+          "shares": 271.4193,
+          "entry_price": 143.172,
+          "current_price": 143.172,
+          "market_value": 38859.64,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-02-09",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 289.8382,
+          "entry_price": 117.3143,
+          "current_price": 117.3143,
+          "market_value": 34002.18,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-02-09",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-10",
+      "cash": 24238.88,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 97015.2,
+      "positions": {
+        "XLK": {
+          "shares": 272.6222,
+          "entry_price": 142.373,
+          "current_price": 142.373,
+          "market_value": 38814.04,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-02-10",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 287.5899,
+          "entry_price": 118.0928,
+          "current_price": 118.0928,
+          "market_value": 33962.29,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-02-10",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-11",
+      "cash": 24206.19,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 96884.48,
+      "positions": {
+        "XLK": {
+          "shares": 271.4552,
+          "entry_price": 142.7925,
+          "current_price": 142.7925,
+          "market_value": 38761.75,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-02-11",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 288.5926,
+          "entry_price": 117.5239,
+          "current_price": 117.5239,
+          "market_value": 33916.53,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-02-11",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-12",
+      "cash": 24206.19,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 95395.61,
+      "positions": {
+        "XLK": {
+          "shares": 271.4552,
+          "entry_price": 142.7925,
+          "current_price": 139.0371,
+          "market_value": 37742.35,
+          "unrealized_pnl": -1019.4,
+          "entry_date": "2026-02-11",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 288.5926,
+          "entry_price": 117.5239,
+          "current_price": 115.8972,
+          "market_value": 33447.07,
+          "unrealized_pnl": -469.46,
+          "entry_date": "2026-02-11",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-13",
+      "cash": 24206.19,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 95504.9,
+      "positions": {
+        "XLK": {
+          "shares": 271.4552,
+          "entry_price": 142.7925,
+          "current_price": 139.3867,
+          "market_value": 37837.24,
+          "unrealized_pnl": -924.52,
+          "entry_date": "2026-02-11",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 288.5926,
+          "entry_price": 117.5239,
+          "current_price": 115.9471,
+          "market_value": 33461.47,
+          "unrealized_pnl": -455.06,
+          "entry_date": "2026-02-11",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-16",
+      "cash": 24206.19,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 95504.9,
+      "positions": {
+        "XLK": {
+          "shares": 271.4552,
+          "entry_price": 142.7925,
+          "current_price": 139.3867,
+          "market_value": 37837.24,
+          "unrealized_pnl": -924.52,
+          "entry_date": "2026-02-11",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 288.5926,
+          "entry_price": 117.5239,
+          "current_price": 115.9471,
+          "market_value": 33461.47,
+          "unrealized_pnl": -455.06,
+          "entry_date": "2026-02-11",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-17",
+      "cash": 24206.19,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 95442.89,
+      "positions": {
+        "XLK": {
+          "shares": 271.4552,
+          "entry_price": 142.7925,
+          "current_price": 139.3068,
+          "market_value": 37815.55,
+          "unrealized_pnl": -946.2,
+          "entry_date": "2026-02-11",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 288.5926,
+          "entry_price": 117.5239,
+          "current_price": 115.8074,
+          "market_value": 33421.15,
+          "unrealized_pnl": -495.38,
+          "entry_date": "2026-02-11",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-18",
+      "cash": 24206.19,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 96112.84,
+      "positions": {
+        "XLK": {
+          "shares": 271.4552,
+          "entry_price": 142.7925,
+          "current_price": 140.735,
+          "market_value": 38203.25,
+          "unrealized_pnl": -558.51,
+          "entry_date": "2026-02-11",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 288.5926,
+          "entry_price": 117.5239,
+          "current_price": 116.7854,
+          "market_value": 33703.4,
+          "unrealized_pnl": -213.13,
+          "entry_date": "2026-02-11",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-19",
+      "cash": 24206.19,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 95698.41,
+      "positions": {
+        "XLK": {
+          "shares": 271.4552,
+          "entry_price": 142.7925,
+          "current_price": 140.0359,
+          "market_value": 38013.46,
+          "unrealized_pnl": -748.29,
+          "entry_date": "2026-02-11",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 288.5926,
+          "entry_price": 117.5239,
+          "current_price": 116.007,
+          "market_value": 33478.75,
+          "unrealized_pnl": -437.78,
+          "entry_date": "2026-02-11",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-20",
+      "cash": 24206.19,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 96228.55,
+      "positions": {
+        "XLK": {
+          "shares": 271.4552,
+          "entry_price": 142.7925,
+          "current_price": 140.7051,
+          "market_value": 38195.11,
+          "unrealized_pnl": -566.64,
+          "entry_date": "2026-02-11",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 288.5926,
+          "entry_price": 117.5239,
+          "current_price": 117.2145,
+          "market_value": 33827.25,
+          "unrealized_pnl": -89.29,
+          "entry_date": "2026-02-11",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-23",
+      "cash": 24206.19,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 94880.2,
+      "positions": {
+        "XLK": {
+          "shares": 271.4552,
+          "entry_price": 142.7925,
+          "current_price": 138.348,
+          "market_value": 37555.28,
+          "unrealized_pnl": -1206.48,
+          "entry_date": "2026-02-11",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 288.5926,
+          "entry_price": 117.5239,
+          "current_price": 114.7595,
+          "market_value": 33118.73,
+          "unrealized_pnl": -797.8,
+          "entry_date": "2026-02-11",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-24",
+      "cash": 24206.19,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 95872.24,
+      "positions": {
+        "XLK": {
+          "shares": 271.4552,
+          "entry_price": 142.7925,
+          "current_price": 140.1458,
+          "market_value": 38043.29,
+          "unrealized_pnl": -718.46,
+          "entry_date": "2026-02-11",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 288.5926,
+          "entry_price": 117.5239,
+          "current_price": 116.506,
+          "market_value": 33622.76,
+          "unrealized_pnl": -293.78,
+          "entry_date": "2026-02-11",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-25",
+      "cash": 24149.76,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 96658.75,
+      "positions": {
+        "XLK": {
+          "shares": 270.7471,
+          "entry_price": 142.8324,
+          "current_price": 142.8324,
+          "market_value": 38671.46,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-02-25",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 289.5679,
+          "entry_price": 116.8553,
+          "current_price": 116.8553,
+          "market_value": 33837.53,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-02-25",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-26",
+      "cash": 24149.76,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 96106.37,
+      "positions": {
+        "XLK": {
+          "shares": 270.7471,
+          "entry_price": 142.8324,
+          "current_price": 140.8349,
+          "market_value": 38130.64,
+          "unrealized_pnl": -540.82,
+          "entry_date": "2026-02-25",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 289.5679,
+          "entry_price": 116.8553,
+          "current_price": 116.8153,
+          "market_value": 33825.97,
+          "unrealized_pnl": -11.56,
+          "entry_date": "2026-02-25",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-02-27",
+      "cash": 24149.76,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 95443.04,
+      "positions": {
+        "XLK": {
+          "shares": 270.7471,
+          "entry_price": 142.8324,
+          "current_price": 138.5877,
+          "market_value": 37522.22,
+          "unrealized_pnl": -1149.25,
+          "entry_date": "2026-02-25",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 289.5679,
+          "entry_price": 116.8553,
+          "current_price": 116.6257,
+          "market_value": 33771.06,
+          "unrealized_pnl": -66.47,
+          "entry_date": "2026-02-25",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-02",
+      "cash": 24149.76,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 95237.82,
+      "positions": {
+        "XLK": {
+          "shares": 270.7471,
+          "entry_price": 142.8324,
+          "current_price": 139.3667,
+          "market_value": 37733.14,
+          "unrealized_pnl": -938.32,
+          "entry_date": "2026-02-25",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 289.5679,
+          "entry_price": 116.8553,
+          "current_price": 115.1886,
+          "market_value": 33354.92,
+          "unrealized_pnl": -482.61,
+          "entry_date": "2026-02-25",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-03",
+      "cash": 24149.76,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 94379.86,
+      "positions": {
+        "XLK": {
+          "shares": 270.7471,
+          "entry_price": 142.8324,
+          "current_price": 137.3293,
+          "market_value": 37181.5,
+          "unrealized_pnl": -1489.96,
+          "entry_date": "2026-02-25",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 289.5679,
+          "entry_price": 116.8553,
+          "current_price": 114.1307,
+          "market_value": 33048.59,
+          "unrealized_pnl": -788.94,
+          "entry_date": "2026-02-25",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-04",
+      "cash": 24149.76,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 95599.26,
+      "positions": {
+        "XLK": {
+          "shares": 270.7471,
+          "entry_price": 142.8324,
+          "current_price": 139.6663,
+          "market_value": 37814.26,
+          "unrealized_pnl": -857.2,
+          "entry_date": "2026-02-25",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 289.5679,
+          "entry_price": 116.8553,
+          "current_price": 116.1567,
+          "market_value": 33635.24,
+          "unrealized_pnl": -202.29,
+          "entry_date": "2026-02-25",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-05",
+      "cash": 24149.76,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 95737.44,
+      "positions": {
+        "XLK": {
+          "shares": 270.7471,
+          "entry_price": 142.8324,
+          "current_price": 140.0059,
+          "market_value": 37906.2,
+          "unrealized_pnl": -765.26,
+          "entry_date": "2026-02-25",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 289.5679,
+          "entry_price": 116.8553,
+          "current_price": 116.3163,
+          "market_value": 33681.48,
+          "unrealized_pnl": -156.05,
+          "entry_date": "2026-02-25",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-06",
+      "cash": 24149.76,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 94346.19,
+      "positions": {
+        "XLK": {
+          "shares": 270.7471,
+          "entry_price": 142.8324,
+          "current_price": 137.1195,
+          "market_value": 37124.71,
+          "unrealized_pnl": -1546.75,
+          "entry_date": "2026-02-25",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 289.5679,
+          "entry_price": 116.8553,
+          "current_price": 114.2106,
+          "market_value": 33071.71,
+          "unrealized_pnl": -765.82,
+          "entry_date": "2026-02-25",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-09",
+      "cash": 23738.56,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 95013.94,
+      "positions": {
+        "XLP": {
+          "shares": 444.661,
+          "entry_price": 85.4888,
+          "current_price": 85.4888,
+          "market_value": 38013.54,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-09",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 714.9283,
+          "entry_price": 46.5247,
+          "current_price": 46.5247,
+          "market_value": 33261.84,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-09",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-10",
+      "cash": 23738.56,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 94697.5,
+      "positions": {
+        "XLP": {
+          "shares": 444.661,
+          "entry_price": 85.4888,
+          "current_price": 85.2402,
+          "market_value": 37902.99,
+          "unrealized_pnl": -110.54,
+          "entry_date": "2026-03-09",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 714.9283,
+          "entry_price": 46.5247,
+          "current_price": 46.2367,
+          "market_value": 33055.95,
+          "unrealized_pnl": -205.89,
+          "entry_date": "2026-03-09",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-11",
+      "cash": 23738.56,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 93920.96,
+      "positions": {
+        "XLP": {
+          "shares": 444.661,
+          "entry_price": 85.4888,
+          "current_price": 84.1165,
+          "market_value": 37403.33,
+          "unrealized_pnl": -610.2,
+          "entry_date": "2026-03-09",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 714.9283,
+          "entry_price": 46.5247,
+          "current_price": 45.8494,
+          "market_value": 32779.07,
+          "unrealized_pnl": -482.78,
+          "entry_date": "2026-03-09",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-12",
+      "cash": 23475.39,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 93961.25,
+      "positions": {
+        "XLP": {
+          "shares": 448.7129,
+          "entry_price": 83.7784,
+          "current_price": 83.7784,
+          "market_value": 37592.46,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-12",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 712.3306,
+          "entry_price": 46.1772,
+          "current_price": 46.1772,
+          "market_value": 32893.4,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-12",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-13",
+      "cash": 23552.35,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 94269.1,
+      "positions": {
+        "XLP": {
+          "shares": 447.5796,
+          "entry_price": 84.2657,
+          "current_price": 84.2657,
+          "market_value": 37715.6,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-13",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 707.6635,
+          "entry_price": 46.634,
+          "current_price": 46.634,
+          "market_value": 33001.15,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-13",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-16",
+      "cash": 23552.35,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 94586.74,
+      "positions": {
+        "XLP": {
+          "shares": 447.5796,
+          "entry_price": 84.2657,
+          "current_price": 84.5043,
+          "market_value": 37822.42,
+          "unrealized_pnl": 106.82,
+          "entry_date": "2026-03-13",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 707.6635,
+          "entry_price": 46.634,
+          "current_price": 46.9319,
+          "market_value": 33211.97,
+          "unrealized_pnl": 210.82,
+          "entry_date": "2026-03-13",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-17",
+      "cash": 23552.35,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 94370.77,
+      "positions": {
+        "XLP": {
+          "shares": 447.5796,
+          "entry_price": 84.2657,
+          "current_price": 84.2259,
+          "market_value": 37697.8,
+          "unrealized_pnl": -17.8,
+          "entry_date": "2026-03-13",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 707.6635,
+          "entry_price": 46.634,
+          "current_price": 46.8028,
+          "market_value": 33120.62,
+          "unrealized_pnl": 119.47,
+          "entry_date": "2026-03-13",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-18",
+      "cash": 23267.37,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 93129.19,
+      "positions": {
+        "XLP": {
+          "shares": 453.4046,
+          "entry_price": 82.1774,
+          "current_price": 82.1774,
+          "market_value": 37259.63,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-18",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 702.549,
+          "entry_price": 46.4056,
+          "current_price": 46.4056,
+          "market_value": 32602.18,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-18",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-19",
+      "cash": 23267.37,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 92694.55,
+      "positions": {
+        "XLP": {
+          "shares": 453.4046,
+          "entry_price": 82.1774,
+          "current_price": 81.5112,
+          "market_value": 36957.55,
+          "unrealized_pnl": -302.08,
+          "entry_date": "2026-03-18",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 702.549,
+          "entry_price": 46.4056,
+          "current_price": 46.2169,
+          "market_value": 32469.62,
+          "unrealized_pnl": -132.56,
+          "entry_date": "2026-03-18",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-20",
+      "cash": 22741.53,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91025.82,
+      "positions": {
+        "XLP": {
+          "shares": 450.5263,
+          "entry_price": 80.835,
+          "current_price": 80.835,
+          "market_value": 36418.29,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-20",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 718.6739,
+          "entry_price": 44.34,
+          "current_price": 44.34,
+          "market_value": 31866.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-20",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-23",
+      "cash": 22807.11,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91288.14,
+      "positions": {
+        "XLP": {
+          "shares": 449.9041,
+          "entry_price": 81.18,
+          "current_price": 81.18,
+          "market_value": 36523.21,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-23",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 713.6627,
+          "entry_price": 44.78,
+          "current_price": 44.78,
+          "market_value": 31957.81,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-23",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-24",
+      "cash": 22824.27,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91356.8,
+      "positions": {
+        "XLP": {
+          "shares": 450.631,
+          "entry_price": 81.11,
+          "current_price": 81.11,
+          "market_value": 36550.68,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-24",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 709.2891,
+          "entry_price": 45.09,
+          "current_price": 45.09,
+          "market_value": 31981.84,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-24",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-25",
+      "cash": 22861.83,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91507.03,
+      "positions": {
+        "XLP": {
+          "shares": 449.1568,
+          "entry_price": 81.51,
+          "current_price": 81.51,
+          "market_value": 36610.77,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-25",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 707.9431,
+          "entry_price": 45.25,
+          "current_price": 45.25,
+          "market_value": 32034.42,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-25",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-26",
+      "cash": 22819.4,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91337.3,
+      "positions": {
+        "XLP": {
+          "shares": 450.3683,
+          "entry_price": 81.14,
+          "current_price": 81.14,
+          "market_value": 36542.88,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-26",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 705.3832,
+          "entry_price": 45.33,
+          "current_price": 45.33,
+          "market_value": 31975.02,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-26",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-27",
+      "cash": 22884.97,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91599.6,
+      "positions": {
+        "XLP": {
+          "shares": 448.1267,
+          "entry_price": 81.78,
+          "current_price": 81.78,
+          "market_value": 36647.8,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-27",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 703.3741,
+          "entry_price": 45.59,
+          "current_price": 45.59,
+          "market_value": 32066.82,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-27",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-30",
+      "cash": 22919.88,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91739.23,
+      "positions": {
+        "XLP": {
+          "shares": 448.2615,
+          "entry_price": 81.88,
+          "current_price": 81.88,
+          "market_value": 36703.65,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-30",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 699.3837,
+          "entry_price": 45.92,
+          "current_price": 45.92,
+          "market_value": 32115.7,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-30",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-03-31",
+      "cash": 22911.91,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91707.32,
+      "positions": {
+        "XLP": {
+          "shares": 447.559,
+          "entry_price": 81.98,
+          "current_price": 81.98,
+          "market_value": 36690.89,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-31",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 699.5975,
+          "entry_price": 45.89,
+          "current_price": 45.89,
+          "market_value": 32104.53,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-03-31",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-01",
+      "cash": 22911.91,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91628.5,
+      "positions": {
+        "XLP": {
+          "shares": 447.559,
+          "entry_price": 81.98,
+          "current_price": 81.46,
+          "market_value": 36458.16,
+          "unrealized_pnl": -232.73,
+          "entry_date": "2026-03-31",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 699.5975,
+          "entry_price": 45.89,
+          "current_price": 46.11,
+          "market_value": 32258.44,
+          "unrealized_pnl": 153.91,
+          "entry_date": "2026-03-31",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-02",
+      "cash": 22911.91,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91981.86,
+      "positions": {
+        "XLP": {
+          "shares": 447.559,
+          "entry_price": 81.98,
+          "current_price": 81.89,
+          "market_value": 36650.61,
+          "unrealized_pnl": -40.28,
+          "entry_date": "2026-03-31",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 699.5975,
+          "entry_price": 45.89,
+          "current_price": 46.34,
+          "market_value": 32419.35,
+          "unrealized_pnl": 314.82,
+          "entry_date": "2026-03-31",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-03",
+      "cash": 22911.91,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91981.86,
+      "positions": {
+        "XLP": {
+          "shares": 447.559,
+          "entry_price": 81.98,
+          "current_price": 81.89,
+          "market_value": 36650.61,
+          "unrealized_pnl": -40.28,
+          "entry_date": "2026-03-31",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 699.5975,
+          "entry_price": 45.89,
+          "current_price": 46.34,
+          "market_value": 32419.35,
+          "unrealized_pnl": 314.82,
+          "entry_date": "2026-03-31",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-06",
+      "cash": 22911.91,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 92207.55,
+      "positions": {
+        "XLP": {
+          "shares": 447.559,
+          "entry_price": 81.98,
+          "current_price": 82.66,
+          "market_value": 36995.23,
+          "unrealized_pnl": 304.34,
+          "entry_date": "2026-03-31",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 699.5975,
+          "entry_price": 45.89,
+          "current_price": 46.17,
+          "market_value": 32300.41,
+          "unrealized_pnl": 195.89,
+          "entry_date": "2026-03-31",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-07",
+      "cash": 22863.41,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91513.34,
+      "positions": {
+        "XLP": {
+          "shares": 450.5697,
+          "entry_price": 81.26,
+          "current_price": 81.26,
+          "market_value": 36613.3,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-07",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 692.3845,
+          "entry_price": 46.27,
+          "current_price": 46.27,
+          "market_value": 32036.63,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-07",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-08",
+      "cash": 22863.41,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 92551.32,
+      "positions": {
+        "XLP": {
+          "shares": 450.5697,
+          "entry_price": 81.26,
+          "current_price": 82.78,
+          "market_value": 37298.16,
+          "unrealized_pnl": 684.86,
+          "entry_date": "2026-04-07",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 692.3845,
+          "entry_price": 46.27,
+          "current_price": 46.78,
+          "market_value": 32389.75,
+          "unrealized_pnl": 353.11,
+          "entry_date": "2026-04-07",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-09",
+      "cash": 22863.41,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 93109.38,
+      "positions": {
+        "XLP": {
+          "shares": 450.5697,
+          "entry_price": 81.26,
+          "current_price": 83.45,
+          "market_value": 37600.04,
+          "unrealized_pnl": 986.75,
+          "entry_date": "2026-04-07",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 692.3845,
+          "entry_price": 46.27,
+          "current_price": 47.15,
+          "market_value": 32645.93,
+          "unrealized_pnl": 609.3,
+          "entry_date": "2026-04-07",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-10",
+      "cash": 22863.41,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 92491.22,
+      "positions": {
+        "XLP": {
+          "shares": 450.5697,
+          "entry_price": 81.26,
+          "current_price": 82.37,
+          "market_value": 37113.43,
+          "unrealized_pnl": 500.13,
+          "entry_date": "2026-04-07",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 692.3845,
+          "entry_price": 46.27,
+          "current_price": 46.96,
+          "market_value": 32514.38,
+          "unrealized_pnl": 477.74,
+          "entry_date": "2026-04-07",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-13",
+      "cash": 22863.41,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91727.09,
+      "positions": {
+        "XLP": {
+          "shares": 450.5697,
+          "entry_price": 81.26,
+          "current_price": 81.55,
+          "market_value": 36743.96,
+          "unrealized_pnl": 130.67,
+          "entry_date": "2026-04-07",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 692.3845,
+          "entry_price": 46.27,
+          "current_price": 46.39,
+          "market_value": 32119.72,
+          "unrealized_pnl": 83.09,
+          "entry_date": "2026-04-07",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-14",
+      "cash": 22863.41,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91746.43,
+      "positions": {
+        "XLP": {
+          "shares": 450.5697,
+          "entry_price": 81.26,
+          "current_price": 81.47,
+          "market_value": 36707.91,
+          "unrealized_pnl": 94.62,
+          "entry_date": "2026-04-07",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 692.3845,
+          "entry_price": 46.27,
+          "current_price": 46.47,
+          "market_value": 32175.11,
+          "unrealized_pnl": 138.48,
+          "entry_date": "2026-04-07",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-15",
+      "cash": 22863.41,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91250.13,
+      "positions": {
+        "XLP": {
+          "shares": 450.5697,
+          "entry_price": 81.26,
+          "current_price": 81.06,
+          "market_value": 36523.18,
+          "unrealized_pnl": -90.12,
+          "entry_date": "2026-04-07",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 692.3845,
+          "entry_price": 46.27,
+          "current_price": 46.02,
+          "market_value": 31863.54,
+          "unrealized_pnl": -173.1,
+          "entry_date": "2026-04-07",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-16",
+      "cash": 22875.49,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 91561.67,
+      "positions": {
+        "XLK": {
+          "shares": 240.9724,
+          "entry_price": 152.02,
+          "current_price": 152.02,
+          "market_value": 36632.63,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-16",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 272.4947,
+          "entry_price": 117.63,
+          "current_price": 117.63,
+          "market_value": 32053.55,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-16",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-17",
+      "cash": 23074.55,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 92357.9,
+      "positions": {
+        "XLK": {
+          "shares": 239.3982,
+          "entry_price": 154.35,
+          "current_price": 154.35,
+          "market_value": 36951.12,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-17",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 268.5178,
+          "entry_price": 120.41,
+          "current_price": 120.41,
+          "market_value": 32332.23,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-17",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-20",
+      "cash": 23074.55,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 92263.17,
+      "positions": {
+        "XLK": {
+          "shares": 239.3982,
+          "entry_price": 154.35,
+          "current_price": 154.56,
+          "market_value": 37001.39,
+          "unrealized_pnl": 50.27,
+          "entry_date": "2026-04-17",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 268.5178,
+          "entry_price": 120.41,
+          "current_price": 119.87,
+          "market_value": 32187.23,
+          "unrealized_pnl": -145.0,
+          "entry_date": "2026-04-17",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-21",
+      "cash": 23074.55,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 92052.63,
+      "positions": {
+        "XLK": {
+          "shares": 239.3982,
+          "entry_price": 154.35,
+          "current_price": 154.69,
+          "market_value": 37032.52,
+          "unrealized_pnl": 81.39,
+          "entry_date": "2026-04-17",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 268.5178,
+          "entry_price": 120.41,
+          "current_price": 118.97,
+          "market_value": 31945.56,
+          "unrealized_pnl": -386.67,
+          "entry_date": "2026-04-17",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    }
+  ],
+  "sim_start": "2026-01-20",
+  "last_run": "2026-04-21",
+  "meta": {
+    "vix-fear-rotation": {
+      "vix": 18.87,
+      "signal_label": "HOLD",
+      "name": "VIX Fear Rotation",
+      "last_run": "2026-04-21"
+    }
+  }
+}

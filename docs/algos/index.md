@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-20T23:10:17
+Updated (UTC): 2026-04-21T23:11:11
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 92
+Crazy models: 99
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -32,7 +32,7 @@ Crazy models: 92
 | crypto-derivative-arbitrage | Crypto Derivative Arbitrage | daily |
 | earthquake-energy-demand | Earthquake Energy Demand Indicator | daily |
 | electric-vehicle-charge-station-density | Electric Vehicle Charge Station Density | daily |
-| insider-trading-signals | Insider Trading Signals | daily |
+| insider-trading-signals | Insider Trading Signals | weekly |
 | online-ad-impression-volatility | Online Ad Impression Volatility Trader | daily |
 | pet-food-supply-chain | Pet Food Supply Chain Disruption | daily |
 | reddit-emoji-sentiment-spike | Reddit Emoji Sentiment Spike | daily |
@@ -108,3 +108,10 @@ Crazy models: 92
 | lumber-futures-rollercoaster | Lumber Futures Rollercoaster | daily |
 | semiconductor-moonshot-warning | Semiconductor Moonshot Warning | daily |
 | solar-storm-scorcher | Solar Storm Scorcher | daily |
+| yelp-closure-velocity | Yelp Closure Velocity | weekly |
+| patent-filing-velocity | Patent Filing Velocity | monthly |
+| vix-fear-rotation | VIX Fear Rotation | daily |
+| vix-term-structure | VIX Term Structure | daily |
+| finra-dark-pool-signal | FINRA Dark Pool Signal | weekly |
+| energy-sector-sudden-weekly-volatility-spike | Energy Sector Sudden Weekly Volatility Spike | weekly |
+| materials-sector-weekly-volatility-contraction-breakout | Materials Sector Weekly Volatility Contraction Breakout | weekly |

@@ -1,19 +1,10 @@
 {
-  "cash": 94990.05,
+  "cash": 99935.78757528696,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 9.95,
+  "fees_paid": 20.176517331821184,
   "taxes_paid": 0.0,
-  "positions": {
-    "XLB": {
-      "shares": 95.73042396748824,
-      "entry_price": 52.22999954223633,
-      "entry_date": "2026-04-20",
-      "cost": 5000.0,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-20",
@@ -24,6 +15,20 @@
       "cost": 5000.0,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-21",
+      "action": "SELL",
+      "ticker": "XLB",
+      "shares": 95.7304,
+      "price": 51.77,
+      "proceeds": 4945.74,
+      "fees": 10.23,
+      "tax": 0.0,
+      "pnl": -54.26,
+      "pnl_pct": -1.09,
+      "entry_date": "2026-04-20",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -736,19 +741,29 @@
       },
       "sector": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
       "num_positions": 1
+    },
+    {
+      "date": "2026-04-21",
+      "cash": 99935.79,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99935.79,
+      "positions": {},
+      "sector": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-18",
-  "last_run": "2026-04-20",
+  "last_run": "2026-04-21",
   "meta": {
     "xlb-weekly-rss-news-count-spike-on-commodity-shortage": {
       "latest_value": 2.0,
-      "prior_avg": 1.1,
-      "signal_change": 0.8182,
-      "signal_label": "RISK_ON",
+      "prior_avg": 1.25,
+      "signal_change": 0.6,
+      "signal_label": "HOLD",
       "name": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-04-20",
+      "last_signal": "HOLD",
+      "last_run": "2026-04-21",
       "entry_date": "2026-04-20"
     }
   }

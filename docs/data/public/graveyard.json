@@ -1,6 +1,41 @@
 {
-  "generated_at": "2026-04-21T10:27:17Z",
+  "generated_at": "2026-04-21T23:11:12Z",
   "algos": [
+    {
+      "key": "crazy:xlb-weekly-rss-news-count-spike-on-commodity-shortage",
+      "algo_type": "crazy",
+      "algo_id": "xlb-weekly-rss-news-count-spike-on-commodity-shortage",
+      "name": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
+      "family": "attention_sentiment",
+      "status": "parked",
+      "evidence_class": "pending_seed",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.06,
+      "days_running": 71,
+      "beat_spy": false,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.41,
+      "ret_30d_pct": -0.06,
+      "spy_delta_30d_pct": -7.5,
+      "last_snapshot": "2026-04-21",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLB",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
+    },
     {
       "key": "crazy:retail-roulette",
       "algo_type": "crazy",
@@ -11,15 +46,30 @@
       "evidence_class": "v1_backtested",
       "rebalance_frequency": "daily",
       "ytd_pct": -0.09,
-      "days_running": 70,
+      "days_running": 71,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.11,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.43,
       "ret_30d_pct": -0.09,
-      "spy_delta_30d_pct": -8.23,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.52,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
-      "comparator": null
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
     },
     {
       "key": "crazy:xle-weekly-drawdown-rebound-signal",
@@ -27,19 +77,174 @@
       "algo_id": "xle-weekly-drawdown-rebound-signal",
       "name": "Xle Weekly Drawdown Rebound Signal",
       "family": "macro_input_pressure",
-      "status": "failed",
-      "evidence_class": "v1_backtested",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "ytd_pct": -0.33,
-      "days_running": 70,
+      "days_running": 71,
       "beat_spy": false,
-      "spy_pct": 4.02,
-      "alpha_pct": -4.36,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.67,
       "ret_30d_pct": -0.18,
-      "spy_delta_30d_pct": -8.32,
-      "last_snapshot": "2026-04-20",
+      "spy_delta_30d_pct": -7.62,
+      "last_snapshot": "2026-04-21",
       "new_algo_date": null,
-      "comparator": null
+      "comparator": {
+        "primary_etf": "XLE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "key": "crazy:xlc-weekly-google-trends-surge-in-5g-rollout",
+      "algo_type": "crazy",
+      "algo_id": "xlc-weekly-google-trends-surge-in-5g-rollout",
+      "name": "Xlc Weekly Google Trends Surge In 5g Rollout",
+      "family": "attention_sentiment",
+      "status": "parked",
+      "evidence_class": "pending_seed",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.41,
+      "days_running": 71,
+      "beat_spy": false,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.75,
+      "ret_30d_pct": 0.04,
+      "spy_delta_30d_pct": -7.39,
+      "last_snapshot": "2026-04-21",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLC",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "key": "crazy:xlb-daily-volatility-contraction-breakout",
+      "algo_type": "crazy",
+      "algo_id": "xlb-daily-volatility-contraction-breakout",
+      "name": "Xlb Daily Volatility Contraction Breakout",
+      "family": "macro_input_pressure",
+      "status": "parked",
+      "evidence_class": "pending_seed",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 71,
+      "beat_spy": false,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.34,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.43,
+      "last_snapshot": "2026-04-21",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLB",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "key": "crazy:materials-sector-weekly-volatility-contraction-breakout",
+      "algo_type": "crazy",
+      "algo_id": "materials-sector-weekly-volatility-contraction-breakout",
+      "name": "Materials Sector Weekly Volatility Contraction Breakout",
+      "family": "political_insider_filing",
+      "status": "parked",
+      "evidence_class": "pending_seed",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 66,
+      "beat_spy": false,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.34,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.43,
+      "last_snapshot": "2026-04-21",
+      "new_algo_date": "2026-04-21",
+      "comparator": {
+        "primary_etf": "XLB",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "key": "crazy:energy-sector-sudden-weekly-volatility-spike",
+      "algo_type": "crazy",
+      "algo_id": "energy-sector-sudden-weekly-volatility-spike",
+      "name": "Energy Sector Sudden Weekly Volatility Spike",
+      "family": "political_insider_filing",
+      "status": "parked",
+      "evidence_class": "pending_seed",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 66,
+      "beat_spy": false,
+      "spy_pct": 3.34,
+      "alpha_pct": -3.34,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.43,
+      "last_snapshot": "2026-04-21",
+      "new_algo_date": "2026-04-21",
+      "comparator": {
+        "primary_etf": "XLE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
     }
   ]
 }
