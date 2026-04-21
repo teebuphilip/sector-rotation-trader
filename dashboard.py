@@ -16,6 +16,7 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
                        title: str = None):
     out_path = output_path or DASHBOARD_FILE
     os.makedirs(os.path.dirname(out_path) or "docs", exist_ok=True)
+    legal_href = os.path.relpath(os.path.join("docs", "legal.html"), os.path.dirname(out_path) or ".")
 
     # ── Compute summary stats ──────────────────────────────────
     pos_value = sum(
@@ -449,7 +450,7 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
     <strong>Signal Lab Notice:</strong> This is an experimental signal lab. Signals are generated, tracked, and evaluated as research outputs. Many signals will fail, and some may only appear to work because of randomness or limited sample size.<br>
     <strong>Not financial advice:</strong> Nothing here is a recommendation to buy, sell, or hold any asset. Past performance does not guarantee future results.<br>
     <strong>Performance/data disclosure:</strong> Results are model outputs from simulated or simplified conditions and may not reflect slippage, fees, liquidity, execution delays, or market impact. Third-party data may be incomplete, delayed, inaccurate, or revised.<br>
-    <strong>Your responsibility:</strong> Do your own research and consult a qualified professional before making investment decisions. Paper-traded only &mdash; no real money at risk.
+    <strong>Your responsibility:</strong> Do your own research and consult a qualified professional before making investment decisions. Paper-traded only &mdash; no real money at risk. <a href="{legal_href}">Full disclaimer</a>.
   </div>
 
 </div>

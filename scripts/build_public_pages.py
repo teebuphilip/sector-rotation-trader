@@ -141,6 +141,36 @@ def _leaderboard_rows_html(algos: list) -> str:
     return "\n".join(rows)
 
 
+def _site_links() -> str:
+    return (
+        '<a href="landing.html">Home</a> &middot; '
+        '<a href="leaderboard.html">Leaderboard</a> &middot; '
+        '<a href="families.html">Families</a> &middot; '
+        '<a href="daily.html">Daily Report</a> &middot; '
+        '<a href="premium.html">Premium Preview</a> &middot; '
+        '<a href="blog/index.html">Blog</a> &middot; '
+        '<a href="legal.html">Legal</a>'
+    )
+
+
+def _footer_html(generated_at: str, run_date: str, label: str = "Updated nightly at 6:30 PM ET") -> str:
+    return f"""
+<footer>
+  <div class="wrap">
+    <div><strong>crazystockalgo.com</strong> &mdash; {label}</div>
+    <div>Last updated: {_e(generated_at or run_date)}</div>
+    <div style="margin-top:8px;">{_site_links()}</div>
+    <div style="margin-top:8px;">
+      <strong>Signal Lab Notice:</strong> Experimental research only. Signals can and will fail. Do not interpret any signal as a recommendation.<br>
+      <strong>Performance Disclosure:</strong> Leaderboards are model/simulation outputs and may not reflect slippage, fees, liquidity, execution delays, or market impact.<br>
+      <strong>Data Disclaimer:</strong> Third-party data may be incomplete, delayed, inaccurate, or revised. Use at your own risk.<br>
+      <strong>Not financial advice:</strong> Do your own research. You are responsible for your own decisions. Paper-traded only &mdash; no real money at risk.
+    </div>
+    <div class="memorial">In loving memory of Biscotti (2008&ndash;2026). Good boy. Best algo. &hearts;</div>
+  </div>
+</footer>"""
+
+
 CSS = """
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
   :root {
@@ -357,19 +387,7 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div><strong>crazystockalgo.com</strong> &mdash; Updated nightly at 6:30 PM ET</div>
-    <div>Last updated: {_e(generated_at or run_date)}</div>
-    <div style="margin-top:8px;">
-      <strong>Signal Lab Notice:</strong> Experimental research only. Signals can and will fail. Do not interpret any signal as a recommendation.<br>
-      <strong>Performance Disclosure:</strong> Leaderboards are model/simulation outputs and may not reflect slippage, fees, liquidity, execution delays, or market impact.<br>
-      <strong>Data Disclaimer:</strong> Third-party data may be incomplete, delayed, inaccurate, or revised. Use at your own risk.<br>
-      <strong>Not financial advice:</strong> Do your own research. You are responsible for your own decisions. Paper-traded only &mdash; no real money at risk.
-    </div>
-    <div class="memorial">In loving memory of Biscotti (2008&ndash;2026). Good boy. Best algo. &hearts;</div>
-  </div>
-</footer>
+{_footer_html(generated_at, run_date)}
 
 <script>
 (function() {{
@@ -552,8 +570,11 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
       <p>Trading and investing involve significant risk, including possible loss of principal. Past performance does not guarantee future results. Signals, models, results, and third-party data may be incomplete, incorrect, delayed, or revised.</p>
       <p>You are solely responsible for your own financial decisions. Do your own research and consult a qualified professional before making investment decisions.</p>
       <p>By using this service, you agree that the operators are not liable for losses, damages, or decisions made based on the information provided.</p>
+      <p><a href="legal.html">Read the full legal/disclaimer page &rarr;</a></p>
     </div>
   </div>
+
+{_footer_html((daily or {}).get("generated_at", ""), (daily or {}).get("run_date", ""), "Free public launch surface")}
 
 </body>
 </html>"""
@@ -729,18 +750,160 @@ def build_premium(daily: dict, leaderboard: dict) -> str:
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div><strong>crazystockalgo.com</strong> &mdash; Premium Preview &mdash; Updated nightly at 6:30 PM ET</div>
-    <div>Last updated: {_e(generated_at or run_date)}</div>
-    <div style="margin-top:8px;">
-      <strong>Not financial advice.</strong> Experimental research only. Paper-traded signals, not real money.
-      Past performance does not guarantee future results.
-    </div>
-    <div class="memorial">In loving memory of Biscotti (2008&ndash;2026). Good boy. Best algo. &hearts;</div>
-  </div>
-</footer>
+{_footer_html(generated_at, run_date, "Premium preview")}
 
+</body>
+</html>"""
+
+
+def build_families_page(families: dict, daily: dict) -> str:
+    generated_at = families.get("generated_at", "")
+    run_date = daily.get("run_date", "")
+    cards = []
+    for family_name, payload in sorted((families.get("families") or {}).items()):
+        leaders = payload.get("leaders") or []
+        leader_rows = "".join(
+            f"<li><strong>{_e(item.get('name'))}</strong> "
+            f"<span class=\"{_ret_class(item.get('ytd_pct'))}\">{_fmt(item.get('ytd_pct'))}</span> "
+            f"<span class=\"days\">({item.get('status') or 'n/a'})</span></li>"
+            for item in leaders[:5]
+        ) or "<li>No leaders yet.</li>"
+        cards.append(
+            f"""
+      <div class="card">
+        <h2>{_e(family_name)}</h2>
+        <p class="muted">Signals: {_e(payload.get('count', 0))}</p>
+        <p class="muted">Status mix: {_e(payload.get('by_status', {}))}</p>
+        <ul style="margin: 12px 0 0 18px; line-height: 1.8;">
+          {leader_rows}
+        </ul>
+      </div>"""
+        )
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crazy Stock Algo — Families</title>
+<style>{LANDING_CSS}</style>
+</head>
+<body>
+  <header>
+    <h1>Signal Families</h1>
+    <p>The lab grouped by theme instead of one flat wall of random experiments.</p>
+  </header>
+  <div class="wrap">
+    <div class="grid">
+{''.join(cards)}
+    </div>
+  </div>
+{_footer_html(generated_at, run_date, "Family view")}
+</body>
+</html>"""
+
+
+def build_daily_page(daily: dict) -> str:
+    generated_at = daily.get("generated_at", "")
+    run_date = daily.get("run_date", "")
+    top_rows = "".join(
+        f"<tr><td>{i}</td><td>{_e(item.get('name'))}</td><td>{_e(item.get('family'))}</td>"
+        f"<td class=\"{_ret_class(item.get('ytd_pct'))}\">{_fmt(item.get('ytd_pct'))}</td>"
+        f"<td class=\"vs-spy {'vs-spy-pos' if (item.get('alpha_pct') or -999) >= 0 else 'vs-spy-neg'}\">{_fmt(item.get('alpha_pct'))}</td></tr>"
+        for i, item in enumerate(daily.get("top_live_ytd", [])[:10], start=1)
+    ) or '<tr><td colspan="5">No daily leaders yet.</td></tr>'
+    rolling_rows = "".join(
+        f"<li><strong>{_e(item.get('name'))}</strong> "
+        f"<span class=\"{_ret_class(item.get('ret_30d_pct'))}\">{_fmt(item.get('ret_30d_pct'))}</span> "
+        f"<span class=\"days\">vs SPY {_fmt(item.get('vs_spy_30d_pct'))}</span></li>"
+        for item in (daily.get("rolling_30d") or {}).get("leaders", [])[:10]
+    ) or "<li>No rolling 30D data yet.</li>"
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crazy Stock Algo — Daily Report</title>
+<style>{CSS}</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-badge">DAILY REPORT</div>
+  <h1><span>{_e(run_date)}</span> nightly snapshot</h1>
+  <p class="hero-sub">What changed in the lab after the nightly run.</p>
+</div>
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Counts</h2>
+    <p class="section-sub">Current product layer totals.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">{_e((daily.get('counts') or {}).get('total', 0))}</div><div class="label">Total</div></div>
+      <div class="hero-stat"><div class="num">{_e((daily.get('counts') or {}).get('watchlist', 0))}</div><div class="label">Watchlist</div></div>
+      <div class="hero-stat"><div class="num">{_e((daily.get('counts') or {}).get('promoted', 0))}</div><div class="label">Promoted</div></div>
+      <div class="hero-stat"><div class="num">{_e((daily.get('counts') or {}).get('graveyard', 0))}</div><div class="label">Graveyard</div></div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Top Live YTD</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Algorithm</th><th>Family</th><th>Return</th><th>Alpha vs SPY</th></tr></thead>
+        <tbody>{top_rows}</tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Rolling 30D Leaders</h2>
+    <ul style="margin-left: 20px; line-height: 1.9;">{rolling_rows}</ul>
+  </div>
+</section>
+{_footer_html(generated_at, run_date, "Daily report")}
+</body>
+</html>"""
+
+
+def build_legal_page() -> str:
+    legal_md = (REPO / "docs" / "legal" / "disclaimers.md").read_text(encoding="utf-8")
+    sections = []
+    current = []
+    title = None
+    for line in legal_md.splitlines():
+        if line.startswith("## "):
+            if title:
+                sections.append((title, current))
+            title = line[3:].strip()
+            current = []
+        elif line.strip():
+            current.append(line.strip())
+    if title:
+        sections.append((title, current))
+
+    body = []
+    for title, lines in sections:
+        paras = "\n".join(f"<p>{_e(line)}</p>" for line in lines)
+        body.append(f"<section><div class=\"wrap\"><h2 class=\"section-title\">{_e(title)}</h2>{paras}</div></section>")
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crazy Stock Algo — Legal</title>
+<style>{CSS}</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-badge">LEGAL</div>
+  <h1><span>Disclaimers</span> and disclosures</h1>
+  <p class="hero-sub">The plain-English rules for using this site and its signals.</p>
+</div>
+{''.join(body)}
+{_footer_html('', '', 'Legal / disclosures')}
 </body>
 </html>"""
 
@@ -768,6 +931,7 @@ STRIPE_PAYMENT_URL = "#waitlist"
 def build_main():
     daily = _load("daily.json")
     leaderboard = _load("leaderboard.json")
+    families = _load("families.json")
 
     out_lb = REPO / "docs" / "leaderboard.html"
     out_lb.write_text(build_leaderboard(daily, leaderboard), encoding="utf-8")
@@ -780,6 +944,18 @@ def build_main():
     out_premium = REPO / "docs" / "premium.html"
     out_premium.write_text(build_premium(daily, leaderboard), encoding="utf-8")
     print(f"[pages] wrote {out_premium}")
+
+    out_families = REPO / "docs" / "families.html"
+    out_families.write_text(build_families_page(families, daily), encoding="utf-8")
+    print(f"[pages] wrote {out_families}")
+
+    out_daily = REPO / "docs" / "daily.html"
+    out_daily.write_text(build_daily_page(daily), encoding="utf-8")
+    print(f"[pages] wrote {out_daily}")
+
+    out_legal = REPO / "docs" / "legal.html"
+    out_legal.write_text(build_legal_page(), encoding="utf-8")
+    print(f"[pages] wrote {out_legal}")
 
 
 def main():
