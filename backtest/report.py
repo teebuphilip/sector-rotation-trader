@@ -16,7 +16,7 @@ def _safe_metrics(metrics: dict) -> dict:
 
 
 def write_result(result: BacktestResult, root: Path, run_date: str) -> dict:
-    algo_dir = root / result.algo_id
+    algo_dir = root / result.family / result.algo_id
     algo_dir.mkdir(parents=True, exist_ok=True)
 
     if not result.equity_curve.empty:
