@@ -13,6 +13,8 @@ from .openchargemap import fetch_openchargemap_counts
 from .eia_electricity import fetch_eia_electricity
 from .port_container_volume import fetch_port_container_volume
 from .bts_airline_load_factor import fetch_bts_airline_load_factor
+from .yelp_fusion import fetch_yelp_closure_rate
+from .uspto_bulk import fetch_uspto_patent_counts
 
 __all__ = [
     "fetch_reddit_activity",
@@ -30,4 +32,6 @@ __all__ = [
     "fetch_eia_electricity",
     "fetch_port_container_volume",
     "fetch_bts_airline_load_factor",
+    "fetch_yelp_closure_rate",
+    "fetch_uspto_patent_counts",
 ]
