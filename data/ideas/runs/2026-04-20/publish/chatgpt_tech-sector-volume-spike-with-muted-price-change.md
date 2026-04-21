@@ -1,6 +1,7 @@
 # Tech Sector Volume Spike With Muted Price Change
 
 **Idea ID:** `tech-sector-volume-spike-with-muted-price-change`
+**Family:** ``
 **Source:** openai / gpt-4.1-mini
 **Frequency:** daily
 

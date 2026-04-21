@@ -1,0 +1,1032 @@
+{
+  "date": "2026-04-20",
+  "input_count": 24,
+  "kept_count": 9,
+  "duplicate_count": 15,
+  "kept_by_source": {
+    "chatgpt": 6,
+    "claude": 3
+  },
+  "duplicates": [
+    {
+      "source": "claude",
+      "idea_id": "solar-storm-scorcher",
+      "title": "Solar Storm Scorcher",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "solar storm scorcher",
+        "matched_idea_id": "solar-storm-scorcher",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "solar-storm-scorcher",
+        "title": "Solar Storm Scorcher",
+        "source_provider": "anthropic",
+        "source_model": "claude-3-haiku-20240307",
+        "thesis": "Spikes in solar activity and geomagnetic storms can disrupt satellite operations, power grids, and other critical infrastructure, signaling potential volatility in energy and technology sectors. Solar storms can impact energy infrastructure and space-based technologies, which are crucial for the energy and technology sectors.",
+        "data_sources": [
+          "NOAA daily solar activity index through weather_series adapter"
+        ],
+        "signal_logic": "If the daily solar activity index increases by more than 50% compared to the prior 7-day average",
+        "entry_exit": "Entry: If the daily solar activity index increases by more than 50% compared to the prior 7-day average Exit: After 3 trading days or once the index retreats by 30%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLE"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use NOAA daily solar activity index through weather_series adapter via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "monthly",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Solar activity can exhibit periodic spikes and storms, which are more likely to occur within a 30-day timeframe, especially during active phases of the solar cycle.",
+        "schema": {
+          "idea": "Solar storm scorcher",
+          "data": {
+            "source": "NOAA daily solar activity index through weather_series adapter",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Spikes in solar activity and geomagnetic storms can disrupt satellite operations, power grids, and other critical infrastructure, signaling potential volatility in energy and technology sectors.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLE",
+            "rationale": "Solar storms can impact energy infrastructure and space-based technologies, which are crucial for the energy and technology sectors."
+          },
+          "trade_logic": {
+            "entry": "If the daily solar activity index increases by more than 50% compared to the prior 7-day average",
+            "exit": "After 3 trading days or once the index retreats by 30%",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "monthly",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Solar activity can exhibit periodic spikes and storms, which are more likely to occur within a 30-day timeframe, especially during active phases of the solar cycle.",
+          "source_provider": "anthropic",
+          "source_model": "claude-3-haiku-20240307"
+        }
+      }
+    },
+    {
+      "source": "claude",
+      "idea_id": "ev-charging-station-stampede",
+      "title": "Ev Charging Station Stampede",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "ev charging station stampede",
+        "matched_idea_id": "ev-charging-station-stampede",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "ev-charging-station-stampede",
+        "title": "Ev Charging Station Stampede",
+        "source_provider": "anthropic",
+        "source_model": "claude-3-haiku-20240307",
+        "thesis": "Rapid growth in the number of public EV charging stations can signal increasing consumer adoption of electric vehicles and related infrastructure investment. EV adoption and charging infrastructure growth are closely tied to consumer discretionary spending and the future of transportation.",
+        "data_sources": [
+          "Openchargemap public EV charging station data through openchargemap adapter"
+        ],
+        "signal_logic": "If the weekly growth rate in public EV charging stations exceeds 2%",
+        "entry_exit": "Entry: If the weekly growth rate in public EV charging stations exceeds 2% Exit: After 2 weeks or once the growth rate falls below 1%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Openchargemap public EV charging station data through openchargemap adapter via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "monthly",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Adoption of electric vehicles and expansion of charging infrastructure is a long-term trend, but can exhibit periods of accelerated growth that may occur within a 30-day timeframe.",
+        "schema": {
+          "idea": "EV charging station stampede",
+          "data": {
+            "source": "Openchargemap public EV charging station data through openchargemap adapter",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Rapid growth in the number of public EV charging stations can signal increasing consumer adoption of electric vehicles and related infrastructure investment.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "EV adoption and charging infrastructure growth are closely tied to consumer discretionary spending and the future of transportation."
+          },
+          "trade_logic": {
+            "entry": "If the weekly growth rate in public EV charging stations exceeds 2%",
+            "exit": "After 2 weeks or once the growth rate falls below 1%",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "monthly",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Adoption of electric vehicles and expansion of charging infrastructure is a long-term trend, but can exhibit periods of accelerated growth that may occur within a 30-day timeframe.",
+          "source_provider": "anthropic",
+          "source_model": "claude-3-haiku-20240307"
+        }
+      }
+    },
+    {
+      "source": "claude",
+      "idea_id": "earthquake-aftershock-amplifier",
+      "title": "Earthquake Aftershock Amplifier",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "earthquake aftershock amplifier",
+        "matched_idea_id": "earthquake-aftershock-amplifier",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "earthquake-aftershock-amplifier",
+        "title": "Earthquake Aftershock Amplifier",
+        "source_provider": "anthropic",
+        "source_model": "claude-3-haiku-20240307",
+        "thesis": "Significant earthquake events can trigger increased aftershock activity, which may signal volatility and uncertainty in energy and industrial sectors. Earthquakes can disrupt energy infrastructure, supply chains, and construction activity.",
+        "data_sources": [
+          "USGS earthquake activity through earthquake_activity adapter"
+        ],
+        "signal_logic": "If the daily earthquake activity index increases by more than 50% compared to the prior 7-day average",
+        "entry_exit": "Entry: If the daily earthquake activity index increases by more than 50% compared to the prior 7-day average Exit: After 5 trading days or once the index retreats by 30%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLE"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use USGS earthquake activity through earthquake_activity adapter via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "monthly",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Earthquake clusters and aftershock sequences are common, and can often be observed within a 30-day timeframe, especially in seismically active regions.",
+        "schema": {
+          "idea": "Earthquake aftershock amplifier",
+          "data": {
+            "source": "USGS earthquake activity through earthquake_activity adapter",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Significant earthquake events can trigger increased aftershock activity, which may signal volatility and uncertainty in energy and industrial sectors.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLE",
+            "rationale": "Earthquakes can disrupt energy infrastructure, supply chains, and construction activity."
+          },
+          "trade_logic": {
+            "entry": "If the daily earthquake activity index increases by more than 50% compared to the prior 7-day average",
+            "exit": "After 5 trading days or once the index retreats by 30%",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "monthly",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Earthquake clusters and aftershock sequences are common, and can often be observed within a 30-day timeframe, especially in seismically active regions.",
+          "source_provider": "anthropic",
+          "source_model": "claude-3-haiku-20240307"
+        }
+      }
+    },
+    {
+      "source": "claude",
+      "idea_id": "crypto-capitulation-countdown",
+      "title": "Crypto Capitulation Countdown",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "crypto capitulation countdown",
+        "matched_idea_id": "crypto-capitulation-countdown",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "crypto-capitulation-countdown",
+        "title": "Crypto Capitulation Countdown",
+        "source_provider": "anthropic",
+        "source_model": "claude-3-haiku-20240307",
+        "thesis": "Cryptocurrency prices often experience sharp sell-offs in times of market stress, signaling a broader retreat from risk assets. Cryptocurrencies are a high-risk, high-volatility asset class that is tightly correlated with technology and consumer discretionary stocks.",
+        "data_sources": [
+          "Yahoo Finance daily prices for BTC-USD and SPY through price_only adapter"
+        ],
+        "signal_logic": "If BTC-USD closes down more than 5% for 3 consecutive days",
+        "entry_exit": "Entry: If BTC-USD closes down more than 5% for 3 consecutive days Exit: After 7 trading days or once BTC-USD outperforms SPY by 2%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLC"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Yahoo Finance daily prices for BTC-USD and SPY through price_only adapter via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Cryptocurrency markets are known for their volatility, and sharp selloffs often occur in times of broader market stress or uncertainty.",
+        "schema": {
+          "idea": "Crypto capitulation countdown",
+          "data": {
+            "source": "Yahoo Finance daily prices for BTC-USD and SPY through price_only adapter",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Cryptocurrency prices often experience sharp sell-offs in times of market stress, signaling a broader retreat from risk assets.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLC",
+            "rationale": "Cryptocurrencies are a high-risk, high-volatility asset class that is tightly correlated with technology and consumer discretionary stocks."
+          },
+          "trade_logic": {
+            "entry": "If BTC-USD closes down more than 5% for 3 consecutive days",
+            "exit": "After 7 trading days or once BTC-USD outperforms SPY by 2%",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Cryptocurrency markets are known for their volatility, and sharp selloffs often occur in times of broader market stress or uncertainty.",
+          "source_provider": "anthropic",
+          "source_model": "claude-3-haiku-20240307"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "industrial-sector-weekly-earthquake-activity-correlation-dip",
+      "title": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "industrial sector weekly earthquake activity correlation dip",
+        "matched_idea_id": "industrial-sector-weekly-earthquake-activity-correlation-dip",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "industrial-sector-weekly-earthquake-activity-correlation-dip",
+        "title": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "A sudden 40%+ weekly drop in earthquake activity near industrial regions correlates with short-term industrial sector strength due to fewer disruption risks. Lower seismic disturbances reduce operational risks for industrial companies.",
+        "data_sources": [
+          "USGS earthquake_activity weekly counts near major industrial hubs"
+        ],
+        "signal_logic": "Enter long XLI if weekly earthquake counts drop more than 40% vs prior week",
+        "entry_exit": "Entry: Enter long XLI if weekly earthquake counts drop more than 40% vs prior week Exit: Exit after 3 weeks or if XLI drops 4%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use USGS earthquake_activity weekly counts near major industrial hubs via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Earthquake activity fluctuates regularly enough to trigger dips and recoveries on a weekly basis.",
+        "schema": {
+          "idea": "Industrial sector weekly earthquake activity correlation dip",
+          "data": {
+            "source": "USGS earthquake_activity weekly counts near major industrial hubs",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "A sudden 40%+ weekly drop in earthquake activity near industrial regions correlates with short-term industrial sector strength due to fewer disruption risks.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLI",
+            "rationale": "Lower seismic disturbances reduce operational risks for industrial companies."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLI if weekly earthquake counts drop more than 40% vs prior week",
+            "exit": "Exit after 3 weeks or if XLI drops 4%",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Earthquake activity fluctuates regularly enough to trigger dips and recoveries on a weekly basis.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "consumer-discretionary-google-trends-surge-for-sale-keywords",
+      "title": "Consumer Discretionary Google Trends Surge For Sale Keywords",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "consumer discretionary google trends surge for sale keywords",
+        "matched_idea_id": "consumer-discretionary-google-trends-surge-for-sale-keywords",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "consumer-discretionary-google-trends-surge-for-sale-keywords",
+        "title": "Consumer Discretionary Google Trends Surge For Sale Keywords",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "A sudden 15%+ weekly increase in search interest for 'sale' often correlates with rising consumer spending and positive momentum in discretionary stocks. Higher consumer interest in sales can indicate upcoming retail strength.",
+        "data_sources": [
+          "Google Trends weekly data for 'sale' keyword in US"
+        ],
+        "signal_logic": "Enter long if weekly 'sale' search interest rises more than 15% vs prior week",
+        "entry_exit": "Entry: Enter long if weekly 'sale' search interest rises more than 15% vs prior week Exit: Exit after 3 weeks or if XLY drops 3% from entry",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly data for 'sale' keyword in US via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Weekly Google Trends data frequently shows spikes in consumer interest around holidays and promotions.",
+        "schema": {
+          "idea": "Consumer discretionary Google Trends surge for 'sale' keywords",
+          "data": {
+            "source": "Google Trends weekly data for 'sale' keyword in US",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "A sudden 15%+ weekly increase in search interest for 'sale' often correlates with rising consumer spending and positive momentum in discretionary stocks.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "Higher consumer interest in sales can indicate upcoming retail strength."
+          },
+          "trade_logic": {
+            "entry": "Enter long if weekly 'sale' search interest rises more than 15% vs prior week",
+            "exit": "Exit after 3 weeks or if XLY drops 3% from entry",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Weekly Google Trends data frequently shows spikes in consumer interest around holidays and promotions.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "energy-sector-weekly-drawdown-exhaustion",
+      "title": "Energy Sector Weekly Drawdown Exhaustion",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "energy sector weekly drawdown exhaustion",
+        "matched_idea_id": "energy-sector-weekly-drawdown-exhaustion",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "energy-sector-weekly-drawdown-exhaustion",
+        "title": "Energy Sector Weekly Drawdown Exhaustion",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "After a 3-week consecutive decline totaling more than 8%, a reversal week with a smaller loss or gain often signals short-term bottoming. Energy sector tends to mean revert after sharp multi-week declines.",
+        "data_sources": [
+          "Yahoo Finance weekly prices for XLE"
+        ],
+        "signal_logic": "Enter long if XLE drops 3 consecutive weeks totaling >8% and then weekly loss is <2% or positive",
+        "entry_exit": "Entry: Enter long if XLE drops 3 consecutive weeks totaling >8% and then weekly loss is <2% or positive Exit: Exit after 4 weeks or a 5% gain is realized",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLE"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Yahoo Finance weekly prices for XLE via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 36,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Energy volatility and drawdowns are common, creating regular opportunities for this pattern.",
+        "schema": {
+          "idea": "Energy sector weekly drawdown exhaustion",
+          "data": {
+            "source": "Yahoo Finance weekly prices for XLE",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "After a 3-week consecutive decline totaling more than 8%, a reversal week with a smaller loss or gain often signals short-term bottoming.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLE",
+            "rationale": "Energy sector tends to mean revert after sharp multi-week declines."
+          },
+          "trade_logic": {
+            "entry": "Enter long if XLE drops 3 consecutive weeks totaling >8% and then weekly loss is <2% or positive",
+            "exit": "Exit after 4 weeks or a 5% gain is realized",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 36,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Energy volatility and drawdowns are common, creating regular opportunities for this pattern.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "claude",
+      "idea_id": "lumber-futures-rollercoaster",
+      "title": "Lumber Futures Rollercoaster",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "lumber futures rollercoaster",
+        "matched_idea_id": "lumber-futures-rollercoaster",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "lumber-futures-rollercoaster",
+        "title": "Lumber Futures Rollercoaster",
+        "source_provider": "anthropic",
+        "source_model": "claude-3-haiku-20240307",
+        "thesis": "Lumber futures can experience wild price swings that outpace the broader market, often correcting sharply after a rapid run-up. Lumber is a key industrial commodity that feeds into construction and housing costs.",
+        "data_sources": [
+          "Yahoo Finance daily prices for LBS and SPY through price_only adapter"
+        ],
+        "signal_logic": "If LBS closes up more than 6% for the day",
+        "entry_exit": "Entry: If LBS closes up more than 6% for the day Exit: After 5 trading days or once LBS underperforms SPY by 4%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLB"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Yahoo Finance daily prices for LBS and SPY through price_only adapter via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "monthly",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Lumber futures are known for their volatile price swings, often driven by supply chain disruptions and weather-related events.",
+        "schema": {
+          "idea": "Lumber futures rollercoaster",
+          "data": {
+            "source": "Yahoo Finance daily prices for LBS and SPY through price_only adapter",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Lumber futures can experience wild price swings that outpace the broader market, often correcting sharply after a rapid run-up.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLB",
+            "rationale": "Lumber is a key industrial commodity that feeds into construction and housing costs."
+          },
+          "trade_logic": {
+            "entry": "If LBS closes up more than 6% for the day",
+            "exit": "After 5 trading days or once LBS underperforms SPY by 4%",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "monthly",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Lumber futures are known for their volatile price swings, often driven by supply chain disruptions and weather-related events.",
+          "source_provider": "anthropic",
+          "source_model": "claude-3-haiku-20240307"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "utilities-sector-negative-price-gap-fill",
+      "title": "Utilities Sector Negative Price Gap Fill",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "utilities sector negative price gap fill",
+        "matched_idea_id": "utilities-sector-negative-price-gap-fill",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "utilities-sector-negative-price-gap-fill",
+        "title": "Utilities Sector Negative Price Gap Fill",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "A gap down of more than 1.5% that fills (closes back above previous day's close) within 3 days often leads to short-term rallies. Gap fills signal short-term demand overcoming initial sell pressure in utilities.",
+        "data_sources": [
+          "Yahoo Finance daily prices for XLU"
+        ],
+        "signal_logic": "Enter long XLU when a gap down >1.5% on day 1 is filled by close within 3 days",
+        "entry_exit": "Entry: Enter long XLU when a gap down >1.5% on day 1 is filled by close within 3 days Exit: Exit after 5 trading days or if XLU drops 2% from entry",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLU"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Yahoo Finance daily prices for XLU via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Gap down and fill patterns happen frequently in utilities due to sector defensiveness.",
+        "schema": {
+          "idea": "Utilities sector negative price gap fill",
+          "data": {
+            "source": "Yahoo Finance daily prices for XLU",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "A gap down of more than 1.5% that fills (closes back above previous day's close) within 3 days often leads to short-term rallies.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLU",
+            "rationale": "Gap fills signal short-term demand overcoming initial sell pressure in utilities."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLU when a gap down >1.5% on day 1 is filled by close within 3 days",
+            "exit": "Exit after 5 trading days or if XLU drops 2% from entry",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Gap down and fill patterns happen frequently in utilities due to sector defensiveness.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "materials-sector-weekly-positive-correlation-breakdown-with-",
+      "title": "Materials Sector Weekly Positive Correlation Breakdown With Xlb",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "materials sector weekly positive correlation breakdown with xlb",
+        "matched_idea_id": "materials-sector-weekly-positive-correlation-breakdown-with-",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "materials-sector-weekly-positive-correlation-breakdown-with-",
+        "title": "Materials Sector Weekly Positive Correlation Breakdown With Xlb",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "When XLB weekly returns decouple negatively from SPY returns for 2 consecutive weeks, a rebound in XLB often follows. Short-term negative divergence from broad market is often overdone in materials.",
+        "data_sources": [
+          "Yahoo Finance weekly returns for XLB and SPY"
+        ],
+        "signal_logic": "Enter long XLB if weekly returns are negative while SPY returns are positive for 2 weeks in a row",
+        "entry_exit": "Entry: Enter long XLB if weekly returns are negative while SPY returns are positive for 2 weeks in a row Exit: Exit after 4 weeks or if XLB gains 6%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLB"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Yahoo Finance weekly returns for XLB and SPY via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 36,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Materials sector often exhibits short-term divergences from SPY.",
+        "schema": {
+          "idea": "Materials sector weekly positive correlation breakdown with XLB",
+          "data": {
+            "source": "Yahoo Finance weekly returns for XLB and SPY",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "When XLB weekly returns decouple negatively from SPY returns for 2 consecutive weeks, a rebound in XLB often follows.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLB",
+            "rationale": "Short-term negative divergence from broad market is often overdone in materials."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLB if weekly returns are negative while SPY returns are positive for 2 weeks in a row",
+            "exit": "Exit after 4 weeks or if XLB gains 6%",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 36,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Materials sector often exhibits short-term divergences from SPY.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "claude",
+      "idea_id": "semiconductor-moonshot-warning",
+      "title": "Semiconductor Moonshot Warning",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "semiconductor moonshot warning",
+        "matched_idea_id": "semiconductor-moonshot-warning",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "semiconductor-moonshot-warning",
+        "title": "Semiconductor Moonshot Warning",
+        "source_provider": "anthropic",
+        "source_model": "claude-3-haiku-20240307",
+        "thesis": "Semiconductors often experience large daily price jumps, which can signal speculative froth and increased risk of a pullback. Semiconductors are a high-beta technology sector that leads the market up and down.",
+        "data_sources": [
+          "Yahoo Finance daily prices for SOXX and SPY through price_only adapter"
+        ],
+        "signal_logic": "If SOXX closes up more than 4% for the day",
+        "entry_exit": "Entry: If SOXX closes up more than 4% for the day Exit: After 3 trading days or once SOXX underperforms SPY by 2%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLK"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Yahoo Finance daily prices for SOXX and SPY through price_only adapter via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Semiconductor stocks often exhibit volatile intraday price swings, especially on high-profile earnings or news.",
+        "schema": {
+          "idea": "Semiconductor moonshot warning",
+          "data": {
+            "source": "Yahoo Finance daily prices for SOXX and SPY through price_only adapter",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Semiconductors often experience large daily price jumps, which can signal speculative froth and increased risk of a pullback.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLK",
+            "rationale": "Semiconductors are a high-beta technology sector that leads the market up and down."
+          },
+          "trade_logic": {
+            "entry": "If SOXX closes up more than 4% for the day",
+            "exit": "After 3 trading days or once SOXX underperforms SPY by 2%",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Semiconductor stocks often exhibit volatile intraday price swings, especially on high-profile earnings or news.",
+          "source_provider": "anthropic",
+          "source_model": "claude-3-haiku-20240307"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "financial-sector-momentum-divergence-with-spy",
+      "title": "Financial Sector Momentum Divergence With Spy",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "financial sector momentum divergence with spy",
+        "matched_idea_id": "financial-sector-momentum-divergence-with-spy",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "financial-sector-momentum-divergence-with-spy",
+        "title": "Financial Sector Momentum Divergence With Spy",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "If XLF's 10-day momentum turns positive while SPY's remains negative, it often precedes outperformance in financials. Financials can lead broad market recoveries when their momentum diverges positively.",
+        "data_sources": [
+          "Yahoo Finance daily returns for XLF and SPY"
+        ],
+        "signal_logic": "Enter long XLF when 10-day momentum >0 and SPY 10-day momentum <0",
+        "entry_exit": "Entry: Enter long XLF when 10-day momentum >0 and SPY 10-day momentum <0 Exit: Exit if XLF momentum turns negative or SPY momentum turns positive",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLF"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Yahoo Finance daily returns for XLF and SPY via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 18,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Momentum divergences between sectors and SPY occur regularly in volatile markets.",
+        "schema": {
+          "idea": "Financial sector momentum divergence with SPY",
+          "data": {
+            "source": "Yahoo Finance daily returns for XLF and SPY",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "If XLF's 10-day momentum turns positive while SPY's remains negative, it often precedes outperformance in financials.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLF",
+            "rationale": "Financials can lead broad market recoveries when their momentum diverges positively."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLF when 10-day momentum >0 and SPY 10-day momentum <0",
+            "exit": "Exit if XLF momentum turns negative or SPY momentum turns positive",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 18,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Momentum divergences between sectors and SPY occur regularly in volatile markets.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "healthcare-sector-google-trends-spike-in-flu-symptoms",
+      "title": "Healthcare Sector Google Trends Spike In Flu Symptoms",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "healthcare sector google trends spike in flu symptoms",
+        "matched_idea_id": "healthcare-sector-google-trends-spike-in-flu-symptoms",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "healthcare-sector-google-trends-spike-in-flu-symptoms",
+        "title": "Healthcare Sector Google Trends Spike In Flu Symptoms",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "A 20%+ weekly increase in flu symptom searches often precedes healthcare sector strength due to expected increased demand. Rising illness-related searches correlate with higher healthcare utilization.",
+        "data_sources": [
+          "Google Trends weekly data for 'flu symptoms' US searches"
+        ],
+        "signal_logic": "Enter long XLV if 'flu symptoms' search interest rises >20% week-over-week",
+        "entry_exit": "Entry: Enter long XLV if 'flu symptoms' search interest rises >20% week-over-week Exit: Exit after 4 weeks or if XLV drops 3%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLV"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly data for 'flu symptoms' US searches via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 36,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Seasonal flu outbreaks cause regular weekly spikes in symptom searches.",
+        "schema": {
+          "idea": "Healthcare sector Google Trends spike in 'flu symptoms'",
+          "data": {
+            "source": "Google Trends weekly data for 'flu symptoms' US searches",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "A 20%+ weekly increase in flu symptom searches often precedes healthcare sector strength due to expected increased demand.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLV",
+            "rationale": "Rising illness-related searches correlate with higher healthcare utilization."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLV if 'flu symptoms' search interest rises >20% week-over-week",
+            "exit": "Exit after 4 weeks or if XLV drops 3%",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 36,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Seasonal flu outbreaks cause regular weekly spikes in symptom searches.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "technology-sector-daily-ev-charger-count-surge",
+      "title": "Technology Sector Daily Ev Charger Count Surge",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "technology sector daily ev charger count surge",
+        "matched_idea_id": "technology-sector-daily-ev-charger-count-surge",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "technology-sector-daily-ev-charger-count-surge",
+        "title": "Technology Sector Daily Ev Charger Count Surge",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "A daily 5%+ increase in EV charger counts correlates with tech sector optimism driven by green technology adoption. Rising EV infrastructure investment reflects tech innovation and policy tailwinds.",
+        "data_sources": [
+          "OpenChargeMap daily US EV charger counts aggregated"
+        ],
+        "signal_logic": "Enter long XLK if daily EV charger counts increase >5% compared to prior day",
+        "entry_exit": "Entry: Enter long XLK if daily EV charger counts increase >5% compared to prior day Exit: Exit after 7 trading days or if XLK drops 3%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLK"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use OpenChargeMap daily US EV charger counts aggregated via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "EV infrastructure expands steadily with occasional daily surges.",
+        "schema": {
+          "idea": "Technology sector daily EV charger count surge",
+          "data": {
+            "source": "OpenChargeMap daily US EV charger counts aggregated",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "A daily 5%+ increase in EV charger counts correlates with tech sector optimism driven by green technology adoption.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLK",
+            "rationale": "Rising EV infrastructure investment reflects tech innovation and policy tailwinds."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLK if daily EV charger counts increase >5% compared to prior day",
+            "exit": "Exit after 7 trading days or if XLK drops 3%",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "EV infrastructure expands steadily with occasional daily surges.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "staples-sector-drawdown-rapid-recovery",
+      "title": "Staples Sector Drawdown Rapid Recovery",
+      "family": null,
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "staples sector drawdown rapid recovery",
+        "matched_idea_id": "staples-sector-drawdown-rapid-recovery",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "staples-sector-drawdown-rapid-recovery",
+        "title": "Staples Sector Drawdown Rapid Recovery",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "When XLP falls 3%+ in 3 days but bounces back 1%+ on the 4th day, it often signals short-term oversold relief. Consumer staples often see quick mean reversion after sharp short-term selloffs.",
+        "data_sources": [
+          "Yahoo Finance daily prices for XLP"
+        ],
+        "signal_logic": "Enter long XLP on day 4 if prior 3-day loss >3% and day 4 gains >1%",
+        "entry_exit": "Entry: Enter long XLP on day 4 if prior 3-day loss >3% and day 4 gains >1% Exit: Exit after 5 trading days or if price falls 2% from entry",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLP"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Yahoo Finance daily prices for XLP via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Staples experience frequent short-term selloffs and rebounds in volatile environments.",
+        "schema": {
+          "idea": "Staples sector drawdown rapid recovery",
+          "data": {
+            "source": "Yahoo Finance daily prices for XLP",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "When XLP falls 3%+ in 3 days but bounces back 1%+ on the 4th day, it often signals short-term oversold relief.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLP",
+            "rationale": "Consumer staples often see quick mean reversion after sharp short-term selloffs."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLP on day 4 if prior 3-day loss >3% and day 4 gains >1%",
+            "exit": "Exit after 5 trading days or if price falls 2% from entry",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Staples experience frequent short-term selloffs and rebounds in volatile environments.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 # Real Estate Weekly Google Trends Surge For Mortgage Rates
 
 **Idea ID:** `real-estate-weekly-google-trends-surge-for-mortgage-rates`
+**Family:** ``
 **Source:** openai / gpt-4.1-mini
 **Frequency:** weekly
 

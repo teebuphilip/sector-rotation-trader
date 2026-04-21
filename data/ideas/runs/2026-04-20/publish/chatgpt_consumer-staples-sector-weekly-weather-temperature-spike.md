@@ -1,6 +1,7 @@
 # Consumer Staples Sector Weekly Weather Temperature Spike
 
 **Idea ID:** `consumer-staples-sector-weekly-weather-temperature-spike`
+**Family:** ``
 **Source:** openai / gpt-4.1-mini
 **Frequency:** weekly
 

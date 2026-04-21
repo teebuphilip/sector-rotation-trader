@@ -125,6 +125,8 @@ def main() -> int:
         print(f"Both generators failed. See {run_dir / 'errors'}", file=sys.stderr)
         return 1
 
+    _run(["python", "scripts/dedup_crazy_ideas.py", "--date", args.date])
+
     if not args.no_publish:
         _run(["python", "scripts/crazy_score_ideas.py", "--date", args.date])
         _run(["python", "scripts/crazy_publish_markdown.py", "--date", args.date])

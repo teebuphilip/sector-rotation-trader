@@ -1,6 +1,7 @@
 # Housing Market Fever Dream
 
 **Idea ID:** `housing-market-fever-dream`
+**Family:** ``
 **Source:** anthropic / claude-3-haiku-20240307
 **Frequency:** weekly
 

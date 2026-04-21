@@ -18,6 +18,8 @@ Hard constraints:
 - Prefer signals that are likely to produce a position within 30 days.
 - Avoid fragile one-off event data.
 - Avoid ideas already used: TSA throughput, Craigslist listings, 311 calls, LinkedIn workforce report, Congress trading, Reddit gaming thread spike, Port of Los Angeles TEU, EIA electricity demand, BTS airline traffic.
+- Do not output near-duplicates of the same idea with cosmetic wording changes.
+- If two ideas would use the same family, same primary data source, same sector ETF, and nearly the same trigger logic, keep only the strongest one and replace the others with genuinely different ideas.
 
 Existing adapter/data families to prefer:
 - price_only: Yahoo Finance ETF/stock price, returns, volume, momentum, drawdown, volatility.

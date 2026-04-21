@@ -1,6 +1,7 @@
 # Materials Sector Weekly Volatility Contraction Breakout
 
 **Idea ID:** `materials-sector-weekly-volatility-contraction-breakout`
+**Family:** ``
 **Source:** openai / gpt-4.1-mini
 **Frequency:** weekly
 

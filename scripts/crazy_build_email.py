@@ -221,6 +221,7 @@ def build_report() -> str:
     raw_counts = _provider_counts(run_dir, "raw")
     filtered_counts = _provider_counts(run_dir, "filtered")
     rejected_counts = _provider_counts(run_dir, "rejected")
+    dedup = _load_json(run_dir / "duplicates" / "report.json")
     gate_counts = _gate_counts(gate if isinstance(gate, dict) else None)
     family_counts = _family_counts(run_dir)
     shipped_family_counts = _shipped_family_counts(run_dir)
@@ -252,6 +253,9 @@ def build_report() -> str:
     lines.append(f"  Raw Total:         {sum(raw_counts.values())}")
     lines.append(f"  Schema kept:       {sum(filtered_counts.values())}")
     lines.append(f"  Schema rejected:   {sum(rejected_counts.values())}")
+    if isinstance(dedup, dict):
+        lines.append(f"  Dedup kept:        {dedup.get('kept_count', 0)}")
+        lines.append(f"  Dedup removed:     {dedup.get('duplicate_count', 0)}")
     lines.append(f"  Scored:            {_score_count(run_dir)}")
     lines.append(f"  Published specs:   {_publish_count(run_dir)}")
     lines.append("")

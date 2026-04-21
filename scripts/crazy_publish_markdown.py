@@ -23,6 +23,11 @@ def _load_jsonl(path: Path) -> list[dict]:
     return items
 
 
+def _ideas_dir(run_dir: Path) -> Path:
+    deduped = run_dir / "deduped"
+    return deduped if deduped.exists() else run_dir / "filtered"
+
+
 def _idea_to_md(idea: dict) -> str:
     def _list(v):
         if isinstance(v, list):
@@ -79,7 +84,7 @@ def main() -> int:
     args = parser.parse_args()
 
     run_dir = Path("data") / "ideas" / "runs" / args.date
-    raw_dir = run_dir / "filtered"
+    raw_dir = _ideas_dir(run_dir)
     pub_dir = run_dir / "publish"
     pub_dir.mkdir(parents=True, exist_ok=True)
     for stale in pub_dir.glob("*.md"):

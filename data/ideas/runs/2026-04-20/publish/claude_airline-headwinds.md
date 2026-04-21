@@ -1,6 +1,7 @@
 # Airline Headwinds
 
 **Idea ID:** `airline-headwinds`
+**Family:** ``
 **Source:** anthropic / claude-3-haiku-20240307
 **Frequency:** weekly
 

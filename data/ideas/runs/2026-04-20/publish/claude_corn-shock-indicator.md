@@ -1,6 +1,7 @@
 # Corn Shock Indicator
 
 **Idea ID:** `corn-shock-indicator`
+**Family:** ``
 **Source:** anthropic / claude-3-haiku-20240307
 **Frequency:** weekly
 

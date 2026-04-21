@@ -1,6 +1,7 @@
 # Communication Sector Volume-price Divergence
 
 **Idea ID:** `communication-sector-volume-price-divergence`
+**Family:** ``
 **Source:** openai / gpt-4.1-mini
 **Frequency:** daily
 

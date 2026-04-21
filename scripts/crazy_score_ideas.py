@@ -38,6 +38,11 @@ def _load_jsonl(path: Path) -> list[dict]:
     return items
 
 
+def _ideas_dir(run_dir: Path) -> Path:
+    deduped = run_dir / "deduped"
+    return deduped if deduped.exists() else run_dir / "filtered"
+
+
 def _score(idea: dict) -> int:
     present = 0
     for k in REQUIRED_KEYS:
@@ -63,7 +68,7 @@ def main() -> int:
     args = parser.parse_args()
 
     run_dir = Path("data") / "ideas" / "runs" / args.date
-    raw_dir = run_dir / "filtered"
+    raw_dir = _ideas_dir(run_dir)
 
     results = []
     for src in ["chatgpt", "claude"]:

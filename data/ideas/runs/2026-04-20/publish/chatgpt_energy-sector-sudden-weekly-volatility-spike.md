@@ -1,6 +1,7 @@
 # Energy Sector Sudden Weekly Volatility Spike
 
 **Idea ID:** `energy-sector-sudden-weekly-volatility-spike`
+**Family:** ``
 **Source:** openai / gpt-4.1-mini
 **Frequency:** weekly
 
