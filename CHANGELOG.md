@@ -2,6 +2,13 @@
 
 ## 2026-04-21 (session 5 — morning stats email)
 
+### chore: shift morning stats email trigger to 08:30 UTC (3:30am EST)
+- Changed cron from `0 8 * * *` to `30 8 * * *`.
+- Note: shifts to 4:30am during EDT (UTC-4); change to `30 7 * * *` in spring if you want it pinned to 3:30am year-round.
+
+Files: `.github/workflows/morning_stats_email.yml`
+
+
 ### feat: wire up daily_stats_email.py as a morning 8am UTC workflow
 - New `.github/workflows/morning_stats_email.yml` runs at 08:00 UTC daily.
 - Passes `AFH_RUN_DATE=yesterday` so the email reports on the previous day's completed runs (nightly book closes at 22:30 UTC, so all data is in place by 8am).
