@@ -7,7 +7,7 @@ from pathlib import Path
 from config import SECTOR_ETFS
 
 SUPPORTED_PRICE_TICKERS = set(SECTOR_ETFS) | {"SPY"}
-UNSUPPORTED_ADAPTER_MARKERS = [
+NON_PRICE_ADAPTER_MARKERS = [
     "crazy.adapters.google_trends",
     "crazy.adapters.fred_series",
     "crazy.adapters.rss_count",
@@ -44,37 +44,44 @@ def _source_for_algo(algo) -> str:
 def classify_algo(algo, family: str = "crazy") -> BacktestClassification:
     universe = [str(t).upper() for t in (algo.universe() or [])]
     if not universe:
-        return BacktestClassification("UNSUPPORTED_DATA", "Algo has no tradable ETF universe")
+        return BacktestClassification("LIVE_ONLY_NON_PRICE", "Algo has no tradable ETF universe")
+
     unsupported_tickers = sorted(set(universe) - SUPPORTED_PRICE_TICKERS)
     if unsupported_tickers:
         return BacktestClassification(
-            "UNSUPPORTED_DATA",
+            "UNSUPPORTED_UNIVERSE",
             f"V1 only supports SPY/sector ETFs; unsupported tickers: {', '.join(unsupported_tickers)}",
         )
 
     source = _source_for_algo(algo)
     # Native short exposure is rejected at runtime if target_allocations returns
     # negative weights. Static source checks are too noisy because long-only
-    # mean-reversion logic often compares against negative thresholds.
+    # mean-reversion logic often compare against negative thresholds.
 
     if family == "normal":
         if hasattr(algo, "compute_target"):
             return BacktestClassification("BACKTESTABLE", "Normal price-based algo interface", True)
-        return BacktestClassification("UNSUPPORTED_DATA", "Normal algo lacks compute_target")
+        return BacktestClassification("LIVE_ONLY_NON_PRICE", "Normal algo lacks compute_target")
 
-    for marker in UNSUPPORTED_ADAPTER_MARKERS:
+    for marker in NON_PRICE_ADAPTER_MARKERS:
         if marker in source:
-            return BacktestClassification("UNSUPPORTED_DATA", f"Uses non-price adapter: {marker}")
+            return BacktestClassification("LIVE_ONLY_NON_PRICE", f"Uses non-price adapter: {marker}")
 
     if "crazy.adapters.price_only" in source:
         if 'df[df["date"] <= as_of_ts]' in source or "df[df['date'] <= as_of_ts]" in source:
             return BacktestClassification("BACKTESTABLE", "Uses price_only adapter with as_of date filter", True)
-        return BacktestClassification("UNSUPPORTED_DATA", "Uses price data but no visible as_of cutoff")
+        return BacktestClassification("NEEDS_HISTORY", "Uses price data but no visible as_of cutoff")
 
     if "safe_download" in source:
-        return BacktestClassification("UNSUPPORTED_DATA", "Uses direct safe_download; V1 requires refactor to point-in-time cached prices")
+        return BacktestClassification(
+            "NEEDS_HISTORY",
+            "Uses direct safe_download; V1 requires refactor to point-in-time cached prices",
+        )
 
     if getattr(algo, "supports_historical_seed", False):
-        return BacktestClassification("UNSUPPORTED_DATA", "Historical seed exists, but V1 cannot prove point-in-time price-only behavior")
+        return BacktestClassification(
+            "NEEDS_HISTORY",
+            "Historical seed exists, but V1 cannot prove point-in-time price-only behavior",
+        )
 
-    return BacktestClassification("UNSUPPORTED_DATA", "No supported V1 price-only backtest path")
+    return BacktestClassification("LIVE_ONLY_NON_PRICE", "No supported V1 price-only backtest path")

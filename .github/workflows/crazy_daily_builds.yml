@@ -112,6 +112,14 @@ jobs:
             --verbose \
             $LIMIT_ARGS
 
+      - name: Run V1 backtests for newly seeded algos
+        if: always()
+        run: |
+          python scripts/run_factory_backtests.py \
+            --date "$RUN_DATE" \
+            --start 2024-01-01 \
+            --end "$RUN_DATE"
+
       - name: Run newly seeded experiment algos only
         if: always()
         run: |
@@ -152,7 +160,7 @@ jobs:
         if: always()
         run: |
           python scripts/check_public_html_placeholders.py
-          python -m py_compile scripts/autogen_crazy_factory.py scripts/build_template_algo.py scripts/final_publish_llm_gate.py scripts/rebuild_crazy_combined_dashboard.py crazy/runner.py crazy_run.py
+          python -m py_compile scripts/autogen_crazy_factory.py scripts/build_template_algo.py scripts/final_publish_llm_gate.py scripts/rebuild_crazy_combined_dashboard.py scripts/run_factory_backtests.py crazy/runner.py crazy_run.py
 
       - name: Summarize build
         if: always()
@@ -182,6 +190,11 @@ jobs:
           with open(path) as f:
               d = json.load(f)
           print(f"  - completed={d.get('completed', 0)} built={d.get('built', 0)} seeded={d.get('seeded', 0)} intervention={d.get('intervention', 0)} failed={d.get('failed', 0)} skipped={d.get('skipped', 0)}")
+          bt = d.get('backtest') or {}
+          if bt:
+              counts = bt.get('counts') or {}
+              counts_text = ' '.join(f"{k}={v}" for k, v in sorted(counts.items())) or 'none'
+              print(f"  - backtest reviewed={bt.get('reviewed', 0)} {counts_text}")
           PY
             fi
           } >> "$GITHUB_STEP_SUMMARY"
@@ -194,6 +207,7 @@ jobs:
           git add crazy/algos data/algos_registry_crazy.txt
           git add data/ideas docs/ideas
           git add data/crazy/state docs/algos docs/crazy
+          git add reports/backtests || true
           git add docs/signals docs/leaderboards docs/ledgers || true
           if [ -d data/blocked ]; then
             git add data/blocked

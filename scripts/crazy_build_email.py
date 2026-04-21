@@ -227,6 +227,7 @@ def build_report() -> str:
     failed_dir = Path("data/ideas/failed") / run_date
     intervention_dir = run_dir / "intervention"
 
+    backtest = factory.get("backtest") if isinstance(factory, dict) else None
     lines.append("Build Factory:")
     if factory:
         lines.append(f"  Attempted:    {factory.get('attempted', 0)}")
@@ -238,7 +239,15 @@ def build_report() -> str:
         lines.append(f"  Final run OK: {factory.get('run_ok', 'n/a')}")
     else:
         lines.append("  Missing factory summary")
-    lines.append("")
+    if isinstance(backtest, dict):
+        counts = backtest.get("counts") or {}
+        lines.append("Backtest / Classification:")
+        lines.append(f"  Reviewed:     {backtest.get('reviewed', 0)}")
+        for key in sorted(counts):
+            lines.append(f"  {key}: {counts[key]}")
+        if backtest.get("output_root"):
+            lines.append(f"  Output dir:   {backtest.get('output_root')}")
+        lines.append("")
 
     lines.append("Spec Buckets:")
     lines.append(f"  Completed:    {_count_files(completed_dir)}")
