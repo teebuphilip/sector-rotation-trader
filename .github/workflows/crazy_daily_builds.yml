@@ -112,6 +112,14 @@ jobs:
             --verbose \
             $LIMIT_ARGS
 
+      - name: Verify factory summary written
+        if: always()
+        run: |
+          if [ ! -f "data/ideas/runs/$RUN_DATE/factory_results/summary.json" ]; then
+            echo "::error::Factory autogen step ran but did not write summary.json — likely crashed before completion."
+            exit 1
+          fi
+
       - name: Run V1 backtests for newly seeded algos
         if: always()
         run: |

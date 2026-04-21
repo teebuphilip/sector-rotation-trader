@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-04-21 (session 4 — P2 operational pipeline fixes)
+
+### fix: template-built algo is syntax-checked before being marked as built
+- `build_template_algo.py` now runs `compile()` on the generated Python file immediately after writing it.
+- If the generated code has syntax errors (e.g., unescaped quotes in idea name or adapter call), the file is removed and the script exits with code 1.
+- The factory's existing `build_proc.returncode != 0` check catches this and marks the spec as `failed_build` instead of proceeding to a seed that would fail on import.
+
+Files: `scripts/build_template_algo.py`
+
+### fix: factory crash before summary.json is written now fails the workflow visibly
+- Added "Verify factory summary written" step in `crazy_daily_builds.yml` immediately after the autogen step.
+- If `summary.json` is missing (autogen crashed before completion), the job fails before the commit and email steps run.
+- Previously, the email reported job success even when autogen crashed, because `continue-on-error: true` swallowed the failure and the only check was in a late "Assess" step that ran after the email.
+
+Files: `.github/workflows/crazy_daily_builds.yml`
+
 ## 2026-04-21 (session 3 — P1 operational pipeline fixes)
 
 ### fix: registry entry now written only after seed succeeds, not after build

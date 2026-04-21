@@ -396,6 +396,11 @@ def build(spec_file: Path, out: Path, adapter: str | None = None) -> dict:
         adapter_call=adapter_call,
     )
     _write(out, code)
+    try:
+        compile(code, str(out), "exec")
+    except SyntaxError as exc:
+        out.unlink()
+        raise SystemExit(f"[syntax-error] generated code for {idea_id} has syntax errors: {exc}") from exc
     return {
         "spec_file": str(spec_file),
         "out": str(out),
