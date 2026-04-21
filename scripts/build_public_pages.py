@@ -5,29 +5,14 @@ Generate static public HTML pages from docs/data/public/ contract.
 Generates:
   docs/leaderboard.html   — sector heatmap + top-10 leaderboard + ticker lookup
   docs/landing.html       — landing/CTA with pricing section + rolling 30D winners
-  docs/premium.html       — full leaderboard + detail, gated by monthly token
-
-Token gate:
-  Set PREMIUM_SECRET env var (in GitHub Actions secrets).
-  scripts/generate_premium_token.py prints the current month's token.
-  The SHA-256 hash of that token is embedded in premium.html at build time.
-  Users enter their token; it is hashed client-side and compared to the embedded hash.
-  Tokens are valid for one calendar month. Rotate by emailing new token to MailerLite list on the 1st.
+  docs/premium.html       — premium teaser page for the July paid launch
 """
 from __future__ import annotations
 import json
 import html
-import os
 import sys
 from pathlib import Path
 from datetime import datetime
-
-sys.path.insert(0, str(Path(__file__).parent))
-try:
-    from generate_premium_token import token_for_month, token_hash
-except ImportError:
-    def token_for_month(ym=None): return "dev000000000"
-    def token_hash(t): return __import__("hashlib").sha256(t.encode()).hexdigest()
 
 REPO = Path(__file__).parent.parent
 PUBLIC = REPO / "docs" / "data" / "public"
@@ -652,56 +637,32 @@ def _premium_table_rows(algos: list) -> str:
 
 
 def build_premium(daily: dict, leaderboard: dict) -> str:
-    tok = token_for_month()
-    tok_hash = token_hash(tok)
     algos = leaderboard.get("algos", [])
     total = len(algos)
     beating = sum(1 for a in algos if a.get("beat_spy"))
     generated_at = daily.get("generated_at", "")
     run_date = daily.get("run_date", "")
     sector_html = _sector_heatmap_html(daily.get("sector_summary") or {})
-    table_rows = _premium_table_rows(algos)
+    table_rows = _premium_table_rows(algos[:15])
+    counts = daily.get("counts") or {}
+    watchlist = counts.get("watchlist", 0)
+    promoted = counts.get("promoted", 0)
+    graveyard = counts.get("graveyard", 0)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Crazy Stock Algo \u2014 Premium Access</title>
-<meta name="robots" content="noindex,nofollow" />
+<title>Crazy Stock Algo \u2014 Premium Preview</title>
 <style>{PREMIUM_CSS}</style>
 </head>
 <body>
 
-<!-- Token gate -->
-<div id="gate-section">
-  <div class="gate-wrap">
-    <div class="hero-badge">PREMIUM</div>
-    <div class="gate-title">Enter your access token</div>
-    <div class="gate-sub">
-      Monthly access tokens are emailed to active subscribers on the 1st of each month.<br>
-      <a href="landing.html#pricing">Get access &rarr;</a>
-    </div>
-    <div class="gate-form">
-      <input type="text" class="gate-input" id="gate-input" placeholder="xxxxxxxxxxxx" maxlength="20" autocomplete="off" spellcheck="false" />
-      <button class="gate-btn" onclick="unlockPremium()">Unlock</button>
-    </div>
-    <div class="gate-error" id="gate-error">Invalid token. Check your email for this month&rsquo;s token.</div>
-    <div class="gate-note">
-      Tokens are valid for the current calendar month.<br>
-      Questions? <a href="mailto:teebu.philip@gmail.com">teebu.philip@gmail.com</a>
-    </div>
-  </div>
-</div>
-
-<!-- Premium content (hidden until unlocked) -->
-<div id="premium-content">
-
 <div class="hero">
-  <div class="hero-badge">PREMIUM <span style="margin-left:4px;opacity:0.6">&#x2713; UNLOCKED</span></div>
-  <button class="signout-btn" onclick="signOut()">Sign out</button>
-  <h1><span>{_e(total)}</span> algorithms &mdash; full view</h1>
-  <p class="hero-sub">Complete leaderboard + family + evidence class. Updated nightly.</p>
+  <div class="hero-badge">PREMIUM PREVIEW</div>
+  <h1><span>July 1</span> premium launch</h1>
+  <p class="hero-sub">June 15 is free public launch. July 1 adds the paid operating layer.</p>
   <div class="hero-stats">
     <div class="hero-stat">
       <div class="num">{_e(total)}</div>
@@ -712,16 +673,44 @@ def build_premium(daily: dict, leaderboard: dict) -> str:
       <div class="label">Beating SPY</div>
     </div>
     <div class="hero-stat">
-      <div class="num">11</div>
-      <div class="label">Sectors Tracked</div>
+      <div class="num">{_e(watchlist)}</div>
+      <div class="label">Watchlist</div>
     </div>
   </div>
+  <a class="cta" href="landing.html#waitlist">Join the waitlist</a>
+  <span class="cta-sub">No checkout yet. Waitlist first, paid launch July 1.</span>
 </div>
 
 <section>
   <div class="wrap">
+    <h2 class="section-title">What Premium Will Add</h2>
+    <p class="section-sub">This page is a teaser, not a gated member area yet.</p>
+    <div class="hero-stats" style="justify-content:flex-start; gap:20px; margin:0 0 24px;">
+      <div class="hero-stat">
+        <div class="num">{_e(promoted)}</div>
+        <div class="label">Promoted</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">{_e(graveyard)}</div>
+        <div class="label">Graveyard</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">11</div>
+        <div class="label">Sectors</div>
+      </div>
+    </div>
+    <div class="rank-note">
+      <strong>Free on June 15:</strong> blog, stripped leaderboard, families, promoted/watchlist summaries, graveyard, public daily report, and public ticker pages.
+      <br>
+      <strong>Paid on July 1:</strong> full leaderboard, full per-algo detail, full per-ticker detail, trade history, equity curves, and premium summaries.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <h2 class="section-title">Sector Heatmap</h2>
-    <p class="section-sub">Composite signal across all algorithms. Updated nightly.</p>
+    <p class="section-sub">This stays in the free public site. Premium adds the deeper operating layer around it.</p>
     <div class="heatmap">
 {sector_html}
     </div>
@@ -730,12 +719,12 @@ def build_premium(daily: dict, leaderboard: dict) -> str:
 
 <section>
   <div class="wrap">
-    <h2 class="section-title">Full Leaderboard <span class="premium-badge">PREMIUM</span></h2>
-    <p class="section-sub">All {_e(total)} algorithms. Force rank (full-window) + rolling 30D + family + evidence class.</p>
+    <h2 class="section-title">Premium Preview <span class="premium-badge">COMING JULY 1</span></h2>
+    <p class="section-sub">Preview of the table shape. The live paid layer does not launch until July 1.</p>
     <div class="rank-note">
       <strong>Force rank</strong> = full-window/since-seed return. <strong>Rolling 30D</strong> = trailing 30-day return.
       <code>Family</code> = strategy category. <code>Evidence</code> = validation status.
-      An algo can rank poorly overall but top the 30D list &mdash; that means recent momentum, not full validation.
+      Free stays intentionally lighter. Premium is where the full operating detail goes.
     </div>
     <div class="table-wrap">
       <table>
@@ -751,12 +740,16 @@ def build_premium(daily: dict, leaderboard: dict) -> str:
         </tbody>
       </table>
     </div>
+    <div style="margin-top:18px;">
+      <a class="cta" href="landing.html#waitlist">Join the waitlist</a>
+      <span class="cta-sub">Free launch first. Paid layer starts July 1.</span>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div><strong>crazystockalgo.com</strong> &mdash; Premium &mdash; Updated nightly at 6:30 PM ET</div>
+    <div><strong>crazystockalgo.com</strong> &mdash; Premium Preview &mdash; Updated nightly at 6:30 PM ET</div>
     <div>Last updated: {_e(generated_at or run_date)}</div>
     <div style="margin-top:8px;">
       <strong>Not financial advice.</strong> Experimental research only. Paper-traded signals, not real money.
@@ -765,60 +758,6 @@ def build_premium(daily: dict, leaderboard: dict) -> str:
     <div class="memorial">In loving memory of Biscotti (2008&ndash;2026). Good boy. Best algo. &hearts;</div>
   </div>
 </footer>
-
-</div><!-- /premium-content -->
-
-<script>
-(function() {{
-  var TOKEN_HASH = '{tok_hash}';
-  var LS_KEY = 'csa_premium_token_hash';
-
-  function sha256(str) {{
-    // SubtleCrypto-based async SHA-256
-    var enc = new TextEncoder();
-    return crypto.subtle.digest('SHA-256', enc.encode(str)).then(function(buf) {{
-      return Array.from(new Uint8Array(buf)).map(function(b) {{ return b.toString(16).padStart(2,'0'); }}).join('');
-    }});
-  }}
-
-  function unlock() {{
-    document.getElementById('gate-section').style.display = 'none';
-    document.getElementById('premium-content').classList.add('unlocked');
-  }}
-
-  // Auto-unlock if stored hash matches
-  var stored = localStorage.getItem(LS_KEY);
-  if (stored === TOKEN_HASH) {{ unlock(); return; }}
-
-  window.unlockPremium = function() {{
-    var input = document.getElementById('gate-input');
-    var error = document.getElementById('gate-error');
-    var token = input.value.trim().toLowerCase();
-    error.classList.remove('show');
-    if (!token) return;
-    sha256(token).then(function(hash) {{
-      if (hash === TOKEN_HASH) {{
-        localStorage.setItem(LS_KEY, hash);
-        unlock();
-      }} else {{
-        error.classList.add('show');
-        input.value = '';
-        input.focus();
-      }}
-    }});
-  }};
-
-  window.signOut = function() {{
-    localStorage.removeItem(LS_KEY);
-    document.getElementById('premium-content').classList.remove('unlocked');
-    document.getElementById('gate-section').style.display = '';
-  }};
-
-  document.getElementById('gate-input').addEventListener('keydown', function(e) {{
-    if (e.key === 'Enter') window.unlockPremium();
-  }});
-}})();
-</script>
 
 </body>
 </html>"""
