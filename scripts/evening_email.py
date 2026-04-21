@@ -251,6 +251,34 @@ def build_report() -> str:
     else:
         lines.append("ROLLING 30D LEADERBOARD: not yet generated")
 
+    # ── 6.5 Product Structure Summary ──────────────────────────────
+    lines.append("")
+    product_summary = _load_json(ROOT / "data" / "product" / "daily_summary.json")
+    if isinstance(product_summary, dict):
+        counts = product_summary.get("counts") or {}
+        by_status = product_summary.get("by_status") or {}
+        by_evidence = product_summary.get("by_evidence_class") or {}
+        lines.append("PRODUCT STRUCTURE:")
+        lines.append("  Total algos:   {}".format(counts.get("total", 0)))
+        lines.append("  Watchlist:     {}".format(counts.get("watchlist", 0)))
+        lines.append("  Promoted:      {}".format(counts.get("promoted", 0)))
+        lines.append("  Graveyard:     {}".format(counts.get("graveyard", 0)))
+        if by_status:
+            lines.append("  Status mix:")
+            for key, value in sorted(by_status.items()):
+                lines.append("    - {}: {}".format(key, value))
+        if by_evidence:
+            lines.append("  Evidence mix:")
+            for key, value in sorted(by_evidence.items()):
+                lines.append("    - {}: {}".format(key, value))
+        new_algos = product_summary.get("new_algos_today") or []
+        if new_algos:
+            lines.append("  New algos today:")
+            for item in new_algos[:5]:
+                lines.append("    - {} ({})".format(item.get("algo_id", "?"), item.get("family", "?")))
+    else:
+        lines.append("PRODUCT STRUCTURE: not yet generated")
+
     # ── 7. Blocked Algos (missing API keys) ───────────────────────
     lines.append("")
     blocked_file = ROOT / "data" / "blocked" / "algos.jsonl"

@@ -14,6 +14,16 @@ VALID_EXPECTED = {"high", "medium", "low"}
 VALID_FIRE_RATE = {"daily", "weekly", "monthly", "rare"}
 VALID_ADAPTER_STATUS = {"existing", "new_required"}
 VALID_TRIGGER_SENSITIVITY = {"high", "medium", "low"}
+VALID_FAMILIES = {
+    "consumer_stress",
+    "travel_mobility",
+    "labor_jobs",
+    "freight_logistics",
+    "attention_sentiment",
+    "political_insider_filing",
+    "local_economy_weirdness",
+    "macro_input_pressure",
+}
 SECTOR_RE = re.compile(r"^X[A-Z]{2,4}$")
 
 
@@ -31,6 +41,9 @@ def _validate_schema(obj: dict, mode: str = "standard") -> list[str]:
     errors = []
     if not obj.get("idea") or not isinstance(obj.get("idea"), str):
         errors.append("missing idea")
+    family = obj.get("family")
+    if family not in VALID_FAMILIES:
+        errors.append("family must be one of the approved crazy families")
     if not isinstance(obj.get("data"), dict):
         errors.append("missing data")
     else:
@@ -127,6 +140,7 @@ def _normalize(obj: dict) -> dict:
     return {
         "idea_id": idea_id,
         "title": title or idea_id.replace("-", " ").title(),
+        "family": obj.get("family", ""),
         "source_provider": obj.get("source_provider", ""),
         "source_model": obj.get("source_model", ""),
         "thesis": f"{obj.get('behavior','').strip()} {impact.get('rationale','').strip()}".strip(),

@@ -74,6 +74,7 @@ def main() -> int:
                 "source": src,
                 "idea_id": idea.get("idea_id"),
                 "title": idea.get("title"),
+                "family": idea.get("family"),
                 "score": _score(idea),
             })
 

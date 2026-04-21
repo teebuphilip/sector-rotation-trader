@@ -32,6 +32,7 @@ def _idea_to_md(idea: dict) -> str:
     return f"""# {idea.get('title','(untitled)')}
 
 **Idea ID:** `{idea.get('idea_id','')}`
+**Family:** `{idea.get('family','')}`
 **Source:** {idea.get('source_provider','')} / {idea.get('source_model','')}
 **Frequency:** {idea.get('frequency','')}
 

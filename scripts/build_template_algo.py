@@ -81,6 +81,11 @@ def _frequency(text: str) -> str:
     return value if value in {"daily", "weekly", "monthly"} else "daily"
 
 
+def _family(text: str) -> str:
+    match = re.search(r"\*\*Family:\*\*\s*`([^`]+)`", text)
+    return match.group(1).strip() if match else ""
+
+
 def _universe(text: str) -> list[str]:
     sec = _section(text, "Universe")
     tickers = []
@@ -220,6 +225,7 @@ def _code(
     name: str,
     universe: list[str],
     frequency: str,
+    family: str,
     threshold: float,
     direction: str,
     hold_days: int,
@@ -235,6 +241,7 @@ def _code(
 class {class_name}(CrazyAlgoBase):
     algo_id = "{idea_id}"
     name = "{name}"
+    family = "{family}"
     rebalance_frequency = "{frequency}"
     supports_historical_seed = {supports_hist}
 
@@ -359,6 +366,7 @@ def build(spec_file: Path, out: Path, adapter: str | None = None) -> dict:
     name = _title(text, idea_id.replace("-", " ").title())
     universe = _universe(text)
     frequency = _frequency(text)
+    family = _family(text)
     signal_logic = _section(text, "Signal Logic")
     signal_text = "\n".join([
         signal_logic,
@@ -381,6 +389,7 @@ def build(spec_file: Path, out: Path, adapter: str | None = None) -> dict:
         name=name,
         universe=universe,
         frequency=frequency,
+        family=family,
         threshold=threshold,
         direction=direction,
         hold_days=hold_days,
@@ -395,6 +404,7 @@ def build(spec_file: Path, out: Path, adapter: str | None = None) -> dict:
         "name": name,
         "universe": universe,
         "frequency": frequency,
+        "family": family,
         "threshold": threshold,
         "direction": direction,
         "hold_days": hold_days,

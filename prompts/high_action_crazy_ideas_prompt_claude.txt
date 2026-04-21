@@ -9,6 +9,7 @@ Hard constraints:
 - Use daily or weekly data only.
 - Must be historically backfillable for at least 12 months.
 - Must use an existing adapter/data family whenever possible.
+- Must assign exactly ONE family from: consumer_stress, travel_mobility, labor_jobs, freight_logistics, attention_sentiment, political_insider_filing, local_economy_weirdness, macro_input_pressure.
 - Must map to exactly ONE sector ETF.
 - Must have simple deterministic entry/exit logic.
 - Expected fire rate must be daily, weekly, or monthly. Never rare.
@@ -35,6 +36,7 @@ Existing adapter/data families to prefer:
 Required keys in every object:
 {
   "idea": "",
+  "family": "consumer_stress|travel_mobility|labor_jobs|freight_logistics|attention_sentiment|political_insider_filing|local_economy_weirdness|macro_input_pressure",
   "data": {
     "source": "",
     "type": "api|scrape",

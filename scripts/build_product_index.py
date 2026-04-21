@@ -231,7 +231,7 @@ def main() -> int:
         state_path = (NORMAL_STATE_DIR if algo_family == "normal" else CRAZY_STATE_DIR) / f"{algo_id}.json"
         state = _state_summary(state_path)
         backtest = backtests.get((algo_family, algo_id))
-        family = _classify_family(algo_family, algo_id, algo.name)
+        family = getattr(algo, "family", "") or _classify_family(algo_family, algo_id, algo.name)
         evidence_class = _evidence_class(backtest, state, algo_id in pending_seed)
         status = _status(algo_family, backtest, state, algo_id in pending_seed)
 
