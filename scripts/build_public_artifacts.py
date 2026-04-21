@@ -32,6 +32,28 @@ def _write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, indent=2) + '\n', encoding='utf-8')
 
 
+def _public_signal_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    return {
+        'ticker': payload.get('ticker'),
+        'sector': payload.get('sector'),
+        'sector_etf': payload.get('sector_etf'),
+        'generated': payload.get('generated'),
+        'lab_started': payload.get('lab_started'),
+        'composite': payload.get('composite'),
+        'composite_label': payload.get('composite_label'),
+        'composite_color': payload.get('composite_color'),
+        'bullish': payload.get('bullish'),
+        'bearish': payload.get('bearish'),
+        'neutral': payload.get('neutral'),
+        'bullish_pct': payload.get('bullish_pct'),
+        'total_signals': payload.get('total_signals'),
+        'total_active': payload.get('total_active'),
+        'disclaimer': payload.get('disclaimer'),
+        'detail_level': 'public_teaser',
+        'premium_breakdown_available': True,
+    }
+
+
 def _copy_signal_json_tree() -> int:
     if not SIGNALS_DIR.exists():
         return 0
@@ -40,7 +62,11 @@ def _copy_signal_json_tree() -> int:
         rel = src.relative_to(SIGNALS_DIR)
         dest = PUBLIC_SIGNALS_DIR / rel
         dest.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(src, dest)
+        payload = _load_json(src)
+        if isinstance(payload, dict):
+            _write_json(dest, _public_signal_payload(payload))
+        else:
+            shutil.copyfile(src, dest)
         copied += 1
     return copied
 
