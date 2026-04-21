@@ -421,6 +421,11 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
       <code>Comparators</code> shows the current 5-day and 20-day momentum direction on the algo's primary sector ETF when that mapping is clean enough to show.
       Some signals are backtested under strict V1 rules. Others are live-only because the historical data is not clean enough to backfill honestly.
     </div>
+    <div class="rank-note">
+      <strong>Why comparators are here:</strong> Simple momentum baselines are the null hypothesis.
+      If a weird signal is useful, it should sometimes add information beyond raw price trend.
+      These badges are context, not a final scorecard.
+    </div>
     <div class="table-wrap">
       <table>
         <thead>
@@ -937,6 +942,15 @@ def build_daily_page(daily: dict) -> str:
       <div class="hero-stat"><div class="num">{_e((daily.get('counts') or {}).get('watchlist', 0))}</div><div class="label">Watchlist</div></div>
       <div class="hero-stat"><div class="num">{_e((daily.get('counts') or {}).get('promoted', 0))}</div><div class="label">Promoted</div></div>
       <div class="hero-stat"><div class="num">{_e((daily.get('counts') or {}).get('graveyard', 0))}</div><div class="label">Graveyard</div></div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="rank-note">
+      <strong>Comparator note:</strong> The lab now tracks simple always-on baselines in `docs/comparison/`.
+      Today that means <code>momentum_5d</code> and <code>momentum_20d</code>.
+      They are there to answer one question: does a signal add anything beyond price momentum alone?
     </div>
   </div>
 </section>

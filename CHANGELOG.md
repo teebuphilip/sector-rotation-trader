@@ -9,6 +9,7 @@
 - If comparator data is missing or an algo cannot be cleanly mapped to a primary sector ETF, the page shows `n/a` instead of inventing a grade.
 
 Files: `scripts/build_public_artifacts.py`, `scripts/build_public_pages.py`, `docs/data/public/leaderboard.json`, `docs/leaderboard.html`
+- Added one small comparator explainer block to `docs/leaderboard.html` and `docs/daily.html` so the public site explains why these baseline badges exist.
 
 ## 2026-04-21 (session 6 — Kronos postpone + momentum baseline)
 
