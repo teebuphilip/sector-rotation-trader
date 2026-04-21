@@ -20,6 +20,17 @@ content templates format facts
 
 The content layer does not recompute metrics and does not invent narratives.
 
+There is now a second architectural rule for product delivery:
+
+```text
+nightly runs compute facts once
+-> stripped public JSON is generated
+-> static public pages are rendered from that JSON
+-> only public-safe artifacts are pushed to the website repo
+```
+
+This repo remains the private system of record. The public site should be a rendered view, not a browser-side reconstruction of internal state.
+
 ## System Map
 
 ```text
@@ -34,6 +45,9 @@ after core success:
 publish specs --> final gate --> template build --> seed --> run only new experiments --> experiment email
 
 rank history + rolling 30D + signal precompute --> deep validation report --> content files
+
+nightly public artifact generation:
+product/state/backtest/signals --> public-safe JSON --> static public pages --> public repo push
 ```
 
 ## Baseline NRWise
@@ -195,6 +209,19 @@ data/ideas/runs/YYYY-MM-DD/factory_results/
 
 The schema gate rejects ideas before build if they lack real data, clear behavior, sector impact, or deterministic trade logic. The final publish gate performs a second LLM-assisted check before specs are moved into `build/`, `intervention/`, or `reject/`.
 
+High-action crazy ideas now also carry an explicit `family` field so the lab can be grouped and surfaced systematically instead of as a flat list of unrelated experiments.
+
+Approved families:
+
+- `consumer_stress`
+- `travel_mobility`
+- `labor_jobs`
+- `freight_logistics`
+- `attention_sentiment`
+- `political_insider_filing`
+- `local_economy_weirdness`
+- `macro_input_pressure`
+
 ## Build + Seed Architecture
 
 The build pipeline turns gated markdown specs into runnable crazy algo files. The production path now favors deterministic template builds. The older structural LLM builder remains available for manual/debug work and its artifacts are retained for review.
@@ -258,23 +285,80 @@ Builder components:
 - `scripts/validate_structural_algo.py`
 - `scripts/validate_algo_llm.py`
 - `scripts/validate_final.py`
-- `scripts/final_publish_llm_gate.py`
-- `scripts/build_template_algo.py`
-- `scripts/rebuild_crazy_combined_dashboard.py`
 
-Triage outputs:
+## Product Structure Layer
 
-- `data/ideas/completed/YYYY-MM-DD/`
-- `data/ideas/failed/YYYY-MM-DD/`
-- `data/ideas/intervention/YYYY-MM-DD/`
+The repo now maintains a derived product layer on top of raw pipeline artifacts. This is similar to the AFH model: operational buckets stay noisy, but product-facing outputs are normalized into stable JSON files.
 
-Failure policy:
+Generator:
 
-- No adapter or low confidence -> intervention.
-- Build failure -> failed.
-- Seed failure -> failed.
-- Successful build + seed -> completed.
-- Native short specs currently require intervention unless explicitly supported by the template builder.
+- `scripts/build_product_index.py`
+
+Outputs:
+
+- `data/product/algos_index.json`
+- `data/product/families.json`
+- `data/product/watchlist.json`
+- `data/product/promoted.json`
+- `data/product/graveyard.json`
+- `data/product/daily_summary.json`
+
+Derived fields:
+
+- `family`
+- `status`
+- `evidence_class`
+
+Current status model:
+
+- `promoted`
+- `backtest_weak`
+- `live_only`
+- `sandbox`
+- `failed`
+- `parked`
+
+Current evidence model:
+
+- `v1_backtested`
+- `live_receipts_only`
+- `needs_history`
+- `short_model_pending`
+- `pending_seed`
+
+This product layer is what future public pages, operator summaries, and premium/private surfaces should read from.
+
+## Public vs Private Split
+
+The July ship target assumes a static public site plus a later premium layer. The public site should be generated from a small, stable contract and pushed to a separate public repo.
+
+Public JSON target shape:
+
+- `docs/data/public/daily.json`
+- `docs/data/public/leaderboard.json`
+- `docs/data/public/families.json`
+- `docs/data/public/watchlist.json`
+- `docs/data/public/promoted.json`
+- `docs/data/public/graveyard.json`
+- `docs/data/public/benchmarks/spy.json`
+- `docs/data/public/benchmarks/qqq.json`
+- `docs/data/public/signals/index.json`
+- `docs/data/public/signals/<symbol>.json`
+
+Static public pages should be rendered from those files every night.
+
+Internal/private artifacts must stay out of the public repo:
+
+- raw ideas
+- intervention/failed factory artifacts
+- codegen logs
+- full state files
+- full trade logs
+- full equity curves
+- private leaderboard payloads
+- debugging outputs
+
+See `content-split.md` for the current free vs paid product split.
 
 ## State Layout
 
