@@ -75,6 +75,57 @@ def _provider_counts(run_dir: Path, subdir: str) -> dict[str, int]:
     return out
 
 
+def _family_counts(run_dir: Path) -> dict[str, int]:
+    counter: Counter[str] = Counter()
+    date = run_dir.name
+    for src in ("chatgpt", "claude"):
+        for obj in _load_jsonl(run_dir / "filtered" / f"{src}_{date}.jsonl"):
+            family = str(obj.get("family") or "").strip()
+            if family:
+                counter[family] += 1
+    return dict(sorted(counter.items()))
+
+
+def _product_family_map() -> dict[str, str]:
+    path = Path("data/product/algos_index.json")
+    data = _load_json(path)
+    out: dict[str, str] = {}
+    if not isinstance(data, dict):
+        return out
+    for item in data.get("algos", []):
+        if not isinstance(item, dict):
+            continue
+        algo_type = str(item.get("algo_type") or "")
+        algo_id = str(item.get("algo_id") or "")
+        family = str(item.get("family") or "")
+        if algo_type and algo_id and family:
+            out[f"{algo_type}:{algo_id}"] = family
+    return out
+
+
+def _shipped_family_counts(run_dir: Path) -> dict[str, int]:
+    root = run_dir / "factory_results"
+    product_families = _product_family_map()
+    counter: Counter[str] = Counter()
+    if not root.exists():
+        return {}
+    for path in sorted(root.glob("*.json")):
+        if path.name.endswith("_template_build.json") or path.name == "summary.json":
+            continue
+        obj = _load_json(path)
+        if not isinstance(obj, dict):
+            continue
+        if not (obj.get("built") or obj.get("completed") or obj.get("seeded")):
+            continue
+        idea_id = str(obj.get("idea_id") or "")
+        family = str(obj.get("family") or "").strip()
+        if not family and idea_id:
+            family = product_families.get(f"crazy:{idea_id}", "")
+        if family:
+            counter[family] += 1
+    return dict(sorted(counter.items()))
+
+
 def _score_count(run_dir: Path) -> int:
     obj = _load_json(run_dir / "score.json")
     if isinstance(obj, list):
@@ -171,6 +222,8 @@ def build_report() -> str:
     filtered_counts = _provider_counts(run_dir, "filtered")
     rejected_counts = _provider_counts(run_dir, "rejected")
     gate_counts = _gate_counts(gate if isinstance(gate, dict) else None)
+    family_counts = _family_counts(run_dir)
+    shipped_family_counts = _shipped_family_counts(run_dir)
 
     lines: list[str] = []
     lines.append(f"Crazy Daily Build Factory - {run_date}")
@@ -208,6 +261,12 @@ def build_report() -> str:
         lines.append("Top scored ideas:")
         for item in top:
             lines.append(f"  - {item}")
+        lines.append("")
+
+    if family_counts:
+        lines.append("Idea Families:")
+        for family, count in family_counts.items():
+            lines.append(f"  {family}: {count}")
         lines.append("")
 
     lines.append("Final Publish Gate:")
@@ -262,6 +321,12 @@ def build_report() -> str:
     if len(shipped) > 30:
         lines.append(f"  ... {len(shipped) - 30} more")
     lines.append("")
+
+    if shipped_family_counts:
+        lines.append("Shipped Families:")
+        for family, count in shipped_family_counts.items():
+            lines.append(f"  {family}: {count}")
+        lines.append("")
 
     registry_algos = _new_algos_from_registry(run_date)
     if registry_algos:
