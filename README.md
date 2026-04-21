@@ -86,6 +86,7 @@ Public outputs:
 - `docs/legal.html`: public disclaimer/legal page.
 - `docs/blog/`: blog/build-log pages.
 - `docs/data/public/`: nightly stripped public JSON contract.
+- `docs/comparison/`: nightly comparator outputs used for benchmark context.
 - `docs/leaderboards/`: rolling 30-day leaderboard outputs.
 - `docs/signals/`: private-side precompute outputs used to derive public-safe signal JSON.
 - `docs/signals/lookup.html`: ticker lookup UI.

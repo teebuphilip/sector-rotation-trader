@@ -16,6 +16,7 @@ Force rank (`data/rank_history.csv`) is full-window/since-seed performance; roll
 The product layer adds `family`, `status`, and `evidence_class` so public pages, operator summaries, and later premium surfaces do not have to scrape raw pipeline outputs.
 `scripts/build_public_artifacts.py` converts that private product layer plus signals/leaderboards into a stable nightly public contract under `docs/data/public/`.
 The stripped public contract feeds the static public pages: `docs/index.html`, `docs/leaderboard.html`, `docs/families.html`, `docs/daily.html`, `docs/premium.html`, `docs/legal.html`, and `docs/blog/index.html`.
+`scripts/comparison_nightly.py` also writes `docs/comparison/today.json` and `docs/comparison/history.json` so the lab can compare algos against simple always-on baselines such as `momentum_5d` and `momentum_20d`.
 Public per-signal JSON is teaser-safe and does not expose the full internal per-algo breakdown.
 The standalone content engine is separate from tactical and experiment workflows: `scripts/run_content_engine.sh` reads rank history, rolling 30D, and signal precompute outputs, writes `reports/deep_validation/`, then renders deterministic text files under `content/`.
 Content generation uses the deep validation JSON as truth and does not recompute metrics or use an LLM.

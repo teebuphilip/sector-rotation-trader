@@ -353,6 +353,12 @@ Public JSON target shape:
 
 Static public pages should be rendered from those files every night. The public per-signal payload is intentionally teaser-safe and does not expose the full internal per-algo breakdown.
 
+Comparator outputs:
+
+- `scripts/comparison_nightly.py`: nightly benchmark/comparator suite.
+- `docs/comparison/today.json`: latest comparator payload.
+- `docs/comparison/history.json`: comparator history.
+
 Generator:
 
 - `scripts/build_public_artifacts.py`
