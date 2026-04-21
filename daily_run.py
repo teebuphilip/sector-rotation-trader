@@ -63,7 +63,10 @@ all_needed = list(set(candidate_universe + held_tickers))
 if all_needed:
     raw = safe_download(all_needed, period="1y")
     if raw.empty:
-        print("  ⚠ Failed to download stock data — proceeding with exits only.")
+        if state["positions"]:
+            print("  ✖ Failed to download stock data with open positions — aborting run.")
+            sys.exit(1)
+        print("  ⚠ Failed to download stock data — no open positions, skipping entries.")
         prices_all  = pd.DataFrame()
         volumes_all = pd.DataFrame()
     elif isinstance(raw.columns, pd.MultiIndex):

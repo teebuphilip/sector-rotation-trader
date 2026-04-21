@@ -3,6 +3,7 @@ portfolio.py — Portfolio state management: cash, margin, positions, P&L
 """
 import json
 import os
+import sys
 from datetime import date, datetime
 from config import (
     STARTING_CASH, MAX_POSITION_SIZE, MAX_BORROW,
@@ -40,12 +41,15 @@ def save_state(state: dict):
 
 def load_state_from(path: str) -> dict:
     if os.path.exists(path):
-        with open(path) as f:
-            state = json.load(f)
+        try:
+            with open(path) as f:
+                state = json.load(f)
             state.setdefault("fees_paid", 0.0)
             state.setdefault("taxes_paid", 0.0)
             state.setdefault("meta", {})
             return state
+        except (json.JSONDecodeError, ValueError) as exc:
+            print(f"  ✖ CRITICAL: {path} is corrupted ({exc}) — starting from default state.", file=sys.stderr)
     return _default_state()
 
 
@@ -99,6 +103,9 @@ def open_position(state: dict, ticker: str, price: float, amount: float, using_m
         if amount > max_spend:
             amount = max_spend
 
+    if price <= 0:
+        print(f"  ✖ CRITICAL: invalid price {price} for {ticker} — skipping open_position.", file=sys.stderr)
+        return
     shares = amount / price
     cost   = amount
 

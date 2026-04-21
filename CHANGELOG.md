@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-04-21 (session 2 — P0 operational pipeline fixes)
+
+### fix: state.json corruption no longer crashes the daily run
+- `portfolio.py:load_state_from` now wraps `json.load()` in try/except for `JSONDecodeError`/`ValueError`.
+- On corruption, prints a CRITICAL warning to stderr and falls back to `_default_state()` instead of raising.
+- Previously a truncated state file (e.g. mid-write crash) would hard-fail the entire daily run.
+
+Files: `portfolio.py`
+
+### fix: stock data download failure with open positions now aborts instead of continuing silently
+- `daily_run.py` previously continued with empty `prices_all` when yfinance failed on stock data.
+- Exit signals would never fire (all tickers skipped), positions held indefinitely with no action.
+- Now: if download fails and positions are open, exits with code 1. If no positions, continues with entry-only skip as before.
+
+Files: `daily_run.py`
+
+### fix: zero/negative price guard in open_position
+- `portfolio.py:open_position` now rejects prices <= 0 before computing shares.
+- Prevents `shares = inf` from corrupting state if yfinance returns a bad close price.
+
+Files: `portfolio.py`
+
 ## 2026-04-21 (session 1 — crazy idea dedupe + prompt memory)
 
 ### feat: deterministic dedupe gate for crazy ideation
