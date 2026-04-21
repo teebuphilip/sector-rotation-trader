@@ -115,6 +115,9 @@ jobs:
           if [ -d docs/quality_checks ]; then
             git add docs/quality_checks
           fi
+          if [ -d data/product ]; then
+            git add data/product
+          fi
           git diff --cached --quiet || git commit -m "daily run $(date -u '+%Y-%m-%d') — $(python -c "
           import json
           s = json.load(open('state.json'))

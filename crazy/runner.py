@@ -142,6 +142,7 @@ def run_all(dry_run: bool = False, as_of: date = None, algo_ids=None, update_com
         write_crazy_ledger()
         _run_post_script("scripts/rolling_30d_leaderboard.py")
         _run_post_script("scripts/update_algos_index.py")
+        _run_post_script("scripts/build_product_index.py")
 
 
 def _run_post_script(script: str):

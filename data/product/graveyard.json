@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-04-21T10:24:53Z",
+  "algos": [
+    {
+      "key": "crazy:retail-roulette",
+      "algo_type": "crazy",
+      "algo_id": "retail-roulette",
+      "name": "Retail Roulette",
+      "family": "consumer_stress",
+      "status": "failed",
+      "evidence_class": "v1_backtested",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99913.43,
+      "ytd_pct": -0.09,
+      "trade_count": 12,
+      "positions": 0,
+      "last_snapshot": "2026-04-20",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": "BACKTEST_FAIL",
+      "backtest_reason": "Backtest completed",
+      "backtest_alpha_vs_spy_pct": -51.32,
+      "backtest_trade_count": 87
+    },
+    {
+      "key": "crazy:xle-weekly-drawdown-rebound-signal",
+      "algo_type": "crazy",
+      "algo_id": "xle-weekly-drawdown-rebound-signal",
+      "name": "Xle Weekly Drawdown Rebound Signal",
+      "family": "macro_input_pressure",
+      "status": "failed",
+      "evidence_class": "v1_backtested",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLE"
+      ],
+      "equity": 99667.3,
+      "ytd_pct": -0.33,
+      "trade_count": 32,
+      "positions": 0,
+      "last_snapshot": "2026-04-20",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": "BACKTEST_FAIL",
+      "backtest_reason": "Backtest completed",
+      "backtest_alpha_vs_spy_pct": -51.35,
+      "backtest_trade_count": 74
+    }
+  ]
+}

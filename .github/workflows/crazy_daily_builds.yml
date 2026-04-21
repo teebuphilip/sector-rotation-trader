@@ -155,12 +155,13 @@ jobs:
           python precompute_signals.py --min-days 30
           python scripts/rolling_30d_leaderboard.py
           python scripts/update_algos_index.py
+          python scripts/build_product_index.py
 
       - name: Validate generated public files
         if: always()
         run: |
           python scripts/check_public_html_placeholders.py
-          python -m py_compile scripts/autogen_crazy_factory.py scripts/build_template_algo.py scripts/final_publish_llm_gate.py scripts/rebuild_crazy_combined_dashboard.py scripts/run_factory_backtests.py crazy/runner.py crazy_run.py
+          python -m py_compile scripts/autogen_crazy_factory.py scripts/build_template_algo.py scripts/build_product_index.py scripts/final_publish_llm_gate.py scripts/rebuild_crazy_combined_dashboard.py scripts/run_factory_backtests.py crazy/runner.py crazy_run.py
 
       - name: Summarize build
         if: always()
@@ -207,6 +208,7 @@ jobs:
           git add crazy/algos data/algos_registry_crazy.txt
           git add data/ideas docs/ideas
           git add data/crazy/state docs/algos docs/crazy
+          git add data/product || true
           git add reports/backtests || true
           git add docs/signals docs/leaderboards docs/ledgers || true
           if [ -d data/blocked ]; then
