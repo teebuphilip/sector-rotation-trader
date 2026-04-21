@@ -1,0 +1,14 @@
+# Backtest: Weather Disruption Ripple Effects
+
+- Algo ID: `weather-disruption-ripple-effects`
+- Family: `crazy`
+- Status: `UNSUPPORTED_DATA`
+- Reason: Uses non-price adapter: crazy.adapters.weather_series
+
+## Metrics
+
+No metrics because this algo was not V1-backtestable.
+
+## Method
+
+V1 professional backtest: signal after close, execution next trading day open, 5 bps default slippage, long/cash only, compared with SPY buy-and-hold. Not investment advice.

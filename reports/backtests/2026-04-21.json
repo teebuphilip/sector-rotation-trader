@@ -1,0 +1,1056 @@
+{
+  "run_date": "2026-04-21",
+  "start": "2024-01-01",
+  "end": "2026-04-15",
+  "slippage_bps": 5.0,
+  "generated_at": "2026-04-21T08:58:19Z",
+  "counts": {
+    "BACKTEST_WEAK": 7,
+    "UNSUPPORTED_DATA": 83,
+    "INSUFFICIENT_ACTIVITY": 5,
+    "BACKTEST_FAIL": 2
+  },
+  "results": [
+    {
+      "algo_id": "faber",
+      "name": "Faber Momentum Rotation",
+      "family": "normal",
+      "status": "BACKTEST_WEAK",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 19.31,
+        "spy_return_pct": 50.97,
+        "alpha_vs_spy_pct": -31.66,
+        "max_drawdown_pct": -5.87,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": 0.47,
+        "spy_sharpe": 0.93,
+        "trade_count": 60,
+        "sell_count": 30,
+        "win_rate_pct": 56.67,
+        "turnover": 22.2957
+      },
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "dmsr",
+      "name": "Antonacci Dual Momentum Sector Rotation",
+      "family": "normal",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AGG",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "simple_monthly",
+      "name": "Quantified Simple Monthly Rotation",
+      "family": "normal",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: EEM, TLT",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "biscotti",
+      "name": "Algo Biscotti (Unconditional Loyalty)",
+      "family": "normal",
+      "status": "BACKTEST_WEAK",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 2.92,
+        "spy_return_pct": 50.97,
+        "alpha_vs_spy_pct": -48.05,
+        "max_drawdown_pct": -15.38,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": -0.29,
+        "spy_sharpe": 0.93,
+        "trade_count": 21,
+        "sell_count": 10,
+        "win_rate_pct": 50.0,
+        "turnover": 21.6978
+      },
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "baileymol",
+      "name": "Algo Baileymol (Chaos Monger)",
+      "family": "normal",
+      "status": "BACKTEST_WEAK",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 14.83,
+        "spy_return_pct": 50.97,
+        "alpha_vs_spy_pct": -36.14,
+        "max_drawdown_pct": -22.14,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": 0.18,
+        "spy_sharpe": 0.93,
+        "trade_count": 291,
+        "sell_count": 144,
+        "win_rate_pct": 54.17,
+        "turnover": 101.6409
+      },
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "tsa",
+      "name": "TSA Body Count",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses direct safe_download; V1 requires refactor to point-in-time cached prices",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "cardboard",
+      "name": "Cardboard Box Index",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "craigslist",
+      "name": "Craigslist Desperation Index",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: GLD",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "glassdoor",
+      "name": "Glassdoor Misery Gradient",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "calls311",
+      "name": "311 Call Rotation",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "liquor",
+      "name": "Liquor Store Leading Indicator",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "linkedin",
+      "name": "LinkedIn Layoff Propagation",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "congress",
+      "name": "Congress Trading Fade",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Historical seed exists, but V1 cannot prove point-in-time price-only behavior",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "biscotti",
+      "name": "Algo Biscotti (Unconditional Loyalty)",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses direct safe_download; V1 requires refactor to point-in-time cached prices",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "baileymol",
+      "name": "Chaos Rotation Lab",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses direct safe_download; V1 requires refactor to point-in-time cached prices",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "reddit-gaming-thread-spike",
+      "name": "Reddit Gaming Thread Spike",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: EA, MSFT, NVDA, RBLX, TTWO",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "airport-shopping-spree",
+      "name": "Airport Shopping Spree",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: EXPE, MAR, TCOM",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "cloud-storage-demand-surge",
+      "name": "Cloud Storage Demand Surge",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: BOX, DBX, GOOGL, MSFT",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "crypto-derivative-arbitrage",
+      "name": "Crypto Derivative Arbitrage",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: BTC-USD, ETH-USD, LINK-USD, LTC-USD, XRP-USD",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "earthquake-energy-demand",
+      "name": "Earthquake Energy Demand Indicator",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: UNG, USO",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "electric-vehicle-charge-station-density",
+      "name": "Electric Vehicle Charge Station Density",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: BLNK, CHPT, EVGO, TSLA",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "insider-trading-signals",
+      "name": "Insider Trading Signals",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: IWV",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "online-ad-impression-volatility",
+      "name": "Online Ad Impression Volatility Trader",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: GOOG, META, PINS, SNAP, TTD",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "pet-food-supply-chain",
+      "name": "Pet Food Supply Chain Disruption",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: CENT, CENTA, CHWY, PETS",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "reddit-emoji-sentiment-spike",
+      "name": "Reddit Emoji Sentiment Spike",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMC, AMD, GME, MSFT, NFLX, NVDA, TSLA",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "reddit-mentions-volatility-spike",
+      "name": "Reddit Mentions Volatility Spike",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMC, AMD, BABA, GME, META, MSFT, NFLX, NVDA, TSLA",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "reddit-sentiment-spike",
+      "name": "Reddit Sentiment Spike",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMD, AMZN, BABA, GOOGL, META, MSFT, NFLX, NVDA, TSLA",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "reddit-sentiment-spike-trend",
+      "name": "Reddit Sentiment Spike Trend",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMD, AMZN, GME, MSFT, NFLX, NVDA, PLTR, TSLA",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "reddit-sentiment-volatility-spike",
+      "name": "Reddit Sentiment Volatility Spike",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMZN, GME, MSFT, NVDA, TSLA",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "reddit-subreddit-mention-spike",
+      "name": "Reddit Subreddit Mention Spike",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMC, AMD, GME, MSFT, NVDA, TSLA",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "reddit-subreddit-sentiment-spike",
+      "name": "Reddit Subreddit Sentiment Spike",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMC, GME, MSFT, TSLA",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "reddit-subreddit-surge-momentum",
+      "name": "Reddit Subreddit Surge Momentum",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMC, AMD, GME, MSFT, NFLX, NIO, NVDA, PLTR, TSLA",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "reddit-volatility-spike",
+      "name": "Reddit Volatility Spike",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMC, AMD, GME, GOOGL, META, MSFT, NFLX, NVDA, TSLA",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "social-media-sentiment-spike",
+      "name": "Social Media Sentiment Spike",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMZN, GOOGL, META, MSFT, NFLX, NVDA, TSLA",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "superbowl-futures-trade",
+      "name": "Superbowl Futures Trade",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "twitter-sentiment-spike",
+      "name": "Twitter Sentiment Spike",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMD, AMZN, BABA, GOOGL, META, MSFT, NFLX, NVDA, TSLA",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "volatility-spike-follow-through",
+      "name": "Volatility Spike Follow-Through",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMD, AMZN, GOOG, META, MSFT, NFLX, NVDA, TSLA",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "weather-volatility-spike",
+      "name": "Weather Volatility Spike",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "V1 only supports SPY/sector ETFs; unsupported tickers: QQQ, UVXY, VXX",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "truck-tonnage",
+      "name": "Truck Tonnage Index",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "misery-rotation",
+      "name": "Misery Rotation",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "uber-mobility",
+      "name": "Uber Mobility Index",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "job-posting-acceleration",
+      "name": "Job Posting Acceleration",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "bankruptcy-filing-rate",
+      "name": "Bankruptcy Filing Rate",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "small-business-formation",
+      "name": "Small Business Formation",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "credit-card-delinquency",
+      "name": "Credit Card Delinquency",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "consumer-sentiment",
+      "name": "Consumer Sentiment",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "retail-sales-momentum",
+      "name": "Retail Sales Momentum",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "freight-rail-carloads",
+      "name": "Freight Rail Carloads",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.fred_series",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "housing-permit-velocity",
+      "name": "Housing Permit Velocity",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.fred_series",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "mortgage-rate-housing-proxy",
+      "name": "Mortgage Rate Housing Proxy",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.fred_series",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "copper-momentum",
+      "name": "Copper Momentum",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.fred_series",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "lumber-momentum",
+      "name": "Lumber Momentum",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.fred_series",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "yield-curve-regime",
+      "name": "Yield Curve Regime",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.fred_series",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "high-yield-spread-regime",
+      "name": "High Yield Spread Regime",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.fred_series",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "electricity-consumption",
+      "name": "Electricity Consumption",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.eia_electricity",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "port-container-volume",
+      "name": "Port Container Volume",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "airline-load-factor",
+      "name": "Airline Load Factor Proxy",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "No supported V1 price-only backtest path",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "real-estate-sector-weekly-google-trends-home-buying-surge",
+      "name": "Real Estate Sector Weekly Google Trends Home Buying Surge",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "utilities-sector-weekly-temperature-drop-signal",
+      "name": "Utilities Sector Weekly Temperature Drop Signal",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.weather_series",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "airport-security-surge",
+      "name": "Airport Security Surge",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.tsa_table",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "ev-charging-boom",
+      "name": "Ev Charging Boom",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.openchargemap",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "fintech-disruption-wave",
+      "name": "Fintech Disruption Wave",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.rss_count",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "global-tech-earnings-momentum",
+      "name": "Global Tech Earnings Momentum",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "port-congestion-squeeze",
+      "name": "Port Congestion Squeeze",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Historical seed exists, but V1 cannot prove point-in-time price-only behavior",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "retail-rush-ahead-of-holidays",
+      "name": "Retail Rush Ahead Of Holidays",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "utility-power-grid-stress",
+      "name": "Utility Power Grid Stress",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.eia_electricity",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "weather-disruption-ripple-effects",
+      "name": "Weather Disruption Ripple Effects",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.weather_series",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "work-from-home-frenzy",
+      "name": "Work From Home Frenzy",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "xlb-daily-volatility-contraction-breakout",
+      "name": "Xlb Daily Volatility Contraction Breakout",
+      "family": "crazy",
+      "status": "INSUFFICIENT_ACTIVITY",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.0,
+        "spy_return_pct": 50.97,
+        "alpha_vs_spy_pct": -50.97,
+        "max_drawdown_pct": 0.0,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": 0.0,
+        "spy_sharpe": 0.93,
+        "trade_count": 0,
+        "sell_count": 0,
+        "win_rate_pct": 0.0,
+        "turnover": 0.0
+      },
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "xlb-weekly-rss-news-count-spike-on-commodity-shortage",
+      "name": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.rss_count",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "xlc-weekly-google-trends-surge-in-5g-rollout",
+      "name": "Xlc Weekly Google Trends Surge In 5g Rollout",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "xle-weekly-drawdown-rebound-signal",
+      "name": "Xle Weekly Drawdown Rebound Signal",
+      "family": "crazy",
+      "status": "BACKTEST_FAIL",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": -0.38,
+        "spy_return_pct": 50.97,
+        "alpha_vs_spy_pct": -51.35,
+        "max_drawdown_pct": -0.63,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": -14.96,
+        "spy_sharpe": 0.93,
+        "trade_count": 74,
+        "sell_count": 37,
+        "win_rate_pct": 54.05,
+        "turnover": 3.6923
+      },
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "xlu-daily-electricity-demand-surge",
+      "name": "Xlu Daily Electricity Demand Surge",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.eia_electricity",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "xlu-weekly-cold-snap-weather-correlation",
+      "name": "Xlu Weekly Cold Snap Weather Correlation",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.weather_series",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "xlv-google-trends-flu-search-spike",
+      "name": "Xlv Google Trends Flu Search Spike",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "electricity-enlightenment",
+      "name": "Electricity Enlightenment",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.eia_electricity",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "ev-euphoria",
+      "name": "Ev Euphoria",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.openchargemap",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "google-gusts",
+      "name": "Google Gusts",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "retail-roulette",
+      "name": "Retail Roulette",
+      "family": "crazy",
+      "status": "BACKTEST_FAIL",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": -0.34,
+        "spy_return_pct": 50.97,
+        "alpha_vs_spy_pct": -51.32,
+        "max_drawdown_pct": -0.49,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": -17.65,
+        "spy_sharpe": 0.93,
+        "trade_count": 87,
+        "sell_count": 43,
+        "win_rate_pct": 51.16,
+        "turnover": 4.3323
+      },
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "rss-roar",
+      "name": "Rss Roar",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.rss_count",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "tremor-tension",
+      "name": "Tremor Tension",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.earthquake_activity",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "weather-windfall",
+      "name": "Weather Windfall",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.weather_series",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "consumer-discretionary-google-trends-surge-for-sale-keywords",
+      "name": "Consumer Discretionary Google Trends Surge For Sale Keywords",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "energy-sector-weekly-drawdown-exhaustion",
+      "name": "Energy Sector Weekly Drawdown Exhaustion",
+      "family": "crazy",
+      "status": "BACKTEST_WEAK",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.76,
+        "spy_return_pct": 50.97,
+        "alpha_vs_spy_pct": -50.21,
+        "max_drawdown_pct": -0.14,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": -10.61,
+        "spy_sharpe": 0.93,
+        "trade_count": 12,
+        "sell_count": 6,
+        "win_rate_pct": 66.67,
+        "turnover": 0.6097
+      },
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "financial-sector-momentum-divergence-with-spy",
+      "name": "Financial Sector Momentum Divergence With Spy",
+      "family": "crazy",
+      "status": "INSUFFICIENT_ACTIVITY",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.0,
+        "spy_return_pct": 50.97,
+        "alpha_vs_spy_pct": -50.97,
+        "max_drawdown_pct": 0.0,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": 0.0,
+        "spy_sharpe": 0.93,
+        "trade_count": 0,
+        "sell_count": 0,
+        "win_rate_pct": 0.0,
+        "turnover": 0.0
+      },
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "healthcare-sector-google-trends-spike-in-flu-symptoms",
+      "name": "Healthcare Sector Google Trends Spike In Flu Symptoms",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "industrial-sector-weekly-earthquake-activity-correlation-dip",
+      "name": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.earthquake_activity",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "materials-sector-weekly-positive-correlation-breakdown-with-",
+      "name": "Materials Sector Weekly Positive Correlation Breakdown With Xlb",
+      "family": "crazy",
+      "status": "INSUFFICIENT_ACTIVITY",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.05,
+        "spy_return_pct": 50.97,
+        "alpha_vs_spy_pct": -50.92,
+        "max_drawdown_pct": 0.0,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": -148.05,
+        "spy_sharpe": 0.93,
+        "trade_count": 2,
+        "sell_count": 1,
+        "win_rate_pct": 100.0,
+        "turnover": 0.1005
+      },
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "staples-sector-drawdown-rapid-recovery",
+      "name": "Staples Sector Drawdown Rapid Recovery",
+      "family": "crazy",
+      "status": "BACKTEST_WEAK",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.02,
+        "spy_return_pct": 50.97,
+        "alpha_vs_spy_pct": -50.95,
+        "max_drawdown_pct": -0.11,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": -59.33,
+        "spy_sharpe": 0.93,
+        "trade_count": 10,
+        "sell_count": 5,
+        "win_rate_pct": 40.0,
+        "turnover": 0.5
+      },
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "technology-sector-daily-ev-charger-count-surge",
+      "name": "Technology Sector Daily Ev Charger Count Surge",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.openchargemap",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "utilities-sector-negative-price-gap-fill",
+      "name": "Utilities Sector Negative Price Gap Fill",
+      "family": "crazy",
+      "status": "BACKTEST_WEAK",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.16,
+        "spy_return_pct": 50.97,
+        "alpha_vs_spy_pct": -50.82,
+        "max_drawdown_pct": -0.3,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": -15.12,
+        "spy_sharpe": 0.93,
+        "trade_count": 118,
+        "sell_count": 59,
+        "win_rate_pct": 54.24,
+        "turnover": 5.9098
+      },
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "crypto-capitulation-countdown",
+      "name": "Crypto Capitulation Countdown",
+      "family": "crazy",
+      "status": "INSUFFICIENT_ACTIVITY",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.0,
+        "spy_return_pct": 50.97,
+        "alpha_vs_spy_pct": -50.97,
+        "max_drawdown_pct": 0.0,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": 0.0,
+        "spy_sharpe": 0.93,
+        "trade_count": 0,
+        "sell_count": 0,
+        "win_rate_pct": 0.0,
+        "turnover": 0.0
+      },
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "earthquake-aftershock-amplifier",
+      "name": "Earthquake Aftershock Amplifier",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.earthquake_activity",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "ev-charging-station-stampede",
+      "name": "Ev Charging Station Stampede",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.openchargemap",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "lumber-futures-rollercoaster",
+      "name": "Lumber Futures Rollercoaster",
+      "family": "crazy",
+      "status": "INSUFFICIENT_ACTIVITY",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.0,
+        "spy_return_pct": 50.97,
+        "alpha_vs_spy_pct": -50.97,
+        "max_drawdown_pct": 0.0,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": 0.0,
+        "spy_sharpe": 0.93,
+        "trade_count": 0,
+        "sell_count": 0,
+        "win_rate_pct": 0.0,
+        "turnover": 0.0
+      },
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "semiconductor-moonshot-warning",
+      "name": "Semiconductor Moonshot Warning",
+      "family": "crazy",
+      "status": "BACKTEST_WEAK",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.15,
+        "spy_return_pct": 50.97,
+        "alpha_vs_spy_pct": -50.82,
+        "max_drawdown_pct": -0.21,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": -28.3,
+        "spy_sharpe": 0.93,
+        "trade_count": 24,
+        "sell_count": 12,
+        "win_rate_pct": 58.33,
+        "turnover": 1.2024
+      },
+      "run_date": "2026-04-21"
+    },
+    {
+      "algo_id": "solar-storm-scorcher",
+      "name": "Solar Storm Scorcher",
+      "family": "crazy",
+      "status": "UNSUPPORTED_DATA",
+      "reason": "Uses non-price adapter: crazy.adapters.weather_series",
+      "metrics": {},
+      "run_date": "2026-04-21"
+    }
+  ]
+}
