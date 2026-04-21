@@ -47,6 +47,83 @@ def _write_error(run_dir: Path, label: str, err: Exception) -> None:
     (err_dir / f"{label}.txt").write_text(str(err) + "\n")
 
 
+def _load_json(path: Path) -> dict:
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def _recent_idea_titles(limit: int = 60) -> list[str]:
+    titles: list[str] = []
+
+    product = _load_json(Path("data/product/algos_index.json"))
+    for item in product.get("algos", []):
+        if isinstance(item, dict) and item.get("name"):
+            titles.append(str(item["name"]))
+
+    runs_root = Path("data/ideas/runs")
+    if runs_root.exists():
+        for run_dir in sorted(runs_root.iterdir(), reverse=True):
+            if not run_dir.is_dir():
+                continue
+            src_dir = run_dir / "deduped"
+            if not src_dir.exists():
+                src_dir = run_dir / "filtered"
+            for src in ("chatgpt", "claude"):
+                path = src_dir / f"{src}_{run_dir.name}.jsonl"
+                if not path.exists():
+                    continue
+                for line in path.read_text(encoding="utf-8").splitlines():
+                    s = line.strip()
+                    if not s:
+                        continue
+                    try:
+                        obj = json.loads(s)
+                    except Exception:
+                        continue
+                    title = obj.get("title") or obj.get("idea")
+                    if title:
+                        titles.append(str(title))
+
+    seen = set()
+    out = []
+    for title in titles:
+        norm = " ".join(str(title).strip().lower().split())
+        if not norm or norm in seen:
+            continue
+        seen.add(norm)
+        out.append(str(title).strip())
+        if len(out) >= limit:
+            break
+    return out
+
+
+def _prompt_with_history(prompt_path: str, run_dir: Path, label: str) -> str:
+    base = Path(prompt_path).read_text(encoding="utf-8")
+    existing = _recent_idea_titles()
+    if not existing:
+        return prompt_path
+
+    appendix = [
+        "",
+        "ANTI-DUPLICATE CONTEXT",
+        "----------------------",
+        "The lab already has these existing or recently generated ideas/titles.",
+        "Do not output the same idea again with cosmetic wording changes.",
+        "If your idea is materially similar to any item below, replace it with a different one.",
+        "",
+    ]
+    appendix.extend(f"- {title}" for title in existing)
+    text = base.rstrip() + "\n" + "\n".join(appendix) + "\n"
+
+    tmp = run_dir / f"{label}_prompt_with_history.txt"
+    tmp.write_text(text, encoding="utf-8")
+    return str(tmp)
+
+
 def _gate(src: str, date: str) -> None:
     run_dir = Path("data") / "ideas" / "runs" / date
     _run([
@@ -101,10 +178,13 @@ def main() -> int:
     env["ERROR_DIR"] = str(run_dir / "errors")
     env["RESPONSE_DIR"] = str(run_dir / "responses")
 
+    chatgpt_prompt = _prompt_with_history(args.chatgpt_prompt, run_dir, "chatgpt")
+    claude_prompt = _prompt_with_history(args.claude_prompt, run_dir, "claude")
+
     success = False
 
     try:
-        chat_stdout = _run_capture(["/bin/bash", "scripts/crazy_generate_chatgpt.sh", args.chatgpt_prompt], env, "chatgpt")
+        chat_stdout = _run_capture(["/bin/bash", "scripts/crazy_generate_chatgpt.sh", chatgpt_prompt], env, "chatgpt")
         (raw_dir / f"chatgpt_{args.date}.jsonl").write_text(chat_stdout)
         _gate("chatgpt", args.date)
         success = True
@@ -113,7 +193,7 @@ def main() -> int:
         (raw_dir / f"chatgpt_{args.date}.jsonl").write_text("")
 
     try:
-        claude_stdout = _run_capture(["/bin/bash", "scripts/crazy_generate_claude.sh", args.claude_prompt], env, "claude")
+        claude_stdout = _run_capture(["/bin/bash", "scripts/crazy_generate_claude.sh", claude_prompt], env, "claude")
         (raw_dir / f"claude_{args.date}.jsonl").write_text(claude_stdout)
         _gate("claude", args.date)
         success = True
