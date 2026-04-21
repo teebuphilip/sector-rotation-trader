@@ -16,6 +16,7 @@ jobs:
     env:
       ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
       FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+      PREMIUM_SECRET: ${{ secrets.PREMIUM_SECRET }}
 
     steps:
       - name: Checkout repo
@@ -124,7 +125,7 @@ jobs:
           if [ -d docs/data/public ]; then
             git add docs/data/public
           fi
-          git add docs/leaderboard.html docs/landing.html || true
+          git add docs/leaderboard.html docs/landing.html docs/premium.html || true
           if [ -d data/product ]; then
             git add data/product
           fi

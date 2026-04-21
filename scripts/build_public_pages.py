@@ -3,17 +3,31 @@
 Generate static public HTML pages from docs/data/public/ contract.
 
 Generates:
-  docs/leaderboard.html   — sector heatmap + leaderboard + ticker lookup
-  docs/landing.html       — landing/CTA page with live rolling 30D winners
+  docs/leaderboard.html   — sector heatmap + top-10 leaderboard + ticker lookup
+  docs/landing.html       — landing/CTA with pricing section + rolling 30D winners
+  docs/premium.html       — full leaderboard + detail, gated by monthly token
 
-All data is baked in at generation time. The only client-side fetch
-remaining is the ticker lookup, which reads docs/data/public/signals/<TICKER>.json.
+Token gate:
+  Set PREMIUM_SECRET env var (in GitHub Actions secrets).
+  scripts/generate_premium_token.py prints the current month's token.
+  The SHA-256 hash of that token is embedded in premium.html at build time.
+  Users enter their token; it is hashed client-side and compared to the embedded hash.
+  Tokens are valid for one calendar month. Rotate by emailing new token to MailerLite list on the 1st.
 """
 from __future__ import annotations
 import json
 import html
+import os
+import sys
 from pathlib import Path
 from datetime import datetime
+
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from generate_premium_token import token_for_month, token_hash
+except ImportError:
+    def token_for_month(ym=None): return "dev000000000"
+    def token_hash(t): return __import__("hashlib").sha256(t.encode()).hexdigest()
 
 REPO = Path(__file__).parent.parent
 PUBLIC = REPO / "docs" / "data" / "public"
@@ -466,9 +480,12 @@ def _winners_li(entries: list) -> str:
     return "\n".join(parts)
 
 
-def build_landing(leaderboard: dict) -> str:
+def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
     entries = leaderboard.get("algos", [])
     winners_html = _winners_li(entries)
+    counts = (daily or {}).get("counts", {})
+    total = counts.get("total") or len(entries)
+    pricing_html = PRICING_SECTION.format(total=total, stripe_url=STRIPE_PAYMENT_URL)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -520,6 +537,8 @@ def build_landing(leaderboard: dict) -> str:
         <a class="cta" href="blog/index.html">Read the blog</a>
       </div>
     </div>
+
+{pricing_html}
 
     <div class="card waitlist" id="waitlist">
       <h2>Waitlist</h2>
@@ -574,7 +593,278 @@ def build_landing(leaderboard: dict) -> str:
 </html>"""
 
 
-def main():
+PREMIUM_CSS = CSS + """
+  .gate-wrap { max-width: 480px; margin: 60px auto; padding: 0 20px; text-align: center; }
+  .gate-title { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+  .gate-sub { font-size: 14px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
+  .gate-form { display: flex; gap: 10px; margin-bottom: 16px; }
+  .gate-input { flex: 1; padding: 12px 16px; font-family: var(--mono); font-size: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; color: var(--text); outline: none; letter-spacing: 2px; }
+  .gate-input:focus { border-color: var(--accent-dim); }
+  .gate-btn { padding: 12px 20px; background: var(--accent); color: #000; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; font-family: var(--sans); transition: background 0.2s; }
+  .gate-btn:hover { background: #1ee89e; }
+  .gate-error { color: var(--red); font-family: var(--mono); font-size: 13px; margin-top: 8px; display: none; }
+  .gate-error.show { display: block; }
+  .gate-note { font-size: 12px; color: var(--muted); margin-top: 12px; line-height: 1.6; }
+  .gate-note a { color: var(--accent-dim); text-decoration: none; }
+  .gate-note a:hover { text-decoration: underline; }
+  #premium-content { display: none; }
+  #premium-content.unlocked { display: block; }
+  .premium-badge { display: inline-block; font-family: var(--mono); font-size: 11px; color: var(--gold); border: 1px solid var(--gold); border-radius: 4px; padding: 2px 8px; margin-left: 8px; letter-spacing: 0.5px; vertical-align: middle; }
+  .detail-col { color: var(--muted); font-family: var(--mono); font-size: 12px; }
+  .family-badge { font-family: var(--mono); font-size: 10px; padding: 2px 6px; border-radius: 3px; background: rgba(168,85,247,0.1); color: var(--purple); border: 1px solid rgba(168,85,247,0.2); }
+  .ev-badge { font-family: var(--mono); font-size: 10px; padding: 2px 6px; border-radius: 3px; background: rgba(25,211,143,0.08); color: var(--accent-dim); border: 1px solid rgba(25,211,143,0.15); }
+  .signout-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 12px; padding: 4px 12px; border-radius: 4px; cursor: pointer; font-family: var(--mono); float: right; margin-top: 4px; }
+  .signout-btn:hover { border-color: var(--red); color: var(--red); }
+"""
+
+
+def _premium_table_rows(algos: list) -> str:
+    rows = []
+    for i, a in enumerate(algos):
+        rank = i + 1
+        spec = _get_special(str(a.get("algo_id", "")))
+        row_cls = spec["row_class"] if spec else ""
+
+        emoji = f'<span class="algo-emoji">{spec["emoji"]}</span>' if spec else ""
+        if spec:
+            name_html = (
+                f'<span class="name-tooltip"><span class="algo-name">{emoji}{_e(a.get("name",""))}</span>'
+                f'<span class="tip">{_e(spec["tip"])}</span></span>'
+            )
+        else:
+            name_html = f'<span class="algo-name">{_e(a.get("name",""))}</span>'
+
+        ytd = a.get("ytd_pct")
+        spy = a.get("spy_pct")
+        ret30 = a.get("ret_30d_pct")
+        try:
+            diff = float(ytd) - float(spy)
+            diff_cls = "vs-spy-pos" if diff >= 0 else "vs-spy-neg"
+            diff_str = ("+" if diff >= 0 else "") + f"{diff:.2f}%"
+        except (TypeError, ValueError):
+            diff_cls = "vs-spy-neg"
+            diff_str = "n/a"
+
+        status_html = (
+            '<span class="status-beat">BEATING SPY</span>'
+            if a.get("beat_spy")
+            else '<span class="status-lag">LAGGING</span>'
+        )
+        family = _e(a.get("family") or "")
+        ev = _e(a.get("evidence_class") or "")
+
+        rows.append(
+            f'<tr class="{row_cls}">'
+            f'<td class="rank">{rank}</td>'
+            f'<td>{name_html}</td>'
+            f'<td><span class="algo-type-badge">{_e(a.get("algo_type",""))}</span></td>'
+            f'<td class="{_ret_class(ytd)}">{_fmt(ytd)}</td>'
+            f'<td class="vs-spy {diff_cls}">{diff_str}</td>'
+            f'<td class="{_ret_class(ret30)}">{_fmt(ret30)}</td>'
+            f'<td class="days">{_e(a.get("days_running",""))}d</td>'
+            f'<td>{status_html}</td>'
+            f'<td><span class="family-badge">{family}</span></td>'
+            f'<td><span class="ev-badge">{ev}</span></td>'
+            f'</tr>'
+        )
+    return "\n".join(rows)
+
+
+def build_premium(daily: dict, leaderboard: dict) -> str:
+    tok = token_for_month()
+    tok_hash = token_hash(tok)
+    algos = leaderboard.get("algos", [])
+    total = len(algos)
+    beating = sum(1 for a in algos if a.get("beat_spy"))
+    generated_at = daily.get("generated_at", "")
+    run_date = daily.get("run_date", "")
+    sector_html = _sector_heatmap_html(daily.get("sector_summary") or {})
+    table_rows = _premium_table_rows(algos)
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crazy Stock Algo \u2014 Premium Access</title>
+<meta name="robots" content="noindex,nofollow" />
+<style>{PREMIUM_CSS}</style>
+</head>
+<body>
+
+<!-- Token gate -->
+<div id="gate-section">
+  <div class="gate-wrap">
+    <div class="hero-badge">PREMIUM</div>
+    <div class="gate-title">Enter your access token</div>
+    <div class="gate-sub">
+      Monthly access tokens are emailed to active subscribers on the 1st of each month.<br>
+      <a href="landing.html#pricing">Get access &rarr;</a>
+    </div>
+    <div class="gate-form">
+      <input type="text" class="gate-input" id="gate-input" placeholder="xxxxxxxxxxxx" maxlength="20" autocomplete="off" spellcheck="false" />
+      <button class="gate-btn" onclick="unlockPremium()">Unlock</button>
+    </div>
+    <div class="gate-error" id="gate-error">Invalid token. Check your email for this month&rsquo;s token.</div>
+    <div class="gate-note">
+      Tokens are valid for the current calendar month.<br>
+      Questions? <a href="mailto:teebu.philip@gmail.com">teebu.philip@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- Premium content (hidden until unlocked) -->
+<div id="premium-content">
+
+<div class="hero">
+  <div class="hero-badge">PREMIUM <span style="margin-left:4px;opacity:0.6">&#x2713; UNLOCKED</span></div>
+  <button class="signout-btn" onclick="signOut()">Sign out</button>
+  <h1><span>{_e(total)}</span> algorithms &mdash; full view</h1>
+  <p class="hero-sub">Complete leaderboard + family + evidence class. Updated nightly.</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="num">{_e(total)}</div>
+      <div class="label">Total Algos</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">{_e(beating)}/{_e(total)}</div>
+      <div class="label">Beating SPY</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">11</div>
+      <div class="label">Sectors Tracked</div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Sector Heatmap</h2>
+    <p class="section-sub">Composite signal across all algorithms. Updated nightly.</p>
+    <div class="heatmap">
+{sector_html}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Full Leaderboard <span class="premium-badge">PREMIUM</span></h2>
+    <p class="section-sub">All {_e(total)} algorithms. Force rank (full-window) + rolling 30D + family + evidence class.</p>
+    <div class="rank-note">
+      <strong>Force rank</strong> = full-window/since-seed return. <strong>Rolling 30D</strong> = trailing 30-day return.
+      <code>Family</code> = strategy category. <code>Evidence</code> = validation status.
+      An algo can rank poorly overall but top the 30D list &mdash; that means recent momentum, not full validation.
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>Algorithm</th><th>Type</th>
+            <th>Return</th><th>vs SPY</th><th>30D</th><th>Days</th><th>Status</th>
+            <th>Family</th><th>Evidence</th>
+          </tr>
+        </thead>
+        <tbody>
+{table_rows}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><strong>crazystockalgo.com</strong> &mdash; Premium &mdash; Updated nightly at 6:30 PM ET</div>
+    <div>Last updated: {_e(generated_at or run_date)}</div>
+    <div style="margin-top:8px;">
+      <strong>Not financial advice.</strong> Experimental research only. Paper-traded signals, not real money.
+      Past performance does not guarantee future results.
+    </div>
+    <div class="memorial">In loving memory of Biscotti (2008&ndash;2026). Good boy. Best algo. &hearts;</div>
+  </div>
+</footer>
+
+</div><!-- /premium-content -->
+
+<script>
+(function() {{
+  var TOKEN_HASH = '{tok_hash}';
+  var LS_KEY = 'csa_premium_token_hash';
+
+  function sha256(str) {{
+    // SubtleCrypto-based async SHA-256
+    var enc = new TextEncoder();
+    return crypto.subtle.digest('SHA-256', enc.encode(str)).then(function(buf) {{
+      return Array.from(new Uint8Array(buf)).map(function(b) {{ return b.toString(16).padStart(2,'0'); }}).join('');
+    }});
+  }}
+
+  function unlock() {{
+    document.getElementById('gate-section').style.display = 'none';
+    document.getElementById('premium-content').classList.add('unlocked');
+  }}
+
+  // Auto-unlock if stored hash matches
+  var stored = localStorage.getItem(LS_KEY);
+  if (stored === TOKEN_HASH) {{ unlock(); return; }}
+
+  window.unlockPremium = function() {{
+    var input = document.getElementById('gate-input');
+    var error = document.getElementById('gate-error');
+    var token = input.value.trim().toLowerCase();
+    error.classList.remove('show');
+    if (!token) return;
+    sha256(token).then(function(hash) {{
+      if (hash === TOKEN_HASH) {{
+        localStorage.setItem(LS_KEY, hash);
+        unlock();
+      }} else {{
+        error.classList.add('show');
+        input.value = '';
+        input.focus();
+      }}
+    }});
+  }};
+
+  window.signOut = function() {{
+    localStorage.removeItem(LS_KEY);
+    document.getElementById('premium-content').classList.remove('unlocked');
+    document.getElementById('gate-section').style.display = '';
+  }};
+
+  document.getElementById('gate-input').addEventListener('keydown', function(e) {{
+    if (e.key === 'Enter') window.unlockPremium();
+  }});
+}})();
+</script>
+
+</body>
+</html>"""
+
+
+PRICING_SECTION = """
+    <div class="card" id="pricing" style="border-color: rgba(25,211,143,0.3);">
+      <h2>Premium &mdash; $19.99/month</h2>
+      <p>What free does not show:</p>
+      <ul style="margin: 0 0 12px; padding-left: 16px; color: var(--muted); font-size: 14px; line-height: 1.8;">
+        <li>Full leaderboard (all {total} algos, not just top 10)</li>
+        <li>Rolling 30D column + family + evidence class per algo</li>
+        <li>Sector detail per algorithm</li>
+        <li>Monthly token emailed on the 1st</li>
+      </ul>
+      <a class="cta" href="{stripe_url}" target="_blank" rel="noopener">Subscribe via Stripe &rarr;</a>
+      <div style="margin-top: 8px; font-size: 12px; color: var(--muted);">
+        After payment you will receive your monthly access token by email within 24 hours.
+        Cancel any time.
+      </div>
+    </div>
+"""
+
+STRIPE_PAYMENT_URL = "https://buy.stripe.com/PLACEHOLDER"
+
+
+def build_main():
     daily = _load("daily.json")
     leaderboard = _load("leaderboard.json")
 
@@ -583,8 +873,16 @@ def main():
     print(f"[pages] wrote {out_lb}")
 
     out_landing = REPO / "docs" / "landing.html"
-    out_landing.write_text(build_landing(leaderboard), encoding="utf-8")
+    out_landing.write_text(build_landing(leaderboard, daily), encoding="utf-8")
     print(f"[pages] wrote {out_landing}")
+
+    out_premium = REPO / "docs" / "premium.html"
+    out_premium.write_text(build_premium(daily, leaderboard), encoding="utf-8")
+    print(f"[pages] wrote {out_premium}")
+
+
+def main():
+    build_main()
 
 
 if __name__ == "__main__":
