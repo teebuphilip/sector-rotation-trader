@@ -328,10 +328,9 @@ def _build_report() -> str:
     rank_csv = Path("data/rank_history.csv")
     if rank_csv.exists():
         import csv
-        today_str = datetime.utcnow().strftime("%Y-%m-%d")
         with rank_csv.open("r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
-            today_rows = [r for r in reader if r.get("date") == today_str]
+            today_rows = [r for r in reader if r.get("date") == run_date]
         if today_rows:
             by_return = sorted(today_rows, key=lambda r: float(r.get("ytd_pct", 0)), reverse=True)
             beating = sum(1 for r in by_return if r.get("beat_spy", "").lower() == "true")

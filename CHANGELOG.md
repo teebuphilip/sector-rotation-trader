@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-04-21 (session 5 — morning stats email)
+
+### feat: wire up daily_stats_email.py as a morning 8am UTC workflow
+- New `.github/workflows/morning_stats_email.yml` runs at 08:00 UTC daily.
+- Passes `AFH_RUN_DATE=yesterday` so the email reports on the previous day's completed runs (nightly book closes at 22:30 UTC, so all data is in place by 8am).
+- Supports `workflow_dispatch` with optional `run_date` override for replays.
+- Uses existing `ALERT_EMAIL_TO`, `ALERT_EMAIL_USER`, `ALERT_EMAIL_PASS` secrets.
+
+### fix: force rank section in daily_stats_email.py used hardcoded utcnow() date
+- Line 331 was filtering `rank_history.csv` by `datetime.utcnow()` instead of `run_date`.
+- When run at 8am for yesterday's data, force rank always showed "no rows for today".
+- Now uses `run_date` (which respects `AFH_RUN_DATE`) consistently.
+
+Files: `scripts/daily_stats_email.py`, `.github/workflows/morning_stats_email.yml`
+
 ## 2026-04-21 (session 4 — P2 operational pipeline fixes)
 
 ### fix: template-built algo is syntax-checked before being marked as built
