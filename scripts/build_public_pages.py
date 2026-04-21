@@ -557,7 +557,7 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
         <button type="submit">Join waitlist</button>
       </form>
       <iframe name="mailerlite-waitlist-frame" title="Mailing list signup" style="display:none"></iframe>
-      <div class="notice" id="waitlist-notice">No hype. Weekly notes from the paper-trading lab.</div>
+      <div class="notice">No hype. Weekly notes from the paper-trading lab.</div>
     </div>
 
     <div class="card waitlist" id="disclaimer">
@@ -569,25 +569,6 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
       <p>By using this service, you agree that the operators are not liable for losses, damages, or decisions made based on the information provided.</p>
     </div>
   </div>
-
-<script>
-(function() {{
-  var form = document.getElementById('mailerlite-waitlist-form');
-  var notice = document.getElementById('waitlist-notice');
-  if (!form) return;
-  var configured = form.action && form.action.indexOf('MAILERLITE_FORM_ACTION_URL') === -1;
-  form.addEventListener('submit', function(event) {{
-    event.preventDefault();
-    if (!configured) {{
-      if (notice) notice.textContent = 'Waitlist form is not live yet. MailerLite setup still needs the real form action URL.';
-      return;
-    }}
-    form.submit();
-    form.reset();
-    if (notice) notice.textContent = 'You are on the list. If MailerLite asks for confirmation, check your inbox.';
-  }});
-}})();
-</script>
 
 </body>
 </html>"""
@@ -853,15 +834,14 @@ PRICING_SECTION = """
         <li>Sector detail per algorithm</li>
         <li>Monthly token emailed on the 1st</li>
       </ul>
-      <a class="cta" href="{stripe_url}" target="_blank" rel="noopener">Subscribe via Stripe &rarr;</a>
+      <a class="cta" href="{stripe_url}">Join the mailing list &rarr;</a>
       <div style="margin-top: 8px; font-size: 12px; color: var(--muted);">
-        After payment you will receive your monthly access token by email within 24 hours.
-        Cancel any time.
+        Subscribers get the monthly access token by email on the 1st.
       </div>
     </div>
 """
 
-STRIPE_PAYMENT_URL = "https://buy.stripe.com/PLACEHOLDER"
+STRIPE_PAYMENT_URL = "#waitlist"
 
 
 def build_main():
