@@ -204,6 +204,10 @@ CSS = """
   .cta { display: inline-block; margin-top: 20px; padding: 12px 32px; background: var(--accent); color: #000; font-weight: 700; font-size: 15px; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; transition: background 0.2s; }
   .cta:hover { background: #1ee89e; }
   .cta-sub { display: block; font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .hero-strip { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  .pill { font-size: 12px; color: var(--muted); border: 1px solid rgba(255,255,255,0.08); border-radius: 999px; padding: 6px 10px; }
+  .pill a { color: inherit; text-decoration: none; }
+  .pill a:hover { text-decoration: underline; }
   .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
   section { padding: 48px 0; }
   section + section { border-top: 1px solid var(--border); }
@@ -351,6 +355,12 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
   </div>
   <a class="cta" href="landing.html#waitlist">Join our mailing list</a>
   <span class="cta-sub">Weekly lab notes, launch updates, and what broke</span>
+  <div class="hero-strip" style="justify-content:center; margin-top:18px;">
+    <span class="pill">Start at <a href="landing.html" style="color:inherit;">Home</a></span>
+    <span class="pill">Then <a href="families.html" style="color:inherit;">Families</a></span>
+    <span class="pill">Then <a href="daily.html" style="color:inherit;">Daily Report</a></span>
+    <span class="pill">Then <a href="blog/index.html" style="color:inherit;">Blog</a></span>
+  </div>
 </div>
 
 <section>
@@ -485,6 +495,12 @@ LANDING_CSS = """
   .waitlist-form button { border: 1px solid var(--accent); border-radius: 8px; background: transparent; color: var(--accent); padding: 10px 12px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
   .waitlist-form button:hover { background: rgba(25, 211, 143, 0.1); }
   .notice { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.4; }
+  .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  .hero-actions .cta { padding: 10px 14px; }
+  .cta-primary { background: var(--accent); color: #062018; font-weight: 700; }
+  .cta-primary:hover { background: #33e3a3; }
+  .hero-strip { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .pill { font-size: 12px; color: var(--muted); border: 1px solid rgba(255,255,255,0.08); border-radius: 999px; padding: 6px 10px; }
   @media (max-width: 560px) { .waitlist-form { grid-template-columns: 1fr; } }
 """
 
@@ -529,6 +545,17 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
   <header>
     <h1>The Signal Lab That Shows Its Failures</h1>
     <p>We run weird market signals in public. Most fail. We track every one.</p>
+    <div class="hero-actions">
+      <a class="cta cta-primary" href="leaderboard.html">See the public leaderboard</a>
+      <a class="cta" href="daily.html">Read tonight's snapshot</a>
+      <a class="cta" href="#waitlist">Join the waitlist</a>
+    </div>
+    <div class="hero-strip">
+      <span class="pill">Public leaderboard</span>
+      <span class="pill">Signal families</span>
+      <span class="pill">Nightly snapshots</span>
+      <span class="pill">Failures stay visible</span>
+    </div>
   </header>
 
   <div class="wrap">
