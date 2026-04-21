@@ -2,7 +2,7 @@ name: Morning Stats Email
 
 on:
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "30 8 * * *"
   workflow_dispatch:
     inputs:
       run_date:
