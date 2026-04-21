@@ -1,13 +1,11 @@
 {
-  "adapter": "price_only",
+  "adapter": null,
   "algo_file": "crazy/algos/consumer_discretionary_weekly_volume_price_divergence.py",
   "built": false,
-  "errors": [
-    "l logic: Entry conditions require 'weekly_volume' > 1.2 * prior_4_week_avg_volume, but volume data is not available from adapter, causing forced HOLD; thus signal logic does not follow spec intent.\n- Rebalance frequency: Spec frequency is weekly, code uses daily rebalance_frequency.\n- Allocation logic: Uses 0.20 total allocation divided by universe size, but spec max_total_exposure is 0.2 and allocation_per_signal is 0.05; code allocates 0.20 total which exceeds per signal allocation and does not respect max_total_exposure properly.\n[validate-llm] wrote data/algos_codegen/structural_2026-04-19_063654/validate_llm_report.json\n[step] patch (fix)\n[patch][openai] cost=$0.007867\n[patch] wrote data/algos_codegen/structural_2026-04-19_063654/patch_fix_report.json\n[step] validate llm (fix)\n[validate-llm][openai] cost=$0.004780\nFAIL\n- Incorrect rebalance_frequency: spec requires weekly but code uses daily.\n- Code uses 'volume' column which is not provided by 'price_only' adapter (only 'date' and 'value' columns are returned).\n- Code calculates 'weekly_price_return' from 'value' column but spec expects weekly frequency data; code does not resample or ensure weekly frequency.\n- Entry and exit logic mostly matches spec but code relies on unavailable 'volume' data, violating adapter contract.\n- Signal logic uses correct conditions but on unavailable data, so logic cannot be fulfilled as per spec.\n- Allocation logic caps allocation_per_signal at max_total_exposure incorrectly; should accumulate signals up to max_total_exposure, but code just uses min(0.05,0.20) which is always 0.05 (not a failure but simplistic).\n[validate-llm] wrote data/algos_codegen/structural_2026-04-19_063654/validate_llm_fix_report.json\n[error] LLM validation failed after fix pass; skipping final validation.\n[step] patch (deterministic fallback)\n[patch-deterministic] applied\n[step] validate final (fallback)\nFAIL\n- missing_risk_off_exit\n- missing_allocation_per_signal_5pct\n- missing_max_total_exposure_20pct\n"
-  ],
+  "errors": [],
   "idea_id": "consumer-discretionary-weekly-volume-price-divergence",
   "run_ok": null,
   "seeded": false,
-  "spec_file": "data/ideas/runs/2026-04-17/build/chatgpt_consumer-discretionary-weekly-volume-price-divergence.md",
-  "status": "failed_build"
+  "spec_file": "data/ideas/runs/2026-04-17/publish/chatgpt_consumer-discretionary-weekly-volume-price-divergence.md",
+  "status": "skipped_already_triaged"
 }
