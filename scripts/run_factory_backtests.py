@@ -68,13 +68,21 @@ def main() -> int:
     print(f"[run] date={args.date} seeded_ids={len(seeded_ids)}")
     if not seeded_ids:
         summary = _load_json(summary_path)
-        summary["backtest"] = {"reviewed": 0, "counts": {}, "output_root": str(Path(args.output_root) / args.date)}
+        summary["backtest"] = {
+            "seeded_ids": 0,
+            "matched_algos": 0,
+            "reviewed": 0,
+            "counts": {},
+            "missing_algo_ids": [],
+            "output_root": str(Path(args.output_root) / args.date),
+        }
         summary_path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
         print("[done] no seeded algos to backtest")
         return 0
 
     algos = _find_algos(seeded_ids)
     by_id = {algo.algo_id: algo for algo in algos}
+    missing_algo_ids = []
     output_root = Path(args.output_root) / args.date
     output_root.mkdir(parents=True, exist_ok=True)
 
@@ -84,6 +92,7 @@ def main() -> int:
         algo = by_id.get(algo_id)
         if not algo:
             counter["MISSING_ALGO"] += 1
+            missing_algo_ids.append(algo_id)
             continue
         print(f"[backtest] {algo.algo_id} {algo.name}")
         result = run_backtest(algo, "crazy", args.start, end, args.slippage_bps)
@@ -106,8 +115,11 @@ def main() -> int:
 
     summary = _load_json(summary_path)
     summary["backtest"] = {
+        "seeded_ids": len(seeded_ids),
+        "matched_algos": len(algos),
         "reviewed": len(written),
         "counts": dict(counter),
+        "missing_algo_ids": missing_algo_ids,
         "output_root": str(output_root),
         "start": args.start,
         "end": end,

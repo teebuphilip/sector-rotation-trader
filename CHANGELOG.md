@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-04-21 (session 11 — factory backtest visibility)
+
+### fix: factory backtest summary now exposes seeded vs matched vs reviewed
+- `scripts/run_factory_backtests.py` now writes `seeded_ids`, `matched_algos`, and `missing_algo_ids` into `factory_results/summary.json`.
+- Missing registry matches are no longer just a buried counter; the exact missing IDs are preserved in the summary.
+- Zero-seeded runs now still write a fully shaped backtest summary block.
+
+### fix: crazy build email now surfaces missing backtest visibility
+- `scripts/crazy_build_email.py` now prints seeded IDs, matched algos, reviewed algos, and missing algo IDs from the factory backtest summary.
+- If the backtest block is missing entirely, the email says so explicitly instead of silently skipping the section.
+
+Files: `scripts/run_factory_backtests.py`, `scripts/crazy_build_email.py`, `CHANGELOG.md`
+
 ## 2026-04-21 (session 10 — ideation parse-failure hardening)
 
 ### fix: schema gate no longer crashes on one malformed JSONL line

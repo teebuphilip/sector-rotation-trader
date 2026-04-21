@@ -304,12 +304,25 @@ def build_report() -> str:
         lines.append("  Missing factory summary")
     if isinstance(backtest, dict):
         counts = backtest.get("counts") or {}
+        missing_algo_ids = backtest.get("missing_algo_ids") or []
         lines.append("Backtest / Classification:")
+        lines.append(f"  Seeded IDs:   {backtest.get('seeded_ids', 0)}")
+        lines.append(f"  Matched:      {backtest.get('matched_algos', 0)}")
         lines.append(f"  Reviewed:     {backtest.get('reviewed', 0)}")
         for key in sorted(counts):
             lines.append(f"  {key}: {counts[key]}")
+        if missing_algo_ids:
+            lines.append(f"  Missing algos: {len(missing_algo_ids)}")
+            for algo_id in missing_algo_ids[:10]:
+                lines.append(f"    - {algo_id}")
+            if len(missing_algo_ids) > 10:
+                lines.append(f"    ... {len(missing_algo_ids) - 10} more")
         if backtest.get("output_root"):
             lines.append(f"  Output dir:   {backtest.get('output_root')}")
+        lines.append("")
+    else:
+        lines.append("Backtest / Classification:")
+        lines.append("  Missing backtest summary")
         lines.append("")
 
     lines.append("Spec Buckets:")
