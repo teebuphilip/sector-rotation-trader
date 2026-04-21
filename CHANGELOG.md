@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-04-21 (session 10 — ideation parse-failure hardening)
+
+### fix: schema gate no longer crashes on one malformed JSONL line
+- `scripts/crazy_schema_gate.py` now catches per-line `JSONDecodeError` instead of crashing the whole batch.
+- Invalid lines are written to rejects with `invalid_json`, line number, reason, and raw line preview.
+- The gate now prints `parse_failures=N` so partial-batch damage is visible in logs.
+
+### fix: final publish gate now surfaces LLM parse fallbacks explicitly
+- `scripts/final_publish_llm_gate.py` now prints a warning when the LLM response fails to parse and the spec is forced into `INTERVENTION`.
+- The final-gate summary now includes `parse_failures`, and each file record includes `parse_failed`.
+- This separates true intervention from parser failure in the operator view without changing the file-placement model yet.
+
+Files: `scripts/crazy_schema_gate.py`, `scripts/final_publish_llm_gate.py`, `CHANGELOG.md`
+
 ## 2026-04-21 (session 9 — morning email comparator section)
 
 ### feat: daily_stats_email now reports comparator context

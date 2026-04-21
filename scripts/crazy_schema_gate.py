@@ -179,21 +179,34 @@ def main() -> int:
 
     accepted = []
     rejected = []
+    parse_failures = 0
 
-    for line in in_path.read_text().splitlines():
+    for line_no, line in enumerate(in_path.read_text().splitlines(), start=1):
         s = line.strip()
         if not s:
             continue
-        obj = json.loads(s)
+        try:
+            obj = json.loads(s)
+        except json.JSONDecodeError as exc:
+            parse_failures += 1
+            rejected.append({
+                "errors": ["invalid_json"],
+                "line_number": line_no,
+                "reason": str(exc),
+                "raw_line": s[:1000],
+            })
+            continue
         errs = _validate_schema(obj, args.mode)
         if errs:
-            rejected.append({"errors": errs, "schema": obj})
+            rejected.append({"errors": errs, "schema": obj, "line_number": line_no})
         else:
             accepted.append(_normalize(obj))
 
     out_path.write_text("\n".join(json.dumps(x) for x in accepted) + ("\n" if accepted else ""))
     rej_path.write_text("\n".join(json.dumps(x) for x in rejected) + ("\n" if rejected else ""))
-    print(f"accepted={len(accepted)} rejected={len(rejected)}")
+    if parse_failures:
+        print(f"[warn] schema gate encountered {parse_failures} invalid JSON line(s)")
+    print(f"accepted={len(accepted)} rejected={len(rejected)} parse_failures={parse_failures}")
     return 0
 
 

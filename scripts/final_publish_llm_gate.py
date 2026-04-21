@@ -392,6 +392,7 @@ def main() -> int:
         "dry_run": args.dry_run,
         "move": args.move,
         "counts": {"BUILD": 0, "INTERVENTION": 0, "REJECT": 0},
+        "parse_failures": 0,
         "costs": {"openai": 0.0, "total": 0.0},
         "files": [],
     }
@@ -407,6 +408,10 @@ def main() -> int:
 
         parsed, usage, cost, raw_response = _llm_verdict(llm, spec_path, markdown, route)
         verdict = _normalize_verdict(parsed, route, override)
+        parse_failed = "failed_to_parse_llm_json" in (verdict.get("risk_flags") or [])
+        if parse_failed:
+            summary["parse_failures"] += 1
+            print(f"[warn] final gate parse fallback for {spec_path.name}; forced INTERVENTION")
         decision = verdict["decision"]
         target_dir = {
             "BUILD": build_dir,
@@ -439,6 +444,7 @@ def main() -> int:
                 "reason": verdict["reason"],
                 "risk_flags": verdict["risk_flags"],
                 "cost_usd": cost,
+                "parse_failed": parse_failed,
             }
         )
 
@@ -457,7 +463,8 @@ def main() -> int:
         "[done] "
         f"build={summary['counts']['BUILD']} "
         f"intervention={summary['counts']['INTERVENTION']} "
-        f"reject={summary['counts']['REJECT']}"
+        f"reject={summary['counts']['REJECT']} "
+        f"parse_failures={summary['parse_failures']}"
     )
     print(
         f"[costs][openai]=${summary['costs']['openai']:.6f} "
