@@ -29,11 +29,11 @@ Add each key as a GitHub Actions secret in both repos (sector-rotation-trader + 
 
 ---
 
-## PREMIUM_SECRET
-**Used by:** `scripts/generate_premium_token.py`, `scripts/build_public_pages.py`
-**Get it:** Generate locally — `python -c "import secrets; print(secrets.token_hex(32))"`
-**Tier needed:** N/A — self-generated
-**Note:** Used to HMAC-sign monthly premium access tokens for the public site paywall
+## PREMIUM / STRIPE
+**Current status:** Not needed for the June 15 free launch
+**Next step:** Keep `docs/premium.html` as a teaser until Stripe checkout is real
+**When needed:** Before the July 1 paid launch, create Stripe checkout + real backend gating
+**Note:** Do not bring back fake token gating for launch
 
 ---
 
@@ -52,4 +52,4 @@ Add each key as a GitHub Actions secret in both repos (sector-rotation-trader + 
 1. Go to repo → **Settings → Secrets and variables → Actions**
 2. Click **New repository secret**
 3. Name must match exactly (all caps, underscores)
-4. For AFH repo: repeat for any shared keys (POLYGON_API_KEY, PREMIUM_SECRET)
+4. For AFH repo: repeat for any shared keys (for now that is mainly `POLYGON_API_KEY`)

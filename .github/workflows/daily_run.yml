@@ -16,7 +16,6 @@ jobs:
     env:
       ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
       FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-      PREMIUM_SECRET: ${{ secrets.PREMIUM_SECRET }}
 
     steps:
       - name: Checkout repo

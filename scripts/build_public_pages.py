@@ -560,27 +560,9 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
 
 
 PREMIUM_CSS = CSS + """
-  .gate-wrap { max-width: 480px; margin: 60px auto; padding: 0 20px; text-align: center; }
-  .gate-title { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
-  .gate-sub { font-size: 14px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
-  .gate-form { display: flex; gap: 10px; margin-bottom: 16px; }
-  .gate-input { flex: 1; padding: 12px 16px; font-family: var(--mono); font-size: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; color: var(--text); outline: none; letter-spacing: 2px; }
-  .gate-input:focus { border-color: var(--accent-dim); }
-  .gate-btn { padding: 12px 20px; background: var(--accent); color: #000; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; font-family: var(--sans); transition: background 0.2s; }
-  .gate-btn:hover { background: #1ee89e; }
-  .gate-error { color: var(--red); font-family: var(--mono); font-size: 13px; margin-top: 8px; display: none; }
-  .gate-error.show { display: block; }
-  .gate-note { font-size: 12px; color: var(--muted); margin-top: 12px; line-height: 1.6; }
-  .gate-note a { color: var(--accent-dim); text-decoration: none; }
-  .gate-note a:hover { text-decoration: underline; }
-  #premium-content { display: none; }
-  #premium-content.unlocked { display: block; }
   .premium-badge { display: inline-block; font-family: var(--mono); font-size: 11px; color: var(--gold); border: 1px solid var(--gold); border-radius: 4px; padding: 2px 8px; margin-left: 8px; letter-spacing: 0.5px; vertical-align: middle; }
-  .detail-col { color: var(--muted); font-family: var(--mono); font-size: 12px; }
   .family-badge { font-family: var(--mono); font-size: 10px; padding: 2px 6px; border-radius: 3px; background: rgba(168,85,247,0.1); color: var(--purple); border: 1px solid rgba(168,85,247,0.2); }
   .ev-badge { font-family: var(--mono); font-size: 10px; padding: 2px 6px; border-radius: 3px; background: rgba(25,211,143,0.08); color: var(--accent-dim); border: 1px solid rgba(25,211,143,0.15); }
-  .signout-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 12px; padding: 4px 12px; border-radius: 4px; cursor: pointer; font-family: var(--mono); float: right; margin-top: 4px; }
-  .signout-btn:hover { border-color: var(--red); color: var(--red); }
 """
 
 
@@ -770,12 +752,12 @@ PRICING_SECTION = """
       <ul style="margin: 0 0 12px; padding-left: 16px; color: var(--muted); font-size: 14px; line-height: 1.8;">
         <li>Full leaderboard (all {total} algos, not just top 10)</li>
         <li>Rolling 30D column + family + evidence class per algo</li>
-        <li>Sector detail per algorithm</li>
-        <li>Monthly token emailed on the 1st</li>
+        <li>Full per-algo and per-ticker detail</li>
+        <li>Trade history and equity curves after paid launch</li>
       </ul>
       <a class="cta" href="{stripe_url}">Join the mailing list &rarr;</a>
       <div style="margin-top: 8px; font-size: 12px; color: var(--muted);">
-        Subscribers get the monthly access token by email on the 1st.
+        Free public launch comes first. Paid access starts July 1 after checkout is real.
       </div>
     </div>
 """

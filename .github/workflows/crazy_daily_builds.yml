@@ -37,7 +37,6 @@ jobs:
       EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
       SOCRATA_APP_TOKEN: ${{ secrets.SOCRATA_APP_TOKEN }}
       ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
-      PREMIUM_SECRET: ${{ secrets.PREMIUM_SECRET }}
 
     steps:
       - name: Checkout repo
@@ -164,7 +163,7 @@ jobs:
         if: always()
         run: |
           python scripts/check_public_html_placeholders.py
-          python -m py_compile scripts/autogen_crazy_factory.py scripts/build_public_artifacts.py scripts/build_public_pages.py scripts/generate_premium_token.py scripts/build_template_algo.py scripts/build_product_index.py scripts/final_publish_llm_gate.py scripts/rebuild_crazy_combined_dashboard.py scripts/run_factory_backtests.py crazy/runner.py crazy_run.py
+          python -m py_compile scripts/autogen_crazy_factory.py scripts/build_public_artifacts.py scripts/build_public_pages.py scripts/build_template_algo.py scripts/build_product_index.py scripts/final_publish_llm_gate.py scripts/rebuild_crazy_combined_dashboard.py scripts/run_factory_backtests.py crazy/runner.py crazy_run.py
 
       - name: Summarize build
         if: always()
