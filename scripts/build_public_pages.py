@@ -284,6 +284,29 @@ CSS = """
   }
 """
 
+REPORT_CSS = CSS.replace(
+    """  .paywall-row td { color: rgba(255,255,255,0.15) !important; user-select: none; pointer-events: none; }
+  .paywall-row .algo-name { filter: blur(4px); }
+  .paywall-cta-row td { text-align: center; padding: 16px; border-bottom: none; }
+  .paywall-cta-row a { color: var(--accent); font-weight: 600; text-decoration: none; font-size: 14px; }
+  .paywall-cta-row a:hover { text-decoration: underline; }
+""",
+    "",
+)
+
+
+def _pretty_label(value: str) -> str:
+    return str(value).replace("_", " ").title()
+
+
+def _status_mix_html(by_status: dict) -> str:
+    items = []
+    for status, count in sorted((by_status or {}).items()):
+        items.append(
+            f'<span class="algo-type-badge">{_e(_pretty_label(status))}: {_e(count)}</span>'
+        )
+    return " ".join(items) if items else '<span class="algo-type-badge">No status data</span>'
+
 
 def build_leaderboard(daily: dict, leaderboard: dict) -> str:
     algos = leaderboard.get("algos", [])
@@ -762,6 +785,7 @@ def build_families_page(families: dict, daily: dict) -> str:
     cards = []
     for family_name, payload in sorted((families.get("families") or {}).items()):
         leaders = payload.get("leaders") or []
+        status_mix_html = _status_mix_html(payload.get("by_status") or {})
         leader_rows = "".join(
             f"<li><strong>{_e(item.get('name'))}</strong> "
             f"<span class=\"{_ret_class(item.get('ytd_pct'))}\">{_fmt(item.get('ytd_pct'))}</span> "
@@ -773,7 +797,7 @@ def build_families_page(families: dict, daily: dict) -> str:
       <div class="card">
         <h2>{_e(family_name)}</h2>
         <p class="muted">Signals: {_e(payload.get('count', 0))}</p>
-        <p class="muted">Status mix: {_e(payload.get('by_status', {}))}</p>
+        <div style="margin: 10px 0 2px;">{status_mix_html}</div>
         <ul style="margin: 12px 0 0 18px; line-height: 1.8;">
           {leader_rows}
         </ul>
@@ -825,7 +849,7 @@ def build_daily_page(daily: dict) -> str:
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Crazy Stock Algo — Daily Report</title>
-<style>{CSS}</style>
+<style>{REPORT_CSS}</style>
 </head>
 <body>
 <div class="hero">
@@ -894,7 +918,7 @@ def build_legal_page() -> str:
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Crazy Stock Algo — Legal</title>
-<style>{CSS}</style>
+<style>{REPORT_CSS}</style>
 </head>
 <body>
 <div class="hero">
