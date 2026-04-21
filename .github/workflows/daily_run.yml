@@ -68,6 +68,9 @@ jobs:
       - name: Build public artifact contract
         run: python scripts/build_public_artifacts.py
 
+      - name: Build static public pages
+        run: python scripts/build_public_pages.py
+
       - name: Nightly validation (surface)
         id: validate_surface
         run: |
@@ -121,6 +124,7 @@ jobs:
           if [ -d docs/data/public ]; then
             git add docs/data/public
           fi
+          git add docs/leaderboard.html docs/landing.html || true
           if [ -d data/product ]; then
             git add data/product
           fi

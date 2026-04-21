@@ -15,121 +15,31 @@
     --text: #ecf5f2;
   }
   * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: 'Space Grotesk', system-ui, sans-serif;
-    color: var(--text);
-    background:
-      radial-gradient(1000px 600px at 15% -10%, #1e3f35, transparent),
-      radial-gradient(900px 500px at 90% 0%, #1b352f, transparent),
-      var(--bg);
-  }
-  header {
-    padding: 28px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  header h1 {
-    margin: 0;
-    font-size: 30px;
-    letter-spacing: 0.5px;
-  }
-  header p {
-    margin: 6px 0 0;
-    color: var(--muted);
-    font-family: 'IBM Plex Mono', ui-monospace, monospace;
-    font-size: 12px;
-  }
+  body { margin: 0; font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--text); background: radial-gradient(1000px 600px at 15% -10%, #1e3f35, transparent), radial-gradient(900px 500px at 90% 0%, #1b352f, transparent), var(--bg); }
+  header { padding: 28px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  header h1 { margin: 0; font-size: 30px; letter-spacing: 0.5px; }
+  header p { margin: 6px 0 0; color: var(--muted); font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; }
   .wrap { padding: 24px; }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px;
-  }
-  .card {
-    background: var(--card);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-    padding: 16px;
-    box-shadow: 0 14px 30px rgba(0,0,0,0.22);
-  }
-  .card h2 {
-    margin: 0 0 8px;
-    font-size: 18px;
-  }
-  .card p {
-    margin: 0 0 12px;
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.4;
-  }
-  .cta {
-    display: inline-block;
-    padding: 10px 12px;
-    border-radius: 8px;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 13px;
-  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card { background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 16px; box-shadow: 0 14px 30px rgba(0,0,0,0.22); }
+  .card h2 { margin: 0 0 8px; font-size: 18px; }
+  .card p { margin: 0 0 12px; color: var(--muted); font-size: 14px; line-height: 1.4; }
+  .cta { display: inline-block; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--accent); color: var(--accent); text-decoration: none; font-weight: 600; font-size: 13px; }
   .cta:hover { background: rgba(25, 211, 143, 0.1); }
-  .winners h3 {
-    margin: 0 0 8px;
-    font-size: 16px;
-  }
-  .winners ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  .winners li {
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    font-size: 14px;
-  }
+  .winners h3 { margin: 0 0 8px; font-size: 16px; }
+  .winners ul { margin: 0; padding: 0; list-style: none; }
+  .winners li { padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 14px; }
   .winners li:last-child { border-bottom: none; }
   .muted { color: var(--muted); font-size: 12px; }
-  .waitlist {
-    margin-top: 16px;
-    border: 1px solid rgba(25, 211, 143, 0.28);
-  }
-  .waitlist-form {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 8px;
-    margin-top: 12px;
-  }
-  .waitlist-form input {
-    min-width: 0;
-    border: 1px solid rgba(255,255,255,0.14);
-    border-radius: 8px;
-    background: #0f1c18;
-    color: var(--text);
-    padding: 10px 12px;
-    font: inherit;
-    font-size: 14px;
-  }
-  .waitlist-form button {
-    border: 1px solid var(--accent);
-    border-radius: 8px;
-    background: transparent;
-    color: var(--accent);
-    padding: 10px 12px;
-    font: inherit;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-  }
+  .ret-pos { color: #19d38f; font-family: 'IBM Plex Mono', monospace; }
+  .ret-neg { color: #ef4444; font-family: 'IBM Plex Mono', monospace; }
+  .waitlist { margin-top: 16px; border: 1px solid rgba(25, 211, 143, 0.28); }
+  .waitlist-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; margin-top: 12px; }
+  .waitlist-form input { min-width: 0; border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; background: #0f1c18; color: var(--text); padding: 10px 12px; font: inherit; font-size: 14px; }
+  .waitlist-form button { border: 1px solid var(--accent); border-radius: 8px; background: transparent; color: var(--accent); padding: 10px 12px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
   .waitlist-form button:hover { background: rgba(25, 211, 143, 0.1); }
-  .notice {
-    margin-top: 10px;
-    color: var(--muted);
-    font-size: 12px;
-    line-height: 1.4;
-  }
-  @media (max-width: 560px) {
-    .waitlist-form { grid-template-columns: 1fr; }
-  }
+  .notice { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.4; }
+  @media (max-width: 560px) { .waitlist-form { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -147,17 +57,19 @@
       </div>
 
       <div class="card">
-        <h2>Product 2: Model‑Fit Scoring</h2>
+        <h2>Product 2: Model-Fit Scoring</h2>
         <p>Drop in a stock or sector. We score it against the live model library and show whether the chaos agrees or not.</p>
         <a class="cta" href="#waitlist">Join our mailing list</a>
       </div>
 
       <div class="card winners">
-        <h3>30‑Day Rolling Winners</h3>
-        <ul id="winners-list">
-          <li class="muted">Waiting for leaderboard data</li>
+        <h3>30-Day Rolling Winners</h3>
+        <ul>
+<li>1. Algo Baileymol (Chaos Monger) &mdash; <span class="ret-pos">+6.91%</span></li>
+<li>2. Faber Momentum Rotation &mdash; <span class="ret-pos">+1.22%</span></li>
+<li>3. Antonacci Dual Momentum Sector Rotation &mdash; <span class="ret-pos">+3.56%</span></li>
         </ul>
-        <p class="muted">Source: rolling 30‑day leaderboard</p>
+        <p class="muted">Source: rolling 30-day leaderboard &mdash; <a href="leaderboard.html">full leaderboard</a></p>
       </div>
 
       <div class="card">
@@ -177,7 +89,7 @@
 
     <div class="card waitlist" id="waitlist">
       <h2>Waitlist</h2>
-      <p>Get the weekly lab note: what fired, what broke, what got killed, and what Biscotti is doing.</p>
+      <p>Get the weekly lab note: what fired, what broke, what got killed, and what Biscotti was doing.</p>
       <form
         class="waitlist-form"
         id="mailerlite-waitlist-form"
@@ -191,14 +103,8 @@
         <input type="hidden" name="anticsrf" value="true" />
         <button type="submit">Join waitlist</button>
       </form>
-      <iframe
-        name="mailerlite-waitlist-frame"
-        title="Mailing list signup"
-        style="display:none"
-      ></iframe>
-      <div class="notice" id="waitlist-notice">
-        No hype. Weekly notes from the paper-trading lab.
-      </div>
+      <iframe name="mailerlite-waitlist-frame" title="Mailing list signup" style="display:none"></iframe>
+      <div class="notice" id="waitlist-notice">No hype. Weekly notes from the paper-trading lab.</div>
     </div>
 
     <div class="card waitlist" id="disclaimer">
@@ -212,50 +118,23 @@
   </div>
 
 <script>
-(async function() {
-  try {
-    const res = await fetch('leaderboards/rolling_30d.json');
-    if (!res.ok) throw new Error('fetch failed');
-    const data = await res.json();
-    const winners = (data.entries || []).slice(0, 3);
-    const ul = document.getElementById('winners-list');
-    ul.innerHTML = '';
-    if (!winners.length) {
-      ul.innerHTML = '<li class="muted">No data yet</li>';
-      return;
-    }
-    winners.forEach((w, i) => {
-      const ret = (w.ret_30d === null || w.ret_30d === undefined) ? 'n/a' : (w.ret_30d * 100).toFixed(2) + '%';
-      const li = document.createElement('li');
-      li.textContent = `${i + 1}. ${w.name} — ${ret}`;
-      ul.appendChild(li);
-    });
-  } catch (e) {
-    const ul = document.getElementById('winners-list');
-    if (ul) ul.innerHTML = '<li class="muted">Leaderboard not available</li>';
-  }
-})();
-
 (function() {
-  const form = document.getElementById('mailerlite-waitlist-form');
-  const notice = document.getElementById('waitlist-notice');
+  var form = document.getElementById('mailerlite-waitlist-form');
+  var notice = document.getElementById('waitlist-notice');
   if (!form) return;
-  const configured = form.action && !form.action.includes('MAILERLITE_FORM_ACTION_URL');
+  var configured = form.action && form.action.indexOf('MAILERLITE_FORM_ACTION_URL') === -1;
   form.addEventListener('submit', function(event) {
     event.preventDefault();
     if (!configured) {
-      if (notice) {
-        notice.textContent = 'Waitlist form is not live yet. MailerLite setup still needs the real form action URL.';
-      }
+      if (notice) notice.textContent = 'Waitlist form is not live yet. MailerLite setup still needs the real form action URL.';
       return;
     }
     form.submit();
     form.reset();
-    if (notice) {
-      notice.textContent = 'You are on the list. If MailerLite asks for confirmation, check your inbox.';
-    }
+    if (notice) notice.textContent = 'You are on the list. If MailerLite asks for confirmation, check your inbox.';
   });
 })();
 </script>
+
 </body>
 </html>
