@@ -50,6 +50,10 @@ jobs:
       - name: Run crazy algos
         run: python crazy_run.py
 
+      - name: Nightly comparator suite
+        continue-on-error: true
+        run: python scripts/comparison_nightly.py
+
       - name: Cleanup blocked keys
         run: python scripts/cleanup_blocked_keys.py
 
@@ -103,6 +107,7 @@ jobs:
           git add data/normal/state docs/normal
           git add data/crazy/state docs/algos docs/crazy
           git add docs/signals || true
+          git add docs/comparison || true
           if [ -d docs/ledgers ]; then
             git add docs/ledgers
           fi
