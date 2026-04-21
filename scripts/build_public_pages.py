@@ -334,7 +334,7 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
 <div class="hero">
   <div class="hero-badge">LIVE EXPERIMENT</div>
   <h1><span>{_e(signal_count)}</span> signals running</h1>
-  <p class="hero-sub">Can unconventional data sources beat the S&amp;P 500?</p>
+  <p class="hero-sub">We run weird market signals in public. Most fail. We track every one against SPY.</p>
   <div class="hero-stats">
     <div class="hero-stat">
       <div class="num">{_e(total)}</div>
@@ -365,14 +365,15 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
 
 <section>
   <div class="wrap">
-    <h2 class="section-title">Proven Signals</h2>
-    <p class="section-sub">All algorithms ranked by return since seed.</p>
+    <h2 class="section-title">Public Leaderboard</h2>
+    <p class="section-sub">A stripped public view of the lab. Winners, laggards, and idle names all stay visible.</p>
     <div class="rank-note">
       <strong>How to read this:</strong>
       <code>Force rank</code> is the full-window, since-seed paper-traded ranking.
       <code>Rolling 30D</code> is recent momentum. A signal can look great over 30 days
       and still rank poorly over the full window, or the other way around.
       We show both because hiding that split would be dishonest.
+      Some signals are backtested under strict V1 rules. Others are live-only because the historical data is not clean enough to backfill honestly.
     </div>
     <div class="table-wrap">
       <table>
@@ -393,7 +394,7 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
 <section>
   <div class="wrap">
     <h2 class="section-title">Ticker Quick Check</h2>
-    <p class="section-sub">Look up any tracked stock to see the composite signal. Free preview.</p>
+    <p class="section-sub">Look up any tracked stock to see the public composite signal. Free preview only.</p>
     <div class="ticker-check">
       <div class="ticker-input-wrap">
         <input type="text" class="ticker-input" id="ticker-input" placeholder="NVDA" maxlength="6" autocomplete="off" />
@@ -511,6 +512,9 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
     winners_html = _winners_li(entries)
     counts = (daily or {}).get("counts", {})
     total = counts.get("total") or len(entries)
+    watchlist = counts.get("watchlist", 0)
+    promoted = counts.get("promoted", 0)
+    graveyard = counts.get("graveyard", 0)
     pricing_html = PRICING_SECTION.format(total=total, stripe_url=STRIPE_PAYMENT_URL)
 
     return f"""<!DOCTYPE html>
@@ -523,26 +527,26 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
 </head>
 <body>
   <header>
-    <h1>Crazy Models Lab</h1>
-    <p>Daily weird models. Public receipts. Failures included.</p>
+    <h1>The Signal Lab That Shows Its Failures</h1>
+    <p>We run weird market signals in public. Most fail. We track every one.</p>
   </header>
 
   <div class="wrap">
     <div class="grid">
       <div class="card">
-        <h2>Product 1: Daily Crazy Models Feed</h2>
-        <p>Every day we run a new, slightly unhinged trading signal. You get the full spec, the timestamps, and the ugly failures along with the wins.</p>
-        <a class="cta" href="#waitlist">Join our mailing list</a>
+        <h2>What This Is</h2>
+        <p>A transparent signal research lab. We generate unconventional ideas, paper-track them, compare them to SPY, and keep the failures visible.</p>
+        <a class="cta" href="leaderboard.html">See the leaderboard</a>
       </div>
 
       <div class="card">
-        <h2>Product 2: Model-Fit Scoring</h2>
-        <p>Drop in a stock or sector. We score it against the live model library and show whether the chaos agrees or not.</p>
-        <a class="cta" href="#waitlist">Join our mailing list</a>
+        <h2>How Signals Are Labeled</h2>
+        <p>Every signal stays visible as some combination of sandbox, live-only, backtested, promoted, idle, or failed. Nothing gets deleted to make the stats look prettier.</p>
+        <a class="cta" href="families.html">Browse signal families</a>
       </div>
 
       <div class="card winners">
-        <h3>30-Day Rolling Winners</h3>
+        <h3>30-Day Rolling Leaders</h3>
         <ul>
 {winners_html}
         </ul>
@@ -550,18 +554,22 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
       </div>
 
       <div class="card">
-        <h2>Honor Pages</h2>
-        <p>Named algos that mean something to us. We run them forever.</p>
-        <a class="cta" href="biscotti.html">Algo Biscotti</a>
-        <div style="height:8px"></div>
-        <a class="cta" href="bailey.html">Algo Baileymol</a>
+        <h2>What You Can Verify</h2>
+        <p>Public counts update nightly. Right now the lab shows <strong>{_e(total)}</strong> total algos, <strong>{_e(watchlist)}</strong> on the watchlist, <strong>{_e(promoted)}</strong> promoted, and <strong>{_e(graveyard)}</strong> in the graveyard.</p>
+        <a class="cta" href="daily.html">Read the daily snapshot</a>
       </div>
 
       <div class="card">
         <h2>Build Log</h2>
-        <p>Ship notes, failures, and receipts. This is the public lab notebook.</p>
+        <p>Ship notes, failures, receipts, and founder context. This is the public lab notebook, not a polished black box.</p>
         <a class="cta" href="blog/index.html">Read the blog</a>
       </div>
+    </div>
+
+    <div class="card waitlist" style="margin-top:16px;">
+      <h2>How The Lab Works</h2>
+      <p>We generate and ship new signals. If a signal can be backtested honestly under V1 rules, it gets a backtest grade. If not, it stays live-only and has to earn trust through receipts.</p>
+      <p>Signals that have not traded recently can go idle. Signals that trade and underperform can fail. Both stay visible. That is the whole point.</p>
     </div>
 
 {pricing_html}
@@ -935,7 +943,7 @@ def build_legal_page() -> str:
 PRICING_SECTION = """
     <div class="card" id="pricing" style="border-color: rgba(25,211,143,0.3);">
       <h2>Premium &mdash; $19.99/month</h2>
-      <p>What free does not show:</p>
+      <p>Free proves the lab is real. Premium is the deeper operating layer.</p>
       <ul style="margin: 0 0 12px; padding-left: 16px; color: var(--muted); font-size: 14px; line-height: 1.8;">
         <li>Full leaderboard (all {total} algos, not just top 10)</li>
         <li>Rolling 30D column + family + evidence class per algo</li>
