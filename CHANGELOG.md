@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-21 (session 8 — margin interest closeout fix)
+
+### fix: margin interest allocation no longer depends on close order
+- `portfolio.py:close_position` now snapshots opening borrowed principal and accrued interest for each close date and allocates interest against that batch snapshot.
+- When multiple margin positions close on the same day, each close now receives its intended share regardless of which ticker closes first.
+- Clears the batch helper once margin positions are gone or the date changes.
+
+Files: `portfolio.py`, `CHANGELOG.md`
+
 ## 2026-04-21 (session 7 — leaderboard comparator badges)
 
 ### feat: show comparator context on the public leaderboard
@@ -35,15 +44,15 @@ Files: `scripts/comparison_nightly.py`, `.github/workflows/daily_run.yml`, `craz
 Files: `.github/workflows/morning_stats_email.yml`
 
 
-### feat: wire up daily_stats_email.py as a morning 8am UTC workflow
-- New `.github/workflows/morning_stats_email.yml` runs at 08:00 UTC daily.
-- Passes `AFH_RUN_DATE=yesterday` so the email reports on the previous day's completed runs (nightly book closes at 22:30 UTC, so all data is in place by 8am).
+### feat: wire up daily_stats_email.py as a morning stats workflow
+- New `.github/workflows/morning_stats_email.yml` runs daily and now fires at 08:30 UTC.
+- Passes `AFH_RUN_DATE=yesterday` so the email reports on the previous day's completed runs (nightly book closes at 22:30 UTC, so all data is in place by the morning run).
 - Supports `workflow_dispatch` with optional `run_date` override for replays.
 - Uses existing `ALERT_EMAIL_TO`, `ALERT_EMAIL_USER`, `ALERT_EMAIL_PASS` secrets.
 
 ### fix: force rank section in daily_stats_email.py used hardcoded utcnow() date
 - Line 331 was filtering `rank_history.csv` by `datetime.utcnow()` instead of `run_date`.
-- When run at 8am for yesterday's data, force rank always showed "no rows for today".
+- When run in the morning for yesterday's data, force rank always showed "no rows for today".
 - Now uses `run_date` (which respects `AFH_RUN_DATE`) consistently.
 
 Files: `scripts/daily_stats_email.py`, `.github/workflows/morning_stats_email.yml`

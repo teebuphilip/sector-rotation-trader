@@ -180,14 +180,28 @@ def close_position(state: dict, ticker: str, price: float, reason: str = "exit_s
         tax = pnl * rate
 
     if pos["using_margin"]:
-        # Settle accrued interest first (proportional to this position's share of borrowed)
-        if state["borrowed"] > 0 and state["accrued_interest"] > 0:
-            interest_share = min(
-                state["accrued_interest"],
-                state["accrued_interest"] * (pos["cost"] / state["borrowed"])
-            )
+        # When multiple margin positions close on the same day, allocate interest
+        # against the opening borrowed/interest snapshot for that close batch so
+        # settlement does not depend on close order.
+        meta = state.setdefault("meta", {})
+        batch = meta.get("margin_interest_batch")
+        if not isinstance(batch, dict) or batch.get("date") != as_of_iso:
+            batch = {
+                "date": as_of_iso,
+                "borrowed_base": float(state.get("borrowed", 0.0) or 0.0),
+                "interest_base": float(state.get("accrued_interest", 0.0) or 0.0),
+                "allocated": 0.0,
+            }
+            meta["margin_interest_batch"] = batch
+
+        if batch.get("borrowed_base", 0.0) > 0 and batch.get("interest_base", 0.0) > 0 and state["accrued_interest"] > 0:
+            ratio = min(float(pos["cost"]) / float(batch["borrowed_base"]), 1.0)
+            target_share = float(batch["interest_base"]) * ratio
+            remaining_batch_interest = max(0.0, float(batch["interest_base"]) - float(batch["allocated"]))
+            interest_share = min(float(state["accrued_interest"]), remaining_batch_interest, target_share)
             proceeds -= interest_share
-            state["accrued_interest"] = max(0, state["accrued_interest"] - interest_share)
+            state["accrued_interest"] = max(0.0, state["accrued_interest"] - interest_share)
+            batch["allocated"] = float(batch.get("allocated", 0.0)) + interest_share
 
         # Repay borrowed principal fully — shortfall comes from cash
         principal = pos["cost"]
@@ -225,6 +239,12 @@ def close_position(state: dict, ticker: str, price: float, reason: str = "exit_s
     })
 
     del state["positions"][ticker]
+
+    batch = state.setdefault("meta", {}).get("margin_interest_batch")
+    if isinstance(batch, dict):
+        margin_positions_left = any(p.get("using_margin") for p in state["positions"].values())
+        if batch.get("date") != as_of_iso or not margin_positions_left or state.get("borrowed", 0.0) <= 0:
+            state["meta"].pop("margin_interest_batch", None)
 
 
 def accrue_interest(state: dict):
