@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-04-22 (session 13 — Claude default model fallback)
+
+### fix: crazy Claude generator now defaults to a current Anthropic model alias
+- `scripts/crazy_generate_claude.sh` previously defaulted to `claude-3-haiku-20240307`, which now returns `404 not_found_error` for this repo's Anthropic setup when `ANTHROPIC_MODEL` is unset.
+- The fallback now uses `claude-3-5-haiku-latest`, which matches Anthropic's current documented Haiku alias and keeps the idea pipeline working even if the model secret is blank.
+
+Files: `scripts/crazy_generate_claude.sh`, `CHANGELOG.md`
+
 ## 2026-04-22 (session 12 — crazy idea failure visibility)
 
 ### fix: failed crazy idea runs now leave evidence in git and workflow logs
