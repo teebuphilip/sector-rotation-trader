@@ -21,6 +21,7 @@ jobs:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
       ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
+      ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
 
     steps:
       - name: Checkout repo
@@ -54,3 +55,16 @@ jobs:
           git add drafts/features/
           git diff --cached --quiet || git commit -m "feat: weekly feature PRDs $RUN_DATE"
           git push || true
+
+      - name: Send summary email
+        if: ${{ env.ALERT_EMAIL_TO != '' }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.ALERT_EMAIL_USER }}
+          password: ${{ secrets.ALERT_EMAIL_PASS }}
+          subject: "Feature Ideas — ${{ env.RUN_DATE }}"
+          body: file:///home/runner/work/sector-rotation-trader/sector-rotation-trader/drafts/features/${{ env.RUN_DATE }}/summary.txt
+          to: ${{ secrets.ALERT_EMAIL_TO }}
+          from: ${{ secrets.ALERT_EMAIL_USER }}

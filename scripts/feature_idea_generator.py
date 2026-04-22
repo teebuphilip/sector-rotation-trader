@@ -1,9 +1,9 @@
 """
 Weekly feature idea generator.
 
-Reads the product context and PRD template, calls OpenAI (primary) or
-Anthropic (fallback), and writes 4 filled-out PRD files to
-drafts/features/YYYY-MM-DD/.
+Calls BOTH OpenAI and Anthropic independently — 4 ideas each, 8 total.
+Writes PRDs to drafts/features/YYYY-MM-DD/ with provider prefix.
+Writes a summary file for the email step.
 
 Run manually:
     python scripts/feature_idea_generator.py
@@ -38,10 +38,12 @@ Your job: generate 4 distinct, grounded feature ideas for post-launch.
 
 Rules:
 - Each idea must serve one of the three user archetypes (Receipts Guy, Signal Hunter, Alt-Data Nerd).
-- Each idea must pass the on-brand test: sounds like it was built by the guy who named an algo after his dead dog — not a marketing team.
+- Each idea must pass the on-brand test: sounds like it was built by the guy who named an algo \
+after his dead dog — not a marketing team.
 - No onboarding wizards. No notification centers. No activity feeds. No AI stock-picking claims.
 - Losses and failures must remain first-class citizens in any feature touching the leaderboard or signals.
-- Features must fit the core interaction: a user scans the leaderboard to see which weird signals are holding up.
+- Features must fit the core interaction: a user scans the leaderboard to see which weird signals \
+are holding up.
 - Keep each PRD tight. 1-2 sentences max per field. No fluff.
 
 Output format: return a JSON array of exactly 4 objects, each with these keys:
@@ -53,7 +55,7 @@ Return only the JSON array. No commentary before or after.\
 """
 
 
-def _build_user_prompt(product_ctx: str, template: str) -> str:
+def _build_prompt(product_ctx: str, template: str) -> str:
     return f"""Here is the product context:
 
 {product_ctx}
@@ -92,16 +94,12 @@ def _call_anthropic(prompt: str) -> str:
     return resp.content[0].text.strip()
 
 
-def _call_llm(prompt: str) -> str:
-    if os.getenv("OPENAI_API_KEY"):
-        try:
-            return _call_openai(prompt)
-        except Exception as exc:
-            print(f"[feature_ideas] OpenAI failed: {exc} — trying Anthropic", file=sys.stderr)
-    if os.getenv("ANTHROPIC_API_KEY"):
-        return _call_anthropic(prompt)
-    print("[feature_ideas] No API keys found (OPENAI_API_KEY or ANTHROPIC_API_KEY)", file=sys.stderr)
-    sys.exit(1)
+def _parse_ideas(raw: str) -> list[dict]:
+    raw = raw.strip()
+    if raw.startswith("```"):
+        raw = re.sub(r"^```[a-z]*\n?", "", raw)
+        raw = re.sub(r"\n?```$", "", raw)
+    return json.loads(raw)
 
 
 def _slugify(text: str) -> str:
@@ -110,15 +108,18 @@ def _slugify(text: str) -> str:
     return text.strip("-")[:50]
 
 
-def _render_prd(idea: dict, run_date: str) -> str:
+def _render_prd(idea: dict, run_date: str, provider: str) -> str:
     user_stories = "\n".join(f"- {s}" for s in idea.get("user_stories", []))
-    requirements = "\n".join(f"- **Requirement {i+1}:** {r}" for i, r in enumerate(idea.get("requirements", [])))
+    requirements = "\n".join(
+        f"- **Requirement {i+1}:** {r}"
+        for i, r in enumerate(idea.get("requirements", []))
+    )
     ac = "\n".join(f"- {c}" for c in idea.get("acceptance_criteria", []))
     oos = "\n".join(f"- {o}" for o in idea.get("out_of_scope", []))
 
     return f"""# {idea.get("name", "Untitled Feature")}
 Status: {idea.get("status", "Draft")}
-Generated: {run_date}
+Generated: {run_date} | Provider: {provider}
 
 ## 1. The "Why" (Context)
 
@@ -149,12 +150,34 @@ Generated: {run_date}
 """
 
 
-def _parse_ideas(raw: str) -> list[dict]:
-    raw = raw.strip()
-    if raw.startswith("```"):
-        raw = re.sub(r"^```[a-z]*\n?", "", raw)
-        raw = re.sub(r"\n?```$", "", raw)
-    return json.loads(raw)
+def _run_provider(name: str, fn, prompt: str, run_date: str, out_dir: Path, dry_run: bool) -> tuple[int, list[str], str]:
+    """Call one provider. Returns (count, titles, error_msg)."""
+    print(f"[feature_ideas] calling {name}...")
+    try:
+        raw = fn(prompt)
+        ideas = _parse_ideas(raw)
+    except Exception as exc:
+        msg = f"{name} failed: {exc}"
+        print(f"[feature_ideas] {msg}", file=sys.stderr)
+        return 0, [], msg
+
+    titles = []
+    if not dry_run:
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+    for i, idea in enumerate(ideas, 1):
+        title = idea.get("name", f"Feature {i}")
+        titles.append(title)
+        if dry_run:
+            print(f"\n--- {name.upper()} IDEA {i}: {title} ---")
+            print(_render_prd(idea, run_date, name))
+        else:
+            slug = _slugify(title)
+            path = out_dir / f"{name}-feature-{i:02d}-{slug}.md"
+            path.write_text(_render_prd(idea, run_date, name))
+            print(f"[feature_ideas] wrote {path}")
+
+    return len(ideas), titles, ""
 
 
 def run(run_date: str, dry_run: bool = False) -> None:
@@ -167,35 +190,57 @@ def run(run_date: str, dry_run: bool = False) -> None:
 
     product_ctx = PRODUCT_CONTEXT.read_text()
     template = PRD_TEMPLATE.read_text()
-    prompt = _build_user_prompt(product_ctx, template)
-
-    print("[feature_ideas] calling LLM...")
-    raw = _call_llm(prompt)
-
-    try:
-        ideas = _parse_ideas(raw)
-    except Exception as exc:
-        print(f"[feature_ideas] failed to parse LLM response: {exc}", file=sys.stderr)
-        print(raw, file=sys.stderr)
-        sys.exit(1)
-
-    if dry_run:
-        for i, idea in enumerate(ideas, 1):
-            print(f"\n--- IDEA {i}: {idea.get('name')} ---")
-            print(_render_prd(idea, run_date))
-        return
-
+    prompt = _build_prompt(product_ctx, template)
     out_dir = OUT_ROOT / run_date
+
+    results = {}
+
+    if os.getenv("OPENAI_API_KEY"):
+        count, titles, err = _run_provider("openai", _call_openai, prompt, run_date, out_dir, dry_run)
+        results["openai"] = {"count": count, "titles": titles, "error": err}
+    else:
+        results["openai"] = {"count": 0, "titles": [], "error": "OPENAI_API_KEY not set"}
+
+    if os.getenv("ANTHROPIC_API_KEY"):
+        count, titles, err = _run_provider("anthropic", _call_anthropic, prompt, run_date, out_dir, dry_run)
+        results["anthropic"] = {"count": count, "titles": titles, "error": err}
+    else:
+        results["anthropic"] = {"count": 0, "titles": [], "error": "ANTHROPIC_API_KEY not set"}
+
+    total = sum(r["count"] for r in results.values())
+    print(f"[feature_ideas] done — {total} PRDs total")
+
+    if not dry_run:
+        _write_summary(run_date, results, out_dir)
+
+
+def _write_summary(run_date: str, results: dict, out_dir: Path) -> None:
+    lines = [
+        f"FEATURE IDEAS RUN — {run_date}",
+        "=" * 50,
+        "",
+    ]
+
+    total = sum(r["count"] for r in results.values())
+    lines.append(f"Total PRDs generated: {total}")
+    lines.append("")
+
+    for provider, data in results.items():
+        label = "ChatGPT (OpenAI)" if provider == "openai" else "Claude (Anthropic)"
+        lines.append(f"{label}: {data['count']} ideas")
+        if data["error"]:
+            lines.append(f"  ERROR: {data['error']}")
+        for i, title in enumerate(data["titles"], 1):
+            lines.append(f"  {i}. {title}")
+        lines.append("")
+
+    lines.append("=" * 50)
+    lines.append(f"PRDs saved to: drafts/features/{run_date}/")
+
+    summary_path = out_dir / "summary.txt"
     out_dir.mkdir(parents=True, exist_ok=True)
-
-    for i, idea in enumerate(ideas, 1):
-        slug = _slugify(idea.get("name", f"feature-{i}"))
-        filename = f"feature-{i:02d}-{slug}.md"
-        path = out_dir / filename
-        path.write_text(_render_prd(idea, run_date))
-        print(f"[feature_ideas] wrote {path}")
-
-    print(f"[feature_ideas] done — {len(ideas)} PRDs in {out_dir}")
+    summary_path.write_text("\n".join(lines))
+    print(f"[feature_ideas] summary written to {summary_path}")
 
 
 def main() -> None:
