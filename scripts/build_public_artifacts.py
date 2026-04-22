@@ -18,6 +18,7 @@ BENCHMARKS_DIR = PUBLIC_DIR / 'benchmarks'
 PUBLIC_SIGNALS_DIR = PUBLIC_DIR / 'signals'
 COMPARISON_PATH = ROOT / 'docs' / 'comparison' / 'today.json'
 SECTOR_ETFS = {'XLK', 'XLF', 'XLY', 'XLP', 'XLU', 'XLV', 'XLI', 'XLB', 'XLRE', 'XLC', 'XLE'}
+PUBLIC_SCHEMA_VERSION = 'v1'
 
 
 def _load_json(path: Path) -> Any:
@@ -36,6 +37,7 @@ def _write_json(path: Path, payload: Any) -> None:
 
 def _public_signal_payload(payload: dict[str, Any]) -> dict[str, Any]:
     return {
+        'schema_version': PUBLIC_SCHEMA_VERSION,
         'ticker': payload.get('ticker'),
         'sector': payload.get('sector'),
         'sector_etf': payload.get('sector_etf'),
@@ -196,6 +198,7 @@ def _strip_algo_row(
     comparator_summary = _comparator_summary(item, comparison_doc or {})
 
     return {
+        'schema_version': PUBLIC_SCHEMA_VERSION,
         'key': item.get('key'),
         'algo_type': item.get('algo_type'),
         'algo_id': item.get('algo_id'),
@@ -235,6 +238,7 @@ def _build_benchmarks(rank_rows: dict[tuple[str, str], dict[str, Any]], rolling_
             break
 
     spy = {
+        'schema_version': PUBLIC_SCHEMA_VERSION,
         'symbol': 'SPY',
         'available': True,
         'generated_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
@@ -243,6 +247,7 @@ def _build_benchmarks(rank_rows: dict[tuple[str, str], dict[str, Any]], rolling_
         'source': 'data/rank_history.csv + docs/leaderboards/rolling_30d.json',
     }
     qqq = {
+        'schema_version': PUBLIC_SCHEMA_VERSION,
         'symbol': 'QQQ',
         'available': False,
         'generated_at': spy['generated_at'],
@@ -290,11 +295,16 @@ def main() -> int:
             rolling = rolling_rows.get((str(item.get('algo_type') or ''), str(item.get('algo_id') or '')))
             rows.append(_strip_algo_row(item, rank, rolling, spy_ret_30d, comparison_doc))
         return {
+            'schema_version': PUBLIC_SCHEMA_VERSION,
             'generated_at': block.get('generated_at'),
             'algos': _sort_public_rows(rows),
         }
 
-    public_families: dict[str, Any] = {'generated_at': families.get('generated_at'), 'families': {}}
+    public_families: dict[str, Any] = {
+        'schema_version': PUBLIC_SCHEMA_VERSION,
+        'generated_at': families.get('generated_at'),
+        'families': {},
+    }
     for family_name, payload in (families.get('families') or {}).items():
         rows = []
         for item in payload.get('leaders', []):
@@ -312,6 +322,7 @@ def main() -> int:
         }
 
     daily_payload = {
+        'schema_version': PUBLIC_SCHEMA_VERSION,
         'run_date': daily_summary.get('run_date') or signals_index.get('generated'),
         'generated_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
         'counts': daily_summary.get('counts', {}),
@@ -352,6 +363,7 @@ def main() -> int:
     }
 
     leaderboard_payload = {
+        'schema_version': PUBLIC_SCHEMA_VERSION,
         'generated_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
         'counts': {
             'total': len(public_algos),

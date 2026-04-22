@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-04-22 (session 15 — public JSON schema v1)
+
+### feat: define and version the public artifact contract
+- Added `docs/data/public/SCHEMA.md` as the canonical field-level contract for the nightly public site payloads.
+- The contract now explicitly documents shared algo row fields, daily snapshot fields, family payloads, benchmark payloads, and teaser-safe signal payloads.
+- `scripts/build_public_artifacts.py` now stamps `schema_version: "v1"` onto public outputs so downstream consumers can rely on a declared contract version.
+
+### chore: update core docs and task list to match the new public contract
+- `docs/data/public/README.md`, `README.md`, `architecture.md`, and `tldr-architecture.md` now point to the versioned public schema documentation.
+- Marked `V2 ARCH: Define public JSON schema` as `DONE` in `crazystockalgo_execution_plan.csv`.
+
+Files: `scripts/build_public_artifacts.py`, `docs/data/public/SCHEMA.md`, `docs/data/public/README.md`, `README.md`, `architecture.md`, `tldr-architecture.md`, `crazystockalgo_execution_plan.csv`, `CHANGELOG.md`
+
 ## 2026-04-22 (session 14 — morning stats email clarity fixes)
 
 ### fix: idea rows in morning stats email now handle mixed raw schemas

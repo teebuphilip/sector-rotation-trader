@@ -351,6 +351,12 @@ Public JSON target shape:
 - `docs/data/public/signals/index.json`
 - `docs/data/public/signals/<symbol>.json`
 
+Contract details:
+
+- every top-level public JSON file carries `schema_version`
+- current public contract version is `v1`
+- canonical field-level schema lives in `docs/data/public/SCHEMA.md`
+
 Static public pages should be rendered from those files every night. The public per-signal payload is intentionally teaser-safe and does not expose the full internal per-algo breakdown.
 
 Comparator outputs:

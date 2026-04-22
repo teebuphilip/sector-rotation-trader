@@ -608,6 +608,7 @@ Important pages:
 - `docs/marketing/mailerlite_setup.md`: manual MailerLite/waitlist setup checklist.
 
 The public JSON contract that feeds those pages is generated nightly under `docs/data/public/`. Per-signal public JSON is now teaser-safe and does not expose the full internal breakdown payload.
+The contract is now versioned with `schema_version: "v1"` and documented in `docs/data/public/SCHEMA.md`.
 
 ## GitHub Actions
 

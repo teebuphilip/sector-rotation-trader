@@ -14,7 +14,7 @@ Force rank (`data/rank_history.csv`) is full-window/since-seed performance; roll
 `precompute_signals.py` writes `docs/signals/` for the lookup product, including sector summaries and per-ticker JSON files.
 `scripts/build_product_index.py` writes the derived product layer under `data/product/`, including `algos_index.json`, `families.json`, `watchlist.json`, `promoted.json`, `graveyard.json`, and `daily_summary.json`.
 The product layer adds `family`, `status`, and `evidence_class` so public pages, operator summaries, and later premium surfaces do not have to scrape raw pipeline outputs.
-`scripts/build_public_artifacts.py` converts that private product layer plus signals/leaderboards into a stable nightly public contract under `docs/data/public/`.
+`scripts/build_public_artifacts.py` converts that private product layer plus signals/leaderboards into a stable nightly public contract under `docs/data/public/`. That contract is versioned with `schema_version: "v1"` and documented in `docs/data/public/SCHEMA.md`.
 The stripped public contract feeds the static public pages: `docs/index.html`, `docs/leaderboard.html`, `docs/families.html`, `docs/daily.html`, `docs/premium.html`, `docs/legal.html`, and `docs/blog/index.html`.
 `scripts/comparison_nightly.py` also writes `docs/comparison/today.json` and `docs/comparison/history.json` so the lab can compare algos against simple always-on baselines such as `momentum_5d` and `momentum_20d`.
 Public per-signal JSON is teaser-safe and does not expose the full internal per-algo breakdown.
