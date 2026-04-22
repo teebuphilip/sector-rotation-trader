@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-04-22 (session 16 — morning content email + post generator)
+
+### feat: LLM post generator (scripts/post_generator.py)
+- Reads `reports/deep_validation/latest.json` (or dated version), calls Claude API with locked facts only, writes `drafts/YYYY-MM-DD.md`.
+- 300-400 word Substack draft: headline, lede, top 3 signals, weird signal/divergence, honest observation, CTA.
+- Strictly facts-only — no invention, no metrics not in the report. Voice rules from content-generation.md enforced in system prompt.
+- Defaults to `claude-haiku-4-5-20251001` via ANTHROPIC_MODEL secret.
+
+### feat: morning content email (scripts/morning_content_email.py + morning_content_email.yml)
+- New workflow runs at 09:30 UTC (4:30am EST) — 1 hour after morning stats email.
+- Runs post_generator.py, commits draft to `drafts/`, emails full text to operator.
+- On wake: two emails — 3:30am ops stats, 4:30am content draft ready to copy-paste to Substack.
+- Substack push (cookie-auth) stays as a post-launch task in the CSV.
+
+Files: `scripts/post_generator.py`, `scripts/morning_content_email.py`, `.github/workflows/morning_content_email.yml`
+
 ## 2026-04-22 (session 15 — public JSON schema v1)
 
 ### feat: define and version the public artifact contract
