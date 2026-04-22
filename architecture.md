@@ -622,6 +622,31 @@ Rule:
 If it is not in reports/deep_validation/latest.json, the content engine cannot use it.
 ```
 
+## LLM Post Generator and Morning Content Email
+
+An LLM rewrite pass sits on top of the content engine output.
+
+Flow:
+
+```text
+reports/deep_validation/latest.json
+-> scripts/post_generator.py (calls Claude API, facts-only)
+-> drafts/YYYY-MM-DD.md
+-> scripts/morning_content_email.py
+-> email to operator at 4:30am EST
+```
+
+Scripts:
+
+- `scripts/post_generator.py`: reads locked facts from the deep validation JSON, calls Claude API, writes a 300-400 word Substack draft to `drafts/`. No invention — only facts present in the report can appear in the draft.
+- `scripts/morning_content_email.py`: reads `drafts/YYYY-MM-DD.md` and emails it to the operator.
+
+The post generator enforces the same voice rules as the content engine: honest, curious, human, transparent. Forbidden language list applies.
+
+Wired as `.github/workflows/morning_content_email.yml` at 09:30 UTC (4:30am EST) — 1 hour after the ops stats email.
+
+Substack push (cookie-auth via `substack_publisher.py`) is a post-launch task.
+
 Detailed doc:
 
 - `content-generation.md`
@@ -630,12 +655,12 @@ Detailed doc:
 
 Primary workflows:
 
-- `.github/workflows/daily_run.yml`: core book run; runs baseline, normal, existing crazy, dashboards, ledgers, signal precompute, validation, and core email steps.
+- `.github/workflows/daily_run.yml`: core book run; runs baseline, normal, existing crazy, dashboards, ledgers, signal precompute, nightly comparators, validation, and core email steps.
 - `.github/workflows/crazy_ideas_daily.yml`: morning high-action idea generation; silent, no email, no trading-state mutation.
 - `.github/workflows/crazy_daily_builds.yml`: experiment activation; triggered by successful completion of the core book workflow.
 - `.github/workflows/normal_ideas_weekly.yml`: generates and publishes normal ideas.
-
-The content engine is not wired into the daily workflow yet by design. It can be run locally or added later as a separate workflow/job.
+- `.github/workflows/morning_stats_email.yml`: ops stats email at 08:30 UTC (3:30am EST).
+- `.github/workflows/morning_content_email.yml`: LLM post draft email at 09:30 UTC (4:30am EST).
 
 ## Execution Flow: Daily Tactical Run
 

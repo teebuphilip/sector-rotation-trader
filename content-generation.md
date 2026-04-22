@@ -85,7 +85,7 @@ Reusable future LLM prompt:
 
 - `prompts/content_voice_prompt.txt`
 
-Current V1 note: the active content generator does not call an LLM. The voice rules are implemented through deterministic wording and documented for any future rewrite layer.
+The deterministic generator does not call an LLM. The LLM rewrite pass (`post_generator.py`) sits downstream and receives only the locked JSON facts — it cannot invent metrics or narratives.
 
 ## Current Flow
 
@@ -95,8 +95,14 @@ data/rank_history.csv
 + docs/signals/index.json
 -> scripts/write_deep_validation_report.py
 -> reports/deep_validation/latest.json
--> scripts/generate_content.py
+-> scripts/generate_content.py  (deterministic templates)
 -> content/*.txt
+
+reports/deep_validation/latest.json
+-> scripts/post_generator.py  (LLM rewrite pass, facts-only)
+-> drafts/YYYY-MM-DD.md
+-> scripts/morning_content_email.py
+-> email to operator at 4:30am EST
 ```
 
 Wrapper:
@@ -227,6 +233,32 @@ Optional args are passed to `write_deep_validation_report.py`:
 ```bash
 scripts/run_content_engine.sh --date 2026-04-15
 ```
+
+### `scripts/post_generator.py`
+
+LLM rewrite pass. Reads `reports/deep_validation/latest.json` (or a dated version), calls Claude API with a locked facts block, and writes a 300-400 word Substack draft to `drafts/YYYY-MM-DD.md`.
+
+Responsibilities:
+
+- distil the deep validation JSON into a compact facts block;
+- call Claude API with system prompt enforcing voice rules and facts-only constraint;
+- write the draft to `drafts/`.
+
+Constraints:
+
+- only facts present in the JSON may appear in the draft;
+- voice rules from the Voice System section apply in full;
+- forbidden language list is enforced via system prompt.
+
+It does not read dashboards, download market data, or invent reasons for performance.
+
+### `scripts/morning_content_email.py`
+
+Reads `drafts/YYYY-MM-DD.md` and prints it to stdout for the morning content workflow to email. Wired into `.github/workflows/morning_content_email.yml` at 09:30 UTC (4:30am EST).
+
+### `substack_publisher.py` (post-launch)
+
+Will POST `drafts/YYYY-MM-DD.md` to Substack via unofficial cookie-auth API. Starts in draft/review mode. Auto-publish after 2 weeks of quality validation. Requires `SUBSTACK_SESSION_COOKIE` secret, rotated monthly.
 
 ## Deep Validation Report Structure
 
