@@ -32,6 +32,8 @@ jobs:
           echo "AFH_RUN_DATE=$(date -u +%F)" >> $GITHUB_ENV
 
       - name: Generate high-action ideas
+        id: generate
+        continue-on-error: true
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -39,10 +41,37 @@ jobs:
           ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
         run: |
           python scripts/crazy_generate_high_action_ideas.py --date "$AFH_RUN_DATE"
+
+      - name: Aggregate idea reports
+        if: always()
+        run: |
           python scripts/compare_ideas.py --base data/ideas || true
           python scripts/ai_costs_aggregate.py || true
 
+      - name: Dump generator errors
+        if: always()
+        run: |
+          ERR_DIR="data/ideas/runs/$AFH_RUN_DATE/errors"
+          RESP_DIR="data/ideas/runs/$AFH_RUN_DATE/responses"
+          if [ -d "$ERR_DIR" ]; then
+            echo "=== generator errors ==="
+            for f in "$ERR_DIR"/*.txt; do
+              [ -f "$f" ] || continue
+              echo "--- $f ---"
+              cat "$f"
+            done
+          fi
+          if [ -d "$RESP_DIR" ]; then
+            echo "=== generator response codes ==="
+            for f in "$RESP_DIR"/*_http_code.txt; do
+              [ -f "$f" ] || continue
+              echo "--- $f ---"
+              cat "$f"
+            done
+          fi
+
       - name: Commit results
+        if: always()
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
@@ -53,3 +82,9 @@ jobs:
           git commit -m "daily: crazy idea run" || echo "No changes to commit"
           git pull --rebase --autostash
           git push
+
+      - name: Fail if generation failed
+        if: steps.generate.outcome != 'success'
+        run: |
+          echo "::error::Crazy idea generation failed. Partial outputs and errors were committed."
+          exit 1

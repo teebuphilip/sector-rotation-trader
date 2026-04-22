@@ -447,6 +447,7 @@ def check_idea_pipeline() -> List[str]:
     else:
         # Check at least 1 idea was generated
         raw_dir = today_dir / "raw"
+        err_dir = today_dir / "errors"
         idea_count = 0
         if raw_dir.exists():
             for jl in raw_dir.glob("*.jsonl"):
@@ -455,8 +456,18 @@ def check_idea_pipeline() -> List[str]:
                     if line.strip()
                 )
         if idea_count == 0:
-            fail("Crazy idea run exists but 0 ideas generated")
-            results.append("FAIL → 0 ideas generated today")
+            provider_errors = []
+            if err_dir.exists():
+                for path in sorted(err_dir.glob("*.txt")):
+                    msg = path.read_text(encoding="utf-8", errors="replace").strip()
+                    provider_errors.append(f"{path.stem}: {msg or 'unknown_error'}")
+            if provider_errors:
+                detail = "; ".join(provider_errors)
+                fail(f"Crazy idea run failed today ({detail})")
+                results.append("FAIL → crazy idea run failed; see errors/")
+            else:
+                fail("Crazy idea run exists but 0 ideas generated")
+                results.append("FAIL → 0 ideas generated today")
         else:
             results.append(f"PASS ({idea_count} crazy idea(s) today)")
 

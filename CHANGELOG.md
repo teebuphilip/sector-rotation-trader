@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-04-22 (session 12 — crazy idea failure visibility)
+
+### fix: failed crazy idea runs now leave evidence in git and workflow logs
+- `.github/workflows/crazy_ideas_daily.yml` now runs generation with `continue-on-error: true`, dumps `errors/*.txt` and response-code files, commits partial run outputs even on failure, then fails the workflow explicitly at the end.
+- This prevents the previous blind spot where a failed idea run left no same-day directory in git and the tactical pipeline only reported `No crazy idea run found for today`.
+
+### fix: crazy idea generator now prints provider error summaries before exiting
+- `scripts/crazy_generate_high_action_ideas.py` now emits `[error-summary]` lines from `data/ideas/runs/<date>/errors/*.txt` when both providers fail.
+- Future workflow logs will show the actual provider-side failure string instead of only `Both generators failed`.
+
+### fix: nightly validation now distinguishes missing run vs failed run
+- `scripts/validate_nightly.py` now checks `data/ideas/runs/<date>/errors/*.txt` when a same-day run exists but generated zero ideas.
+- Validation now reports `crazy idea run failed; see errors/` instead of collapsing that case into a generic zero-ideas failure.
+
+Files: `.github/workflows/crazy_ideas_daily.yml`, `scripts/crazy_generate_high_action_ideas.py`, `scripts/validate_nightly.py`, `CHANGELOG.md`
+
 ## 2026-04-21 (session 11 — factory backtest visibility)
 
 ### fix: factory backtest summary now exposes seeded vs matched vs reviewed

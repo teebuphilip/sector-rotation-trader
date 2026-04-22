@@ -47,6 +47,19 @@ def _write_error(run_dir: Path, label: str, err: Exception) -> None:
     (err_dir / f"{label}.txt").write_text(str(err) + "\n")
 
 
+def _emit_error_summary(run_dir: Path) -> None:
+    err_dir = run_dir / "errors"
+    if not err_dir.exists():
+        return
+    for label in ("chatgpt", "claude"):
+        path = err_dir / f"{label}.txt"
+        if not path.exists():
+            continue
+        msg = path.read_text(encoding="utf-8").strip()
+        if msg:
+            print(f"[error-summary] {label}: {msg}", file=sys.stderr)
+
+
 def _load_json(path: Path) -> dict:
     if not path.exists():
         return {}
@@ -204,6 +217,7 @@ def main() -> int:
         print(f"[warn] Claude generator failed: {exc}", file=sys.stderr)
 
     if not success:
+        _emit_error_summary(run_dir)
         print(f"Both generators failed. See {run_dir / 'errors'}", file=sys.stderr)
         return 1
 
