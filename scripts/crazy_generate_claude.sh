@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-MODEL="${ANTHROPIC_MODEL:-claude-3-7-sonnet-20250219}"
+MODEL="${ANTHROPIC_MODEL:-claude-haiku-4-5-20251001}"
 MAX_TOKENS="${ANTHROPIC_MAX_TOKENS:-4096}"
 PROMPT_FILE="${1:-prompts/crazy_ideas_prompt.txt}"
 TMP_JSON="$(mktemp)"
