@@ -29,6 +29,30 @@ def _load_algos_index() -> list[dict]:
     return [a for a in algos if isinstance(a, dict)]
 
 
+def _slugify(text: str) -> str:
+    out = []
+    prev_dash = False
+    for ch in text.lower():
+        if ch.isalnum():
+            out.append(ch)
+            prev_dash = False
+        elif not prev_dash:
+            out.append("-")
+            prev_dash = True
+    return "".join(out).strip("-") or "(unknown)"
+
+
+def _idea_display_fields(idea: dict) -> tuple[str, str]:
+    title = (
+        str(idea.get("title") or "").strip()
+        or str(idea.get("idea") or "").strip()
+    )
+    idea_id = str(idea.get("idea_id") or "").strip()
+    if not idea_id and title:
+        idea_id = _slugify(title)
+    return idea_id or "(unknown)", title
+
+
 def _comparator_section(lines: list[str]) -> None:
     comparison = _load_json(Path("docs/comparison/today.json"))
     if not isinstance(comparison, dict):
@@ -43,18 +67,24 @@ def _comparator_section(lines: list[str]) -> None:
         return
 
     lines.append("")
-    lines.append("Comparator snapshot:")
+    lines.append(f"Comparator snapshot ({len(SECTOR_ETFS)} sector ETFs):")
     for name, payload in sorted(comparators.items()):
         if not isinstance(payload, dict):
             continue
         counts = {"UP": 0, "DOWN": 0, "NEUTRAL": 0}
+        insufficient = 0
         for row in payload.values():
             if not isinstance(row, dict):
                 continue
             direction = str(row.get("direction") or "NEUTRAL")
             if direction in counts:
                 counts[direction] += 1
-        lines.append(f"- {name}: UP {counts['UP']} / DOWN {counts['DOWN']} / NEUTRAL {counts['NEUTRAL']}")
+            if row.get("error") == "insufficient_data":
+                insufficient += 1
+        lines.append(
+            f"- {name}: UP {counts['UP']} / DOWN {counts['DOWN']} / "
+            f"NEUTRAL {counts['NEUTRAL']} (insufficient_data={insufficient})"
+        )
 
     algos = _load_algos_index()
     beaters = []
@@ -223,7 +253,8 @@ def _build_report() -> str:
     lines.append("")
 
     # Idea run
-    run_date = os.getenv("AFH_RUN_DATE") or now
+    market_run_date = os.getenv("AFH_RUN_DATE") or now
+    run_date = market_run_date
     ideas_base = Path("data/ideas/runs")
     latest_run = ideas_base / run_date
     if not latest_run.exists():
@@ -268,10 +299,11 @@ def _build_report() -> str:
         ideas = []
         for src, path in [("chatgpt", chat_path), ("claude", claude_path)]:
             for idea in _load_ideas(path):
+                idea_id, title = _idea_display_fields(idea)
                 ideas.append({
                     "src": src,
-                    "idea_id": idea.get("idea_id", "(unknown)"),
-                    "title": idea.get("title", "").strip(),
+                    "idea_id": idea_id,
+                    "title": title,
                 })
         if ideas:
             lines.append("- Ideas generated:")
@@ -336,10 +368,11 @@ def _build_report() -> str:
         ideas = []
         for src, path in [("chatgpt", chat_path), ("claude", claude_path)]:
             for idea in _load_ideas(path):
+                idea_id, title = _idea_display_fields(idea)
                 ideas.append({
                     "src": src,
-                    "idea_id": idea.get("idea_id", "(unknown)"),
-                    "title": idea.get("title", "").strip(),
+                    "idea_id": idea_id,
+                    "title": title,
                 })
         if ideas:
             lines.append("- Ideas generated:")
@@ -419,11 +452,11 @@ def _build_report() -> str:
         import csv
         with rank_csv.open("r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
-            today_rows = [r for r in reader if r.get("date") == run_date]
+            today_rows = [r for r in reader if r.get("date") == market_run_date]
         if today_rows:
             by_return = sorted(today_rows, key=lambda r: float(r.get("ytd_pct", 0)), reverse=True)
             beating = sum(1 for r in by_return if r.get("beat_spy", "").lower() == "true")
-            lines.append(f"Force Rank Summary ({len(by_return)} algos):")
+            lines.append(f"Force Rank Summary ({market_run_date}, {len(by_return)} algos):")
             lines.append(f"- Beating SPY: {beating}/{len(by_return)}")
             lines.append("")
             lines.append("Top 10 by Return:")
@@ -442,7 +475,7 @@ def _build_report() -> str:
                 rank = r.get("rank_return", "?")
                 lines.append(f"  #{rank:>3s}  {name:40s}  {ytd:+7.2f}%  alpha:{alpha:+6.2f}%")
         else:
-            lines.append("Force Rank: no rows for today")
+            lines.append(f"Force Rank: no rows for market date {market_run_date}")
     else:
         lines.append("Force Rank: rank_history.csv missing")
 
@@ -454,11 +487,14 @@ def _build_report() -> str:
     if validation_cache.exists():
         counts = _load_json(validation_cache)
         if isinstance(counts, dict):
-            lines.append(f"Validation cache: {len(counts)} algos tracked")
+            lines.append(
+                f"Nightly validation snapshot tracker: {len(counts)} algos tracked "
+                f"(internal validator bookkeeping)"
+            )
         else:
-            lines.append("Validation cache: present but unreadable")
+            lines.append("Nightly validation snapshot tracker: present but unreadable")
     else:
-        lines.append("Validation cache: not yet established")
+        lines.append("Nightly validation snapshot tracker: not yet established")
 
     return "\n".join(lines)
 

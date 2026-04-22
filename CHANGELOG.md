@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-04-22 (session 14 — morning stats email clarity fixes)
+
+### fix: idea rows in morning stats email now handle mixed raw schemas
+- `scripts/daily_stats_email.py` no longer assumes every raw idea row has `idea_id` and `title`.
+- Older raw idea runs that used `idea` now render with a derived slug instead of showing `(unknown)`.
+- This fixes the morning email's `Ideas generated` section across mixed historical run formats.
+
+### fix: force-rank section now uses market run date instead of latest idea-run date
+- The morning email was reusing one mutable `run_date` for both idea-run reporting and market force-rank reporting.
+- If the latest idea run directory was newer than the market data date, the email incorrectly printed `Force Rank: no rows for today`.
+- The force-rank section now uses a separate `market_run_date` sourced from `AFH_RUN_DATE`/the intended reporting date.
+
+### chore: clarify comparator and validation bookkeeping in morning email
+- Comparator section now explicitly says it covers `11 sector ETFs` and shows `insufficient_data` counts.
+- `Validation cache` wording was replaced with `Nightly validation snapshot tracker` plus a short note that it is internal validator bookkeeping.
+
+Files: `scripts/daily_stats_email.py`, `CHANGELOG.md`
+
 ## 2026-04-22 (session 13 — Claude default model fallback)
 
 ### fix: crazy Claude generator now defaults to a current Anthropic model alias
