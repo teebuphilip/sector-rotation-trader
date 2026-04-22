@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T15:46:26Z",
+  "generated_at": "2026-04-22T23:14:26Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
@@ -205,8 +205,8 @@
             "XLU",
             "XLV"
           ],
-          "equity": 100572.83,
-          "ytd_pct": 0.57,
+          "equity": 100735.93,
+          "ytd_pct": 0.74,
           "trade_count": 2,
           "positions": 2,
           "last_snapshot": "2026-04-22",
@@ -364,8 +364,8 @@
             "XLRE",
             "XLU"
           ],
-          "equity": 106493.74,
-          "ytd_pct": 6.49,
+          "equity": 106647.83,
+          "ytd_pct": 6.65,
           "trade_count": 30,
           "positions": 2,
           "last_snapshot": "2026-04-22",
@@ -400,8 +400,8 @@
             "SPY",
             "AGG"
           ],
-          "equity": 104308.72,
-          "ytd_pct": 4.31,
+          "equity": 104534.86,
+          "ytd_pct": 4.53,
           "trade_count": 15,
           "positions": 3,
           "last_snapshot": "2026-04-22",
@@ -495,8 +495,8 @@
             "XLRE",
             "XLU"
           ],
-          "equity": 98056.12,
-          "ytd_pct": -1.94,
+          "equity": 98142.18,
+          "ytd_pct": -1.86,
           "trade_count": 5,
           "positions": 1,
           "last_snapshot": "2026-04-22",
@@ -1057,6 +1057,34 @@
       },
       "leaders": [
         {
+          "key": "crazy:insider-trading-signals",
+          "algo_type": "crazy",
+          "algo_id": "insider-trading-signals",
+          "name": "Insider Trading Signals",
+          "family": "political_insider_filing",
+          "status": "live_only",
+          "evidence_class": "live_receipts_only",
+          "rebalance_frequency": "weekly",
+          "universe": [
+            "XLF",
+            "XLK",
+            "XLY",
+            "XLP",
+            "XLU"
+          ],
+          "equity": 100155.01,
+          "ytd_pct": 0.16,
+          "trade_count": 1,
+          "positions": 1,
+          "last_snapshot": "2026-04-22",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": "UNSUPPORTED_DATA",
+          "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: IWV",
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
+        {
           "key": "crazy:finra-dark-pool-signal",
           "algo_type": "crazy",
           "algo_id": "finra-dark-pool-signal",
@@ -1073,8 +1101,8 @@
             "XLU",
             "XLV"
           ],
-          "equity": 100332.78,
-          "ytd_pct": 0.33,
+          "equity": 100049.77,
+          "ytd_pct": 0.05,
           "trade_count": 2,
           "positions": 2,
           "last_snapshot": "2026-04-22",
@@ -1082,34 +1110,6 @@
           "new_algo_date": null,
           "backtest_status": null,
           "backtest_reason": null,
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:insider-trading-signals",
-          "algo_type": "crazy",
-          "algo_id": "insider-trading-signals",
-          "name": "Insider Trading Signals",
-          "family": "political_insider_filing",
-          "status": "live_only",
-          "evidence_class": "live_receipts_only",
-          "rebalance_frequency": "weekly",
-          "universe": [
-            "XLF",
-            "XLK",
-            "XLY",
-            "XLP",
-            "XLU"
-          ],
-          "equity": 100216.1,
-          "ytd_pct": 0.22,
-          "trade_count": 1,
-          "positions": 1,
-          "last_snapshot": "2026-04-22",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": "UNSUPPORTED_DATA",
-          "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: IWV",
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
         },
@@ -1330,8 +1330,8 @@
             "XLU",
             "XLV"
           ],
-          "equity": 99818.02,
-          "ytd_pct": -0.18,
+          "equity": 99589.17,
+          "ytd_pct": -0.41,
           "trade_count": 6,
           "positions": 2,
           "last_snapshot": "2026-04-22",

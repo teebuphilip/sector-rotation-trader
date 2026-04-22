@@ -3193,6 +3193,35 @@
       },
       "sector": "VIX Term Structure",
       "num_positions": 2
+    },
+    {
+      "date": "2026-04-22",
+      "cash": 23523.95,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 94663.14,
+      "positions": {
+        "XLK": {
+          "shares": 244.0568,
+          "entry_price": 154.35,
+          "current_price": 158.09,
+          "market_value": 38582.93,
+          "unrealized_pnl": 912.77,
+          "entry_date": "2026-04-17",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 273.743,
+          "entry_price": 120.41,
+          "current_price": 118.93,
+          "market_value": 32556.25,
+          "unrealized_pnl": -405.14,
+          "entry_date": "2026-04-17",
+          "margin": false
+        }
+      },
+      "sector": "VIX Term Structure",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-20"

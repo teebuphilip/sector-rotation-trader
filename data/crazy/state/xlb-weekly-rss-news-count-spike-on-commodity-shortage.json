@@ -1,10 +1,19 @@
 {
-  "cash": 99935.78757528696,
+  "cash": 94929.04819652262,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 20.176517331821184,
+  "fees_paid": 30.126517331821184,
   "taxes_paid": 0.0,
-  "positions": {},
+  "positions": {
+    "XLB": {
+      "shares": 96.40727768160043,
+      "entry_price": 51.83000183105469,
+      "entry_date": "2026-04-22",
+      "cost": 4996.789378764348,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-20",
@@ -29,6 +38,16 @@
       "pnl_pct": -1.09,
       "entry_date": "2026-04-20",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-22",
+      "action": "BUY",
+      "ticker": "XLB",
+      "shares": 96.4073,
+      "price": 51.83,
+      "cost": 4996.79,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -761,20 +780,40 @@
       "positions": {},
       "sector": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-22",
+      "cash": 94929.05,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99925.84,
+      "positions": {
+        "XLB": {
+          "shares": 96.4073,
+          "entry_price": 51.83,
+          "current_price": 51.83,
+          "market_value": 4996.79,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-22",
+          "margin": false
+        }
+      },
+      "sector": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-18",
   "last_run": "2026-04-22",
   "meta": {
     "xlb-weekly-rss-news-count-spike-on-commodity-shortage": {
-      "latest_value": 1.0,
-      "prior_avg": 1.25,
-      "signal_change": -0.2,
-      "signal_label": "HOLD",
+      "latest_value": 2.0,
+      "prior_avg": 1.2857,
+      "signal_change": 0.5556,
+      "signal_label": "RISK_ON",
       "name": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
-      "last_signal": "HOLD",
+      "last_signal": "RISK_ON",
       "last_run": "2026-04-22",
-      "entry_date": "2026-04-20"
+      "entry_date": "2026-04-22"
     }
   }
 }

@@ -1,10 +1,19 @@
 {
-  "cash": 99912.89350155479,
+  "cash": 94907.29882647705,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 20.159284218236017,
+  "fees_paid": 30.109284218236017,
   "taxes_paid": 0.0,
-  "positions": {},
+  "positions": {
+    "XLC": {
+      "shares": 42.37907016860648,
+      "entry_price": 117.87999725341797,
+      "entry_date": "2026-04-22",
+      "cost": 4995.6446750777395,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-20",
@@ -29,6 +38,16 @@
       "pnl_pct": -1.54,
       "entry_date": "2026-04-20",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-22",
+      "action": "BUY",
+      "ticker": "XLC",
+      "shares": 42.3791,
+      "price": 117.88,
+      "cost": 4995.64,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -761,19 +780,40 @@
       "positions": {},
       "sector": "Google Gusts",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-22",
+      "cash": 94907.3,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99902.94,
+      "positions": {
+        "XLC": {
+          "shares": 42.3791,
+          "entry_price": 117.88,
+          "current_price": 117.88,
+          "market_value": 4995.64,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-22",
+          "margin": false
+        }
+      },
+      "sector": "Google Gusts",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-18",
   "last_run": "2026-04-22",
   "meta": {
     "google-gusts": {
-      "signal_label": "HOLD",
+      "signal_label": "RISK_ON",
       "name": "Google Gusts",
-      "last_signal": "HOLD",
+      "last_signal": "RISK_ON",
       "last_run": "2026-04-22",
-      "latest_value": 0.0,
-      "prior_avg": 5.8929,
-      "signal_change": -1.0
+      "latest_value": 3.0,
+      "prior_avg": 2.4286,
+      "signal_change": 0.2353,
+      "entry_date": "2026-04-22"
     }
   }
 }

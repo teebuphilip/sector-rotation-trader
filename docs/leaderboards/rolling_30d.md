@@ -2,25 +2,25 @@
 
 Force rank is the full-window, since-seed paper-traded ranking. Rolling 30D is recent momentum. A signal can lead one list and lag the other; that split is expected and visible on purpose.
 
-SPY 30D Return: +8.27%
+SPY 30D Return: +8.52%
 
 | Rank | Algo | Category | 30D Return | 30D Sharpe | 30D Max DD |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Algo Baileymol (Chaos Monger) | standard | +7.29% | 4.33 | -1.71% |
-| 2 | Algo Biscotti (Unconditional Loyalty) | standard | +5.85% | 2.59 | -3.10% |
-| 3 | VIX Term Structure | crazy | +4.74% | 5.16 | -1.09% |
-| 4 | Antonacci Dual Momentum Sector Rotation | standard | +4.16% | 6.03 | -1.22% |
-| 5 | Chaos Rotation Lab | crazy | +2.95% | 1.56 | -3.24% |
-| 6 | VIX Fear Rotation | crazy | +1.49% | 1.60 | -2.00% |
-| 7 | Algo Biscotti (Unconditional Loyalty) | crazy | +1.24% | 0.59 | -2.86% |
-| 8 | Faber Momentum Rotation | standard | +1.22% | 1.24 | -1.38% |
-| 9 | Retail Sales Momentum | crazy | +0.57% | 0.27 | -0.02% |
-| 10 | FINRA Dark Pool Signal | crazy | +0.33% | -0.57 | -0.02% |
-| 11 | Insider Trading Signals | crazy | +0.22% | -3.92 | -0.01% |
-| 12 | Earthquake Aftershock Amplifier | crazy | +0.06% | -20.92 | 0.00% |
-| 13 | NRWise Acceleration | standard | +0.06% | -0.49 | -2.90% |
-| 14 | Semiconductor Moonshot Warning | crazy | +0.05% | -19.24 | -0.02% |
-| 15 | Xlc Weekly Google Trends Surge In 5g Rollout | crazy | +0.04% | -16.02 | -0.02% |
+| 1 | Algo Baileymol (Chaos Monger) | standard | +7.45% | 4.33 | -1.71% |
+| 2 | Algo Biscotti (Unconditional Loyalty) | standard | +5.94% | 2.57 | -3.10% |
+| 3 | VIX Term Structure | crazy | +4.99% | 5.31 | -1.09% |
+| 4 | Antonacci Dual Momentum Sector Rotation | standard | +4.38% | 6.25 | -1.22% |
+| 5 | Chaos Rotation Lab | crazy | +3.10% | 1.62 | -3.24% |
+| 6 | VIX Fear Rotation | crazy | +1.72% | 1.86 | -2.00% |
+| 7 | Faber Momentum Rotation | standard | +1.22% | 1.19 | -1.38% |
+| 8 | Algo Biscotti (Unconditional Loyalty) | crazy | +1.12% | 0.49 | -2.86% |
+| 9 | Retail Sales Momentum | crazy | +0.74% | 0.95 | -0.02% |
+| 10 | Insider Trading Signals | crazy | +0.16% | -4.66 | -0.06% |
+| 11 | Earthquake Aftershock Amplifier | crazy | +0.06% | -21.49 | 0.00% |
+| 12 | NRWise Acceleration | standard | +0.06% | -0.48 | -2.89% |
+| 13 | FINRA Dark Pool Signal | crazy | +0.05% | -2.58 | -0.28% |
+| 14 | Semiconductor Moonshot Warning | crazy | +0.05% | -19.74 | -0.02% |
+| 15 | Xlc Weekly Google Trends Surge In 5g Rollout | crazy | +0.04% | -16.39 | -0.02% |
 | 16 | Quantified Simple Monthly Rotation | standard | +0.00% | 0.00 | 0.00% |
 | 17 | Airport Security Surge | crazy | +0.00% | 0.00 | 0.00% |
 | 18 | Real Estate Sector Weekly Google Trends Home Buying Surge | crazy | +0.00% | 0.00 | 0.00% |
@@ -96,18 +96,18 @@ SPY 30D Return: +8.27%
 | 88 | Consumer Sentiment | crazy | +0.00% | 0.00 | 0.00% |
 | 89 | Social Media Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
 | 90 | Energy Sector Weekly Drawdown Exhaustion | crazy | +0.00% | 0.00 | 0.00% |
-| 91 | Consumer Discretionary Google Trends Surge For Sale Keywords | crazy | -0.01% | -57.47 | -0.02% |
-| 92 | Xlu Daily Electricity Demand Surge | crazy | -0.03% | -52.64 | -0.03% |
-| 93 | Industrial Sector Weekly Earthquake Activity Correlation Dip | crazy | -0.03% | -89.46 | -0.03% |
-| 94 | Utilities Sector Negative Price Gap Fill | crazy | -0.06% | -46.38 | -0.06% |
-| 95 | Xlb Weekly Rss News Count Spike On Commodity Shortage | crazy | -0.06% | -30.04 | -0.06% |
-| 96 | Electricity Enlightenment | crazy | -0.08% | -17.53 | -0.13% |
-| 97 | Retail Roulette | crazy | -0.09% | -20.52 | -0.13% |
-| 98 | Google Gusts | crazy | -0.09% | -22.18 | -0.09% |
-| 99 | Tremor Tension | crazy | -0.13% | -15.25 | -0.13% |
-| 100 | Uber Mobility Index | crazy | -0.18% | -4.25 | -0.49% |
-| 101 | Xle Weekly Drawdown Rebound Signal | crazy | -0.18% | -9.20 | -0.28% |
-| 102 | Copper Momentum | crazy | -0.54% | -3.15 | -0.90% |
-| 103 | Lumber Momentum | crazy | -0.72% | -3.12 | -1.13% |
-| 104 | Electricity Consumption | crazy | -0.79% | -3.79 | -1.02% |
-| 105 | Mortgage Rate Housing Proxy | crazy | -0.81% | -4.34 | -1.11% |
+| 91 | Consumer Discretionary Google Trends Surge For Sale Keywords | crazy | -0.01% | -58.62 | -0.02% |
+| 92 | Xlu Daily Electricity Demand Surge | crazy | -0.03% | -53.54 | -0.03% |
+| 93 | Industrial Sector Weekly Earthquake Activity Correlation Dip | crazy | -0.03% | -91.44 | -0.03% |
+| 94 | Utilities Sector Negative Price Gap Fill | crazy | -0.06% | -46.99 | -0.06% |
+| 95 | Xlb Weekly Rss News Count Spike On Commodity Shortage | crazy | -0.07% | -30.76 | -0.07% |
+| 96 | Electricity Enlightenment | crazy | -0.08% | -17.77 | -0.13% |
+| 97 | Retail Roulette | crazy | -0.09% | -20.79 | -0.13% |
+| 98 | Google Gusts | crazy | -0.10% | -22.79 | -0.10% |
+| 99 | Tremor Tension | crazy | -0.13% | -15.42 | -0.13% |
+| 100 | Xle Weekly Drawdown Rebound Signal | crazy | -0.18% | -9.28 | -0.28% |
+| 101 | Uber Mobility Index | crazy | -0.41% | -5.15 | -0.49% |
+| 102 | Copper Momentum | crazy | -0.56% | -3.23 | -0.92% |
+| 103 | Electricity Consumption | crazy | -0.78% | -3.75 | -1.02% |
+| 104 | Lumber Momentum | crazy | -0.87% | -3.45 | -1.27% |
+| 105 | Mortgage Rate Housing Proxy | crazy | -1.03% | -4.93 | -1.11% |

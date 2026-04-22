@@ -23,6 +23,16 @@
       "pnl_pct": -1.09,
       "entry_date": "2026-04-20",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-22",
+      "action": "BUY",
+      "ticker": "XLB",
+      "shares": 96.4073,
+      "price": 51.83,
+      "cost": 4996.79,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -755,6 +765,26 @@
       "positions": {},
       "sector": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-22",
+      "cash": 94929.05,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99925.84,
+      "positions": {
+        "XLB": {
+          "shares": 96.4073,
+          "entry_price": 51.83,
+          "current_price": 51.83,
+          "market_value": 4996.79,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-22",
+          "margin": false
+        }
+      },
+      "sector": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-18"
