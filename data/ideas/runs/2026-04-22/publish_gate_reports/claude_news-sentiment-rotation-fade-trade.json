@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-22/publish/claude_news-sentiment-rotation-fade-trade.md",
+  "target_file": "data/ideas/runs/2026-04-22/build/claude_news-sentiment-rotation-fade-trade.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": false,
+    "reason": "Spec uses daily RSS count data with a matching existing adapter and clear deterministic logic.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "rss_count"
+      ],
+      "scores": {
+        "rss_count": 2,
+        "html_table": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 993,
+    "output_tokens": 77
+  },
+  "cost_usd": 0.0032525,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec uses daily RSS count data with a matching existing adapter and clear deterministic logic.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

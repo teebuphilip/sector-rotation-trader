@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-22/publish/chatgpt_political-insider-selling-spike-in-financial-sector-etfs.md",
+  "target_file": "data/ideas/runs/2026-04-22/intervention/chatgpt_political-insider-selling-spike-in-financial-sector-etfs.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "new adapter required",
+      "requires short position",
+      "short_trade_not_supported",
+      "unmapped data source",
+      "unsupported_template_adapter",
+      "volume data needed"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "html_table": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 909,
+    "output_tokens": 79
+  },
+  "cost_usd": 0.0030625,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": null,\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly supports political insider filings data source.\",\n  \"risk_flags\": [\"requires short position\", \"unmapped data source\", \"volume data needed\", \"new adapter required\"]\n}\n```"
+}

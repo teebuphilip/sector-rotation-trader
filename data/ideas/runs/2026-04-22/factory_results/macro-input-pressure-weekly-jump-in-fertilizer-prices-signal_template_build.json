@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-04-22/build/chatgpt_macro-input-pressure-weekly-jump-in-fertilizer-prices-signal.md",
+  "out": "crazy/algos/macro_input_pressure_weekly_jump_in_fertilizer_prices_signal.py",
+  "adapter": "price_only",
+  "idea_id": "macro-input-pressure-weekly-jump-in-fertilizer-prices-signal",
+  "name": "Macro Input Pressure Weekly Jump In Fertilizer Prices Signals Agricultural Sector Rotation",
+  "universe": [
+    "XLB"
+  ],
+  "frequency": "weekly",
+  "family": "macro_input_pressure",
+  "threshold": 0.08,
+  "direction": "up",
+  "hold_days": 28
+}

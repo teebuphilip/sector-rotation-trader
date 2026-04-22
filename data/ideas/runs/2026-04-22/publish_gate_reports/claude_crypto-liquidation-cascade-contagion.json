@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-22/publish/claude_crypto-liquidation-cascade-contagion.md",
+  "target_file": "data/ideas/runs/2026-04-22/build/claude_crypto-liquidation-cascade-contagion.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Spec uses valid existing adapters with clear deterministic routing and buildable logic.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 4,
+        "price_only": 2
+      },
+      "top_score": 4,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 997,
+    "output_tokens": 76
+  },
+  "cost_usd": 0.0032525,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec uses valid existing adapters with clear deterministic routing and buildable logic.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

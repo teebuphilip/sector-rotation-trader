@@ -1,0 +1,40 @@
+{
+  "source_file": "data/ideas/runs/2026-04-22/publish/chatgpt_freight-logistics-squeeze-from-weekly-fred-producer-price-in.md",
+  "target_file": "data/ideas/runs/2026-04-22/intervention/chatgpt_freight-logistics-squeeze-from-weekly-fred-producer-price-in.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "requires shorting",
+      "short_trade_not_supported",
+      "unsupported_template_adapter",
+      "volume not specified",
+      "weekly frequency"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table",
+        "price_only"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 974,
+    "output_tokens": 84
+  },
+  "cost_usd": 0.003275,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires short position but current algo envelope supports only long/flat allocations.\",\n  \"risk_flags\": [\"requires shorting\", \"low adapter routing confidence\", \"weekly frequency\", \"volume not specified\"]\n}\n```"
+}

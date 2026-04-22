@@ -2,7 +2,7 @@
 
 Force rank is the full-window, since-seed paper-traded ranking. Rolling 30D is recent momentum. A signal can lead one list and lag the other; that split is expected and visible on purpose.
 
-SPY 30D Return: +8.25%
+SPY 30D Return: +8.27%
 
 | Rank | Algo | Category | 30D Return | 30D Sharpe | 30D Max DD |
 | --- | --- | --- | --- | --- | --- |
@@ -22,80 +22,80 @@ SPY 30D Return: +8.25%
 | 14 | Semiconductor Moonshot Warning | crazy | +0.05% | -19.24 | -0.02% |
 | 15 | Xlc Weekly Google Trends Surge In 5g Rollout | crazy | +0.04% | -16.02 | -0.02% |
 | 16 | Quantified Simple Monthly Rotation | standard | +0.00% | 0.00 | 0.00% |
-| 17 | Reddit Subreddit Mention Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 18 | Cardboard Box Index | crazy | +0.00% | 0.00 | 0.00% |
-| 19 | Ev Euphoria | crazy | +0.00% | 0.00 | 0.00% |
-| 20 | Patent Filing Velocity | crazy | +0.00% | 0.00 | 0.00% |
-| 21 | Reddit Sentiment Spike Trend | crazy | +0.00% | 0.00 | 0.00% |
-| 22 | Materials Sector Weekly Volatility Contraction Breakout | crazy | +0.00% | 0.00 | 0.00% |
-| 23 | Crypto Derivative Arbitrage | crazy | +0.00% | 0.00 | 0.00% |
-| 24 | Congress Trading Fade | crazy | +0.00% | 0.00 | 0.00% |
-| 25 | Port Container Volume | crazy | +0.00% | 0.00 | 0.00% |
-| 26 | Twitter Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 27 | Yield Curve Regime | crazy | +0.00% | 0.00 | 0.00% |
-| 28 | TSA Body Count | crazy | +0.00% | 0.00 | 0.00% |
-| 29 | Cloud Storage Demand Surge | crazy | +0.00% | 0.00 | 0.00% |
-| 30 | Liquor Store Leading Indicator | crazy | +0.00% | 0.00 | 0.00% |
-| 31 | Yelp Closure Velocity | crazy | +0.00% | 0.00 | 0.00% |
-| 32 | Reddit Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 33 | Electric Vehicle Charge Station Density | crazy | +0.00% | 0.00 | 0.00% |
-| 34 | Craigslist Desperation Index | crazy | +0.00% | 0.00 | 0.00% |
-| 35 | Consumer Sentiment | crazy | +0.00% | 0.00 | 0.00% |
-| 36 | Airport Security Surge | crazy | +0.00% | 0.00 | 0.00% |
-| 37 | Lumber Futures Rollercoaster | crazy | +0.00% | 0.00 | 0.00% |
-| 38 | Port Congestion Squeeze | crazy | +0.00% | 0.00 | 0.00% |
-| 39 | Earthquake Energy Demand Indicator | crazy | +0.00% | 0.00 | 0.00% |
-| 40 | LinkedIn Layoff Propagation | crazy | +0.00% | 0.00 | 0.00% |
-| 41 | Small Business Formation | crazy | +0.00% | 0.00 | 0.00% |
-| 42 | Airport Shopping Spree | crazy | +0.00% | 0.00 | 0.00% |
-| 43 | Global Tech Earnings Momentum | crazy | +0.00% | 0.00 | 0.00% |
-| 44 | Freight Rail Carloads | crazy | +0.00% | 0.00 | 0.00% |
-| 45 | Airline Load Factor Proxy | crazy | +0.00% | 0.00 | 0.00% |
-| 46 | Misery Rotation | crazy | +0.00% | 0.00 | 0.00% |
-| 47 | Reddit Sentiment Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 48 | Xlu Weekly Cold Snap Weather Correlation | crazy | +0.00% | 0.00 | 0.00% |
-| 49 | Ev Charging Station Stampede | crazy | +0.00% | 0.00 | 0.00% |
-| 50 | Ev Charging Boom | crazy | +0.00% | 0.00 | 0.00% |
-| 51 | Real Estate Sector Weekly Google Trends Home Buying Surge | crazy | +0.00% | 0.00 | 0.00% |
-| 52 | Technology Sector Daily Ev Charger Count Surge | crazy | +0.00% | 0.00 | 0.00% |
-| 53 | Crypto Capitulation Countdown | crazy | +0.00% | 0.00 | 0.00% |
-| 54 | Credit Card Delinquency | crazy | +0.00% | 0.00 | 0.00% |
-| 55 | Superbowl Futures Trade | crazy | +0.00% | 0.00 | 0.00% |
-| 56 | Reddit Emoji Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 57 | Truck Tonnage Index | crazy | +0.00% | 0.00 | 0.00% |
-| 58 | Rss Roar | crazy | +0.00% | 0.00 | 0.00% |
-| 59 | Reddit Subreddit Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 60 | 311 Call Rotation | crazy | +0.00% | 0.00 | 0.00% |
-| 61 | Reddit Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 62 | Job Posting Acceleration | crazy | +0.00% | 0.00 | 0.00% |
-| 63 | Materials Sector Weekly Positive Correlation Breakdown With Xlb | crazy | +0.00% | 0.00 | 0.00% |
-| 64 | Housing Permit Velocity | crazy | +0.00% | 0.00 | 0.00% |
-| 65 | Xlb Daily Volatility Contraction Breakout | crazy | +0.00% | 0.00 | 0.00% |
-| 66 | Retail Rush Ahead Of Holidays | crazy | +0.00% | 0.00 | 0.00% |
-| 67 | Utility Power Grid Stress | crazy | +0.00% | 0.00 | 0.00% |
-| 68 | Healthcare Sector Google Trends Spike In Flu Symptoms | crazy | +0.00% | 0.00 | 0.00% |
-| 69 | Solar Storm Scorcher | crazy | +0.00% | 0.00 | 0.00% |
-| 70 | Xlv Google Trends Flu Search Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 71 | Social Media Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 72 | Reddit Gaming Thread Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 73 | Pet Food Supply Chain Disruption | crazy | +0.00% | 0.00 | 0.00% |
-| 74 | Weather Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 75 | Energy Sector Weekly Drawdown Exhaustion | crazy | +0.00% | 0.00 | 0.00% |
-| 76 | Glassdoor Misery Gradient | crazy | +0.00% | 0.00 | 0.00% |
-| 77 | Staples Sector Drawdown Rapid Recovery | crazy | +0.00% | 0.00 | 0.00% |
-| 78 | Reddit Mentions Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 79 | Online Ad Impression Volatility Trader | crazy | +0.00% | 0.00 | 0.00% |
-| 80 | Energy Sector Sudden Weekly Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 81 | Utilities Sector Weekly Temperature Drop Signal | crazy | +0.00% | 0.00 | 0.00% |
-| 82 | Financial Sector Momentum Divergence With Spy | crazy | +0.00% | 0.00 | 0.00% |
-| 83 | Weather Disruption Ripple Effects | crazy | +0.00% | 0.00 | 0.00% |
-| 84 | High Yield Spread Regime | crazy | +0.00% | 0.00 | 0.00% |
-| 85 | Bankruptcy Filing Rate | crazy | +0.00% | 0.00 | 0.00% |
-| 86 | Volatility Spike Follow-Through | crazy | +0.00% | 0.00 | 0.00% |
-| 87 | Reddit Subreddit Surge Momentum | crazy | +0.00% | 0.00 | 0.00% |
-| 88 | Weather Windfall | crazy | +0.00% | 0.00 | 0.00% |
-| 89 | Work From Home Frenzy | crazy | +0.00% | 0.00 | 0.00% |
-| 90 | Fintech Disruption Wave | crazy | +0.00% | 0.00 | 0.00% |
+| 17 | Airport Security Surge | crazy | +0.00% | 0.00 | 0.00% |
+| 18 | Real Estate Sector Weekly Google Trends Home Buying Surge | crazy | +0.00% | 0.00 | 0.00% |
+| 19 | Technology Sector Daily Ev Charger Count Surge | crazy | +0.00% | 0.00 | 0.00% |
+| 20 | Twitter Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 21 | Port Container Volume | crazy | +0.00% | 0.00 | 0.00% |
+| 22 | Misery Rotation | crazy | +0.00% | 0.00 | 0.00% |
+| 23 | Reddit Subreddit Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 24 | Reddit Mentions Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 25 | Global Tech Earnings Momentum | crazy | +0.00% | 0.00 | 0.00% |
+| 26 | 311 Call Rotation | crazy | +0.00% | 0.00 | 0.00% |
+| 27 | Energy Sector Sudden Weekly Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 28 | Superbowl Futures Trade | crazy | +0.00% | 0.00 | 0.00% |
+| 29 | Lumber Futures Rollercoaster | crazy | +0.00% | 0.00 | 0.00% |
+| 30 | Financial Sector Momentum Divergence With Spy | crazy | +0.00% | 0.00 | 0.00% |
+| 31 | LinkedIn Layoff Propagation | crazy | +0.00% | 0.00 | 0.00% |
+| 32 | Weather Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 33 | Craigslist Desperation Index | crazy | +0.00% | 0.00 | 0.00% |
+| 34 | Ev Euphoria | crazy | +0.00% | 0.00 | 0.00% |
+| 35 | Electric Vehicle Charge Station Density | crazy | +0.00% | 0.00 | 0.00% |
+| 36 | Rss Roar | crazy | +0.00% | 0.00 | 0.00% |
+| 37 | Reddit Sentiment Spike Trend | crazy | +0.00% | 0.00 | 0.00% |
+| 38 | Ev Charging Boom | crazy | +0.00% | 0.00 | 0.00% |
+| 39 | Cloud Storage Demand Surge | crazy | +0.00% | 0.00 | 0.00% |
+| 40 | Xlv Google Trends Flu Search Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 41 | Healthcare Sector Google Trends Spike In Flu Symptoms | crazy | +0.00% | 0.00 | 0.00% |
+| 42 | Weather Disruption Ripple Effects | crazy | +0.00% | 0.00 | 0.00% |
+| 43 | Xlb Daily Volatility Contraction Breakout | crazy | +0.00% | 0.00 | 0.00% |
+| 44 | Congress Trading Fade | crazy | +0.00% | 0.00 | 0.00% |
+| 45 | Crypto Capitulation Countdown | crazy | +0.00% | 0.00 | 0.00% |
+| 46 | Crypto Derivative Arbitrage | crazy | +0.00% | 0.00 | 0.00% |
+| 47 | Yield Curve Regime | crazy | +0.00% | 0.00 | 0.00% |
+| 48 | Utilities Sector Weekly Temperature Drop Signal | crazy | +0.00% | 0.00 | 0.00% |
+| 49 | Earthquake Energy Demand Indicator | crazy | +0.00% | 0.00 | 0.00% |
+| 50 | Bankruptcy Filing Rate | crazy | +0.00% | 0.00 | 0.00% |
+| 51 | TSA Body Count | crazy | +0.00% | 0.00 | 0.00% |
+| 52 | Patent Filing Velocity | crazy | +0.00% | 0.00 | 0.00% |
+| 53 | Airline Load Factor Proxy | crazy | +0.00% | 0.00 | 0.00% |
+| 54 | Reddit Gaming Thread Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 55 | Xlu Weekly Cold Snap Weather Correlation | crazy | +0.00% | 0.00 | 0.00% |
+| 56 | Utility Power Grid Stress | crazy | +0.00% | 0.00 | 0.00% |
+| 57 | Liquor Store Leading Indicator | crazy | +0.00% | 0.00 | 0.00% |
+| 58 | Reddit Subreddit Surge Momentum | crazy | +0.00% | 0.00 | 0.00% |
+| 59 | Materials Sector Weekly Volatility Contraction Breakout | crazy | +0.00% | 0.00 | 0.00% |
+| 60 | Reddit Emoji Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 61 | Work From Home Frenzy | crazy | +0.00% | 0.00 | 0.00% |
+| 62 | Solar Storm Scorcher | crazy | +0.00% | 0.00 | 0.00% |
+| 63 | Glassdoor Misery Gradient | crazy | +0.00% | 0.00 | 0.00% |
+| 64 | Reddit Subreddit Mention Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 65 | Materials Sector Weekly Positive Correlation Breakdown With Xlb | crazy | +0.00% | 0.00 | 0.00% |
+| 66 | Reddit Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 67 | Retail Rush Ahead Of Holidays | crazy | +0.00% | 0.00 | 0.00% |
+| 68 | Port Congestion Squeeze | crazy | +0.00% | 0.00 | 0.00% |
+| 69 | Pet Food Supply Chain Disruption | crazy | +0.00% | 0.00 | 0.00% |
+| 70 | Online Ad Impression Volatility Trader | crazy | +0.00% | 0.00 | 0.00% |
+| 71 | Small Business Formation | crazy | +0.00% | 0.00 | 0.00% |
+| 72 | Housing Permit Velocity | crazy | +0.00% | 0.00 | 0.00% |
+| 73 | Ev Charging Station Stampede | crazy | +0.00% | 0.00 | 0.00% |
+| 74 | Staples Sector Drawdown Rapid Recovery | crazy | +0.00% | 0.00 | 0.00% |
+| 75 | Truck Tonnage Index | crazy | +0.00% | 0.00 | 0.00% |
+| 76 | Freight Rail Carloads | crazy | +0.00% | 0.00 | 0.00% |
+| 77 | Reddit Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 78 | High Yield Spread Regime | crazy | +0.00% | 0.00 | 0.00% |
+| 79 | Cardboard Box Index | crazy | +0.00% | 0.00 | 0.00% |
+| 80 | Job Posting Acceleration | crazy | +0.00% | 0.00 | 0.00% |
+| 81 | Volatility Spike Follow-Through | crazy | +0.00% | 0.00 | 0.00% |
+| 82 | Reddit Sentiment Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 83 | Credit Card Delinquency | crazy | +0.00% | 0.00 | 0.00% |
+| 84 | Yelp Closure Velocity | crazy | +0.00% | 0.00 | 0.00% |
+| 85 | Fintech Disruption Wave | crazy | +0.00% | 0.00 | 0.00% |
+| 86 | Airport Shopping Spree | crazy | +0.00% | 0.00 | 0.00% |
+| 87 | Weather Windfall | crazy | +0.00% | 0.00 | 0.00% |
+| 88 | Consumer Sentiment | crazy | +0.00% | 0.00 | 0.00% |
+| 89 | Social Media Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 90 | Energy Sector Weekly Drawdown Exhaustion | crazy | +0.00% | 0.00 | 0.00% |
 | 91 | Consumer Discretionary Google Trends Surge For Sale Keywords | crazy | -0.01% | -57.47 | -0.02% |
 | 92 | Xlu Daily Electricity Demand Surge | crazy | -0.03% | -52.64 | -0.03% |
 | 93 | Industrial Sector Weekly Earthquake Activity Correlation Dip | crazy | -0.03% | -89.46 | -0.03% |

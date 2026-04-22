@@ -1,0 +1,37 @@
+{
+  "source_file": "data/ideas/runs/2026-04-22/publish/chatgpt_local-economy-weirdness-sudden-surge-in-municipal-building-p.md",
+  "target_file": "data/ideas/runs/2026-04-22/intervention/chatgpt_local-economy-weirdness-sudden-surge-in-municipal-building-p.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "adapter does not support weekly aggregation",
+      "data source instability",
+      "frequency mismatch",
+      "low_adapter_confidence",
+      "potential false positives",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 951,
+    "output_tokens": 96
+  },
+  "cost_usd": 0.0033375,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Monthly building permits data cannot be reliably used for weekly signals without new adapter or data transformation.\",\n  \"risk_flags\": [\n    \"frequency mismatch\",\n    \"adapter does not support weekly aggregation\",\n    \"data source instability\",\n    \"potential false positives\"\n  ]\n}\n```"
+}

@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-04-22/publish/chatgpt_macro-input-pressure-rapid-increase-in-natural-gas-futures-v.md",
+  "target_file": "data/ideas/runs/2026-04-22/intervention/chatgpt_macro-input-pressure-rapid-increase-in-natural-gas-futures-v.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": true,
+    "reason": "Volatility data for natural gas futures is required but price_only adapter does not provide volatility.",
+    "risk_flags": [
+      "adapter_mismatch",
+      "data_source_specificity",
+      "volatility_required"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 947,
+    "output_tokens": 83
+  },
+  "cost_usd": 0.0031975,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Volatility data for natural gas futures is required but price_only adapter does not provide volatility.\",\n  \"risk_flags\": [\"volatility_required\", \"adapter_mismatch\", \"data_source_specificity\"]\n}\n```"
+}

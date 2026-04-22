@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-22/publish/claude_temperature-shock-energy-demand-flip.md",
+  "target_file": "data/ideas/runs/2026-04-22/build/claude_temperature-shock-energy-demand-flip.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "weather_series",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a valid existing weather_series adapter with deterministic routing.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "weather_series"
+      ],
+      "scores": {
+        "reddit_activity": 1,
+        "weather_series": 2,
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 969,
+    "output_tokens": 76
+  },
+  "cost_usd": 0.0031825,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"weather_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid existing weather_series adapter with deterministic routing.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

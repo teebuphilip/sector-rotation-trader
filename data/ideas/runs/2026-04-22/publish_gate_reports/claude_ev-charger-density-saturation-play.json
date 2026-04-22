@@ -1,0 +1,32 @@
+{
+  "source_file": "data/ideas/runs/2026-04-22/publish/claude_ev-charger-density-saturation-play.md",
+  "target_file": "data/ideas/runs/2026-04-22/build/claude_ev-charger-density-saturation-play.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "openchargemap",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, deterministic, uses a real adapter matching the data source.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "openchargemap"
+      ],
+      "scores": {
+        "openchargemap": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 945,
+    "output_tokens": 77
+  },
+  "cost_usd": 0.0031325,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"openchargemap\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses a real adapter matching the data source.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}
