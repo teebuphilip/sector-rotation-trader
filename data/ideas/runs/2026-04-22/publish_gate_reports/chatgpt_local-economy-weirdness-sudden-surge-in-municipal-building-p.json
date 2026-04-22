@@ -30,8 +30,8 @@
   },
   "usage": {
     "input_tokens": 951,
-    "output_tokens": 96
+    "output_tokens": 97
   },
-  "cost_usd": 0.0033375,
-  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Monthly building permits data cannot be reliably used for weekly signals without new adapter or data transformation.\",\n  \"risk_flags\": [\n    \"frequency mismatch\",\n    \"adapter does not support weekly aggregation\",\n    \"data source instability\",\n    \"potential false positives\"\n  ]\n}\n```"
+  "cost_usd": 0.0033475,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Monthly building permits data cannot be reliably used for weekly signals without a new adapter or data transformation.\",\n  \"risk_flags\": [\n    \"frequency mismatch\",\n    \"adapter does not support weekly aggregation\",\n    \"data source instability\",\n    \"potential false positives\"\n  ]\n}\n```"
 }

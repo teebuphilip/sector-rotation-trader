@@ -1,21 +1,27 @@
 {
-  "attempted": 5,
-  "built": 5,
-  "completed": 0,
+  "attempted": 8,
+  "built": 8,
+  "completed": 8,
   "date": "2026-04-22",
   "dry_run": false,
-  "failed": 5,
+  "failed": 0,
   "generated": false,
   "intervention": 0,
-  "seeded": 0,
-  "skipped": 0,
+  "seeded": 8,
+  "skipped": 5,
   "status": "summary",
   "backtest": {
-    "seeded_ids": 0,
-    "matched_algos": 0,
-    "reviewed": 0,
-    "counts": {},
+    "seeded_ids": 8,
+    "matched_algos": 8,
+    "reviewed": 8,
+    "counts": {
+      "LIVE_ONLY_NON_PRICE": 7,
+      "NEEDS_HISTORY": 1
+    },
     "missing_algo_ids": [],
-    "output_root": "reports/backtests/factory/2026-04-22"
+    "output_root": "reports/backtests/factory/2026-04-22",
+    "start": "2024-01-01",
+    "end": "2026-04-22",
+    "slippage_bps": 5.0
   }
 }

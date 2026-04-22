@@ -1,17 +1,17 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-04-22T23:14:26Z",
+  "generated_at": "2026-04-22T23:26:16Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
-      "count": 18,
+      "count": 19,
       "by_status": {
-        "live_only": 2,
+        "live_only": 3,
         "parked": 2,
         "sandbox": 14
       },
       "by_evidence_class": {
-        "live_receipts_only": 2,
+        "live_receipts_only": 3,
         "needs_history": 14,
         "pending_seed": 2
       },
@@ -125,14 +125,14 @@
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 8,
+      "count": 10,
       "by_status": {
         "failed": 1,
-        "live_only": 3,
+        "live_only": 5,
         "sandbox": 4
       },
       "by_evidence_class": {
-        "live_receipts_only": 3,
+        "live_receipts_only": 5,
         "needs_history": 4,
         "v1_backtested": 1
       },
@@ -380,35 +380,14 @@
     },
     "freight_logistics": {
       "family": "freight_logistics",
-      "count": 5,
+      "count": 6,
       "by_status": {
-        "sandbox": 5
+        "sandbox": 6
       },
       "by_evidence_class": {
-        "needs_history": 5
+        "needs_history": 6
       },
       "leaders": [
-        {
-          "schema_version": "v1",
-          "key": "crazy:truck-tonnage",
-          "algo_type": "crazy",
-          "algo_id": "truck-tonnage",
-          "name": "Truck Tonnage Index",
-          "family": "freight_logistics",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "monthly",
-          "ytd_pct": 0.0,
-          "days_running": 77,
-          "beat_spy": false,
-          "spy_pct": 4.39,
-          "alpha_pct": -4.39,
-          "ret_30d_pct": 0.0,
-          "spy_delta_30d_pct": -8.52,
-          "last_snapshot": "2026-04-22",
-          "new_algo_date": null,
-          "comparator": null
-        },
         {
           "schema_version": "v1",
           "key": "crazy:port-container-volume",
@@ -507,6 +486,42 @@
           "last_snapshot": "2026-04-22",
           "new_algo_date": null,
           "comparator": null
+        },
+        {
+          "schema_version": "v1",
+          "key": "crazy:shipping-container-squeeze-play",
+          "algo_type": "crazy",
+          "algo_id": "shipping-container-squeeze-play",
+          "name": "Shipping Container Squeeze Play",
+          "family": "freight_logistics",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "weekly",
+          "ytd_pct": 0.0,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.0,
+          "spy_delta_30d_pct": -8.52,
+          "last_snapshot": "2026-04-22",
+          "new_algo_date": null,
+          "comparator": {
+            "primary_etf": "XLI",
+            "signals": {
+              "momentum_5d": {
+                "direction": "NEUTRAL",
+                "confidence": 0.0,
+                "return_pct": null
+              },
+              "momentum_20d": {
+                "direction": "NEUTRAL",
+                "confidence": 0.0,
+                "return_pct": null
+              }
+            },
+            "summary": "mixed"
+          }
         }
       ]
     },
@@ -587,14 +602,52 @@
     },
     "local_economy_weirdness": {
       "family": "local_economy_weirdness",
-      "count": 4,
+      "count": 5,
       "by_status": {
+        "live_only": 1,
         "sandbox": 4
       },
       "by_evidence_class": {
+        "live_receipts_only": 1,
         "needs_history": 4
       },
       "leaders": [
+        {
+          "schema_version": "v1",
+          "key": "crazy:seismic-activity-construction-halt-signal",
+          "algo_type": "crazy",
+          "algo_id": "seismic-activity-construction-halt-signal",
+          "name": "Seismic Activity Construction Halt Signal",
+          "family": "local_economy_weirdness",
+          "status": "live_only",
+          "evidence_class": "live_receipts_only",
+          "rebalance_frequency": "daily",
+          "ytd_pct": -0.14,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": -0.14,
+          "spy_delta_30d_pct": -8.66,
+          "last_snapshot": "2026-04-22",
+          "new_algo_date": null,
+          "comparator": {
+            "primary_etf": "XLB",
+            "signals": {
+              "momentum_5d": {
+                "direction": "NEUTRAL",
+                "confidence": 0.0,
+                "return_pct": null
+              },
+              "momentum_20d": {
+                "direction": "NEUTRAL",
+                "confidence": 0.0,
+                "return_pct": null
+              }
+            },
+            "summary": "mixed"
+          }
+        },
         {
           "schema_version": "v1",
           "key": "crazy:yelp-closure-velocity",
@@ -683,16 +736,16 @@
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 39,
+      "count": 40,
       "by_status": {
         "backtest_weak": 1,
         "live_only": 10,
         "parked": 2,
-        "sandbox": 26
+        "sandbox": 27
       },
       "by_evidence_class": {
         "live_receipts_only": 10,
-        "needs_history": 24,
+        "needs_history": 25,
         "pending_seed": 2,
         "v1_backtested": 3
       },
@@ -1004,58 +1057,16 @@
     },
     "travel_mobility": {
       "family": "travel_mobility",
-      "count": 5,
+      "count": 7,
       "by_status": {
         "live_only": 1,
-        "sandbox": 4
+        "sandbox": 6
       },
       "by_evidence_class": {
         "live_receipts_only": 1,
-        "needs_history": 4
+        "needs_history": 6
       },
       "leaders": [
-        {
-          "schema_version": "v1",
-          "key": "crazy:uber-mobility",
-          "algo_type": "crazy",
-          "algo_id": "uber-mobility",
-          "name": "Uber Mobility Index",
-          "family": "travel_mobility",
-          "status": "live_only",
-          "evidence_class": "live_receipts_only",
-          "rebalance_frequency": "weekly",
-          "ytd_pct": -0.41,
-          "days_running": 77,
-          "beat_spy": false,
-          "spy_pct": 4.39,
-          "alpha_pct": -4.8,
-          "ret_30d_pct": -0.41,
-          "spy_delta_30d_pct": -8.93,
-          "last_snapshot": "2026-04-22",
-          "new_algo_date": null,
-          "comparator": null
-        },
-        {
-          "schema_version": "v1",
-          "key": "crazy:tsa",
-          "algo_type": "crazy",
-          "algo_id": "tsa",
-          "name": "TSA Body Count",
-          "family": "travel_mobility",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "daily",
-          "ytd_pct": 0.0,
-          "days_running": 77,
-          "beat_spy": false,
-          "spy_pct": 4.39,
-          "alpha_pct": -4.39,
-          "ret_30d_pct": 0.0,
-          "spy_delta_30d_pct": -8.52,
-          "last_snapshot": "2026-04-22",
-          "new_algo_date": null,
-          "comparator": null
-        },
         {
           "schema_version": "v1",
           "key": "crazy:airport-shopping-spree",
@@ -1133,6 +1144,78 @@
           "last_snapshot": "2026-04-22",
           "new_algo_date": null,
           "comparator": null
+        },
+        {
+          "schema_version": "v1",
+          "key": "crazy:rental-car-shortage-volatility-spike",
+          "algo_type": "crazy",
+          "algo_id": "rental-car-shortage-volatility-spike",
+          "name": "Rental Car Shortage Volatility Spike",
+          "family": "travel_mobility",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "weekly",
+          "ytd_pct": 0.0,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.0,
+          "spy_delta_30d_pct": -8.52,
+          "last_snapshot": "2026-04-22",
+          "new_algo_date": null,
+          "comparator": {
+            "primary_etf": "XLY",
+            "signals": {
+              "momentum_5d": {
+                "direction": "NEUTRAL",
+                "confidence": 0.0,
+                "return_pct": null
+              },
+              "momentum_20d": {
+                "direction": "NEUTRAL",
+                "confidence": 0.0,
+                "return_pct": null
+              }
+            },
+            "summary": "mixed"
+          }
+        },
+        {
+          "schema_version": "v1",
+          "key": "crazy:ev-charger-density-saturation-play",
+          "algo_type": "crazy",
+          "algo_id": "ev-charger-density-saturation-play",
+          "name": "Ev Charger Density Saturation Play",
+          "family": "travel_mobility",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "ytd_pct": 0.0,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.0,
+          "spy_delta_30d_pct": -8.52,
+          "last_snapshot": "2026-04-22",
+          "new_algo_date": null,
+          "comparator": {
+            "primary_etf": "XLK",
+            "signals": {
+              "momentum_5d": {
+                "direction": "NEUTRAL",
+                "confidence": 0.0,
+                "return_pct": null
+              },
+              "momentum_20d": {
+                "direction": "NEUTRAL",
+                "confidence": 0.0,
+                "return_pct": null
+              }
+            },
+            "summary": "mixed"
+          }
         }
       ]
     }

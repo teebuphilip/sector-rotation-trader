@@ -11,15 +11,15 @@
   },
   "parse_failures": 0,
   "costs": {
-    "openai": 0.07974250000000001,
-    "total": 0.07974250000000001
+    "openai": 0.0795625,
+    "total": 0.0795625
   },
   "files": [
     {
       "file": "data/ideas/runs/2026-04-22/publish/chatgpt_attention-sentiment-daily-spike-in-google-trends-for-cyberat.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-04-22/build/chatgpt_attention-sentiment-daily-spike-in-google-trends-for-cyberat.md",
-      "reason": "Spec is clear, uses a valid existing adapter with deterministic routing and matches data source.",
+      "reason": "Spec is clear, deterministic, uses a valid existing adapter for Google Trends daily data.",
       "risk_flags": [
         "data source instability",
         "false positives",
@@ -32,13 +32,13 @@
       "file": "data/ideas/runs/2026-04-22/publish/chatgpt_attention-sentiment-weekly-surge-in-google-trends-for-inflat.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-04-22/build/chatgpt_attention-sentiment-weekly-surge-in-google-trends-for-inflat.md",
-      "reason": "Spec is clear, uses a valid existing adapter with deterministic routing and well-defined signal logic.",
+      "reason": "Spec is clear, uses a valid existing adapter with deterministic routing and feasible signal logic.",
       "risk_flags": [
         "data source instability",
         "false positives",
         "regime shifts"
       ],
-      "cost_usd": 0.003155,
+      "cost_usd": 0.003145,
       "parse_failed": false
     },
     {
@@ -47,12 +47,12 @@
       "target": "data/ideas/runs/2026-04-22/intervention/chatgpt_consumer-stress-spike-from-weekly-google-trends-on-debt-cons.md",
       "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
       "risk_flags": [
-        "potential data source instability",
-        "requires short position",
-        "short_trade_not_supported",
-        "signal threshold and exit logic need manual review"
+        "entry logic uses short position",
+        "position sizing with short exposure",
+        "requires shorting",
+        "short_trade_not_supported"
       ],
-      "cost_usd": 0.0031925,
+      "cost_usd": 0.0031625,
       "parse_failed": false
     },
     {
@@ -61,12 +61,12 @@
       "target": "data/ideas/runs/2026-04-22/intervention/chatgpt_consumer-stress-weekly-spike-in-google-trends-for-layoff-sea.md",
       "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
       "risk_flags": [
-        "entry/exit logic needs clarification",
+        "entry/exit logic needs manual review",
         "requires short position",
-        "seasonality adjustment unclear",
+        "seasonality handling unclear",
         "short_trade_not_supported"
       ],
-      "cost_usd": 0.00316,
+      "cost_usd": 0.00317,
       "parse_failed": false
     },
     {
@@ -77,13 +77,13 @@
       "risk_flags": [
         "low adapter routing confidence",
         "low_adapter_confidence",
-        "requires shorting",
+        "requires short position",
         "short_trade_not_supported",
         "unsupported_template_adapter",
-        "volume not specified",
+        "volume data not specified",
         "weekly frequency"
       ],
-      "cost_usd": 0.003275,
+      "cost_usd": 0.003285,
       "parse_failed": false
     },
     {
@@ -95,11 +95,10 @@
         "data source instability",
         "low adapter routing confidence",
         "low_adapter_confidence",
-        "requires volume data",
-        "unsupported_template_adapter",
-        "weekly frequency"
+        "manual adapter mapping required",
+        "unsupported_template_adapter"
       ],
-      "cost_usd": 0.0031225,
+      "cost_usd": 0.0031325,
       "parse_failed": false
     },
     {
@@ -124,7 +123,7 @@
       "reason": "Template builder does not support fred_series yet.",
       "risk_flags": [
         "data source ambiguity",
-        "potential adapter mismatch",
+        "potential data instability",
         "unsupported_template_adapter",
         "volume data not specified",
         "weekly frequency mapping"
@@ -145,7 +144,7 @@
         "potential false positives",
         "unsupported_template_adapter"
       ],
-      "cost_usd": 0.0033375,
+      "cost_usd": 0.0033475,
       "parse_failed": false
     },
     {
@@ -154,13 +153,13 @@
       "target": "data/ideas/runs/2026-04-22/intervention/chatgpt_local-economy-weirdness-weekly-surge-in-municipal-water-cons.md",
       "reason": "Template builder does not support html_table yet.",
       "risk_flags": [
+        "adapter mismatch",
         "data source instability",
         "low adapter routing confidence",
         "low_adapter_confidence",
-        "unsupported_template_adapter",
-        "weekly aggregation from scraped data"
+        "unsupported_template_adapter"
       ],
-      "cost_usd": 0.0031725,
+      "cost_usd": 0.0030525,
       "parse_failed": false
     },
     {
@@ -170,7 +169,7 @@
       "reason": "Volatility data for natural gas futures is required but price_only adapter does not provide volatility.",
       "risk_flags": [
         "adapter_mismatch",
-        "data_source_specificity",
+        "needs_volatility_data",
         "volatility_required"
       ],
       "cost_usd": 0.0031975,
@@ -195,12 +194,12 @@
       "target": "data/ideas/runs/2026-04-22/intervention/chatgpt_macro-input-pressure-weekly-rise-in-steel-futures-volume-sig.md",
       "reason": "price_only currently provides close/value data, not volume.",
       "risk_flags": [
-        "adapter_mismatch",
-        "data_source_specific",
+        "adapter mismatch",
+        "needs new volume adapter",
         "price_only_volume_gap",
-        "volume_required"
+        "volume data required"
       ],
-      "cost_usd": 0.00309,
+      "cost_usd": 0.00307,
       "parse_failed": false
     },
     {
@@ -223,13 +222,13 @@
       "file": "data/ideas/runs/2026-04-22/publish/chatgpt_travel-mobility-weekly-increase-in-google-trends-for-road-tr.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-04-22/build/chatgpt_travel-mobility-weekly-increase-in-google-trends-for-road-tr.md",
-      "reason": "Spec is clear, deterministic, uses a valid existing adapter for Google Trends data.",
+      "reason": "Spec is clear, uses a real adapter with matching data source and frequency.",
       "risk_flags": [
         "data source instability",
         "false positives",
         "regime shifts"
       ],
-      "cost_usd": 0.0031425,
+      "cost_usd": 0.0031325,
       "parse_failed": false
     },
     {
@@ -262,13 +261,13 @@
       "file": "data/ideas/runs/2026-04-22/publish/claude_grocery-store-foot-traffic-collapse-signal.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-04-22/build/claude_grocery-store-foot-traffic-collapse-signal.md",
-      "reason": "Spec is clear, uses a real adapter with matching data source and frequency.",
+      "reason": "Spec is clear, uses a valid existing adapter with deterministic routing and appropriate data source.",
       "risk_flags": [
         "data source instability",
         "false positives",
         "regime shifts"
       ],
-      "cost_usd": 0.003225,
+      "cost_usd": 0.003205,
       "parse_failed": false
     },
     {
@@ -288,13 +287,13 @@
       "file": "data/ideas/runs/2026-04-22/publish/claude_news-sentiment-rotation-fade-trade.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-04-22/build/claude_news-sentiment-rotation-fade-trade.md",
-      "reason": "Spec uses daily RSS count data with a matching existing adapter and clear deterministic logic.",
+      "reason": "Spec is deterministic, uses a valid rss_count adapter for daily article counts, and is structurally sound.",
       "risk_flags": [
         "data source instability",
         "false positives",
         "regime shifts"
       ],
-      "cost_usd": 0.0032525,
+      "cost_usd": 0.0032625,
       "parse_failed": false
     },
     {
@@ -314,39 +313,39 @@
       "file": "data/ideas/runs/2026-04-22/publish/claude_seismic-activity-construction-halt-signal.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-04-22/build/claude_seismic-activity-construction-halt-signal.md",
-      "reason": "Spec is deterministic, uses a valid adapter for USGS earthquake data, and is structurally sound.",
+      "reason": "Spec is clear, deterministic, uses a valid adapter for seismic data, and is buildable as is.",
       "risk_flags": [
         "data source instability",
         "false positives",
         "regime shifts"
       ],
-      "cost_usd": 0.00326,
+      "cost_usd": 0.00327,
       "parse_failed": false
     },
     {
       "file": "data/ideas/runs/2026-04-22/publish/claude_shipping-container-squeeze-play.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-04-22/build/claude_shipping-container-squeeze-play.md",
-      "reason": "Spec is clear, uses a real adapter matching the data source, and is deterministic.",
+      "reason": "Spec is clear, uses a valid existing adapter with matching data source and frequency.",
       "risk_flags": [
         "data source instability",
         "false positives",
         "regime shifts"
       ],
-      "cost_usd": 0.0031625,
+      "cost_usd": 0.0031525,
       "parse_failed": false
     },
     {
       "file": "data/ideas/runs/2026-04-22/publish/claude_temperature-shock-energy-demand-flip.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-04-22/build/claude_temperature-shock-energy-demand-flip.md",
-      "reason": "Spec is clear, uses a valid existing weather_series adapter with deterministic routing.",
+      "reason": "Spec is clear, uses a valid existing adapter with matching data source and frequency.",
       "risk_flags": [
         "data source instability",
         "false positives",
         "regime shifts"
       ],
-      "cost_usd": 0.0031825,
+      "cost_usd": 0.0031925,
       "parse_failed": false
     },
     {
@@ -361,7 +360,7 @@
         "regime shifts",
         "unsupported_template_adapter"
       ],
-      "cost_usd": 0.003245,
+      "cost_usd": 0.003215,
       "parse_failed": false
     }
   ]

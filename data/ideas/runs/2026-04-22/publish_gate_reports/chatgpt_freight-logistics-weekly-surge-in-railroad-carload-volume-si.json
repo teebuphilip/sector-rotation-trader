@@ -11,9 +11,8 @@
       "data source instability",
       "low adapter routing confidence",
       "low_adapter_confidence",
-      "requires volume data",
-      "unsupported_template_adapter",
-      "weekly frequency"
+      "manual adapter mapping required",
+      "unsupported_template_adapter"
     ],
     "route": {
       "adapters": [
@@ -29,8 +28,8 @@
   },
   "usage": {
     "input_tokens": 913,
-    "output_tokens": 84
+    "output_tokens": 85
   },
-  "cost_usd": 0.0031225,
-  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly provides weekly railroad carload volume data; scraping needed.\",\n  \"risk_flags\": [\"data source instability\", \"low adapter routing confidence\", \"requires volume data\", \"weekly frequency\"]\n}\n```"
+  "cost_usd": 0.0031325,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly supports public weekly railroad carload volume data; scraping implies new adapter needed.\",\n  \"risk_flags\": [\"data source instability\", \"low adapter routing confidence\", \"manual adapter mapping required\"]\n}\n```"
 }

@@ -9,7 +9,7 @@
     "reason": "Template builder does not support fred_series yet.",
     "risk_flags": [
       "data source ambiguity",
-      "potential adapter mismatch",
+      "potential data instability",
       "unsupported_template_adapter",
       "volume data not specified",
       "weekly frequency mapping"
@@ -32,5 +32,5 @@
     "output_tokens": 95
   },
   "cost_usd": 0.0032775,
-  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly measures weekly healthcare job postings; new adapter needed for public job posting scrapes or specific FRED series.\",\n  \"risk_flags\": [\"data source ambiguity\", \"weekly frequency mapping\", \"volume data not specified\", \"potential adapter mismatch\"]\n}\n```"
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly measures weekly healthcare job postings; new adapter needed for public job posting scrapes or specific FRED series.\",\n  \"risk_flags\": [\"data source ambiguity\", \"weekly frequency mapping\", \"volume data not specified\", \"potential data instability\"]\n}\n```"
 }

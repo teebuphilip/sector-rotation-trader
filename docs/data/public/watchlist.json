@@ -1,6 +1,6 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-04-22T23:14:26Z",
+  "generated_at": "2026-04-22T23:26:16Z",
   "algos": [
     {
       "schema_version": "v1",
@@ -257,6 +257,42 @@
       "new_algo_date": null,
       "comparator": {
         "primary_etf": "XLP",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:news-sentiment-rotation-fade-trade",
+      "algo_type": "crazy",
+      "algo_id": "news-sentiment-rotation-fade-trade",
+      "name": "News Sentiment Rotation Fade Trade",
+      "family": "attention_sentiment",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.01,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.01,
+      "spy_delta_30d_pct": -8.53,
+      "last_snapshot": "2026-04-22",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
         "signals": {
           "momentum_5d": {
             "direction": "NEUTRAL",
@@ -581,6 +617,114 @@
       "new_algo_date": null,
       "comparator": {
         "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:seismic-activity-construction-halt-signal",
+      "algo_type": "crazy",
+      "algo_id": "seismic-activity-construction-halt-signal",
+      "name": "Seismic Activity Construction Halt Signal",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.14,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.14,
+      "spy_delta_30d_pct": -8.66,
+      "last_snapshot": "2026-04-22",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLB",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:grocery-store-foot-traffic-collapse-signal",
+      "algo_type": "crazy",
+      "algo_id": "grocery-store-foot-traffic-collapse-signal",
+      "name": "Grocery Store Foot Traffic Collapse Signal",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.31,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.01,
+      "spy_delta_30d_pct": -8.53,
+      "last_snapshot": "2026-04-22",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          },
+          "momentum_20d": {
+            "direction": "NEUTRAL",
+            "confidence": 0.0,
+            "return_pct": null
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:healthcare-cost-shock-google-search-spike",
+      "algo_type": "crazy",
+      "algo_id": "healthcare-cost-shock-google-search-spike",
+      "name": "Healthcare Cost Shock Google Search Spike",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.38,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -8.52,
+      "last_snapshot": "2026-04-22",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLV",
         "signals": {
           "momentum_5d": {
             "direction": "NEUTRAL",

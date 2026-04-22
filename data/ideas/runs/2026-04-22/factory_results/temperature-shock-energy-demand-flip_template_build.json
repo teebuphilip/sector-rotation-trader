@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-04-22/build/claude_temperature-shock-energy-demand-flip.md",
+  "out": "crazy/algos/temperature_shock_energy_demand_flip.py",
+  "adapter": "weather_series",
+  "idea_id": "temperature-shock-energy-demand-flip",
+  "name": "Temperature Shock Energy Demand Flip",
+  "universe": [
+    "XLU"
+  ],
+  "frequency": "daily",
+  "family": "macro_input_pressure",
+  "threshold": 0.1,
+  "direction": "up",
+  "hold_days": 5
+}

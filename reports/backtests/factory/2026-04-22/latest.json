@@ -1,0 +1,85 @@
+{
+  "run_date": "2026-04-22",
+  "start": "2024-01-01",
+  "end": "2026-04-22",
+  "slippage_bps": 5.0,
+  "generated_at": "2026-04-22T23:25:19Z",
+  "counts": {
+    "LIVE_ONLY_NON_PRICE": 7,
+    "NEEDS_HISTORY": 1
+  },
+  "results": [
+    {
+      "algo_id": "ev-charger-density-saturation-play",
+      "name": "Ev Charger Density Saturation Play",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.openchargemap",
+      "metrics": {},
+      "run_date": "2026-04-22"
+    },
+    {
+      "algo_id": "grocery-store-foot-traffic-collapse-signal",
+      "name": "Grocery Store Foot Traffic Collapse Signal",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-22"
+    },
+    {
+      "algo_id": "healthcare-cost-shock-google-search-spike",
+      "name": "Healthcare Cost Shock Google Search Spike",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-22"
+    },
+    {
+      "algo_id": "news-sentiment-rotation-fade-trade",
+      "name": "News Sentiment Rotation Fade Trade",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.rss_count",
+      "metrics": {},
+      "run_date": "2026-04-22"
+    },
+    {
+      "algo_id": "rental-car-shortage-volatility-spike",
+      "name": "Rental Car Shortage Volatility Spike",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-22"
+    },
+    {
+      "algo_id": "seismic-activity-construction-halt-signal",
+      "name": "Seismic Activity Construction Halt Signal",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.earthquake_activity",
+      "metrics": {},
+      "run_date": "2026-04-22"
+    },
+    {
+      "algo_id": "shipping-container-squeeze-play",
+      "name": "Shipping Container Squeeze Play",
+      "family": "crazy",
+      "status": "NEEDS_HISTORY",
+      "reason": "Historical seed exists, but V1 cannot prove point-in-time price-only behavior",
+      "metrics": {},
+      "run_date": "2026-04-22"
+    },
+    {
+      "algo_id": "temperature-shock-energy-demand-flip",
+      "name": "Temperature Shock Energy Demand Flip",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.weather_series",
+      "metrics": {},
+      "run_date": "2026-04-22"
+    }
+  ]
+}

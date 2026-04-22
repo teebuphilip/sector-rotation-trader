@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-22T23:14:25
+Updated (UTC): 2026-04-22T23:26:15
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 99
+Crazy models: 107
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -115,3 +115,11 @@ Crazy models: 99
 | finra-dark-pool-signal | FINRA Dark Pool Signal | weekly |
 | energy-sector-sudden-weekly-volatility-spike | Energy Sector Sudden Weekly Volatility Spike | weekly |
 | materials-sector-weekly-volatility-contraction-breakout | Materials Sector Weekly Volatility Contraction Breakout | weekly |
+| ev-charger-density-saturation-play | Ev Charger Density Saturation Play | daily |
+| grocery-store-foot-traffic-collapse-signal | Grocery Store Foot Traffic Collapse Signal | weekly |
+| healthcare-cost-shock-google-search-spike | Healthcare Cost Shock Google Search Spike | weekly |
+| news-sentiment-rotation-fade-trade | News Sentiment Rotation Fade Trade | daily |
+| rental-car-shortage-volatility-spike | Rental Car Shortage Volatility Spike | weekly |
+| seismic-activity-construction-halt-signal | Seismic Activity Construction Halt Signal | daily |
+| shipping-container-squeeze-play | Shipping Container Squeeze Play | weekly |
+| temperature-shock-energy-demand-flip | Temperature Shock Energy Demand Flip | daily |

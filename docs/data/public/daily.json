@@ -1,55 +1,55 @@
 {
   "schema_version": "v1",
   "run_date": "2026-04-22",
-  "generated_at": "2026-04-22T23:14:50Z",
+  "generated_at": "2026-04-22T23:26:16Z",
   "counts": {
-    "total": 104,
+    "total": 112,
     "normal": 5,
-    "crazy": 99,
-    "watchlist": 31,
+    "crazy": 107,
+    "watchlist": 35,
     "promoted": 5,
     "graveyard": 7
   },
   "by_status": {
     "backtest_weak": 4,
     "failed": 1,
-    "live_only": 22,
+    "live_only": 26,
     "parked": 6,
     "promoted": 5,
-    "sandbox": 66
+    "sandbox": 70
   },
   "by_evidence_class": {
-    "live_receipts_only": 22,
-    "needs_history": 64,
+    "live_receipts_only": 26,
+    "needs_history": 68,
     "pending_seed": 6,
     "v1_backtested": 12
   },
   "new_algos_today": [],
   "top_bullish_etfs": [
     "XLK",
-    "XLP",
-    "XLY"
+    "XLY",
+    "XLP"
   ],
   "top_bearish_etfs": [
-    "XLE",
+    "XLRE",
     "XLV",
     "XLF"
   ],
   "ticker_count": 105,
-  "signal_count": 104,
+  "signal_count": 112,
   "sector_summary": {
     "XLK": {
       "etf": "XLK",
       "sector": "Technology",
-      "composite": "7 of 18",
+      "composite": "7 of 19",
       "composite_label": "MIXED",
       "composite_color": "yellow",
-      "bullish_pct": 39
+      "bullish_pct": 37
     },
     "XLV": {
       "etf": "XLV",
       "sector": "Healthcare",
-      "composite": "0 of 19",
+      "composite": "0 of 21",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 0
@@ -57,7 +57,7 @@
     "XLF": {
       "etf": "XLF",
       "sector": "Financial Services",
-      "composite": "0 of 17",
+      "composite": "0 of 18",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 0
@@ -65,39 +65,39 @@
     "XLY": {
       "etf": "XLY",
       "sector": "Consumer Cyclical",
-      "composite": "5 of 19",
+      "composite": "6 of 21",
       "composite_label": "BEARISH",
       "composite_color": "red",
-      "bullish_pct": 26
+      "bullish_pct": 29
     },
     "XLI": {
       "etf": "XLI",
       "sector": "Industrials",
+      "composite": "5 of 20",
+      "composite_label": "BEARISH",
+      "composite_color": "red",
+      "bullish_pct": 25
+    },
+    "XLC": {
+      "etf": "XLC",
+      "sector": "Communication Services",
+      "composite": "1 of 19",
+      "composite_label": "BEARISH",
+      "composite_color": "red",
+      "bullish_pct": 5
+    },
+    "XLP": {
+      "etf": "XLP",
+      "sector": "Consumer Defensive",
       "composite": "5 of 19",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 26
     },
-    "XLC": {
-      "etf": "XLC",
-      "sector": "Communication Services",
-      "composite": "1 of 18",
-      "composite_label": "BEARISH",
-      "composite_color": "red",
-      "bullish_pct": 6
-    },
-    "XLP": {
-      "etf": "XLP",
-      "sector": "Consumer Defensive",
-      "composite": "5 of 18",
-      "composite_label": "BEARISH",
-      "composite_color": "red",
-      "bullish_pct": 28
-    },
     "XLE": {
       "etf": "XLE",
       "sector": "Energy",
-      "composite": "1 of 20",
+      "composite": "1 of 21",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 5
@@ -105,26 +105,26 @@
     "XLB": {
       "etf": "XLB",
       "sector": "Basic Materials",
-      "composite": "4 of 19",
+      "composite": "4 of 21",
       "composite_label": "BEARISH",
       "composite_color": "red",
-      "bullish_pct": 21
+      "bullish_pct": 19
     },
     "XLRE": {
       "etf": "XLRE",
       "sector": "Real Estate",
-      "composite": "1 of 18",
+      "composite": "1 of 19",
       "composite_label": "BEARISH",
       "composite_color": "red",
-      "bullish_pct": 6
+      "bullish_pct": 5
     },
     "XLU": {
       "etf": "XLU",
       "sector": "Utilities",
-      "composite": "3 of 19",
+      "composite": "3 of 20",
       "composite_label": "BEARISH",
       "composite_color": "red",
-      "bullish_pct": 16
+      "bullish_pct": 15
     }
   },
   "top_live_ytd": [
@@ -400,7 +400,7 @@
     }
   ],
   "rolling_30d": {
-    "as_of": "2026-04-22T23:14:49.860729",
+    "as_of": "2026-04-22T23:26:15.281639",
     "spy_ret_30d_pct": 8.52,
     "leaders": [
       {

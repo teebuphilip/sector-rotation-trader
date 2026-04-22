@@ -9,7 +9,7 @@
     "reason": "Volatility data for natural gas futures is required but price_only adapter does not provide volatility.",
     "risk_flags": [
       "adapter_mismatch",
-      "data_source_specificity",
+      "needs_volatility_data",
       "volatility_required"
     ],
     "route": {
@@ -30,5 +30,5 @@
     "output_tokens": 83
   },
   "cost_usd": 0.0031975,
-  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Volatility data for natural gas futures is required but price_only adapter does not provide volatility.\",\n  \"risk_flags\": [\"volatility_required\", \"adapter_mismatch\", \"data_source_specificity\"]\n}\n```"
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Volatility data for natural gas futures is required but price_only adapter does not provide volatility.\",\n  \"risk_flags\": [\"volatility_required\", \"adapter_mismatch\", \"needs_volatility_data\"]\n}\n```"
 }

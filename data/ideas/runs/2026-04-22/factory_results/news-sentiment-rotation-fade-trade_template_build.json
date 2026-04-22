@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-04-22/build/claude_news-sentiment-rotation-fade-trade.md",
+  "out": "crazy/algos/news_sentiment_rotation_fade_trade.py",
+  "adapter": "rss_count",
+  "idea_id": "news-sentiment-rotation-fade-trade",
+  "name": "News Sentiment Rotation Fade Trade",
+  "universe": [
+    "XLY"
+  ],
+  "frequency": "daily",
+  "family": "attention_sentiment",
+  "threshold": 0.1,
+  "direction": "up",
+  "hold_days": 4
+}

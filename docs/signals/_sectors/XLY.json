@@ -1,13 +1,13 @@
 {
   "etf": "XLY",
   "sector": "Consumer Cyclical",
-  "bullish": 5,
-  "bearish": 14,
-  "neutral": 85,
-  "total_signals": 104,
-  "total_active": 19,
-  "bullish_pct": 26,
-  "composite": "5 of 19",
+  "bullish": 6,
+  "bearish": 15,
+  "neutral": 91,
+  "total_signals": 112,
+  "total_active": 21,
+  "bullish_pct": 29,
+  "composite": "6 of 21",
   "composite_label": "BEARISH",
   "composite_color": "red",
   "breakdown": [
@@ -111,6 +111,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "grocery-store-foot-traffic-collapse-signal",
+      "name": "Grocery Store Foot Traffic Collapse Signal",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 66,
+      "ytd_pct": -0.31,
+      "beat_spy": false
+    },
+    {
       "algo_id": "calls311",
       "name": "311 Call Rotation",
       "algo_type": "crazy",
@@ -180,6 +189,15 @@
       "direction": "BEARISH",
       "days_running": 77,
       "ytd_pct": -0.78,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "healthcare-cost-shock-google-search-spike",
+      "name": "Healthcare Cost Shock Google Search Spike",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": -0.37,
       "beat_spy": false
     },
     {
@@ -369,6 +387,15 @@
       "direction": "NEUTRAL",
       "days_running": 75,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "news-sentiment-rotation-fade-trade",
+      "name": "News Sentiment Rotation Fade Trade",
+      "algo_type": "crazy",
+      "direction": "BULLISH",
+      "days_running": 66,
+      "ytd_pct": -0.01,
       "beat_spy": false
     },
     {
@@ -597,6 +624,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "seismic-activity-construction-halt-signal",
+      "name": "Seismic Activity Construction Halt Signal",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": -0.14,
+      "beat_spy": false
+    },
+    {
       "algo_id": "materials-sector-weekly-positive-correlation-breakdown-with-",
       "name": "Materials Sector Weekly Positive Correlation Breakdown With Xlb",
       "algo_type": "crazy",
@@ -678,11 +714,29 @@
       "beat_spy": false
     },
     {
+      "algo_id": "shipping-container-squeeze-play",
+      "name": "Shipping Container Squeeze Play",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "housing-permit-velocity",
       "name": "Housing Permit Velocity",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 77,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "rental-car-shortage-volatility-spike",
+      "name": "Rental Car Shortage Volatility Spike",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -795,6 +849,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "ev-charger-density-saturation-play",
+      "name": "Ev Charger Density Saturation Play",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "google-gusts",
       "name": "Google Gusts",
       "algo_type": "crazy",
@@ -899,6 +962,15 @@
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 71,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "temperature-shock-energy-demand-flip",
+      "name": "Temperature Shock Energy Demand Flip",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
       "ytd_pct": 0.0,
       "beat_spy": false
     },

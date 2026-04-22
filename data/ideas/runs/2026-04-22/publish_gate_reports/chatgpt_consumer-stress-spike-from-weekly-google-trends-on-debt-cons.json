@@ -8,10 +8,10 @@
     "needs_new_adapter": false,
     "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
     "risk_flags": [
-      "potential data source instability",
-      "requires short position",
-      "short_trade_not_supported",
-      "signal threshold and exit logic need manual review"
+      "entry logic uses short position",
+      "position sizing with short exposure",
+      "requires shorting",
+      "short_trade_not_supported"
     ],
     "route": {
       "adapters": [
@@ -27,8 +27,8 @@
   },
   "usage": {
     "input_tokens": 941,
-    "output_tokens": 84
+    "output_tokens": 81
   },
-  "cost_usd": 0.0031925,
-  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires short position which is not supported by current algo envelope.\",\n  \"risk_flags\": [\"requires short position\", \"potential data source instability\", \"signal threshold and exit logic need manual review\"]\n}\n```"
+  "cost_usd": 0.0031625,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires short position which current algo envelope does not support.\",\n  \"risk_flags\": [\"requires shorting\", \"position sizing with short exposure\", \"entry logic uses short position\"]\n}\n```"
 }

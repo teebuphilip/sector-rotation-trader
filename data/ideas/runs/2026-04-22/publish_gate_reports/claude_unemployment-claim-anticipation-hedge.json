@@ -29,8 +29,8 @@
   },
   "usage": {
     "input_tokens": 970,
-    "output_tokens": 82
+    "output_tokens": 79
   },
-  "cost_usd": 0.003245,
-  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is deterministic, uses a valid fred_series adapter for ICSA weekly data, and logic is clear.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+  "cost_usd": 0.003215,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is deterministic, uses a real FRED series adapter, and is structurally sound.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
 }

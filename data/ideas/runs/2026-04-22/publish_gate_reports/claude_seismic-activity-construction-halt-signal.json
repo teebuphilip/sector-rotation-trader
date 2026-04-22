@@ -6,7 +6,7 @@
     "adapter_ok": true,
     "selected_adapter": "earthquake_activity",
     "needs_new_adapter": false,
-    "reason": "Spec is deterministic, uses a valid adapter for USGS earthquake data, and is structurally sound.",
+    "reason": "Spec is clear, deterministic, uses a valid adapter for seismic data, and is buildable as is.",
     "risk_flags": [
       "data source instability",
       "false positives",
@@ -25,8 +25,8 @@
   },
   "usage": {
     "input_tokens": 976,
-    "output_tokens": 82
+    "output_tokens": 83
   },
-  "cost_usd": 0.00326,
-  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is deterministic, uses a valid adapter for USGS earthquake data, and is structurally sound.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+  "cost_usd": 0.00327,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses a valid adapter for seismic data, and is buildable as is.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
 }
