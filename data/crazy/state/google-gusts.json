@@ -751,16 +751,26 @@
       "positions": {},
       "sector": "Google Gusts",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-22",
+      "cash": 99912.89,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99912.89,
+      "positions": {},
+      "sector": "Google Gusts",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-18",
-  "last_run": "2026-04-21",
+  "last_run": "2026-04-22",
   "meta": {
     "google-gusts": {
-      "signal_label": "RISK_OFF",
+      "signal_label": "HOLD",
       "name": "Google Gusts",
-      "last_signal": "RISK_OFF",
-      "last_run": "2026-04-21",
+      "last_signal": "HOLD",
+      "last_run": "2026-04-22",
       "latest_value": 0.0,
       "prior_avg": 5.8929,
       "signal_change": -1.0

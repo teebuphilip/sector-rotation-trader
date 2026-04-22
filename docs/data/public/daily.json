@@ -1,6 +1,6 @@
 {
-  "run_date": "2026-04-21",
-  "generated_at": "2026-04-21T23:11:50Z",
+  "run_date": "2026-04-22",
+  "generated_at": "2026-04-22T15:43:46Z",
   "counts": {
     "total": 104,
     "normal": 5,
@@ -23,204 +23,11 @@
     "pending_seed": 6,
     "v1_backtested": 12
   },
-  "new_algos_today": [
-    {
-      "key": "crazy:vix-fear-rotation",
-      "algo_type": "crazy",
-      "algo_id": "vix-fear-rotation",
-      "name": "VIX Fear Rotation",
-      "family": "attention_sentiment",
-      "status": "live_only",
-      "evidence_class": "live_receipts_only",
-      "rebalance_frequency": "daily",
-      "universe": [
-        "XLP",
-        "XLU",
-        "XLV",
-        "XLK",
-        "XLY",
-        "XLF"
-      ],
-      "equity": 92052.63,
-      "ytd_pct": -7.95,
-      "trade_count": 118,
-      "positions": 2,
-      "last_snapshot": "2026-04-21",
-      "last_signal": null,
-      "new_algo_date": "2026-04-21",
-      "backtest_status": null,
-      "backtest_reason": null,
-      "backtest_alpha_vs_spy_pct": null,
-      "backtest_trade_count": null
-    },
-    {
-      "key": "crazy:vix-term-structure",
-      "algo_type": "crazy",
-      "algo_id": "vix-term-structure",
-      "name": "VIX Term Structure",
-      "family": "attention_sentiment",
-      "status": "live_only",
-      "evidence_class": "live_receipts_only",
-      "rebalance_frequency": "daily",
-      "universe": [
-        "XLP",
-        "XLU",
-        "XLV",
-        "XLK",
-        "XLY",
-        "XLF"
-      ],
-      "equity": 93844.3,
-      "ytd_pct": -6.16,
-      "trade_count": 106,
-      "positions": 2,
-      "last_snapshot": "2026-04-21",
-      "last_signal": null,
-      "new_algo_date": "2026-04-21",
-      "backtest_status": null,
-      "backtest_reason": null,
-      "backtest_alpha_vs_spy_pct": null,
-      "backtest_trade_count": null
-    },
-    {
-      "key": "crazy:yelp-closure-velocity",
-      "algo_type": "crazy",
-      "algo_id": "yelp-closure-velocity",
-      "name": "Yelp Closure Velocity",
-      "family": "local_economy_weirdness",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
-      "rebalance_frequency": "weekly",
-      "universe": [
-        "XLY",
-        "XLK",
-        "XLF",
-        "XLP",
-        "XLU",
-        "XLV"
-      ],
-      "equity": 100000.0,
-      "ytd_pct": 0.0,
-      "trade_count": 0,
-      "positions": 0,
-      "last_snapshot": "2026-04-21",
-      "last_signal": null,
-      "new_algo_date": "2026-04-21",
-      "backtest_status": null,
-      "backtest_reason": null,
-      "backtest_alpha_vs_spy_pct": null,
-      "backtest_trade_count": null
-    },
-    {
-      "key": "crazy:energy-sector-sudden-weekly-volatility-spike",
-      "algo_type": "crazy",
-      "algo_id": "energy-sector-sudden-weekly-volatility-spike",
-      "name": "Energy Sector Sudden Weekly Volatility Spike",
-      "family": "political_insider_filing",
-      "status": "parked",
-      "evidence_class": "pending_seed",
-      "rebalance_frequency": "weekly",
-      "universe": [
-        "XLE"
-      ],
-      "equity": 100000.0,
-      "ytd_pct": 0.0,
-      "trade_count": 0,
-      "positions": 0,
-      "last_snapshot": "2026-04-21",
-      "last_signal": null,
-      "new_algo_date": "2026-04-21",
-      "backtest_status": null,
-      "backtest_reason": null,
-      "backtest_alpha_vs_spy_pct": null,
-      "backtest_trade_count": null
-    },
-    {
-      "key": "crazy:finra-dark-pool-signal",
-      "algo_type": "crazy",
-      "algo_id": "finra-dark-pool-signal",
-      "name": "FINRA Dark Pool Signal",
-      "family": "political_insider_filing",
-      "status": "live_only",
-      "evidence_class": "live_receipts_only",
-      "rebalance_frequency": "weekly",
-      "universe": [
-        "XLK",
-        "XLF",
-        "XLY",
-        "XLP",
-        "XLU",
-        "XLV"
-      ],
-      "equity": 99980.1,
-      "ytd_pct": -0.02,
-      "trade_count": 2,
-      "positions": 2,
-      "last_snapshot": "2026-04-21",
-      "last_signal": null,
-      "new_algo_date": "2026-04-21",
-      "backtest_status": null,
-      "backtest_reason": null,
-      "backtest_alpha_vs_spy_pct": null,
-      "backtest_trade_count": null
-    },
-    {
-      "key": "crazy:materials-sector-weekly-volatility-contraction-breakout",
-      "algo_type": "crazy",
-      "algo_id": "materials-sector-weekly-volatility-contraction-breakout",
-      "name": "Materials Sector Weekly Volatility Contraction Breakout",
-      "family": "political_insider_filing",
-      "status": "parked",
-      "evidence_class": "pending_seed",
-      "rebalance_frequency": "weekly",
-      "universe": [
-        "XLB"
-      ],
-      "equity": 100000.0,
-      "ytd_pct": 0.0,
-      "trade_count": 0,
-      "positions": 0,
-      "last_snapshot": "2026-04-21",
-      "last_signal": null,
-      "new_algo_date": "2026-04-21",
-      "backtest_status": null,
-      "backtest_reason": null,
-      "backtest_alpha_vs_spy_pct": null,
-      "backtest_trade_count": null
-    },
-    {
-      "key": "crazy:patent-filing-velocity",
-      "algo_type": "crazy",
-      "algo_id": "patent-filing-velocity",
-      "name": "Patent Filing Velocity",
-      "family": "political_insider_filing",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
-      "rebalance_frequency": "monthly",
-      "universe": [
-        "XLK",
-        "XLI",
-        "XLV",
-        "XLP",
-        "XLU"
-      ],
-      "equity": 100000.0,
-      "ytd_pct": 0.0,
-      "trade_count": 0,
-      "positions": 0,
-      "last_snapshot": "2026-04-21",
-      "last_signal": null,
-      "new_algo_date": "2026-04-21",
-      "backtest_status": null,
-      "backtest_reason": null,
-      "backtest_alpha_vs_spy_pct": null,
-      "backtest_trade_count": null
-    }
-  ],
+  "new_algos_today": [],
   "top_bullish_etfs": [
     "XLK",
-    "XLP",
-    "XLY"
+    "XLI",
+    "XLP"
   ],
   "top_bearish_etfs": [
     "XLV",
@@ -233,15 +40,15 @@
     "XLK": {
       "etf": "XLK",
       "sector": "Technology",
-      "composite": "7 of 16",
+      "composite": "7 of 17",
       "composite_label": "MIXED",
       "composite_color": "yellow",
-      "bullish_pct": 44
+      "bullish_pct": 41
     },
     "XLV": {
       "etf": "XLV",
       "sector": "Healthcare",
-      "composite": "0 of 17",
+      "composite": "0 of 18",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 0
@@ -249,7 +56,7 @@
     "XLF": {
       "etf": "XLF",
       "sector": "Financial Services",
-      "composite": "0 of 15",
+      "composite": "0 of 16",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 0
@@ -257,10 +64,10 @@
     "XLY": {
       "etf": "XLY",
       "sector": "Consumer Cyclical",
-      "composite": "5 of 17",
+      "composite": "5 of 18",
       "composite_label": "BEARISH",
       "composite_color": "red",
-      "bullish_pct": 29
+      "bullish_pct": 28
     },
     "XLI": {
       "etf": "XLI",
@@ -273,7 +80,7 @@
     "XLC": {
       "etf": "XLC",
       "sector": "Communication Services",
-      "composite": "0 of 17",
+      "composite": "0 of 18",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 0
@@ -281,31 +88,31 @@
     "XLP": {
       "etf": "XLP",
       "sector": "Consumer Defensive",
-      "composite": "5 of 16",
+      "composite": "5 of 17",
       "composite_label": "BEARISH",
       "composite_color": "red",
-      "bullish_pct": 31
+      "bullish_pct": 29
     },
     "XLE": {
       "etf": "XLE",
       "sector": "Energy",
-      "composite": "1 of 18",
+      "composite": "1 of 19",
       "composite_label": "BEARISH",
       "composite_color": "red",
-      "bullish_pct": 6
+      "bullish_pct": 5
     },
     "XLB": {
       "etf": "XLB",
       "sector": "Basic Materials",
-      "composite": "3 of 18",
+      "composite": "3 of 19",
       "composite_label": "BEARISH",
       "composite_color": "red",
-      "bullish_pct": 17
+      "bullish_pct": 16
     },
     "XLRE": {
       "etf": "XLRE",
       "sector": "Real Estate",
-      "composite": "1 of 16",
+      "composite": "1 of 17",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 6
@@ -313,10 +120,10 @@
     "XLU": {
       "etf": "XLU",
       "sector": "Utilities",
-      "composite": "3 of 17",
+      "composite": "3 of 18",
       "composite_label": "BEARISH",
       "composite_color": "red",
-      "bullish_pct": 18
+      "bullish_pct": 17
     }
   },
   "top_live_ytd": [
@@ -329,14 +136,34 @@
       "status": "promoted",
       "evidence_class": "v1_backtested",
       "rebalance_frequency": "weekly",
-      "ytd_pct": 5.88,
-      "days_running": 76,
+      "ytd_pct": 6.49,
+      "days_running": 77,
       "beat_spy": true,
-      "spy_pct": 3.34,
-      "alpha_pct": 2.54,
-      "ret_30d_pct": 6.68,
-      "spy_delta_30d_pct": -0.75,
-      "last_snapshot": "2026-04-21",
+      "spy_pct": 4.13,
+      "alpha_pct": 2.36,
+      "ret_30d_pct": 7.29,
+      "spy_delta_30d_pct": -0.95,
+      "last_snapshot": "2026-04-22",
+      "new_algo_date": null,
+      "comparator": null
+    },
+    {
+      "key": "normal:dmsr",
+      "algo_type": "normal",
+      "algo_id": "dmsr",
+      "name": "Antonacci Dual Momentum Sector Rotation",
+      "family": "core_rotation",
+      "status": "promoted",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "monthly_eom",
+      "ytd_pct": 4.31,
+      "days_running": 77,
+      "beat_spy": true,
+      "spy_pct": 4.13,
+      "alpha_pct": 0.18,
+      "ret_30d_pct": 4.16,
+      "spy_delta_30d_pct": -4.09,
+      "last_snapshot": "2026-04-22",
       "new_algo_date": null,
       "comparator": null
     },
@@ -350,33 +177,73 @@
       "evidence_class": "v1_backtested",
       "rebalance_frequency": "monthly_eom",
       "ytd_pct": 3.85,
-      "days_running": 76,
-      "beat_spy": true,
-      "spy_pct": 3.34,
-      "alpha_pct": 0.5,
+      "days_running": 77,
+      "beat_spy": false,
+      "spy_pct": 4.13,
+      "alpha_pct": -0.29,
       "ret_30d_pct": 1.22,
-      "spy_delta_30d_pct": -6.21,
-      "last_snapshot": "2026-04-21",
+      "spy_delta_30d_pct": -7.02,
+      "last_snapshot": "2026-04-22",
       "new_algo_date": null,
       "comparator": null
     },
     {
-      "key": "normal:dmsr",
-      "algo_type": "normal",
-      "algo_id": "dmsr",
-      "name": "Antonacci Dual Momentum Sector Rotation",
-      "family": "core_rotation",
-      "status": "promoted",
+      "key": "crazy:retail-sales-momentum",
+      "algo_type": "crazy",
+      "algo_id": "retail-sales-momentum",
+      "name": "Retail Sales Momentum",
+      "family": "consumer_stress",
+      "status": "live_only",
       "evidence_class": "live_receipts_only",
-      "rebalance_frequency": "monthly_eom",
-      "ytd_pct": 3.68,
+      "rebalance_frequency": "monthly",
+      "ytd_pct": 0.57,
       "days_running": 76,
-      "beat_spy": true,
-      "spy_pct": 3.34,
-      "alpha_pct": 0.34,
-      "ret_30d_pct": 3.53,
-      "spy_delta_30d_pct": -3.9,
-      "last_snapshot": "2026-04-21",
+      "beat_spy": false,
+      "spy_pct": 4.13,
+      "alpha_pct": -3.56,
+      "ret_30d_pct": 0.57,
+      "spy_delta_30d_pct": -7.68,
+      "last_snapshot": "2026-04-22",
+      "new_algo_date": null,
+      "comparator": null
+    },
+    {
+      "key": "crazy:finra-dark-pool-signal",
+      "algo_type": "crazy",
+      "algo_id": "finra-dark-pool-signal",
+      "name": "FINRA Dark Pool Signal",
+      "family": "political_insider_filing",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.33,
+      "days_running": 67,
+      "beat_spy": false,
+      "spy_pct": 4.13,
+      "alpha_pct": -3.8,
+      "ret_30d_pct": 0.33,
+      "spy_delta_30d_pct": -7.92,
+      "last_snapshot": "2026-04-22",
+      "new_algo_date": null,
+      "comparator": null
+    },
+    {
+      "key": "crazy:insider-trading-signals",
+      "algo_type": "crazy",
+      "algo_id": "insider-trading-signals",
+      "name": "Insider Trading Signals",
+      "family": "political_insider_filing",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.22,
+      "days_running": 76,
+      "beat_spy": false,
+      "spy_pct": 4.13,
+      "alpha_pct": -3.92,
+      "ret_30d_pct": 0.22,
+      "spy_delta_30d_pct": -8.03,
+      "last_snapshot": "2026-04-22",
       "new_algo_date": null,
       "comparator": null
     },
@@ -390,13 +257,13 @@
       "evidence_class": "live_receipts_only",
       "rebalance_frequency": "daily",
       "ytd_pct": 0.05,
-      "days_running": 69,
+      "days_running": 70,
       "beat_spy": false,
-      "spy_pct": 3.34,
-      "alpha_pct": -3.29,
+      "spy_pct": 4.13,
+      "alpha_pct": -4.08,
       "ret_30d_pct": 0.06,
-      "spy_delta_30d_pct": -7.37,
-      "last_snapshot": "2026-04-21",
+      "spy_delta_30d_pct": -8.19,
+      "last_snapshot": "2026-04-22",
       "new_algo_date": null,
       "comparator": {
         "primary_etf": "XLE",
@@ -425,13 +292,13 @@
       "evidence_class": "v1_backtested",
       "rebalance_frequency": "daily",
       "ytd_pct": 0.05,
-      "days_running": 69,
+      "days_running": 70,
       "beat_spy": false,
-      "spy_pct": 3.34,
-      "alpha_pct": -3.3,
+      "spy_pct": 4.13,
+      "alpha_pct": -4.09,
       "ret_30d_pct": 0.05,
-      "spy_delta_30d_pct": -7.39,
-      "last_snapshot": "2026-04-21",
+      "spy_delta_30d_pct": -8.2,
+      "last_snapshot": "2026-04-22",
       "new_algo_date": null,
       "comparator": {
         "primary_etf": "XLK",
@@ -460,13 +327,13 @@
       "evidence_class": "v1_backtested",
       "rebalance_frequency": "weekly",
       "ytd_pct": 0.03,
-      "days_running": 69,
+      "days_running": 70,
       "beat_spy": false,
-      "spy_pct": 3.34,
-      "alpha_pct": -3.32,
+      "spy_pct": 4.13,
+      "alpha_pct": -4.11,
       "ret_30d_pct": 0.0,
-      "spy_delta_30d_pct": -7.43,
-      "last_snapshot": "2026-04-21",
+      "spy_delta_30d_pct": -8.25,
+      "last_snapshot": "2026-04-22",
       "new_algo_date": null,
       "comparator": {
         "primary_etf": "XLB",
@@ -495,13 +362,13 @@
       "evidence_class": "v1_backtested",
       "rebalance_frequency": "daily",
       "ytd_pct": 0.02,
-      "days_running": 69,
+      "days_running": 70,
       "beat_spy": false,
-      "spy_pct": 3.34,
-      "alpha_pct": -3.32,
+      "spy_pct": 4.13,
+      "alpha_pct": -4.11,
       "ret_30d_pct": 0.0,
-      "spy_delta_30d_pct": -7.43,
-      "last_snapshot": "2026-04-21",
+      "spy_delta_30d_pct": -8.25,
+      "last_snapshot": "2026-04-22",
       "new_algo_date": null,
       "comparator": {
         "primary_etf": "XLP",
@@ -519,141 +386,81 @@
         },
         "summary": "mixed"
       }
-    },
-    {
-      "key": "crazy:reddit-mentions-volatility-spike",
-      "algo_type": "crazy",
-      "algo_id": "reddit-mentions-volatility-spike",
-      "name": "Reddit Mentions Volatility Spike",
-      "family": "attention_sentiment",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
-      "rebalance_frequency": "daily",
-      "ytd_pct": 0.0,
-      "days_running": 75,
-      "beat_spy": false,
-      "spy_pct": 3.34,
-      "alpha_pct": -3.34,
-      "ret_30d_pct": 0.0,
-      "spy_delta_30d_pct": -7.43,
-      "last_snapshot": "2026-04-21",
-      "new_algo_date": null,
-      "comparator": null
-    },
-    {
-      "key": "crazy:reddit-gaming-thread-spike",
-      "algo_type": "crazy",
-      "algo_id": "reddit-gaming-thread-spike",
-      "name": "Reddit Gaming Thread Spike",
-      "family": "attention_sentiment",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
-      "rebalance_frequency": "daily",
-      "ytd_pct": 0.0,
-      "days_running": 75,
-      "beat_spy": false,
-      "spy_pct": 3.34,
-      "alpha_pct": -3.34,
-      "ret_30d_pct": 0.0,
-      "spy_delta_30d_pct": -7.43,
-      "last_snapshot": "2026-04-21",
-      "new_algo_date": null,
-      "comparator": null
-    },
-    {
-      "key": "crazy:reddit-emoji-sentiment-spike",
-      "algo_type": "crazy",
-      "algo_id": "reddit-emoji-sentiment-spike",
-      "name": "Reddit Emoji Sentiment Spike",
-      "family": "attention_sentiment",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
-      "rebalance_frequency": "daily",
-      "ytd_pct": 0.0,
-      "days_running": 75,
-      "beat_spy": false,
-      "spy_pct": 3.34,
-      "alpha_pct": -3.34,
-      "ret_30d_pct": 0.0,
-      "spy_delta_30d_pct": -7.43,
-      "last_snapshot": "2026-04-21",
-      "new_algo_date": null,
-      "comparator": null
     }
   ],
   "rolling_30d": {
-    "as_of": "2026-04-21T23:11:49.472529",
-    "spy_ret_30d_pct": 7.43,
+    "as_of": "2026-04-22T15:43:45.603279",
+    "spy_ret_30d_pct": 8.25,
     "leaders": [
       {
         "algo_id": "baileymol",
         "name": "Algo Baileymol (Chaos Monger)",
         "algo_type": "normal",
-        "ret_30d_pct": 6.68,
-        "vs_spy_30d_pct": -0.75
+        "ret_30d_pct": 7.29,
+        "vs_spy_30d_pct": -0.95
       },
       {
         "algo_id": "biscotti",
         "name": "Algo Biscotti (Unconditional Loyalty)",
         "algo_type": "normal",
-        "ret_30d_pct": 6.19,
-        "vs_spy_30d_pct": -1.24
+        "ret_30d_pct": 5.85,
+        "vs_spy_30d_pct": -2.4
       },
       {
         "algo_id": "vix-term-structure",
         "name": "VIX Term Structure",
         "algo_type": "crazy",
-        "ret_30d_pct": 4.08,
-        "vs_spy_30d_pct": -3.35
+        "ret_30d_pct": 4.74,
+        "vs_spy_30d_pct": -3.5
       },
       {
         "algo_id": "dmsr",
         "name": "Antonacci Dual Momentum Sector Rotation",
         "algo_type": "normal",
-        "ret_30d_pct": 3.53,
-        "vs_spy_30d_pct": -3.9
+        "ret_30d_pct": 4.16,
+        "vs_spy_30d_pct": -4.09
       },
       {
         "algo_id": "baileymol",
         "name": "Chaos Rotation Lab",
         "algo_type": "crazy",
-        "ret_30d_pct": 2.36,
-        "vs_spy_30d_pct": -5.08
+        "ret_30d_pct": 2.95,
+        "vs_spy_30d_pct": -5.3
+      },
+      {
+        "algo_id": "vix-fear-rotation",
+        "name": "VIX Fear Rotation",
+        "algo_type": "crazy",
+        "ret_30d_pct": 1.49,
+        "vs_spy_30d_pct": -6.76
+      },
+      {
+        "algo_id": "biscotti",
+        "name": "Algo Biscotti (Unconditional Loyalty)",
+        "algo_type": "crazy",
+        "ret_30d_pct": 1.24,
+        "vs_spy_30d_pct": -7.01
       },
       {
         "algo_id": "faber",
         "name": "Faber Momentum Rotation",
         "algo_type": "normal",
         "ret_30d_pct": 1.22,
-        "vs_spy_30d_pct": -6.21
+        "vs_spy_30d_pct": -7.02
       },
       {
-        "algo_id": "vix-fear-rotation",
-        "name": "VIX Fear Rotation",
+        "algo_id": "retail-sales-momentum",
+        "name": "Retail Sales Momentum",
         "algo_type": "crazy",
-        "ret_30d_pct": 0.84,
-        "vs_spy_30d_pct": -6.59
+        "ret_30d_pct": 0.57,
+        "vs_spy_30d_pct": -7.68
       },
       {
-        "algo_id": "biscotti",
-        "name": "Algo Biscotti (Unconditional Loyalty)",
+        "algo_id": "finra-dark-pool-signal",
+        "name": "FINRA Dark Pool Signal",
         "algo_type": "crazy",
-        "ret_30d_pct": 0.79,
-        "vs_spy_30d_pct": -6.64
-      },
-      {
-        "algo_id": "earthquake-aftershock-amplifier",
-        "name": "Earthquake Aftershock Amplifier",
-        "algo_type": "crazy",
-        "ret_30d_pct": 0.06,
-        "vs_spy_30d_pct": -7.37
-      },
-      {
-        "algo_id": "nrwise",
-        "name": "NRWise Acceleration",
-        "algo_type": "normal",
-        "ret_30d_pct": 0.06,
-        "vs_spy_30d_pct": -7.38
+        "ret_30d_pct": 0.33,
+        "vs_spy_30d_pct": -7.92
       }
     ]
   }
