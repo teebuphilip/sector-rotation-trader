@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-04-22 (session 17 — ops integrity check + factory seed fix)
+
+### fix: direct file-based crazy seeding no longer depends on registry presence
+- `crazy_seed.py --algo-file ...` was previously converting the file path into an algo id and then asking the registry loader to find it.
+- After the anti-orphan registry change, newly built algos were not appended to the registry until seed succeeded, so factory seeds failed with `No matching crazy algos found to seed`.
+- `crazy_seed.py` now imports the provided file directly, finds the single `CrazyAlgoBase` subclass in that module, and seeds it without requiring a pre-existing registry entry.
+
+### chore: record first recurring ops integrity scan
+- Added `ops_integrity_2026-04-22.md` with the scan findings across ideation, tactical, and factory paths.
+- Marked the first recurring `Validate ops/pipeline integrity — deep scan/check` CSV task as `DONE`.
+
+Files: `crazy_seed.py`, `ops_integrity_2026-04-22.md`, `crazystockalgo_execution_plan.csv`, `CHANGELOG.md`
+
 ## 2026-04-22 (session 16 — morning content email + post generator)
 
 ### feat: LLM post generator (scripts/post_generator.py)
