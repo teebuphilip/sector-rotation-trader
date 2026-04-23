@@ -117,6 +117,16 @@
   .rank-note { border: 1px solid var(--border); border-radius: 12px; background: rgba(255,255,255,0.035); padding: 14px 16px; margin: 14px 0 18px; color: var(--muted); font-size: 13px; line-height: 1.65; }
   .rank-note strong { color: var(--text); }
   .rank-note code { font-family: var(--mono); color: var(--gold); background: rgba(255,204,102,0.08); padding: 1px 5px; border-radius: 4px; }
+  .pulse { background: rgba(25,211,143,0.04); border-top: 1px solid rgba(25,211,143,0.14); border-bottom: 1px solid rgba(25,211,143,0.14); padding: 12px 0; }
+  .pulse .wrap { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .pulse-label { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
+  .pulse-items { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .pulse-item { font-family: var(--mono); font-size: 13px; color: var(--text); }
+  .pulse-sep { color: var(--muted); font-size: 13px; }
+  .pulse-date { color: var(--muted); font-size: 11px; }
+  .cred-strip { display: flex; justify-content: center; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .cred-strip .cred-item { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .cred-strip .cred-dot { color: rgba(255,255,255,0.2); font-size: 11px; }
   @media (max-width: 600px) {
     .hero { padding: 40px 16px 32px; }
     .hero-stats { gap: 20px; }
@@ -148,13 +158,27 @@
       <div class="label">Sectors Tracked</div>
     </div>
   </div>
-  <a class="cta" href="landing.html#waitlist">Join our mailing list</a>
-  <span class="cta-sub">Weekly lab notes, launch updates, and what broke</span>
-  <div class="hero-strip" style="justify-content:center; margin-top:18px;">
+  <a class="cta" href="landing.html#waitlist">Get the weekly lab notes</a>
+  <span class="cta-sub">See which weird signals are surviving, which are dead, and which are still unresolved.</span>
+  <div class="cred-strip">
+    <span class="cred-item">112 signals tracked</span>
+    <span class="cred-dot">&middot;</span>
+    <span class="cred-item">failures stay visible</span>
+    <span class="cred-dot">&middot;</span>
+    <span class="cred-item">live since April 6, 2026</span>
+  </div>
+  <div class="hero-strip" style="justify-content:center; margin-top:12px;">
     <span class="pill">Start at <a href="landing.html" style="color:inherit;">Home</a></span>
     <span class="pill">Then <a href="families.html" style="color:inherit;">Families</a></span>
     <span class="pill">Then <a href="daily.html" style="color:inherit;">Daily Report</a></span>
     <span class="pill">Then <a href="blog/index.html" style="color:inherit;">Blog</a></span>
+  </div>
+</div>
+
+<div class="pulse">
+  <div class="wrap">
+    <span class="pulse-label">TODAY IN THE LAB</span>
+    <div class="pulse-items"><span class="pulse-item">Algo Baileymol (Chaos Monger): +6.65% YTD</span> <span class="pulse-sep">&middot;</span> <span class="pulse-item"><strong>2</strong> of 112 beating SPY</span> <span class="pulse-sep">&middot;</span> <span class="pulse-item">XLK strongest consensus</span> <span class="pulse-sep">&middot;</span> <span class="pulse-item">XLRE weakest consensus</span> <span class="pulse-sep">&middot;</span> <span class="pulse-item pulse-date">2026-04-22</span></div>
   </div>
 </div>
 
@@ -317,7 +341,7 @@
 <tr class=" paywall-row"><td class="rank">110</td><td><span class="algo-name">Shipping Container Squeeze Play</span></td><td><span class="algo-type-badge">crazy</span></td><td class="return-zero">0.00%</td><td class="vs-spy vs-spy-neg">n/a</td><td><div class="comparator-pack" title="Current comparator directions for XLI"><span class="comp-badge comp-down">5D DOWN</span><span class="comp-badge comp-up">20D UP</span></div></td><td class="days">0d</td><td><span class="status-lag">LAGGING</span></td></tr>
 <tr class=" paywall-row"><td class="rank">111</td><td><span class="algo-name">Rental Car Shortage Volatility Spike</span></td><td><span class="algo-type-badge">crazy</span></td><td class="return-zero">0.00%</td><td class="vs-spy vs-spy-neg">n/a</td><td><div class="comparator-pack" title="Current comparator directions for XLY"><span class="comp-badge comp-up">5D UP</span><span class="comp-badge comp-up">20D UP</span></div></td><td class="days">0d</td><td><span class="status-lag">LAGGING</span></td></tr>
 <tr class=" paywall-row"><td class="rank">112</td><td><span class="algo-name">Ev Charger Density Saturation Play</span></td><td><span class="algo-type-badge">crazy</span></td><td class="return-zero">0.00%</td><td class="vs-spy vs-spy-neg">n/a</td><td><div class="comparator-pack" title="Current comparator directions for XLK"><span class="comp-badge comp-up">5D UP</span><span class="comp-badge comp-up">20D UP</span></div></td><td class="days">0d</td><td><span class="status-lag">LAGGING</span></td></tr>
-<tr class="paywall-cta-row"><td colspan="8"><a href="landing.html#waitlist">&rarr; Join our mailing list for launch updates</a></td></tr>
+<tr class="paywall-cta-row"><td colspan="8"><a href="landing.html#waitlist">&rarr; Get the weekly lab notes</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -338,7 +362,7 @@
         <div class="tr-ticker" id="tr-ticker"></div>
         <div class="tr-sector" id="tr-sector"></div>
         <div class="tr-verdict" id="tr-verdict"></div>
-        <span class="tr-unlock">Want the full breakdown later? <a href="landing.html#waitlist">Join our mailing list</a></span>
+        <span class="tr-unlock">Want the full breakdown later? <a href="landing.html#waitlist">Get the weekly lab notes</a></span>
       </div>
     </div>
   </div>

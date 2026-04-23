@@ -164,7 +164,7 @@ def _leaderboard_rows_html(algos: list) -> str:
     rows.append(
         '<tr class="paywall-cta-row">'
         '<td colspan="8"><a href="landing.html#waitlist">'
-        '&rarr; Join our mailing list for launch updates</a></td>'
+        '&rarr; Get the weekly lab notes</a></td>'
         '</tr>'
     )
     return "\n".join(rows)
@@ -180,6 +180,52 @@ def _site_links() -> str:
         '<a href="blog/index.html">Blog</a> &middot; '
         '<a href="legal.html">Legal</a>'
     )
+
+
+def _pulse_block_html(daily: dict, total: int | None = None, beating: int | None = None) -> str:
+    counts = daily.get("counts") or {}
+    total = total if total is not None else counts.get("total", 0)
+    top = (daily.get("top_live_ytd") or [])[:1]
+    leader_text = ""
+    if top:
+        t = top[0]
+        name = t.get("name", "")
+        ytd = t.get("ytd_pct")
+        try:
+            r = float(ytd)
+            sign = "+" if r >= 0 else ""
+            leader_text = f"{name}: {sign}{r:.2f}% YTD"
+        except (TypeError, ValueError):
+            leader_text = name
+
+    bullish = (daily.get("top_bullish_etfs") or [])[:1]
+    bearish = (daily.get("top_bearish_etfs") or [])[:1]
+    bullish_text = f"{bullish[0]} strongest consensus" if bullish else ""
+    bearish_text = f"{bearish[0]} weakest consensus" if bearish else ""
+
+    run_date = daily.get("run_date", "")
+
+    items = []
+    if leader_text:
+        items.append(f'<span class="pulse-item">{_e(leader_text)}</span>')
+    if beating is not None:
+        items.append(f'<span class="pulse-item"><strong>{_e(beating)}</strong> of {_e(total)} beating SPY</span>')
+    elif total:
+        items.append(f'<span class="pulse-item"><strong>{_e(total)}</strong> algos tracked</span>')
+    if bullish_text:
+        items.append(f'<span class="pulse-item">{_e(bullish_text)}</span>')
+    if bearish_text:
+        items.append(f'<span class="pulse-item">{_e(bearish_text)}</span>')
+    if run_date:
+        items.append(f'<span class="pulse-item pulse-date">{_e(run_date)}</span>')
+
+    inner = ' <span class="pulse-sep">&middot;</span> '.join(items)
+    return f"""<div class="pulse">
+  <div class="wrap">
+    <span class="pulse-label">TODAY IN THE LAB</span>
+    <div class="pulse-items">{inner}</div>
+  </div>
+</div>"""
 
 
 def _footer_html(generated_at: str, run_date: str, label: str = "Updated nightly at 6:30 PM ET") -> str:
@@ -312,6 +358,16 @@ CSS = """
   .rank-note { border: 1px solid var(--border); border-radius: 12px; background: rgba(255,255,255,0.035); padding: 14px 16px; margin: 14px 0 18px; color: var(--muted); font-size: 13px; line-height: 1.65; }
   .rank-note strong { color: var(--text); }
   .rank-note code { font-family: var(--mono); color: var(--gold); background: rgba(255,204,102,0.08); padding: 1px 5px; border-radius: 4px; }
+  .pulse { background: rgba(25,211,143,0.04); border-top: 1px solid rgba(25,211,143,0.14); border-bottom: 1px solid rgba(25,211,143,0.14); padding: 12px 0; }
+  .pulse .wrap { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .pulse-label { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
+  .pulse-items { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .pulse-item { font-family: var(--mono); font-size: 13px; color: var(--text); }
+  .pulse-sep { color: var(--muted); font-size: 13px; }
+  .pulse-date { color: var(--muted); font-size: 11px; }
+  .cred-strip { display: flex; justify-content: center; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .cred-strip .cred-item { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .cred-strip .cred-dot { color: rgba(255,255,255,0.2); font-size: 11px; }
   @media (max-width: 600px) {
     .hero { padding: 40px 16px 32px; }
     .hero-stats { gap: 20px; }
@@ -388,15 +444,24 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
       <div class="label">Sectors Tracked</div>
     </div>
   </div>
-  <a class="cta" href="landing.html#waitlist">Join our mailing list</a>
-  <span class="cta-sub">Weekly lab notes, launch updates, and what broke</span>
-  <div class="hero-strip" style="justify-content:center; margin-top:18px;">
+  <a class="cta" href="landing.html#waitlist">Get the weekly lab notes</a>
+  <span class="cta-sub">See which weird signals are surviving, which are dead, and which are still unresolved.</span>
+  <div class="cred-strip">
+    <span class="cred-item">{_e(total)} signals tracked</span>
+    <span class="cred-dot">&middot;</span>
+    <span class="cred-item">failures stay visible</span>
+    <span class="cred-dot">&middot;</span>
+    <span class="cred-item">live since April 6, 2026</span>
+  </div>
+  <div class="hero-strip" style="justify-content:center; margin-top:12px;">
     <span class="pill">Start at <a href="landing.html" style="color:inherit;">Home</a></span>
     <span class="pill">Then <a href="families.html" style="color:inherit;">Families</a></span>
     <span class="pill">Then <a href="daily.html" style="color:inherit;">Daily Report</a></span>
     <span class="pill">Then <a href="blog/index.html" style="color:inherit;">Blog</a></span>
   </div>
 </div>
+
+{_pulse_block_html(daily, total, beating)}
 
 <section>
   <div class="wrap">
@@ -456,7 +521,7 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
         <div class="tr-ticker" id="tr-ticker"></div>
         <div class="tr-sector" id="tr-sector"></div>
         <div class="tr-verdict" id="tr-verdict"></div>
-        <span class="tr-unlock">Want the full breakdown later? <a href="landing.html#waitlist">Join our mailing list</a></span>
+        <span class="tr-unlock">Want the full breakdown later? <a href="landing.html#waitlist">Get the weekly lab notes</a></span>
       </div>
     </div>
   </div>
@@ -589,12 +654,12 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
     <div class="hero-actions">
       <a class="cta cta-primary" href="leaderboard.html">See the public leaderboard</a>
       <a class="cta" href="daily.html">Read tonight's snapshot</a>
-      <a class="cta" href="#waitlist">Join the waitlist</a>
+      <a class="cta" href="#waitlist">Get weekly lab notes</a>
     </div>
     <div class="hero-strip">
-      <span class="pill">Public leaderboard</span>
-      <span class="pill">Signal families</span>
-      <span class="pill">Nightly snapshots</span>
+      <span class="pill">{_e(total)} algos tracked</span>
+      <span class="pill">{_e((daily or {}).get('signal_count', total))} public signals</span>
+      <span class="pill">Paper-traded only</span>
       <span class="pill">Failures stay visible</span>
     </div>
   </header>
@@ -643,8 +708,8 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
 {pricing_html}
 
     <div class="card waitlist" id="waitlist">
-      <h2>Waitlist</h2>
-      <p>Get the weekly lab note: what fired, what broke, what got killed, and what Biscotti was doing.</p>
+      <h2>Get the weekly lab notes</h2>
+      <p>See which weird signals are surviving, which are dead, and which are still unresolved.</p>
       <form
         class="waitlist-form"
         id="mailerlite-waitlist-form"
@@ -659,7 +724,7 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
         <button type="submit">Join waitlist</button>
       </form>
       <iframe name="mailerlite-waitlist-frame" title="Mailing list signup" style="display:none"></iframe>
-      <div class="notice">No hype. Weekly notes from the paper-trading lab.</div>
+      <div class="notice">No hype. No AI stock-picking claims. Just the receipts.</div>
     </div>
 
     <div class="card waitlist" id="disclaimer">
@@ -933,6 +998,7 @@ def build_daily_page(daily: dict) -> str:
   <h1><span>{_e(run_date)}</span> nightly snapshot</h1>
   <p class="hero-sub">What changed in the lab after the nightly run.</p>
 </div>
+{_pulse_block_html(daily)}
 <section>
   <div class="wrap">
     <h2 class="section-title">Counts</h2>

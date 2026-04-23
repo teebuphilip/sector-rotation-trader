@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-04-23 (session 6 — public conversion proof blocks)
+
+### feat: add live proof copy to public pages
+- `scripts/build_public_pages.py` now emits a "Today in the Lab" pulse block on the leaderboard and daily report.
+- The pulse uses real nightly public data: current leader, SPY-beating count when available, strongest/weakest sector consensus, and run date.
+- The landing page hero now leads with concrete proof points: algos tracked, public signals, paper-traded only, and failures staying visible.
+
+### copy: tighten mailing-list conversion language
+- Replaced generic "join mailing list" copy with "Get the weekly lab notes."
+- Changed the risky "0 deleted failures" claim to the safer, accurate "failures stay visible."
+- Rebuilt generated public pages from the updated generator.
+
+Files: `scripts/build_public_pages.py`, `docs/index.html`, `docs/landing.html`, `docs/leaderboard.html`, `docs/daily.html`, `docs/premium.html`, `docs/legal.html`, `CHANGELOG.md`
+
 ## 2026-04-23 (session 5 — May 15 Reddit learning post)
 
 ### chore: pull first Reddit learning post forward

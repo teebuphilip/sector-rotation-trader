@@ -116,6 +116,16 @@
   .rank-note { border: 1px solid var(--border); border-radius: 12px; background: rgba(255,255,255,0.035); padding: 14px 16px; margin: 14px 0 18px; color: var(--muted); font-size: 13px; line-height: 1.65; }
   .rank-note strong { color: var(--text); }
   .rank-note code { font-family: var(--mono); color: var(--gold); background: rgba(255,204,102,0.08); padding: 1px 5px; border-radius: 4px; }
+  .pulse { background: rgba(25,211,143,0.04); border-top: 1px solid rgba(25,211,143,0.14); border-bottom: 1px solid rgba(25,211,143,0.14); padding: 12px 0; }
+  .pulse .wrap { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .pulse-label { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
+  .pulse-items { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .pulse-item { font-family: var(--mono); font-size: 13px; color: var(--text); }
+  .pulse-sep { color: var(--muted); font-size: 13px; }
+  .pulse-date { color: var(--muted); font-size: 11px; }
+  .cred-strip { display: flex; justify-content: center; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .cred-strip .cred-item { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .cred-strip .cred-dot { color: rgba(255,255,255,0.2); font-size: 11px; }
   @media (max-width: 600px) {
     .hero { padding: 40px 16px 32px; }
     .hero-stats { gap: 20px; }
