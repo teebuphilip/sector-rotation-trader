@@ -182,7 +182,7 @@ def _site_links() -> str:
     )
 
 
-def _pulse_block_html(daily: dict, total: int | None = None, beating: int | None = None) -> str:
+def _pulse_block_html(daily: dict, total=None, beating=None) -> str:
     counts = daily.get("counts") or {}
     total = total if total is not None else counts.get("total", 0)
     top = (daily.get("top_live_ytd") or [])[:1]
