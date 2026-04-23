@@ -75,6 +75,9 @@ jobs:
       - name: Build static public pages
         run: python scripts/build_public_pages.py
 
+      - name: Write deep validation report for content engine
+        run: python scripts/write_deep_validation_report.py
+
       - name: Nightly validation (surface)
         id: validate_surface
         run: |
@@ -128,6 +131,9 @@ jobs:
           fi
           if [ -d docs/data/public ]; then
             git add docs/data/public
+          fi
+          if [ -d reports/deep_validation ]; then
+            git add reports/deep_validation
           fi
           git add docs/index.html docs/leaderboard.html docs/landing.html docs/premium.html docs/families.html docs/daily.html docs/legal.html || true
           if [ -d data/product ]; then
