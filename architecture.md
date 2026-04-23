@@ -447,6 +447,12 @@ Runtime files are gitignored:
 - `data/premium/stripe_events.json`
 - `private_artifacts/`
 
+Public site rollback:
+
+- `scripts/rollback_public_site.py` safely rolls back bad `stockarithm-site` publishes with `git revert`.
+- It refuses dirty or stale public checkouts and does not force-push.
+- Details live in `PUBLIC_SITE_OPERATIONS.md`.
+
 Open before real paid launch:
 
 - deploy Railway service

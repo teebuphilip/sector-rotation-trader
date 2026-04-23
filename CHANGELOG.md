@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-04-23 (session 11 — public site rollback script)
+
+### feat: add safe rollback helper for public site repo
+- Added `scripts/rollback_public_site.py` for reverting bad `stockarithm-site` publishes with `git revert`.
+- The script refuses dirty repos, wrong branches, and local checkouts that are behind/ahead of `origin/main`.
+- It does not use `reset --hard` or force-push.
+- Added `PUBLIC_SITE_OPERATIONS.md` with rollback commands and safety rules.
+- Added the public rollback task as `DONE` in `stockarithm_execution_plan.csv`.
+
+Files: `scripts/rollback_public_site.py`, `PUBLIC_SITE_OPERATIONS.md`, `architecture.md`, `stockarithm_execution_plan.csv`, `CHANGELOG.md`
+
 ## 2026-04-23 (session 10 — backend architecture docs)
 
 ### docs: document the premium backend at three levels
