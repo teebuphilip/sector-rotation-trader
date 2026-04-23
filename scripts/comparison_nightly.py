@@ -28,6 +28,7 @@ import json
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
+import pandas as pd
 import yfinance as yf
 
 ETFS = ["XLK", "XLF", "XLY", "XLP", "XLU", "XLV", "XLI", "XLB", "XLRE", "XLC", "XLE"]
@@ -44,10 +45,19 @@ def _fetch_closes(ticker: str, as_of: date) -> list:
                          progress=False, auto_adjust=True)
         if df.empty:
             return []
-        closes = df["Close"].dropna()
+        closes = df["Close"]
+        if isinstance(closes, pd.DataFrame):
+            if ticker in closes.columns:
+                closes = closes[ticker]
+            elif len(closes.columns) == 1:
+                closes = closes.iloc[:, 0]
+            else:
+                return []
+        closes = closes.dropna()
         closes = closes[closes.index.normalize() <= str(as_of)]
         return [float(v) for v in closes.values]
-    except Exception:
+    except Exception as exc:
+        print(f"[comparison] {ticker}: failed to fetch closes: {exc}")
         return []
 
 
