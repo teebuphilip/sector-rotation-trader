@@ -10,6 +10,40 @@ Target split:
 
 The public site repo should never receive trading source code, backend code, raw state, raw idea runs, ledgers, or private artifacts.
 
+
+## Publish Script
+
+Script:
+
+```bash
+python scripts/publish_public_site.py
+```
+
+The publisher copies only an explicit allowlist from this private repo into `stockarithm-site`:
+
+- public HTML pages
+- `docs/blog/`
+- `docs/data/public/`
+- `docs/signals/lookup.html`
+- `CNAME`
+- `.nojekyll`
+
+It does not mirror `docs/` wholesale. It validates the bundle for banned paths and secret-looking strings before commit.
+
+Dry run:
+
+```bash
+python scripts/publish_public_site.py --dry-run
+```
+
+Manual publish:
+
+```bash
+python scripts/publish_public_site.py --repo-dir ../stockarithm-site --push
+```
+
+Nightly publish uses `PUBLIC_SITE_PUSH_TOKEN` as a GitHub Actions secret. The token needs write access to `teebuphilip/stockarithm-site`.
+
 ## Rollback Script
 
 Script:

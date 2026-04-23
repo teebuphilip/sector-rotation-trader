@@ -447,6 +447,12 @@ Runtime files are gitignored:
 - `data/premium/stripe_events.json`
 - `private_artifacts/`
 
+Public site publishing:
+
+- `scripts/publish_public_site.py` publishes only an explicit allowlist to `stockarithm-site`.
+- The nightly workflow can push the public bundle after the 6:30pm run when `PUBLIC_SITE_PUSH_TOKEN` is configured.
+- The public repo receives static pages, blog files, and `docs/data/public/`; it does not receive backend code, trading logic, raw state, ledgers, or private artifacts.
+
 Public site rollback:
 
 - `scripts/rollback_public_site.py` safely rolls back bad `stockarithm-site` publishes with `git revert`.

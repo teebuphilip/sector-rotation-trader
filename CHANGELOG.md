@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-04-23 (session 12 — repo split seed + public publisher)
+
+### chore: seed split repos
+- Seeded private `stockarithm-api` with the FastAPI backend, backend architecture doc, README, requirements, and gitignore.
+- Published the first allowlisted static bundle to public `stockarithm-site`.
+
+### feat: add allowlist-only public site publisher
+- Added `scripts/publish_public_site.py` to copy only public-safe files to `stockarithm-site`.
+- The script validates the bundle for banned paths and secret-looking strings before commit.
+- Wired `daily_run.yml` to publish the public site after the nightly commit when `PUBLIC_SITE_PUSH_TOKEN` is configured.
+- Updated `PUBLIC_SITE_OPERATIONS.md` and `architecture.md` with publish/rollback notes.
+
+Files: `scripts/publish_public_site.py`, `.github/workflows/daily_run.yml`, `PUBLIC_SITE_OPERATIONS.md`, `architecture.md`, `stockarithm_execution_plan.csv`, `CHANGELOG.md`
+
 ## 2026-04-23 (session 11 — public site rollback script)
 
 ### feat: add safe rollback helper for public site repo
