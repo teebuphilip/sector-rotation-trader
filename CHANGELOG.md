@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-23 (session 10 — backend architecture docs)
+
+### docs: document the premium backend at three levels
+- Added `backend/BACKEND_ARCHITECTURE.md` with the detailed Railway/FastAPI/Stripe entitlement design, endpoint contract, runtime stores, cookie model, deployment plan, test plan, and staged-vs-done status.
+- Updated `architecture.md` with the medium-depth backend summary: what Railway owns, why Auth0 is skipped, Stripe flow, webhook flow, and open launch items.
+- Updated `tldr-architecture.md` with the plain-English version: static public site plus tiny paid-access API.
+
+Files: `backend/BACKEND_ARCHITECTURE.md`, `architecture.md`, `tldr-architecture.md`, `CHANGELOG.md`
+
 ## 2026-04-23 (session 9 — Stripe test-mode premium backend)
 
 ### feat: stage Railway/FastAPI premium backend
