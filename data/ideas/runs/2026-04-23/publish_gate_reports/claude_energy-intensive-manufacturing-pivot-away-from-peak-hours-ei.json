@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-23/publish/claude_energy-intensive-manufacturing-pivot-away-from-peak-hours-ei.md",
+  "target_file": "data/ideas/runs/2026-04-23/intervention/claude_energy-intensive-manufacturing-pivot-away-from-peak-hours-ei.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "eia_electricity",
+    "needs_new_adapter": true,
+    "reason": "eia_electricity adapter does not provide peak-hour demand or volume data needed for the spec",
+    "risk_flags": [
+      "adapter mismatch for peak-hour demand",
+      "complex multi-source integration needs manual review",
+      "shorting/inverse exposure not supported",
+      "volume data required but price_only adapter lacks volume"
+    ],
+    "route": {
+      "adapters": [
+        "eia_electricity"
+      ],
+      "scores": {
+        "html_table": 1,
+        "eia_electricity": 2,
+        "price_only": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1083,
+    "output_tokens": 116
+  },
+  "cost_usd": 0.0038675,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"eia_electricity\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"eia_electricity adapter does not provide peak-hour demand or volume data needed for the spec\",\n  \"risk_flags\": [\n    \"adapter mismatch for peak-hour demand\",\n    \"volume data required but price_only adapter lacks volume\",\n    \"shorting/inverse exposure not supported\",\n    \"complex multi-source integration needs manual review\"\n  ]\n}\n```"
+}

@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-23/publish/chatgpt_freight-logistics-weekly-spike-in-railcar-dwell-time-signals.md",
+  "target_file": "data/ideas/runs/2026-04-23/intervention/chatgpt_freight-logistics-weekly-spike-in-railcar-dwell-time-signals.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "data source adapter missing",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "short_trade_not_supported",
+      "shorting not supported natively",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 931,
+    "output_tokens": 89
+  },
+  "cost_usd": 0.0032175,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly provides railcar dwell time data; requires new adapter for public rail data API.\",\n  \"risk_flags\": [\"shorting not supported natively\", \"data source adapter missing\", \"low adapter routing confidence\"]\n}\n```"
+}

@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-23/publish/chatgpt_weekly-increase-in-local-economy-weirdness-sudden-rise-in-bu.md",
+  "target_file": "data/ideas/runs/2026-04-23/intervention/chatgpt_weekly-increase-in-local-economy-weirdness-sudden-rise-in-bu.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "data source instability",
+      "low_adapter_confidence",
+      "requires new adapter",
+      "short position not natively supported",
+      "short_trade_not_supported",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 934,
+    "output_tokens": 78
+  },
+  "cost_usd": 0.003115,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"null\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly supports weekly municipal building permit denial counts.\",\n  \"risk_flags\": [\"data source instability\", \"requires new adapter\", \"short position not natively supported\"]\n}\n```"
+}

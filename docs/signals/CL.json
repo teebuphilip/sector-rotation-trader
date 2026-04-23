@@ -2,15 +2,15 @@
   "ticker": "CL",
   "sector": "Consumer Defensive",
   "sector_etf": "XLP",
-  "composite": "5 of 17",
+  "composite": "5 of 18",
   "composite_label": "BEARISH",
   "composite_color": "red",
   "bullish": 5,
-  "bearish": 12,
-  "neutral": 95,
-  "total_signals": 112,
-  "total_active": 17,
-  "bullish_pct": 29,
+  "bearish": 13,
+  "neutral": 97,
+  "total_signals": 115,
+  "total_active": 18,
+  "bullish_pct": 28,
   "breakdown": [
     {
       "algo_id": "reddit-subreddit-mention-spike",
@@ -625,6 +625,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "weekly-surge-in-openchargemap-ev-charger-installations-signa",
+      "name": "Weekly Surge In Openchargemap Ev Charger Installations Signals Bullish Xlc",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "xlv-google-trends-flu-search-spike",
       "name": "Xlv Google Trends Flu Search Spike",
       "algo_type": "crazy",
@@ -649,6 +658,15 @@
       "direction": "NEUTRAL",
       "days_running": 78,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
+      "name": "Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 66,
+      "ytd_pct": -0.01,
       "beat_spy": false
     },
     {
@@ -748,6 +766,15 @@
       "direction": "BEARISH",
       "days_running": 78,
       "ytd_pct": -6.12,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-searches-for-diy-home-repair-s",
+      "name": "Weekly Surge In Google Trends Searches For Diy Home Repair Signals Consumer Stress Lifting Xly",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": -0.78,
       "beat_spy": false
     },
     {

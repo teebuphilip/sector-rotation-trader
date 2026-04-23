@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-23/publish/chatgpt_attention-sentiment-daily-spike-in-rss-news-counts-for-pharm.md",
+  "target_file": "data/ideas/runs/2026-04-23/intervention/chatgpt_attention-sentiment-daily-spike-in-rss-news-counts-for-pharm.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "position sizing conflicts with current algo constraints",
+      "requires short position",
+      "rss_count adapter may not support shorting",
+      "short_trade_not_supported"
+    ],
+    "route": {
+      "adapters": [
+        "rss_count"
+      ],
+      "scores": {
+        "rss_count": 3,
+        "html_table": 1,
+        "price_only": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 956,
+    "output_tokens": 88
+  },
+  "cost_usd": 0.00327,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting but current algo envelope supports only long/flat allocations\",\n  \"risk_flags\": [\"requires short position\", \"rss_count adapter may not support shorting\", \"position sizing conflicts with current algo constraints\"]\n}\n```"
+}

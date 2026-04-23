@@ -1,8 +1,8 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-04-23T23:15:19Z",
+  "generated_at": "2026-04-23T23:18:13Z",
   "counts": {
-    "total": 112,
+    "total": 115,
     "beating_spy": 2
   },
   "algos": [
@@ -338,6 +338,42 @@
       "last_snapshot": "2026-04-23",
       "new_algo_date": null,
       "comparator": null
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
+      "algo_type": "crazy",
+      "algo_id": "attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
+      "name": "Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc",
+      "family": "attention_sentiment",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.01,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.01,
+      "spy_delta_30d_pct": -8.47,
+      "last_snapshot": "2026-04-23",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLC",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.242,
+            "return_pct": -1.212
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 5.339
+          }
+        },
+        "summary": "mixed"
+      }
     },
     {
       "schema_version": "v1",
@@ -1013,6 +1049,42 @@
       "last_snapshot": "2026-04-23",
       "new_algo_date": null,
       "comparator": null
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-searches-for-diy-home-repair-s",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-searches-for-diy-home-repair-s",
+      "name": "Weekly Surge In Google Trends Searches For Diy Home Repair Signals Consumer Stress Lifting Xly",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.78,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.18,
+      "spy_delta_30d_pct": -8.64,
+      "last_snapshot": "2026-04-23",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.019,
+            "return_pct": 0.094
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.331
+          }
+        },
+        "summary": "both_up"
+      }
     },
     {
       "schema_version": "v1",
@@ -3122,6 +3194,42 @@
       "last_snapshot": "2026-04-23",
       "new_algo_date": null,
       "comparator": null
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-openchargemap-ev-charger-installations-signa",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-openchargemap-ev-charger-installations-signa",
+      "name": "Weekly Surge In Openchargemap Ev Charger Installations Signals Bullish Xlc",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -8.46,
+      "last_snapshot": "2026-04-23",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLC",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.242,
+            "return_pct": -1.212
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 5.339
+          }
+        },
+        "summary": "mixed"
+      }
     }
   ]
 }

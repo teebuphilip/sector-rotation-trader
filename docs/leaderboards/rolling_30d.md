@@ -77,45 +77,48 @@ SPY 30D Return: +8.46%
 | 69 | Utility Power Grid Stress | crazy | +0.00% | 0.00 | 0.00% |
 | 70 | Healthcare Sector Google Trends Spike In Flu Symptoms | crazy | +0.00% | 0.00 | 0.00% |
 | 71 | Solar Storm Scorcher | crazy | +0.00% | 0.00 | 0.00% |
-| 72 | Xlv Google Trends Flu Search Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 73 | Social Media Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 74 | Reddit Gaming Thread Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 75 | Pet Food Supply Chain Disruption | crazy | +0.00% | 0.00 | 0.00% |
-| 76 | Weather Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 77 | Energy Sector Weekly Drawdown Exhaustion | crazy | +0.00% | 0.00 | 0.00% |
-| 78 | Glassdoor Misery Gradient | crazy | +0.00% | 0.00 | 0.00% |
-| 79 | Staples Sector Drawdown Rapid Recovery | crazy | +0.00% | 0.00 | 0.00% |
-| 80 | Reddit Mentions Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 81 | Online Ad Impression Volatility Trader | crazy | +0.00% | 0.00 | 0.00% |
-| 82 | Rental Car Shortage Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 83 | Energy Sector Sudden Weekly Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 84 | Healthcare Cost Shock Google Search Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 85 | Utilities Sector Weekly Temperature Drop Signal | crazy | +0.00% | 0.00 | 0.00% |
-| 86 | Financial Sector Momentum Divergence With Spy | crazy | +0.00% | 0.00 | 0.00% |
-| 87 | Weather Disruption Ripple Effects | crazy | +0.00% | 0.00 | 0.00% |
-| 88 | High Yield Spread Regime | crazy | +0.00% | 0.00 | 0.00% |
-| 89 | Shipping Container Squeeze Play | crazy | +0.00% | 0.00 | 0.00% |
-| 90 | Bankruptcy Filing Rate | crazy | +0.00% | 0.00 | 0.00% |
-| 91 | Volatility Spike Follow-Through | crazy | +0.00% | 0.00 | 0.00% |
-| 92 | Temperature Shock Energy Demand Flip | crazy | +0.00% | 0.00 | 0.00% |
-| 93 | Reddit Subreddit Surge Momentum | crazy | +0.00% | 0.00 | 0.00% |
-| 94 | Weather Windfall | crazy | +0.00% | 0.00 | 0.00% |
-| 95 | Work From Home Frenzy | crazy | +0.00% | 0.00 | 0.00% |
-| 96 | Fintech Disruption Wave | crazy | +0.00% | 0.00 | 0.00% |
-| 97 | Electricity Consumption | crazy | -0.01% | -1.20 | -1.02% |
-| 98 | Consumer Discretionary Google Trends Surge For Sale Keywords | crazy | -0.01% | -58.62 | -0.02% |
-| 99 | Grocery Store Foot Traffic Collapse Signal | crazy | -0.01% | -11.04 | -0.11% |
-| 100 | Xlu Daily Electricity Demand Surge | crazy | -0.03% | -53.54 | -0.03% |
-| 101 | Industrial Sector Weekly Earthquake Activity Correlation Dip | crazy | -0.04% | -83.04 | -0.04% |
-| 102 | Utilities Sector Negative Price Gap Fill | crazy | -0.06% | -46.99 | -0.06% |
-| 103 | News Sentiment Rotation Fade Trade | crazy | -0.07% | -25.86 | -0.07% |
-| 104 | Faber Momentum Rotation | standard | -0.08% | -1.19 | -1.38% |
-| 105 | Electricity Enlightenment | crazy | -0.08% | -17.77 | -0.13% |
-| 106 | Xlb Weekly Rss News Count Spike On Commodity Shortage | crazy | -0.09% | -31.04 | -0.09% |
-| 107 | Retail Roulette | crazy | -0.09% | -20.79 | -0.13% |
-| 108 | Tremor Tension | crazy | -0.12% | -15.18 | -0.12% |
-| 109 | Google Gusts | crazy | -0.13% | -22.68 | -0.13% |
-| 110 | Seismic Activity Construction Halt Signal | crazy | -0.14% | -22.15 | -0.14% |
-| 111 | Retail Sales Momentum | crazy | -0.17% | -1.84 | -0.90% |
-| 112 | Xle Weekly Drawdown Rebound Signal | crazy | -0.24% | -10.57 | -0.28% |
-| 113 | Lumber Momentum | crazy | -0.49% | -2.38 | -1.27% |
+| 72 | Weekly Surge In Openchargemap Ev Charger Installations Signals Bullish Xlc | crazy | +0.00% | 0.00 | 0.00% |
+| 73 | Xlv Google Trends Flu Search Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 74 | Social Media Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 75 | Reddit Gaming Thread Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 76 | Pet Food Supply Chain Disruption | crazy | +0.00% | 0.00 | 0.00% |
+| 77 | Weather Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 78 | Energy Sector Weekly Drawdown Exhaustion | crazy | +0.00% | 0.00 | 0.00% |
+| 79 | Glassdoor Misery Gradient | crazy | +0.00% | 0.00 | 0.00% |
+| 80 | Staples Sector Drawdown Rapid Recovery | crazy | +0.00% | 0.00 | 0.00% |
+| 81 | Reddit Mentions Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 82 | Online Ad Impression Volatility Trader | crazy | +0.00% | 0.00 | 0.00% |
+| 83 | Rental Car Shortage Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 84 | Energy Sector Sudden Weekly Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 85 | Healthcare Cost Shock Google Search Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 86 | Utilities Sector Weekly Temperature Drop Signal | crazy | +0.00% | 0.00 | 0.00% |
+| 87 | Financial Sector Momentum Divergence With Spy | crazy | +0.00% | 0.00 | 0.00% |
+| 88 | Weather Disruption Ripple Effects | crazy | +0.00% | 0.00 | 0.00% |
+| 89 | High Yield Spread Regime | crazy | +0.00% | 0.00 | 0.00% |
+| 90 | Shipping Container Squeeze Play | crazy | +0.00% | 0.00 | 0.00% |
+| 91 | Bankruptcy Filing Rate | crazy | +0.00% | 0.00 | 0.00% |
+| 92 | Volatility Spike Follow-Through | crazy | +0.00% | 0.00 | 0.00% |
+| 93 | Temperature Shock Energy Demand Flip | crazy | +0.00% | 0.00 | 0.00% |
+| 94 | Reddit Subreddit Surge Momentum | crazy | +0.00% | 0.00 | 0.00% |
+| 95 | Weather Windfall | crazy | +0.00% | 0.00 | 0.00% |
+| 96 | Work From Home Frenzy | crazy | +0.00% | 0.00 | 0.00% |
+| 97 | Fintech Disruption Wave | crazy | +0.00% | 0.00 | 0.00% |
+| 98 | Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc | crazy | -0.01% | -137.01 | -0.01% |
+| 99 | Electricity Consumption | crazy | -0.01% | -1.20 | -1.02% |
+| 100 | Consumer Discretionary Google Trends Surge For Sale Keywords | crazy | -0.01% | -58.62 | -0.02% |
+| 101 | Grocery Store Foot Traffic Collapse Signal | crazy | -0.01% | -11.04 | -0.11% |
+| 102 | Xlu Daily Electricity Demand Surge | crazy | -0.03% | -53.54 | -0.03% |
+| 103 | Industrial Sector Weekly Earthquake Activity Correlation Dip | crazy | -0.04% | -83.04 | -0.04% |
+| 104 | Utilities Sector Negative Price Gap Fill | crazy | -0.06% | -46.99 | -0.06% |
+| 105 | News Sentiment Rotation Fade Trade | crazy | -0.07% | -25.86 | -0.07% |
+| 106 | Faber Momentum Rotation | standard | -0.08% | -1.19 | -1.38% |
+| 107 | Electricity Enlightenment | crazy | -0.08% | -17.77 | -0.13% |
+| 108 | Xlb Weekly Rss News Count Spike On Commodity Shortage | crazy | -0.09% | -31.04 | -0.09% |
+| 109 | Retail Roulette | crazy | -0.09% | -20.79 | -0.13% |
+| 110 | Tremor Tension | crazy | -0.12% | -15.18 | -0.12% |
+| 111 | Google Gusts | crazy | -0.13% | -22.68 | -0.13% |
+| 112 | Seismic Activity Construction Halt Signal | crazy | -0.14% | -22.15 | -0.14% |
+| 113 | Retail Sales Momentum | crazy | -0.17% | -1.84 | -0.90% |
+| 114 | Weekly Surge In Google Trends Searches For Diy Home Repair Signals Consumer Stress Lifting Xly | crazy | -0.18% | -15.06 | -0.23% |
+| 115 | Xle Weekly Drawdown Rebound Signal | crazy | -0.24% | -10.57 | -0.28% |
+| 116 | Lumber Momentum | crazy | -0.49% | -2.38 | -1.27% |

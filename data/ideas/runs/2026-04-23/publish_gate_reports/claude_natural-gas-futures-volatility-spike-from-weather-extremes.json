@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-23/publish/claude_natural-gas-futures-volatility-spike-from-weather-extremes.md",
+  "target_file": "data/ideas/runs/2026-04-23/intervention/claude_natural-gas-futures-volatility-spike-from-weather-extremes.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": true,
+    "reason": "price_only currently provides close/value data, not volume.",
+    "risk_flags": [
+      "adapter_mismatch",
+      "data_source_integration",
+      "price_only_volume_gap",
+      "volume_required"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "weather_series": 2,
+        "html_table": 1,
+        "price_only": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1061,
+    "output_tokens": 76
+  },
+  "cost_usd": 0.0034125,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Volume data required but price_only adapter does not provide volume\",\n  \"risk_flags\": [\"volume_required\", \"adapter_mismatch\", \"data_source_integration\"]\n}\n```"
+}

@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-23T23:14:52
+Updated (UTC): 2026-04-23T23:18:12
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 107
+Crazy models: 110
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -123,3 +123,6 @@ Crazy models: 107
 | seismic-activity-construction-halt-signal | Seismic Activity Construction Halt Signal | daily |
 | shipping-container-squeeze-play | Shipping Container Squeeze Play | weekly |
 | temperature-shock-energy-demand-flip | Temperature Shock Energy Demand Flip | daily |
+| attention-sentiment-spike-daily-surge-in-news-rss-counts-men | Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc | daily |
+| weekly-surge-in-google-trends-searches-for-diy-home-repair-s | Weekly Surge In Google Trends Searches For Diy Home Repair Signals Consumer Stress Lifting Xly | weekly |
+| weekly-surge-in-openchargemap-ev-charger-installations-signa | Weekly Surge In Openchargemap Ev Charger Installations Signals Bullish Xlc | weekly |

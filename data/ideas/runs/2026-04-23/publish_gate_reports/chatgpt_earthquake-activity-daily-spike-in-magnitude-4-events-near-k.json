@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-23/publish/chatgpt_earthquake-activity-daily-spike-in-magnitude-4-events-near-k.md",
+  "target_file": "data/ideas/runs/2026-04-23/intervention/chatgpt_earthquake-activity-daily-spike-in-magnitude-4-events-near-k.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "adapter may not support required granularity",
+      "needs geospatial filtering near ports",
+      "requires short position",
+      "short_trade_not_supported",
+      "volume data not specified but may be needed"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity"
+      ],
+      "scores": {
+        "earthquake_activity": 3,
+        "tsa_table": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 933,
+    "output_tokens": 120
+  },
+  "cost_usd": 0.0035325,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Spec requires shorting XLI which is not supported and needs volume data; also adapter must measure earthquakes near ports specifically, likely needing new geospatial filtering.\",\n  \"risk_flags\": [\n    \"requires short position\",\n    \"needs geospatial filtering near ports\",\n    \"volume data not specified but may be needed\",\n    \"adapter may not support required granularity\"\n  ]\n}\n```"
+}

@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-23T23:14:52Z",
+  "generated_at": "2026-04-23T23:18:12Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
-      "count": 19,
+      "count": 20,
       "by_status": {
-        "live_only": 3,
+        "live_only": 4,
         "parked": 2,
         "sandbox": 14
       },
       "by_evidence_class": {
-        "live_receipts_only": 3,
+        "live_receipts_only": 4,
         "needs_history": 14,
         "pending_seed": 2
       },
@@ -176,14 +176,14 @@
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 10,
+      "count": 11,
       "by_status": {
         "failed": 1,
-        "live_only": 5,
+        "live_only": 6,
         "sandbox": 4
       },
       "by_evidence_class": {
-        "live_receipts_only": 5,
+        "live_receipts_only": 6,
         "needs_history": 4,
         "v1_backtested": 1
       },
@@ -918,16 +918,16 @@
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 40,
+      "count": 41,
       "by_status": {
         "backtest_weak": 1,
         "live_only": 10,
         "parked": 2,
-        "sandbox": 27
+        "sandbox": 28
       },
       "by_evidence_class": {
         "live_receipts_only": 10,
-        "needs_history": 25,
+        "needs_history": 26,
         "pending_seed": 2,
         "v1_backtested": 3
       },

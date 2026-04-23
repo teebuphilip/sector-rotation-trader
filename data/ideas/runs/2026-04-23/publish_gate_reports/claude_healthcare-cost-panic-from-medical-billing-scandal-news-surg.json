@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-04-23/publish/claude_healthcare-cost-panic-from-medical-billing-scandal-news-surg.md",
+  "target_file": "data/ideas/runs/2026-04-23/intervention/claude_healthcare-cost-panic-from-medical-billing-scandal-news-surg.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "adapter mismatch",
+      "multiple adapters needed",
+      "price_only required",
+      "rss_count required",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "rss_count": 2,
+        "html_table": 2,
+        "price_only": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1081,
+    "output_tokens": 91
+  },
+  "cost_usd": 0.0036125,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"rss_count adapter is required but top adapter routing selected html_table; price_only adapter also needed for XLV price\",\n  \"risk_flags\": [\"adapter mismatch\", \"multiple adapters needed\", \"rss_count required\", \"price_only required\"]\n}\n```"
+}
