@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-04-23 (session 8 — homepage hero copy)
+
+### copy: write and apply Stockarithm homepage hero
+- Added `drafts/homepage_hero.md` with the chosen hero, backup variant, CTA copy, proof strip, rationale, and phrases to avoid.
+- Applied the chosen hero to the generated landing/index pages: "Weird market signals, run in public."
+- Kept the copy away from AI stock-picking claims and pointed the visitor to the public leaderboard plus weekly lab notes.
+- Marked `MARKETING: Write homepage hero text` as `DONE` in `stockarithm_execution_plan.csv`.
+
+Files: `drafts/homepage_hero.md`, `scripts/build_public_pages.py`, `docs/index.html`, `docs/landing.html`, `stockarithm_execution_plan.csv`, `CHANGELOG.md`
+
 ## 2026-04-23 (session 7 — Stockarithm rename)
 
 ### chore: replace legacy public branding with Stockarithm

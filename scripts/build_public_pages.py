@@ -649,8 +649,8 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
 </head>
 <body>
   <header>
-    <h1>The Signal Lab That Shows Its Failures</h1>
-    <p>We run weird market signals in public. Most fail. We track every one.</p>
+    <h1>Weird market signals, run in public.</h1>
+    <p>Stockarithm tracks paper-traded algos against SPY. The wins, misses, idle names, and dead signals all stay visible.</p>
     <div class="hero-actions">
       <a class="cta cta-primary" href="leaderboard.html">See the public leaderboard</a>
       <a class="cta" href="daily.html">Read tonight's snapshot</a>
