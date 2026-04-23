@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-04-23 (session 9 — Stripe test-mode premium backend)
+
+### feat: stage Railway/FastAPI premium backend
+- Added `backend/stockarithm_api.py`, a small FastAPI service for Stripe-backed premium access without Auth0.
+- Supports Stripe test-mode checkout verification through `/unlock`, signed HTTP-only session cookies, `/api/me/status`, and Stripe signature-verified `/webhook`.
+- Webhook records processed event IDs and handles checkout completion plus subscription cancel/pause/update events.
+- Premium endpoints are gated by entitlement: leaderboard, per-signal detail, per-ticker detail, and CSV downloads.
+- Added `docs/app.html` as the static premium frontend shell that checks entitlement and renders the gated leaderboard.
+- Added `backend/README.md` with Railway/test-mode environment variables and endpoint notes.
+
+### chore: mark backend-related V2 tasks as staged
+- Marked Railway API service, Stripe webhook, magic-link/session auth, premium endpoints, app.html, and CSV downloads as `STAGED` in `stockarithm_execution_plan.csv`.
+- These are not `DONE` until Railway deploy, Stripe test webhook setup, and end-to-end checkout validation are complete.
+
+Files: `backend/stockarithm_api.py`, `backend/README.md`, `docs/app.html`, `requirements.txt`, `stockarithm_execution_plan.csv`, `CHANGELOG.md`
+
 ## 2026-04-23 (session 8 — homepage hero copy)
 
 ### copy: write and apply Stockarithm homepage hero
