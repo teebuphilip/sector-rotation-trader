@@ -145,7 +145,7 @@ His exact words:
 
 ---
 
-### PHASE 5: SECTOR ROTATION TRADER → CRAZYSTOCKALGO (Apr 2026 - Present)
+### PHASE 5: SECTOR ROTATION TRADER → STOCKARITHM (Apr 2026 - Present)
 **The Current Focus: Desperate Need for Cash**
 
 #### The Origin (3 Weeks Ago - Early April 2026):
@@ -269,7 +269,7 @@ This infrastructure is the template for all his signal labs. The automation, pro
 
 ### PRODUCT ROADMAP:
 
-#### 1. CRAZYSTOCKALGO (Launch: July 1, 2026)
+#### 1. STOCKARITHM (Launch: July 1, 2026)
 - **What:** Transparent stock signal research
 - **Model:** Free top signals public, Premium $19.99/month (all signals + analysis)
 - **Strategy:** Auto-generate algos daily, backtest, paper trade 30 days, launch only proven ones
