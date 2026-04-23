@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-23 (session 5 — May 15 Reddit learning post)
+
+### chore: pull first Reddit learning post forward
+- Updated `crazystockalgo_execution_plan.csv` so the first Reddit learning post is scheduled for `2026-05-15` instead of the later June window.
+- Pulled supporting work earlier: homepage hero copy, Reddit draft, and landing-page conversion proof blocks now land before the May 15 post.
+- The May 15 post is framed as a learning/discovery post, not the final paid launch.
+
+Files: `crazystockalgo_execution_plan.csv`, `CHANGELOG.md`
+
 ## 2026-04-23 (session 4 — quality check HOLD semantics)
 
 ### fix: quality check no longer treats normal HOLD-with-positions as warning noise
