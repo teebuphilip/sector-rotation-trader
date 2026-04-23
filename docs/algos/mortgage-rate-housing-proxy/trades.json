@@ -1012,6 +1012,35 @@
       },
       "sector": "Mortgage Rate Housing Proxy",
       "num_positions": 2
+    },
+    {
+      "date": "2026-04-23",
+      "cash": 29980.1,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100429.39,
+      "positions": {
+        "XLP": {
+          "shares": 485.0837,
+          "entry_price": 82.46,
+          "current_price": 83.48,
+          "market_value": 40494.79,
+          "unrealized_pnl": 494.79,
+          "entry_date": "2026-04-19",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 649.9133,
+          "entry_price": 46.16,
+          "current_price": 46.09,
+          "market_value": 29954.51,
+          "unrealized_pnl": -45.49,
+          "entry_date": "2026-04-19",
+          "margin": false
+        }
+      },
+      "sector": "Mortgage Rate Housing Proxy",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16"

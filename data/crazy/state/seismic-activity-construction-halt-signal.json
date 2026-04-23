@@ -769,19 +769,29 @@
       "positions": {},
       "sector": "Seismic Activity Construction Halt Signal",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-23",
+      "cash": 99861.92,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99861.92,
+      "positions": {},
+      "sector": "Seismic Activity Construction Halt Signal",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-21",
-  "last_run": "2026-04-22",
+  "last_run": "2026-04-23",
   "meta": {
     "seismic-activity-construction-halt-signal": {
       "signal_label": "HOLD",
-      "latest_value": 275.0,
-      "prior_avg": 367.2857,
-      "signal_change": -0.2513,
+      "latest_value": 220.0,
+      "prior_avg": 366.0,
+      "signal_change": -0.3989,
       "name": "Seismic Activity Construction Halt Signal",
       "last_signal": "HOLD",
-      "last_run": "2026-04-22"
+      "last_run": "2026-04-23"
     }
   }
 }
