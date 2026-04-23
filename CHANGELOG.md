@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-04-23 (session 14 — private Vercel preview repo)
+
+### feat: add temporary preview bundle builder for Vercel review
+- Added `scripts/build_vercel_preview_site.py` to assemble a private review bundle from generated static artifacts in `docs/`.
+- The preview bundle includes both the public site surface and premium/internal static pages so the full static experience can be inspected in Vercel before launch.
+- It writes `_preview_index.html`, `vercel.json`, and `robots.txt` so the preview is easy to browse and is marked `noindex`.
+
+### chore: create and seed private `stockarithm-preview` repo
+- Created `teebuphilip/stockarithm-preview` as a private static preview repo.
+- Published the first preview bundle there for Vercel import.
+- Updated `PUBLIC_SITE_OPERATIONS.md` with preview-repo rules, manual publish steps, and Vercel setup notes.
+
+Files: `scripts/build_vercel_preview_site.py`, `PUBLIC_SITE_OPERATIONS.md`, `stockarithm_execution_plan.csv`, `CHANGELOG.md`
+
 ## 2026-04-23 (session 13 — public publish token docs)
 
 ### docs: explain how to create `PUBLIC_SITE_PUSH_TOKEN`

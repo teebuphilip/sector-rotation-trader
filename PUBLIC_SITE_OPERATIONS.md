@@ -10,6 +10,82 @@ Target split:
 
 The public site repo should never receive trading source code, backend code, raw state, raw idea runs, ledgers, or private artifacts.
 
+## Temporary Preview Repo
+
+There is also a temporary private repo for Vercel review:
+
+- `stockarithm-preview`: private static preview repo containing both public pages and premium/internal static artifacts for review.
+
+This repo is not part of the production split. It exists only so you can inspect the full static surface in Vercel before launch.
+
+Rules:
+
+- keep it private
+- do not attach `stockarithm.com`
+- do not treat it as auth or security
+- delete or stop using it once review is done
+
+The preview repo may include premium pages, algo dashboards, comparison outputs, ledgers, and other static review artifacts that should never be pushed to `stockarithm-site`.
+
+### Build The Preview Bundle
+
+```bash
+python scripts/build_vercel_preview_site.py
+```
+
+Default output:
+
+```text
+/tmp/stockarithm-vercel-preview
+```
+
+What it includes:
+
+- public landing, leaderboard, daily, legal, families, blog
+- premium shell and premium static page
+- algo dashboards and combined dashboards
+- public JSON contract
+- comparison outputs
+- quality check markdown
+- ledgers and other static review artifacts already present in `docs/`
+
+It also writes:
+
+- `_preview_index.html` as a click-through directory page
+- `vercel.json` with `X-Robots-Tag: noindex, nofollow, noarchive`
+- `robots.txt` with `Disallow: /`
+
+That reduces accidental indexing. It is not a security boundary.
+
+### Publish The Preview Repo Manually
+
+The preview repo is meant for manual refreshes, not the nightly production pipeline.
+
+Basic flow:
+
+```bash
+python scripts/build_vercel_preview_site.py
+git clone https://github.com/teebuphilip/stockarithm-preview.git /tmp/stockarithm-preview
+cp -R /tmp/stockarithm-vercel-preview/. /tmp/stockarithm-preview/
+cd /tmp/stockarithm-preview
+git add -A
+git commit -m "Refresh Vercel preview"
+git push origin main
+```
+
+### Vercel Setup For The Preview Repo
+
+In Vercel:
+
+1. Import `teebuphilip/stockarithm-preview`.
+2. Keep it on the default Vercel preview domain only.
+3. Framework preset: `Other`.
+4. Build command: leave blank.
+5. Output directory: `.`
+6. Open `_preview_index.html` first.
+
+If Vercel access controls are available on your plan, turn them on. If they are not, assume anyone with the URL can see the preview.
+
 
 ## Publish Script
 
