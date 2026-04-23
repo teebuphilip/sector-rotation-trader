@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-04-23 (session 1 — quality check #3)
+
+### chore: complete Quality Check #3 early
+- Added `quality_check_2026-04-27.md` with the current read on pipeline health, force-rank performance, crazy algo activity, blocked keys, comparator state, and warning items.
+- Marked `Quality check #3` as `DONE` in `crazystockalgo_execution_plan.csv`.
+- Pulled the staged Polygon cutover task forward from `2026-04-28` to `2026-04-27`.
+
+Key findings:
+
+- pipelines were green on the 2026-04-23 start-of-day check
+- 112 algos are tracked: 5 normal, 107 crazy
+- only 2 algos are currently beating SPY by force-rank
+- crazy universe is mostly evidence collection: 33 active, 74 idle
+- comparator suite is wired but currently all `insufficient_data`
+- `reports/deep_validation/latest.json` is stale and needs follow-up before content automation should be trusted
+- VIX family churn remains a watch item
+
+Files: `quality_check_2026-04-27.md`, `crazystockalgo_execution_plan.csv`, `CHANGELOG.md`
+
 ## 2026-04-22 (session 17 — ops integrity check + factory seed fix)
 
 ### fix: direct file-based crazy seeding no longer depends on registry presence
