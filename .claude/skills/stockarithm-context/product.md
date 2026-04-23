@@ -1,8 +1,8 @@
-# CrazyStockAlgo — Product Context
+# Stockarithm — Product Context
 
 ## What It Is
 
-CrazyStockAlgo is a public paper-trading lab for people who think weird real-world signals might beat the usual market bullshit.
+Stockarithm is a public paper-trading lab for people who think weird real-world signals might beat the usual market bullshit.
 
 It is a signal lab, a paper-trading system, and a public record. Every algo runs live. Every trade is logged. Every failure is shown.
 

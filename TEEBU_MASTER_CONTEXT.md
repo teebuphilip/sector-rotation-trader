@@ -150,7 +150,7 @@ His exact words:
 
 #### The Origin (3 Weeks Ago - Early April 2026):
 His exact words (read this carefully):
-> "3 weeks ago, i read some medium article (3yo signed me up by accident), about sector trading and doing it in python, as a lark i asked claude, and it spit it out. realizing i need money i said come up with more algos, (they were all 'normal'). then as a lark i said, hey we need to think up something crazy, me doing the normal stuff isn't going to make me money right. claude spit out 10 crazy ideas. that germinated into crazystockalgo"
+> "3 weeks ago, i read some medium article (3yo signed me up by accident), about sector trading and doing it in python, as a lark i asked claude, and it spit it out. realizing i need money i said come up with more algos, (they were all 'normal'). then as a lark i said, hey we need to think up something crazy, me doing the normal stuff isn't going to make me money right. claude spit out 10 crazy ideas. that germinated into stockarithm"
 
 The sequence:
 1. **3-year-old daughter accidentally signed him up for Medium**
@@ -160,7 +160,7 @@ The sequence:
 5. Asked for more algos - they were "normal" (standard strategies)
 6. **KEY MOMENT:** "hey we need to think up something crazy, me doing the normal stuff isn't going to make me money right"
 7. Claude spit out 10 crazy ideas
-8. **"that germinated into crazystockalgo"**
+8. **"that germinated into stockarithm"**
 
 #### The Current System:
 - **Repo:** github.com/teebuphilip/sector-rotation-trader (176 commits, 4/6/26 - 4/20/26)
@@ -319,7 +319,7 @@ This infrastructure is the template for all his signal labs. The automation, pro
 - **Domain expertise:** 25+ years basketball knowledge (real edge for DBB2)
 
 ### WEAKNESSES:
-- **Shiny object syndrome:** Jumps from idea to idea (CD → FO → AFH → harness → crazystockalgo)
+- **Shiny object syndrome:** Jumps from idea to idea (CD → FO → AFH → harness → stockarithm)
 - **Builds instead of ships:** Court Dominion never launched despite being done
 - **Pivots when hard:** Reddit API issue → abandon CD. "Can't beat market" → "it's research now"
 - **No business/marketing skills:** Can build product, can't acquire customers
@@ -397,7 +397,7 @@ sector-rotation:    176 commits (4/6/26 - 4/20/26)   - 2 weeks, CURRENT FOCUS
 
 **PATTERN:** Each abandoned product became the foundation for the next meta-product. Never ships, always builds the tool to build the tool.
 
-**CURRENT FOCUS:** Finally building something that could generate revenue (crazystockalgo), but still no customers, no revenue.
+**CURRENT FOCUS:** Finally building something that could generate revenue (stockarithm), but still no customers, no revenue.
 
 ---
 
@@ -478,13 +478,13 @@ When helping Teebu, always verify:
 Based on our extensive conversation, here's what he's ACTUALLY committed to:
 
 ### MAY 2026 (NEXT 30 DAYS):
-- Backtest all crazystockalgo algos (Week 1)
+- Backtest all stockarithm algos (Week 1)
 - Paper trade winners for 30 days (Weeks 2-5)
 - Kill losers immediately
 - Build landing page, Stripe integration
 
 ### JUNE 1, 2026 (NOT MAY 15):
-- PUBLIC LAUNCH crazystockalgo
+- PUBLIC LAUNCH stockarithm
 - 5-10 validated algos (60%+ win rate, beat SPY)
 - 30-day paper trading results public
 - Free tier: Top signals public
@@ -614,7 +614,7 @@ All repos public at: github.com/teebuphilip/
 3. **AFH** - AutoFounder Hub, idea generation (ACTIVE but not revenue-generating)
 4. **fo_test_harness** - Multi-pass build factory (ACTIVE, spent "lots of money")
 5. **SaaSPlatformLibrary** - Shared SaaS components (SUPPORT)
-6. **sector-rotation-trader** - Current focus, crazystockalgo foundation (ACTIVE, NO REVENUE YET)
+6. **sector-rotation-trader** - Current focus, stockarithm foundation (ACTIVE, NO REVENUE YET)
 
 Study these repos to understand his technical capabilities and patterns.
 

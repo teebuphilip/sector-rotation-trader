@@ -11,7 +11,7 @@ Do not be polite. Be useful.
 
 ## Context
 
-This repo is a public paper-trading lab called Crazystockalgo / Sector Rotation Trader.
+This repo is a public paper-trading lab called Stockarithm / Sector Rotation Trader.
 
 It runs many weird alternative-data signals. The brand is:
 

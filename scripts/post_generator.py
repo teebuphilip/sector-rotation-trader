@@ -1,5 +1,5 @@
 """
-LLM post generator for CrazyStockAlgo daily Substack draft.
+LLM post generator for Stockarithm daily Substack draft.
 
 Reads reports/deep_validation/latest.json (or a dated version),
 calls Claude API with locked facts only, and writes a 300-400 word
@@ -33,7 +33,7 @@ DRAFTS_DIR = Path("drafts")
 REPORTS_DIR = Path("reports/deep_validation")
 
 SYSTEM_PROMPT = """\
-You are writing the daily lab bulletin for CrazyStockAlgo — a public paper trading \
+You are writing the daily lab bulletin for Stockarithm — a public paper trading \
 experiment running alternative-data algorithmic signals. The author is an engineer, \
 not a finance writer. He named an algo after his dead dog.
 

@@ -1,13 +1,13 @@
 ---
-name: crazystockalgo-context
+name: stockarithm-context
 description: >
-  Product context for CrazyStockAlgo. Load when discussing features, product backlog,
+  Product context for Stockarithm. Load when discussing features, product backlog,
   marketing copy, user experience, positioning, post-launch roadmap, subscriber value,
   leaderboard, signal lab, brand voice, what to build next, content, Substack,
   pricing, launch, Reddit post, waitlist, or anything product-facing.
 ---
 
-# CrazyStockAlgo Product Skill — Router
+# Stockarithm Product Skill — Router
 
 ## When to load what
 

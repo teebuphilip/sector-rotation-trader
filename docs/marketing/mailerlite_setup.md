@@ -30,7 +30,7 @@ signup_date
 Create an embedded form named:
 
 ```text
-Crazy Stock Algo Waitlist
+Stockarithm Waitlist
 ```
 
 Form behavior:

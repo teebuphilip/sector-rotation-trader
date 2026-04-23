@@ -232,7 +232,7 @@ def _footer_html(generated_at: str, run_date: str, label: str = "Updated nightly
     return f"""
 <footer>
   <div class="wrap">
-    <div><strong>crazystockalgo.com</strong> &mdash; {label}</div>
+    <div><strong>stockarithm.com</strong> &mdash; {label}</div>
     <div>Last updated: {_e(generated_at or run_date)}</div>
     <div style="margin-top:8px;">{_site_links()}</div>
     <div style="margin-top:8px;">
@@ -420,7 +420,7 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Crazy Stock Algo \u2014 Live Signal Leaderboard</title>
+<title>Stockarithm \u2014 Live Signal Leaderboard</title>
 <meta name="description" content="{_e(signal_count)} experimental trading algorithms running live. Track performance against SPY." />
 <style>{CSS}</style>
 </head>
@@ -644,7 +644,7 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Crazy Models Lab</title>
+<title>Stockarithm</title>
 <style>{LANDING_CSS}</style>
 </head>
 <body>
@@ -821,7 +821,7 @@ def build_premium(daily: dict, leaderboard: dict) -> str:
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Crazy Stock Algo \u2014 Premium Preview</title>
+<title>Stockarithm \u2014 Premium Preview</title>
 <style>{PREMIUM_CSS}</style>
 </head>
 <body>
@@ -950,7 +950,7 @@ def build_families_page(families: dict, daily: dict) -> str:
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Crazy Stock Algo — Families</title>
+<title>Stockarithm — Families</title>
 <style>{LANDING_CSS}</style>
 </head>
 <body>
@@ -989,7 +989,7 @@ def build_daily_page(daily: dict) -> str:
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Crazy Stock Algo — Daily Report</title>
+<title>Stockarithm — Daily Report</title>
 <style>{REPORT_CSS}</style>
 </head>
 <body>
@@ -1068,7 +1068,7 @@ def build_legal_page() -> str:
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Crazy Stock Algo — Legal</title>
+<title>Stockarithm — Legal</title>
 <style>{REPORT_CSS}</style>
 </head>
 <body>

@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-23 (session 7 — Stockarithm rename)
+
+### chore: replace legacy public branding with Stockarithm
+- Updated public page generator titles and footer domain to `Stockarithm` / `stockarithm.com`.
+- Regenerated public HTML pages so the live site surface uses `Stockarithm` / `stockarithm.com`.
+- Updated launch/domain CSV tasks, MailerLite setup note, blog/signals static pages, LLM prompt copy, and the BTS user-agent string.
+
+Files: `scripts/build_public_pages.py`, `docs/*.html`, `docs/blog/index.html`, `docs/signals/lookup.html`, `docs/marketing/mailerlite_setup.md`, `scripts/post_generator.py`, `scripts/feature_idea_generator.py`, `crazy/adapters/bts_airline_load_factor.py`, `stockarithm_execution_plan.csv`, `CHANGELOG.md`
+
 ## 2026-04-23 (session 6 — public conversion proof blocks)
 
 ### feat: add live proof copy to public pages
@@ -17,11 +26,11 @@ Files: `scripts/build_public_pages.py`, `docs/index.html`, `docs/landing.html`, 
 ## 2026-04-23 (session 5 — May 15 Reddit learning post)
 
 ### chore: pull first Reddit learning post forward
-- Updated `crazystockalgo_execution_plan.csv` so the first Reddit learning post is scheduled for `2026-05-15` instead of the later June window.
+- Updated `stockarithm_execution_plan.csv` so the first Reddit learning post is scheduled for `2026-05-15` instead of the later June window.
 - Pulled supporting work earlier: homepage hero copy, Reddit draft, and landing-page conversion proof blocks now land before the May 15 post.
 - The May 15 post is framed as a learning/discovery post, not the final paid launch.
 
-Files: `crazystockalgo_execution_plan.csv`, `CHANGELOG.md`
+Files: `stockarithm_execution_plan.csv`, `CHANGELOG.md`
 
 ## 2026-04-23 (session 4 — quality check HOLD semantics)
 
@@ -62,7 +71,7 @@ Files: `.github/workflows/daily_run.yml`, `reports/deep_validation/2026-04-22.js
 
 ### chore: complete Quality Check #3 early
 - Added `quality_check_2026-04-27.md` with the current read on pipeline health, force-rank performance, crazy algo activity, blocked keys, comparator state, and warning items.
-- Marked `Quality check #3` as `DONE` in `crazystockalgo_execution_plan.csv`.
+- Marked `Quality check #3` as `DONE` in `stockarithm_execution_plan.csv`.
 - Pulled the staged Polygon cutover task forward from `2026-04-28` to `2026-04-27`.
 
 Key findings:
@@ -75,7 +84,7 @@ Key findings:
 - `reports/deep_validation/latest.json` is stale and needs follow-up before content automation should be trusted
 - VIX family churn remains a watch item
 
-Files: `quality_check_2026-04-27.md`, `crazystockalgo_execution_plan.csv`, `CHANGELOG.md`
+Files: `quality_check_2026-04-27.md`, `stockarithm_execution_plan.csv`, `CHANGELOG.md`
 
 ## 2026-04-22 (session 17 — ops integrity check + factory seed fix)
 
@@ -88,7 +97,7 @@ Files: `quality_check_2026-04-27.md`, `crazystockalgo_execution_plan.csv`, `CHAN
 - Added `ops_integrity_2026-04-22.md` with the scan findings across ideation, tactical, and factory paths.
 - Marked the first recurring `Validate ops/pipeline integrity — deep scan/check` CSV task as `DONE`.
 
-Files: `crazy_seed.py`, `ops_integrity_2026-04-22.md`, `crazystockalgo_execution_plan.csv`, `CHANGELOG.md`
+Files: `crazy_seed.py`, `ops_integrity_2026-04-22.md`, `stockarithm_execution_plan.csv`, `CHANGELOG.md`
 
 ## 2026-04-22 (session 16 — morning content email + post generator)
 
@@ -115,9 +124,9 @@ Files: `scripts/post_generator.py`, `scripts/morning_content_email.py`, `.github
 
 ### chore: update core docs and task list to match the new public contract
 - `docs/data/public/README.md`, `README.md`, `architecture.md`, and `tldr-architecture.md` now point to the versioned public schema documentation.
-- Marked `V2 ARCH: Define public JSON schema` as `DONE` in `crazystockalgo_execution_plan.csv`.
+- Marked `V2 ARCH: Define public JSON schema` as `DONE` in `stockarithm_execution_plan.csv`.
 
-Files: `scripts/build_public_artifacts.py`, `docs/data/public/SCHEMA.md`, `docs/data/public/README.md`, `README.md`, `architecture.md`, `tldr-architecture.md`, `crazystockalgo_execution_plan.csv`, `CHANGELOG.md`
+Files: `scripts/build_public_artifacts.py`, `docs/data/public/SCHEMA.md`, `docs/data/public/README.md`, `README.md`, `architecture.md`, `tldr-architecture.md`, `stockarithm_execution_plan.csv`, `CHANGELOG.md`
 
 ## 2026-04-22 (session 14 — morning stats email clarity fixes)
 
@@ -231,7 +240,7 @@ Files: `scripts/build_public_artifacts.py`, `scripts/build_public_pages.py`, `do
 - Moved 5 Kronos CSV tasks to POSTPONED. NeoQuasar/Kronos-mini is not hosted on HuggingFace Inference API (local-only model requiring torch). Running it in GitHub Actions free tier would OOM.
 - When the $6.99/mo server is provisioned, uncomment `_run_kronos` in `comparison_nightly.py` — zero other changes.
 
-Files: `scripts/comparison_nightly.py`, `.github/workflows/daily_run.yml`, `crazystockalgo_execution_plan.csv`
+Files: `scripts/comparison_nightly.py`, `.github/workflows/daily_run.yml`, `stockarithm_execution_plan.csv`
 
 ## 2026-04-21 (session 5 — morning stats email)
 

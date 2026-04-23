@@ -29,7 +29,7 @@ def _get(url: str, timeout: int = 20):
     import requests
 
     headers = {
-        "User-Agent": "Mozilla/5.0 (compatible; Crazystockalgo/1.0; +https://crazystockalgo.com)"
+        "User-Agent": "Mozilla/5.0 (compatible; Stockarithm/1.0; +https://stockarithm.com)"
     }
     try:
         return requests.get(url, headers=headers, timeout=timeout)

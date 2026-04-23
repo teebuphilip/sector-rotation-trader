@@ -23,15 +23,15 @@ import sys
 from datetime import date
 from pathlib import Path
 
-PRODUCT_CONTEXT = Path(".claude/skills/crazystockalgo-context/product.md")
-PRD_TEMPLATE = Path(".claude/skills/crazystockalgo-context/feature-prd-template.md")
+PRODUCT_CONTEXT = Path(".claude/skills/stockarithm-context/product.md")
+PRD_TEMPLATE = Path(".claude/skills/stockarithm-context/feature-prd-template.md")
 OUT_ROOT = Path("drafts/features")
 
 OPENAI_MODEL = os.getenv("OPENAI_MODEL") or "gpt-4.1-mini"
 ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL") or "claude-haiku-4-5-20251001"
 
 SYSTEM_PROMPT = """\
-You are a product manager for CrazyStockAlgo — a public paper-trading signal lab.
+You are a product manager for Stockarithm — a public paper-trading signal lab.
 You have deep knowledge of the product context provided.
 
 Your job: generate 4 distinct, grounded feature ideas for post-launch.
