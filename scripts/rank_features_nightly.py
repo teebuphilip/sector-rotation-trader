@@ -91,6 +91,12 @@ Verdict rules:
 - SKIP: adjusted_score < 5 AND no standout mechanic
 """
 
+def _slugify(text: str) -> str:
+    text = text.lower()
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+    return text.strip("-")[:50]
+
+
 # ---------------------------------------------------------------------------
 # Cache
 # ---------------------------------------------------------------------------
@@ -164,18 +170,22 @@ def render_master_rank(ranked: list[dict], today: str) -> str:
         f"Total features ranked: {len(ranked)}",
         "",
         "## Scoring Key",
-        "- **Adjusted Score** = viral_total × (6 − build_complexity) × csa_fit / 25",
+        "- **Adjusted Score** = viral_total × (6 − build_complexity) × stockarithm_fit / 25",
         "- **Verdict**: BUILD_NOW | BUILD_LATER | SKIP",
+        "- **Detail**: link to the dated score report for full dimension breakdown",
         "",
         "---",
         "",
-        "| Rank | Feature | Adj Score | Viral/20 | Complexity | CSA Fit | Verdict | Source |",
+        "| Rank | Feature | Adj Score | Viral/20 | Complexity | Fit | Verdict | Detail |",
         "|:---:|---|:---:|:---:|:---:|:---:|:---:|---|"
     ]
 
     for i, r in enumerate(ranked, 1):
         s = r.get("scores", {})
-        src = Path(r.get("source_file", "")).name
+        src_path = Path(r.get("source_file", ""))
+        # derive the dated score report from the source file's parent dir date
+        run_date = src_path.parent.name if re.match(r"\d{4}-\d{2}-\d{2}", src_path.parent.name) else today
+        detail_link = f"[scores]({run_date}.md#{_slugify(r.get('feature_name', ''))})"
         lines.append(
             f"| {i} "
             f"| {r.get('feature_name', '?')} "
@@ -184,7 +194,7 @@ def render_master_rank(ranked: list[dict], today: str) -> str:
             f"| {s.get('build_complexity', '?')} "
             f"| {s.get('stockarithm_fit', '?')} "
             f"| {r.get('verdict', '?')} "
-            f"| `{src}` |"
+            f"| {detail_link} |"
         )
 
     lines += [
