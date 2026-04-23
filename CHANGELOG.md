@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-23 (session 13 — public publish token docs)
+
+### docs: explain how to create `PUBLIC_SITE_PUSH_TOKEN`
+- Added exact fine-grained GitHub PAT steps to `PUBLIC_SITE_OPERATIONS.md`.
+- Documented required permission: `Contents: Read and write` on only `stockarithm-site`.
+- Added verification, rotation, and common failure notes.
+
+Files: `PUBLIC_SITE_OPERATIONS.md`, `CHANGELOG.md`
+
 ## 2026-04-23 (session 12 — repo split seed + public publisher)
 
 ### chore: seed split repos
