@@ -55,11 +55,14 @@ def _algo_summary(state_path, algo_type):
     last_snap = snaps[-1] if snaps else {}
     equity = last_snap.get("equity", 0)
     last_date = last_snap.get("date", "?")
-    signal = last_snap.get("signal", "HOLD")
+    algo_id = state_path.stem
+    meta = s.get("meta", {})
+    algo_meta = meta.get(algo_id, {}) if isinstance(meta, dict) else {}
+    signal = algo_meta.get("last_signal") or last_snap.get("signal", "HOLD")
     ytd_pct = ((equity / 100000) - 1) * 100
 
     return {
-        "algo_id": state_path.stem,
+        "algo_id": algo_id,
         "type": algo_type,
         "equity": equity,
         "ytd_pct": ytd_pct,
@@ -75,6 +78,7 @@ def _algo_summary(state_path, algo_type):
 def build_report():
     lines = []
     warnings = []
+    observations = []
     today = datetime.utcnow().strftime("%Y-%m-%d")
 
     lines.append("# Quality Check — {}".format(today))
@@ -242,11 +246,21 @@ def build_report():
             warnings.append("SNAPSHOT MISMATCH: normal algos have different snapshot counts: {}".format(
                 {a["algo_id"]: a["num_snapshots"] for a in normals}))
 
-    # Any algo with positions but signal is HOLD
-    for a in all_algos:
-        if a["num_positions"] > 0 and a["signal"] == "HOLD":
-            warnings.append("POSITIONS WITH HOLD: {} has {} positions but signal is HOLD".format(
-                a["algo_id"], a["num_positions"]))
+    # HOLD is a do-nothing state in this simulator, not necessarily "go flat".
+    # Only surface it as context so the warning section stays actionable.
+    held_hold = [a for a in all_algos if a["num_positions"] > 0 and a["signal"] == "HOLD"]
+    if held_hold:
+        observations.append(
+            "HELD POSITIONS WITH HOLD SIGNAL: {} algos. HOLD means maintain/no rebalance here, not forced exit.".format(
+                len(held_hold)
+            )
+        )
+        for a in sorted(held_hold, key=lambda x: (x["type"], x["algo_id"]))[:12]:
+            observations.append("  - {} ({}) has {} open positions".format(
+                a["algo_id"], a["type"], a["num_positions"]
+            ))
+        if len(held_hold) > 12:
+            observations.append("  - ... {} more".format(len(held_hold) - 12))
 
     # Algos with many trades but underwater
     for a in all_algos:
@@ -272,6 +286,12 @@ def build_report():
             lines.append("- {}".format(w))
     else:
         lines.append("- ALL CLEAR — nothing weird detected")
+
+    if observations:
+        lines.append("")
+        lines.append("## Context Notes")
+        for note in observations:
+            lines.append("- {}".format(note))
 
     lines.append("")
     lines.append("---")

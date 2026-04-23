@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-23 (session 4 — quality check HOLD semantics)
+
+### fix: quality check no longer treats normal HOLD-with-positions as warning noise
+- `scripts/quality_check.py` now reads `meta[algo_id].last_signal` when available instead of falling back to snapshot-only `HOLD`.
+- `POSITIONS WITH HOLD` is no longer emitted as a warning by default because `HOLD` means maintain/no rebalance in this simulator, not forced exit.
+- Held-position/HOLD cases are now reported under `Context Notes`, leaving `Flags & Warnings` focused on actionable issues like churn, stale state, bad dates, or extreme losses.
+
+Files: `scripts/quality_check.py`, `CHANGELOG.md`
+
 ## 2026-04-23 (session 3 — comparator data fix)
 
 ### fix: comparator suite now extracts yfinance close data robustly
