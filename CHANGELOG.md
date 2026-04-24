@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-04-24 (session 4 — ops integrity scan follow-up)
+
+### fix: morning stats email header now matches the report date
+- `scripts/daily_stats_email.py` now uses `AFH_RUN_DATE` for the top-of-email header instead of `datetime.utcnow()`.
+- The subject already used `AFH_RUN_DATE`; this makes the body consistent with the intended previous-day report.
+
+Files: `scripts/daily_stats_email.py`, `CHANGELOG.md`
+
 ## 2026-04-24 (session 3 — social content pipeline + Reddit launch drafts)
 
 ### feat: add daily social content generator

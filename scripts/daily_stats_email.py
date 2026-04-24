@@ -249,11 +249,11 @@ def _collect_new_algos(run_date: str) -> list[dict]:
 def _build_report() -> str:
     lines = []
     now = datetime.utcnow().strftime("%Y-%m-%d")
-    lines.append(f"Crazy Daily Stats — {now}")
+    market_run_date = os.getenv("AFH_RUN_DATE") or now
+    lines.append(f"Crazy Daily Stats — {market_run_date}")
     lines.append("")
 
     # Idea run
-    market_run_date = os.getenv("AFH_RUN_DATE") or now
     run_date = market_run_date
     ideas_base = Path("data/ideas/runs")
     latest_run = ideas_base / run_date
