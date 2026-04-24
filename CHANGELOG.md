@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-24 (session 7 — wire EIA key into nightly run)
+
+### fix: export `EIA_API_KEY` in the main nightly workflow
+- Added `EIA_API_KEY: ${{ secrets.EIA_API_KEY }}` to `.github/workflows/daily_run.yml`.
+- The secret already existed in GitHub, but the main nightly job was not injecting it into the runner environment.
+- Result: `electricity-consumption` was being recorded as blocked during `daily_run`, `cleanup_blocked_keys.py` could not clear it, and the email/quality outputs kept reporting `EIA_API_KEY` as missing.
+
+Files: `.github/workflows/daily_run.yml`, `CHANGELOG.md`
+
 ## 2026-04-24 (session 6 — separate preview-site publish workflow)
 
 ### feat: add independent preview-site publisher

@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
+      EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
       FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
       PUBLIC_SITE_PUSH_TOKEN: ${{ secrets.PUBLIC_SITE_PUSH_TOKEN }}
 
