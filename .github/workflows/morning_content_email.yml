@@ -48,6 +48,11 @@ jobs:
           python scripts/post_generator.py --date "$AFH_RUN_DATE" || \
             echo "[warn] post_generator failed — draft may be missing"
 
+      - name: Generate social drafts
+        run: |
+          python scripts/social_content_generator.py --date "$AFH_RUN_DATE" || \
+            echo "[warn] social_content_generator failed — drafts may be missing"
+
       - name: Commit draft
         run: |
           git config user.name "sector-bot"
