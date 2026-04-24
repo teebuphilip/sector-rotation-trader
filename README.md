@@ -13,6 +13,7 @@ The system has five major loops:
 3. **Idea generation loop**: silently generates high-action crazy ideas into dated run folders; it does not email and does not mutate trading state.
 4. **Experiment activation loop**: runs only after the core book succeeds, gates published ideas, builds/seeds accepted experiments, runs only the new algos, and sends the experiment email.
 5. **Content loop**: independently reads validated reports and turns them into short public-facing content without inventing new facts.
+6. **Feature generation loop**: every Friday generates 4 OpenAI + 4 Anthropic product feature PRDs, scores them with the V-Factor virality framework, and emails a top-10 ranked list. See `feature-generation.md`.
 
 The daily public output lives under `docs/` and is intended for GitHub Pages.
 

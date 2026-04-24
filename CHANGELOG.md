@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-04-23 (session 15 — feature generation pipeline)
+
+### feat: wire virality scoring into weekly feature generation workflow
+- Added `scripts/score_feature_virality.py`: one-shot per-run scorer, writes `reports/virality/YYYY-MM-DD.md` with per-feature dimension breakdown.
+- Added `scripts/rank_features_nightly.py`: incremental ranker, caches scores by file MD5 (edits trigger rescore; unchanged files are free), force-ranks all unbuilt features into `reports/virality/master_rank.md` and `master_rank.json`.
+- Added `scripts/mark_feature_built.py`: moves a PRD to `drafts/features/built/` (excluded from ranker's dated-subdir scan), removes cache entry. Supports partial name match and `--list` flag.
+- Updated `.github/workflows/feature_ideas.yml` to score/rank after PRD generation and append V-Factor top-10 to the summary email.
+- Fixed `scripts/feature_idea_generator.py`: `OPENAI_MODEL` / `ANTHROPIC_MODEL` now use `os.getenv() or default` so empty-string GitHub secrets fall back to model defaults.
+- Set `temperature=0` in both scorer and ranker for deterministic, cache-stable results.
+- Both scripts fixed: invalid model ID → `claude-haiku-4-5-20251001`, brand references updated to Stockarithm.
+
+### docs: add feature-generation.md
+- Documents the full pipeline: overview, files table, output layout, V-Factor scoring framework, local commands, workflow sequence, required secrets.
+
+Files: `scripts/score_feature_virality.py`, `scripts/rank_features_nightly.py`, `scripts/mark_feature_built.py`, `scripts/feature_idea_generator.py`, `.github/workflows/feature_ideas.yml`, `feature-generation.md`, `README.md`, `tldr-architecture.md`, `CHANGELOG.md`
+
 ## 2026-04-23 (session 14 — private Vercel preview repo)
 
 ### feat: add temporary preview bundle builder for Vercel review
