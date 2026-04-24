@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-04-24 (session 1 — Polygon/Massive cutover)
+
+### feat: cut the live nightly pipeline over to Polygon/Massive
+- Swapped `daily_run.py` and `seed.py` to import `scanner_polygon` instead of the old Yahoo-backed scanner.
+- Updated `.github/workflows/daily_run.yml` and `.github/workflows/crazy_daily_builds.yml` to run `precompute_signals_poly.py`.
+- Updated `scripts/rolling_30d_leaderboard.py` and `scripts/backfill_spy_equity.py` to use `scanner_polygon.safe_download`, removing remaining Yahoo exposure from the nightly leaderboard/SPY benchmark path.
+- Updated `scripts/autogen_crazy_factory.py` so the factory refresh step now rebuilds signals through `precompute_signals_poly.py`.
+- Verified the changed Python entrypoints compile cleanly.
+
+Files: `daily_run.py`, `seed.py`, `.github/workflows/daily_run.yml`, `.github/workflows/crazy_daily_builds.yml`, `scripts/rolling_30d_leaderboard.py`, `scripts/backfill_spy_equity.py`, `scripts/autogen_crazy_factory.py`, `CHANGELOG.md`, `stockarithm_execution_plan.csv`
+
 ## 2026-04-23 (session 15 — feature generation pipeline)
 
 ### feat: wire virality scoring into weekly feature generation workflow

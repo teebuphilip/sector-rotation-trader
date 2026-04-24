@@ -24,7 +24,7 @@ from config import (
     MAX_POSITION_SIZE, SECTOR_ETFS,
     STOP_LOSS_PCT, MAX_DRAWDOWN_PCT, MAX_POSITIONS_PER_SECTOR
 )
-from scanner import SECTOR_STOCKS, find_leading_sector, filter_sector_leaders, safe_download
+from scanner_polygon import SECTOR_STOCKS, find_leading_sector, filter_sector_leaders, safe_download
 from signals import check_entry, check_exit, get_entry_price
 from portfolio import (
     load_state, save_state, open_position, close_position,

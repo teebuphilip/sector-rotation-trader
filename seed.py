@@ -15,7 +15,7 @@ from datetime import date, timedelta
 import json
 
 from config import SEED_DAYS, MAX_POSITION_SIZE, STATE_FILE, STOP_LOSS_PCT
-from scanner import SECTOR_STOCKS, SECTOR_ETFS, find_leading_sector, filter_sector_leaders, safe_download
+from scanner_polygon import SECTOR_STOCKS, SECTOR_ETFS, find_leading_sector, filter_sector_leaders, safe_download
 from signals import check_entry, check_exit, get_entry_price
 from portfolio import (
     _default_state, save_state, open_position, close_position,
