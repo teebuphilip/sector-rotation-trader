@@ -56,6 +56,56 @@ jobs:
           git diff --cached --quiet || git commit -m "feat: weekly feature PRDs $RUN_DATE"
           git push || true
 
+      - name: Score and rank features
+        run: python scripts/rank_features_nightly.py
+
+      - name: Append virality top 10 to summary
+        run: |
+          python - <<'EOF'
+          import json
+          from pathlib import Path
+
+          rank_file = Path("reports/virality/master_rank.json")
+          summary_file = Path(f"drafts/features/${{ env.RUN_DATE }}/summary.txt")
+
+          if not rank_file.exists() or not summary_file.exists():
+              print("Skipping: rank or summary file missing")
+              exit(0)
+
+          ranked = json.loads(rank_file.read_text())
+          top10 = [r for r in ranked if r.get("verdict") != "ERROR"][:10]
+
+          lines = [
+              "",
+              "=" * 50,
+              "VIRALITY TOP 10 (V-Factor adjusted score)",
+              "=" * 50,
+              "",
+          ]
+          for i, r in enumerate(top10, 1):
+              verdict = r.get("verdict", "?")
+              score = r.get("adjusted_score", 0)
+              name = r.get("feature_name", "?")
+              lines.append(f"  {i:>2}. {name} — {verdict} (score={score})")
+
+          lines += [
+              "",
+              "Scores: BUILD_NOW >= 8 (complexity <= 3) | BUILD_LATER >= 5 | SKIP",
+              "Full report: reports/virality/master_rank.md",
+          ]
+
+          with summary_file.open("a") as f:
+              f.write("\n".join(lines) + "\n")
+
+          print(f"Appended top {len(top10)} to {summary_file}")
+          EOF
+
+      - name: Commit virality reports
+        run: |
+          git add reports/virality/
+          git diff --cached --quiet || git commit -m "feat: virality scores $RUN_DATE"
+          git push || true
+
       - name: Send summary email
         if: ${{ env.ALERT_EMAIL_TO != '' }}
         uses: dawidd6/action-send-mail@v3
