@@ -855,14 +855,24 @@
       "positions": {},
       "sector": "Credit Card Delinquency",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-24",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Credit Card Delinquency",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-16",
-  "last_run": "2026-04-23",
+  "last_run": "2026-04-24",
   "meta": {
     "credit-card-delinquency": {
       "name": "Credit Card Delinquency",
-      "last_run": "2026-04-23",
+      "last_run": "2026-04-24",
       "dq_rate": 2.94,
       "delta_1q": -0.04,
       "signal_label": "HOLD",

@@ -1,43 +1,7 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-04-23T23:18:12Z",
+  "generated_at": "2026-04-24T13:18:43Z",
   "algos": [
-    {
-      "schema_version": "v1",
-      "key": "crazy:xlb-weekly-rss-news-count-spike-on-commodity-shortage",
-      "algo_type": "crazy",
-      "algo_id": "xlb-weekly-rss-news-count-spike-on-commodity-shortage",
-      "name": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
-      "family": "attention_sentiment",
-      "status": "parked",
-      "evidence_class": "pending_seed",
-      "rebalance_frequency": "weekly",
-      "ytd_pct": -0.09,
-      "days_running": 74,
-      "beat_spy": false,
-      "spy_pct": 3.98,
-      "alpha_pct": -4.07,
-      "ret_30d_pct": -0.09,
-      "spy_delta_30d_pct": -8.55,
-      "last_snapshot": "2026-04-23",
-      "new_algo_date": null,
-      "comparator": {
-        "primary_etf": "XLB",
-        "signals": {
-          "momentum_5d": {
-            "direction": "UP",
-            "confidence": 0.023,
-            "return_pct": 0.116
-          },
-          "momentum_20d": {
-            "direction": "UP",
-            "confidence": 0.971,
-            "return_pct": 4.857
-          }
-        },
-        "summary": "both_up"
-      }
-    },
     {
       "schema_version": "v1",
       "key": "crazy:retail-roulette",
@@ -49,13 +13,13 @@
       "evidence_class": "v1_backtested",
       "rebalance_frequency": "daily",
       "ytd_pct": -0.09,
-      "days_running": 74,
+      "days_running": 75,
       "beat_spy": false,
       "spy_pct": 3.98,
       "alpha_pct": -4.07,
       "ret_30d_pct": -0.09,
       "spy_delta_30d_pct": -8.55,
-      "last_snapshot": "2026-04-23",
+      "last_snapshot": "2026-04-24",
       "new_algo_date": null,
       "comparator": {
         "primary_etf": "XLY",
@@ -76,6 +40,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:xlb-weekly-rss-news-count-spike-on-commodity-shortage",
+      "algo_type": "crazy",
+      "algo_id": "xlb-weekly-rss-news-count-spike-on-commodity-shortage",
+      "name": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
+      "family": "attention_sentiment",
+      "status": "parked",
+      "evidence_class": "pending_seed",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.1,
+      "days_running": 75,
+      "beat_spy": false,
+      "spy_pct": 3.98,
+      "alpha_pct": -4.08,
+      "ret_30d_pct": -0.1,
+      "spy_delta_30d_pct": -8.56,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLB",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.023,
+            "return_pct": 0.116
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.971,
+            "return_pct": 4.857
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:xle-weekly-drawdown-rebound-signal",
       "algo_type": "crazy",
       "algo_id": "xle-weekly-drawdown-rebound-signal",
@@ -85,13 +85,13 @@
       "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "ytd_pct": -0.33,
-      "days_running": 74,
+      "days_running": 75,
       "beat_spy": false,
       "spy_pct": 3.98,
       "alpha_pct": -4.32,
-      "ret_30d_pct": -0.24,
-      "spy_delta_30d_pct": -8.7,
-      "last_snapshot": "2026-04-23",
+      "ret_30d_pct": -0.23,
+      "spy_delta_30d_pct": -8.69,
+      "last_snapshot": "2026-04-24",
       "new_algo_date": null,
       "comparator": {
         "primary_etf": "XLE",
@@ -121,13 +121,13 @@
       "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "ytd_pct": -0.41,
-      "days_running": 74,
+      "days_running": 75,
       "beat_spy": false,
       "spy_pct": 3.98,
       "alpha_pct": -4.39,
       "ret_30d_pct": 0.05,
       "spy_delta_30d_pct": -8.41,
-      "last_snapshot": "2026-04-23",
+      "last_snapshot": "2026-04-24",
       "new_algo_date": null,
       "comparator": {
         "primary_etf": "XLC",
@@ -157,13 +157,13 @@
       "evidence_class": "pending_seed",
       "rebalance_frequency": "daily",
       "ytd_pct": 0.0,
-      "days_running": 74,
+      "days_running": 75,
       "beat_spy": false,
       "spy_pct": 3.98,
       "alpha_pct": -3.98,
       "ret_30d_pct": 0.0,
       "spy_delta_30d_pct": -8.46,
-      "last_snapshot": "2026-04-23",
+      "last_snapshot": "2026-04-24",
       "new_algo_date": null,
       "comparator": {
         "primary_etf": "XLB",
@@ -193,13 +193,13 @@
       "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "ytd_pct": 0.0,
-      "days_running": 69,
+      "days_running": 70,
       "beat_spy": false,
       "spy_pct": 3.98,
       "alpha_pct": -3.98,
       "ret_30d_pct": 0.0,
       "spy_delta_30d_pct": -8.46,
-      "last_snapshot": "2026-04-23",
+      "last_snapshot": "2026-04-24",
       "new_algo_date": null,
       "comparator": {
         "primary_etf": "XLB",
@@ -229,13 +229,13 @@
       "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "ytd_pct": 0.0,
-      "days_running": 69,
+      "days_running": 70,
       "beat_spy": false,
       "spy_pct": 3.98,
       "alpha_pct": -3.98,
       "ret_30d_pct": 0.0,
       "spy_delta_30d_pct": -8.46,
-      "last_snapshot": "2026-04-23",
+      "last_snapshot": "2026-04-24",
       "new_algo_date": null,
       "comparator": {
         "primary_etf": "XLE",

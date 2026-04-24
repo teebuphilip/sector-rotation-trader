@@ -6,20 +6,20 @@ SPY 30D Return: +8.46%
 
 | Rank | Algo | Category | 30D Return | 30D Sharpe | 30D Max DD |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Algo Biscotti (Unconditional Loyalty) | standard | +7.80% | 3.30 | -3.10% |
+| 1 | Algo Biscotti (Unconditional Loyalty) | standard | +7.67% | 3.24 | -3.10% |
 | 2 | Algo Baileymol (Chaos Monger) | standard | +6.58% | 3.73 | -1.80% |
-| 3 | VIX Term Structure | crazy | +3.94% | 3.83 | -1.09% |
-| 4 | Antonacci Dual Momentum Sector Rotation | standard | +3.72% | 5.63 | -1.22% |
-| 5 | Algo Biscotti (Unconditional Loyalty) | crazy | +2.90% | 1.66 | -2.86% |
-| 6 | Chaos Rotation Lab | crazy | +2.60% | 1.30 | -3.24% |
+| 3 | VIX Term Structure | crazy | +3.61% | 3.48 | -1.09% |
+| 4 | Antonacci Dual Momentum Sector Rotation | standard | +3.60% | 5.40 | -1.22% |
+| 5 | Algo Biscotti (Unconditional Loyalty) | crazy | +2.39% | 1.32 | -2.86% |
+| 6 | Chaos Rotation Lab | crazy | +1.99% | 0.94 | -3.24% |
 | 7 | FINRA Dark Pool Signal | crazy | +1.67% | 2.48 | -0.28% |
 | 8 | Uber Mobility Index | crazy | +1.07% | 0.98 | -0.49% |
 | 9 | Insider Trading Signals | crazy | +0.99% | 1.53 | -0.06% |
-| 10 | VIX Fear Rotation | crazy | +0.70% | 0.41 | -2.00% |
+| 10 | VIX Fear Rotation | crazy | +0.54% | 0.20 | -2.00% |
 | 11 | Mortgage Rate Housing Proxy | crazy | +0.43% | -0.15 | -1.11% |
-| 12 | Xlc Weekly Google Trends Surge In 5g Rollout | crazy | +0.05% | -16.18 | -0.02% |
+| 12 | Xlc Weekly Google Trends Surge In 5g Rollout | crazy | +0.05% | -16.27 | -0.02% |
 | 13 | Semiconductor Moonshot Warning | crazy | +0.05% | -19.74 | -0.02% |
-| 14 | NRWise Acceleration | standard | +0.05% | -0.49 | -2.89% |
+| 14 | NRWise Acceleration | standard | +0.05% | -0.56 | -2.89% |
 | 15 | Copper Momentum | crazy | +0.03% | -1.24 | -0.92% |
 | 16 | Quantified Simple Monthly Rotation | standard | +0.00% | 0.00 | 0.00% |
 | 17 | Reddit Subreddit Mention Spike | crazy | +0.00% | 0.00 | 0.00% |
@@ -103,22 +103,22 @@ SPY 30D Return: +8.46%
 | 95 | Weather Windfall | crazy | +0.00% | 0.00 | 0.00% |
 | 96 | Work From Home Frenzy | crazy | +0.00% | 0.00 | 0.00% |
 | 97 | Fintech Disruption Wave | crazy | +0.00% | 0.00 | 0.00% |
-| 98 | Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc | crazy | -0.01% | -137.01 | -0.01% |
-| 99 | Electricity Consumption | crazy | -0.01% | -1.20 | -1.02% |
-| 100 | Consumer Discretionary Google Trends Surge For Sale Keywords | crazy | -0.01% | -58.62 | -0.02% |
-| 101 | Grocery Store Foot Traffic Collapse Signal | crazy | -0.01% | -11.04 | -0.11% |
+| 98 | Electricity Consumption | crazy | -0.01% | -1.20 | -1.02% |
+| 99 | Consumer Discretionary Google Trends Surge For Sale Keywords | crazy | -0.01% | -58.62 | -0.02% |
+| 100 | Grocery Store Foot Traffic Collapse Signal | crazy | -0.01% | -11.04 | -0.11% |
+| 101 | Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc | crazy | -0.02% | -100.47 | -0.02% |
 | 102 | Xlu Daily Electricity Demand Surge | crazy | -0.03% | -53.54 | -0.03% |
-| 103 | Industrial Sector Weekly Earthquake Activity Correlation Dip | crazy | -0.04% | -83.04 | -0.04% |
+| 103 | Industrial Sector Weekly Earthquake Activity Correlation Dip | crazy | -0.05% | -77.48 | -0.05% |
 | 104 | Utilities Sector Negative Price Gap Fill | crazy | -0.06% | -46.99 | -0.06% |
 | 105 | News Sentiment Rotation Fade Trade | crazy | -0.07% | -25.86 | -0.07% |
-| 106 | Faber Momentum Rotation | standard | -0.08% | -1.19 | -1.38% |
-| 107 | Electricity Enlightenment | crazy | -0.08% | -17.77 | -0.13% |
-| 108 | Xlb Weekly Rss News Count Spike On Commodity Shortage | crazy | -0.09% | -31.04 | -0.09% |
-| 109 | Retail Roulette | crazy | -0.09% | -20.79 | -0.13% |
-| 110 | Tremor Tension | crazy | -0.12% | -15.18 | -0.12% |
-| 111 | Google Gusts | crazy | -0.13% | -22.68 | -0.13% |
-| 112 | Seismic Activity Construction Halt Signal | crazy | -0.14% | -22.15 | -0.14% |
+| 106 | Electricity Enlightenment | crazy | -0.08% | -17.77 | -0.13% |
+| 107 | Retail Roulette | crazy | -0.09% | -19.92 | -0.13% |
+| 108 | Xlb Weekly Rss News Count Spike On Commodity Shortage | crazy | -0.10% | -31.42 | -0.10% |
+| 109 | Tremor Tension | crazy | -0.12% | -15.18 | -0.12% |
+| 110 | Google Gusts | crazy | -0.13% | -22.68 | -0.13% |
+| 111 | Seismic Activity Construction Halt Signal | crazy | -0.13% | -21.69 | -0.13% |
+| 112 | Weekly Surge In Google Trends Searches For Diy Home Repair Signals Consumer Stress Lifting Xly | crazy | -0.17% | -14.77 | -0.22% |
 | 113 | Retail Sales Momentum | crazy | -0.17% | -1.84 | -0.90% |
-| 114 | Weekly Surge In Google Trends Searches For Diy Home Repair Signals Consumer Stress Lifting Xly | crazy | -0.18% | -15.06 | -0.23% |
-| 115 | Xle Weekly Drawdown Rebound Signal | crazy | -0.24% | -10.57 | -0.28% |
-| 116 | Lumber Momentum | crazy | -0.49% | -2.38 | -1.27% |
+| 114 | Xle Weekly Drawdown Rebound Signal | crazy | -0.23% | -10.41 | -0.28% |
+| 115 | Lumber Momentum | crazy | -0.49% | -2.38 | -1.27% |
+| 116 | Faber Momentum Rotation | standard | -0.52% | -2.25 | -1.38% |
