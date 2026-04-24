@@ -290,3 +290,165 @@ For launch reliability:
 - cut over only after we have multiple clean nightly runs through the snapshot path
 
 That preserves data continuity for May 15 while still moving toward the commercial-safe architecture the right way.
+
+## Shadow-Run Strategy
+
+Before production cutover, run Yahoo and Polygon/Massive in parallel.
+
+Important:
+
+- Yahoo remains the live production decision path
+- Polygon/Massive runs as a shadow path only
+- the shadow path does not place or influence live decisions
+
+This is the best way to build confidence without risking pipeline stability.
+
+### Goal
+
+Prove that Polygon/Massive is operationally equivalent to Yahoo for this system before changing the live runtime.
+
+The standard is not perfect byte-for-byte equality.
+The standard is that both paths produce materially equivalent inputs and decisions for the nightly pipeline.
+
+### Shadow Components
+
+Add a parallel shadow flow:
+
+1. build Yahoo-backed reference snapshot
+2. build Polygon/Massive snapshot
+3. compare them
+4. write a parity report
+5. keep the live run on Yahoo until parity is consistently acceptable
+
+Suggested scripts:
+
+- `scripts/build_market_snapshot_yahoo.py`
+- `scripts/build_market_snapshot_polygon.py`
+- `scripts/compare_market_snapshots.py`
+
+Suggested outputs:
+
+- `reports/data_parity/latest.json`
+- `reports/data_parity/latest.md`
+- `reports/data_parity/YYYY-MM-DD.json`
+- `reports/data_parity/YYYY-MM-DD.md`
+
+### What To Compare
+
+#### 1. Coverage parity
+
+Compare:
+
+- total tickers requested
+- total tickers returned
+- missing tickers
+- stale tickers
+
+The report should make missing coverage obvious, because missing data is more important than small price drift.
+
+#### 2. Latest price parity
+
+For each ticker:
+
+- Yahoo latest close
+- Polygon latest close
+- absolute difference
+- percent difference
+
+Flag anything above a configured threshold.
+
+Suggested initial thresholds:
+
+- informational: > 0.25%
+- warning: > 0.75%
+- failure: > 1.50%
+
+Thresholds should be configurable.
+
+#### 3. Time-series parity
+
+For the most important tickers:
+
+- compare recent close series lengths
+- compare last N bars
+- compare missing dates
+
+This catches cases where one source has coverage but a different calendar/bar set.
+
+#### 4. Derived-output parity
+
+Compare downstream outputs built from the two paths:
+
+- leading sector
+- stock leader shortlist
+- comparator outputs
+- rolling 30D inputs
+- signal JSON coverage
+- force-rank benchmark inputs
+
+The report should distinguish between raw price differences and actual downstream product differences.
+
+#### 5. Decision parity
+
+The highest-value comparison is whether the decisions change.
+
+Compare:
+
+- tactical/core trades
+- normal algo targets
+- crazy algo signals for price-dependent algos
+- signal-composite labels
+
+If prices differ but decisions do not, the migration is still probably acceptable.
+
+### Success Criteria
+
+Do not cut over after one clean run.
+
+Recommended cutover gate:
+
+- 7 to 14 consecutive nightly shadow runs
+- no critical coverage gaps
+- no repeated material divergence in downstream decisions
+- no growing stale/missing ticker list
+
+Suggested decision rule:
+
+- if raw prices drift slightly but decisions stay the same, mark pass
+- if raw prices drift and decisions drift, investigate before cutover
+
+### Why This Is Better Than A Blind Swap
+
+This approach:
+
+- keeps the live pipeline reliable
+- gives you hard evidence that Polygon/Massive is good enough
+- turns migration risk into a measurable report
+- lets you debug source differences before they affect users
+
+It also creates a reusable migration harness for any future data provider change.
+
+### Important Caveat
+
+Yahoo and Polygon/Massive will not always match exactly.
+
+Differences can come from:
+
+- delayed vs near-real-time timing
+- adjusted-close conventions
+- symbol normalization
+- holiday/calendar handling
+- missing bars
+
+So the objective is not exact equality.
+The objective is operational equivalence for this product.
+
+### Recommended Sequence
+
+1. keep Yahoo live
+2. build the Polygon/Massive snapshot builder
+3. build the Yahoo reference snapshot builder
+4. build the parity report
+5. run shadow comparison nightly
+6. review parity for at least a week
+7. only then switch the production runtime

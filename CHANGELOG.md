@@ -10,6 +10,7 @@
 ### docs: stage Polygon/Massive migration assets and write the real design
 - Added `staging/polygon_massive_cutover/` with the staged Polygon/Massive files preserved for reference.
 - Added `staging/polygon_massive_cutover/DESIGN.md` documenting the correct strategy: one shared market snapshot builder, one loader, and runtime consumers reading cached data instead of making repeated live fetches.
+- Extended the design with a Yahoo-vs-Polygon shadow-run parity strategy so the migration can be validated nightly before production cutover.
 
 Files: `daily_run.py`, `seed.py`, `.github/workflows/daily_run.yml`, `.github/workflows/crazy_daily_builds.yml`, `scripts/rolling_30d_leaderboard.py`, `scripts/backfill_spy_equity.py`, `scripts/autogen_crazy_factory.py`, `staging/polygon_massive_cutover/`, `CHANGELOG.md`
 
