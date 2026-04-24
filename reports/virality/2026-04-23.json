@@ -1,0 +1,138 @@
+[
+  {
+    "feature_name": "Force Rank Divergence View",
+    "scores": {
+      "proof_of_work": 2,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 6,
+    "adjusted_score": 7.68,
+    "top_viral_mechanic": "Deep, data-literate credibility signal: 'I spotted the algo recovering from rank 200 to rank 50 in 30 days' is genuinely smart-person proof-of-work in r/algotrading, not hype",
+    "biggest_weakness": "Zero invitation loop and no public evidence trail\u2014users consume this privately; no reason to screenshot, share, or recruit others into stockarithm to use it better",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-04-23/anthropic-feature-01-force-rank-divergence-view.md"
+  },
+  {
+    "feature_name": "Trade-Level Signal Audit Trail",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 7,
+    "adjusted_score": 8.4,
+    "top_viral_mechanic": "Enabling skeptical traders to publicly prove 'the algo isn't curve-fit' by sharing audit modal screenshots on r/algotrading, leveraging Stockarithm's transparency-as-moat positioning.",
+    "biggest_weakness": "Feature is read-only inspection with no sharing mechanism, so proof-of-work stays private unless user manually screenshots and posts; lacks inherent invitation loop (no reason to invite others for personal audit access).",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-04-23/anthropic-feature-02-trade-level-signal-audit-trail.md"
+  },
+  {
+    "feature_name": "Bucket Thesis Statement",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 3,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 8,
+    "adjusted_score": 9.6,
+    "top_viral_mechanic": "Operator's written reasoning becomes public artifact that proves transparency and intellectual honesty \u2014 exactly what r/algotrading respects and shares as 'look how candid this founder is about failures'",
+    "biggest_weakness": "Zero network effects or invitation loops; one user's thesis doesn't make the product better for others, and theses don't incentivize sign-ups",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-04-23/anthropic-feature-03-bucket-thesis-statement.md"
+  },
+  {
+    "feature_name": "Bucket Migration Log",
+    "scores": {
+      "proof_of_work": 2,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 6,
+    "adjusted_score": 7.2,
+    "top_viral_mechanic": "Timeline visualization of algo reclassifications creates sharable 'receipts' of which bets paid off and which failed, turning classification changes into micro-narratives the skeptical r/algotrading crowd will screenshot and debate.",
+    "biggest_weakness": "Feature is inherently introspective\u2014users consume it individually on detail pages; there is no incentive to share a migration log, no social loop, and no competitive element that forces cross-user visibility or invitations.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-04-23/anthropic-feature-04-bucket-migration-log.md"
+  },
+  {
+    "feature_name": "Loss Flags Ledger",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 4,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 9,
+    "adjusted_score": 10.8,
+    "top_viral_mechanic": "Weaponizes transparency against fintech hype culture\u2014users can screenshot a leaderboard with prominent loss flags and share as proof of honesty, directly contrasting with hidden-losses competitors.",
+    "biggest_weakness": "No incentive for users to invite others or loop back; the feature educates existing skeptical users but doesn't create FOMO or collaborative advantage for network growth.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-04-23/openai-feature-01-receipts-ledger-loss-flags.md"
+  },
+  {
+    "feature_name": "Signal Hunter's Bucket View",
+    "scores": {
+      "proof_of_work": 2,
+      "invitation_loop": 1,
+      "public_evidence": 1,
+      "cooperative_gain": 2,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 6,
+    "adjusted_score": 7.2,
+    "top_viral_mechanic": "Leverages stockarithm's unique failures-published transparency by making bucket classification (ALPHA/noise/unresolved) visible, which reinforces the legitimacy story to skeptical r/algotrading audiences.",
+    "biggest_weakness": "Pure UX refinement with zero sharing incentives\u2014users filtering signals locally gains them nothing to broadcast, no reason to invite others, and creates no public evidence of their success.",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-04-23/openai-feature-02-signal-hunter-s-bucket-view.md"
+  },
+  {
+    "feature_name": "Alt-Data Nerd's Divergence Spotlight",
+    "scores": {
+      "proof_of_work": 2,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 6,
+    "adjusted_score": 5.76,
+    "top_viral_mechanic": "Niche appeal to data-literate skeptics who can claim discovery of unresolved patterns; fits stockarithm's anti-hype DNA perfectly.",
+    "biggest_weakness": "No sharing mechanic, no social proof layer, and divergence spotting is inherently a solitary research activity with zero incentive to loop others in.",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-04-23/openai-feature-03-alt-data-nerd-s-divergence-spotlight.md"
+  },
+  {
+    "feature_name": "Receipts Guy's Trade History Scroll",
+    "scores": {
+      "proof_of_work": 2,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 6,
+    "adjusted_score": 7.2,
+    "top_viral_mechanic": "Raw, unflinching trade receipts with red losses prominent\u2014speaks directly to skeptical r/algotrading ethos and proves transparency claims with hard data.",
+    "biggest_weakness": "Zero incentive to share or invite others; a Receipts Guy auditing trades alone doesn't broadcast that audit socially, so it generates no public footprint or network growth.",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-04-23/openai-feature-04-receipts-guy-s-trade-history-scroll.md"
+  }
+]

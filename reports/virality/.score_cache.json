@@ -1,0 +1,218 @@
+{
+  "drafts/features/2026-04-22/anthropic-feature-01-divergence-view.md": {
+    "feature_name": "Divergence View",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 7,
+    "adjusted_score": 8.75,
+    "top_viral_mechanic": "Data-literate traders can spot and call out algos caught in lucky streaks, creating native credibility plays on r/algotrading by showing they read the fine print.",
+    "biggest_weakness": "No incentive to share the finding\u2014spotting a divergence is personal alpha, not social proof, so users hoard rather than broadcast.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-04-22/anthropic-feature-01-divergence-view.md",
+    "_hash": "ff4a9da7c6be1bf6e9fb3d11d3bd9d30"
+  },
+  "drafts/features/2026-04-22/anthropic-feature-02-bucket-audit-log.md": {
+    "feature_name": "Bucket Audit Log",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 7,
+    "adjusted_score": 8.4,
+    "top_viral_mechanic": "Transparency of failure reasons (algo moved to noise: 40% win rate) lets users share audit logs as proof of rigorous methodology, exploiting the core unfair advantage of publishing failures.",
+    "biggest_weakness": "No invitation mechanic or network effect\u2014users audit algos alone; sharing a bucket transition log is interesting only to existing users, not a recruitment tool.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-04-22/anthropic-feature-02-bucket-audit-log.md",
+    "_hash": "ccabef2e756772ee4a8e910997239fdc"
+  },
+  "drafts/features/2026-04-22/anthropic-feature-03-cross-algo-pattern-spotter.md": {
+    "feature_name": "Cross-Algo Pattern Spotter",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 2,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 8,
+    "adjusted_score": 6.4,
+    "top_viral_mechanic": "Users can publicly claim they spotted a signal-type pattern before others (e.g., 'I saw weather algos were noise 3 months ago'), turning data analysis into social proof.",
+    "biggest_weakness": "User-only tagging with zero sharing or public leaderboard means patterns discovered stay locked in private dashboards\u2014no built-in mechanism to broadcast findings or create FOMO.",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-04-22/anthropic-feature-03-cross-algo-pattern-spotter.md",
+    "_hash": "de99dfaf678df77b19c35a3c3a849252"
+  },
+  "drafts/features/2026-04-22/anthropic-feature-04-receipts-export.md": {
+    "feature_name": "Receipts Export",
+    "scores": {
+      "proof_of_work": 4,
+      "invitation_loop": 1,
+      "public_evidence": 3,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 9,
+    "adjusted_score": 9.0,
+    "top_viral_mechanic": "Data exports with explicit 'no survivorship bias' headers let skeptical traders prove to peers that stockarithm is genuinely transparent\u2014the anti-hype flex in a hype category.",
+    "biggest_weakness": "Zero network effects or invitation mechanics; a user exporting data doesn't pull anyone else into the product, so growth is entirely dependent on individual conversion.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-04-22/anthropic-feature-04-receipts-export.md",
+    "_hash": "71a3e5d35278447395a791c9b8fedd1e"
+  },
+  "drafts/features/2026-04-23/anthropic-feature-01-force-rank-divergence-view.md": {
+    "feature_name": "Force Rank Divergence View",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 7,
+    "adjusted_score": 8.96,
+    "top_viral_mechanic": "Lets skeptical traders spot and share algos that are visibly recovering from failure \u2014 pure narrative ammunition for the 'receipts guy' archetype who loves proving others wrong with data.",
+    "biggest_weakness": "No incentive loop or sharing mechanic; a user finds a hot divergence but has zero reason to tell anyone else \u2014 it's pure consumption, not co-creation or social proof.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-04-23/anthropic-feature-01-force-rank-divergence-view.md",
+    "_hash": "2878b78f75c5f6b5536cae0f84c86026"
+  },
+  "drafts/features/2026-04-23/anthropic-feature-02-trade-level-signal-audit-trail.md": {
+    "feature_name": "Trade-Level Signal Audit Trail",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 7,
+    "adjusted_score": 8.4,
+    "top_viral_mechanic": "Inspection-level transparency (signal conditions, SPY comparison) lets alt-data nerds prove signal legitimacy publicly in Reddit debates without screenshots\u2014'Biscotti fired on [condition] while SPY did [this]' is shareable proof.",
+    "biggest_weakness": "Read-only audit with no export or share button means users must manually transcribe findings to social; feature lives inside the product and doesn't naturally become a social artifact or conversation starter.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-04-23/anthropic-feature-02-trade-level-signal-audit-trail.md",
+    "_hash": "d79822467daf74103f7a120a026dfc07"
+  },
+  "drafts/features/2026-04-23/anthropic-feature-03-bucket-thesis-statement.md": {
+    "feature_name": "Bucket Thesis Statement",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 3,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 8,
+    "adjusted_score": 9.6,
+    "top_viral_mechanic": "Operator thesis becomes a public proof artifact\u2014readers can screenshot/share the explicit failure logic and prediction criteria, which is rare and credible in fintech.",
+    "biggest_weakness": "No incentive for users to *invite others* to see theses; it's consumption-only and doesn't leverage the two-sided market (winners/losers) as a shared discovery mechanism.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-04-23/anthropic-feature-03-bucket-thesis-statement.md",
+    "_hash": "bdc84fed61cfd9f380d5b9543bff627f"
+  },
+  "drafts/features/2026-04-23/anthropic-feature-04-bucket-migration-log.md": {
+    "feature_name": "Bucket Migration Log",
+    "scores": {
+      "proof_of_work": 2,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 6,
+    "adjusted_score": 5.76,
+    "top_viral_mechanic": "Shows classification volatility as proof of rigor\u2014users can cite 'Biscotti bounced 4x in 60 days' to warn peers, leveraging the failures-published credibility angle.",
+    "biggest_weakness": "Purely analytical; no social sharing mechanic, invitation loop, or reason for users to expose the feature to their network\u2014it's internal due diligence, not social currency.",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-04-23/anthropic-feature-04-bucket-migration-log.md",
+    "_hash": "9158e2d8769d4cf3bba6c364eeda5666"
+  },
+  "drafts/features/2026-04-23/openai-feature-01-receipts-ledger-loss-flags.md": {
+    "feature_name": "Receipts Ledger: Loss Flags",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 7,
+    "adjusted_score": 8.4,
+    "top_viral_mechanic": "Loss flags directly amplify stockarithm's core unfair advantage (transparency) and give skeptical traders proof-of-honesty social currency when they cite it to peers.",
+    "biggest_weakness": "Loss flags are table stakes for credibility, not shareable content\u2014users don't screenshot loss data to flex or tell friends about, so invitation loop and public evidence are near zero.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-04-23/openai-feature-01-receipts-ledger-loss-flags.md",
+    "_hash": "76feec78ccc04ac5b48ce54a86f4e1fa"
+  },
+  "drafts/features/2026-04-23/openai-feature-02-signal-hunter-s-bucket-view.md": {
+    "feature_name": "Signal Hunter's Bucket View",
+    "scores": {
+      "proof_of_work": 2,
+      "invitation_loop": 1,
+      "public_evidence": 1,
+      "cooperative_gain": 2,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 6,
+    "adjusted_score": 7.2,
+    "top_viral_mechanic": "Bucket classification directly leverages stockarithm's unique failures-published transparency\u2014users can visibly filter ALPHA signals and share their curation, turning data triage into credible signal curation.",
+    "biggest_weakness": "Feature is UI/UX optimization with zero incentive loop\u2014users don't gain social currency for using it, can't easily share their bucket filters, and there's no reason others need to join to unlock value.",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-04-23/openai-feature-02-signal-hunter-s-bucket-view.md",
+    "_hash": "ecc7d40402a2d8251388f19f52f37938"
+  },
+  "drafts/features/2026-04-23/openai-feature-03-alt-data-nerd-s-divergence-spotlight.md": {
+    "feature_name": "Alt-Data Nerd's Divergence Spotlight",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 2,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 8,
+    "adjusted_score": 9.6,
+    "top_viral_mechanic": "Lets expert traders spot anomalies others miss and share 'Biscotti found a weird pattern' moments that prove their edge.",
+    "biggest_weakness": "No built-in sharing mechanism or leaderboard footprint\u2014divergence discovery stays private unless user manually screenshots and posts.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-04-23/openai-feature-03-alt-data-nerd-s-divergence-spotlight.md",
+    "_hash": "48de9114a72e24e6b7817587acce89ea"
+  },
+  "drafts/features/2026-04-23/openai-feature-04-receipts-guy-s-trade-history-scroll.md": {
+    "feature_name": "Receipts Guy's Trade History Scroll",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 7,
+    "adjusted_score": 11.2,
+    "top_viral_mechanic": "Foregrounds losses publicly with red/green color coding, exploiting stockarithm's radical transparency angle to let power users prove their due diligence to skeptical communities.",
+    "biggest_weakness": "Zero network effects or invitation mechanics\u2014a Receipts Guy auditing trades alone doesn't create incentive or reason to share with others, making it purely consumptive.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-04-23/openai-feature-04-receipts-guy-s-trade-history-scroll.md",
+    "_hash": "8775fb1cdab464437f2c8a866756bf43"
+  }
+}
