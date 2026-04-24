@@ -1,10 +1,19 @@
 {
-  "cash": 99871.96639003152,
+  "cash": 94868.41807052995,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 40.320741890347925,
+  "fees_paid": 50.27074189034792,
   "taxes_paid": 0.0,
-  "positions": {},
+  "positions": {
+    "XLC": {
+      "shares": 43.21964929836252,
+      "entry_price": 115.54000091552734,
+      "entry_date": "2026-04-24",
+      "cost": 4993.598319501576,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-20",
@@ -53,6 +62,16 @@
       "pnl_pct": -0.62,
       "entry_date": "2026-04-22",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-24",
+      "action": "BUY",
+      "ticker": "XLC",
+      "shares": 43.2196,
+      "price": 115.54,
+      "cost": 4993.6,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -835,20 +854,40 @@
       "positions": {},
       "sector": "Google Gusts",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-24",
+      "cash": 94868.42,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99862.02,
+      "positions": {
+        "XLC": {
+          "shares": 43.2196,
+          "entry_price": 115.54,
+          "current_price": 115.54,
+          "market_value": 4993.6,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-24",
+          "margin": false
+        }
+      },
+      "sector": "Google Gusts",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-18",
   "last_run": "2026-04-24",
   "meta": {
     "google-gusts": {
-      "signal_label": "HOLD",
+      "signal_label": "RISK_ON",
       "name": "Google Gusts",
-      "last_signal": "HOLD",
+      "last_signal": "RISK_ON",
       "last_run": "2026-04-24",
-      "latest_value": 0.0,
-      "prior_avg": 1.8571,
-      "signal_change": -1.0,
-      "entry_date": "2026-04-22"
+      "latest_value": 5.0,
+      "prior_avg": 2.3214,
+      "signal_change": 1.1538,
+      "entry_date": "2026-04-24"
     }
   }
 }

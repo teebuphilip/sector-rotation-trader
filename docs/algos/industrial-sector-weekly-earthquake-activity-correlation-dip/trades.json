@@ -81,6 +81,20 @@
       "cost": 4997.4,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-24",
+      "action": "SELL",
+      "ticker": "XLI",
+      "shares": 28.9856,
+      "price": 172.47,
+      "proceeds": 4988.93,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -8.47,
+      "pnl_pct": -0.17,
+      "entry_date": "2026-04-24",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -863,6 +877,16 @@
       },
       "sector": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
       "num_positions": 1
+    },
+    {
+      "date": "2026-04-24",
+      "cash": 99929.59,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99929.59,
+      "positions": {},
+      "sector": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-19"

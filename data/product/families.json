@@ -1,44 +1,20 @@
 {
-  "generated_at": "2026-04-24T14:38:22Z",
+  "generated_at": "2026-04-24T23:08:17Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
       "count": 22,
       "by_status": {
-        "live_only": 5,
+        "live_only": 6,
         "parked": 2,
-        "sandbox": 15
+        "sandbox": 14
       },
       "by_evidence_class": {
-        "live_receipts_only": 5,
-        "needs_history": 15,
+        "live_receipts_only": 6,
+        "needs_history": 14,
         "pending_seed": 2
       },
       "leaders": [
-        {
-          "key": "crazy:daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig",
-          "algo_type": "crazy",
-          "algo_id": "daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig",
-          "name": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
-          "family": "attention_sentiment",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "daily",
-          "universe": [
-            "XLK"
-          ],
-          "equity": 100000.0,
-          "ytd_pct": 0.0,
-          "trade_count": 0,
-          "positions": 0,
-          "last_snapshot": "2026-04-24",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": null,
-          "backtest_reason": null,
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
-        },
         {
           "key": "crazy:reddit-emoji-sentiment-spike",
           "algo_type": "crazy",
@@ -163,6 +139,38 @@
           "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMD, AMZN, BABA, GOOGL, META, MSFT, NFLX, NVDA, TSLA",
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
+        },
+        {
+          "key": "crazy:reddit-sentiment-spike-trend",
+          "algo_type": "crazy",
+          "algo_id": "reddit-sentiment-spike-trend",
+          "name": "Reddit Sentiment Spike Trend",
+          "family": "attention_sentiment",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "universe": [
+            "AAPL",
+            "TSLA",
+            "AMD",
+            "NVDA",
+            "MSFT",
+            "AMZN",
+            "GME",
+            "PLTR",
+            "NFLX"
+          ],
+          "equity": 100000.0,
+          "ytd_pct": 0.0,
+          "trade_count": 0,
+          "positions": 0,
+          "last_snapshot": "2026-04-24",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": "UNSUPPORTED_DATA",
+          "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMD, AMZN, GME, MSFT, NFLX, NVDA, PLTR, TSLA",
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
         }
       ]
     },
@@ -197,8 +205,8 @@
             "XLU",
             "XLV"
           ],
-          "equity": 100551.33,
-          "ytd_pct": 0.55,
+          "equity": 101137.17,
+          "ytd_pct": 1.14,
           "trade_count": 2,
           "positions": 2,
           "last_snapshot": "2026-04-24",
@@ -226,8 +234,8 @@
             "XLU",
             "XLV"
           ],
-          "equity": 100520.73,
-          "ytd_pct": 0.52,
+          "equity": 100366.62,
+          "ytd_pct": 0.37,
           "trade_count": 2,
           "positions": 2,
           "last_snapshot": "2026-04-24",
@@ -356,8 +364,8 @@
             "XLRE",
             "XLU"
           ],
-          "equity": 106500.29,
-          "ytd_pct": 6.5,
+          "equity": 107064.56,
+          "ytd_pct": 7.06,
           "trade_count": 30,
           "positions": 2,
           "last_snapshot": "2026-04-24",
@@ -392,8 +400,8 @@
             "SPY",
             "AGG"
           ],
-          "equity": 104846.72,
-          "ytd_pct": 4.85,
+          "equity": 105293.53,
+          "ytd_pct": 5.29,
           "trade_count": 15,
           "positions": 3,
           "last_snapshot": "2026-04-24",
@@ -487,8 +495,8 @@
             "XLRE",
             "XLU"
           ],
-          "equity": 98853.69,
-          "ytd_pct": -1.15,
+          "equity": 98962.72,
+          "ytd_pct": -1.04,
           "trade_count": 5,
           "positions": 1,
           "last_snapshot": "2026-04-24",
@@ -787,10 +795,10 @@
           "universe": [
             "XLI"
           ],
-          "equity": 99990.05,
-          "ytd_pct": -0.01,
-          "trade_count": 1,
-          "positions": 1,
+          "equity": 99984.48,
+          "ytd_pct": -0.02,
+          "trade_count": 2,
+          "positions": 0,
           "last_snapshot": "2026-04-24",
           "last_signal": null,
           "new_algo_date": null,
@@ -1134,8 +1142,8 @@
             "XLU",
             "XLV"
           ],
-          "equity": 101753.4,
-          "ytd_pct": 1.75,
+          "equity": 101617.21,
+          "ytd_pct": 1.62,
           "trade_count": 2,
           "positions": 2,
           "last_snapshot": "2026-04-24",
@@ -1162,8 +1170,8 @@
             "XLP",
             "XLU"
           ],
-          "equity": 101108.09,
-          "ytd_pct": 1.11,
+          "equity": 100839.27,
+          "ytd_pct": 0.84,
           "trade_count": 1,
           "positions": 1,
           "last_snapshot": "2026-04-24",
@@ -1282,8 +1290,8 @@
             "XLU",
             "XLV"
           ],
-          "equity": 101156.04,
-          "ytd_pct": 1.16,
+          "equity": 101004.21,
+          "ytd_pct": 1.0,
           "trade_count": 6,
           "positions": 2,
           "last_snapshot": "2026-04-24",

@@ -875,6 +875,16 @@
       "positions": {},
       "sector": "Consumer Sentiment",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-24",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Consumer Sentiment",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-16",
@@ -883,10 +893,10 @@
     "consumer-sentiment": {
       "name": "Consumer Sentiment",
       "last_run": "2026-04-24",
-      "sentiment_level": 56.6,
-      "delta_3m": 5.6,
-      "signal_label": "BULLISH",
-      "signal_key": "BULLISH",
+      "sentiment_level": 53.3,
+      "delta_3m": 0.4,
+      "signal_label": "HOLD",
+      "signal_key": "HOLD",
       "last_signal": "BULLISH"
     }
   }

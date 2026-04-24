@@ -249,6 +249,20 @@
       "cost": 4984.42,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-24",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 42.1408,
+      "price": 118.69,
+      "proceeds": 4991.48,
+      "fees": 10.21,
+      "tax": 2.61,
+      "pnl": 4.45,
+      "pnl_pct": 0.09,
+      "entry_date": "2026-04-24",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1051,6 +1065,16 @@
       },
       "sector": "Grocery Store Foot Traffic Collapse Signal",
       "num_positions": 1
+    },
+    {
+      "date": "2026-04-24",
+      "cash": 99682.86,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99682.86,
+      "positions": {},
+      "sector": "Grocery Store Foot Traffic Collapse Signal",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-21"

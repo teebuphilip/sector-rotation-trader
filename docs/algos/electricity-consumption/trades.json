@@ -115,6 +115,54 @@
       "cost": 34969.14,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-24",
+      "action": "SELL",
+      "ticker": "XLI",
+      "shares": 259.1224,
+      "price": 172.47,
+      "proceeds": 44678.58,
+      "fees": 12.26,
+      "tax": 0.0,
+      "pnl": -281.75,
+      "pnl_pct": -0.63,
+      "entry_date": "2026-04-20",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-24",
+      "action": "SELL",
+      "ticker": "XLB",
+      "shares": 674.039,
+      "price": 51.92,
+      "proceeds": 34984.2,
+      "fees": 11.9,
+      "tax": 5.57,
+      "pnl": 9.49,
+      "pnl_pct": 0.03,
+      "entry_date": "2026-04-20",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-24",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 478.7681,
+      "price": 83.23,
+      "cost": 39847.87,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-24",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 755.0214,
+      "price": 46.18,
+      "cost": 34866.89,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1190,6 +1238,35 @@
           "market_value": 34861.3,
           "unrealized_pnl": -107.85,
           "entry_date": "2026-04-20",
+          "margin": false
+        }
+      },
+      "sector": "Electricity Consumption",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-24",
+      "cash": 24885.02,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99599.78,
+      "positions": {
+        "XLP": {
+          "shares": 478.7681,
+          "entry_price": 83.23,
+          "current_price": 83.23,
+          "market_value": 39847.87,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-24",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 755.0214,
+          "entry_price": 46.18,
+          "current_price": 46.18,
+          "market_value": 34866.89,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-24",
           "margin": false
         }
       },

@@ -1,21 +1,21 @@
 {
   "content_facts": {
     "call_of_day": {
-      "bullish_pct": 32,
-      "composite": "6 of 19",
+      "bullish_pct": 37,
+      "composite": "7 of 19",
       "reason": "Highest bullish percentage in precomputed sector consensus",
       "sector": "XLK",
       "sector_name": "Technology",
-      "stance": "BEARISH"
+      "stance": "MIXED"
     },
     "failure_of_day": {
       "algo_id": "vix-fear-rotation",
-      "alpha_pct": -11.44,
+      "alpha_pct": -11.49,
       "name": "VIX Fear Rotation",
-      "rank_return": 115,
+      "rank_return": 133,
       "reason": "Lowest full-window force rank",
       "status": "FAILING",
-      "ytd_pct": -7.25
+      "ytd_pct": -6.7
     },
     "notable_divergences": [
       {
@@ -23,50 +23,50 @@
         "explanation": "Strong full-window force rank but weaker recent 30D rank.",
         "force_rank": 3,
         "name": "Faber Momentum Rotation",
-        "rank_gap": -113,
+        "rank_gap": -131,
         "ret_30d": -0.005164023487517322,
-        "rolling_30d_rank": 116,
+        "rolling_30d_rank": 134,
         "ytd_pct": 3.85
       },
       {
         "algo_id": "vix-term-structure",
         "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
-        "force_rank": 113,
+        "force_rank": 131,
         "name": "VIX Term Structure",
-        "rank_gap": 110,
-        "ret_30d": 0.044481628738355594,
+        "rank_gap": 128,
+        "ret_30d": 0.050763189404928744,
         "rolling_30d_rank": 3,
-        "ytd_pct": -5.45
+        "ytd_pct": -4.88
       },
       {
         "algo_id": "biscotti",
         "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
-        "force_rank": 111,
+        "force_rank": 129,
         "name": "Algo Biscotti (Unconditional Loyalty)",
-        "rank_gap": 109,
-        "ret_30d": 0.06559152836232518,
+        "rank_gap": 127,
+        "ret_30d": 0.06676681523666783,
         "rolling_30d_rank": 2,
-        "ytd_pct": -1.15
+        "ytd_pct": -1.04
       },
       {
         "algo_id": "baileymol",
         "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
-        "force_rank": 114,
+        "force_rank": 132,
         "name": "Chaos Rotation Lab",
-        "rank_gap": 108,
+        "rank_gap": 126,
         "ret_30d": 0.01992547878331674,
         "rolling_30d_rank": 6,
         "ytd_pct": -6.23
       },
       {
-        "algo_id": "biscotti",
+        "algo_id": "vix-fear-rotation",
         "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
-        "force_rank": 112,
-        "name": "Algo Biscotti (Unconditional Loyalty)",
-        "rank_gap": 107,
-        "ret_30d": 0.02623201808337816,
-        "rolling_30d_rank": 5,
-        "ytd_pct": -1.99
+        "force_rank": 133,
+        "name": "VIX Fear Rotation",
+        "rank_gap": 126,
+        "ret_30d": 0.019608220264607068,
+        "rolling_30d_rank": 7,
+        "ytd_pct": -6.7
       }
     ],
     "signal_of_day": {
@@ -77,8 +77,8 @@
       "rank": 1,
       "rank_type": "rolling_30d",
       "reason": "Ranked #1 on rolling 30D leaderboard",
-      "ret_30d": 0.07300645514895598,
-      "spy_delta_30d": -0.011610342670940632
+      "ret_30d": 0.07869156034864044,
+      "spy_delta_30d": -0.008272896397866658
     }
   },
   "definitions": {
@@ -93,50 +93,50 @@
         "explanation": "Strong full-window force rank but weaker recent 30D rank.",
         "force_rank": 3,
         "name": "Faber Momentum Rotation",
-        "rank_gap": -113,
+        "rank_gap": -131,
         "ret_30d": -0.005164023487517322,
-        "rolling_30d_rank": 116,
+        "rolling_30d_rank": 134,
         "ytd_pct": 3.85
       },
       {
         "algo_id": "vix-term-structure",
         "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
-        "force_rank": 113,
+        "force_rank": 131,
         "name": "VIX Term Structure",
-        "rank_gap": 110,
-        "ret_30d": 0.044481628738355594,
+        "rank_gap": 128,
+        "ret_30d": 0.050763189404928744,
         "rolling_30d_rank": 3,
-        "ytd_pct": -5.45
+        "ytd_pct": -4.88
       },
       {
         "algo_id": "biscotti",
         "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
-        "force_rank": 111,
+        "force_rank": 129,
         "name": "Algo Biscotti (Unconditional Loyalty)",
-        "rank_gap": 109,
-        "ret_30d": 0.06559152836232518,
+        "rank_gap": 127,
+        "ret_30d": 0.06676681523666783,
         "rolling_30d_rank": 2,
-        "ytd_pct": -1.15
+        "ytd_pct": -1.04
       },
       {
         "algo_id": "baileymol",
         "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
-        "force_rank": 114,
+        "force_rank": 132,
         "name": "Chaos Rotation Lab",
-        "rank_gap": 108,
+        "rank_gap": 126,
         "ret_30d": 0.01992547878331674,
         "rolling_30d_rank": 6,
         "ytd_pct": -6.23
       },
       {
-        "algo_id": "biscotti",
+        "algo_id": "vix-fear-rotation",
         "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
-        "force_rank": 112,
-        "name": "Algo Biscotti (Unconditional Loyalty)",
-        "rank_gap": 107,
-        "ret_30d": 0.02623201808337816,
-        "rolling_30d_rank": 5,
-        "ytd_pct": -1.99
+        "force_rank": 133,
+        "name": "VIX Fear Rotation",
+        "rank_gap": 126,
+        "ret_30d": 0.019608220264607068,
+        "rolling_30d_rank": 7,
+        "ytd_pct": -6.7
       }
     ],
     "killed": [],
@@ -147,95 +147,68 @@
       "down": [
         {
           "algo_id": "copper-momentum",
-          "alpha_pct": -4.59,
+          "alpha_pct": -4.98,
           "name": "Copper Momentum",
           "previous_rank_return": 10,
-          "rank_change": -96,
-          "rank_return": 106,
-          "ytd_pct": -0.4
+          "rank_change": -108,
+          "rank_return": 118,
+          "ytd_pct": -0.19
         },
         {
           "algo_id": "electricity-consumption",
-          "alpha_pct": -4.7,
+          "alpha_pct": -5.19,
           "name": "Electricity Consumption",
           "previous_rank_return": 88,
-          "rank_change": -20,
-          "rank_return": 108,
-          "ytd_pct": -0.51
+          "rank_change": -37,
+          "rank_return": 125,
+          "ytd_pct": -0.4
         },
         {
           "algo_id": "baileymol",
-          "alpha_pct": -10.42,
+          "alpha_pct": -11.02,
           "name": "Chaos Rotation Lab",
           "previous_rank_return": 110,
-          "rank_change": -4,
-          "rank_return": 114,
+          "rank_change": -22,
+          "rank_return": 132,
           "ytd_pct": -6.23
         },
         {
           "algo_id": "biscotti",
-          "alpha_pct": -6.18,
+          "alpha_pct": -7.3,
           "name": "Algo Biscotti (Unconditional Loyalty)",
           "previous_rank_return": 109,
-          "rank_change": -3,
-          "rank_return": 112,
-          "ytd_pct": -1.99
+          "rank_change": -21,
+          "rank_return": 130,
+          "ytd_pct": -2.51
         },
         {
           "algo_id": "vix-fear-rotation",
-          "alpha_pct": -11.44,
+          "alpha_pct": -11.49,
           "name": "VIX Fear Rotation",
           "previous_rank_return": 112,
-          "rank_change": -3,
-          "rank_return": 115,
-          "ytd_pct": -7.25
+          "rank_change": -21,
+          "rank_return": 133,
+          "ytd_pct": -6.7
         }
       ],
       "up": [
         {
           "algo_id": "baileymol",
-          "alpha_pct": 2.31,
+          "alpha_pct": 2.28,
           "name": "Algo Baileymol (Chaos Monger)",
           "previous_rank_return": 110,
           "rank_change": 109,
           "rank_return": 1,
-          "ytd_pct": 6.5
+          "ytd_pct": 7.06
         },
         {
           "algo_id": "retail-sales-momentum",
-          "alpha_pct": -3.63,
+          "alpha_pct": -3.65,
           "name": "Retail Sales Momentum",
           "previous_rank_return": 103,
-          "rank_change": 96,
-          "rank_return": 7,
-          "ytd_pct": 0.55
-        },
-        {
-          "algo_id": "grocery-store-foot-traffic-collapse-signal",
-          "alpha_pct": -4.51,
-          "name": "Grocery Store Foot Traffic Collapse Signal",
-          "previous_rank_return": 104,
-          "rank_change": 1,
-          "rank_return": 103,
-          "ytd_pct": -0.32
-        },
-        {
-          "algo_id": "xle-weekly-drawdown-rebound-signal",
-          "alpha_pct": -4.52,
-          "name": "Xle Weekly Drawdown Rebound Signal",
-          "previous_rank_return": 105,
-          "rank_change": 1,
-          "rank_return": 104,
-          "ytd_pct": -0.33
-        },
-        {
-          "algo_id": "healthcare-cost-shock-google-search-spike",
-          "alpha_pct": -4.56,
-          "name": "Healthcare Cost Shock Google Search Spike",
-          "previous_rank_return": 106,
-          "rank_change": 1,
-          "rank_return": 105,
-          "ytd_pct": -0.37
+          "rank_change": 98,
+          "rank_return": 5,
+          "ytd_pct": 1.14
         }
       ]
     },
@@ -243,82 +216,82 @@
       {
         "algo_id": "biscotti",
         "algo_type": "normal",
-        "alpha_pct": -5.33,
+        "alpha_pct": -5.83,
         "beat_spy": false,
         "date": "2026-04-24",
-        "days_running": 81,
-        "equity": 98853.69,
+        "days_running": 82,
+        "equity": 98962.72,
         "name": "Algo Biscotti (Unconditional Loyalty)",
         "previous_rank_return": 109,
-        "rank_alpha": 111,
-        "rank_change": -2,
-        "rank_return": 111,
-        "spy_pct": 4.19,
-        "ytd_pct": -1.15
+        "rank_alpha": 129,
+        "rank_change": -20,
+        "rank_return": 129,
+        "spy_pct": 4.79,
+        "ytd_pct": -1.04
       },
       {
         "algo_id": "biscotti",
         "algo_type": "crazy",
-        "alpha_pct": -6.18,
+        "alpha_pct": -7.3,
         "beat_spy": false,
         "date": "2026-04-24",
-        "days_running": 80,
-        "equity": 98009.55,
+        "days_running": 81,
+        "equity": 97494.15,
         "name": "Algo Biscotti (Unconditional Loyalty)",
         "previous_rank_return": 109,
-        "rank_alpha": 112,
-        "rank_change": -3,
-        "rank_return": 112,
-        "spy_pct": 4.19,
-        "ytd_pct": -1.99
+        "rank_alpha": 130,
+        "rank_change": -21,
+        "rank_return": 130,
+        "spy_pct": 4.79,
+        "ytd_pct": -2.51
       },
       {
         "algo_id": "vix-term-structure",
         "algo_type": "crazy",
-        "alpha_pct": -9.64,
+        "alpha_pct": -9.67,
         "beat_spy": false,
         "date": "2026-04-24",
-        "days_running": 71,
-        "equity": 94548.66,
+        "days_running": 72,
+        "equity": 95117.28,
         "name": "VIX Term Structure",
         "previous_rank_return": 111,
-        "rank_alpha": 113,
-        "rank_change": -2,
-        "rank_return": 113,
-        "spy_pct": 4.19,
-        "ytd_pct": -5.45
+        "rank_alpha": 131,
+        "rank_change": -20,
+        "rank_return": 131,
+        "spy_pct": 4.79,
+        "ytd_pct": -4.88
       },
       {
         "algo_id": "baileymol",
         "algo_type": "crazy",
-        "alpha_pct": -10.42,
+        "alpha_pct": -11.02,
         "beat_spy": false,
         "date": "2026-04-24",
-        "days_running": 80,
+        "days_running": 81,
         "equity": 93765.37,
         "name": "Chaos Rotation Lab",
         "previous_rank_return": 110,
-        "rank_alpha": 114,
-        "rank_change": -4,
-        "rank_return": 114,
-        "spy_pct": 4.19,
+        "rank_alpha": 132,
+        "rank_change": -22,
+        "rank_return": 132,
+        "spy_pct": 4.79,
         "ytd_pct": -6.23
       },
       {
         "algo_id": "vix-fear-rotation",
         "algo_type": "crazy",
-        "alpha_pct": -11.44,
+        "alpha_pct": -11.49,
         "beat_spy": false,
         "date": "2026-04-24",
-        "days_running": 71,
-        "equity": 92745.94,
+        "days_running": 72,
+        "equity": 93301.32,
         "name": "VIX Fear Rotation",
         "previous_rank_return": 112,
-        "rank_alpha": 115,
-        "rank_change": -3,
-        "rank_return": 115,
-        "spy_pct": 4.19,
-        "ytd_pct": -7.25
+        "rank_alpha": 133,
+        "rank_change": -21,
+        "rank_return": 133,
+        "spy_pct": 4.79,
+        "ytd_pct": -6.7
       }
     ],
     "definition": "Full-window/since-seed rank; not the same as recent 30D performance.",
@@ -326,170 +299,181 @@
       {
         "algo_id": "baileymol",
         "algo_type": "normal",
-        "alpha_pct": 2.31,
+        "alpha_pct": 2.28,
         "beat_spy": true,
         "date": "2026-04-24",
-        "days_running": 81,
-        "equity": 106500.29,
+        "days_running": 82,
+        "equity": 107064.56,
         "name": "Algo Baileymol (Chaos Monger)",
         "previous_rank_return": 110,
         "rank_alpha": 1,
         "rank_change": 109,
         "rank_return": 1,
-        "spy_pct": 4.19,
-        "ytd_pct": 6.5
+        "spy_pct": 4.79,
+        "ytd_pct": 7.06
       },
       {
         "algo_id": "dmsr",
         "algo_type": "normal",
-        "alpha_pct": 0.66,
+        "alpha_pct": 0.5,
         "beat_spy": true,
         "date": "2026-04-24",
-        "days_running": 81,
-        "equity": 104846.72,
+        "days_running": 82,
+        "equity": 105293.53,
         "name": "Antonacci Dual Momentum Sector Rotation",
         "previous_rank_return": 2,
         "rank_alpha": 2,
         "rank_change": 0,
         "rank_return": 2,
-        "spy_pct": 4.19,
-        "ytd_pct": 4.85
+        "spy_pct": 4.79,
+        "ytd_pct": 5.29
       },
       {
         "algo_id": "faber",
         "algo_type": "normal",
-        "alpha_pct": -0.34,
+        "alpha_pct": -0.94,
         "beat_spy": false,
         "date": "2026-04-24",
-        "days_running": 81,
+        "days_running": 82,
         "equity": 103846.61,
         "name": "Faber Momentum Rotation",
         "previous_rank_return": 3,
         "rank_alpha": 3,
         "rank_change": 0,
         "rank_return": 3,
-        "spy_pct": 4.19,
+        "spy_pct": 4.79,
         "ytd_pct": 3.85
       },
       {
         "algo_id": "finra-dark-pool-signal",
         "algo_type": "crazy",
-        "alpha_pct": -2.43,
+        "alpha_pct": -3.17,
         "beat_spy": false,
         "date": "2026-04-24",
-        "days_running": 71,
-        "equity": 101753.4,
+        "days_running": 72,
+        "equity": 101617.21,
         "name": "FINRA Dark Pool Signal",
         "previous_rank_return": 4,
         "rank_alpha": 4,
         "rank_change": 0,
         "rank_return": 4,
-        "spy_pct": 4.19,
-        "ytd_pct": 1.75
-      },
-      {
-        "algo_id": "uber-mobility",
-        "algo_type": "crazy",
-        "alpha_pct": -3.03,
-        "beat_spy": false,
-        "date": "2026-04-24",
-        "days_running": 80,
-        "equity": 101156.04,
-        "name": "Uber Mobility Index",
-        "previous_rank_return": 5,
-        "rank_alpha": 5,
-        "rank_change": 0,
-        "rank_return": 5,
-        "spy_pct": 4.19,
-        "ytd_pct": 1.16
-      },
-      {
-        "algo_id": "insider-trading-signals",
-        "algo_type": "crazy",
-        "alpha_pct": -3.08,
-        "beat_spy": false,
-        "date": "2026-04-24",
-        "days_running": 80,
-        "equity": 101108.09,
-        "name": "Insider Trading Signals",
-        "previous_rank_return": 6,
-        "rank_alpha": 6,
-        "rank_change": 0,
-        "rank_return": 6,
-        "spy_pct": 4.19,
-        "ytd_pct": 1.11
+        "spy_pct": 4.79,
+        "ytd_pct": 1.62
       },
       {
         "algo_id": "retail-sales-momentum",
         "algo_type": "crazy",
-        "alpha_pct": -3.63,
+        "alpha_pct": -3.65,
         "beat_spy": false,
         "date": "2026-04-24",
-        "days_running": 80,
-        "equity": 100551.33,
+        "days_running": 81,
+        "equity": 101137.17,
         "name": "Retail Sales Momentum",
         "previous_rank_return": 103,
+        "rank_alpha": 5,
+        "rank_change": 98,
+        "rank_return": 5,
+        "spy_pct": 4.79,
+        "ytd_pct": 1.14
+      },
+      {
+        "algo_id": "uber-mobility",
+        "algo_type": "crazy",
+        "alpha_pct": -3.79,
+        "beat_spy": false,
+        "date": "2026-04-24",
+        "days_running": 81,
+        "equity": 101004.21,
+        "name": "Uber Mobility Index",
+        "previous_rank_return": 5,
+        "rank_alpha": 6,
+        "rank_change": -1,
+        "rank_return": 6,
+        "spy_pct": 4.79,
+        "ytd_pct": 1.0
+      },
+      {
+        "algo_id": "insider-trading-signals",
+        "algo_type": "crazy",
+        "alpha_pct": -3.95,
+        "beat_spy": false,
+        "date": "2026-04-24",
+        "days_running": 81,
+        "equity": 100839.27,
+        "name": "Insider Trading Signals",
+        "previous_rank_return": 6,
         "rank_alpha": 7,
-        "rank_change": 96,
+        "rank_change": -1,
         "rank_return": 7,
-        "spy_pct": 4.19,
-        "ytd_pct": 0.55
+        "spy_pct": 4.79,
+        "ytd_pct": 0.84
       },
       {
         "algo_id": "mortgage-rate-housing-proxy",
         "algo_type": "crazy",
-        "alpha_pct": -3.67,
+        "alpha_pct": -4.42,
         "beat_spy": false,
         "date": "2026-04-24",
-        "days_running": 80,
-        "equity": 100520.73,
+        "days_running": 81,
+        "equity": 100366.62,
         "name": "Mortgage Rate Housing Proxy",
         "previous_rank_return": 7,
         "rank_alpha": 8,
         "rank_change": -1,
         "rank_return": 8,
-        "spy_pct": 4.19,
-        "ytd_pct": 0.52
+        "spy_pct": 4.79,
+        "ytd_pct": 0.37
       },
       {
         "algo_id": "earthquake-aftershock-amplifier",
         "algo_type": "crazy",
-        "alpha_pct": -4.14,
+        "alpha_pct": -4.74,
         "beat_spy": false,
         "date": "2026-04-24",
-        "days_running": 74,
+        "days_running": 75,
         "equity": 100047.52,
         "name": "Earthquake Aftershock Amplifier",
         "previous_rank_return": 8,
         "rank_alpha": 9,
         "rank_change": -1,
         "rank_return": 9,
-        "spy_pct": 4.19,
+        "spy_pct": 4.79,
         "ytd_pct": 0.05
       },
       {
         "algo_id": "semiconductor-moonshot-warning",
         "algo_type": "crazy",
-        "alpha_pct": -4.14,
+        "alpha_pct": -4.74,
         "beat_spy": false,
         "date": "2026-04-24",
-        "days_running": 74,
+        "days_running": 75,
         "equity": 100045.62,
         "name": "Semiconductor Moonshot Warning",
         "previous_rank_return": 9,
         "rank_alpha": 10,
         "rank_change": -1,
         "rank_return": 10,
-        "spy_pct": 4.19,
+        "spy_pct": 4.79,
         "ytd_pct": 0.05
       }
     ]
   },
-  "generated_at": "2026-04-24T14:30:23.376702Z",
+  "generated_at": "2026-04-24T23:08:26.945775Z",
   "report_date": "2026-04-24",
   "rolling_30d": {
-    "as_of": "2026-04-24T14:30:22.174000",
+    "as_of": "2026-04-24T23:08:25.800828",
     "bottom_5": [
+      {
+        "algo_id": "daily-spike-in-daily-earthquake-activity-near-major-logistic",
+        "algo_type": "crazy",
+        "category": "crazy",
+        "max_dd_30d": -0.0022436000000000057,
+        "name": "Daily Spike In Daily Earthquake Activity Near Major Logistics Hubs Signals Bearish Xli",
+        "ret_30d": -0.0022436000000000123,
+        "rolling_30d_rank": 130,
+        "sharpe_30d": -18.243082214139747,
+        "spy_delta_30d": -0.08920805674650711
+      },
       {
         "algo_id": "xle-weekly-drawdown-rebound-signal",
         "algo_type": "crazy",
@@ -497,31 +481,9 @@
         "max_dd_30d": -0.002750889188684233,
         "name": "Xle Weekly Drawdown Rebound Signal",
         "ret_30d": -0.002322438463288612,
-        "rolling_30d_rank": 112,
-        "sharpe_30d": -10.480394146541535,
-        "spy_delta_30d": -0.08693923628318523
-      },
-      {
-        "algo_id": "copper-momentum",
-        "algo_type": "crazy",
-        "category": "crazy",
-        "max_dd_30d": -0.009205244795483571,
-        "name": "Copper Momentum",
-        "ret_30d": -0.004007400000000105,
-        "rolling_30d_rank": 113,
-        "sharpe_30d": -2.182803147053735,
-        "spy_delta_30d": -0.08862419781989672
-      },
-      {
-        "algo_id": "lumber-momentum",
-        "algo_type": "crazy",
-        "category": "crazy",
-        "max_dd_30d": -0.012702572802316337,
-        "name": "Lumber Momentum",
-        "ret_30d": -0.005127700000000068,
-        "rolling_30d_rank": 114,
-        "sharpe_30d": -2.43266877398627,
-        "spy_delta_30d": -0.08974449781989668
+        "rolling_30d_rank": 131,
+        "sharpe_30d": -10.547700876110948,
+        "spy_delta_30d": -0.08928689520979571
       },
       {
         "algo_id": "electricity-consumption",
@@ -529,10 +491,21 @@
         "category": "crazy",
         "max_dd_30d": -0.010151562059290183,
         "name": "Electricity Consumption",
-        "ret_30d": -0.005138899999999946,
-        "rolling_30d_rank": 115,
-        "sharpe_30d": -2.1730067870378416,
-        "spy_delta_30d": -0.08975569781989656
+        "ret_30d": -0.004002200000000067,
+        "rolling_30d_rank": 132,
+        "sharpe_30d": -1.7571681369710697,
+        "spy_delta_30d": -0.09096665674650717
+      },
+      {
+        "algo_id": "lumber-momentum",
+        "algo_type": "crazy",
+        "category": "crazy",
+        "max_dd_30d": -0.012702572802316337,
+        "name": "Lumber Momentum",
+        "ret_30d": -0.004966699999999991,
+        "rolling_30d_rank": 133,
+        "sharpe_30d": -2.3983042691692664,
+        "spy_delta_30d": -0.09193115674650709
       },
       {
         "algo_id": "faber",
@@ -541,13 +514,13 @@
         "max_dd_30d": -0.013793570426934458,
         "name": "Faber Momentum Rotation",
         "ret_30d": -0.005164023487517322,
-        "rolling_30d_rank": 116,
-        "sharpe_30d": -2.2549962022905903,
-        "spy_delta_30d": -0.08978082130741394
+        "rolling_30d_rank": 134,
+        "sharpe_30d": -2.2562242096118865,
+        "spy_delta_30d": -0.09212848023402442
       }
     ],
     "definition": "Trailing 30-day return rank; useful for recent momentum and tactical spotlight.",
-    "spy_ret_30d": 0.08461679781989662,
+    "spy_ret_30d": 0.0869644567465071,
     "top_10": [
       {
         "algo_id": "baileymol",
@@ -555,10 +528,10 @@
         "category": "standard",
         "max_dd_30d": -0.017996354442506742,
         "name": "Algo Baileymol (Chaos Monger)",
-        "ret_30d": 0.07300645514895598,
+        "ret_30d": 0.07869156034864044,
         "rolling_30d_rank": 1,
-        "sharpe_30d": 4.049103562760755,
-        "spy_delta_30d": -0.011610342670940632
+        "sharpe_30d": 4.375172836401647,
+        "spy_delta_30d": -0.008272896397866658
       },
       {
         "algo_id": "biscotti",
@@ -566,10 +539,10 @@
         "category": "standard",
         "max_dd_30d": -0.031009334599850523,
         "name": "Algo Biscotti (Unconditional Loyalty)",
-        "ret_30d": 0.06559152836232518,
+        "ret_30d": 0.06676681523666783,
         "rolling_30d_rank": 2,
-        "sharpe_30d": 2.6700132161913563,
-        "spy_delta_30d": -0.019025269457571437
+        "sharpe_30d": 2.5915761161455833,
+        "spy_delta_30d": -0.02019764150983927
       },
       {
         "algo_id": "vix-term-structure",
@@ -577,10 +550,10 @@
         "category": "crazy",
         "max_dd_30d": -0.010903123975247418,
         "name": "VIX Term Structure",
-        "ret_30d": 0.044481628738355594,
+        "ret_30d": 0.050763189404928744,
         "rolling_30d_rank": 3,
-        "sharpe_30d": 4.161635366076407,
-        "spy_delta_30d": -0.04013516908154102
+        "sharpe_30d": 4.63826878905677,
+        "spy_delta_30d": -0.03620126734157836
       },
       {
         "algo_id": "dmsr",
@@ -588,10 +561,10 @@
         "category": "standard",
         "max_dd_30d": -0.012176829052339003,
         "name": "Antonacci Dual Momentum Sector Rotation",
-        "ret_30d": 0.036837306978810824,
+        "ret_30d": 0.04125584555713924,
         "rolling_30d_rank": 4,
-        "sharpe_30d": 5.420181274633359,
-        "spy_delta_30d": -0.04777949084108579
+        "sharpe_30d": 5.859520473593738,
+        "spy_delta_30d": -0.045708611189367865
       },
       {
         "algo_id": "biscotti",
@@ -599,10 +572,10 @@
         "category": "crazy",
         "max_dd_30d": -0.02863996947372352,
         "name": "Algo Biscotti (Unconditional Loyalty)",
-        "ret_30d": 0.02623201808337816,
+        "ret_30d": 0.020835401303480827,
         "rolling_30d_rank": 5,
-        "sharpe_30d": 1.4451329428703772,
-        "spy_delta_30d": -0.058384779736518455
+        "sharpe_30d": 1.0508981981760408,
+        "spy_delta_30d": -0.06612905544302627
       },
       {
         "algo_id": "baileymol",
@@ -612,19 +585,8 @@
         "name": "Chaos Rotation Lab",
         "ret_30d": 0.01992547878331674,
         "rolling_30d_rank": 6,
-        "sharpe_30d": 0.9171383892022543,
-        "spy_delta_30d": -0.06469131903657988
-      },
-      {
-        "algo_id": "finra-dark-pool-signal",
-        "algo_type": "crazy",
-        "category": "crazy",
-        "max_dd_30d": -0.002820713230511452,
-        "name": "FINRA Dark Pool Signal",
-        "ret_30d": 0.01753399999999994,
-        "rolling_30d_rank": 7,
-        "sharpe_30d": 2.5535969266362635,
-        "spy_delta_30d": -0.06708279781989668
+        "sharpe_30d": 0.8925263104949732,
+        "spy_delta_30d": -0.06703897796319036
       },
       {
         "algo_id": "vix-fear-rotation",
@@ -632,10 +594,32 @@
         "category": "crazy",
         "max_dd_30d": -0.01996845001008491,
         "name": "VIX Fear Rotation",
-        "ret_30d": 0.013538959793580885,
+        "ret_30d": 0.019608220264607068,
+        "rolling_30d_rank": 7,
+        "sharpe_30d": 1.786817156673844,
+        "spy_delta_30d": -0.06735623648190003
+      },
+      {
+        "algo_id": "finra-dark-pool-signal",
+        "algo_type": "crazy",
+        "category": "crazy",
+        "max_dd_30d": -0.002820713230511452,
+        "name": "FINRA Dark Pool Signal",
+        "ret_30d": 0.016172100000000134,
         "rolling_30d_rank": 8,
-        "sharpe_30d": 1.1540445978479343,
-        "spy_delta_30d": -0.07107783802631573
+        "sharpe_30d": 2.200527594194379,
+        "spy_delta_30d": -0.07079235674650697
+      },
+      {
+        "algo_id": "retail-sales-momentum",
+        "algo_type": "crazy",
+        "category": "crazy",
+        "max_dd_30d": -0.009025379524465532,
+        "name": "Retail Sales Momentum",
+        "ret_30d": 0.011371699999999985,
+        "rolling_30d_rank": 9,
+        "sharpe_30d": 0.807770988179339,
+        "spy_delta_30d": -0.07559275674650712
       },
       {
         "algo_id": "uber-mobility",
@@ -643,21 +627,10 @@
         "category": "crazy",
         "max_dd_30d": -0.004890399999999936,
         "name": "Uber Mobility Index",
-        "ret_30d": 0.011560400000000026,
-        "rolling_30d_rank": 9,
-        "sharpe_30d": 1.0912681058333638,
-        "spy_delta_30d": -0.07305639781989659
-      },
-      {
-        "algo_id": "insider-trading-signals",
-        "algo_type": "crazy",
-        "category": "crazy",
-        "max_dd_30d": -0.000609582691803124,
-        "name": "Insider Trading Signals",
-        "ret_30d": 0.01108090000000006,
+        "ret_30d": 0.010042100000000165,
         "rolling_30d_rank": 10,
-        "sharpe_30d": 1.8164787521422041,
-        "spy_delta_30d": -0.07353589781989656
+        "sharpe_30d": 0.7741008665964478,
+        "spy_delta_30d": -0.07692235674650694
       }
     ]
   },
@@ -665,8 +638,8 @@
     "generated": "2026-04-24",
     "sector_summary": {
       "XLB": {
-        "bullish_pct": 19,
-        "composite": "4 of 21",
+        "bullish_pct": 15,
+        "composite": "3 of 20",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLB",
@@ -690,47 +663,47 @@
       },
       "XLF": {
         "bullish_pct": 0,
-        "composite": "0 of 17",
+        "composite": "0 of 18",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLF",
         "sector": "Financial Services"
       },
       "XLI": {
-        "bullish_pct": 28,
-        "composite": "5 of 18",
+        "bullish_pct": 18,
+        "composite": "4 of 22",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLI",
         "sector": "Industrials"
       },
       "XLK": {
-        "bullish_pct": 32,
-        "composite": "6 of 19",
-        "composite_color": "red",
-        "composite_label": "BEARISH",
+        "bullish_pct": 37,
+        "composite": "7 of 19",
+        "composite_color": "yellow",
+        "composite_label": "MIXED",
         "etf": "XLK",
         "sector": "Technology"
       },
       "XLP": {
-        "bullish_pct": 28,
-        "composite": "5 of 18",
+        "bullish_pct": 32,
+        "composite": "6 of 19",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLP",
         "sector": "Consumer Defensive"
       },
       "XLRE": {
-        "bullish_pct": 6,
-        "composite": "1 of 18",
+        "bullish_pct": 5,
+        "composite": "1 of 19",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLRE",
         "sector": "Real Estate"
       },
       "XLU": {
-        "bullish_pct": 16,
-        "composite": "3 of 19",
+        "bullish_pct": 21,
+        "composite": "4 of 19",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLU",
@@ -745,8 +718,8 @@
         "sector": "Healthcare"
       },
       "XLY": {
-        "bullish_pct": 23,
-        "composite": "5 of 22",
+        "bullish_pct": 22,
+        "composite": "5 of 23",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLY",
@@ -755,56 +728,56 @@
     },
     "sectors_ranked": [
       {
-        "bullish_pct": 32,
-        "composite": "6 of 19",
-        "composite_color": "red",
-        "composite_label": "BEARISH",
+        "bullish_pct": 37,
+        "composite": "7 of 19",
+        "composite_color": "yellow",
+        "composite_label": "MIXED",
         "etf": "XLK",
         "sector": "Technology"
       },
       {
-        "bullish_pct": 28,
-        "composite": "5 of 18",
+        "bullish_pct": 32,
+        "composite": "6 of 19",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLP",
         "sector": "Consumer Defensive"
       },
       {
-        "bullish_pct": 28,
-        "composite": "5 of 18",
-        "composite_color": "red",
-        "composite_label": "BEARISH",
-        "etf": "XLI",
-        "sector": "Industrials"
-      },
-      {
-        "bullish_pct": 23,
-        "composite": "5 of 22",
+        "bullish_pct": 22,
+        "composite": "5 of 23",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLY",
         "sector": "Consumer Cyclical"
       },
       {
-        "bullish_pct": 19,
-        "composite": "4 of 21",
-        "composite_color": "red",
-        "composite_label": "BEARISH",
-        "etf": "XLB",
-        "sector": "Basic Materials"
-      },
-      {
-        "bullish_pct": 16,
-        "composite": "3 of 19",
+        "bullish_pct": 21,
+        "composite": "4 of 19",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLU",
         "sector": "Utilities"
       },
       {
-        "bullish_pct": 6,
-        "composite": "1 of 18",
+        "bullish_pct": 18,
+        "composite": "4 of 22",
+        "composite_color": "red",
+        "composite_label": "BEARISH",
+        "etf": "XLI",
+        "sector": "Industrials"
+      },
+      {
+        "bullish_pct": 15,
+        "composite": "3 of 20",
+        "composite_color": "red",
+        "composite_label": "BEARISH",
+        "etf": "XLB",
+        "sector": "Basic Materials"
+      },
+      {
+        "bullish_pct": 5,
+        "composite": "1 of 19",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLRE",
@@ -836,34 +809,34 @@
       },
       {
         "bullish_pct": 0,
-        "composite": "0 of 17",
+        "composite": "0 of 18",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLF",
         "sector": "Financial Services"
       }
     ],
-    "signal_count": 115,
+    "signal_count": 133,
     "ticker_count": 105,
     "top_bearish_etfs": [
-      "XLE",
+      "XLRE",
       "XLV",
       "XLF"
     ],
     "top_bullish_etfs": [
       "XLK",
-      "XLI",
-      "XLP"
+      "XLP",
+      "XLY"
     ],
-    "total_algos": 115
+    "total_algos": 133
   },
   "system_state": {
     "beating_spy_force_rank": 2,
-    "rolling_30d_algos": 116,
+    "rolling_30d_algos": 134,
     "rolling_30d_beating_spy": 0,
     "sectors_computed": 11,
-    "signals_generated": 115,
+    "signals_generated": 133,
     "tickers_covered": 105,
-    "total_force_ranked": 115
+    "total_force_ranked": 133
   }
 }
