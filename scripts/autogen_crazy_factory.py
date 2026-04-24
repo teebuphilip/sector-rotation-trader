@@ -340,7 +340,7 @@ def main() -> int:
     if not args.build_only and not args.skip_run and summary["seeded"] > 0:
         if args.dry_run:
             print("[dry-run] python crazy_run.py")
-            print("[dry-run] python precompute_signals_poly.py")
+            print("[dry-run] python precompute_signals_poly.py --min-days 30 --no-wiki")
             print("[dry-run] python scripts/update_algos_index.py")
             print("[dry-run] python scripts/build_product_index.py")
             print("[dry-run] python scripts/build_public_artifacts.py")
@@ -350,7 +350,7 @@ def main() -> int:
             _print_proc("crazy_run", run_proc, True)
             run_ok = run_proc.returncode == 0
             print("[step] precompute signals once")
-            pre_proc = _run(["python", "precompute_signals_poly.py"])
+            pre_proc = _run(["python", "precompute_signals_poly.py", "--min-days", "30", "--no-wiki"])
             _print_proc("precompute", pre_proc, True)
             run_ok = run_ok and pre_proc.returncode == 0
             print("[step] rebuild product/public artifacts")

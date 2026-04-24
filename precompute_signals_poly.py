@@ -196,8 +196,9 @@ def save_sector_cache():
 
 def get_sector_etf(ticker):
     """Map a ticker to its SPDR sector ETF using Polygon reference data. Cached."""
-    if ticker in _sector_cache:
-        return _sector_cache[ticker]
+    cached = _sector_cache.get(ticker)
+    if cached:
+        return cached
 
     if ticker in ALL_ETFS:
         _sector_cache[ticker] = ticker
@@ -217,7 +218,6 @@ def get_sector_etf(ticker):
     except Exception:
         pass
 
-    _sector_cache[ticker] = None
     return None
 
 

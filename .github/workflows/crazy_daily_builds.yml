@@ -161,7 +161,7 @@ jobs:
         if: always()
         run: |
           python scripts/rebuild_crazy_combined_dashboard.py
-          python precompute_signals_poly.py --min-days 30
+          python precompute_signals_poly.py --min-days 30 --no-wiki
           python scripts/rolling_30d_leaderboard.py
           python scripts/update_algos_index.py
           python scripts/build_product_index.py

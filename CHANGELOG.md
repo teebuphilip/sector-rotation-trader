@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-04-24 (session 2 — Polygon signal coverage fix)
+
+### fix: prevent Polygon/Massive signal precompute from collapsing under free-tier limits
+- `precompute_signals_poly.py` no longer caches `None` sector mappings on transient lookup failures.
+- Nightly callers now run `precompute_signals_poly.py --no-wiki` so the Polygon path uses the seeded fallback ticker list instead of trying to classify the full Wikipedia S&P 500 universe every run.
+- Added the seeded `cache/ticker_sectors.json` mapping to the repo so GitHub Actions starts with known sector mappings for the nightly ticker set.
+- Local dry-run sanity check now writes `105` ticker signals instead of the broken low-single-digit output seen in CI.
+
+Files: `precompute_signals_poly.py`, `.github/workflows/daily_run.yml`, `.github/workflows/crazy_daily_builds.yml`, `scripts/autogen_crazy_factory.py`, `.gitignore`, `cache/ticker_sectors.json`, `CHANGELOG.md`
+
 ## 2026-04-24 (session 1 — Polygon/Massive cutover)
 
 ### feat: cut the live nightly pipeline over to Polygon/Massive
