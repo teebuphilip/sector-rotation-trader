@@ -1,0 +1,32 @@
+{
+  "source_file": "data/ideas/runs/2026-04-24/publish/chatgpt_weekly-surge-in-job-postings-for-warehouse-workers-signals-b.md",
+  "target_file": "data/ideas/runs/2026-04-24/build/chatgpt_weekly-surge-in-job-postings-for-warehouse-workers-signals-b.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": false,
+    "reason": "Spec uses RSS news feed counts directly and is structurally valid and deterministic.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "rss_count"
+      ],
+      "scores": {
+        "rss_count": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 909,
+    "output_tokens": 76
+  },
+  "cost_usd": 0.0030325,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec uses RSS news feed counts directly and is structurally valid and deterministic.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

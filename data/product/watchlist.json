@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T14:29:56Z",
+  "generated_at": "2026-04-24T14:38:22Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -17,6 +17,30 @@
       "ytd_pct": -0.03,
       "trade_count": 3,
       "positions": 1,
+      "last_snapshot": "2026-04-24",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:bank-stress-index-volatility-fear-crush-reversal",
+      "algo_type": "crazy",
+      "algo_id": "bank-stress-index-volatility-fear-crush-reversal",
+      "name": "Bank Stress Index Volatility Fear Crush Reversal",
+      "family": "attention_sentiment",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLF"
+      ],
+      "equity": 99910.26,
+      "ytd_pct": -0.09,
+      "trade_count": 10,
+      "positions": 0,
       "last_snapshot": "2026-04-24",
       "last_signal": null,
       "new_algo_date": null,
@@ -238,6 +262,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-rise-in-google-trends-interest-for-food-delivery-dela",
+      "algo_type": "crazy",
+      "algo_id": "weekly-rise-in-google-trends-interest-for-food-delivery-dela",
+      "name": "Weekly Rise In Google Trends Interest For Food Delivery Delay Signals Bearish Xlp",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLP"
+      ],
+      "equity": 99768.27,
+      "ytd_pct": -0.23,
+      "trade_count": 12,
+      "positions": 0,
+      "last_snapshot": "2026-04-24",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-surge-in-google-trends-searches-for-diy-home-repair-s",
       "algo_type": "crazy",
       "algo_id": "weekly-surge-in-google-trends-searches-for-diy-home-repair-s",
@@ -262,6 +310,78 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-spike-in-google-trends-searches-for-warehouse-automat",
+      "algo_type": "crazy",
+      "algo_id": "weekly-spike-in-google-trends-searches-for-warehouse-automat",
+      "name": "Weekly Spike In Google Trends Searches For Warehouse Automation Failure Signals Bearish Xli",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100039.42,
+      "ytd_pct": 0.04,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-04-24",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-surge-in-job-postings-for-warehouse-workers-signals-b",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-job-postings-for-warehouse-workers-signals-b",
+      "name": "Weekly Surge In Job Postings For Warehouse Workers Signals Bullish Xli",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 99990.05,
+      "ytd_pct": -0.01,
+      "trade_count": 1,
+      "positions": 1,
+      "last_snapshot": "2026-04-24",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-spike-in-daily-earthquake-activity-near-major-logistic",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-daily-earthquake-activity-near-major-logistic",
+      "name": "Daily Spike In Daily Earthquake Activity Near Major Logistics Hubs Signals Bearish Xli",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 99775.64,
+      "ytd_pct": -0.22,
+      "trade_count": 6,
+      "positions": 0,
+      "last_snapshot": "2026-04-24",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:seismic-activity-construction-halt-signal",
       "algo_type": "crazy",
       "algo_id": "seismic-activity-construction-halt-signal",
@@ -276,6 +396,30 @@
       "equity": 99861.92,
       "ytd_pct": -0.14,
       "trade_count": 6,
+      "positions": 0,
+      "last_snapshot": "2026-04-24",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-surge-in-google-trends-searches-for-city-water-outage",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-searches-for-city-water-outage",
+      "name": "Weekly Surge In Google Trends Searches For City Water Outage Signals Bearish Xlre",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLRE"
+      ],
+      "equity": 99773.32,
+      "ytd_pct": -0.23,
+      "trade_count": 14,
       "positions": 0,
       "last_snapshot": "2026-04-24",
       "last_signal": null,

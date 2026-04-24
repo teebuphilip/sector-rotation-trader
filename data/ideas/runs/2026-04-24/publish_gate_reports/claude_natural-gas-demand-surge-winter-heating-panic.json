@@ -1,0 +1,32 @@
+{
+  "source_file": "data/ideas/runs/2026-04-24/publish/claude_natural-gas-demand-surge-winter-heating-panic.md",
+  "target_file": "data/ideas/runs/2026-04-24/intervention/claude_natural-gas-demand-surge-winter-heating-panic.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "eia_electricity",
+    "needs_new_adapter": true,
+    "reason": "eia_electricity adapter does not cover natural gas storage data as required",
+    "risk_flags": [
+      "adapter mismatch",
+      "data source extension needed",
+      "weekly frequency check"
+    ],
+    "route": {
+      "adapters": [
+        "eia_electricity"
+      ],
+      "scores": {
+        "eia_electricity": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 963,
+    "output_tokens": 83
+  },
+  "cost_usd": 0.0032375,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"eia_electricity\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"eia_electricity adapter does not cover natural gas storage data as required\",\n  \"risk_flags\": [\"adapter mismatch\", \"data source extension needed\", \"weekly frequency check\"]\n}\n```"
+}

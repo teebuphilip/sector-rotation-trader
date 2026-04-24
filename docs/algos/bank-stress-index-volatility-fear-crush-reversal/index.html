@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sector Rotation Trader</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0a0d12;
+    --surface:   #111520;
+    --border:    #1e2535;
+    --accent:    #00d4ff;
+    --green:     #00ff88;
+    --red:       #ff4d6d;
+    --yellow:    #ffd166;
+    --text:      #c8d6e5;
+    --muted:     #4a5568;
+    --font-mono: 'Space Mono', monospace;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface);
+  }
+  .logo {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .logo span { color: var(--muted); }
+  .last-update {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* ── Layout ── */
+  .container { max-width: 1400px; margin: 0 auto; padding: 28px 32px; }
+
+  /* ── KPI bar ── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .kpi {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .kpi-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .kpi-value {
+    font-family: var(--font-mono);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .kpi-value.green { color: var(--green); }
+  .kpi-value.red   { color: var(--red); }
+  .kpi-value.accent { color: var(--accent); }
+
+  /* ── Panels ── */
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .panel-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .panel-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .panel-body { padding: 20px; }
+
+  /* ── Chart ── */
+  .chart-wrap {
+    position: relative;
+    height: 280px;
+  }
+
+  /* ── Tables ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  tbody td {
+    padding: 9px 12px;
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    font-size: 13px;
+    color: var(--text);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: rgba(0,212,255,0.03); }
+
+  .ticker {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+    letter-spacing: 0.05em;
+    vertical-align: middle;
+  }
+  .badge.margin { background: rgba(255,209,102,0.15); color: var(--yellow); border: 1px solid var(--yellow); }
+
+  .action-buy  { font-family: var(--font-mono); font-size: 11px; font-weight:700; color: var(--green); }
+  .action-sell { font-family: var(--font-mono); font-size: 11px; font-weight:700; color: var(--red); }
+
+  .empty-state {
+    text-align: center;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 40px;
+  }
+
+  /* ── Dot indicator ── */
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .dot.green { background: var(--green); box-shadow: 0 0 6px var(--green); }
+  .dot.yellow { background: var(--yellow); }
+
+  .disclaimer {
+    margin-top: 28px;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: rgba(17, 21, 32, 0.72);
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 1100px) {
+    .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+    .two-col  { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 680px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .container { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Crazy Algo | Bank Stress Index Volatility Fear Crush Reversal</div>
+  <div class="last-update">Lab started: 2026-01-23 &nbsp;·&nbsp; Last run: 2026-04-24 &nbsp;·&nbsp; $100k base · $10k/trade</div>
+</header>
+
+<div class="container">
+
+  <!-- KPI Bar -->
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-label">Total Equity</div>
+      <div class="kpi-value">$99,910</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Net P&L</div>
+      <div class="kpi-value red">$-90</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Return</div>
+      <div class="kpi-value red">-0.09%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Win Rate</div>
+      <div class="kpi-value accent">60%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Strategy</div>
+      <div class="kpi-value accent">Bank Stress Index Volatility Fear Crush Reversal</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Sharpe Ratio</div>
+      <div class="kpi-value red">-23.79</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Max Drawdown</div>
+      <div class="kpi-value red">-0.1%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Avg Win</div>
+      <div class="kpi-value green">$+22</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Avg Loss</div>
+      <div class="kpi-value red">$-53</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Realized / Unrealized</div>
+      <div class="kpi-value red">$-40 / $+0</div>
+    </div>
+  </div>
+
+  <!-- Equity Curve -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot green"></span>
+      <span class="panel-title">Equity Curve</span>
+    </div>
+    <div class="panel-body">
+      <div class="chart-wrap">
+        <canvas id="equityChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawdown Chart -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot" style="background:var(--red);box-shadow:0 0 6px var(--red)"></span>
+      <span class="panel-title">Drawdown</span>
+    </div>
+    <div class="panel-body">
+      <div class="chart-wrap" style="height:180px">
+        <canvas id="drawdownChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Positions + Sector Performance -->
+  <div class="two-col">
+    <div class="panel">
+      <div class="panel-header">
+        <span class="dot yellow"></span>
+        <span class="panel-title">Open Positions (0)</span>
+      </div>
+      <div class="panel-body" style="padding:0">
+        <div class="empty-state">No open positions</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <span class="dot yellow"></span>
+        <span class="panel-title">Portfolio Stats</span>
+      </div>
+      <div class="panel-body">
+        <table>
+          <tbody>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">CASH</td><td>$99,910.26</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">BORROWED</td><td style="color:var(--text)">$0.00</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">ACCRUED INT.</td><td style="color:var(--red)">$0.00</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">OPEN POSITIONS</td><td>0</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">TOTAL TRADES</td><td>5</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">WINNERS</td><td>3</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">WIN RATE</td><td>60.0%</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">SIM START</td><td>2026-01-23</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trade Log -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Trade Log (last 30)</span>
+    </div>
+    <div class="panel-body" style="padding:0; overflow-x:auto">
+      <table><thead><tr><th>Date</th><th>Action</th><th>Ticker</th><th>Price</th><th>Shares</th><th>Value</th><th>P&L</th><th>Notes</th></tr></thead><tbody>
+            <tr class="sell-row">
+              <td>2026-03-30</td>
+              <td><span class="action-sell">SELL</span></td>
+              <td><span class="ticker">XLF</span></td>
+              <td>$48.36</td>
+              <td>104.4661</td>
+              <td>$5,041.75</td>
+              <td style="color:#00ff88">$+29.75 (+0.6%)</td>
+              <td>rebalance</td>
+            </tr>
+            <tr class="buy-row">
+              <td>2026-03-27</td>
+              <td><span class="action-buy">BUY</span></td>
+              <td><span class="ticker">XLF</span></td>
+              <td>$47.81</td>
+              <td>104.4661</td>
+              <td>$4,994.52</td>
+              <td>—</td>
+              <td>CASH</td>
+            </tr>
+            <tr class="sell-row">
+              <td>2026-03-12</td>
+              <td><span class="action-sell">SELL</span></td>
+              <td><span class="ticker">XLF</span></td>
+              <td>$48.58</td>
+              <td>101.2351</td>
+              <td>$4,907.80</td>
+              <td style="color:#ff4d6d">$-91.81 (-1.8%)</td>
+              <td>rebalance</td>
+            </tr>
+            <tr class="buy-row">
+              <td>2026-03-11</td>
+              <td><span class="action-buy">BUY</span></td>
+              <td><span class="ticker">XLF</span></td>
+              <td>$49.39</td>
+              <td>101.2351</td>
+              <td>$4,999.61</td>
+              <td>—</td>
+              <td>CASH</td>
+            </tr>
+            <tr class="sell-row">
+              <td>2026-02-24</td>
+              <td><span class="action-sell">SELL</span></td>
+              <td><span class="ticker">XLF</span></td>
+              <td>$50.72</td>
+              <td>99.0608</td>
+              <td>$5,014.06</td>
+              <td style="color:#00ff88">$+9.08 (+0.2%)</td>
+              <td>rebalance</td>
+            </tr>
+            <tr class="buy-row">
+              <td>2026-02-23</td>
+              <td><span class="action-buy">BUY</span></td>
+              <td><span class="ticker">XLF</span></td>
+              <td>$50.47</td>
+              <td>99.0608</td>
+              <td>$4,999.65</td>
+              <td>—</td>
+              <td>CASH</td>
+            </tr>
+            <tr class="sell-row">
+              <td>2026-02-17</td>
+              <td><span class="action-sell">SELL</span></td>
+              <td><span class="ticker">XLF</span></td>
+              <td>$51.93</td>
+              <td>97.2796</td>
+              <td>$5,041.80</td>
+              <td style="color:#00ff88">$+27.09 (+0.5%)</td>
+              <td>rebalance</td>
+            </tr>
+            <tr class="buy-row">
+              <td>2026-02-16</td>
+              <td><span class="action-buy">BUY</span></td>
+              <td><span class="ticker">XLF</span></td>
+              <td>$51.39</td>
+              <td>97.2796</td>
+              <td>$4,998.80</td>
+              <td>—</td>
+              <td>CASH</td>
+            </tr>
+            <tr class="sell-row">
+              <td>2026-02-13</td>
+              <td><span class="action-sell">SELL</span></td>
+              <td><span class="ticker">XLF</span></td>
+              <td>$51.39</td>
+              <td>97.2277</td>
+              <td>$4,985.90</td>
+              <td style="color:#ff4d6d">$-14.10 (-0.3%)</td>
+              <td>rebalance</td>
+            </tr>
+            <tr class="buy-row">
+              <td>2026-02-12</td>
+              <td><span class="action-buy">BUY</span></td>
+              <td><span class="ticker">XLF</span></td>
+              <td>$51.43</td>
+              <td>97.2277</td>
+              <td>$5,000.00</td>
+              <td>—</td>
+              <td>CASH</td>
+            </tr></tbody></table>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Signal Lab Notice:</strong> This is an experimental signal lab. Signals are generated, tracked, and evaluated as research outputs. Many signals will fail, and some may only appear to work because of randomness or limited sample size.<br>
+    <strong>Not financial advice:</strong> Nothing here is a recommendation to buy, sell, or hold any asset. Past performance does not guarantee future results.<br>
+    <strong>Performance/data disclosure:</strong> Results are model outputs from simulated or simplified conditions and may not reflect slippage, fees, liquidity, execution delays, or market impact. Third-party data may be incomplete, delayed, inaccurate, or revised.<br>
+    <strong>Your responsibility:</strong> Do your own research and consult a qualified professional before making investment decisions. Paper-traded only &mdash; no real money at risk. <a href="../../legal.html">Full disclaimer</a>.
+  </div>
+
+</div>
+
+<script>
+const dates  = ["2026-01-23", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24"];
+const equity = [100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 99990.05, 99975.95, 99966.0, 99993.09, 99993.09, 99993.09, 99993.09, 99983.14, 99992.22, 99992.22, 99992.22, 99992.22, 99992.22, 99992.22, 99992.22, 99992.22, 99992.22, 99992.22, 99992.22, 99982.27, 99890.46, 99890.46, 99890.46, 99890.46, 99890.46, 99890.46, 99890.46, 99890.46, 99890.46, 99890.46, 99890.46, 99880.51, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26, 99910.26];
+const startV = 100000.0;
+const spyData = [];
+const ddData  = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.01, -0.02, -0.03, -0.01, -0.01, -0.01, -0.01, -0.02, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.01, -0.02, -0.11, -0.11, -0.11, -0.11, -0.11, -0.11, -0.11, -0.11, -0.11, -0.11, -0.11, -0.12, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09, -0.09];
+
+const ctx = document.getElementById('equityChart').getContext('2d');
+
+const grad = ctx.createLinearGradient(0, 0, 0, 280);
+grad.addColorStop(0,   'rgba(0,212,255,0.25)');
+grad.addColorStop(1,   'rgba(0,212,255,0.00)');
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: dates,
+    datasets: [
+      {
+        label: 'Portfolio Equity',
+        data: equity,
+        borderColor: '#00d4ff',
+        borderWidth: 2,
+        backgroundColor: grad,
+        fill: true,
+        tension: 0.3,
+        pointRadius: equity.length > 60 ? 0 : 3,
+        pointHoverRadius: 5,
+        pointBackgroundColor: '#00d4ff',
+      },
+      {
+        label: 'SPY Benchmark',
+        data: spyData.length ? spyData.slice(0, dates.length) : [],
+        borderColor: '#ffd166',
+        borderWidth: 1.5,
+        borderDash: [6,3],
+        fill: false,
+        tension: 0.3,
+        pointRadius: 0,
+      },
+      {
+        label: 'Starting Capital',
+        data: Array(dates.length).fill(startV),
+        borderColor: 'rgba(255,255,255,0.12)',
+        borderWidth: 1,
+        borderDash: [4,4],
+        fill: false,
+        tension: 0,
+        pointRadius: 0,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: {
+        labels: {
+          color: '#4a5568',
+          font: { family: 'Space Mono', size: 11 },
+          boxWidth: 12,
+        }
+      },
+      tooltip: {
+        backgroundColor: '#111520',
+        borderColor: '#1e2535',
+        borderWidth: 1,
+        titleColor: '#00d4ff',
+        bodyColor: '#c8d6e5',
+        titleFont: { family: 'Space Mono', size: 11 },
+        bodyFont: { family: 'DM Sans', size: 12 },
+        callbacks: {
+          label: ctx => ' $' + ctx.parsed.y.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})
+        }
+      }
+    },
+    scales: {
+      x: {
+        grid: { color: 'rgba(30,37,53,0.8)' },
+        ticks: {
+          color: '#4a5568',
+          font: { family: 'Space Mono', size: 10 },
+          maxTicksLimit: 12,
+        }
+      },
+      y: {
+        grid: { color: 'rgba(30,37,53,0.8)' },
+        ticks: {
+          color: '#4a5568',
+          font: { family: 'Space Mono', size: 10 },
+          callback: v => '$' + (v/1000).toFixed(0) + 'k'
+        }
+      }
+    }
+  }
+});
+
+// ── Drawdown Chart ──
+if (ddData.length > 0) {
+  const ddCtx = document.getElementById('drawdownChart').getContext('2d');
+  const ddGrad = ddCtx.createLinearGradient(0, 0, 0, 180);
+  ddGrad.addColorStop(0, 'rgba(255,77,109,0.00)');
+  ddGrad.addColorStop(1, 'rgba(255,77,109,0.30)');
+
+  new Chart(ddCtx, {
+    type: 'line',
+    data: {
+      labels: dates,
+      datasets: [{
+        label: 'Drawdown %',
+        data: ddData,
+        borderColor: '#ff4d6d',
+        borderWidth: 1.5,
+        backgroundColor: ddGrad,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 0,
+        pointHoverRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#111520',
+          borderColor: '#1e2535',
+          borderWidth: 1,
+          titleColor: '#ff4d6d',
+          bodyColor: '#c8d6e5',
+          titleFont: { family: 'Space Mono', size: 11 },
+          bodyFont: { family: 'DM Sans', size: 12 },
+          callbacks: { label: ctx => ' ' + ctx.parsed.y.toFixed(2) + '%' }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(30,37,53,0.8)' },
+          ticks: { color: '#4a5568', font: { family: 'Space Mono', size: 10 }, maxTicksLimit: 12 }
+        },
+        y: {
+          max: 0,
+          grid: { color: 'rgba(30,37,53,0.8)' },
+          ticks: { color: '#4a5568', font: { family: 'Space Mono', size: 10 }, callback: v => v.toFixed(0) + '%' }
+        }
+      }
+    }
+  });
+}
+</script>
+</body>
+</html>

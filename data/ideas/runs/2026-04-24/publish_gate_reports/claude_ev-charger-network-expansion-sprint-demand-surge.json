@@ -1,0 +1,32 @@
+{
+  "source_file": "data/ideas/runs/2026-04-24/publish/claude_ev-charger-network-expansion-sprint-demand-surge.md",
+  "target_file": "data/ideas/runs/2026-04-24/build/claude_ev-charger-network-expansion-sprint-demand-surge.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "openchargemap",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a real adapter with matching data source and deterministic routing.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "openchargemap"
+      ],
+      "scores": {
+        "openchargemap": 4
+      },
+      "top_score": 4,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 952,
+    "output_tokens": 78
+  },
+  "cost_usd": 0.00316,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"openchargemap\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a real adapter with matching data source and deterministic routing.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

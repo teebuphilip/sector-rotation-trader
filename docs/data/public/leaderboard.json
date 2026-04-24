@@ -1,8 +1,8 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-04-24T14:30:23Z",
+  "generated_at": "2026-04-24T14:38:22Z",
   "counts": {
-    "total": 115,
+    "total": 133,
     "beating_spy": 2
   },
   "algos": [
@@ -248,6 +248,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:weekly-spike-in-google-trends-searches-for-warehouse-automat",
+      "algo_type": "crazy",
+      "algo_id": "weekly-spike-in-google-trends-searches-for-warehouse-automat",
+      "name": "Weekly Spike In Google Trends Searches For Warehouse Automation Failure Signals Bearish Xli",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.04,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.04,
+      "spy_delta_30d_pct": -8.42,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.124,
+            "return_pct": -0.62
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.914
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:materials-sector-weekly-positive-correlation-breakdown-with-",
       "algo_type": "crazy",
       "algo_id": "materials-sector-weekly-positive-correlation-breakdown-with-",
@@ -316,6 +352,42 @@
           }
         },
         "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-job-postings-for-warehouse-workers-signals-b",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-job-postings-for-warehouse-workers-signals-b",
+      "name": "Weekly Surge In Job Postings For Warehouse Workers Signals Bullish Xli",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.01,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.01,
+      "spy_delta_30d_pct": -8.47,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.124,
+            "return_pct": -0.62
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.914
+          }
+        },
+        "summary": "mixed"
       }
     },
     {
@@ -608,6 +680,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:bank-stress-index-volatility-fear-crush-reversal",
+      "algo_type": "crazy",
+      "algo_id": "bank-stress-index-volatility-fear-crush-reversal",
+      "name": "Bank Stress Index Volatility Fear Crush Reversal",
+      "family": "attention_sentiment",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.09,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.02,
+      "spy_delta_30d_pct": -8.44,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLF",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.355,
+            "return_pct": -1.774
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.999,
+            "return_pct": 4.995
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:xlu-daily-electricity-demand-surge",
       "algo_type": "crazy",
       "algo_id": "xlu-daily-electricity-demand-surge",
@@ -820,6 +928,114 @@
           }
         },
         "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-spike-in-daily-earthquake-activity-near-major-logistic",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-daily-earthquake-activity-near-major-logistic",
+      "name": "Daily Spike In Daily Earthquake Activity Near Major Logistics Hubs Signals Bearish Xli",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.22,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.22,
+      "spy_delta_30d_pct": -8.69,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.124,
+            "return_pct": -0.62
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.914
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-searches-for-city-water-outage",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-searches-for-city-water-outage",
+      "name": "Weekly Surge In Google Trends Searches For City Water Outage Signals Bearish Xlre",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.23,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.01,
+      "spy_delta_30d_pct": -8.47,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLRE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.2,
+            "return_pct": -1.0
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 9.295
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-rise-in-google-trends-interest-for-food-delivery-dela",
+      "algo_type": "crazy",
+      "algo_id": "weekly-rise-in-google-trends-interest-for-food-delivery-dela",
+      "name": "Weekly Rise In Google Trends Interest For Food Delivery Delay Signals Bearish Xlp",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.23,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.14,
+      "spy_delta_30d_pct": -8.6,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLP",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.293,
+            "return_pct": 1.467
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.624,
+            "return_pct": 3.118
+          }
+        },
+        "summary": "both_up"
       }
     },
     {
@@ -3230,6 +3446,438 @@
       "last_snapshot": "2026-04-24",
       "new_algo_date": null,
       "comparator": null
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-searches-for-home-improvement-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-searches-for-home-improvement-",
+      "name": "Weekly Surge In Google Trends Searches For Home Improvement Loan Signals Consumer Stress Lifting Xly",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -8.46,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.355,
+            "return_pct": -1.777
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 8.674
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-searches-for-diy-electronics-r",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-searches-for-diy-electronics-r",
+      "name": "Weekly Surge In Google Trends Searches For Diy Electronics Repair Signals Bullish Xlk",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -8.46,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLK",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.521,
+            "return_pct": 2.604
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 19.517
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-searches-for-commuting-strike-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-searches-for-commuting-strike-",
+      "name": "Weekly Surge In Google Trends Searches For Commuting Strike Signals Bearish Xly",
+      "family": "travel_mobility",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -8.46,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.355,
+            "return_pct": -1.777
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 8.674
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-spike-in-google-trends-for-home-cooling-failure-signa",
+      "algo_type": "crazy",
+      "algo_id": "weekly-spike-in-google-trends-for-home-cooling-failure-signa",
+      "name": "Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -8.46,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLU",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.03,
+            "return_pct": -0.152
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.335,
+            "return_pct": 1.677
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-rise-in-google-trends-searches-for-gas-price-protest-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-rise-in-google-trends-searches-for-gas-price-protest-",
+      "name": "Weekly Rise In Google Trends Searches For Gas Price Protest Signals Bearish Xle",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -8.46,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.633,
+            "return_pct": 3.163
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 1.0,
+            "return_pct": -7.737
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-increase-in-google-trends-searches-for-bulk-shipping-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-increase-in-google-trends-searches-for-bulk-shipping-",
+      "name": "Weekly Increase In Google Trends Searches For Bulk Shipping Delay Signals Bearish Xlb",
+      "family": "freight_logistics",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -8.46,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLB",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.031,
+            "return_pct": -0.154
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 5.52
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:temperature-extremes-power-demand-spike-utility-boost",
+      "algo_type": "crazy",
+      "algo_id": "temperature-extremes-power-demand-spike-utility-boost",
+      "name": "Temperature Extremes Power Demand Spike Utility Boost",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -8.46,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLU",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.03,
+            "return_pct": -0.152
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.335,
+            "return_pct": 1.677
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:ev-charger-network-expansion-sprint-demand-surge",
+      "algo_type": "crazy",
+      "algo_id": "ev-charger-network-expansion-sprint-demand-surge",
+      "name": "Ev Charger Network Expansion Sprint Demand Surge",
+      "family": "travel_mobility",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -8.46,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.355,
+            "return_pct": -1.777
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 8.674
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-spike-in-rss-news-counts-mentioning-politician-insider",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-rss-news-counts-mentioning-politician-insider",
+      "name": "Daily Spike In Rss News Counts Mentioning Politician Insider Buying Tech Stock Signals Bullish Xlk",
+      "family": "political_insider_filing",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -8.46,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLK",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.521,
+            "return_pct": 2.604
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 19.517
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-spike-in-rss-news-counts-around-labor-union-contract-n",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-rss-news-counts-around-labor-union-contract-n",
+      "name": "Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf",
+      "family": "labor_jobs",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -8.46,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLF",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.355,
+            "return_pct": -1.774
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.999,
+            "return_pct": 4.995
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig",
+      "name": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
+      "family": "attention_sentiment",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -8.46,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLK",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.521,
+            "return_pct": 2.604
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 19.517
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-spike-in-freight-logistics-rss-news-volume-mentioning-",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-freight-logistics-rss-news-volume-mentioning-",
+      "name": "Daily Spike In Freight Logistics Rss News Volume Mentioning Port Labor Strike Triggers Bearish Xli",
+      "family": "freight_logistics",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -8.46,
+      "last_snapshot": "2026-04-24",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.124,
+            "return_pct": -0.62
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.914
+          }
+        },
+        "summary": "mixed"
+      }
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-04-24/build/claude_bank-stress-index-volatility-fear-crush-reversal.md",
+  "out": "crazy/algos/bank_stress_index_volatility_fear_crush_reversal.py",
+  "adapter": "price_only",
+  "idea_id": "bank-stress-index-volatility-fear-crush-reversal",
+  "name": "Bank Stress Index Volatility Fear Crush Reversal",
+  "universe": [
+    "XLF"
+  ],
+  "frequency": "daily",
+  "family": "attention_sentiment",
+  "threshold": 0.02,
+  "direction": "down",
+  "hold_days": 8
+}

@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-24/publish/claude_oil-prices-bounce-off-support-political-supply-fear.md",
+  "target_file": "data/ideas/runs/2026-04-24/intervention/claude_oil-prices-bounce-off-support-political-supply-fear.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "eia_electricity",
+    "needs_new_adapter": true,
+    "reason": "eia_electricity adapter does not provide crude oil price or inventory data needed",
+    "risk_flags": [
+      "adapter mismatch",
+      "data source inconsistency",
+      "requires crude oil price and inventory data"
+    ],
+    "route": {
+      "adapters": [
+        "eia_electricity",
+        "html_table"
+      ],
+      "scores": {
+        "html_table": 2,
+        "eia_electricity": 2,
+        "price_only": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1006,
+    "output_tokens": 88
+  },
+  "cost_usd": 0.003395,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"eia_electricity\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"eia_electricity adapter does not provide crude oil price or inventory data needed\",\n  \"risk_flags\": [\"adapter mismatch\", \"data source inconsistency\", \"requires crude oil price and inventory data\"]\n}\n```"
+}

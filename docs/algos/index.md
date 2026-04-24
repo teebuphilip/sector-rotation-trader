@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-24T14:29:56
+Updated (UTC): 2026-04-24T14:38:21
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 110
+Crazy models: 128
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -126,3 +126,21 @@ Crazy models: 110
 | attention-sentiment-spike-daily-surge-in-news-rss-counts-men | Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc | daily |
 | weekly-surge-in-google-trends-searches-for-diy-home-repair-s | Weekly Surge In Google Trends Searches For Diy Home Repair Signals Consumer Stress Lifting Xly | weekly |
 | weekly-surge-in-openchargemap-ev-charger-installations-signa | Weekly Surge In Openchargemap Ev Charger Installations Signals Bullish Xlc | weekly |
+| daily-spike-in-daily-earthquake-activity-near-major-logistic | Daily Spike In Daily Earthquake Activity Near Major Logistics Hubs Signals Bearish Xli | daily |
+| daily-spike-in-freight-logistics-rss-news-volume-mentioning- | Daily Spike In Freight Logistics Rss News Volume Mentioning Port Labor Strike Triggers Bearish Xli | daily |
+| daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig | Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk | daily |
+| daily-spike-in-rss-news-counts-around-labor-union-contract-n | Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf | daily |
+| daily-spike-in-rss-news-counts-mentioning-politician-insider | Daily Spike In Rss News Counts Mentioning Politician Insider Buying Tech Stock Signals Bullish Xlk | daily |
+| weekly-increase-in-google-trends-searches-for-bulk-shipping- | Weekly Increase In Google Trends Searches For Bulk Shipping Delay Signals Bearish Xlb | weekly |
+| weekly-rise-in-google-trends-interest-for-food-delivery-dela | Weekly Rise In Google Trends Interest For Food Delivery Delay Signals Bearish Xlp | weekly |
+| weekly-rise-in-google-trends-searches-for-gas-price-protest- | Weekly Rise In Google Trends Searches For Gas Price Protest Signals Bearish Xle | weekly |
+| weekly-spike-in-google-trends-for-home-cooling-failure-signa | Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu | weekly |
+| weekly-spike-in-google-trends-searches-for-warehouse-automat | Weekly Spike In Google Trends Searches For Warehouse Automation Failure Signals Bearish Xli | weekly |
+| weekly-surge-in-google-trends-searches-for-city-water-outage | Weekly Surge In Google Trends Searches For City Water Outage Signals Bearish Xlre | weekly |
+| weekly-surge-in-google-trends-searches-for-commuting-strike- | Weekly Surge In Google Trends Searches For Commuting Strike Signals Bearish Xly | weekly |
+| weekly-surge-in-google-trends-searches-for-diy-electronics-r | Weekly Surge In Google Trends Searches For Diy Electronics Repair Signals Bullish Xlk | weekly |
+| weekly-surge-in-google-trends-searches-for-home-improvement- | Weekly Surge In Google Trends Searches For Home Improvement Loan Signals Consumer Stress Lifting Xly | weekly |
+| weekly-surge-in-job-postings-for-warehouse-workers-signals-b | Weekly Surge In Job Postings For Warehouse Workers Signals Bullish Xli | weekly |
+| bank-stress-index-volatility-fear-crush-reversal | Bank Stress Index Volatility Fear Crush Reversal | daily |
+| ev-charger-network-expansion-sprint-demand-surge | Ev Charger Network Expansion Sprint Demand Surge | daily |
+| temperature-extremes-power-demand-spike-utility-boost | Temperature Extremes Power Demand Spike Utility Boost | daily |

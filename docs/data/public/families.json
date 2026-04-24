@@ -1,42 +1,21 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-04-24T14:29:56Z",
+  "generated_at": "2026-04-24T14:38:22Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
-      "count": 20,
+      "count": 22,
       "by_status": {
-        "live_only": 4,
+        "live_only": 5,
         "parked": 2,
-        "sandbox": 14
+        "sandbox": 15
       },
       "by_evidence_class": {
-        "live_receipts_only": 4,
-        "needs_history": 14,
+        "live_receipts_only": 5,
+        "needs_history": 15,
         "pending_seed": 2
       },
       "leaders": [
-        {
-          "schema_version": "v1",
-          "key": "crazy:reddit-sentiment-spike-trend",
-          "algo_type": "crazy",
-          "algo_id": "reddit-sentiment-spike-trend",
-          "name": "Reddit Sentiment Spike Trend",
-          "family": "attention_sentiment",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "daily",
-          "ytd_pct": 0.0,
-          "days_running": 80,
-          "beat_spy": false,
-          "spy_pct": 4.19,
-          "alpha_pct": -4.19,
-          "ret_30d_pct": 0.0,
-          "spy_delta_30d_pct": -8.46,
-          "last_snapshot": "2026-04-24",
-          "new_algo_date": null,
-          "comparator": null
-        },
         {
           "schema_version": "v1",
           "key": "crazy:reddit-sentiment-spike",
@@ -120,20 +99,56 @@
           "last_snapshot": "2026-04-24",
           "new_algo_date": null,
           "comparator": null
+        },
+        {
+          "schema_version": "v1",
+          "key": "crazy:daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig",
+          "algo_type": "crazy",
+          "algo_id": "daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig",
+          "name": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
+          "family": "attention_sentiment",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "ytd_pct": 0.0,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.0,
+          "spy_delta_30d_pct": -8.46,
+          "last_snapshot": "2026-04-24",
+          "new_algo_date": null,
+          "comparator": {
+            "primary_etf": "XLK",
+            "signals": {
+              "momentum_5d": {
+                "direction": "UP",
+                "confidence": 0.521,
+                "return_pct": 2.604
+              },
+              "momentum_20d": {
+                "direction": "UP",
+                "confidence": 1.0,
+                "return_pct": 19.517
+              }
+            },
+            "summary": "both_up"
+          }
         }
       ]
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 11,
+      "count": 14,
       "by_status": {
         "failed": 1,
-        "live_only": 6,
-        "sandbox": 4
+        "live_only": 7,
+        "sandbox": 6
       },
       "by_evidence_class": {
-        "live_receipts_only": 6,
-        "needs_history": 4,
+        "live_receipts_only": 7,
+        "needs_history": 6,
         "v1_backtested": 1
       },
       "leaders": [
@@ -380,31 +395,33 @@
     },
     "freight_logistics": {
       "family": "freight_logistics",
-      "count": 6,
+      "count": 9,
       "by_status": {
-        "sandbox": 6
+        "live_only": 1,
+        "sandbox": 8
       },
       "by_evidence_class": {
-        "needs_history": 6
+        "live_receipts_only": 1,
+        "needs_history": 8
       },
       "leaders": [
         {
           "schema_version": "v1",
-          "key": "crazy:shipping-container-squeeze-play",
+          "key": "crazy:weekly-spike-in-google-trends-searches-for-warehouse-automat",
           "algo_type": "crazy",
-          "algo_id": "shipping-container-squeeze-play",
-          "name": "Shipping Container Squeeze Play",
+          "algo_id": "weekly-spike-in-google-trends-searches-for-warehouse-automat",
+          "name": "Weekly Spike In Google Trends Searches For Warehouse Automation Failure Signals Bearish Xli",
           "family": "freight_logistics",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
+          "status": "live_only",
+          "evidence_class": "live_receipts_only",
           "rebalance_frequency": "weekly",
-          "ytd_pct": 0.0,
-          "days_running": 69,
-          "beat_spy": false,
-          "spy_pct": 4.19,
-          "alpha_pct": -4.19,
-          "ret_30d_pct": 0.0,
-          "spy_delta_30d_pct": -8.46,
+          "ytd_pct": 0.04,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.04,
+          "spy_delta_30d_pct": -8.42,
           "last_snapshot": "2026-04-24",
           "new_algo_date": null,
           "comparator": {
@@ -423,27 +440,6 @@
             },
             "summary": "mixed"
           }
-        },
-        {
-          "schema_version": "v1",
-          "key": "crazy:port-container-volume",
-          "algo_type": "crazy",
-          "algo_id": "port-container-volume",
-          "name": "Port Container Volume",
-          "family": "freight_logistics",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "monthly",
-          "ytd_pct": 0.0,
-          "days_running": 80,
-          "beat_spy": false,
-          "spy_pct": 4.19,
-          "alpha_pct": -4.19,
-          "ret_30d_pct": 0.0,
-          "spy_delta_30d_pct": -8.46,
-          "last_snapshot": "2026-04-24",
-          "new_algo_date": null,
-          "comparator": null
         },
         {
           "schema_version": "v1",
@@ -522,19 +518,93 @@
           "last_snapshot": "2026-04-24",
           "new_algo_date": null,
           "comparator": null
+        },
+        {
+          "schema_version": "v1",
+          "key": "crazy:daily-spike-in-freight-logistics-rss-news-volume-mentioning-",
+          "algo_type": "crazy",
+          "algo_id": "daily-spike-in-freight-logistics-rss-news-volume-mentioning-",
+          "name": "Daily Spike In Freight Logistics Rss News Volume Mentioning Port Labor Strike Triggers Bearish Xli",
+          "family": "freight_logistics",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "ytd_pct": 0.0,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.0,
+          "spy_delta_30d_pct": -8.46,
+          "last_snapshot": "2026-04-24",
+          "new_algo_date": null,
+          "comparator": {
+            "primary_etf": "XLI",
+            "signals": {
+              "momentum_5d": {
+                "direction": "DOWN",
+                "confidence": 0.124,
+                "return_pct": -0.62
+              },
+              "momentum_20d": {
+                "direction": "UP",
+                "confidence": 1.0,
+                "return_pct": 6.914
+              }
+            },
+            "summary": "mixed"
+          }
         }
       ]
     },
     "labor_jobs": {
       "family": "labor_jobs",
-      "count": 3,
+      "count": 5,
       "by_status": {
-        "sandbox": 3
+        "live_only": 1,
+        "sandbox": 4
       },
       "by_evidence_class": {
-        "needs_history": 3
+        "live_receipts_only": 1,
+        "needs_history": 4
       },
       "leaders": [
+        {
+          "schema_version": "v1",
+          "key": "crazy:weekly-surge-in-job-postings-for-warehouse-workers-signals-b",
+          "algo_type": "crazy",
+          "algo_id": "weekly-surge-in-job-postings-for-warehouse-workers-signals-b",
+          "name": "Weekly Surge In Job Postings For Warehouse Workers Signals Bullish Xli",
+          "family": "labor_jobs",
+          "status": "live_only",
+          "evidence_class": "live_receipts_only",
+          "rebalance_frequency": "weekly",
+          "ytd_pct": -0.01,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": -0.01,
+          "spy_delta_30d_pct": -8.47,
+          "last_snapshot": "2026-04-24",
+          "new_algo_date": null,
+          "comparator": {
+            "primary_etf": "XLI",
+            "signals": {
+              "momentum_5d": {
+                "direction": "DOWN",
+                "confidence": 0.124,
+                "return_pct": -0.62
+              },
+              "momentum_20d": {
+                "direction": "UP",
+                "confidence": 1.0,
+                "return_pct": 6.914
+              }
+            },
+            "summary": "mixed"
+          }
+        },
         {
           "schema_version": "v1",
           "key": "crazy:linkedin",
@@ -597,57 +667,57 @@
           "last_snapshot": "2026-04-24",
           "new_algo_date": null,
           "comparator": null
+        },
+        {
+          "schema_version": "v1",
+          "key": "crazy:daily-spike-in-rss-news-counts-around-labor-union-contract-n",
+          "algo_type": "crazy",
+          "algo_id": "daily-spike-in-rss-news-counts-around-labor-union-contract-n",
+          "name": "Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf",
+          "family": "labor_jobs",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "ytd_pct": 0.0,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.0,
+          "spy_delta_30d_pct": -8.46,
+          "last_snapshot": "2026-04-24",
+          "new_algo_date": null,
+          "comparator": {
+            "primary_etf": "XLF",
+            "signals": {
+              "momentum_5d": {
+                "direction": "DOWN",
+                "confidence": 0.355,
+                "return_pct": -1.774
+              },
+              "momentum_20d": {
+                "direction": "UP",
+                "confidence": 0.999,
+                "return_pct": 4.995
+              }
+            },
+            "summary": "mixed"
+          }
         }
       ]
     },
     "local_economy_weirdness": {
       "family": "local_economy_weirdness",
-      "count": 5,
+      "count": 8,
       "by_status": {
-        "live_only": 1,
-        "sandbox": 4
+        "live_only": 3,
+        "sandbox": 5
       },
       "by_evidence_class": {
-        "live_receipts_only": 1,
-        "needs_history": 4
+        "live_receipts_only": 3,
+        "needs_history": 5
       },
       "leaders": [
-        {
-          "schema_version": "v1",
-          "key": "crazy:seismic-activity-construction-halt-signal",
-          "algo_type": "crazy",
-          "algo_id": "seismic-activity-construction-halt-signal",
-          "name": "Seismic Activity Construction Halt Signal",
-          "family": "local_economy_weirdness",
-          "status": "live_only",
-          "evidence_class": "live_receipts_only",
-          "rebalance_frequency": "daily",
-          "ytd_pct": -0.14,
-          "days_running": 69,
-          "beat_spy": false,
-          "spy_pct": 4.19,
-          "alpha_pct": -4.32,
-          "ret_30d_pct": -0.13,
-          "spy_delta_30d_pct": -8.59,
-          "last_snapshot": "2026-04-24",
-          "new_algo_date": null,
-          "comparator": {
-            "primary_etf": "XLB",
-            "signals": {
-              "momentum_5d": {
-                "direction": "DOWN",
-                "confidence": 0.031,
-                "return_pct": -0.154
-              },
-              "momentum_20d": {
-                "direction": "UP",
-                "confidence": 1.0,
-                "return_pct": 5.52
-              }
-            },
-            "summary": "mixed"
-          }
-        },
         {
           "schema_version": "v1",
           "key": "crazy:yelp-closure-velocity",
@@ -731,21 +801,57 @@
           "last_snapshot": "2026-04-24",
           "new_algo_date": null,
           "comparator": null
+        },
+        {
+          "schema_version": "v1",
+          "key": "crazy:weekly-spike-in-google-trends-for-home-cooling-failure-signa",
+          "algo_type": "crazy",
+          "algo_id": "weekly-spike-in-google-trends-for-home-cooling-failure-signa",
+          "name": "Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu",
+          "family": "local_economy_weirdness",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "weekly",
+          "ytd_pct": 0.0,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.0,
+          "spy_delta_30d_pct": -8.46,
+          "last_snapshot": "2026-04-24",
+          "new_algo_date": null,
+          "comparator": {
+            "primary_etf": "XLU",
+            "signals": {
+              "momentum_5d": {
+                "direction": "DOWN",
+                "confidence": 0.03,
+                "return_pct": -0.152
+              },
+              "momentum_20d": {
+                "direction": "UP",
+                "confidence": 0.335,
+                "return_pct": 1.677
+              }
+            },
+            "summary": "mixed"
+          }
         }
       ]
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 41,
+      "count": 43,
       "by_status": {
         "backtest_weak": 1,
         "live_only": 10,
         "parked": 2,
-        "sandbox": 28
+        "sandbox": 30
       },
       "by_evidence_class": {
         "live_receipts_only": 10,
-        "needs_history": 26,
+        "needs_history": 28,
         "pending_seed": 2,
         "v1_backtested": 3
       },
@@ -904,16 +1010,16 @@
     },
     "political_insider_filing": {
       "family": "political_insider_filing",
-      "count": 17,
+      "count": 18,
       "by_status": {
         "backtest_weak": 3,
         "live_only": 6,
         "parked": 2,
-        "sandbox": 6
+        "sandbox": 7
       },
       "by_evidence_class": {
         "live_receipts_only": 5,
-        "needs_history": 5,
+        "needs_history": 6,
         "pending_seed": 2,
         "v1_backtested": 5
       },
@@ -1057,14 +1163,14 @@
     },
     "travel_mobility": {
       "family": "travel_mobility",
-      "count": 7,
+      "count": 9,
       "by_status": {
         "live_only": 1,
-        "sandbox": 6
+        "sandbox": 8
       },
       "by_evidence_class": {
         "live_receipts_only": 1,
-        "needs_history": 6
+        "needs_history": 8
       },
       "leaders": [
         {

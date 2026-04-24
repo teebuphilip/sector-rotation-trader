@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-04-24/publish/claude_truck-tonnage-decline-logistics-contraction-shock.md",
+  "target_file": "data/ideas/runs/2026-04-24/intervention/claude_truck-tonnage-decline-logistics-contraction-shock.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "requires shorting",
+      "short_trade_not_supported",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "html_table": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 946,
+    "output_tokens": 72
+  },
+  "cost_usd": 0.003085,
+  "raw_llm_response": "{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is not supported by current algo envelope.\",\n  \"risk_flags\": [\"requires shorting\", \"data source instability\", \"false positives\"]\n}"
+}

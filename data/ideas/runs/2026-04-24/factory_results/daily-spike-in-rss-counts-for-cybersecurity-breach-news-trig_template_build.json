@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-04-24/build/chatgpt_daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig.md",
+  "out": "crazy/algos/daily_spike_in_rss_counts_for_cybersecurity_breach_news_trig.py",
+  "adapter": "rss_count",
+  "idea_id": "daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig",
+  "name": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
+  "universe": [
+    "XLK"
+  ],
+  "frequency": "daily",
+  "family": "attention_sentiment",
+  "threshold": 0.1,
+  "direction": "up",
+  "hold_days": 5
+}
