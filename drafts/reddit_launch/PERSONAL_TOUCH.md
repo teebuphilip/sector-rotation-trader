@@ -6,18 +6,18 @@ The numbers are filled in by the script. These are the parts where you — not a
 
 ## The Biscotti Decision (affects ALL 5 posts)
 
-Every post mentions Biscotti and the fact that it's named after your dog who died in April 2025.
+Every post mentions Biscotti and the fact that it's named after your dog.
 
 **You need to decide how much you want to say.**
 
-The current drafts use: *"named after my dog, who died in April 2025 while I was building the first version of this."*
+The current drafts use: *"named after my dog."*
 
-That sentence is doing real work — it's the thing that makes the whole project feel human and not like another fintech dashboard. But it's your call how much you want to share about that publicly and on post day.
+That sentence is still doing real work — it's the thing that makes the whole project feel human and not like another fintech dashboard. But it's your call how much you want to share about that publicly and on post day.
 
 Options:
-- Leave it as-is (probably the right call)
+- Leave it as-is
 - Expand it by one sentence if you feel like it
-- Cut it to just "named after my late dog Biscotti" if you don't want to go there on day one
+- Change it to just "named after my late dog Biscotti" if you want slightly more context without a full personal aside
 
 Don't overthink it. The shorter version still works.
 
@@ -53,9 +53,7 @@ The only thing to check: does the Biscotti sentence feel right on post day? If s
 
 ## r/SecurityAnalysis — Check the Macro Commentary
 
-The post includes: *"internally consistent with a late-cycle, risk-off positioning read."*
-
-That line is based on today's data (XLK mixed, XLP/XLI bearish). On May 15, the sector consensus will be different. Update that sentence to match whatever the leaderboard is actually saying about sector positioning that week. Don't leave stale macro commentary.
+The script now keeps the macro line more neutral, but you should still rewrite it in your own words on post day if the sector mix is interesting. Do not let canned macro language slip back in.
 
 ---
 
@@ -73,6 +71,9 @@ The moment you catch yourself writing something that sounds like a press release
 # 1. Refresh numbers (run day before posting)
 python scripts/refresh_reddit_drafts.py --date 2026-05-15
 
+# Optional: create same-day manual overrides before regenerating
+# drafts/reddit_launch/overrides/2026-05-15.json
+
 # 2. Open the dated folder
 open drafts/reddit_launch/2026-05-15/
 
@@ -80,4 +81,13 @@ open drafts/reddit_launch/2026-05-15/
 # 4. Check the Biscotti line across all 5
 # 5. Update the macro line in security_analysis.md
 # 6. Post r/algotrading first, then the others over the following days
+```
+
+Optional overrides file shape:
+
+```json
+{
+  "algotrading_title": "override text here",
+  "security_macro_note": "override text here"
+}
 ```

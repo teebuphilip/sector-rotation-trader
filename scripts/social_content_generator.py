@@ -25,6 +25,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from datetime import date
 from pathlib import Path
@@ -34,12 +35,14 @@ import anthropic
 MODEL = os.getenv("ANTHROPIC_MODEL") or "claude-haiku-4-5-20251001"
 REPORTS_DIR = Path("reports/deep_validation")
 DRAFTS_DIR = Path("drafts/social")
+BRAND = "StockArithm"
 
 _SHARED_RULES = """\
 Hard rules (non-negotiable):
 - Use ONLY facts present in the JSON data block. Do not invent metrics, returns, or reasons.
 - Named algos stay named: Biscotti, Baileymol, etc. as they appear in the data.
 - stockarithm.com is the URL. Never invent a different URL.
+- In prose, the brand is StockArithm. The URL stays lowercase.
 - Forbidden words: cutting-edge, proprietary algorithm, AI-powered, seamless, robust, revolutionary, game-changing, unlock your potential.
 - Show losses as clearly as wins. The lab publishes failures publicly. That is the differentiator.
 - No investment advice, no price predictions, no stock picks.
@@ -49,7 +52,7 @@ CHANNELS = {
     "reddit_algotrading": {
         "filename": "reddit_algotrading.md",
         "system": f"""\
-You are writing a Reddit post for r/algotrading for Stockarithm — a public paper-trading lab \
+You are writing a Reddit post for r/algotrading for StockArithm — a public paper-trading lab \
 running alternative-data algorithmic signals.
 
 {_SHARED_RULES}
@@ -72,7 +75,7 @@ End with: "Full leaderboard at stockarithm.com — all signals public, failures 
     "reddit_investing": {
         "filename": "reddit_investing.md",
         "system": f"""\
-You are writing a Reddit post for r/investing for Stockarithm — a public paper-trading lab \
+You are writing a Reddit post for r/investing for StockArithm — a public paper-trading lab \
 running alternative-data algorithmic signals.
 
 {_SHARED_RULES}
@@ -95,7 +98,7 @@ End with: "Everything is public at stockarithm.com."
     "reddit_stocks": {
         "filename": "reddit_stocks.md",
         "system": f"""\
-You are writing a Reddit post for r/stocks for Stockarithm — a public paper-trading lab \
+You are writing a Reddit post for r/stocks for StockArithm — a public paper-trading lab \
 running alternative-data algorithmic signals.
 
 {_SHARED_RULES}
@@ -116,7 +119,7 @@ End with: "stockarithm.com — leaderboard is public."
     "reddit_quant": {
         "filename": "reddit_quant.md",
         "system": f"""\
-You are writing a Reddit post for r/quant for Stockarithm — a public paper-trading lab \
+You are writing a Reddit post for r/quant for StockArithm — a public paper-trading lab \
 running alternative-data algorithmic signals.
 
 {_SHARED_RULES}
@@ -141,7 +144,7 @@ End with: "Methodology and full leaderboard at stockarithm.com."
     "reddit_security_analysis": {
         "filename": "reddit_security_analysis.md",
         "system": f"""\
-You are writing a Reddit post for r/SecurityAnalysis for Stockarithm — a public paper-trading lab \
+You are writing a Reddit post for r/SecurityAnalysis for StockArithm — a public paper-trading lab \
 using economic leading indicators as sector rotation signals.
 
 {_SHARED_RULES}
@@ -167,7 +170,7 @@ End with: "Full signal methodology and sector consensus at stockarithm.com."
     "twitter_x": {
         "filename": "twitter_x.md",
         "system": f"""\
-You are writing a Twitter/X post (Fintwit style) for Stockarithm — a public paper-trading lab \
+You are writing a Twitter/X post (Fintwit style) for StockArithm — a public paper-trading lab \
 running alternative-data algorithmic signals.
 
 {_SHARED_RULES}
@@ -213,14 +216,19 @@ def _build_facts_block(report):
 
     facts = {
         "report_date": report.get("report_date"),
-        "system": {
-            "total_algos": ss.get("total_algos"),
-            "algos_beating_spy": ss.get("algos_beating_spy"),
-            "algos_with_positions": ss.get("algos_with_positions"),
+        "system_state": {
+            "total_force_ranked": ss.get("total_force_ranked"),
+            "beating_spy_force_rank": ss.get("beating_spy_force_rank"),
+            "rolling_30d_algos": ss.get("rolling_30d_algos"),
+            "rolling_30d_beating_spy": ss.get("rolling_30d_beating_spy"),
+            "signals_generated": ss.get("signals_generated"),
+            "tickers_covered": ss.get("tickers_covered"),
         },
-        "top_force_ranked": (fr.get("top_algos") or [])[:5],
-        "bottom_force_ranked": (fr.get("bottom_algos") or [])[:3],
-        "top_rolling_30d": (r30.get("top_algos") or [])[:5],
+        "top_force_ranked": (fr.get("top_10") or [])[:5],
+        "bottom_force_ranked": (fr.get("bottom_5") or [])[:3],
+        "top_rolling_30d": (r30.get("top_10") or [])[:5],
+        "bottom_rolling_30d": (r30.get("bottom_5") or [])[:3],
+        "spy_ret_30d": r30.get("spy_ret_30d"),
         "signal_of_day": cf.get("signal_of_day"),
         "failure_of_day": cf.get("failure_of_day"),
         "call_of_day": cf.get("call_of_day"),
@@ -239,15 +247,26 @@ def _generate_one(client, channel_key, channel_cfg, facts_block, run_date, out_d
         message = client.messages.create(
             model=MODEL,
             max_tokens=1024,
+            temperature=0,
             system=channel_cfg["system"],
             messages=[{"role": "user", "content": user_message}],
         )
         draft = message.content[0].text.strip()
+        _lint_draft(draft, channel_key)
         out_path = out_dir / channel_cfg["filename"]
-        out_path.write_text(draft)
+        out_path.write_text(draft, encoding="utf-8")
         print(f"[social] wrote {out_path}")
     except Exception as e:
         print(f"[social] ERROR {channel_key}: {e}", file=sys.stderr)
+
+
+def _lint_draft(text, channel_key):
+    if "stockarithm.com" not in text.lower():
+        raise ValueError(f"{channel_key}: missing stockarithm.com URL")
+    if "Stockarithm" in text:
+        raise ValueError(f"{channel_key}: stale brand casing Stockarithm found")
+    if re.search(r"\{[^}]+\}", text):
+        raise ValueError(f"{channel_key}: unresolved placeholder found")
 
 
 def generate(run_date, dry_run=False, only_channel=None):

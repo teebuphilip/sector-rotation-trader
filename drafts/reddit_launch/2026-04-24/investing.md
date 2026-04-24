@@ -2,11 +2,11 @@
 
 ---
 
-**Title:** I built a public paper-trading lab using weird economic data — TSA counts, bankruptcy rates, the misery index — as market signals. Here's what 80 days of results looks like.
+**Title:** I built a public paper-trading lab using economic side-channel data — TSA counts, bankruptcy rates, the misery index — as market signals. Here's what 81 days of results looks like.
 
 ---
 
-For the past 12 weeks I've been running a public paper-trading experiment called Stockarithm. The idea is simple: use alternative economic data — not price charts, not earnings — as signals for rotating between sector ETFs.
+For the past 12 weeks I've been running a public paper-trading experiment called StockArithm. The idea is simple: use alternative economic data — not price charts, not earnings — as signals for rotating between sector ETFs.
 
 Examples of what I'm tracking:
 
@@ -18,15 +18,15 @@ Examples of what I'm tracking:
 
 Each signal has fixed rules. If it fires, rotate. If it reverses, rotate back. No discretion, no overrides.
 
-**The honest results after 80 days**
+**The honest results after 81 days**
 
-115 signals running. 2 are beating SPY. The rest are flat or underperforming.
+133 signals running. 2 are beating SPY. The rest are flat or underperforming.
 
-I'm not going to spin that. Most of these signals need more time. A month of data is a starting point, not a verdict. But the ones that aren't working are public and on the leaderboard alongside the ones that are.
+I'm not going to spin that. Most of these signals need more time. 81 days is still early, not a verdict. But the ones that aren't working are public and on the leaderboard alongside the ones that are.
 
-The most interesting one right now: **Biscotti**, named after my dog who died in April 2025 while I was building this. It's ranked #1 on the last 30 days (7.67%) but sits at #100 overall. Good month, bad long-run record. I'm watching it, not celebrating it.
+The most interesting one right now: **Biscotti**, named after my dog. It's ranked #2 on the last 30 days (6.56%) but sits at #111 overall. Good month, bad long-run record. I'm watching it, not celebrating it.
 
-The worst: **VIX Fear Rotation** at -8.00% return. Still running. Removing underperformers after 30 days is exactly how survivorship bias works.
+The worst: **VIX Fear Rotation** at -7.25% return. Still running. Removing underperformers after 30 days is exactly how survivorship bias works.
 
 The whole point of this project is radical transparency — I publish the losing signals because anyone can build a track record that conveniently starts after the losses.
 

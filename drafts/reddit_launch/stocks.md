@@ -4,11 +4,11 @@
 
 ---
 
-**Title:** Running {total_algos} trading signals in public. {beating_spy} are beating the market. {losing_count} are losing to it. Here's the scoreboard.
+**Title:** Running {total_algos} trading signals in public. {beating_spy} are beating the market. The rest are flat or losing to it. Here's the scoreboard.
 
 ---
 
-Built a public paper-trading lab called Stockarithm. Using weird economic data — TSA checkpoint counts, bankruptcy filing rates, the misery index — as signals for rotating between sector ETFs.
+Built a public paper-trading lab called StockArithm. Using economic oddities — TSA checkpoint counts, bankruptcy filing rates, the misery index — as signals for rotating between sector ETFs.
 
 Current score after {days_running} days:
 
@@ -18,7 +18,7 @@ Current score after {days_running} days:
 
 The {losing_count} are all on the leaderboard. Not hiding them.
 
-One to watch: **Biscotti** (named after my late dog) is having its best 30 days yet — {biscotti_30d_return}% in the last month — but has a weak long-run record. Good streak, bad history. Make of that what you will.
+One to watch: **Biscotti** (named after my dog) is having its best 30 days yet — {biscotti_30d_return}% in the last month — but has a weak long-run record. Good streak, bad history. Make of that what you will.
 
 Worst on the board: **{worst_name}** at {worst_return}%. Still running it. Removing signals after bad months is how survivorship bias happens.
 

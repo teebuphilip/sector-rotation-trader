@@ -744,11 +744,11 @@ Substack push (cookie-auth via `substack_publisher.py`) is a post-launch task.
 - `drafts/social/YYYY-MM-DD/reddit_security_analysis.md` — macro framing, sector rotation rationale
 - `drafts/social/YYYY-MM-DD/twitter_x.md` — terse Fintwit, one stat, screenshot prompt
 
-One LLM call per channel. Same facts-only constraint as `post_generator.py`. Operator decides what to post and when — nothing is auto-published.
+One LLM call per channel. Same facts-only constraint as `post_generator.py`. It now reads the real deep-validation schema keys, uses deterministic temperature, and lints for URL/brand/placeholder errors before writing. Operator decides what to post and when — nothing is auto-published.
 
 ### Reddit Launch Post Refresh
 
-`scripts/refresh_reddit_drafts.py` is a deterministic (no LLM) script that fills `{variable}` placeholders in the Reddit launch post templates with live numbers from `docs/data/public/leaderboard.json`. Writes dated copies to `drafts/reddit_launch/YYYY-MM-DD/`.
+`scripts/refresh_reddit_drafts.py` is a deterministic (no LLM) script that fills `{variable}` placeholders in the Reddit launch post templates with live numbers from canonical public/rank artifacts: `docs/data/public/leaderboard.json`, `data/rank_history.csv`, `docs/leaderboards/rolling_30d.json`, and `docs/data/public/daily.json`. It supports optional same-day overrides and fails loudly if unresolved placeholders or stale canned claims remain. Writes dated copies to `drafts/reddit_launch/YYYY-MM-DD/`.
 
 `.github/workflows/reddit_draft_refresh.yml` runs this daily at 14:00 UTC until May 15, keeping fresh number-filled copies committed to the repo. After May 15 the workflow exits cleanly with no action needed.
 

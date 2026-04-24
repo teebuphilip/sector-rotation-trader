@@ -4,11 +4,11 @@
 
 ---
 
-**Title:** Alternative economic data as sector rotation signals — methodology notes and {days_running}-day paper trading results [OC]
+**Title:** Alternative economic data as sector rotation signals — methodology notes and {days_running}-day paper-trading results [OC]
 
 ---
 
-I've been running a paper-trading lab (Stockarithm) for approximately {days_running} days using single alternative-data sources as sector rotation triggers. Posting here for methodological feedback, not validation.
+I've been running a paper-trading lab (StockArithm) for approximately {days_running} days using single alternative-data sources as sector rotation triggers. Posting here for methodological feedback, not validation.
 
 **Setup**
 
@@ -31,11 +31,11 @@ An algo at #{biscotti_rolling_rank} rolling 30D and #{biscotti_force_rank} force
 
 **Results**
 
-{total_algos} algos, {days_running} days live. {beating_spy} showing positive alpha vs SPY (+{top1_alpha}% and +{top2_alpha}%). Zero beating SPY on rolling 30D.
+{total_algos} algos, {days_running} days live. {beating_spy} showing positive alpha vs SPY (+{top1_alpha}% and +{top2_alpha}%). {rolling_30d_beating_spy} beating SPY on rolling 30D.
 
 I'll say the obvious: {days_running} days is not a sufficient sample for any statistical inference about edge. The lab is designed to run for 12+ months before I'd claim anything meaningful. The current data is directional at best.
 
-Most interesting observation: **Biscotti** is #{biscotti_rolling_rank} on rolling 30D ({biscotti_30d_return}% in 30 days) and #{biscotti_force_rank} on force rank. Classic regime-specificity pattern. Whether it's real signal or noise in a specific market environment is exactly what longer run-time will answer.
+Most interesting observation: **Biscotti** is #{biscotti_rolling_rank} on rolling 30D ({biscotti_30d_return}% in 30 days) and #{biscotti_force_rank} on force rank. Classic regime-specificity pattern. Whether it's real signal or noise in a specific market environment is exactly what longer runtime will answer.
 
 Worst performer: **{worst_name}** at {worst_return}% return, {worst_alpha}% alpha. Not retired — removing underperformers on short windows produces survivorship bias and I'm trying to avoid that explicitly.
 

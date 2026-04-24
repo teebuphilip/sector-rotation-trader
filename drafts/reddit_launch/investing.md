@@ -4,11 +4,11 @@
 
 ---
 
-**Title:** I built a public paper-trading lab using weird economic data — TSA counts, bankruptcy rates, the misery index — as market signals. Here's what {days_running} days of results looks like.
+**Title:** I built a public paper-trading lab using economic side-channel data — TSA counts, bankruptcy rates, the misery index — as market signals. Here's what {days_running} days of results looks like.
 
 ---
 
-For the past {weeks_running} weeks I've been running a public paper-trading experiment called Stockarithm. The idea is simple: use alternative economic data — not price charts, not earnings — as signals for rotating between sector ETFs.
+For the past {weeks_running} weeks I've been running a public paper-trading experiment called StockArithm. The idea is simple: use alternative economic data — not price charts, not earnings — as signals for rotating between sector ETFs.
 
 Examples of what I'm tracking:
 
@@ -24,9 +24,9 @@ Each signal has fixed rules. If it fires, rotate. If it reverses, rotate back. N
 
 {total_algos} signals running. {beating_spy} are beating SPY. The rest are flat or underperforming.
 
-I'm not going to spin that. Most of these signals need more time. A month of data is a starting point, not a verdict. But the ones that aren't working are public and on the leaderboard alongside the ones that are.
+I'm not going to spin that. Most of these signals need more time. {days_running} days is still early, not a verdict. But the ones that aren't working are public and on the leaderboard alongside the ones that are.
 
-The most interesting one right now: **Biscotti**, named after my dog who died in April 2025 while I was building this. It's ranked #{biscotti_rolling_rank} on the last 30 days ({biscotti_30d_return}%) but sits at #{biscotti_force_rank} overall. Good month, bad long-run record. I'm watching it, not celebrating it.
+The most interesting one right now: **Biscotti**, named after my dog. It's ranked #{biscotti_rolling_rank} on the last 30 days ({biscotti_30d_return}%) but sits at #{biscotti_force_rank} overall. Good month, bad long-run record. I'm watching it, not celebrating it.
 
 The worst: **{worst_name}** at {worst_return}% return. Still running. Removing underperformers after 30 days is exactly how survivorship bias works.
 

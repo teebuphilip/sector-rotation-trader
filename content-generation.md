@@ -115,6 +115,9 @@ reports/deep_validation/latest.json
      twitter_x.md
 
 docs/data/public/leaderboard.json
++ data/rank_history.csv
++ docs/leaderboards/rolling_30d.json
++ docs/data/public/daily.json
 -> scripts/refresh_reddit_drafts.py  (deterministic, no LLM)
 -> drafts/reddit_launch/YYYY-MM-DD/  (launch post templates with live numbers)
 ```
@@ -293,9 +296,10 @@ LLM-powered channel-specific social draft generator. Runs daily inside `morning_
 
 Responsibilities:
 
-- read the same deep validation facts block as `post_generator.py`;
+- read the actual deep validation schema (`system_state`, `force_rank.top_10`, `rolling_30d.top_10`, `content_facts`);
 - make one Claude API call per channel with a channel-specific system prompt;
 - enforce the same facts-only constraint — no invented metrics or narratives;
+- lint the output for missing URL, stale brand casing, or unresolved placeholders before writing;
 - write 6 drafts to `drafts/social/YYYY-MM-DD/`.
 
 Channel prompts enforce distinct tone per audience: methodology-first for r/algotrading and r/quant, outcome-focused for r/investing, punchy scoreboard for r/stocks, macro-framed for r/SecurityAnalysis, terse Fintwit for Twitter/X.
@@ -304,9 +308,20 @@ Supports `--channel` flag to regenerate a single channel locally.
 
 ### `scripts/refresh_reddit_drafts.py`
 
-Deterministic (no LLM) number-filler for the Reddit launch post templates. Reads `docs/data/public/leaderboard.json` and substitutes `{variable}` placeholders with live values. Writes dated copies to `drafts/reddit_launch/YYYY-MM-DD/`.
+Deterministic (no LLM) number-filler for the Reddit launch post templates. Reads canonical public and rank artifacts, substitutes `{variable}` placeholders with current values, applies optional same-day overrides, and writes dated copies to `drafts/reddit_launch/YYYY-MM-DD/`.
 
-Variables filled: total algos, beating SPY count, losing count, days running, top 2 performer names and returns, Biscotti rolling rank and force rank, worst performer name and return, top sector consensus.
+Canonical sources:
+
+- `docs/data/public/leaderboard.json`
+- `data/rank_history.csv`
+- `docs/leaderboards/rolling_30d.json`
+- `docs/data/public/daily.json`
+
+Validates:
+
+- unresolved placeholders;
+- stale canned phrases that should never ship;
+- manual override support from `drafts/reddit_launch/overrides/YYYY-MM-DD.json`.
 
 Run day before posting to get current-number copies ready for final editing.
 

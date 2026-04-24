@@ -2,11 +2,11 @@
 
 ---
 
-**Title:** Alternative economic data as sector rotation signals — methodology notes and 80-day paper trading results [OC]
+**Title:** Alternative economic data as sector rotation signals — methodology notes and 81-day paper-trading results [OC]
 
 ---
 
-I've been running a paper-trading lab (Stockarithm) for approximately 80 days using single alternative-data sources as sector rotation triggers. Posting here for methodological feedback, not validation.
+I've been running a paper-trading lab (StockArithm) for approximately 81 days using single alternative-data sources as sector rotation triggers. Posting here for methodological feedback, not validation.
 
 **Setup**
 
@@ -25,17 +25,17 @@ Two separate rankings, intentionally not collapsed:
 1. **Force rank** — full-window since-seed total return and alpha. Long-run trust metric.
 2. **Rolling 30D** — trailing return, Sharpe, max drawdown. Regime-specific momentum metric.
 
-An algo at #1 rolling 30D and #100 force rank is diagnostic, not a contradiction. That pattern indicates short-term regime fit, not durable edge.
+An algo at #2 rolling 30D and #111 force rank is diagnostic, not a contradiction. That pattern indicates short-term regime fit, not durable edge.
 
 **Results**
 
-115 algos, 80 days live. 2 showing positive alpha vs SPY (+1.80% and +0.78%). Zero beating SPY on rolling 30D.
+133 algos, 81 days live. 2 showing positive alpha vs SPY (+2.31% and +0.66%). 0 beating SPY on rolling 30D.
 
-I'll say the obvious: 80 days is not a sufficient sample for any statistical inference about edge. The lab is designed to run for 12+ months before I'd claim anything meaningful. The current data is directional at best.
+I'll say the obvious: 81 days is not a sufficient sample for any statistical inference about edge. The lab is designed to run for 12+ months before I'd claim anything meaningful. The current data is directional at best.
 
-Most interesting observation: **Biscotti** is #1 on rolling 30D (7.67% in 30 days) and #100 on force rank. Classic regime-specificity pattern. Whether it's real signal or noise in a specific market environment is exactly what longer run-time will answer.
+Most interesting observation: **Biscotti** is #2 on rolling 30D (6.56% in 30 days) and #111 on force rank. Classic regime-specificity pattern. Whether it's real signal or noise in a specific market environment is exactly what longer runtime will answer.
 
-Worst performer: **VIX Fear Rotation** at -8.00% return, -11.99% alpha. Not retired — removing underperformers on short windows produces survivorship bias and I'm trying to avoid that explicitly.
+Worst performer: **VIX Fear Rotation** at -7.25% return, -11.44% alpha. Not retired — removing underperformers on short windows produces survivorship bias and I'm trying to avoid that explicitly.
 
 **Questions I'd genuinely like input on**
 

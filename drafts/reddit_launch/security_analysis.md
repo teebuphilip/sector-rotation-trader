@@ -8,7 +8,7 @@
 
 ---
 
-I've been running a public paper-trading lab (Stockarithm) that treats alternative economic data as leading indicators for sector rotation. {days_running} days of live paper trading. Posting the methodology and results.
+I've been running a public paper-trading lab (StockArithm) that treats alternative economic data as leading indicators for sector rotation. {days_running} days of live paper trading. Posting the methodology and results.
 
 **The thesis**
 
@@ -30,7 +30,7 @@ Each signal maps to a fixed sector ETF rotation rule. No discretionary override.
 
 {total_algos} signals, {days_running} days live. {beating_spy} showing positive alpha vs SPY (+{top1_alpha}% and +{top2_alpha}%). The rest are neutral or negative.
 
-The current signal ensemble consensus: {top_sector_name} ({top_sector_etf}) is mixed — {top_sector_bullish_pct}% of signals bullish. That's internally consistent with a late-cycle, risk-off positioning read.
+The current signal ensemble consensus: {security_macro_note}
 
 One structural observation: the monthly FRED-sourced signals are almost uniformly flat at {days_running} days. Expected — monthly cadence doesn't generate enough signal events in this window to build a track record. The weekly-release signals (TSA, AAR freight) are showing earlier differentiation.
 

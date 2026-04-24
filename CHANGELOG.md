@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-04-24 (session 8 — Reddit launch copy/script hardening)
+
+### fix: tighten Reddit launch draft refresh around canonical ranks and stale-copy checks
+- `scripts/refresh_reddit_drafts.py` now reads `data/rank_history.csv` for canonical force-rank positions and `docs/leaderboards/rolling_30d.json` for canonical rolling-30D ranks instead of approximating both from public leaderboard sorting.
+- It now also reads `docs/data/public/daily.json` for current sector-summary language, supports optional manual overrides from `drafts/reddit_launch/overrides/YYYY-MM-DD.json`, and fails if unresolved placeholders or known stale canned phrases remain.
+- Updated the launch templates under `drafts/reddit_launch/` to remove stale hardcoded claims, tighten channel-specific wording, and use `StockArithm` in prose while keeping `stockarithm.com` lowercase.
+
+### fix: align social draft generator with the real deep-validation report schema
+- `scripts/social_content_generator.py` now reads `system_state`, `force_rank.top_10`, `rolling_30d.top_10`, and related current keys from `reports/deep_validation/latest.json`.
+- Added deterministic `temperature=0` and output linting for URL presence, stale `Stockarithm` casing, and unresolved placeholders before drafts are written.
+
+### chore: schedule pre-launch LLM revalidation of Reddit copy
+- Added a May 13 CSV task to run the Reddit launch copy back through LLM reviewers using fresh public numbers and current positioning before the May 15 post.
+
+Files: `scripts/refresh_reddit_drafts.py`, `scripts/social_content_generator.py`, `drafts/reddit_launch/*.md`, `drafts/reddit_launch/PERSONAL_TOUCH.md`, `stockarithm_execution_plan.csv`, `content-generation.md`, `architecture.md`, `tldr-architecture.md`, `CHANGELOG.md`
+
 ## 2026-04-24 (session 7 — wire EIA key into nightly run)
 
 ### fix: export `EIA_API_KEY` in the main nightly workflow
