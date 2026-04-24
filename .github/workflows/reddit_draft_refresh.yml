@@ -1,0 +1,62 @@
+name: Reddit Draft Refresh
+
+on:
+  schedule:
+    - cron: "0 14 * * *"   # 14:00 UTC = 9am EST / 10am EDT, after morning content email
+  workflow_dispatch:
+    inputs:
+      run_date:
+        description: "Run date YYYY-MM-DD. Defaults to today."
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-drafts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check if past May 15
+        run: |
+          TODAY=$(date -u +%F)
+          CUTOFF="2026-05-15"
+          if [[ "$TODAY" > "$CUTOFF" ]]; then
+            echo "Past $CUTOFF — this workflow has served its purpose. Skipping."
+            echo "SKIP=true" >> "$GITHUB_ENV"
+          else
+            echo "SKIP=false" >> "$GITHUB_ENV"
+          fi
+
+      - name: Checkout repo
+        if: env.SKIP == 'false'
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        if: env.SKIP == 'false'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set run date
+        if: env.SKIP == 'false'
+        run: |
+          if [ -n "${{ inputs.run_date }}" ]; then
+            echo "RUN_DATE=${{ inputs.run_date }}" >> "$GITHUB_ENV"
+          else
+            echo "RUN_DATE=$(date -u +%F)" >> "$GITHUB_ENV"
+          fi
+
+      - name: Refresh Reddit drafts
+        if: env.SKIP == 'false'
+        run: python scripts/refresh_reddit_drafts.py --date "$RUN_DATE"
+
+      - name: Commit refreshed drafts
+        if: env.SKIP == 'false'
+        run: |
+          git config user.name "sector-bot"
+          git config user.email "sector-bot@users.noreply.github.com"
+          git add drafts/reddit_launch/
+          git diff --cached --quiet || git commit -m "chore: refresh Reddit launch drafts $RUN_DATE"
+          git push || true
