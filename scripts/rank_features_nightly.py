@@ -152,6 +152,7 @@ def score_feature(client: anthropic.Anthropic, feature_text: str) -> dict:
     response = client.messages.create(
         model=MODEL,
         max_tokens=1000,
+        temperature=0,
         messages=[{"role": "user", "content": prompt}]
     )
     raw = response.content[0].text.strip()
