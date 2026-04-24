@@ -1,0 +1,48 @@
+name: Preview Site Publish
+
+on:
+  schedule:
+    # 9:15 PM ET Tue-Sat UTC, after the 6:30 PM ET weekday nightly run has usually finished
+    - cron: "15 1 * * 2-6"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish-preview:
+    runs-on: ubuntu-latest
+    env:
+      PREVIEW_SITE_PUSH_TOKEN: ${{ secrets.PREVIEW_SITE_PUSH_TOKEN }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Publish preview site repo
+        if: ${{ env.PREVIEW_SITE_PUSH_TOKEN != '' }}
+        env:
+          PREVIEW_SITE_REMOTE: https://x-access-token:${{ env.PREVIEW_SITE_PUSH_TOKEN }}@github.com/teebuphilip/stockarithm-preview.git
+        run: python scripts/publish_preview_site.py --repo-dir /tmp/stockarithm-preview --push
+
+      - name: Note missing preview token
+        if: ${{ env.PREVIEW_SITE_PUSH_TOKEN == '' }}
+        run: |
+          echo "::warning::PREVIEW_SITE_PUSH_TOKEN is not configured; preview site publish skipped."

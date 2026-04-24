@@ -73,6 +73,38 @@ git commit -m "Refresh Vercel preview"
 git push origin main
 ```
 
+### Automatic Preview Publish
+
+There is also a separate GitHub Actions workflow:
+
+- `.github/workflows/preview_site_publish.yml`
+
+Behavior:
+
+- runs on its own nightly schedule after the main `6:30pm ET` run window
+- can also be triggered manually with `workflow_dispatch`
+- does not block or gate the trading pipeline
+
+It uses a separate secret:
+
+```text
+PREVIEW_SITE_PUSH_TOKEN
+```
+
+Recommended setup:
+
+- create another fine-grained GitHub PAT
+- repository access: only `stockarithm-preview`
+- repository permission: `Contents: Read and write`
+
+Add it to `sector-rotation-trader` under:
+
+- `Settings`
+- `Secrets and variables`
+- `Actions`
+
+Do not assume `PUBLIC_SITE_PUSH_TOKEN` will work here unless you intentionally created a token that has access to both repos.
+
 ### Vercel Setup For The Preview Repo
 
 In Vercel:

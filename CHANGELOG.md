@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-24 (session 6 — separate preview-site publish workflow)
+
+### feat: add independent preview-site publisher
+- Added `scripts/publish_preview_site.py` to build the private public+premium preview bundle and push it to `stockarithm-preview`.
+- Added `.github/workflows/preview_site_publish.yml` so the preview repo can refresh on its own nightly schedule and via manual dispatch, without depending on or blocking the main trading workflow.
+- Documented the new `PREVIEW_SITE_PUSH_TOKEN` secret in `PUBLIC_SITE_OPERATIONS.md`.
+
+Files: `scripts/publish_preview_site.py`, `.github/workflows/preview_site_publish.yml`, `PUBLIC_SITE_OPERATIONS.md`, `CHANGELOG.md`
+
 ## 2026-04-24 (session 5 — restore live Yahoo runtime + stage proper migration design)
 
 ### chore: restore the live runtime path to the original Yahoo-backed implementation
