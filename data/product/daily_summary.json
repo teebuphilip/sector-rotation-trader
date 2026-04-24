@@ -1,6 +1,6 @@
 {
   "run_date": "2026-04-24",
-  "generated_at": "2026-04-24T13:18:43Z",
+  "generated_at": "2026-04-24T14:29:56Z",
   "counts": {
     "total": 115,
     "normal": 5,
@@ -47,8 +47,8 @@
         "XLRE",
         "XLU"
       ],
-      "equity": 105781.58,
-      "ytd_pct": 5.78,
+      "equity": 106500.29,
+      "ytd_pct": 6.5,
       "trade_count": 30,
       "positions": 2,
       "last_snapshot": "2026-04-24",
@@ -83,8 +83,8 @@
         "SPY",
         "AGG"
       ],
-      "equity": 104760.23,
-      "ytd_pct": 4.76,
+      "equity": 104846.72,
+      "ytd_pct": 4.85,
       "trade_count": 15,
       "positions": 3,
       "last_snapshot": "2026-04-24",
@@ -147,8 +147,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 101669.32,
-      "ytd_pct": 1.67,
+      "equity": 101753.4,
+      "ytd_pct": 1.75,
       "trade_count": 2,
       "positions": 2,
       "last_snapshot": "2026-04-24",
@@ -176,8 +176,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 101066.05,
-      "ytd_pct": 1.07,
+      "equity": 101156.04,
+      "ytd_pct": 1.16,
       "trade_count": 6,
       "positions": 2,
       "last_snapshot": "2026-04-24",
@@ -204,8 +204,8 @@
         "XLP",
         "XLU"
       ],
-      "equity": 100992.01,
-      "ytd_pct": 0.99,
+      "equity": 101108.09,
+      "ytd_pct": 1.11,
       "trade_count": 1,
       "positions": 1,
       "last_snapshot": "2026-04-24",
@@ -213,6 +213,35 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: IWV",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:retail-sales-momentum",
+      "algo_type": "crazy",
+      "algo_id": "retail-sales-momentum",
+      "name": "Retail Sales Momentum",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "monthly",
+      "universe": [
+        "XLY",
+        "XLK",
+        "XLF",
+        "XLP",
+        "XLU",
+        "XLV"
+      ],
+      "equity": 100551.33,
+      "ytd_pct": 0.55,
+      "trade_count": 2,
+      "positions": 2,
+      "last_snapshot": "2026-04-24",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": "UNSUPPORTED_DATA",
+      "backtest_reason": "No supported V1 price-only backtest path",
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },
@@ -233,8 +262,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 100429.39,
-      "ytd_pct": 0.43,
+      "equity": 100520.73,
+      "ytd_pct": 0.52,
       "trade_count": 2,
       "positions": 2,
       "last_snapshot": "2026-04-24",
@@ -292,35 +321,6 @@
       "backtest_reason": "Backtest completed",
       "backtest_alpha_vs_spy_pct": -50.82,
       "backtest_trade_count": 24
-    },
-    {
-      "key": "crazy:copper-momentum",
-      "algo_type": "crazy",
-      "algo_id": "copper-momentum",
-      "name": "Copper Momentum",
-      "family": "macro_input_pressure",
-      "status": "live_only",
-      "evidence_class": "live_receipts_only",
-      "rebalance_frequency": "monthly",
-      "universe": [
-        "XLB",
-        "XLI",
-        "XLE",
-        "XLP",
-        "XLU",
-        "XLV"
-      ],
-      "equity": 100032.35,
-      "ytd_pct": 0.03,
-      "trade_count": 2,
-      "positions": 2,
-      "last_snapshot": "2026-04-24",
-      "last_signal": null,
-      "new_algo_date": null,
-      "backtest_status": "UNSUPPORTED_DATA",
-      "backtest_reason": "Uses non-price adapter: crazy.adapters.fred_series",
-      "backtest_alpha_vs_spy_pct": null,
-      "backtest_trade_count": null
     }
   ]
 }

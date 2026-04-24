@@ -1,10 +1,19 @@
 {
-  "cash": 99948.01370181699,
+  "cash": 94940.66301672615,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 60.47633705315804,
+  "fees_paid": 70.42633705315804,
   "taxes_paid": 0.0,
-  "positions": {},
+  "positions": {
+    "XLI": {
+      "shares": 28.985561040209703,
+      "entry_price": 172.41000366210938,
+      "entry_date": "2026-04-24",
+      "cost": 4997.40068509085,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-20",
@@ -77,6 +86,16 @@
       "pnl_pct": -0.2,
       "entry_date": "2026-04-23",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-24",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 28.9856,
+      "price": 172.41,
+      "cost": 4997.4,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -839,19 +858,39 @@
       "positions": {},
       "sector": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-24",
+      "cash": 94940.66,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99938.06,
+      "positions": {
+        "XLI": {
+          "shares": 28.9856,
+          "entry_price": 172.41,
+          "current_price": 172.41,
+          "market_value": 4997.4,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-24",
+          "margin": false
+        }
+      },
+      "sector": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-19",
   "last_run": "2026-04-24",
   "meta": {
     "industrial-sector-weekly-earthquake-activity-correlation-dip": {
-      "signal_label": "HOLD",
-      "latest_value": 133.0,
-      "prior_avg": 391.3214,
-      "signal_change": -0.6601,
-      "entry_date": "2026-04-23",
+      "signal_label": "RISK_ON",
+      "latest_value": 144.0,
+      "prior_avg": 391.3571,
+      "signal_change": -0.632,
+      "entry_date": "2026-04-24",
       "name": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
-      "last_signal": "HOLD",
+      "last_signal": "RISK_ON",
       "last_run": "2026-04-24"
     }
   }

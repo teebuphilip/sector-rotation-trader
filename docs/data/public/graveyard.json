@@ -1,6 +1,6 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-04-24T13:18:43Z",
+  "generated_at": "2026-04-24T14:29:56Z",
   "algos": [
     {
       "schema_version": "v1",
@@ -13,10 +13,10 @@
       "evidence_class": "v1_backtested",
       "rebalance_frequency": "daily",
       "ytd_pct": -0.09,
-      "days_running": 75,
+      "days_running": 76,
       "beat_spy": false,
-      "spy_pct": 3.98,
-      "alpha_pct": -4.07,
+      "spy_pct": 4.19,
+      "alpha_pct": -4.27,
       "ret_30d_pct": -0.09,
       "spy_delta_30d_pct": -8.55,
       "last_snapshot": "2026-04-24",
@@ -25,17 +25,17 @@
         "primary_etf": "XLY",
         "signals": {
           "momentum_5d": {
-            "direction": "UP",
-            "confidence": 0.019,
-            "return_pct": 0.094
+            "direction": "DOWN",
+            "confidence": 0.355,
+            "return_pct": -1.777
           },
           "momentum_20d": {
             "direction": "UP",
             "confidence": 1.0,
-            "return_pct": 6.331
+            "return_pct": 8.674
           }
         },
-        "summary": "both_up"
+        "summary": "mixed"
       }
     },
     {
@@ -48,30 +48,30 @@
       "status": "parked",
       "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
-      "ytd_pct": -0.1,
-      "days_running": 75,
+      "ytd_pct": -0.11,
+      "days_running": 76,
       "beat_spy": false,
-      "spy_pct": 3.98,
-      "alpha_pct": -4.08,
-      "ret_30d_pct": -0.1,
-      "spy_delta_30d_pct": -8.56,
+      "spy_pct": 4.19,
+      "alpha_pct": -4.3,
+      "ret_30d_pct": -0.11,
+      "spy_delta_30d_pct": -8.57,
       "last_snapshot": "2026-04-24",
       "new_algo_date": null,
       "comparator": {
         "primary_etf": "XLB",
         "signals": {
           "momentum_5d": {
-            "direction": "UP",
-            "confidence": 0.023,
-            "return_pct": 0.116
+            "direction": "DOWN",
+            "confidence": 0.031,
+            "return_pct": -0.154
           },
           "momentum_20d": {
             "direction": "UP",
-            "confidence": 0.971,
-            "return_pct": 4.857
+            "confidence": 1.0,
+            "return_pct": 5.52
           }
         },
-        "summary": "both_up"
+        "summary": "mixed"
       }
     },
     {
@@ -85,10 +85,10 @@
       "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "ytd_pct": -0.33,
-      "days_running": 75,
+      "days_running": 76,
       "beat_spy": false,
-      "spy_pct": 3.98,
-      "alpha_pct": -4.32,
+      "spy_pct": 4.19,
+      "alpha_pct": -4.52,
       "ret_30d_pct": -0.23,
       "spy_delta_30d_pct": -8.69,
       "last_snapshot": "2026-04-24",
@@ -98,13 +98,13 @@
         "signals": {
           "momentum_5d": {
             "direction": "UP",
-            "confidence": 0.141,
-            "return_pct": 0.707
+            "confidence": 0.633,
+            "return_pct": 3.163
           },
           "momentum_20d": {
             "direction": "DOWN",
             "confidence": 1.0,
-            "return_pct": -5.927
+            "return_pct": -7.737
           }
         },
         "summary": "mixed"
@@ -121,10 +121,10 @@
       "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "ytd_pct": -0.41,
-      "days_running": 75,
+      "days_running": 76,
       "beat_spy": false,
-      "spy_pct": 3.98,
-      "alpha_pct": -4.39,
+      "spy_pct": 4.19,
+      "alpha_pct": -4.59,
       "ret_30d_pct": 0.05,
       "spy_delta_30d_pct": -8.41,
       "last_snapshot": "2026-04-24",
@@ -134,13 +134,13 @@
         "signals": {
           "momentum_5d": {
             "direction": "DOWN",
-            "confidence": 0.242,
-            "return_pct": -1.212
+            "confidence": 0.601,
+            "return_pct": -3.006
           },
           "momentum_20d": {
             "direction": "UP",
             "confidence": 1.0,
-            "return_pct": 5.339
+            "return_pct": 6.167
           }
         },
         "summary": "mixed"
@@ -157,10 +157,10 @@
       "evidence_class": "pending_seed",
       "rebalance_frequency": "daily",
       "ytd_pct": 0.0,
-      "days_running": 75,
+      "days_running": 76,
       "beat_spy": false,
-      "spy_pct": 3.98,
-      "alpha_pct": -3.98,
+      "spy_pct": 4.19,
+      "alpha_pct": -4.19,
       "ret_30d_pct": 0.0,
       "spy_delta_30d_pct": -8.46,
       "last_snapshot": "2026-04-24",
@@ -169,17 +169,17 @@
         "primary_etf": "XLB",
         "signals": {
           "momentum_5d": {
-            "direction": "UP",
-            "confidence": 0.023,
-            "return_pct": 0.116
+            "direction": "DOWN",
+            "confidence": 0.031,
+            "return_pct": -0.154
           },
           "momentum_20d": {
             "direction": "UP",
-            "confidence": 0.971,
-            "return_pct": 4.857
+            "confidence": 1.0,
+            "return_pct": 5.52
           }
         },
-        "summary": "both_up"
+        "summary": "mixed"
       }
     },
     {
@@ -193,10 +193,10 @@
       "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "ytd_pct": 0.0,
-      "days_running": 70,
+      "days_running": 71,
       "beat_spy": false,
-      "spy_pct": 3.98,
-      "alpha_pct": -3.98,
+      "spy_pct": 4.19,
+      "alpha_pct": -4.19,
       "ret_30d_pct": 0.0,
       "spy_delta_30d_pct": -8.46,
       "last_snapshot": "2026-04-24",
@@ -205,17 +205,17 @@
         "primary_etf": "XLB",
         "signals": {
           "momentum_5d": {
-            "direction": "UP",
-            "confidence": 0.023,
-            "return_pct": 0.116
+            "direction": "DOWN",
+            "confidence": 0.031,
+            "return_pct": -0.154
           },
           "momentum_20d": {
             "direction": "UP",
-            "confidence": 0.971,
-            "return_pct": 4.857
+            "confidence": 1.0,
+            "return_pct": 5.52
           }
         },
-        "summary": "both_up"
+        "summary": "mixed"
       }
     },
     {
@@ -229,10 +229,10 @@
       "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "ytd_pct": 0.0,
-      "days_running": 70,
+      "days_running": 71,
       "beat_spy": false,
-      "spy_pct": 3.98,
-      "alpha_pct": -3.98,
+      "spy_pct": 4.19,
+      "alpha_pct": -4.19,
       "ret_30d_pct": 0.0,
       "spy_delta_30d_pct": -8.46,
       "last_snapshot": "2026-04-24",
@@ -242,13 +242,13 @@
         "signals": {
           "momentum_5d": {
             "direction": "UP",
-            "confidence": 0.141,
-            "return_pct": 0.707
+            "confidence": 0.633,
+            "return_pct": 3.163
           },
           "momentum_20d": {
             "direction": "DOWN",
             "confidence": 1.0,
-            "return_pct": -5.927
+            "return_pct": -7.737
           }
         },
         "summary": "mixed"
