@@ -1,13 +1,14 @@
-# r/SecurityAnalysis — First Post Draft
-> UPDATE BEFORE POSTING: refresh [X days] and any numbers that have changed since 2026-04-24
+# r/SecurityAnalysis — Launch Post Template
+# Run: python scripts/refresh_reddit_drafts.py
+# Output lands in drafts/reddit_launch/YYYY-MM-DD/security_analysis.md with numbers filled in
 
 ---
 
-**Title:** Testing economic leading indicators as systematic sector rotation signals — [X]-day live results and methodology
+**Title:** Testing economic leading indicators as systematic sector rotation signals — {days_running}-day live results and methodology
 
 ---
 
-I've been running a public paper-trading lab (Stockarithm) that treats alternative economic data as leading indicators for sector rotation. [X] days of live paper trading. Posting the methodology and results.
+I've been running a public paper-trading lab (Stockarithm) that treats alternative economic data as leading indicators for sector rotation. {days_running} days of live paper trading. Posting the methodology and results.
 
 **The thesis**
 
@@ -17,7 +18,7 @@ These are not novel ideas. The sector rotation framework is well-documented. Wha
 
 **Data sources and signal structure**
 
-115 algorithms, each using a single data source as its trigger:
+{total_algos} algorithms, each using a single data source as its trigger:
 
 - **FRED macro**: unemployment (UNRATE), CPI (CPIAUCSL), bankruptcy filings (BUSTHCONS), job openings (JTSJOL), retail sales momentum (RSXFS), small business optimism (SBUSV)
 - **Transport throughput**: TSA checkpoint counts (weekly), AAR freight rail carloads (weekly), Port of LA container volumes (TEU), airline load factor proxy (BTS)
@@ -27,18 +28,18 @@ Each signal maps to a fixed sector ETF rotation rule. No discretionary override.
 
 **Current results**
 
-115 signals, [X] days live. 2 showing positive alpha vs SPY (+1.80% and +0.78%). The rest are neutral or negative.
+{total_algos} signals, {days_running} days live. {beating_spy} showing positive alpha vs SPY (+{top1_alpha}% and +{top2_alpha}%). The rest are neutral or negative.
 
-The current signal ensemble consensus: Technology (XLK) is mixed — 41% of signals bullish. Consumer Defensive (XLP) and Industrials (XLI) are reading bearish across the suite. That's internally consistent with a late-cycle, risk-off positioning read — worth noting given where we are macro-wise.
+The current signal ensemble consensus: {top_sector_name} ({top_sector_etf}) is mixed — {top_sector_bullish_pct}% of signals bullish. That's internally consistent with a late-cycle, risk-off positioning read.
 
-One structural observation: the monthly FRED-sourced signals are almost uniformly flat at [X] days. Expected — monthly cadence doesn't generate enough signal events in this window to build a track record. The weekly-release signals (TSA, AAR freight) are showing earlier differentiation. That cadence difference alone is worth tracking.
+One structural observation: the monthly FRED-sourced signals are almost uniformly flat at {days_running} days. Expected — monthly cadence doesn't generate enough signal events in this window to build a track record. The weekly-release signals (TSA, AAR freight) are showing earlier differentiation.
 
 **What I'm watching**
 
-The divergence between force rank (full-window since seed) and rolling 30D momentum is the most diagnostic metric right now. **Biscotti** is #1 on rolling 30D (+7.8% in 30 days) and #98 on force rank. That kind of divergence — short-term regime fit against weak long-run record — is exactly the pattern I built dual-ranking to surface.
+The divergence between force rank (full-window since seed) and rolling 30D momentum is the most diagnostic metric. **Biscotti** is #{biscotti_rolling_rank} on rolling 30D ({biscotti_30d_return}% in 30 days) and #{biscotti_force_rank} on force rank. Short-term regime fit against a weak long-run record — exactly the pattern dual-ranking is designed to surface.
 
 **Honest caveats**
 
-[X] days of paper trading is directional data, not a verdict on any of these signals. The lab is designed to run for 12+ months. I'm publishing now because the methodology is fixed and the results are accumulating publicly whether I post about it or not.
+{days_running} days of paper trading is directional data, not a verdict on any of these signals. The lab is designed to run for 12+ months. Publishing now because the methodology is fixed and the results are accumulating publicly regardless.
 
 Full leaderboard and signal methodology at stockarithm.com. All signals public, no survivorship bias filtering.

@@ -1,13 +1,14 @@
-# r/quant — First Post Draft
-> UPDATE BEFORE POSTING: refresh [X days] and any numbers that have changed since 2026-04-24
+# r/quant — Launch Post Template
+# Run: python scripts/refresh_reddit_drafts.py
+# Output lands in drafts/reddit_launch/YYYY-MM-DD/quant.md with numbers filled in
 
 ---
 
-**Title:** Alternative economic data as sector rotation signals — methodology notes and [X]-day paper trading results [OC]
+**Title:** Alternative economic data as sector rotation signals — methodology notes and {days_running}-day paper trading results [OC]
 
 ---
 
-I've been running a paper-trading lab (Stockarithm) for approximately [X] days using single alternative-data sources as sector rotation triggers. Posting here for methodological feedback, not validation.
+I've been running a paper-trading lab (Stockarithm) for approximately {days_running} days using single alternative-data sources as sector rotation triggers. Posting here for methodological feedback, not validation.
 
 **Setup**
 
@@ -26,17 +27,17 @@ Two separate rankings, intentionally not collapsed:
 1. **Force rank** — full-window since-seed total return and alpha. Long-run trust metric.
 2. **Rolling 30D** — trailing return, Sharpe, max drawdown. Regime-specific momentum metric.
 
-An algo at #1 rolling 30D and #98 force rank is diagnostic, not a contradiction. That pattern indicates short-term regime fit, not durable edge.
+An algo at #{biscotti_rolling_rank} rolling 30D and #{biscotti_force_rank} force rank is diagnostic, not a contradiction. That pattern indicates short-term regime fit, not durable edge.
 
 **Results**
 
-115 algos, [X] days live. 2 showing positive alpha vs SPY (+1.80% and +0.78%). Zero beating SPY on rolling 30D.
+{total_algos} algos, {days_running} days live. {beating_spy} showing positive alpha vs SPY (+{top1_alpha}% and +{top2_alpha}%). Zero beating SPY on rolling 30D.
 
-I'll say the obvious: [X] days is not a sufficient sample for any statistical inference about edge. The lab is designed to run for 12+ months before I'd claim anything meaningful. The current data is directional at best.
+I'll say the obvious: {days_running} days is not a sufficient sample for any statistical inference about edge. The lab is designed to run for 12+ months before I'd claim anything meaningful. The current data is directional at best.
 
-Most interesting observation: **Biscotti** is #1 on rolling 30D (+7.8% in 30 days) and #98 on force rank. Classic regime-specificity pattern. Whether it's real signal or noise in a specific market environment is exactly what longer run-time will answer.
+Most interesting observation: **Biscotti** is #{biscotti_rolling_rank} on rolling 30D ({biscotti_30d_return}% in 30 days) and #{biscotti_force_rank} on force rank. Classic regime-specificity pattern. Whether it's real signal or noise in a specific market environment is exactly what longer run-time will answer.
 
-Worst performer: **VIX Fear Rotation** at -8.0% return, -11.99% alpha. Not retired — removing underperformers on short windows produces survivorship bias and I'm trying to avoid that explicitly.
+Worst performer: **{worst_name}** at {worst_return}% return, {worst_alpha}% alpha. Not retired — removing underperformers on short windows produces survivorship bias and I'm trying to avoid that explicitly.
 
 **Questions I'd genuinely like input on**
 

@@ -1,24 +1,25 @@
-# r/algotrading — First Post Draft
-> UPDATE BEFORE POSTING: refresh [X days] and any numbers that have changed since 2026-04-24
+# r/algotrading — Launch Post Template
+# Run: python scripts/refresh_reddit_drafts.py
+# Output lands in drafts/reddit_launch/YYYY-MM-DD/algotrading.md with numbers filled in
 
 ---
 
-**Title:** I've been running 115 alternative-data signals against SPY for [X] days. 2 are winning. Here's the full picture.
+**Title:** I've been running {total_algos} alternative-data signals against SPY for {days_running} days. {beating_spy} are winning. Here's the full picture.
 
 ---
 
-Background: I've been building a paper-trading lab called Stockarithm that runs sector rotation algorithms driven by alternative economic data — TSA checkpoint counts, bankruptcy filing rates, EV charger installation velocity, freight rail carloads, consumer misery index, and about 110 other weird things.
+Background: I've been building a paper-trading lab called Stockarithm that runs sector rotation algorithms driven by alternative economic data — TSA checkpoint counts, bankruptcy filing rates, EV charger installation velocity, freight rail carloads, consumer misery index, and about {total_algos_minus_10} other weird things.
 
 Everything is paper-traded (no real money), everything is public, and I publish the failures as clearly as the wins. That's the whole point.
 
 **The current numbers**
 
-- 115 signals running live
-- 2 beating SPY on full-window alpha (+5.78% / +1.80 alpha and +4.76% / +0.78 alpha)
+- {total_algos} signals running live
+- {beating_spy} beating SPY on full-window alpha ({top1_return}% / +{top1_alpha}% alpha and {top2_return}% / +{top2_alpha}% alpha)
 - 0 beating SPY on rolling 30D
-- 113 are flat, collecting data, or underperforming
+- {losing_count} are flat, collecting data, or underperforming
 
-I'm going to say that again: 2 out of 115. Not burying that.
+I'm going to say that again: {beating_spy} out of {total_algos}. Not burying that.
 
 **The methodology**
 
@@ -36,25 +37,25 @@ Two rankings, deliberately separate:
 - **Force rank** — full-window/since-seed total return and alpha. Long-run trust metric.
 - **Rolling 30D** — trailing momentum, Sharpe, max drawdown. Recent-regime metric.
 
-An algo can be #1 on rolling 30D and #98 on force rank simultaneously. That's a feature, not a bug.
+An algo can be #1 on rolling 30D and #{biscotti_force_rank} on force rank simultaneously. That's a feature, not a bug.
 
 **The ones worth talking about**
 
-Best on full-window: **Baileymol (Chaos Monger)** at +5.78% return, +1.80% alpha.
+Best on full-window: **{top1_name}** at {top1_return}% return, +{top1_alpha}% alpha.
 
-Best on rolling 30D: **Biscotti (Unconditional Loyalty)** — +7.8% in the last 30 days, currently ranked #1 on momentum. Force rank: #98. Named after my dog, who died in April 2025 while I was building the first version of this. Good month. Bad long-run record. I don't know yet if it's turned a corner or got lucky in a specific regime.
+Best on rolling 30D: **Biscotti (Unconditional Loyalty)** — {biscotti_30d_return}% in the last 30 days, currently ranked #{biscotti_rolling_rank} on momentum. Force rank: #{biscotti_force_rank}. Named after my dog, who died in April 2025 while I was building the first version of this. Good month. Bad long-run record. I don't know yet if it's turned a corner or got lucky in a specific regime.
 
-Worst: **VIX Fear Rotation** at -8.0% return, -11.99% alpha. Still running. Killing an algo after 30 bad days is how you get survivorship bias.
+Worst: **{worst_name}** at {worst_return}% return, {worst_alpha}% alpha. Still running. Killing an algo after 30 bad days is how you get survivorship bias.
 
 **What I'm not doing**
 
 - Not cherry-picking the start date
 - Not hiding the flat algos — they're all on the leaderboard
-- Not claiming 30 days is statistically meaningful (it's not)
+- Not claiming {days_running} days is statistically significant (it's not)
 - Not selling anything yet
 
 **Why I'm posting**
 
-Gut-check time. What am I missing methodologically? What signals would you run that aren't on the board? What does 2-out-of-115 tell you about the data sources or the rotation rules?
+Gut-check time. What am I missing methodologically? What signals would you run that aren't on the board? What does {beating_spy}-out-of-{total_algos} tell you about the data sources or the rotation rules?
 
 Full leaderboard at stockarithm.com — all signals, failures included.
