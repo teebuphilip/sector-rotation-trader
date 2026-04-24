@@ -95,14 +95,28 @@ data/rank_history.csv
 + docs/signals/index.json
 -> scripts/write_deep_validation_report.py
 -> reports/deep_validation/latest.json
--> scripts/generate_content.py  (deterministic templates)
+-> scripts/generate_content.py       (deterministic templates)
 -> content/*.txt
 
 reports/deep_validation/latest.json
--> scripts/post_generator.py  (LLM rewrite pass, facts-only)
--> drafts/YYYY-MM-DD.md
+-> scripts/post_generator.py         (LLM rewrite pass, facts-only)
+-> drafts/YYYY-MM-DD.md              (Substack draft)
 -> scripts/morning_content_email.py
 -> email to operator at 4:30am EST
+
+reports/deep_validation/latest.json
+-> scripts/social_content_generator.py  (LLM, one call per channel)
+-> drafts/social/YYYY-MM-DD/
+     reddit_algotrading.md
+     reddit_investing.md
+     reddit_stocks.md
+     reddit_quant.md
+     reddit_security_analysis.md
+     twitter_x.md
+
+docs/data/public/leaderboard.json
+-> scripts/refresh_reddit_drafts.py  (deterministic, no LLM)
+-> drafts/reddit_launch/YYYY-MM-DD/  (launch post templates with live numbers)
 ```
 
 Wrapper:
@@ -170,6 +184,23 @@ Provides:
 This is the current sector/ticker consensus source.
 
 ## Outputs
+
+Social drafts (daily, committed by morning_content_email.yml):
+
+- `drafts/social/YYYY-MM-DD/reddit_algotrading.md`
+- `drafts/social/YYYY-MM-DD/reddit_investing.md`
+- `drafts/social/YYYY-MM-DD/reddit_stocks.md`
+- `drafts/social/YYYY-MM-DD/reddit_quant.md`
+- `drafts/social/YYYY-MM-DD/reddit_security_analysis.md`
+- `drafts/social/YYYY-MM-DD/twitter_x.md`
+
+Reddit launch post drafts (daily until May 15, committed by reddit_draft_refresh.yml):
+
+- `drafts/reddit_launch/YYYY-MM-DD/algotrading.md`
+- `drafts/reddit_launch/YYYY-MM-DD/investing.md`
+- `drafts/reddit_launch/YYYY-MM-DD/stocks.md`
+- `drafts/reddit_launch/YYYY-MM-DD/quant.md`
+- `drafts/reddit_launch/YYYY-MM-DD/security_analysis.md`
 
 Deep validation reports:
 
@@ -255,6 +286,35 @@ It does not read dashboards, download market data, or invent reasons for perform
 ### `scripts/morning_content_email.py`
 
 Reads `drafts/YYYY-MM-DD.md` and prints it to stdout for the morning content workflow to email. Wired into `.github/workflows/morning_content_email.yml` at 09:30 UTC (4:30am EST).
+
+### `scripts/social_content_generator.py`
+
+LLM-powered channel-specific social draft generator. Runs daily inside `morning_content_email.yml` after `post_generator.py`.
+
+Responsibilities:
+
+- read the same deep validation facts block as `post_generator.py`;
+- make one Claude API call per channel with a channel-specific system prompt;
+- enforce the same facts-only constraint — no invented metrics or narratives;
+- write 6 drafts to `drafts/social/YYYY-MM-DD/`.
+
+Channel prompts enforce distinct tone per audience: methodology-first for r/algotrading and r/quant, outcome-focused for r/investing, punchy scoreboard for r/stocks, macro-framed for r/SecurityAnalysis, terse Fintwit for Twitter/X.
+
+Supports `--channel` flag to regenerate a single channel locally.
+
+### `scripts/refresh_reddit_drafts.py`
+
+Deterministic (no LLM) number-filler for the Reddit launch post templates. Reads `docs/data/public/leaderboard.json` and substitutes `{variable}` placeholders with live values. Writes dated copies to `drafts/reddit_launch/YYYY-MM-DD/`.
+
+Variables filled: total algos, beating SPY count, losing count, days running, top 2 performer names and returns, Biscotti rolling rank and force rank, worst performer name and return, top sector consensus.
+
+Run day before posting to get current-number copies ready for final editing.
+
+```bash
+python scripts/refresh_reddit_drafts.py --date 2026-05-15
+```
+
+Templates live at `drafts/reddit_launch/*.md`. Personal touch guidance is in `drafts/reddit_launch/PERSONAL_TOUCH.md`.
 
 ### `substack_publisher.py` (post-launch)
 

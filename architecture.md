@@ -733,6 +733,25 @@ Wired as `.github/workflows/morning_content_email.yml` at 09:30 UTC (4:30am EST)
 
 Substack push (cookie-auth via `substack_publisher.py`) is a post-launch task.
 
+### Social Content Generator
+
+`scripts/social_content_generator.py` runs inside the same `morning_content_email.yml` job after `post_generator.py`. It generates 6 channel-specific drafts from the same deep validation facts block:
+
+- `drafts/social/YYYY-MM-DD/reddit_algotrading.md` — methodology-first, self-deprecating, invites critique
+- `drafts/social/YYYY-MM-DD/reddit_investing.md` — outcome-focused, accessible
+- `drafts/social/YYYY-MM-DD/reddit_stocks.md` — punchy scoreboard, minimal words
+- `drafts/social/YYYY-MM-DD/reddit_quant.md` — technical, honest about sample size
+- `drafts/social/YYYY-MM-DD/reddit_security_analysis.md` — macro framing, sector rotation rationale
+- `drafts/social/YYYY-MM-DD/twitter_x.md` — terse Fintwit, one stat, screenshot prompt
+
+One LLM call per channel. Same facts-only constraint as `post_generator.py`. Operator decides what to post and when — nothing is auto-published.
+
+### Reddit Launch Post Refresh
+
+`scripts/refresh_reddit_drafts.py` is a deterministic (no LLM) script that fills `{variable}` placeholders in the Reddit launch post templates with live numbers from `docs/data/public/leaderboard.json`. Writes dated copies to `drafts/reddit_launch/YYYY-MM-DD/`.
+
+`.github/workflows/reddit_draft_refresh.yml` runs this daily at 14:00 UTC until May 15, keeping fresh number-filled copies committed to the repo. After May 15 the workflow exits cleanly with no action needed.
+
 Detailed doc:
 
 - `content-generation.md`
@@ -746,7 +765,8 @@ Primary workflows:
 - `.github/workflows/crazy_daily_builds.yml`: experiment activation; triggered by successful completion of the core book workflow.
 - `.github/workflows/normal_ideas_weekly.yml`: generates and publishes normal ideas.
 - `.github/workflows/morning_stats_email.yml`: ops stats email at 08:30 UTC (3:30am EST).
-- `.github/workflows/morning_content_email.yml`: LLM post draft email at 09:30 UTC (4:30am EST).
+- `.github/workflows/morning_content_email.yml`: LLM post draft email at 09:30 UTC (4:30am EST). Also runs social content generator.
+- `.github/workflows/reddit_draft_refresh.yml`: daily Reddit launch post number refresh at 14:00 UTC; auto-stops after May 15.
 
 ## Execution Flow: Daily Tactical Run
 

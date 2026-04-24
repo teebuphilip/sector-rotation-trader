@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-04-24 (session 3 — social content pipeline + Reddit launch drafts)
+
+### feat: add daily social content generator
+- Added `scripts/social_content_generator.py`: generates 5 Reddit channel variants (r/algotrading, r/investing, r/stocks, r/quant, r/SecurityAnalysis) and one Twitter/X post daily from the deep validation report. One LLM call per channel, facts-only, nothing invented. Outputs to `drafts/social/YYYY-MM-DD/`.
+- Wired into `morning_content_email.yml` after `post_generator.py` so all 7 drafts land in one daily batch.
+
+### feat: Reddit launch post templates + daily number refresh
+- Added 5 channel-specific Reddit launch post templates in `drafts/reddit_launch/` with `{variable}` placeholders.
+- Added `scripts/refresh_reddit_drafts.py`: reads `docs/data/public/leaderboard.json`, fills in all live numbers (algo count, beating SPY, top performers, Biscotti rank, worst performer, sector consensus), writes dated copies to `drafts/reddit_launch/YYYY-MM-DD/`.
+- Added `drafts/reddit_launch/PERSONAL_TOUCH.md`: documents exactly which sections need Teebu's voice before posting — the Biscotti decision, the gut-check questions in r/algotrading and r/quant, and the macro commentary in r/SecurityAnalysis.
+- Added `.github/workflows/reddit_draft_refresh.yml`: runs daily at 14:00 UTC, auto-stops after May 15 via date check. No manual disable needed.
+
+Files: `scripts/social_content_generator.py`, `scripts/refresh_reddit_drafts.py`, `.github/workflows/morning_content_email.yml`, `.github/workflows/reddit_draft_refresh.yml`, `drafts/reddit_launch/`, `content-generation.md`, `architecture.md`, `tldr-architecture.md`, `CHANGELOG.md`
+
 ## 2026-04-24 (session 2 — Polygon signal coverage fix)
 
 ### fix: prevent Polygon/Massive signal precompute from collapsing under free-tier limits
