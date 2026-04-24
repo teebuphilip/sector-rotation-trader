@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-04-24 (session 5 — restore live Yahoo runtime + stage proper migration design)
+
+### chore: restore the live runtime path to the original Yahoo-backed implementation
+- Reverted the active nightly/runtime entrypoints back to the original `scanner`/`precompute_signals.py` path for launch reliability.
+- Restored the live workflow steps and helper scripts that had been pointed at the partial Polygon/Massive cutover.
+- This keeps the nightly pipeline stable while the proper shared-snapshot migration is designed and built in parallel.
+
+### docs: stage Polygon/Massive migration assets and write the real design
+- Added `staging/polygon_massive_cutover/` with the staged Polygon/Massive files preserved for reference.
+- Added `staging/polygon_massive_cutover/DESIGN.md` documenting the correct strategy: one shared market snapshot builder, one loader, and runtime consumers reading cached data instead of making repeated live fetches.
+
+Files: `daily_run.py`, `seed.py`, `.github/workflows/daily_run.yml`, `.github/workflows/crazy_daily_builds.yml`, `scripts/rolling_30d_leaderboard.py`, `scripts/backfill_spy_equity.py`, `scripts/autogen_crazy_factory.py`, `staging/polygon_massive_cutover/`, `CHANGELOG.md`
+
 ## 2026-04-24 (session 4 — ops integrity scan follow-up)
 
 ### fix: morning stats email header now matches the report date

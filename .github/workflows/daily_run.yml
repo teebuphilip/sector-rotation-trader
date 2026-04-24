@@ -16,7 +16,6 @@ jobs:
     env:
       ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
       FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-      POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
       PUBLIC_SITE_PUSH_TOKEN: ${{ secrets.PUBLIC_SITE_PUSH_TOKEN }}
 
     steps:
@@ -60,7 +59,7 @@ jobs:
         run: python scripts/cleanup_blocked_keys.py
 
       - name: Pre-compute signal verdicts
-        run: python precompute_signals_poly.py --min-days 30 --no-wiki
+        run: python precompute_signals.py --min-days 30
 
       - name: Check public HTML placeholders
         run: python scripts/check_public_html_placeholders.py
