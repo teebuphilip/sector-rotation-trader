@@ -174,6 +174,8 @@ def publish(repo_dir: Path, branch: str, message: str, dry_run: bool, push: bool
     if not status:
         print("[publish] no public site changes to commit")
         return
+    run(["git", "config", "user.name", "stockarithm-bot"], cwd=repo_dir)
+    run(["git", "config", "user.email", "stockarithm-bot@users.noreply.github.com"], cwd=repo_dir)
     run(["git", "commit", "-m", message], cwd=repo_dir)
     if push:
         run(["git", "push", "origin", branch], cwd=repo_dir)

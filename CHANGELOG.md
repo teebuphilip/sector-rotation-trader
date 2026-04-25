@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-25 (session 1 — fix public/preview publish git identity)
+
+### fix: configure bot git identity inside public-site publisher repos
+- `scripts/publish_public_site.py` now sets repo-local `git config user.name/user.email` before committing to `stockarithm-site`.
+- `scripts/publish_preview_site.py` now does the same before committing to `stockarithm-preview`.
+- This fixes the overnight GitHub Actions failures where both publish jobs cloned successfully but died at `git commit` with `Author identity unknown`.
+
+Files: `scripts/publish_public_site.py`, `scripts/publish_preview_site.py`, `CHANGELOG.md`
+
 ## 2026-04-24 (session 8 — Reddit launch copy/script hardening)
 
 ### fix: tighten Reddit launch draft refresh around canonical ranks and stale-copy checks
