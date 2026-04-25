@@ -57,6 +57,20 @@
       "cost": 4993.6,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-25",
+      "action": "SELL",
+      "ticker": "XLC",
+      "shares": 43.2196,
+      "price": 115.54,
+      "proceeds": 4983.39,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -10.21,
+      "pnl_pct": -0.2,
+      "entry_date": "2026-04-24",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -859,6 +873,16 @@
       },
       "sector": "Google Gusts",
       "num_positions": 1
+    },
+    {
+      "date": "2026-04-25",
+      "cash": 99851.8,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99851.8,
+      "positions": {},
+      "sector": "Google Gusts",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-18"

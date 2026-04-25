@@ -1,11 +1,31 @@
 {
-  "cash": 100000,
+  "cash": 94990.05,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 0.0,
+  "fees_paid": 9.95,
   "taxes_paid": 0.0,
-  "positions": {},
-  "trade_log": [],
+  "positions": {
+    "XLF": {
+      "shares": 97.23843208963218,
+      "entry_price": 51.41999816894531,
+      "entry_date": "2026-04-25",
+      "cost": 5000.0,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
+  "trade_log": [
+    {
+      "date": "2026-04-25",
+      "action": "BUY",
+      "ticker": "XLF",
+      "shares": 97.2384,
+      "price": 51.42,
+      "cost": 5000.0,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-01-23",
@@ -676,19 +696,40 @@
       "positions": {},
       "sector": "Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-25",
+      "cash": 94990.05,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99990.05,
+      "positions": {
+        "XLF": {
+          "shares": 97.2384,
+          "entry_price": 51.42,
+          "current_price": 51.42,
+          "market_value": 5000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-25",
+          "margin": false
+        }
+      },
+      "sector": "Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-23",
-  "last_run": "2026-04-24",
+  "last_run": "2026-04-25",
   "meta": {
     "daily-spike-in-rss-news-counts-around-labor-union-contract-n": {
       "latest_value": 2.0,
-      "prior_avg": 2.3333,
-      "signal_change": -0.1429,
-      "signal_label": "HOLD",
+      "prior_avg": 1.6667,
+      "signal_change": 0.2,
+      "signal_label": "RISK_ON",
       "name": "Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf",
-      "last_signal": "HOLD",
-      "last_run": "2026-04-24"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-04-25",
+      "entry_date": "2026-04-25"
     }
   }
 }
