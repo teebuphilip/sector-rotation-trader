@@ -1,0 +1,152 @@
+{
+  "date": "2026-04-26",
+  "input_count": 24,
+  "kept_count": 22,
+  "duplicate_count": 2,
+  "kept_by_source": {
+    "chatgpt": 13,
+    "claude": 9
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-surge-in-travelmobility-google-trends-searches-for-ro",
+      "title": "Weekly Surge In Travelmobility Google Trends Searches For Road Trip Signals Bullish Xly",
+      "family": "travel_mobility",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.491,
+        "matched_title": "travel mobility weekly increase in google trends for road trip searches signals leisure travel pickup",
+        "matched_idea_id": "travel-mobility-weekly-increase-in-google-trends-for-road-tr",
+        "matched_origin": "history:2026-04-22",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-surge-in-travelmobility-google-trends-searches-for-ro",
+        "title": "Weekly Surge In Travelmobility Google Trends Searches For Road Trip Signals Bullish Xly",
+        "family": "travel_mobility",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising interest in road trips signals increased consumer discretionary travel spending potential. More road trips increase discretionary spending on travel-related goods and services.",
+        "data_sources": [
+          "Google Trends weekly search interest for 'road trip'"
+        ],
+        "signal_logic": "If weekly search interest rises more than 20% week-over-week",
+        "entry_exit": "Entry: If weekly search interest rises more than 20% week-over-week Exit: After 4 weeks or if interest drops below baseline",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly search interest for 'road trip' via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Seasonal and event-driven travel trends cause frequent interest spikes.",
+        "schema": {
+          "idea": "Weekly surge in travel_mobility Google Trends searches for 'road trip' signals bullish XLY",
+          "family": "travel_mobility",
+          "data": {
+            "source": "Google Trends weekly search interest for 'road trip'",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Rising interest in road trips signals increased consumer discretionary travel spending potential.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "More road trips increase discretionary spending on travel-related goods and services."
+          },
+          "trade_logic": {
+            "entry": "If weekly search interest rises more than 20% week-over-week",
+            "exit": "After 4 weeks or if interest drops below baseline",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Seasonal and event-driven travel trends cause frequent interest spikes.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-increase-in-macroinputpressure-fred-series-for-produc",
+      "title": "Weekly Increase In Macroinputpressure Fred Series For Producer Price Index Signals Bearish Xlb",
+      "family": "macro_input_pressure",
+      "duplicate_of": {
+        "reason": "high_title_overlap",
+        "score": 0.692,
+        "matched_title": "weekly surge in fred series for producer price index ppi signals bearish xlb",
+        "matched_idea_id": "weekly-surge-in-fred-series-for-producer-price-index-ppi-sig",
+        "matched_origin": "history:2026-04-25",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-increase-in-macroinputpressure-fred-series-for-produc",
+        "title": "Weekly Increase In Macroinputpressure Fred Series For Producer Price Index Signals Bearish Xlb",
+        "family": "macro_input_pressure",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising producer prices increase input costs for materials companies, pressuring margins and stock performance. Higher input inflation squeezes materials sector profitability.",
+        "data_sources": [
+          "FRED weekly Producer Price Index (PPI) data"
+        ],
+        "signal_logic": "If weekly PPI increases more than 0.5% week-over-week",
+        "entry_exit": "Entry: If weekly PPI increases more than 0.5% week-over-week Exit: After 3 weeks or if PPI growth slows below 0.1%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLB"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use FRED weekly Producer Price Index (PPI) data via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 36,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "PPI data is regularly updated and exhibits frequent moderate changes.",
+        "schema": {
+          "idea": "Weekly increase in macro_input_pressure FRED series for Producer Price Index signals bearish XLB",
+          "family": "macro_input_pressure",
+          "data": {
+            "source": "FRED weekly Producer Price Index (PPI) data",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Rising producer prices increase input costs for materials companies, pressuring margins and stock performance.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLB",
+            "rationale": "Higher input inflation squeezes materials sector profitability."
+          },
+          "trade_logic": {
+            "entry": "If weekly PPI increases more than 0.5% week-over-week",
+            "exit": "After 3 weeks or if PPI growth slows below 0.1%",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 36,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "PPI data is regularly updated and exhibits frequent moderate changes.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
