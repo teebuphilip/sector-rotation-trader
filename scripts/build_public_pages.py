@@ -145,7 +145,7 @@ def _leaderboard_rows_html(ranked_algos: list[tuple[int, dict]], paywall: bool =
             else '<span class="status-lag">LAGGING</span>'
         )
         algo_type = str(a.get("algo_type", ""))
-        public_algo_type = "alternative" if algo_type == "crazy" else algo_type
+        public_algo_type = _public_algo_type(algo_type)
 
         comparator_html = _comparator_badges_html(a.get('comparator'))
 
@@ -430,6 +430,24 @@ def _status_mix_html(by_status: dict) -> str:
             f'<span class="algo-type-badge">{_e(_pretty_label(status))}: {_e(count)}</span>'
         )
     return " ".join(items) if items else '<span class="algo-type-badge">No status data</span>'
+
+
+def _public_algo_type(value: str) -> str:
+    return "alternative" if str(value) == "crazy" else str(value)
+
+
+def _status_legend_html() -> str:
+    return """
+    <div class="rank-note">
+      <strong>Status legend:</strong>
+      <code>live_only</code> means the signal is live and publishing receipts, but does not have a clean enough history for a strict backtest.
+      <code>sandbox</code> means visible in public on purpose, but still waiting on enough data or a first live trade.
+      <code>parked</code> means temporarily set aside while the input, build, or deployment path gets cleaned up.
+      <code>promoted</code> means strong enough to feature publicly.
+      <code>backtest_weak</code> means the historical test exists but has not earned much trust.
+      <code>graveyard</code> means the idea failed badly enough that we keep it visible as a dead end.
+    </div>
+    """
 
 
 def build_leaderboard(daily: dict, leaderboard: dict) -> str:
@@ -841,7 +859,7 @@ def _premium_table_rows(algos: list) -> str:
         family = _e(a.get("family") or "")
         ev = _e(a.get("evidence_class") or "")
         algo_type = str(a.get("algo_type", ""))
-        public_algo_type = "alternative" if algo_type == "crazy" else algo_type
+        public_algo_type = _public_algo_type(algo_type)
 
         rows.append(
             f'<tr class="{row_cls}">'
@@ -987,7 +1005,7 @@ def build_families_page(families: dict, daily: dict) -> str:
         leader_rows = "".join(
             f"<li><strong>{_e(item.get('name'))}</strong> "
             f"<span class=\"{_ret_class(item.get('ytd_pct'))}\">{_fmt(item.get('ytd_pct'))}</span> "
-            f"<span class=\"days\">({item.get('status') or 'n/a'})</span></li>"
+            f"<span class=\"days\">({_e(_pretty_label(item.get('status') or 'n/a'))})</span></li>"
             for item in leaders[:5]
         ) or "<li>No leaders yet.</li>"
         cards.append(
@@ -1013,9 +1031,10 @@ def build_families_page(families: dict, daily: dict) -> str:
 <body>
   <header>
     <h1>Signal Families</h1>
-    <p>The lab grouped by theme instead of one flat wall of random experiments.</p>
+    <p>The lab grouped by theme instead of one flat wall of alternative experiments.</p>
   </header>
   <div class="wrap">
+    {_status_legend_html()}
     <div class="grid">
 {''.join(cards)}
     </div>
