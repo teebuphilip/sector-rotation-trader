@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -78,6 +79,7 @@ def write_preview_index(out: Path) -> None:
         ("Public Home", "index.html"),
         ("Landing", "landing.html"),
         ("Leaderboard", "leaderboard.html"),
+        ("Full Leaderboard (Preview Only)", "leaderboard-full.html"),
         ("Families", "families.html"),
         ("Daily", "daily.html"),
         ("Premium Teaser", "premium.html"),
@@ -154,6 +156,24 @@ def write_vercel_config(out: Path) -> None:
     (out / "robots.txt").write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
 
 
+def write_full_preview_leaderboard(out: Path) -> None:
+    src = out / "leaderboard.html"
+    if not src.exists():
+        return
+    html = src.read_text(encoding="utf-8")
+    html = html.replace(" paywall-row", "")
+    html = html.replace('class="paywall-row"', 'class=""')
+    html = re.sub(r'<tr class="paywall-cta-row">.*?</tr>', "", html, flags=re.S)
+    html = html.replace(
+        "<title>StockArithm \u2014 Live Signal Leaderboard</title>",
+        "<title>StockArithm \u2014 Full Preview Leaderboard</title>",
+    )
+    marker = '<p class="section-sub">A stripped public view of the lab. The rows below are the names that have actually moved. The zero-trade names are collapsed underneath with reasons.</p>'
+    replacement = marker + '\n    <div class="rank-note"><strong>Preview-only note:</strong> This private preview page removes the public blur/paywall treatment so you can inspect the full leaderboard before launch.</div>'
+    html = html.replace(marker, replacement)
+    (out / "leaderboard-full.html").write_text(html, encoding="utf-8")
+
+
 def build(out: Path) -> None:
     if out.exists():
         shutil.rmtree(out)
@@ -162,6 +182,7 @@ def build(out: Path) -> None:
         copy_file(rel, out)
     for rel in DIRS:
         copy_dir(rel, out)
+    write_full_preview_leaderboard(out)
     write_preview_index(out)
     write_vercel_config(out)
     total = sum(1 for p in out.rglob("*") if p.is_file())
