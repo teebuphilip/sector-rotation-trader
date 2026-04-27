@@ -21,6 +21,8 @@ from build_vercel_preview_site import build
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REMOTE = os.getenv("PREVIEW_SITE_REMOTE", "https://github.com/teebuphilip/stockarithm-preview.git")
 DEFAULT_BRANCH = os.getenv("PREVIEW_SITE_BRANCH", "main")
+DEFAULT_GIT_NAME = os.getenv("PREVIEW_SITE_GIT_NAME", "Teebu Philip")
+DEFAULT_GIT_EMAIL = os.getenv("PREVIEW_SITE_GIT_EMAIL", "teebu.philip@gmail.com")
 
 
 def run(cmd: list[str], cwd: Path | None = None, dry_run: bool = False) -> None:
@@ -82,7 +84,7 @@ def copy_tree(src_dir: Path, dest_dir: Path) -> None:
             shutil.copy2(item, target)
 
 
-def publish(repo_dir: Path, branch: str, message: str, dry_run: bool, push: bool) -> None:
+def publish(repo_dir: Path, branch: str, message: str, git_name: str, git_email: str, dry_run: bool, push: bool) -> None:
     run(["git", "add", "-A"], cwd=repo_dir, dry_run=dry_run)
     if dry_run:
         run(["git", "status", "--short"], cwd=repo_dir, dry_run=True)
@@ -91,8 +93,8 @@ def publish(repo_dir: Path, branch: str, message: str, dry_run: bool, push: bool
     if not status:
         print("[publish] no preview site changes to commit")
         return
-    run(["git", "config", "user.name", "stockarithm-bot"], cwd=repo_dir)
-    run(["git", "config", "user.email", "stockarithm-bot@users.noreply.github.com"], cwd=repo_dir)
+    run(["git", "config", "user.name", git_name], cwd=repo_dir)
+    run(["git", "config", "user.email", git_email], cwd=repo_dir)
     run(["git", "commit", "-m", message], cwd=repo_dir)
     if push:
         run(["git", "push", "origin", branch], cwd=repo_dir)
@@ -105,6 +107,8 @@ def main() -> int:
     parser.add_argument("--repo-dir", default="../stockarithm-preview", help="Local checkout path for stockarithm-preview")
     parser.add_argument("--remote-url", default=DEFAULT_REMOTE)
     parser.add_argument("--branch", default=DEFAULT_BRANCH)
+    parser.add_argument("--git-name", default=DEFAULT_GIT_NAME)
+    parser.add_argument("--git-email", default=DEFAULT_GIT_EMAIL)
     parser.add_argument("--push", action="store_true", help="Commit and push to preview repo")
     parser.add_argument("--dry-run", action="store_true", help="Build/validate a temp preview bundle only")
     args = parser.parse_args()
@@ -128,7 +132,7 @@ def main() -> int:
         prepare_repo(repo_dir, args.remote_url, args.branch, dry_run=False)
         clear_repo_contents(repo_dir)
         copy_tree(bundle_dir, repo_dir)
-        publish(repo_dir, args.branch, message, dry_run=False, push=args.push)
+        publish(repo_dir, args.branch, message, args.git_name, args.git_email, dry_run=False, push=args.push)
     return 0
 
 

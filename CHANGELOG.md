@@ -13,6 +13,7 @@
 - Removed the premium teaser block from the landing page so the homepage stays focused on comprehension and mailing-list conversion instead of a half-open paid pitch.
 - Added a plain-English legend for `watchlist`, `promoted`, and `graveyard` directly in the landing verification card so internal pipeline states are not left unexplained.
 - Updated the visible blog index dates to read as yesterday and today instead of looking like the public notebook died two weeks ago.
+- Updated `scripts/publish_public_site.py` and `scripts/publish_preview_site.py` to use a Git identity tied to the GitHub owner account by default instead of the unmapped `stockarithm-bot@users.noreply.github.com`, because Vercel blocks deploys when the commit email cannot be matched to a GitHub account.
 
 ### feat: add footer attribution across generated public pages
 - `_footer_html(...)` now renders `StockArithm powered by R&B AlgoLabs, LLC.` ahead of the footer label.
