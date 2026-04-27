@@ -1,0 +1,70 @@
+{
+  "run_date": "2026-04-27",
+  "start": "2024-01-01",
+  "end": "2026-04-27",
+  "slippage_bps": 5.0,
+  "generated_at": "2026-04-27T23:21:08Z",
+  "counts": {
+    "LIVE_ONLY_NON_PRICE": 4,
+    "BACKTEST_WEAK": 1
+  },
+  "results": [
+    {
+      "algo_id": "daily-spike-in-ev-charger-installations-signals-bullish-xlc",
+      "name": "Daily Spike In Ev Charger Installations Signals Bullish Xlc",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.openchargemap",
+      "metrics": {},
+      "run_date": "2026-04-27"
+    },
+    {
+      "algo_id": "ev-charger-network-density-surge-bullish-signal",
+      "name": "Ev Charger Network Density Surge Bullish Signal",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.openchargemap",
+      "metrics": {},
+      "run_date": "2026-04-27"
+    },
+    {
+      "algo_id": "oil-price-momentum-reversal-energy-sector-bounce",
+      "name": "Oil Price Momentum Reversal Energy Sector Bounce",
+      "family": "crazy",
+      "status": "BACKTEST_WEAK",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.04,
+        "spy_return_pct": 55.21,
+        "alpha_vs_spy_pct": -55.17,
+        "max_drawdown_pct": -0.47,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": -14.27,
+        "spy_sharpe": 0.99,
+        "trade_count": 121,
+        "sell_count": 60,
+        "win_rate_pct": 58.33,
+        "turnover": 6.0622
+      },
+      "run_date": "2026-04-27"
+    },
+    {
+      "algo_id": "weekly-google-trends-spike-for-diy-car-repair-signals-bullis",
+      "name": "Weekly Google Trends Spike For Diy Car Repair Signals Bullish Xly",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-27"
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-for-inflation-hedge-gold-signa",
+      "name": "Weekly Surge In Google Trends For Inflation Hedge Gold Signals Bullish Xlb",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-27"
+    }
+  ]
+}

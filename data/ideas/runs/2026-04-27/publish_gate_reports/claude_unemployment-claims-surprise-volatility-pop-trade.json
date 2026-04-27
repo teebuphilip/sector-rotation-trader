@@ -1,0 +1,37 @@
+{
+  "source_file": "data/ideas/runs/2026-04-27/publish/claude_unemployment-claims-surprise-volatility-pop-trade.md",
+  "target_file": "data/ideas/runs/2026-04-27/intervention/claude_unemployment-claims-surprise-volatility-pop-trade.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "requires shorting",
+      "short_trade_not_supported",
+      "unsupported_template_adapter",
+      "weekly frequency with volume-like logic"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 987,
+    "output_tokens": 83
+  },
+  "cost_usd": 0.0032975,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting but current algo envelope supports only long/flat allocations.\",\n  \"risk_flags\": [\"requires shorting\", \"low adapter routing confidence\", \"weekly frequency with volume-like logic\"]\n}\n```"
+}

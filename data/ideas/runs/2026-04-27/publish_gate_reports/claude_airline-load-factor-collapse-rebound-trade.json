@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-27/publish/claude_airline-load-factor-collapse-rebound-trade.md",
+  "target_file": "data/ideas/runs/2026-04-27/intervention/claude_airline-load-factor-collapse-rebound-trade.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "bts_airline_load_factor",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support bts_airline_load_factor yet.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "bts_airline_load_factor",
+        "html_table"
+      ],
+      "scores": {
+        "html_table": 2,
+        "bts_airline_load_factor": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 974,
+    "output_tokens": 83
+  },
+  "cost_usd": 0.003265,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"bts_airline_load_factor\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses existing BTS airline load factor adapter with weekly frequency and deterministic routing.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

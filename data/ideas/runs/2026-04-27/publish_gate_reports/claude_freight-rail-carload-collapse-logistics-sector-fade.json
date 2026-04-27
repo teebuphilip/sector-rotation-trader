@@ -1,0 +1,37 @@
+{
+  "source_file": "data/ideas/runs/2026-04-27/publish/claude_freight-rail-carload-collapse-logistics-sector-fade.md",
+  "target_file": "data/ideas/runs/2026-04-27/intervention/claude_freight-rail-carload-collapse-logistics-sector-fade.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "adapter confidence low",
+      "low_adapter_confidence",
+      "short_trade_not_supported",
+      "shorting required",
+      "unsupported_template_adapter",
+      "volume data not explicitly confirmed"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 982,
+    "output_tokens": 81
+  },
+  "cost_usd": 0.003265,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting but current algo envelope supports only long/flat positions.\",\n  \"risk_flags\": [\"shorting required\", \"adapter confidence low\", \"volume data not explicitly confirmed\"]\n}\n```"
+}

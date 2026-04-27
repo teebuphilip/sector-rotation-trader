@@ -1,0 +1,32 @@
+{
+  "source_file": "data/ideas/runs/2026-04-27/publish/chatgpt_weekly-surge-in-google-trends-for-home-appliance-repair-dela.md",
+  "target_file": "data/ideas/runs/2026-04-27/intervention/chatgpt_weekly-surge-in-google-trends-for-home-appliance-repair-dela.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "requires short position",
+      "short_trade_not_supported",
+      "signal logic needs manual review"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 918,
+    "output_tokens": 74
+  },
+  "cost_usd": 0.003035,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires short entry which current algo envelope does not support.\",\n  \"risk_flags\": [\"requires short position\", \"signal logic needs manual review\"]\n}\n```"
+}

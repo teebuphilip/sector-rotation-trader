@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-27/publish/claude_real-estate-mortgage-rate-google-trends-capitulation-signal.md",
+  "target_file": "data/ideas/runs/2026-04-27/intervention/claude_real-estate-mortgage-rate-google-trends-capitulation-signal.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "google_trends"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "google_trends": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1028,
+    "output_tokens": 75
+  },
+  "cost_usd": 0.00332,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses existing adapters matching data sources.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

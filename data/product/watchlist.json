@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T23:18:33Z",
+  "generated_at": "2026-04-27T23:21:18Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -282,6 +282,30 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "No supported V1 price-only backtest path",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-google-trends-spike-for-diy-car-repair-signals-bullis",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-spike-for-diy-car-repair-signals-bullis",
+      "name": "Weekly Google Trends Spike For Diy Car Repair Signals Bullish Xly",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99892.81,
+      "ytd_pct": -0.11,
+      "trade_count": 32,
+      "positions": 0,
+      "last_snapshot": "2026-04-27",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },
@@ -704,6 +728,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:oil-price-momentum-reversal-energy-sector-bounce",
+      "algo_type": "crazy",
+      "algo_id": "oil-price-momentum-reversal-energy-sector-bounce",
+      "name": "Oil Price Momentum Reversal Energy Sector Bounce",
+      "family": "macro_input_pressure",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLE"
+      ],
+      "equity": 99832.47,
+      "ytd_pct": -0.17,
+      "trade_count": 22,
+      "positions": 0,
+      "last_snapshot": "2026-04-27",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:semiconductor-moonshot-warning",
       "algo_type": "crazy",
       "algo_id": "semiconductor-moonshot-warning",
@@ -748,6 +796,30 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "Uses non-price adapter: crazy.adapters.earthquake_activity",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-surge-in-google-trends-for-inflation-hedge-gold-signa",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-inflation-hedge-gold-signa",
+      "name": "Weekly Surge In Google Trends For Inflation Hedge Gold Signals Bullish Xlb",
+      "family": "macro_input_pressure",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLB"
+      ],
+      "equity": 99759.56,
+      "ytd_pct": -0.24,
+      "trade_count": 16,
+      "positions": 0,
+      "last_snapshot": "2026-04-27",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },

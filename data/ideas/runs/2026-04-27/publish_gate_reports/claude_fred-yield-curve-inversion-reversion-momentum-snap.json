@@ -1,0 +1,37 @@
+{
+  "source_file": "data/ideas/runs/2026-04-27/publish/claude_fred-yield-curve-inversion-reversion-momentum-snap.md",
+  "target_file": "data/ideas/runs/2026-04-27/intervention/claude_fred-yield-curve-inversion-reversion-momentum-snap.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "fred_series adapter may not directly provide spread",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "requires derived spread calculation",
+      "unsupported_template_adapter",
+      "volume data not applicable but position sizing needs clarity"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "price_only"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 1000,
+    "output_tokens": 100
+  },
+  "cost_usd": 0.0035,
+  "raw_llm_response": "{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Low confidence in deterministic adapter routing and unclear if fred_series adapter fully supports the required spread calculation and volume data.\",\n  \"risk_flags\": [\"low adapter routing confidence\", \"fred_series adapter may not directly provide spread\", \"requires derived spread calculation\", \"volume data not applicable but position sizing needs clarity\"]\n}"
+}

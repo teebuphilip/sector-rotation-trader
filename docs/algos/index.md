@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-27T23:18:32
+Updated (UTC): 2026-04-27T23:21:17
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 128
+Crazy models: 133
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -144,3 +144,8 @@ Crazy models: 128
 | bank-stress-index-volatility-fear-crush-reversal | Bank Stress Index Volatility Fear Crush Reversal | daily |
 | ev-charger-network-expansion-sprint-demand-surge | Ev Charger Network Expansion Sprint Demand Surge | daily |
 | temperature-extremes-power-demand-spike-utility-boost | Temperature Extremes Power Demand Spike Utility Boost | daily |
+| daily-spike-in-ev-charger-installations-signals-bullish-xlc | Daily Spike In Ev Charger Installations Signals Bullish Xlc | daily |
+| weekly-google-trends-spike-for-diy-car-repair-signals-bullis | Weekly Google Trends Spike For Diy Car Repair Signals Bullish Xly | weekly |
+| weekly-surge-in-google-trends-for-inflation-hedge-gold-signa | Weekly Surge In Google Trends For Inflation Hedge Gold Signals Bullish Xlb | weekly |
+| ev-charger-network-density-surge-bullish-signal | Ev Charger Network Density Surge Bullish Signal | daily |
+| oil-price-momentum-reversal-energy-sector-bounce | Oil Price Momentum Reversal Energy Sector Bounce | daily |

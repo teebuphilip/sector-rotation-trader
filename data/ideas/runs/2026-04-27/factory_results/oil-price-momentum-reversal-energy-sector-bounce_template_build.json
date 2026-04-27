@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-04-27/build/claude_oil-price-momentum-reversal-energy-sector-bounce.md",
+  "out": "crazy/algos/oil_price_momentum_reversal_energy_sector_bounce.py",
+  "adapter": "price_only",
+  "idea_id": "oil-price-momentum-reversal-energy-sector-bounce",
+  "name": "Oil Price Momentum Reversal Energy Sector Bounce",
+  "universe": [
+    "XLE"
+  ],
+  "frequency": "daily",
+  "family": "macro_input_pressure",
+  "threshold": 0.02,
+  "direction": "up",
+  "hold_days": 5
+}

@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-27/publish/chatgpt_weekly-surge-in-google-trends-for-energy-bill-shock-signals-.md",
+  "target_file": "data/ideas/runs/2026-04-27/intervention/chatgpt_weekly-surge-in-google-trends-for-energy-bill-shock-signals-.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "potential data source instability",
+      "requires short position",
+      "short_trade_not_supported",
+      "signal threshold and exit logic need manual review"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 2,
+        "html_table": 1,
+        "price_only": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 960,
+    "output_tokens": 84
+  },
+  "cost_usd": 0.00324,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is not supported by current algo envelope.\",\n  \"risk_flags\": [\"requires short position\", \"potential data source instability\", \"signal threshold and exit logic need manual review\"]\n}\n```"
+}

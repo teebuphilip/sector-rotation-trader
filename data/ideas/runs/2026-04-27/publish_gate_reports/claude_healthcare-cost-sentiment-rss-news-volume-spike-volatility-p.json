@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-04-27/publish/claude_healthcare-cost-sentiment-rss-news-volume-spike-volatility-p.md",
+  "target_file": "data/ideas/runs/2026-04-27/intervention/claude_healthcare-cost-sentiment-rss-news-volume-spike-volatility-p.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "data source scraping stability",
+      "requires RSS feed count adapter",
+      "short_trade_not_supported",
+      "shorting exposure not supported natively",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "rss_count": 2,
+        "html_table": 2,
+        "price_only": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1036,
+    "output_tokens": 88
+  },
+  "cost_usd": 0.00347,
+  "raw_llm_response": "{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Spec requires RSS feed count data but no existing RSS adapter is confirmed; shorting exposure also requires review.\",\n  \"risk_flags\": [\"requires RSS feed count adapter\", \"shorting exposure not supported natively\", \"data source scraping stability\"]\n}"
+}
