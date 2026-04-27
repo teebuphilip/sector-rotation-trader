@@ -232,7 +232,8 @@ def _footer_html(generated_at: str, run_date: str, label: str = "Updated nightly
     return f"""
 <footer>
   <div class="wrap">
-    <div><strong>StockArithm</strong> powered by R&amp;B AlgoLabs, LLC. &mdash; {label}</div>
+    <div class="footer-attribution"><strong>StockArithm</strong> powered by R&amp;B AlgoLabs, LLC.</div>
+    <div>{label}</div>
     <div>Last updated: {_e(generated_at or run_date)}</div>
     <div style="margin-top:8px;">{_site_links()}</div>
     <div style="margin-top:8px;">
@@ -352,6 +353,7 @@ CSS = """
   .ticker-error { color: var(--red); font-family: var(--mono); font-size: 13px; display: none; }
   .ticker-error.show { display: block; }
   footer { border-top: 1px solid var(--border); padding: 32px 20px; text-align: center; font-size: 12px; color: var(--muted); line-height: 1.8; }
+  .footer-attribution { text-align: center; font-size: 11px; font-style: italic; color: var(--muted); margin-bottom: 8px; }
   footer a { color: var(--accent-dim); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
   .memorial { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); font-style: italic; color: rgba(255,255,255,0.3); }
@@ -649,8 +651,8 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
 </head>
 <body>
   <header>
-    <h1>Weird market signals, run in public.</h1>
-    <p>StockArithm is a public paper-trading lab for weird market signals. Some are working. Some are failing. All of them stay visible.</p>
+    <h1>Alternative data signals, run in public.</h1>
+    <p>StockArithm is a public paper-trading lab for alternative data signals. Some are working. Some are failing. All of them stay visible.</p>
     <div class="hero-actions">
       <a class="cta cta-primary" href="leaderboard.html">See the public leaderboard</a>
       <a class="cta" href="daily.html">Read tonight's snapshot</a>

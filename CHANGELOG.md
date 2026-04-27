@@ -7,6 +7,7 @@
 - Replaced the redundant `public signals` proof pill with `Updated nightly`, changed `Paper-traded only` to `Paper-traded in public`, and rewrote the two top cards into the agreed explainer + leaderboard bridge copy.
 - Softened the premium teaser so it reads like a future layer instead of a half-open offer.
 - Completed the wider public-facing brand sweep in generated page titles plus static `docs/blog/index.html`, `docs/app.html`, and `docs/signals/lookup.html`, keeping `stockarithm.com` lowercase only for the domain/API URL.
+- Tightened the first-read tone based on review feedback by changing the landing hero from `weird market signals` to `alternative data signals`, and restyled the footer attribution into a centered, smaller, italic line so it reads like attribution instead of a second banner.
 
 ### feat: add footer attribution across generated public pages
 - `_footer_html(...)` now renders `StockArithm powered by R&B AlgoLabs, LLC.` ahead of the footer label.
