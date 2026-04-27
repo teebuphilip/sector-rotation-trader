@@ -14,6 +14,7 @@
 - Added a plain-English legend for `watchlist`, `promoted`, and `graveyard` directly in the landing verification card so internal pipeline states are not left unexplained.
 - Updated the visible blog index dates to read as yesterday and today instead of looking like the public notebook died two weeks ago.
 - Updated `scripts/publish_public_site.py` and `scripts/publish_preview_site.py` to use a Git identity tied to the GitHub owner account by default instead of the unmapped `stockarithm-bot@users.noreply.github.com`, because Vercel blocks deploys when the commit email cannot be matched to a GitHub account.
+- Tightened the shared footer presentation so `StockArithm powered by R&B AlgoLabs, LLC.` renders as an explicitly centered, smaller, italic attribution instead of blending into the rest of the footer copy.
 
 ### feat: add footer attribution across generated public pages
 - `_footer_html(...)` now renders `StockArithm powered by R&B AlgoLabs, LLC.` ahead of the footer label.
