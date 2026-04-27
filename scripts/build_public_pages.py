@@ -112,11 +112,10 @@ def _comparator_badges_html(payload: dict | None) -> str:
     return f'<div class="comparator-pack" title="{_e(title)}">' + ''.join(badges) + '</div>'
 
 
-def _leaderboard_rows_html(algos: list) -> str:
+def _leaderboard_rows_html(ranked_algos: list[tuple[int, dict]], paywall: bool = True) -> str:
     rows = []
-    for i, a in enumerate(algos):
-        rank = i + 1
-        is_free = rank <= FREE_ROWS
+    for rank, a in ranked_algos:
+        is_free = (rank <= FREE_ROWS) if paywall else True
         spec = _get_special(str(a.get("algo_id", "")))
         row_cls = spec["row_class"] if spec else ""
         paywall_cls = "" if is_free else " paywall-row"
@@ -161,13 +160,37 @@ def _leaderboard_rows_html(algos: list) -> str:
             f'</tr>'
         )
 
-    rows.append(
-        '<tr class="paywall-cta-row">'
-        '<td colspan="8"><a href="landing.html#waitlist">'
-        '&rarr; Get the weekly lab notes</a></td>'
-        '</tr>'
-    )
+    if paywall:
+        rows.append(
+            '<tr class="paywall-cta-row">'
+            '<td colspan="8"><a href="landing.html#waitlist">'
+            '&rarr; Get the weekly lab notes</a></td>'
+            '</tr>'
+        )
     return "\n".join(rows)
+
+
+def _is_zero_trade_algo(algo: dict) -> bool:
+    try:
+        return float(algo.get("ytd_pct") or 0) == 0.0
+    except (TypeError, ValueError):
+        return False
+
+
+def _zero_trade_reason(algo: dict) -> str:
+    evidence = str(algo.get("evidence_class") or "")
+    status = str(algo.get("status") or "")
+    if evidence == "needs_history":
+        return "Needs more history before the signal can trade honestly."
+    if evidence == "pending_seed":
+        return "Seed/build pipeline finished late; still waiting on first live receipts."
+    if status == "parked":
+        return "Temporarily parked while the input or deployment path gets cleaned up."
+    if status == "sandbox":
+        return "Still in sandbox: visible on purpose, but not yet earning live receipts."
+    if evidence == "v1_backtested":
+        return "Rule exists, but live trading has not fired yet."
+    return "Still visible, but no live trade has fired yet."
 
 
 def _site_links() -> str:
@@ -415,7 +438,21 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
     run_date = daily.get("run_date", "")
 
     sector_html = _sector_heatmap_html(daily.get("sector_summary") or {})
-    table_rows = _leaderboard_rows_html(algos)
+    ranked_algos = list(enumerate(algos, start=1))
+    active_ranked = [(rank, algo) for rank, algo in ranked_algos if not _is_zero_trade_algo(algo)]
+    zero_ranked = [(rank, algo) for rank, algo in ranked_algos if _is_zero_trade_algo(algo)]
+    table_rows = _leaderboard_rows_html(active_ranked)
+    zero_rows = "\n".join(
+        f"<tr>"
+        f"<td class=\"rank\">{rank}</td>"
+        f"<td>{_e(algo.get('name', ''))}</td>"
+        f"<td><span class=\"algo-type-badge\">{_e(algo.get('algo_type', ''))}</span></td>"
+        f"<td class=\"days\">{_e(algo.get('status', ''))}</td>"
+        f"<td class=\"days\">{_e(algo.get('evidence_class', ''))}</td>"
+        f"<td>{_e(_zero_trade_reason(algo))}</td>"
+        f"</tr>"
+        for rank, algo in zero_ranked
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -431,7 +468,7 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
 <div class="hero">
   <div class="hero-badge">LIVE EXPERIMENT</div>
   <h1><span>{_e(signal_count)}</span> signals running</h1>
-  <p class="hero-sub">We run weird market signals in public. Most fail. We track every one against SPY.</p>
+  <p class="hero-sub">We run alternative data signals in public. Most fail. We track every one against SPY.</p>
   <div class="hero-stats">
     <div class="hero-stat">
       <div class="num">{_e(total)}</div>
@@ -478,7 +515,7 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
 <section>
   <div class="wrap">
     <h2 class="section-title">Public Leaderboard</h2>
-    <p class="section-sub">A stripped public view of the lab. Winners, laggards, and idle names all stay visible.</p>
+    <p class="section-sub">A stripped public view of the lab. The rows below are the names that have actually moved. The zero-trade names are collapsed underneath with reasons.</p>
     <div class="rank-note">
       <strong>How to read this:</strong>
       <code>Force rank</code> is the full-window, since-seed paper-traded ranking.
@@ -506,6 +543,24 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
         </tbody>
       </table>
     </div>
+    <details style="margin-top:16px;" class="card">
+      <summary style="cursor:pointer; font-weight:700;">{_e(len(zero_ranked))} algos still flat or waiting on first live trade</summary>
+      <p class="section-sub" style="margin-top:12px; margin-bottom:16px;">
+        These are not hidden because that would be dishonest. Most are still in sandbox, still need more history, or have not fired a live trade yet.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th><th>Algorithm</th><th>Type</th><th>Status</th><th>Evidence</th><th>Why it is still flat</th>
+            </tr>
+          </thead>
+          <tbody>
+{zero_rows}
+          </tbody>
+        </table>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -655,7 +710,6 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
     <p>StockArithm is a public paper-trading lab for alternative data signals. Some are working. Some are failing. All of them stay visible.</p>
     <div class="hero-actions">
       <a class="cta cta-primary" href="leaderboard.html">See the public leaderboard</a>
-      <a class="cta" href="daily.html">Read tonight's snapshot</a>
       <a class="cta" href="#waitlist">Get the weekly lab notes</a>
     </div>
     <div class="hero-strip">
@@ -671,13 +725,11 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
       <div class="card">
         <h2>What you're looking at</h2>
         <p>Each row is one live paper-traded signal. Some are working. Some are failing. One of them is named after my dog. That is the point.</p>
-        <a class="cta" href="leaderboard.html">See the leaderboard</a>
       </div>
 
       <div class="card">
-        <h2>Start with the public leaderboard.</h2>
-        <p>See what is working, what is failing, and which signals are getting weird.</p>
-        <a class="cta" href="leaderboard.html">View the leaderboard</a>
+        <h2>Why so many names stay flat</h2>
+        <p>A lot of the lab is still collecting data, waiting on better history, or sitting in sandbox until the first real trade fires. We leave those names visible instead of pretending they do not exist.</p>
       </div>
 
       <div class="card winners">
