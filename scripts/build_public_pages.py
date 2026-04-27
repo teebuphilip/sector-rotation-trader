@@ -450,6 +450,31 @@ def _status_legend_html() -> str:
     """
 
 
+FAMILY_DESCRIPTIONS = {
+    "attention_sentiment": "Signals that try to catch sector moves through attention spikes, headlines, search interest, and sentiment shifts.",
+    "consumer_stress": "Signals built around consumer pressure, housing, rates, and spending strain before that stress fully shows up in sector prices.",
+    "core_rotation": "The cleaner baseline rotation rules: momentum, trend, and other simple sector-switching logic with fewer alternative inputs.",
+    "freight_logistics": "Signals using shipping, freight, ports, and supply-chain activity as early reads on industrial and materials demand.",
+    "labor_jobs": "Signals watching layoffs, hiring, labor stress, and job demand for clues about sector weakness or resilience.",
+    "local_economy_weirdness": "Ground-level alternative signals from local behavior, foot traffic, closures, calls, and other messy real-world activity.",
+    "macro_input_pressure": "Signals tied to macro shocks like volatility, weather, commodities, energy, and other broad external pressure inputs.",
+    "political_insider_filing": "Signals built from insider flows, political filings, and dark-pool style positioning clues before the market fully reacts.",
+    "travel_mobility": "Signals using movement, travel, transit, and mobility behavior as an early read on consumer and cyclical activity.",
+}
+
+FAMILY_TITLES = {
+    "attention_sentiment": "Attention & Sentiment",
+    "consumer_stress": "Consumer Stress",
+    "core_rotation": "Core Rotation",
+    "freight_logistics": "Freight & Logistics",
+    "labor_jobs": "Labor & Jobs",
+    "local_economy_weirdness": "Local Economy Signals",
+    "macro_input_pressure": "Macro Input Pressure",
+    "political_insider_filing": "Political & Insider Filings",
+    "travel_mobility": "Travel & Mobility",
+}
+
+
 def build_leaderboard(daily: dict, leaderboard: dict) -> str:
     algos = leaderboard.get("algos", [])
     signal_count = daily.get("signal_count") or len(algos)
@@ -1002,6 +1027,8 @@ def build_families_page(families: dict, daily: dict) -> str:
     for family_name, payload in sorted((families.get("families") or {}).items()):
         leaders = payload.get("leaders") or []
         status_mix_html = _status_mix_html(payload.get("by_status") or {})
+        family_desc = FAMILY_DESCRIPTIONS.get(family_name, "A cluster of related signals grouped by theme so the board is easier to read.")
+        family_title = FAMILY_TITLES.get(family_name, family_name)
         leader_rows = "".join(
             f"<li><strong>{_e(item.get('name'))}</strong> "
             f"<span class=\"{_ret_class(item.get('ytd_pct'))}\">{_fmt(item.get('ytd_pct'))}</span> "
@@ -1011,8 +1038,9 @@ def build_families_page(families: dict, daily: dict) -> str:
         cards.append(
             f"""
       <div class="card">
-        <h2>{_e(family_name)}</h2>
+        <h2>{_e(family_title)}</h2>
         <p class="muted">Signals: {_e(payload.get('count', 0))}</p>
+        <p class="muted" style="margin-top:8px;">{_e(family_desc)}</p>
         <div style="margin: 10px 0 2px;">{status_mix_html}</div>
         <ul style="margin: 12px 0 0 18px; line-height: 1.8;">
           {leader_rows}
