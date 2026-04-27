@@ -144,6 +144,8 @@ def _leaderboard_rows_html(ranked_algos: list[tuple[int, dict]], paywall: bool =
             if a.get("beat_spy")
             else '<span class="status-lag">LAGGING</span>'
         )
+        algo_type = str(a.get("algo_type", ""))
+        public_algo_type = "alternative" if algo_type == "crazy" else algo_type
 
         comparator_html = _comparator_badges_html(a.get('comparator'))
 
@@ -151,7 +153,7 @@ def _leaderboard_rows_html(ranked_algos: list[tuple[int, dict]], paywall: bool =
             f'<tr class="{row_cls}{paywall_cls}">'
             f'<td class="rank">{rank}</td>'
             f'<td>{name_html}</td>'
-            f'<td><span class="algo-type-badge">{_e(a.get("algo_type",""))}</span></td>'
+            f'<td><span class="algo-type-badge">{_e(public_algo_type)}</span></td>'
             f'<td class="{_ret_class(ytd)}">{_fmt(ytd)}</td>'
             f'<td class="vs-spy {diff_cls}">{diff_str}</td>'
             f'<td>{comparator_html}</td>'
@@ -448,7 +450,7 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
         f"<tr>"
         f"<td class=\"rank\">{rank}</td>"
         f"<td>{_e(algo.get('name', ''))}</td>"
-        f"<td><span class=\"algo-type-badge\">{_e(algo.get('algo_type', ''))}</span></td>"
+        f"<td><span class=\"algo-type-badge\">{_e('alternative' if str(algo.get('algo_type', '')) == 'crazy' else algo.get('algo_type', ''))}</span></td>"
         f"<td class=\"days\">{_e(algo.get('status', ''))}</td>"
         f"<td class=\"days\">{_e(algo.get('evidence_class', ''))}</td>"
         f"<td>{_e(_zero_trade_reason(algo))}</td>"
@@ -486,7 +488,7 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
     </div>
   </div>
   <a class="cta" href="landing.html#waitlist">Get the weekly lab notes</a>
-  <span class="cta-sub">See which weird signals are surviving, which are dead, and which are still unresolved.</span>
+  <span class="cta-sub">See which alternative signals are surviving, which are dead, and which are still unresolved.</span>
   <div class="cred-strip">
     <span class="cred-item">{_e(total)} signals tracked</span>
     <span class="cred-dot">&middot;</span>
@@ -529,7 +531,7 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
     </div>
     <div class="rank-note">
       <strong>Why comparators are here:</strong> Simple momentum baselines are the null hypothesis.
-      If a weird signal is useful, it should sometimes add information beyond raw price trend.
+      If an alternative signal is useful, it should sometimes add information beyond raw price trend.
       These badges are context, not a final scorecard.
     </div>
     <div class="table-wrap">
@@ -838,12 +840,14 @@ def _premium_table_rows(algos: list) -> str:
         )
         family = _e(a.get("family") or "")
         ev = _e(a.get("evidence_class") or "")
+        algo_type = str(a.get("algo_type", ""))
+        public_algo_type = "alternative" if algo_type == "crazy" else algo_type
 
         rows.append(
             f'<tr class="{row_cls}">'
             f'<td class="rank">{rank}</td>'
             f'<td>{name_html}</td>'
-            f'<td><span class="algo-type-badge">{_e(a.get("algo_type",""))}</span></td>'
+            f'<td><span class="algo-type-badge">{_e(public_algo_type)}</span></td>'
             f'<td class="{_ret_class(ytd)}">{_fmt(ytd)}</td>'
             f'<td class="vs-spy {diff_cls}">{diff_str}</td>'
             f'<td class="{_ret_class(ret30)}">{_fmt(ret30)}</td>'
