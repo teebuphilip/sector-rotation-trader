@@ -212,18 +212,27 @@ def _site_links() -> str:
         '<a href="daily.html">Daily Report</a> &middot; '
         '<a href="premium.html">Premium Preview</a> &middot; '
         '<a href="blog/index.html">Blog</a> &middot; '
-        '<a href="legal.html">Legal</a>'
+        '<a href="legal.html">Legal</a> &middot; '
+        '<a href="biscotti.html">Biscotti</a>'
     )
 
 
-def _biscotti_chart_html(rank_history: list[dict]) -> str:
+def _leader_chart_html(rank_history: list[dict], leaderboard: dict) -> str:
+    top = (leaderboard.get("algos") or [])[:1]
+    if not top:
+        return '<p class="muted">Leader chart coming soon.</p>'
+    leader = top[0]
+    algo_id = str(leader.get("algo_id", ""))
+    algo_name = str(leader.get("name", "Top recent leader"))
+    category = "normal" if str(leader.get("category") or "standard") != "crazy" else "crazy"
+
     rows = [
         row for row in rank_history
-        if str(row.get("algo_id", "")) == "biscotti" and str(row.get("algo_type", "")) == "normal"
+        if str(row.get("algo_id", "")) == algo_id and str(row.get("algo_type", "")) == category
     ]
     rows.sort(key=lambda row: row.get("date", ""))
     if len(rows) < 2:
-        return '<p class="muted">Biscotti chart coming soon.</p>'
+        return '<p class="muted">Top leader chart coming soon.</p>'
 
     points = []
     try:
@@ -270,16 +279,16 @@ def _biscotti_chart_html(rank_history: list[dict]) -> str:
 
     biscotti_last = points[-1][1]
     spy_last = points[-1][2]
-    biscotti_label = f"Biscotti {biscotti_last:.1f}"
+    biscotti_label = f"{algo_name} {biscotti_last:.1f}"
     spy_label = f"SPY {spy_last:.1f}"
 
     return f"""
     <div class="mini-chart-wrap">
       <div class="mini-chart-meta">
-        <div class="mini-chart-title">Biscotti vs SPY</div>
-        <div class="mini-chart-note">A simple chart is enough here: one live algo against the benchmark it has to beat.</div>
+        <div class="mini-chart-title">Top 30D leader vs SPY</div>
+        <div class="mini-chart-note">A simple chart is enough here: the current top recent leader against the benchmark it has to beat.</div>
       </div>
-      <svg class="mini-chart" viewBox="0 0 {width} {height}" role="img" aria-label="Biscotti versus SPY chart">
+      <svg class="mini-chart" viewBox="0 0 {width} {height}" role="img" aria-label="Top 30D leader versus SPY chart">
         <rect x="0" y="0" width="{width}" height="{height}" rx="14" fill="#0f1c18" stroke="rgba(255,255,255,0.08)"/>
         <line x1="{pad_x}" y1="{height - pad_y}" x2="{width - pad_x}" y2="{height - pad_y}" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
         <path d="{path(1)}" fill="none" stroke="#7da7ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -288,7 +297,6 @@ def _biscotti_chart_html(rank_history: list[dict]) -> str:
       <div class="mini-chart-legend">
         <span><i style="background:#19d38f;"></i>{_e(biscotti_label)}</span>
         <span><i style="background:#7da7ff;"></i>{_e(spy_label)}</span>
-        <span><a href="biscotti.html">Meet Biscotti</a></span>
       </div>
     </div>
     """
@@ -831,7 +839,7 @@ def _winners_li(entries: list) -> str:
 def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: list[dict] | None = None) -> str:
     entries = leaderboard.get("algos", [])
     winners_html = _winners_li(entries)
-    chart_html = _biscotti_chart_html(rank_history or [])
+    chart_html = _leader_chart_html(rank_history or [], leaderboard)
     counts = (daily or {}).get("counts", {})
     total = counts.get("total") or len(entries)
     watchlist = counts.get("watchlist", 0)

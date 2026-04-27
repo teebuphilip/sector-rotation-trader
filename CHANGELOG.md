@@ -14,6 +14,7 @@
 - Added a plain-English legend for `watchlist`, `promoted`, and `graveyard` directly in the landing verification card so internal pipeline states are not left unexplained.
 - Added one-line plain-English descriptions for each family on `families.html` so the public page explains what `travel_mobility`, `core_rotation`, `freight_logistics`, and the other family buckets are actually trying to measure.
 - Added a small homepage chart for `Biscotti vs SPY` using `data/rank_history.csv`, and linked the chart to the Biscotti detail page so the May 15 public launch has a clear Biscotti surface.
+- Swapped the homepage chart to the current top 30-day leader versus SPY instead of giving Biscotti a separate chart callout, and added a Biscotti footer-nav link for the May 15 launch path.
 - Updated the visible blog index dates to read as yesterday and today instead of looking like the public notebook died two weeks ago.
 - Updated `scripts/publish_public_site.py` and `scripts/publish_preview_site.py` to use a Git identity tied to the GitHub owner account by default instead of the unmapped `stockarithm-bot@users.noreply.github.com`, because Vercel blocks deploys when the commit email cannot be matched to a GitHub account.
 - Tightened the shared footer presentation so `StockArithm powered by R&B AlgoLabs, LLC.` renders as an explicitly centered, smaller, italic attribution instead of blending into the rest of the footer copy.
