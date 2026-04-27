@@ -205,15 +205,20 @@ def _zero_trade_reason(algo: dict) -> str:
 
 
 def _site_links() -> str:
-    return (
-        '<a href="landing.html">Home</a> &middot; '
-        '<a href="leaderboard.html">Leaderboard</a> &middot; '
-        '<a href="families.html">Families</a> &middot; '
-        '<a href="daily.html">Daily Report</a> &middot; '
-        '<a href="premium.html">Premium Preview</a> &middot; '
-        '<a href="blog/index.html">Blog</a> &middot; '
-        '<a href="legal.html">Legal</a> &middot; '
-        '<a href="biscotti.html">Biscotti</a>'
+    links = [
+        ("/landing.html", "Home"),
+        ("/leaderboard.html", "Leaderboard"),
+        ("/signals/index.html", "Signals"),
+        ("/families.html", "Families"),
+        ("/daily.html", "Daily Report"),
+        ("/premium.html", "Premium Preview"),
+        ("/blog/index.html", "Blog"),
+        ("/legal.html", "Legal"),
+        ("/biscotti.html", "Biscotti"),
+    ]
+    return " &middot; ".join(
+        f'<a href="{href}" style="color:inherit;text-decoration:none;">{_e(label)}</a>'
+        for href, label in links
     )
 
 
@@ -302,6 +307,21 @@ def _leader_chart_html(rank_history: list[dict], leaderboard: dict) -> str:
     """
 
 
+def _signal_index_rows_html(entries: list[dict]) -> str:
+    rows = []
+    for item in sorted(entries, key=lambda row: (str(row.get("name") or "").lower(), str(row.get("algo_type") or ""))):
+        rows.append(
+            "<tr>"
+            f"<td><strong>{_e(item.get('name'))}</strong></td>"
+            f"<td>{_e(_public_algo_type(str(item.get('algo_type', ''))))}</td>"
+            f"<td>{_e(FAMILY_TITLES.get(str(item.get('family') or ''), _pretty_label(item.get('family') or '')))}</td>"
+            f"<td>{_e(_pretty_label(str(item.get('status') or '')))}</td>"
+            f"<td>{_e(item.get('rebalance_frequency') or '')}</td>"
+            "</tr>"
+        )
+    return "\n".join(rows) if rows else '<tr><td colspan="5">No signals yet.</td></tr>'
+
+
 def _pulse_block_html(daily: dict, total=None, beating=None) -> str:
     counts = daily.get("counts") or {}
     total = total if total is not None else counts.get("total", 0)
@@ -352,7 +372,7 @@ def _footer_html(generated_at: str, run_date: str, label: str = "Updated nightly
     return f"""
 <footer>
   <div class="wrap">
-    <div style="text-align:center;margin-top:8px;">{_site_links()}</div>
+    <div style="margin-top:8px;text-align:center;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;line-height:1.6;letter-spacing:0.2px;color:rgba(255,255,255,0.58);">{_site_links()}</div>
     <div style="width:100%;max-width:520px;height:1px;margin:14px auto 14px;background:rgba(255,255,255,0.10);"></div>
     <div style="display:block;width:100%;text-align:center;font-size:11px;font-style:italic;letter-spacing:0.2px;color:rgba(255,255,255,0.58);margin:0 auto 10px;">
       StockArithm powered by R&amp;B AlgoLabs, LLC.
@@ -906,6 +926,12 @@ def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: li
         <p>Ship notes, failures, receipts, and founder context. This is the public lab notebook, not a polished black box.</p>
         <a class="cta" href="blog/index.html">Read the blog</a>
       </div>
+
+      <div class="card">
+        <h2>Signal Index</h2>
+        <p>All 133 signals in one public list. Names, families, and status only. No rank and no returns.</p>
+        <a class="cta" href="signals/index.html">Browse all signals</a>
+      </div>
     </div>
 
     <div class="card waitlist" style="margin-top:16px;">
@@ -945,6 +971,76 @@ def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: li
   </div>
 
 {_footer_html((daily or {}).get("generated_at", ""), (daily or {}).get("run_date", ""), "Free public launch surface")}
+
+</body>
+</html>"""
+
+
+def build_signals_index(leaderboard: dict, daily: dict | None = None) -> str:
+    entries = leaderboard.get("algos", [])
+    total = len(entries)
+    generated_at = (daily or {}).get("generated_at", "")
+    run_date = (daily or {}).get("run_date", "")
+    rows = _signal_index_rows_html(entries)
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StockArithm — Signals Index</title>
+<style>{LANDING_CSS}
+  .table-wrap {{ overflow-x: auto; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; }}
+  table {{ width: 100%; border-collapse: collapse; min-width: 760px; background: rgba(255,255,255,0.02); }}
+  thead th {{ text-align: left; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.08); }}
+  tbody td {{ padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 14px; vertical-align: top; }}
+  tbody tr:last-child td {{ border-bottom: none; }}
+  tbody td strong {{ color: var(--text); }}
+  .signal-note {{ color: var(--muted); font-size: 14px; line-height: 1.5; margin-top: 8px; }}
+  .signal-table-sub {{ margin: 0 0 14px; color: var(--muted); font-size: 14px; }}
+</style>
+</head>
+<body>
+    <header>
+    <h1>All signals, no scoreboard.</h1>
+    <p>StockArithm's public inventory: names, families, and status only. No rank and no returns.</p>
+    <div class="hero-actions">
+      <a class="cta cta-primary" href="/leaderboard.html">See the public leaderboard</a>
+      <a class="cta" href="/families.html">Browse families</a>
+    </div>
+    <div class="hero-strip">
+      <span class="pill">{_e(total)} signals listed</span>
+      <span class="pill">Alphabetical order</span>
+      <span class="pill">No returns shown</span>
+      <span class="pill">No rank shown</span>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="card">
+      <h2>Public signal index</h2>
+      <p class="signal-table-sub">This is the full public list. It exists so the site does not feel like it is hiding the inventory.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Family</th>
+              <th>Status</th>
+              <th>Frequency</th>
+            </tr>
+          </thead>
+          <tbody>
+{rows}
+          </tbody>
+        </table>
+      </div>
+      <p class="signal-note">Premium will link into the full per-algo pages later. This page stays public and stays scorecard-free.</p>
+    </div>
+  </div>
+
+{_footer_html(generated_at, run_date, "Public signal index")}
 
 </body>
 </html>"""
@@ -1326,6 +1422,10 @@ def build_main():
     out_index = REPO / "docs" / "index.html"
     out_index.write_text(build_landing(leaderboard, daily, rank_history), encoding="utf-8")
     print(f"[pages] wrote {out_index}")
+
+    out_signals = REPO / "docs" / "signals" / "index.html"
+    out_signals.write_text(build_signals_index(leaderboard, daily), encoding="utf-8")
+    print(f"[pages] wrote {out_signals}")
 
     out_premium = REPO / "docs" / "premium.html"
     out_premium.write_text(build_premium(daily, leaderboard), encoding="utf-8")
