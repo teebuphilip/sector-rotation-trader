@@ -24,6 +24,7 @@ FILES = [
     "docs/daily.html",
     "docs/premium.html",
     "docs/legal.html",
+    "docs/biscotti.html",
     "docs/app.html",
     "docs/nrwise.html",
     "docs/trades.json",

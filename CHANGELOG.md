@@ -18,6 +18,8 @@
 - Added a public `Signals` index page that lists all 133 signals alphabetically with name, type, family, status, and frequency, but no rank or returns, so the site shows the full inventory without giving away the scoreboard.
 - Standardized the footer nav across generated pages with one root-relative link style so the same menu renders consistently on nested pages like `blog/` and `signals/`.
 - Reordered the sector heatmap into a clean 6/5 layout on desktop and moved `XLC` to the bottom row so the first row does not look awkwardly lopsided.
+- Moved the homepage chart above the landing-page cards so it reads as the visual anchor for the page instead of another card in the grid.
+- Added `docs/biscotti.html` and `docs/signals/index.html` to the public and preview publish paths so the `Biscotti` footer link and public inventory page do not 404 after deploy.
 - Updated the visible blog index dates to read as yesterday and today instead of looking like the public notebook died two weeks ago.
 - Updated `scripts/publish_public_site.py` and `scripts/publish_preview_site.py` to use a Git identity tied to the GitHub owner account by default instead of the unmapped `stockarithm-bot@users.noreply.github.com`, because Vercel blocks deploys when the commit email cannot be matched to a GitHub account.
 - Tightened the shared footer presentation so `StockArithm powered by R&B AlgoLabs, LLC.` renders as an explicitly centered, smaller, italic attribution instead of blending into the rest of the footer copy.

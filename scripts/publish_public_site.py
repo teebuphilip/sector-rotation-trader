@@ -29,8 +29,10 @@ ALLOWLIST_FILES = [
     "docs/daily.html",
     "docs/premium.html",
     "docs/legal.html",
+    "docs/biscotti.html",
     "docs/app.html",
     "docs/signals/lookup.html",
+    "docs/signals/index.html",
 ]
 
 ALLOWLIST_DIRS = [

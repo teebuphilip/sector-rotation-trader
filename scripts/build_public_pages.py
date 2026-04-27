@@ -215,11 +215,14 @@ def _site_links() -> str:
         ("/blog/index.html", "Blog"),
         ("/legal.html", "Legal"),
     ]
-    main_links = " &middot; ".join(
-        f'<a href="{href}">{_e(label)}</a>'
-        for href, label in links
-    )
-    return f'{main_links} * <a href="/biscotti.html">Biscotti</a>'
+    parts = []
+    for i, (href, label) in enumerate(links):
+        if i:
+            parts.append('<span class="footer-sep">&middot;</span>')
+        parts.append(f'<a href="{href}">{_e(label)}</a>')
+    parts.append('<span class="footer-sep">*</span>')
+    parts.append('<a href="/biscotti.html">Biscotti</a>')
+    return "".join(parts)
 
 
 def _leader_chart_html(rank_history: list[dict], leaderboard: dict) -> str:
@@ -497,8 +500,9 @@ CSS = """
   .ticker-error { color: var(--red); font-family: var(--mono); font-size: 13px; display: none; }
   .ticker-error.show { display: block; }
   footer { border-top: 1px solid var(--border); padding: 32px 20px; text-align: center; font-size: 12px; color: var(--muted); line-height: 1.8; }
-  .footer-nav { margin-top: 8px; text-align: center; font-family: var(--mono); font-size: 11px; line-height: 1.6; letter-spacing: 0.2px; color: rgba(255,255,255,0.58); }
-  .footer-nav a { color: inherit; text-decoration: none; }
+  .footer-nav { margin-top: 8px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0 8px; font-family: var(--mono); font-size: 11px; line-height: 1.6; letter-spacing: 0.2px; color: rgba(255,255,255,0.58); }
+  .footer-nav a { color: inherit; text-decoration: none; white-space: nowrap; }
+  .footer-nav .footer-sep { color: rgba(255,255,255,0.40); }
   .footer-nav a:hover { text-decoration: underline; }
   .rank-note { border: 1px solid var(--border); border-radius: 12px; background: rgba(255,255,255,0.035); padding: 14px 16px; margin: 14px 0 18px; color: var(--muted); font-size: 13px; line-height: 1.65; }
   .rank-note strong { color: var(--text); }
@@ -892,10 +896,11 @@ def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: li
   </header>
 
   <div class="wrap">
+    <div class="card" style="margin-bottom:16px;">
+      {chart_html}
+    </div>
+
     <div class="grid">
-      <div class="card">
-        {chart_html}
-      </div>
 
       <div class="card">
         <h2>What you're looking at</h2>
