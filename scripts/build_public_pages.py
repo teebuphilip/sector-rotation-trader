@@ -694,7 +694,6 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
     watchlist = counts.get("watchlist", 0)
     promoted = counts.get("promoted", 0)
     graveyard = counts.get("graveyard", 0)
-    pricing_html = PRICING_SECTION.format(total=total, stripe_url=STRIPE_PAYMENT_URL)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -743,6 +742,7 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
       <div class="card">
         <h2>What You Can Verify</h2>
         <p>Public counts update nightly. Right now the lab shows <strong>{_e(total)}</strong> total algos, <strong>{_e(watchlist)}</strong> on the watchlist, <strong>{_e(promoted)}</strong> promoted, and <strong>{_e(graveyard)}</strong> in the graveyard.</p>
+        <p class="muted" style="margin-top:10px;">Watchlist means worth monitoring but not yet trusted. Promoted means strong enough to feature publicly. Graveyard means the idea failed badly enough that we keep it visible as a dead end.</p>
         <a class="cta" href="daily.html">Read the daily snapshot</a>
       </div>
 
@@ -758,9 +758,6 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
       <p>We generate and ship new signals. If a signal can be backtested honestly under V1 rules, it gets a backtest grade. If not, it stays live-only and has to earn trust through receipts.</p>
       <p>Signals that have not traded recently can go idle. Signals that trade and underperform can fail. Both stay visible. That is the whole point.</p>
     </div>
-
-{pricing_html}
-
     <div class="card waitlist" id="waitlist">
       <h2>Get the weekly lab notes.</h2>
       <p>A short weekly note on which signals are holding up, which are breaking, and what the lab learned.</p>

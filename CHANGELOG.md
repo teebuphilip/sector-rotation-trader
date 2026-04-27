@@ -10,6 +10,9 @@
 - Tightened the first-read tone based on review feedback by changing the landing hero from `weird market signals` to `alternative data signals`, and restyled the footer attribution into a centered, smaller, italic line so it reads like attribution instead of a second banner.
 - Reduced homepage CTA redundancy by removing the top-level daily-snapshot CTA and replacing the duplicate leaderboard card with a plain-English explanation of why so many algos are still flat.
 - Reworked the public leaderboard so the live/traded rows stay upfront while the `0.00%` names move into a collapsed section with explicit reasons like `needs_history`, `sandbox`, and `pending_seed` instead of reading like a broken table.
+- Removed the premium teaser block from the landing page so the homepage stays focused on comprehension and mailing-list conversion instead of a half-open paid pitch.
+- Added a plain-English legend for `watchlist`, `promoted`, and `graveyard` directly in the landing verification card so internal pipeline states are not left unexplained.
+- Updated the visible blog index dates to read as yesterday and today instead of looking like the public notebook died two weeks ago.
 
 ### feat: add footer attribution across generated public pages
 - `_footer_html(...)` now renders `StockArithm powered by R&B AlgoLabs, LLC.` ahead of the footer label.
