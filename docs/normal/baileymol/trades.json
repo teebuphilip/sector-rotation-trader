@@ -355,6 +355,54 @@
       "cost": 35379.05,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-27",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 228.9017,
+      "price": 160.57,
+      "proceeds": 36742.89,
+      "fees": 11.86,
+      "tax": 504.62,
+      "pnl": 859.22,
+      "pnl_pct": 2.43,
+      "entry_date": "2026-04-20",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-27",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 295.1451,
+      "price": 117.84,
+      "proceeds": 34768.12,
+      "fees": 11.78,
+      "tax": 0.0,
+      "pnl": -610.92,
+      "pnl_pct": -1.73,
+      "entry_date": "2026-04-20",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-27",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 220.8082,
+      "price": 160.57,
+      "cost": 35455.18,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-27",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 300.8756,
+      "price": 117.84,
+      "cost": 35455.18,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -2168,6 +2216,35 @@
           "market_value": 35030.78,
           "unrealized_pnl": -348.27,
           "entry_date": "2026-04-20",
+          "margin": false
+        }
+      },
+      "sector": "Algo Baileymol (Chaos Monger)",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-27",
+      "cash": 35435.28,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 106345.64,
+      "positions": {
+        "XLK": {
+          "shares": 220.8082,
+          "entry_price": 160.57,
+          "current_price": 160.57,
+          "market_value": 35455.18,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-27",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 300.8756,
+          "entry_price": 117.84,
+          "current_price": 117.84,
+          "market_value": 35455.18,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-27",
           "margin": false
         }
       },

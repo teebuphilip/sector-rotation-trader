@@ -736,19 +736,29 @@
       "positions": {},
       "sector": "Energy Sector Sudden Weekly Volatility Spike",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-27",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Energy Sector Sudden Weekly Volatility Spike",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-20",
-  "last_run": "2026-04-25",
+  "last_run": "2026-04-27",
   "meta": {
     "energy-sector-sudden-weekly-volatility-spike": {
-      "latest_value": 56.87,
-      "prior_avg": 57.9495,
-      "signal_change": -0.0186,
+      "latest_value": 56.77,
+      "prior_avg": 57.65,
+      "signal_change": -0.0153,
       "signal_label": "HOLD",
       "name": "Energy Sector Sudden Weekly Volatility Spike",
       "last_signal": "HOLD",
-      "last_run": "2026-04-25"
+      "last_run": "2026-04-27"
     }
   }
 }

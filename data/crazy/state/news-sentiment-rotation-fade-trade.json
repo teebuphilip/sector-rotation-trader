@@ -1,10 +1,19 @@
 {
-  "cash": 99929.81035742749,
+  "cash": 94923.36983955612,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 20.160110984499813,
+  "fees_paid": 30.110110984499812,
   "taxes_paid": 0.0,
-  "positions": {},
+  "positions": {
+    "XLY": {
+      "shares": 42.400633682511305,
+      "entry_price": 117.83999633789062,
+      "entry_date": "2026-04-27",
+      "cost": 4996.490517871374,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-22",
@@ -29,6 +38,16 @@
       "pnl_pct": -1.2,
       "entry_date": "2026-04-22",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-27",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 42.4006,
+      "price": 117.84,
+      "cost": 4996.49,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -751,20 +770,40 @@
       "positions": {},
       "sector": "News Sentiment Rotation Fade Trade",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-27",
+      "cash": 94923.37,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99919.86,
+      "positions": {
+        "XLY": {
+          "shares": 42.4006,
+          "entry_price": 117.84,
+          "current_price": 117.84,
+          "market_value": 4996.49,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-27",
+          "margin": false
+        }
+      },
+      "sector": "News Sentiment Rotation Fade Trade",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-21",
-  "last_run": "2026-04-25",
+  "last_run": "2026-04-27",
   "meta": {
     "news-sentiment-rotation-fade-trade": {
-      "latest_value": 2.0,
-      "prior_avg": 8.8571,
-      "signal_change": -0.7742,
-      "entry_date": "2026-04-22",
-      "signal_label": "HOLD",
+      "latest_value": 16.0,
+      "prior_avg": 7.0,
+      "signal_change": 1.2857,
+      "entry_date": "2026-04-27",
+      "signal_label": "RISK_ON",
       "name": "News Sentiment Rotation Fade Trade",
-      "last_signal": "HOLD",
-      "last_run": "2026-04-25"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-04-27"
     }
   }
 }

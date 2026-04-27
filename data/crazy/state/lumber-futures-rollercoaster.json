@@ -766,19 +766,29 @@
       "positions": {},
       "sector": "Lumber Futures Rollercoaster",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-27",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Lumber Futures Rollercoaster",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-19",
-  "last_run": "2026-04-25",
+  "last_run": "2026-04-27",
   "meta": {
     "lumber-futures-rollercoaster": {
-      "latest_value": 51.92,
-      "prior_avg": 51.904,
-      "signal_change": 0.0003,
+      "latest_value": 51.78,
+      "prior_avg": 51.912,
+      "signal_change": -0.0025,
       "signal_label": "HOLD",
       "name": "Lumber Futures Rollercoaster",
       "last_signal": "HOLD",
-      "last_run": "2026-04-25"
+      "last_run": "2026-04-27"
     }
   }
 }
