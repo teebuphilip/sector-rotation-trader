@@ -657,7 +657,7 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
       and still rank poorly over the full window, or the other way around.
       We show both because hiding that split would be dishonest.
       <code>Comparators</code> shows the current 5-day and 20-day momentum direction on the algo's primary sector ETF when that mapping is clean enough to show.
-      Some signals are backtested under strict V1 rules. Others are live-only because the historical data is not clean enough to backfill honestly.
+      Some signals are backtested under our standard rules. Others are live-only because the historical data is not clean enough to backfill honestly.
     </div>
     <div class="rank-note">
       <strong>Why comparators are here:</strong> Simple momentum baselines are the null hypothesis.
@@ -902,7 +902,7 @@ def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: li
 
     <div class="card waitlist" style="margin-top:16px;">
       <h2>How The Lab Works</h2>
-      <p>We generate and ship new signals. If a signal can be backtested honestly under V1 rules, it gets a backtest grade. If not, it stays live-only and has to earn trust through receipts.</p>
+      <p>We make new signals and test them honestly. If we can backtest one using our standard rules, it gets a backtest grade. If not, it stays live-only and has to earn trust from real results.</p>
       <p>Signals that have not traded recently can go idle. Signals that trade and underperform can fail. Both stay visible. That is the whole point.</p>
     </div>
     <div class="card waitlist" id="waitlist">
