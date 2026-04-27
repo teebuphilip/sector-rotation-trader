@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-04-27 (session 1 — landing copy pass kickoff)
+
+### feat: start the landing-page conversion copy pass in the page generator
+- `scripts/build_public_pages.py` now uses `StockArithm` in the landing title and hero copy, tightens the hero language around the public paper-trading lab, and changes the secondary CTA to `Get the weekly lab notes`.
+- Replaced the redundant `public signals` proof pill with `Updated nightly`, changed `Paper-traded only` to `Paper-traded in public`, and rewrote the two top cards into the agreed explainer + leaderboard bridge copy.
+- Softened the premium teaser so it reads like a future layer instead of a half-open offer.
+- Completed the wider public-facing brand sweep in generated page titles plus static `docs/blog/index.html`, `docs/app.html`, and `docs/signals/lookup.html`, keeping `stockarithm.com` lowercase only for the domain/API URL.
+
+### feat: add footer attribution across generated public pages
+- `_footer_html(...)` now renders `StockArithm powered by R&B AlgoLabs, LLC.` ahead of the footer label.
+- This applies to every public/generated page that uses the shared footer helper.
+- Added the same attribution to the static blog index and premium app shell footer.
+
+Files: `scripts/build_public_pages.py`, `CHANGELOG.md`
+
 ## 2026-04-25 (session 1 — fix public/preview publish git identity)
 
 ### fix: configure bot git identity inside public-site publisher repos

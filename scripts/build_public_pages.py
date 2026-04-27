@@ -232,7 +232,7 @@ def _footer_html(generated_at: str, run_date: str, label: str = "Updated nightly
     return f"""
 <footer>
   <div class="wrap">
-    <div><strong>stockarithm.com</strong> &mdash; {label}</div>
+    <div><strong>StockArithm</strong> powered by R&amp;B AlgoLabs, LLC. &mdash; {label}</div>
     <div>Last updated: {_e(generated_at or run_date)}</div>
     <div style="margin-top:8px;">{_site_links()}</div>
     <div style="margin-top:8px;">
@@ -420,7 +420,7 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Stockarithm \u2014 Live Signal Leaderboard</title>
+<title>StockArithm \u2014 Live Signal Leaderboard</title>
 <meta name="description" content="{_e(signal_count)} experimental trading algorithms running live. Track performance against SPY." />
 <style>{CSS}</style>
 </head>
@@ -644,22 +644,22 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Stockarithm</title>
+<title>StockArithm</title>
 <style>{LANDING_CSS}</style>
 </head>
 <body>
   <header>
     <h1>Weird market signals, run in public.</h1>
-    <p>Stockarithm tracks paper-traded algos against SPY. The wins, misses, idle names, and dead signals all stay visible.</p>
+    <p>StockArithm is a public paper-trading lab for weird market signals. Some are working. Some are failing. All of them stay visible.</p>
     <div class="hero-actions">
       <a class="cta cta-primary" href="leaderboard.html">See the public leaderboard</a>
       <a class="cta" href="daily.html">Read tonight's snapshot</a>
-      <a class="cta" href="#waitlist">Get weekly lab notes</a>
+      <a class="cta" href="#waitlist">Get the weekly lab notes</a>
     </div>
     <div class="hero-strip">
       <span class="pill">{_e(total)} algos tracked</span>
-      <span class="pill">{_e((daily or {}).get('signal_count', total))} public signals</span>
-      <span class="pill">Paper-traded only</span>
+      <span class="pill">Updated nightly</span>
+      <span class="pill">Paper-traded in public</span>
       <span class="pill">Failures stay visible</span>
     </div>
   </header>
@@ -667,15 +667,15 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
   <div class="wrap">
     <div class="grid">
       <div class="card">
-        <h2>What This Is</h2>
-        <p>A transparent signal research lab. We generate unconventional ideas, paper-track them, compare them to SPY, and keep the failures visible.</p>
+        <h2>What you're looking at</h2>
+        <p>Each row is one live paper-traded signal. Some are working. Some are failing. One of them is named after my dog. That is the point.</p>
         <a class="cta" href="leaderboard.html">See the leaderboard</a>
       </div>
 
       <div class="card">
-        <h2>How Signals Are Labeled</h2>
-        <p>Every signal stays visible as some combination of sandbox, live-only, backtested, promoted, idle, or failed. Nothing gets deleted to make the stats look prettier.</p>
-        <a class="cta" href="families.html">Browse signal families</a>
+        <h2>Start with the public leaderboard.</h2>
+        <p>See what is working, what is failing, and which signals are getting weird.</p>
+        <a class="cta" href="leaderboard.html">View the leaderboard</a>
       </div>
 
       <div class="card winners">
@@ -708,8 +708,8 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
 {pricing_html}
 
     <div class="card waitlist" id="waitlist">
-      <h2>Get the weekly lab notes</h2>
-      <p>See which weird signals are surviving, which are dead, and which are still unresolved.</p>
+      <h2>Get the weekly lab notes.</h2>
+      <p>A short weekly note on which signals are holding up, which are breaking, and what the lab learned.</p>
       <form
         class="waitlist-form"
         id="mailerlite-waitlist-form"
@@ -721,10 +721,10 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
         <input type="hidden" name="fields[source]" value="landing" />
         <input type="hidden" name="ml-submit" value="1" />
         <input type="hidden" name="anticsrf" value="true" />
-        <button type="submit">Join waitlist</button>
+        <button type="submit">Get the weekly notes</button>
       </form>
       <iframe name="mailerlite-waitlist-frame" title="Mailing list signup" style="display:none"></iframe>
-      <div class="notice">No hype. No AI stock-picking claims. Just the receipts.</div>
+      <div class="notice">No hype. Just the state of the lab.</div>
     </div>
 
     <div class="card waitlist" id="disclaimer">
@@ -821,7 +821,7 @@ def build_premium(daily: dict, leaderboard: dict) -> str:
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Stockarithm \u2014 Premium Preview</title>
+<title>StockArithm \u2014 Premium Preview</title>
 <style>{PREMIUM_CSS}</style>
 </head>
 <body>
@@ -886,7 +886,7 @@ def build_premium(daily: dict, leaderboard: dict) -> str:
 
 <section>
   <div class="wrap">
-    <h2 class="section-title">Premium Preview <span class="premium-badge">COMING JULY 1</span></h2>
+    <h2 class="section-title">Premium Preview <span class="premium-badge">COMING LATER</span></h2>
     <p class="section-sub">Preview of the table shape. The live paid layer does not launch until July 1.</p>
     <div class="rank-note">
       <strong>Force rank</strong> = full-window/since-seed return. <strong>Rolling 30D</strong> = trailing 30-day return.
@@ -950,7 +950,7 @@ def build_families_page(families: dict, daily: dict) -> str:
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Stockarithm — Families</title>
+<title>StockArithm — Families</title>
 <style>{LANDING_CSS}</style>
 </head>
 <body>
@@ -989,7 +989,7 @@ def build_daily_page(daily: dict) -> str:
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Stockarithm — Daily Report</title>
+<title>StockArithm — Daily Report</title>
 <style>{REPORT_CSS}</style>
 </head>
 <body>
@@ -1068,7 +1068,7 @@ def build_legal_page() -> str:
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Stockarithm — Legal</title>
+<title>StockArithm — Legal</title>
 <style>{REPORT_CSS}</style>
 </head>
 <body>
@@ -1085,17 +1085,11 @@ def build_legal_page() -> str:
 
 PRICING_SECTION = """
     <div class="card" id="pricing" style="border-color: rgba(25,211,143,0.3);">
-      <h2>Premium &mdash; $19.99/month</h2>
-      <p>Free proves the lab is real. Premium is the deeper operating layer.</p>
-      <ul style="margin: 0 0 12px; padding-left: 16px; color: var(--muted); font-size: 14px; line-height: 1.8;">
-        <li>Full leaderboard (all {total} algos, not just top 10)</li>
-        <li>Rolling 30D column + family + evidence class per algo</li>
-        <li>Full per-algo and per-ticker detail</li>
-        <li>Trade history and equity curves after paid launch</li>
-      </ul>
-      <a class="cta" href="{stripe_url}">Join the mailing list &rarr;</a>
+      <h2>Premium is not open yet</h2>
+      <p>For now, the public site is the proof. Paid access comes later, after the free surface is stable and worth charging for.</p>
+      <a class="cta" href="{stripe_url}">Join the mailing list for updates</a>
       <div style="margin-top: 8px; font-size: 12px; color: var(--muted);">
-        Free public launch comes first. Paid access starts July 1 after checkout is real.
+        Free public launch comes first. Paid access starts after the public surface earns it.
       </div>
     </div>
 """
