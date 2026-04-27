@@ -23,7 +23,7 @@ SPECIAL = {
     "baileymol": {"emoji": "\u26a1",      "row_class": "row-baileymol", "tip": "The Chaos Monger \u2014 thrives on volatility spikes"},
 }
 
-ETF_ORDER = ["XLK", "XLF", "XLV", "XLY", "XLI", "XLC", "XLP", "XLE", "XLB", "XLRE", "XLU"]
+ETF_ORDER = ["XLK", "XLF", "XLV", "XLY", "XLI", "XLP", "XLE", "XLB", "XLRE", "XLU", "XLC"]
 
 FREE_ROWS = 10
 
@@ -214,12 +214,12 @@ def _site_links() -> str:
         ("/premium.html", "Premium Preview"),
         ("/blog/index.html", "Blog"),
         ("/legal.html", "Legal"),
-        ("/biscotti.html", "Biscotti"),
     ]
-    return " &middot; ".join(
-        f'<a href="{href}" style="color:inherit;text-decoration:none;">{_e(label)}</a>'
+    main_links = " &middot; ".join(
+        f'<a href="{href}">{_e(label)}</a>'
         for href, label in links
     )
+    return f'{main_links} * <a href="/biscotti.html">Biscotti</a>'
 
 
 def _leader_chart_html(rank_history: list[dict], leaderboard: dict) -> str:
@@ -372,7 +372,7 @@ def _footer_html(generated_at: str, run_date: str, label: str = "Updated nightly
     return f"""
 <footer>
   <div class="wrap">
-    <div style="margin-top:8px;text-align:center;font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:11px;line-height:1.6;letter-spacing:0.2px;color:rgba(255,255,255,0.58);">{_site_links()}</div>
+    <div class="footer-nav">{_site_links()}</div>
     <div style="width:100%;max-width:520px;height:1px;margin:14px auto 14px;background:rgba(255,255,255,0.10);"></div>
     <div style="display:block;width:100%;text-align:center;font-size:11px;font-style:italic;letter-spacing:0.2px;color:rgba(255,255,255,0.58);margin:0 auto 10px;">
       StockArithm powered by R&amp;B AlgoLabs, LLC.
@@ -433,7 +433,7 @@ CSS = """
   section + section { border-top: 1px solid var(--border); }
   .section-title { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
   .section-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
-  .heatmap { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+  .heatmap { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
   .sector-tile { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; text-align: center; cursor: default; transition: transform 0.15s, border-color 0.15s; position: relative; }
   .sector-tile:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.15); }
   .sector-tile .etf { font-family: var(--mono); font-size: 16px; font-weight: 700; }
@@ -497,8 +497,9 @@ CSS = """
   .ticker-error { color: var(--red); font-family: var(--mono); font-size: 13px; display: none; }
   .ticker-error.show { display: block; }
   footer { border-top: 1px solid var(--border); padding: 32px 20px; text-align: center; font-size: 12px; color: var(--muted); line-height: 1.8; }
-  footer a { color: var(--accent-dim); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
+  .footer-nav { margin-top: 8px; text-align: center; font-family: var(--mono); font-size: 11px; line-height: 1.6; letter-spacing: 0.2px; color: rgba(255,255,255,0.58); }
+  .footer-nav a { color: inherit; text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
   .rank-note { border: 1px solid var(--border); border-radius: 12px; background: rgba(255,255,255,0.035); padding: 14px 16px; margin: 14px 0 18px; color: var(--muted); font-size: 13px; line-height: 1.65; }
   .rank-note strong { color: var(--text); }
   .rank-note code { font-family: var(--mono); color: var(--gold); background: rgba(255,204,102,0.08); padding: 1px 5px; border-radius: 4px; }
@@ -518,7 +519,7 @@ CSS = """
     .hero-stat .num { font-size: 24px; }
     table { font-size: 13px; }
     thead th, tbody td { padding: 10px 10px; }
-    .heatmap { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; }
+    .heatmap { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
     .sector-tile { padding: 10px; }
   }
 """
