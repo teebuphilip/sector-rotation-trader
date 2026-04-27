@@ -10,6 +10,7 @@ Generates:
 from __future__ import annotations
 import json
 import html
+import csv
 import sys
 from pathlib import Path
 from datetime import datetime
@@ -32,6 +33,14 @@ def _load(name: str) -> dict:
     if p.exists():
         return json.loads(p.read_text())
     return {}
+
+
+def _load_rank_history() -> list[dict]:
+    p = REPO / "data" / "rank_history.csv"
+    if not p.exists():
+        return []
+    with p.open(newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
 
 
 def _e(s) -> str:
@@ -205,6 +214,84 @@ def _site_links() -> str:
         '<a href="blog/index.html">Blog</a> &middot; '
         '<a href="legal.html">Legal</a>'
     )
+
+
+def _biscotti_chart_html(rank_history: list[dict]) -> str:
+    rows = [
+        row for row in rank_history
+        if str(row.get("algo_id", "")) == "biscotti" and str(row.get("algo_type", "")) == "normal"
+    ]
+    rows.sort(key=lambda row: row.get("date", ""))
+    if len(rows) < 2:
+        return '<p class="muted">Biscotti chart coming soon.</p>'
+
+    points = []
+    try:
+        base_biscotti = float(rows[0].get("equity") or 0)
+        base_spy = 1.0 + (float(rows[0].get("spy_pct") or 0) / 100.0)
+        if base_biscotti <= 0 or base_spy <= 0:
+            raise ValueError
+        for row in rows:
+            biscotti_equity = float(row.get("equity") or 0)
+            spy_pct = float(row.get("spy_pct") or 0)
+            biscotti_val = biscotti_equity / base_biscotti * 100.0
+            spy_val = (1.0 + spy_pct / 100.0) / base_spy * 100.0
+            points.append((row.get("date") or "", biscotti_val, spy_val))
+    except (TypeError, ValueError, ZeroDivisionError):
+        return '<p class="muted">Biscotti chart unavailable.</p>'
+
+    values = [v for _, bisc, spy in points for v in (bisc, spy)]
+    min_v = min(values)
+    max_v = max(values)
+    if max_v - min_v < 1e-9:
+        max_v += 1.0
+        min_v -= 1.0
+
+    width = 640
+    height = 240
+    pad_x = 28
+    pad_y = 24
+    chart_w = width - pad_x * 2
+    chart_h = height - pad_y * 2
+    steps = max(len(points) - 1, 1)
+
+    def xy(index: int, value: float):
+        x = pad_x + (chart_w * index / steps)
+        y = pad_y + chart_h - ((value - min_v) / (max_v - min_v) * chart_h)
+        return x, y
+
+    def path(series_index: int) -> str:
+        cmds = []
+        for i, (_, bisc, spy) in enumerate(points):
+            value = bisc if series_index == 0 else spy
+            x, y = xy(i, value)
+            cmds.append(f"{'M' if i == 0 else 'L'} {x:.1f} {y:.1f}")
+        return " ".join(cmds)
+
+    biscotti_last = points[-1][1]
+    spy_last = points[-1][2]
+    biscotti_label = f"Biscotti {biscotti_last:.1f}"
+    spy_label = f"SPY {spy_last:.1f}"
+
+    return f"""
+    <div class="mini-chart-wrap">
+      <div class="mini-chart-meta">
+        <div class="mini-chart-title">Biscotti vs SPY</div>
+        <div class="mini-chart-note">A simple chart is enough here: one live algo against the benchmark it has to beat.</div>
+      </div>
+      <svg class="mini-chart" viewBox="0 0 {width} {height}" role="img" aria-label="Biscotti versus SPY chart">
+        <rect x="0" y="0" width="{width}" height="{height}" rx="14" fill="#0f1c18" stroke="rgba(255,255,255,0.08)"/>
+        <line x1="{pad_x}" y1="{height - pad_y}" x2="{width - pad_x}" y2="{height - pad_y}" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+        <path d="{path(1)}" fill="none" stroke="#7da7ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="{path(0)}" fill="none" stroke="#19d38f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="mini-chart-legend">
+        <span><i style="background:#19d38f;"></i>{_e(biscotti_label)}</span>
+        <span><i style="background:#7da7ff;"></i>{_e(spy_label)}</span>
+        <span><a href="biscotti.html">Meet Biscotti</a></span>
+      </div>
+    </div>
+    """
 
 
 def _pulse_block_html(daily: dict, total=None, beating=None) -> str:
@@ -711,6 +798,14 @@ LANDING_CSS = """
   .cta-primary:hover { background: #33e3a3; }
   .hero-strip { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
   .pill { font-size: 12px; color: var(--muted); border: 1px solid rgba(255,255,255,0.08); border-radius: 999px; padding: 6px 10px; }
+  .mini-chart-wrap { display: flex; flex-direction: column; gap: 10px; }
+  .mini-chart-meta { display: flex; flex-direction: column; gap: 4px; }
+  .mini-chart-title { font-size: 18px; font-weight: 700; }
+  .mini-chart-note { color: var(--muted); font-size: 14px; line-height: 1.4; }
+  .mini-chart { width: 100%; height: auto; display: block; }
+  .mini-chart-legend { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 12px; color: var(--muted); }
+  .mini-chart-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .mini-chart-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 999px; }
   @media (max-width: 560px) { .waitlist-form { grid-template-columns: 1fr; } }
 """
 
@@ -733,9 +828,10 @@ def _winners_li(entries: list) -> str:
     return "\n".join(parts)
 
 
-def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
+def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: list[dict] | None = None) -> str:
     entries = leaderboard.get("algos", [])
     winners_html = _winners_li(entries)
+    chart_html = _biscotti_chart_html(rank_history or [])
     counts = (daily or {}).get("counts", {})
     total = counts.get("total") or len(entries)
     watchlist = counts.get("watchlist", 0)
@@ -768,6 +864,10 @@ def build_landing(leaderboard: dict, daily: dict | None = None) -> str:
 
   <div class="wrap">
     <div class="grid">
+      <div class="card">
+        {chart_html}
+      </div>
+
       <div class="card">
         <h2>What you're looking at</h2>
         <p>Each row is one live paper-traded signal. Some are working. Some are failing. One of them is named after my dog. That is the point.</p>
@@ -1205,17 +1305,18 @@ def build_main():
     daily = _load("daily.json")
     leaderboard = _load("leaderboard.json")
     families = _load("families.json")
+    rank_history = _load_rank_history()
 
     out_lb = REPO / "docs" / "leaderboard.html"
     out_lb.write_text(build_leaderboard(daily, leaderboard), encoding="utf-8")
     print(f"[pages] wrote {out_lb}")
 
     out_landing = REPO / "docs" / "landing.html"
-    out_landing.write_text(build_landing(leaderboard, daily), encoding="utf-8")
+    out_landing.write_text(build_landing(leaderboard, daily, rank_history), encoding="utf-8")
     print(f"[pages] wrote {out_landing}")
 
     out_index = REPO / "docs" / "index.html"
-    out_index.write_text(build_landing(leaderboard, daily), encoding="utf-8")
+    out_index.write_text(build_landing(leaderboard, daily, rank_history), encoding="utf-8")
     print(f"[pages] wrote {out_index}")
 
     out_premium = REPO / "docs" / "premium.html"
