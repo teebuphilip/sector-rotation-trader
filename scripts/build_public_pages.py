@@ -255,11 +255,13 @@ def _footer_html(generated_at: str, run_date: str, label: str = "Updated nightly
     return f"""
 <footer>
   <div class="wrap">
-    <div class="footer-attribution">StockArithm powered by R&amp;B AlgoLabs, LLC.</div>
-    <div class="footer-label">{label}</div>
-    <div class="footer-updated">Last updated: {_e(generated_at or run_date)}</div>
-    <div class="footer-links">{_site_links()}</div>
-    <div class="footer-disclaimers">
+    <div style="display:block;width:100%;text-align:center;font-size:11px;font-style:italic;letter-spacing:0.2px;color:rgba(255,255,255,0.52);margin:0 auto 12px;">
+      StockArithm powered by R&amp;B AlgoLabs, LLC.
+    </div>
+    <div style="text-align:center;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,0.74);margin-bottom:4px;">{label}</div>
+    <div style="text-align:center;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,0.46);margin-bottom:12px;">Last updated: {_e(generated_at or run_date)}</div>
+    <div style="text-align:center;margin-top:8px;">{_site_links()}</div>
+    <div style="margin-top:12px;max-width:920px;margin-left:auto;margin-right:auto;">
       <strong>Signal Lab Notice:</strong> Experimental research only. Signals can and will fail. Do not interpret any signal as a recommendation.<br>
       <strong>Performance Disclosure:</strong> Leaderboards are model/simulation outputs and may not reflect slippage, fees, liquidity, execution delays, or market impact.<br>
       <strong>Data Disclaimer:</strong> Third-party data may be incomplete, delayed, inaccurate, or revised. Use at your own risk.<br>
@@ -376,11 +378,6 @@ CSS = """
   .ticker-error { color: var(--red); font-family: var(--mono); font-size: 13px; display: none; }
   .ticker-error.show { display: block; }
   footer { border-top: 1px solid var(--border); padding: 32px 20px; text-align: center; font-size: 12px; color: var(--muted); line-height: 1.8; }
-  .footer-attribution { display: block; width: 100%; text-align: center; font-size: 11px; font-style: italic; letter-spacing: 0.2px; color: rgba(255,255,255,0.58); margin: 0 auto 10px; }
-  .footer-label { text-align: center; font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,0.72); margin-bottom: 4px; }
-  .footer-updated { text-align: center; font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,0.48); margin-bottom: 10px; }
-  .footer-links { text-align: center; margin-top: 8px; }
-  .footer-disclaimers { margin-top: 12px; max-width: 920px; margin-left: auto; margin-right: auto; }
   footer a { color: var(--accent-dim); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
   .memorial { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); font-style: italic; color: rgba(255,255,255,0.3); }
