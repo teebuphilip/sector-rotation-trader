@@ -255,12 +255,13 @@ def _footer_html(generated_at: str, run_date: str, label: str = "Updated nightly
     return f"""
 <footer>
   <div class="wrap">
+    <div style="text-align:center;margin-top:8px;">{_site_links()}</div>
+    <div style="width:100%;max-width:520px;height:1px;margin:14px auto 14px;background:rgba(255,255,255,0.10);"></div>
     <div style="display:block;width:100%;text-align:center;font-size:11px;font-style:italic;letter-spacing:0.2px;color:rgba(255,255,255,0.52);margin:0 auto 12px;">
       StockArithm powered by R&amp;B AlgoLabs, LLC.
     </div>
     <div style="text-align:center;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,0.74);margin-bottom:4px;">{label}</div>
     <div style="text-align:center;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,0.46);margin-bottom:12px;">Last updated: {_e(generated_at or run_date)}</div>
-    <div style="text-align:center;margin-top:8px;">{_site_links()}</div>
     <div style="margin-top:12px;max-width:920px;margin-left:auto;margin-right:auto;">
       <strong>Signal Lab Notice:</strong> Experimental research only. Signals can and will fail. Do not interpret any signal as a recommendation.<br>
       <strong>Performance Disclosure:</strong> Leaderboards are model/simulation outputs and may not reflect slippage, fees, liquidity, execution delays, or market impact.<br>
