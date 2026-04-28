@@ -220,91 +220,139 @@ def _site_links() -> str:
         if i:
             parts.append('<span class="footer-sep">&middot;</span>')
         parts.append(f'<a href="{href}">{_e(label)}</a>')
-    parts.append('<span class="footer-sep">*</span>')
+    parts.append('<span class="footer-sep">&middot;</span>')
     parts.append('<a href="/biscotti.html">Biscotti</a>')
     return "".join(parts)
 
 
 def _leader_chart_html(rank_history: list[dict], leaderboard: dict) -> str:
-    top = (leaderboard.get("algos") or [])[:1]
+    sorted_top = sorted(
+        [a for a in (leaderboard.get("algos") or []) if a.get("ret_30d_pct") is not None],
+        key=lambda a: float(a.get("ret_30d_pct") or float("-inf")),
+        reverse=True,
+    )
+    top = []
+    seen_ids = set()
+    for item in sorted_top:
+        algo_id = str(item.get("algo_id") or "")
+        if not algo_id or algo_id in seen_ids:
+            continue
+        seen_ids.add(algo_id)
+        top.append(item)
     if not top:
         return '<p class="muted">Leader chart coming soon.</p>'
-    leader = top[0]
-    algo_id = str(leader.get("algo_id", ""))
-    algo_name = str(leader.get("name", "Top recent leader"))
-    category = "normal" if str(leader.get("category") or "standard") != "crazy" else "crazy"
+    chart_rows = {}
+    spy_by_date = {}
+    for row in rank_history:
+        date = str(row.get("date") or "")
+        if date:
+            try:
+                spy_by_date.setdefault(date, float(row.get("spy_pct") or 0))
+            except (TypeError, ValueError):
+                spy_by_date.setdefault(date, 0.0)
+        key = (str(row.get("algo_id") or ""), str(row.get("algo_type") or ""))
+        chart_rows.setdefault(key, []).append(row)
 
-    rows = [
-        row for row in rank_history
-        if str(row.get("algo_id", "")) == algo_id and str(row.get("algo_type", "")) == category
-    ]
-    rows.sort(key=lambda row: row.get("date", ""))
-    if len(rows) < 2:
+    timeline = sorted(spy_by_date)
+    if len(timeline) < 2:
         return '<p class="muted">Top leader chart coming soon.</p>'
 
-    points = []
-    try:
-        base_biscotti = float(rows[0].get("equity") or 0)
-        base_spy = 1.0 + (float(rows[0].get("spy_pct") or 0) / 100.0)
-        if base_biscotti <= 0 or base_spy <= 0:
-            raise ValueError
+    palette = ["#19d38f", "#7da7ff", "#f7b267", "#e879f9", "#f87171", "#facc15", "#34d399", "#60a5fa", "#fb7185", "#a78bfa"]
+    series = []
+    for idx, leader in enumerate(top):
+        if len(series) >= 10:
+            break
+        key = (str(leader.get("algo_id") or ""), "crazy" if str(leader.get("algo_type") or "") == "crazy" else "normal")
+        rows = sorted(chart_rows.get(key, []), key=lambda row: row.get("date", ""))
+        if len(rows) < 2:
+            continue
+        values_by_date: dict[str, float] = {}
+        base = None
         for row in rows:
-            biscotti_equity = float(row.get("equity") or 0)
-            spy_pct = float(row.get("spy_pct") or 0)
-            biscotti_val = biscotti_equity / base_biscotti * 100.0
-            spy_val = (1.0 + spy_pct / 100.0) / base_spy * 100.0
-            points.append((row.get("date") or "", biscotti_val, spy_val))
-    except (TypeError, ValueError, ZeroDivisionError):
-        return '<p class="muted">Biscotti chart unavailable.</p>'
+            date = str(row.get("date") or "")
+            try:
+                equity = float(row.get("equity") or 0)
+            except (TypeError, ValueError):
+                continue
+            if base is None and equity > 0:
+                base = equity
+            if base and date:
+                values_by_date[date] = equity / base * 100.0
+        if len(values_by_date) < 2:
+            continue
+        series.append((str(leader.get("name") or "Leader"), values_by_date, palette[idx % len(palette)]))
 
-    values = [v for _, bisc, spy in points for v in (bisc, spy)]
+    if not series:
+        return '<p class="muted">Top leader chart unavailable.</p>'
+
+    spy_values: dict[str, float] = {}
+    spy_base = None
+    for date in timeline:
+        try:
+            pct = float(spy_by_date.get(date) or 0)
+        except (TypeError, ValueError):
+            pct = 0.0
+        if spy_base is None:
+            spy_base = 1.0 + pct / 100.0
+        if spy_base:
+            spy_values[date] = (1.0 + pct / 100.0) / spy_base * 100.0
+
+    values = list(spy_values.values())
+    for _, values_by_date, _ in series:
+        values.extend(v for v in (values_by_date.get(date) for date in timeline) if v is not None)
     min_v = min(values)
     max_v = max(values)
     if max_v - min_v < 1e-9:
         max_v += 1.0
         min_v -= 1.0
 
-    width = 640
-    height = 240
+    width = 720
+    height = 320
     pad_x = 28
     pad_y = 24
     chart_w = width - pad_x * 2
     chart_h = height - pad_y * 2
-    steps = max(len(points) - 1, 1)
+    steps = max(len(timeline) - 1, 1)
 
     def xy(index: int, value: float):
         x = pad_x + (chart_w * index / steps)
         y = pad_y + chart_h - ((value - min_v) / (max_v - min_v) * chart_h)
         return x, y
 
-    def path(series_index: int) -> str:
+    def path(values_by_date: dict[str, float]) -> str:
         cmds = []
-        for i, (_, bisc, spy) in enumerate(points):
-            value = bisc if series_index == 0 else spy
+        last_value = None
+        started = False
+        for i, date in enumerate(timeline):
+            value = values_by_date.get(date)
+            if value is None:
+                if last_value is None:
+                    continue
+                value = last_value
+            else:
+                last_value = value
             x, y = xy(i, value)
-            cmds.append(f"{'M' if i == 0 else 'L'} {x:.1f} {y:.1f}")
+            cmds.append(f"{'M' if not started else 'L'} {x:.1f} {y:.1f}")
+            started = True
         return " ".join(cmds)
 
-    biscotti_last = points[-1][1]
-    spy_last = points[-1][2]
-    biscotti_label = f"{algo_name} {biscotti_last:.1f}"
-    spy_label = f"SPY {spy_last:.1f}"
+    spy_last = spy_values[timeline[-1]]
 
     return f"""
     <div class="mini-chart-wrap">
       <div class="mini-chart-meta">
-        <div class="mini-chart-title">Top 30D leader vs SPY</div>
-        <div class="mini-chart-note">A simple chart is enough here: the current top recent leader against the benchmark it has to beat.</div>
+        <div class="mini-chart-title">Top 10 rolling 30D leaders vs SPY</div>
+        <div class="mini-chart-note">Ten recent leaders, normalized to 100 at the start of the window, against the benchmark they need to beat.</div>
       </div>
-      <svg class="mini-chart" viewBox="0 0 {width} {height}" role="img" aria-label="Top 30D leader versus SPY chart">
+      <svg class="mini-chart" viewBox="0 0 {width} {height}" role="img" aria-label="Top 10 rolling 30D leaders versus SPY chart">
         <rect x="0" y="0" width="{width}" height="{height}" rx="14" fill="#0f1c18" stroke="rgba(255,255,255,0.08)"/>
         <line x1="{pad_x}" y1="{height - pad_y}" x2="{width - pad_x}" y2="{height - pad_y}" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-        <path d="{path(1)}" fill="none" stroke="#7da7ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="{path(0)}" fill="none" stroke="#19d38f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="{path(spy_values)}" fill="none" stroke="#7da7ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        {''.join(f'<path d="{path(values_by_date)}" fill="none" stroke="{color}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>' for _, values_by_date, color in series)}
       </svg>
       <div class="mini-chart-legend">
-        <span><i style="background:#19d38f;"></i>{_e(biscotti_label)}</span>
-        <span><i style="background:#7da7ff;"></i>{_e(spy_label)}</span>
+        {''.join(f'<span><i style="background:{color};"></i>{_e(name)}</span>' for name, _, color in series)}
+        <span><i style="background:#7da7ff;"></i>SPY {spy_last:.1f}</span>
       </div>
     </div>
     """
@@ -500,10 +548,12 @@ CSS = """
   .ticker-error { color: var(--red); font-family: var(--mono); font-size: 13px; display: none; }
   .ticker-error.show { display: block; }
   footer { border-top: 1px solid var(--border); padding: 32px 20px; text-align: center; font-size: 12px; color: var(--muted); line-height: 1.8; }
-  .footer-nav { margin-top: 8px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0 8px; font-family: var(--mono); font-size: 11px; line-height: 1.6; letter-spacing: 0.2px; color: rgba(255,255,255,0.58); }
-  .footer-nav a { color: inherit; text-decoration: none; white-space: nowrap; }
+  .footer-nav { margin-top: 8px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0 8px; width: 100%; font-family: var(--mono); font-size: 11px; line-height: 1.6; letter-spacing: 0.2px; color: rgba(255,255,255,0.58); }
+  .footer-nav a, .footer-nav a:visited { color: rgba(255,255,255,0.58); text-decoration: none; white-space: nowrap; }
   .footer-nav .footer-sep { color: rgba(255,255,255,0.40); }
   .footer-nav a:hover { text-decoration: underline; }
+  .section-title { text-align: center; }
+  .section-sub { text-align: center; }
   .rank-note { border: 1px solid var(--border); border-radius: 12px; background: rgba(255,255,255,0.035); padding: 14px 16px; margin: 14px 0 18px; color: var(--muted); font-size: 13px; line-height: 1.65; }
   .rank-note strong { color: var(--text); }
   .rank-note code { font-family: var(--mono); color: var(--gold); background: rgba(255,204,102,0.08); padding: 1px 5px; border-radius: 4px; }
@@ -558,14 +608,16 @@ def _public_algo_type(value: str) -> str:
 
 def _status_legend_html() -> str:
     return """
-    <div class="rank-note">
+    <div class="rank-note family-legend">
       <strong>Status legend:</strong>
-      <code>live_only</code> means the signal is live and publishing receipts, but does not have a clean enough history for a strict backtest.
-      <code>sandbox</code> means visible in public on purpose, but still waiting on enough data or a first live trade.
-      <code>parked</code> means temporarily set aside while the input, build, or deployment path gets cleaned up.
-      <code>promoted</code> means strong enough to feature publicly.
-      <code>backtest_weak</code> means the historical test exists but has not earned much trust.
-      <code>graveyard</code> means the idea failed badly enough that we keep it visible as a dead end.
+      <ul>
+        <li><code>live_only</code> means the signal is live and publishing receipts, but does not have a clean enough history for a strict backtest.</li>
+        <li><code>sandbox</code> means visible in public on purpose, but still waiting on enough data or a first live trade.</li>
+        <li><code>parked</code> means temporarily set aside while the input, build, or deployment path gets cleaned up.</li>
+        <li><code>promoted</code> means strong enough to feature publicly.</li>
+        <li><code>backtest_weak</code> means the historical test exists but has not earned much trust.</li>
+        <li><code>graveyard</code> means the idea failed badly enough that we keep it visible as a dead end.</li>
+      </ul>
     </div>
     """
 
@@ -935,7 +987,7 @@ def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: li
 
       <div class="card">
         <h2>Signal Index</h2>
-        <p>All 133 signals in one public list. Names, families, and status only. No rank and no returns.</p>
+        <p>All {_e(total)} signals in one public list. Names, families, and status only. No rank and no returns.</p>
         <a class="cta" href="signals/index.html">Browse all signals</a>
       </div>
     </div>
@@ -1154,7 +1206,7 @@ def build_premium(daily: dict, leaderboard: dict) -> str:
       <div class="label">Watchlist</div>
     </div>
   </div>
-  <a class="cta" href="landing.html#waitlist">Join the waitlist</a>
+  <a class="cta" href="landing.html#waitlist">Get the weekly notes</a>
   <span class="cta-sub">No checkout yet. Waitlist first, paid launch July 1.</span>
 </div>
 
@@ -1217,8 +1269,8 @@ def build_premium(daily: dict, leaderboard: dict) -> str:
         </tbody>
       </table>
     </div>
-    <div style="margin-top:18px;">
-      <a class="cta" href="landing.html#waitlist">Join the waitlist</a>
+    <div style="margin-top:18px; text-align:center;">
+      <a class="cta" href="landing.html#waitlist">Get the weekly notes</a>
       <span class="cta-sub">Free launch first. Paid layer starts July 1.</span>
     </div>
   </div>
@@ -1265,6 +1317,10 @@ def build_families_page(families: dict, daily: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>StockArithm — Families</title>
 <style>{LANDING_CSS}</style>
+<style>
+  .family-legend ul {{ margin: 10px 0 0 18px; line-height: 1.7; }}
+  .family-grid {{ margin-top: 20px; }}
+</style>
 </head>
 <body>
   <header>
@@ -1273,7 +1329,7 @@ def build_families_page(families: dict, daily: dict) -> str:
   </header>
   <div class="wrap">
     {_status_legend_html()}
-    <div class="grid">
+    <div class="grid family-grid">
 {''.join(cards)}
     </div>
   </div>
@@ -1305,6 +1361,11 @@ def build_daily_page(daily: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>StockArithm — Daily Report</title>
 <style>{REPORT_CSS}</style>
+<style>
+  .wrap-table table {{ width: 100%; min-width: 0; table-layout: fixed; }}
+  .wrap-table th, .wrap-table td {{ white-space: normal; word-break: break-word; }}
+  .daily-list {{ margin: 0 auto; max-width: 680px; padding-left: 0; list-style-position: inside; text-align: center; line-height: 1.9; }}
+</style>
 </head>
 <body>
 <div class="hero">
@@ -1337,7 +1398,8 @@ def build_daily_page(daily: dict) -> str:
 <section>
   <div class="wrap">
     <h2 class="section-title">Top Live YTD</h2>
-    <div class="table-wrap">
+    <p class="section-sub">Top live performers by year-to-date return.</p>
+    <div class="table-wrap wrap-table">
       <table>
         <thead><tr><th>#</th><th>Algorithm</th><th>Family</th><th>Return</th><th>Alpha vs SPY</th></tr></thead>
         <tbody>{top_rows}</tbody>
@@ -1348,7 +1410,8 @@ def build_daily_page(daily: dict) -> str:
 <section>
   <div class="wrap">
     <h2 class="section-title">Rolling 30D Leaders</h2>
-    <ul style="margin-left: 20px; line-height: 1.9;">{rolling_rows}</ul>
+    <p class="section-sub">Recent leaders over the last 30 days.</p>
+    <ul class="daily-list">{rolling_rows}</ul>
   </div>
 </section>
 {_footer_html(generated_at, run_date, "Daily report")}

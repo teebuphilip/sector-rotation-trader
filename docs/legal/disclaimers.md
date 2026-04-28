@@ -40,6 +40,6 @@ We do not guarantee the accuracy, completeness, or timeliness of any data presen
 
 Use of this data is at your own risk.
 
-## Short Inline Disclaimer
+## Short Disclaimer
 
 This is an experimental signal lab. Not financial advice. Signals can and will fail. Do your own research.

@@ -30,6 +30,7 @@ ALLOWLIST_FILES = [
     "docs/premium.html",
     "docs/legal.html",
     "docs/biscotti.html",
+    "docs/biscotti.jpg",
     "docs/app.html",
     "docs/signals/lookup.html",
     "docs/signals/index.html",
