@@ -867,20 +867,30 @@
       "positions": {},
       "sector": "Bank Stress Index Volatility Fear Crush Reversal",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-28",
+      "cash": 99910.26,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99910.26,
+      "positions": {},
+      "sector": "Bank Stress Index Volatility Fear Crush Reversal",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-23",
-  "last_run": "2026-04-27",
+  "last_run": "2026-04-28",
   "meta": {
     "bank-stress-index-volatility-fear-crush-reversal": {
-      "latest_value": 51.81,
-      "prior_avg": 52.072,
-      "signal_change": -0.005,
+      "latest_value": 51.85,
+      "prior_avg": 51.908,
+      "signal_change": -0.0011,
       "signal_label": "HOLD",
       "entry_date": "2026-03-27",
       "name": "Bank Stress Index Volatility Fear Crush Reversal",
       "last_signal": "HOLD",
-      "last_run": "2026-04-27"
+      "last_run": "2026-04-28"
     }
   }
 }

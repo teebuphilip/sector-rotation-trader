@@ -1,19 +1,10 @@
 {
-  "cash": 94970.89860597935,
+  "cash": 99875.00436054418,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 30.10936212700394,
+  "fees_paid": 40.31441750396588,
   "taxes_paid": 0.0,
-  "positions": {
-    "XLK": {
-      "shares": 31.132788216169267,
-      "entry_price": 160.57000732421875,
-      "entry_date": "2026-04-27",
-      "cost": 4998.99203189365,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-24",
@@ -48,6 +39,20 @@
       "cost": 4998.99,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-28",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 31.1328,
+      "price": 157.85,
+      "proceeds": 4904.11,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -94.89,
+      "pnl_pct": -1.9,
+      "entry_date": "2026-04-27",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -760,19 +765,29 @@
       },
       "sector": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
       "num_positions": 1
+    },
+    {
+      "date": "2026-04-28",
+      "cash": 99875.0,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99875.0,
+      "positions": {},
+      "sector": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-23",
-  "last_run": "2026-04-27",
+  "last_run": "2026-04-28",
   "meta": {
     "daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig": {
-      "latest_value": 62.0,
-      "prior_avg": 8.0,
-      "signal_change": 6.75,
-      "signal_label": "RISK_ON",
+      "latest_value": 50.0,
+      "prior_avg": 15.6667,
+      "signal_change": 2.1915,
+      "signal_label": "HOLD",
       "name": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-04-27",
+      "last_signal": "HOLD",
+      "last_run": "2026-04-28",
       "entry_date": "2026-04-27"
     }
   }

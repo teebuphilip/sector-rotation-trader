@@ -191,6 +191,16 @@
       "pnl_pct": -0.5,
       "entry_date": "2026-02-27",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-28",
+      "action": "BUY",
+      "ticker": "XLB",
+      "shares": 97.0424,
+      "price": 51.4,
+      "cost": 4987.98,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -933,6 +943,26 @@
       "positions": {},
       "sector": "Weekly Surge In Google Trends For Inflation Hedge Gold Signals Bullish Xlb",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-28",
+      "cash": 94761.63,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99749.61,
+      "positions": {
+        "XLB": {
+          "shares": 97.0424,
+          "entry_price": 51.4,
+          "current_price": 51.4,
+          "market_value": 4987.98,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-28",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Surge In Google Trends For Inflation Hedge Gold Signals Bullish Xlb",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-26"

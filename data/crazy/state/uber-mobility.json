@@ -1314,20 +1314,49 @@
       },
       "sector": "Uber Mobility Index",
       "num_positions": 2
+    },
+    {
+      "date": "2026-04-28",
+      "cash": 29839.36,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100977.74,
+      "positions": {
+        "XLP": {
+          "shares": 486.4656,
+          "entry_price": 81.84,
+          "current_price": 83.08,
+          "market_value": 40415.57,
+          "unrealized_pnl": 603.22,
+          "entry_date": "2026-04-21",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 664.2772,
+          "entry_price": 44.95,
+          "current_price": 46.25,
+          "market_value": 30722.82,
+          "unrealized_pnl": 863.56,
+          "entry_date": "2026-04-21",
+          "margin": false
+        }
+      },
+      "sector": "Uber Mobility Index",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16",
-  "last_run": "2026-04-27",
+  "last_run": "2026-04-28",
   "meta": {
     "uber-mobility": {
       "name": "Uber Mobility Index",
-      "last_run": "2026-04-27",
-      "mobility_index": 93,
-      "roc_4w": 0.0109,
-      "uber_interest": 81,
+      "last_run": "2026-04-28",
+      "mobility_index": 82,
+      "roc_4w": -0.1633,
+      "uber_interest": 70,
       "lyft_interest": 12,
-      "signal_label": "HOLD",
-      "signal_key": "HOLD",
+      "signal_label": "RISK_OFF",
+      "signal_key": "RISK_OFF",
       "last_signal": "RISK_OFF"
     }
   }

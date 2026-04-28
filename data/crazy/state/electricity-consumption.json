@@ -1401,17 +1401,46 @@
       },
       "sector": "Electricity Consumption",
       "num_positions": 2
+    },
+    {
+      "date": "2026-04-28",
+      "cash": 24769.41,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99538.88,
+      "positions": {
+        "XLP": {
+          "shares": 481.6966,
+          "entry_price": 82.34,
+          "current_price": 83.08,
+          "market_value": 40019.35,
+          "unrealized_pnl": 356.46,
+          "entry_date": "2026-04-27",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 751.3538,
+          "entry_price": 46.19,
+          "current_price": 46.25,
+          "market_value": 34750.12,
+          "unrealized_pnl": 45.08,
+          "entry_date": "2026-04-27",
+          "margin": false
+        }
+      },
+      "sector": "Electricity Consumption",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16",
-  "last_run": "2026-04-27",
+  "last_run": "2026-04-28",
   "meta": {
     "electricity-consumption": {
       "name": "Electricity Consumption",
-      "last_run": "2026-04-27",
+      "last_run": "2026-04-28",
       "adapter": "eia_electricity",
       "respondent": "US48",
-      "electricity_4w_chg": -0.0319,
+      "electricity_4w_chg": -0.022,
       "signal_label": "POWER_DEMAND_SLOWDOWN",
       "signal_key": "POWER_DEMAND_SLOWDOWN",
       "last_signal": "POWER_DEMAND_SLOWDOWN"

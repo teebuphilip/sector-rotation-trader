@@ -2016,9 +2016,29 @@
       },
       "sector": "XLU",
       "num_positions": 1
+    },
+    {
+      "date": "2026-04-28",
+      "cash": 90045.55,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100072.57,
+      "positions": {
+        "NEE": {
+          "shares": 103.8961,
+          "entry_price": 96.25,
+          "current_price": 96.51,
+          "market_value": 10027.01,
+          "unrealized_pnl": 27.01,
+          "entry_date": "2026-04-23",
+          "margin": false
+        }
+      },
+      "sector": "XLU",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-07",
-  "last_run": "2026-04-27",
+  "last_run": "2026-04-28",
   "meta": {}
 }

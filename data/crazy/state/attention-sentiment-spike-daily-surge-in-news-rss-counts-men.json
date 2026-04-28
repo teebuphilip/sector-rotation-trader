@@ -1,19 +1,10 @@
 {
-  "cash": 94951.7405779586,
+  "cash": 99936.92227589173,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 50.27570741201467,
+  "fees_paid": 60.48842415930942,
   "taxes_paid": 0.0,
-  "positions": {
-    "XLC": {
-      "shares": 43.156755202422694,
-      "entry_price": 115.80999755859375,
-      "entry_date": "2026-04-27",
-      "cost": 4997.9837146294,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-23",
@@ -72,6 +63,20 @@
       "cost": 4997.98,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-28",
+      "action": "SELL",
+      "ticker": "XLC",
+      "shares": 43.1568,
+      "price": 115.75,
+      "proceeds": 4985.18,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -12.8,
+      "pnl_pct": -0.26,
+      "entry_date": "2026-04-27",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -814,19 +819,29 @@
       },
       "sector": "Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc",
       "num_positions": 1
+    },
+    {
+      "date": "2026-04-28",
+      "cash": 99936.92,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99936.92,
+      "positions": {},
+      "sector": "Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-22",
-  "last_run": "2026-04-27",
+  "last_run": "2026-04-28",
   "meta": {
     "attention-sentiment-spike-daily-surge-in-news-rss-counts-men": {
       "latest_value": 31.0,
-      "prior_avg": 5.0,
-      "signal_change": 5.2,
-      "signal_label": "RISK_ON",
+      "prior_avg": 5.8333,
+      "signal_change": 4.3143,
+      "signal_label": "HOLD",
       "name": "Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-04-27",
+      "last_signal": "HOLD",
+      "last_run": "2026-04-28",
       "entry_date": "2026-04-27"
     }
   }
