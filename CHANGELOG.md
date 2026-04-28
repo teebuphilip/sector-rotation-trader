@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-04-28 (session 1 — chart, footer, and page-consistency pass)
+
+### feat: make the public chart legible and the page chrome consistent
+- The landing chart now shows the top 10 rolling 30-day leaders versus SPY with a distinct dashed SPY baseline, visible axis/grid labels, and a clearer chart frame so it reads like a real market visual instead of a flat line toy.
+- The daily report title is now fully accented, and the `Top Live YTD` section keeps the wrapped table while the quick-check box stays centered.
+- Standardized the generated footer treatment across the public pages so the centered nav, attribution, divider, disclaimers, and Biscotti memorial render the same way on leaderboard, daily, premium, signals, and legal surfaces after rebuild.
+- Brought the static blog index into the same footer-link pattern and moved the Biscotti tribute page to the same green site background family as the rest of the public surface.
+
+Files: `scripts/build_public_pages.py`, `docs/blog/index.html`, `docs/biscotti.html`
+
 ## 2026-04-27 (session 1 — landing copy pass kickoff)
 
 ### feat: start the landing-page conversion copy pass in the page generator

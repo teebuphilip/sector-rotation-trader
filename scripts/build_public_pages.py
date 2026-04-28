@@ -307,16 +307,18 @@ def _leader_chart_html(rank_history: list[dict], leaderboard: dict) -> str:
         min_v -= 1.0
 
     width = 720
-    height = 320
-    pad_x = 28
-    pad_y = 24
-    chart_w = width - pad_x * 2
-    chart_h = height - pad_y * 2
+    height = 340
+    pad_l = 58
+    pad_r = 20
+    pad_t = 18
+    pad_b = 42
+    chart_w = width - pad_l - pad_r
+    chart_h = height - pad_t - pad_b
     steps = max(len(timeline) - 1, 1)
 
     def xy(index: int, value: float):
-        x = pad_x + (chart_w * index / steps)
-        y = pad_y + chart_h - ((value - min_v) / (max_v - min_v) * chart_h)
+        x = pad_l + (chart_w * index / steps)
+        y = pad_t + chart_h - ((value - min_v) / (max_v - min_v) * chart_h)
         return x, y
 
     def path(values_by_date: dict[str, float]) -> str:
@@ -336,7 +338,37 @@ def _leader_chart_html(rank_history: list[dict], leaderboard: dict) -> str:
             started = True
         return " ".join(cmds)
 
+    def fmt_value(value: float) -> str:
+        return f"{value:.1f}"
+
+    def fmt_date_label(value: str) -> str:
+        try:
+            dt = datetime.fromisoformat(value)
+            return f"{dt.strftime('%b')} {dt.day}"
+        except Exception:
+            return value
+
+    tick_values = [min_v, min_v + (max_v - min_v) * 0.33, min_v + (max_v - min_v) * 0.66, max_v]
+    tick_points = [
+        (pad_l, timeline[0], "start"),
+        (pad_l + (chart_w * 0.5), timeline[len(timeline) // 2], "middle"),
+        (width - pad_r, timeline[-1], "end"),
+    ]
     spy_last = spy_values[timeline[-1]]
+    spy_path = path(spy_values)
+    series_paths = "".join(
+        f'<path d="{path(values_by_date)}" fill="none" stroke="{color}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>'
+        for _, values_by_date, color in series
+    )
+    y_ticks = "".join(
+        f'<line x1="{pad_l}" y1="{xy(0, v)[1]:.1f}" x2="{width - pad_r}" y2="{xy(0, v)[1]:.1f}" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 6" stroke-width="1"/>'
+        f'<text x="{pad_l - 10}" y="{xy(0, v)[1] + 4:.1f}" text-anchor="end" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" fill="rgba(255,255,255,0.55)">{fmt_value(v)}</text>'
+        for v in tick_values
+    )
+    x_labels = "".join(
+        f'<text x="{x:.1f}" y="{height - 12}" text-anchor="{anchor}" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" fill="rgba(255,255,255,0.55)">{_e(fmt_date_label(d))}</text>'
+        for x, d, anchor in tick_points
+    )
 
     return f"""
     <div class="mini-chart-wrap">
@@ -346,13 +378,16 @@ def _leader_chart_html(rank_history: list[dict], leaderboard: dict) -> str:
       </div>
       <svg class="mini-chart" viewBox="0 0 {width} {height}" role="img" aria-label="Top 10 rolling 30D leaders versus SPY chart">
         <rect x="0" y="0" width="{width}" height="{height}" rx="14" fill="#0f1c18" stroke="rgba(255,255,255,0.08)"/>
-        <line x1="{pad_x}" y1="{height - pad_y}" x2="{width - pad_x}" y2="{height - pad_y}" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-        <path d="{path(spy_values)}" fill="none" stroke="#7da7ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        {''.join(f'<path d="{path(values_by_date)}" fill="none" stroke="{color}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>' for _, values_by_date, color in series)}
+        {y_ticks}
+        <line x1="{pad_l}" y1="{pad_t}" x2="{pad_l}" y2="{pad_t + chart_h}" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+        <line x1="{pad_l}" y1="{pad_t + chart_h}" x2="{width - pad_r}" y2="{pad_t + chart_h}" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+        <path d="{spy_path}" fill="none" stroke="#8faeff" stroke-width="4" stroke-dasharray="10 6" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+        {series_paths}
+        {x_labels}
       </svg>
       <div class="mini-chart-legend">
         {''.join(f'<span><i style="background:{color};"></i>{_e(name)}</span>' for name, _, color in series)}
-        <span><i style="background:#7da7ff;"></i>SPY {spy_last:.1f}</span>
+        <span><i style="background:none;border-top:3px dashed #8faeff;width:18px;height:0;border-radius:0;"></i>SPY baseline {spy_last:.1f}</span>
       </div>
     </div>
     """
@@ -445,9 +480,9 @@ def _footer_html(generated_at: str, run_date: str, label: str = "Updated nightly
 CSS = """
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
   :root {
-    --bg: #0a0a0a;
-    --bg2: #111;
-    --card: #161616;
+    --bg: #0d1412;
+    --bg2: #13231f;
+    --card: #182b26;
     --border: rgba(255,255,255,0.08);
     --accent: #19d38f;
     --accent-dim: #12a06b;
@@ -456,13 +491,13 @@ CSS = """
     --yellow: #eab308;
     --gold: #d4a017;
     --purple: #a855f7;
-    --muted: #888;
-    --text: #e8e8e8;
+    --muted: #9ab0a7;
+    --text: #ecf5f2;
     --mono: 'IBM Plex Mono', ui-monospace, monospace;
     --sans: 'Space Grotesk', system-ui, sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  body { font-family: var(--sans); color: var(--text); background: radial-gradient(1000px 600px at 15% -10%, #1e3f35, transparent), radial-gradient(900px 500px at 90% 0%, #1b352f, transparent), var(--bg); line-height: 1.5; -webkit-font-smoothing: antialiased; }
   .hero { text-align: center; padding: 60px 24px 48px; background: radial-gradient(800px 400px at 50% 0%, rgba(25,211,143,0.06), transparent), var(--bg); border-bottom: 1px solid var(--border); }
   .hero-badge { display: inline-block; font-family: var(--mono); font-size: 12px; color: var(--accent); border: 1px solid var(--accent-dim); border-radius: 20px; padding: 4px 14px; margin-bottom: 16px; letter-spacing: 0.5px; }
   .hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 700; letter-spacing: -0.5px; margin-bottom: 12px; }
@@ -530,7 +565,7 @@ CSS = """
   .paywall-cta-row td { text-align: center; padding: 16px; border-bottom: none; }
   .paywall-cta-row a { color: var(--accent); font-weight: 600; text-decoration: none; font-size: 14px; }
   .paywall-cta-row a:hover { text-decoration: underline; }
-  .ticker-check { max-width: 480px; }
+  .ticker-check { max-width: 480px; margin: 0 auto; }
   .ticker-input-wrap { display: flex; gap: 10px; margin-bottom: 16px; }
   .ticker-input { flex: 1; padding: 12px 16px; font-family: var(--mono); font-size: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; color: var(--text); outline: none; text-transform: uppercase; }
   .ticker-input::placeholder { color: rgba(255,255,255,0.2); }
@@ -1362,6 +1397,7 @@ def build_daily_page(daily: dict) -> str:
 <title>StockArithm — Daily Report</title>
 <style>{REPORT_CSS}</style>
 <style>
+  .daily-title {{ color: var(--accent); }}
   .wrap-table table {{ width: 100%; min-width: 0; table-layout: fixed; }}
   .wrap-table th, .wrap-table td {{ white-space: normal; word-break: break-word; }}
   .daily-list {{ margin: 0 auto; max-width: 680px; padding-left: 0; list-style-position: inside; text-align: center; line-height: 1.9; }}
@@ -1370,7 +1406,7 @@ def build_daily_page(daily: dict) -> str:
 <body>
 <div class="hero">
   <div class="hero-badge">DAILY REPORT</div>
-  <h1><span>{_e(run_date)}</span> nightly snapshot</h1>
+  <h1 class="daily-title">{_e(run_date)} nightly snapshot</h1>
   <p class="hero-sub">What changed in the lab after the nightly run.</p>
 </div>
 {_pulse_block_html(daily)}
