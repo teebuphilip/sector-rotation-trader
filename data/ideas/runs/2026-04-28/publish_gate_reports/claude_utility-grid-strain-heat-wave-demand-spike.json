@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-04-28/publish/claude_utility-grid-strain-heat-wave-demand-spike.md",
+  "target_file": "data/ideas/runs/2026-04-28/intervention/claude_utility-grid-strain-heat-wave-demand-spike.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "eia_electricity",
+    "needs_new_adapter": true,
+    "reason": "No existing adapter directly supports Open-Meteo temperature data combined with EIA electricity demand.",
+    "risk_flags": [
+      "missing temperature adapter",
+      "potential data latency mismatch",
+      "requires multi-source data fusion"
+    ],
+    "route": {
+      "adapters": [
+        "eia_electricity",
+        "fred_series"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "fred_series": 1,
+        "html_table": 1,
+        "eia_electricity": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1033,
+    "output_tokens": 84
+  },
+  "cost_usd": 0.0034225,
+  "raw_llm_response": "{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"eia_electricity\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly supports Open-Meteo temperature data combined with EIA electricity demand.\",\n  \"risk_flags\": [\"missing temperature adapter\", \"requires multi-source data fusion\", \"potential data latency mismatch\"]\n}"
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T23:31:10Z",
+  "generated_at": "2026-04-28T23:35:31Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
@@ -176,15 +176,15 @@
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 15,
+      "count": 18,
       "by_status": {
         "failed": 1,
-        "live_only": 9,
-        "sandbox": 5
+        "live_only": 10,
+        "sandbox": 7
       },
       "by_evidence_class": {
-        "live_receipts_only": 9,
-        "needs_history": 5,
+        "live_receipts_only": 10,
+        "needs_history": 7,
         "v1_backtested": 1
       },
       "leaders": [
@@ -655,16 +655,40 @@
     },
     "labor_jobs": {
       "family": "labor_jobs",
-      "count": 5,
+      "count": 7,
       "by_status": {
-        "live_only": 2,
+        "live_only": 4,
         "sandbox": 3
       },
       "by_evidence_class": {
-        "live_receipts_only": 2,
+        "live_receipts_only": 4,
         "needs_history": 3
       },
       "leaders": [
+        {
+          "key": "crazy:recession-whisper-google-trends-unemployment-search-surge",
+          "algo_type": "crazy",
+          "algo_id": "recession-whisper-google-trends-unemployment-search-surge",
+          "name": "Recession Whisper Google Trends Unemployment Search Surge",
+          "family": "labor_jobs",
+          "status": "live_only",
+          "evidence_class": "live_receipts_only",
+          "rebalance_frequency": "weekly",
+          "universe": [
+            "XLY"
+          ],
+          "equity": 100072.76,
+          "ytd_pct": 0.07,
+          "trade_count": 2,
+          "positions": 0,
+          "last_snapshot": "2026-04-28",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": null,
+          "backtest_reason": null,
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
         {
           "key": "crazy:daily-spike-in-rss-news-counts-around-labor-union-contract-n",
           "algo_type": "crazy",
@@ -780,30 +804,6 @@
           "new_algo_date": null,
           "backtest_status": "UNSUPPORTED_DATA",
           "backtest_reason": "No supported V1 price-only backtest path",
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:weekly-surge-in-job-postings-for-warehouse-workers-signals-b",
-          "algo_type": "crazy",
-          "algo_id": "weekly-surge-in-job-postings-for-warehouse-workers-signals-b",
-          "name": "Weekly Surge In Job Postings For Warehouse Workers Signals Bullish Xli",
-          "family": "labor_jobs",
-          "status": "live_only",
-          "evidence_class": "live_receipts_only",
-          "rebalance_frequency": "weekly",
-          "universe": [
-            "XLI"
-          ],
-          "equity": 99984.48,
-          "ytd_pct": -0.02,
-          "trade_count": 2,
-          "positions": 0,
-          "last_snapshot": "2026-04-28",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": null,
-          "backtest_reason": null,
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
         }
@@ -1258,14 +1258,14 @@
     },
     "travel_mobility": {
       "family": "travel_mobility",
-      "count": 9,
+      "count": 10,
       "by_status": {
         "live_only": 2,
-        "sandbox": 7
+        "sandbox": 8
       },
       "by_evidence_class": {
         "live_receipts_only": 2,
-        "needs_history": 7
+        "needs_history": 8
       },
       "leaders": [
         {

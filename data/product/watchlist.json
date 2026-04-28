@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T23:31:10Z",
+  "generated_at": "2026-04-28T23:35:31Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -310,6 +310,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-google-trends-surge-in-diy-electronics-repair-signals",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-in-diy-electronics-repair-signals",
+      "name": "Weekly Google Trends Surge In Diy Electronics Repair Signals Tech Consumer Stress Lift",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLK"
+      ],
+      "equity": 99926.34,
+      "ytd_pct": -0.07,
+      "trade_count": 12,
+      "positions": 0,
+      "last_snapshot": "2026-04-28",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-rise-in-google-trends-interest-for-food-delivery-dela",
       "algo_type": "crazy",
       "algo_id": "weekly-rise-in-google-trends-interest-for-food-delivery-dela",
@@ -420,6 +444,54 @@
       "equity": 100007.5,
       "ytd_pct": 0.01,
       "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-04-28",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:recession-whisper-google-trends-unemployment-search-surge",
+      "algo_type": "crazy",
+      "algo_id": "recession-whisper-google-trends-unemployment-search-surge",
+      "name": "Recession Whisper Google Trends Unemployment Search Surge",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 100072.76,
+      "ytd_pct": 0.07,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-04-28",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:wage-growth-demand-surge-fast-food-google-trends",
+      "algo_type": "crazy",
+      "algo_id": "wage-growth-demand-surge-fast-food-google-trends",
+      "name": "Wage Growth Demand Surge Fast Food Google Trends",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99799.52,
+      "ytd_pct": -0.2,
+      "trade_count": 18,
       "positions": 0,
       "last_snapshot": "2026-04-28",
       "last_signal": null,

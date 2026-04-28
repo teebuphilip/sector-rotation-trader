@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-04-28/publish/claude_freight-volume-collapse-on-weak-trucking-orders.md",
+  "target_file": "data/ideas/runs/2026-04-28/intervention/claude_freight-volume-collapse-on-weak-trucking-orders.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "potential data source instability",
+      "unsupported_template_adapter",
+      "weekly frequency with volume data"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 991,
+    "output_tokens": 83
+  },
+  "cost_usd": 0.0033075,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Low confidence in adapter routing and weekly frequency with volume data needs manual review\",\n  \"risk_flags\": [\"low adapter routing confidence\", \"weekly frequency with volume data\", \"potential data source instability\"]\n}\n```"
+}

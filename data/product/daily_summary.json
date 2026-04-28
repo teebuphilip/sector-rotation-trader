@@ -1,25 +1,25 @@
 {
   "run_date": "2026-04-28",
-  "generated_at": "2026-04-28T23:31:10Z",
+  "generated_at": "2026-04-28T23:35:31Z",
   "counts": {
-    "total": 138,
+    "total": 144,
     "normal": 5,
-    "crazy": 133,
-    "watchlist": 51,
+    "crazy": 139,
+    "watchlist": 54,
     "promoted": 5,
     "graveyard": 7
   },
   "by_status": {
     "backtest_weak": 4,
     "failed": 1,
-    "live_only": 42,
+    "live_only": 45,
     "parked": 6,
     "promoted": 5,
-    "sandbox": 80
+    "sandbox": 83
   },
   "by_evidence_class": {
-    "live_receipts_only": 42,
-    "needs_history": 78,
+    "live_receipts_only": 45,
+    "needs_history": 81,
     "pending_seed": 6,
     "v1_backtested": 12
   },
@@ -246,6 +246,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:recession-whisper-google-trends-unemployment-search-surge",
+      "algo_type": "crazy",
+      "algo_id": "recession-whisper-google-trends-unemployment-search-surge",
+      "name": "Recession Whisper Google Trends Unemployment Search Surge",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 100072.76,
+      "ytd_pct": 0.07,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-04-28",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:earthquake-aftershock-amplifier",
       "algo_type": "crazy",
       "algo_id": "earthquake-aftershock-amplifier",
@@ -292,35 +316,6 @@
       "backtest_reason": "Backtest completed",
       "backtest_alpha_vs_spy_pct": -50.82,
       "backtest_trade_count": 24
-    },
-    {
-      "key": "crazy:retail-sales-momentum",
-      "algo_type": "crazy",
-      "algo_id": "retail-sales-momentum",
-      "name": "Retail Sales Momentum",
-      "family": "consumer_stress",
-      "status": "live_only",
-      "evidence_class": "live_receipts_only",
-      "rebalance_frequency": "monthly",
-      "universe": [
-        "XLY",
-        "XLK",
-        "XLF",
-        "XLP",
-        "XLU",
-        "XLV"
-      ],
-      "equity": 100036.09,
-      "ytd_pct": 0.04,
-      "trade_count": 2,
-      "positions": 2,
-      "last_snapshot": "2026-04-28",
-      "last_signal": null,
-      "new_algo_date": null,
-      "backtest_status": "UNSUPPORTED_DATA",
-      "backtest_reason": "No supported V1 price-only backtest path",
-      "backtest_alpha_vs_spy_pct": null,
-      "backtest_trade_count": null
     }
   ]
 }

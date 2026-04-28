@@ -1,0 +1,38 @@
+{
+  "source_file": "data/ideas/runs/2026-04-28/publish/claude_real-estate-cap-rate-compression-yield-chase-unwind.md",
+  "target_file": "data/ideas/runs/2026-04-28/intervention/claude_real-estate-cap-rate-compression-yield-chase-unwind.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "complex signal logic combining FRED and price_only data",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "multiple data sources needing coordination",
+      "no explicit volume data adapter for XLRE",
+      "price_only adapter may lack volume for XLRE",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "price_only"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 1057,
+    "output_tokens": 119
+  },
+  "cost_usd": 0.0038325,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": null,\n  \"needs_new_adapter\": true,\n  \"reason\": \"FRED mortgage rate series and XLRE price require multiple adapters and volume data is unclear\",\n  \"risk_flags\": [\n    \"low adapter routing confidence\",\n    \"multiple data sources needing coordination\",\n    \"price_only adapter may lack volume for XLRE\",\n    \"complex signal logic combining FRED and price_only data\",\n    \"no explicit volume data adapter for XLRE\"\n  ]\n}\n```"
+}

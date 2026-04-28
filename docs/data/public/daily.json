@@ -1,26 +1,26 @@
 {
   "schema_version": "v1",
   "run_date": "2026-04-28",
-  "generated_at": "2026-04-28T23:31:18Z",
+  "generated_at": "2026-04-28T23:35:31Z",
   "counts": {
-    "total": 138,
+    "total": 144,
     "normal": 5,
-    "crazy": 133,
-    "watchlist": 51,
+    "crazy": 139,
+    "watchlist": 54,
     "promoted": 5,
     "graveyard": 7
   },
   "by_status": {
     "backtest_weak": 4,
     "failed": 1,
-    "live_only": 42,
+    "live_only": 45,
     "parked": 6,
     "promoted": 5,
-    "sandbox": 80
+    "sandbox": 83
   },
   "by_evidence_class": {
-    "live_receipts_only": 42,
-    "needs_history": 78,
+    "live_receipts_only": 45,
+    "needs_history": 81,
     "pending_seed": 6,
     "v1_backtested": 12
   },
@@ -36,15 +36,15 @@
     "XLC"
   ],
   "ticker_count": 105,
-  "signal_count": 138,
+  "signal_count": 144,
   "sector_summary": {
     "XLK": {
       "etf": "XLK",
       "sector": "Technology",
-      "composite": "8 of 20",
+      "composite": "8 of 21",
       "composite_label": "MIXED",
       "composite_color": "yellow",
-      "bullish_pct": 40
+      "bullish_pct": 38
     },
     "XLV": {
       "etf": "XLV",
@@ -65,10 +65,10 @@
     "XLY": {
       "etf": "XLY",
       "sector": "Consumer Cyclical",
-      "composite": "6 of 24",
+      "composite": "6 of 26",
       "composite_label": "BEARISH",
       "composite_color": "red",
-      "bullish_pct": 25
+      "bullish_pct": 23
     },
     "XLI": {
       "etf": "XLI",
@@ -277,6 +277,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:recession-whisper-google-trends-unemployment-search-surge",
+      "algo_type": "crazy",
+      "algo_id": "recession-whisper-google-trends-unemployment-search-surge",
+      "name": "Recession Whisper Google Trends Unemployment Search Surge",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.07,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.07,
+      "spy_delta_30d_pct": -12.54,
+      "last_snapshot": "2026-04-28",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.329,
+            "return_pct": -1.647
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 10.742
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:semiconductor-moonshot-warning",
       "algo_type": "crazy",
       "algo_id": "semiconductor-moonshot-warning",
@@ -346,31 +382,10 @@
         },
         "summary": "mixed"
       }
-    },
-    {
-      "schema_version": "v1",
-      "key": "crazy:retail-sales-momentum",
-      "algo_type": "crazy",
-      "algo_id": "retail-sales-momentum",
-      "name": "Retail Sales Momentum",
-      "family": "consumer_stress",
-      "status": "live_only",
-      "evidence_class": "live_receipts_only",
-      "rebalance_frequency": "monthly",
-      "ytd_pct": 0.04,
-      "days_running": 84,
-      "beat_spy": false,
-      "spy_pct": 4.46,
-      "alpha_pct": -4.42,
-      "ret_30d_pct": 0.04,
-      "spy_delta_30d_pct": -12.58,
-      "last_snapshot": "2026-04-28",
-      "new_algo_date": null,
-      "comparator": null
     }
   ],
   "rolling_30d": {
-    "as_of": "2026-04-28T23:31:17.628951",
+    "as_of": "2026-04-28T23:35:29.939325",
     "spy_ret_30d_pct": 12.61,
     "leaders": [
       {

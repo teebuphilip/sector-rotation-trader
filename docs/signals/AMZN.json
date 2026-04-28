@@ -2,15 +2,15 @@
   "ticker": "AMZN",
   "sector": "Consumer Cyclical",
   "sector_etf": "XLY",
-  "composite": "6 of 24",
+  "composite": "6 of 26",
   "composite_label": "BEARISH",
   "composite_color": "red",
   "bullish": 6,
-  "bearish": 18,
-  "neutral": 114,
-  "total_signals": 138,
-  "total_active": 24,
-  "bullish_pct": 25,
+  "bearish": 20,
+  "neutral": 118,
+  "total_signals": 144,
+  "total_active": 26,
+  "bullish_pct": 23,
   "breakdown": [
     {
       "algo_id": "reddit-subreddit-mention-spike",
@@ -36,6 +36,15 @@
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 70,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-for-hotel-room-shortage-signal",
+      "name": "Weekly Surge In Google Trends For Hotel Room Shortage Signals Travel Sector Tightness",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -472,6 +481,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "weekly-google-trends-surge-in-energy-bill-shock-signals-cons",
+      "name": "Weekly Google Trends Surge In Energy Bill Shock Signals Consumer Stress Impacting Utilities",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "news-sentiment-rotation-fade-trade",
       "name": "News Sentiment Rotation Fade Trade",
       "algo_type": "crazy",
@@ -760,6 +778,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "wage-growth-demand-surge-fast-food-google-trends",
+      "name": "Wage Growth Demand Surge Fast Food Google Trends",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 66,
+      "ytd_pct": -0.2,
+      "beat_spy": false
+    },
+    {
       "algo_id": "weekly-surge-in-openchargemap-ev-charger-installations-signa",
       "name": "Weekly Surge In Openchargemap Ev Charger Installations Signals Bullish Xlc",
       "algo_type": "crazy",
@@ -913,6 +940,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "weekly-surge-in-google-trends-for-diy-plumbing-repair-signal",
+      "name": "Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "rental-car-shortage-volatility-spike",
       "name": "Rental Car Shortage Volatility Spike",
       "algo_type": "crazy",
@@ -946,6 +982,15 @@
       "direction": "BEARISH",
       "days_running": 72,
       "ytd_pct": -0.78,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "recession-whisper-google-trends-unemployment-search-surge",
+      "name": "Recession Whisper Google Trends Unemployment Search Surge",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 66,
+      "ytd_pct": 0.07,
       "beat_spy": false
     },
     {
@@ -1153,6 +1198,15 @@
       "direction": "NEUTRAL",
       "days_running": 82,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-google-trends-surge-in-diy-electronics-repair-signals",
+      "name": "Weekly Google Trends Surge In Diy Electronics Repair Signals Tech Consumer Stress Lift",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": -0.07,
       "beat_spy": false
     },
     {

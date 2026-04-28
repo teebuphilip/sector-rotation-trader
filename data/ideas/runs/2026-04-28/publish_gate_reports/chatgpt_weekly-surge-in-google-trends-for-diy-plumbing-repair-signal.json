@@ -1,0 +1,32 @@
+{
+  "source_file": "data/ideas/runs/2026-04-28/publish/chatgpt_weekly-surge-in-google-trends-for-diy-plumbing-repair-signal.md",
+  "target_file": "data/ideas/runs/2026-04-28/build/chatgpt_weekly-surge-in-google-trends-for-diy-plumbing-repair-signal.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, deterministic, uses a valid Google Trends adapter, and is buildable as is.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 932,
+    "output_tokens": 82
+  },
+  "cost_usd": 0.00315,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses a valid Google Trends adapter, and is buildable as is.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

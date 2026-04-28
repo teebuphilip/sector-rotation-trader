@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-28/publish/chatgpt_daily-spike-in-political-insider-filings-for-financial-secto.md",
+  "target_file": "data/ideas/runs/2026-04-28/intervention/chatgpt_daily-spike-in-political-insider-filings-for-financial-secto.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "adapter mismatch with SEC insider filings API",
+      "data source instability",
+      "requires net selling data not available in html_table",
+      "requires short position",
+      "short_trade_not_supported",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "html_table": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 932,
+    "output_tokens": 103
+  },
+  "cost_usd": 0.00336,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly supports SEC insider filings with net selling data and short entry logic.\",\n  \"risk_flags\": [\n    \"requires short position\",\n    \"requires net selling data not available in html_table\",\n    \"adapter mismatch with SEC insider filings API\",\n    \"data source instability\"\n  ]\n}\n```"
+}

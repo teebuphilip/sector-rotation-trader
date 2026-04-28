@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-28/publish/claude_ev-charger-installation-slowdown-sentiment-fade.md",
+  "target_file": "data/ideas/runs/2026-04-28/intervention/claude_ev-charger-installation-slowdown-sentiment-fade.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "openchargemap",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "cross-adapter data integration",
+      "frequency mismatch",
+      "signal timing ambiguity",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "openchargemap"
+      ],
+      "scores": {
+        "openchargemap": 3,
+        "fred_series": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1003,
+    "output_tokens": 83
+  },
+  "cost_usd": 0.0033375,
+  "raw_llm_response": "{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"openchargemap\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Weekly frequency and cross-referencing with FRED vehicle sales require manual review for data alignment and signal timing.\",\n  \"risk_flags\": [\"frequency mismatch\", \"cross-adapter data integration\", \"signal timing ambiguity\"]\n}"
+}

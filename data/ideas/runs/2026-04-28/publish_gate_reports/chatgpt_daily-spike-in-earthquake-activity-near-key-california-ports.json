@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-04-28/publish/chatgpt_daily-spike-in-earthquake-activity-near-key-california-ports.md",
+  "target_file": "data/ideas/runs/2026-04-28/intervention/chatgpt_daily-spike-in-earthquake-activity-near-key-california-ports.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "entry/exit logic needs manual review",
+      "position sizing may conflict with long/flat only",
+      "requires short position",
+      "short_trade_not_supported"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity"
+      ],
+      "scores": {
+        "earthquake_activity": 3,
+        "html_table": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 928,
+    "output_tokens": 88
+  },
+  "cost_usd": 0.0032,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is not supported by current algo envelope.\",\n  \"risk_flags\": [\"requires short position\", \"position sizing may conflict with long/flat only\", \"entry/exit logic needs manual review\"]\n}\n```"
+}

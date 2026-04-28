@@ -1,0 +1,38 @@
+{
+  "source_file": "data/ideas/runs/2026-04-28/publish/claude_weather-driven-agricultural-futures-shock-consumer-food-infl.md",
+  "target_file": "data/ideas/runs/2026-04-28/intervention/claude_weather-driven-agricultural-futures-shock-consumer-food-infl.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "weather_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "complex entry/exit conditions",
+      "cross-adapter data fusion",
+      "multi-frequency data alignment",
+      "unsupported_template_adapter",
+      "volume data not specified"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "weather_series"
+      ],
+      "scores": {
+        "weather_series": 3,
+        "fred_series": 1,
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1053,
+    "output_tokens": 89
+  },
+  "cost_usd": 0.0035225,
+  "raw_llm_response": "{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"weather_series\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Requires combining daily weather data with weekly FRED commodity prices, no single adapter covers both.\",\n  \"risk_flags\": [\"multi-frequency data alignment\", \"cross-adapter data fusion\", \"volume data not specified\", \"complex entry/exit conditions\"]\n}"
+}

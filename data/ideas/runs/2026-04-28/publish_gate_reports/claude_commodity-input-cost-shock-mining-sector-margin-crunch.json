@@ -1,0 +1,39 @@
+{
+  "source_file": "data/ideas/runs/2026-04-28/publish/claude_commodity-input-cost-shock-mining-sector-margin-crunch.md",
+  "target_file": "data/ideas/runs/2026-04-28/intervention/claude_commodity-input-cost-shock-mining-sector-margin-crunch.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "complex multi-source logic",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "multiple FRED series needed",
+      "price_only adapter insufficient for commodity indices",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table",
+        "price_only"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 1015,
+    "output_tokens": 92
+  },
+  "cost_usd": 0.0034575,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": null,\n  \"needs_new_adapter\": true,\n  \"reason\": \"FRED commodity indices require multiple series adapters and combined logic not covered by existing adapters\",\n  \"risk_flags\": [\"low adapter routing confidence\", \"multiple FRED series needed\", \"price_only adapter insufficient for commodity indices\", \"complex multi-source logic\"]\n}\n```"
+}

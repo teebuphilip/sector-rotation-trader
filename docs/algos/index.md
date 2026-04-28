@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-28T23:31:09
+Updated (UTC): 2026-04-28T23:35:30
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 133
+Crazy models: 139
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -149,3 +149,9 @@ Crazy models: 133
 | weekly-surge-in-google-trends-for-inflation-hedge-gold-signa | Weekly Surge In Google Trends For Inflation Hedge Gold Signals Bullish Xlb | weekly |
 | ev-charger-network-density-surge-bullish-signal | Ev Charger Network Density Surge Bullish Signal | daily |
 | oil-price-momentum-reversal-energy-sector-bounce | Oil Price Momentum Reversal Energy Sector Bounce | daily |
+| weekly-google-trends-surge-in-diy-electronics-repair-signals | Weekly Google Trends Surge In Diy Electronics Repair Signals Tech Consumer Stress Lift | weekly |
+| weekly-google-trends-surge-in-energy-bill-shock-signals-cons | Weekly Google Trends Surge In Energy Bill Shock Signals Consumer Stress Impacting Utilities | weekly |
+| weekly-surge-in-google-trends-for-diy-plumbing-repair-signal | Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound | weekly |
+| weekly-surge-in-google-trends-for-hotel-room-shortage-signal | Weekly Surge In Google Trends For Hotel Room Shortage Signals Travel Sector Tightness | weekly |
+| recession-whisper-google-trends-unemployment-search-surge | Recession Whisper Google Trends Unemployment Search Surge | weekly |
+| wage-growth-demand-surge-fast-food-google-trends | Wage Growth Demand Surge Fast Food Google Trends | weekly |

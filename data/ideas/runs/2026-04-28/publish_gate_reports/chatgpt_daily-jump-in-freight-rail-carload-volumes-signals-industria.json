@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-28/publish/chatgpt_daily-jump-in-freight-rail-carload-volumes-signals-industria.md",
+  "target_file": "data/ideas/runs/2026-04-28/intervention/chatgpt_daily-jump-in-freight-rail-carload-volumes-signals-industria.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "tsa_table",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "data source instability",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "missing direct adapter for freight rail data",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "tsa_table": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 930,
+    "output_tokens": 82
+  },
+  "cost_usd": 0.003145,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"tsa_table\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly provides daily freight rail carload volume data.\",\n  \"risk_flags\": [\"data source instability\", \"low adapter routing confidence\", \"missing direct adapter for freight rail data\"]\n}\n```"
+}

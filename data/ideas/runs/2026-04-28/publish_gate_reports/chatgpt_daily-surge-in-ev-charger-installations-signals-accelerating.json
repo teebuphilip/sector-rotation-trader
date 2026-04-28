@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-28/publish/chatgpt_daily-surge-in-ev-charger-installations-signals-accelerating.md",
+  "target_file": "data/ideas/runs/2026-04-28/intervention/chatgpt_daily-surge-in-ev-charger-installations-signals-accelerating.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "openchargemap",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "daily frequency requires reliable daily data",
+      "data source adapter missing",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "openchargemap": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 936,
+    "output_tokens": 85
+  },
+  "cost_usd": 0.00319,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"openchargemap\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly supports Open-Charge-Map daily EV charger counts\",\n  \"risk_flags\": [\"data source adapter missing\", \"low adapter routing confidence\", \"daily frequency requires reliable daily data\"]\n}\n```"
+}
