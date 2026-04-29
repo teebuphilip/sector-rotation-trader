@@ -1,0 +1,292 @@
+{
+  "date": "2026-04-29",
+  "input_count": 25,
+  "kept_count": 21,
+  "duplicate_count": 4,
+  "kept_by_source": {
+    "chatgpt": 11,
+    "claude": 10
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-google-trends-searches-for-truck-driver-short",
+      "title": "Daily Spike In Google Trends Searches For Truck Driver Shortage Signals Bullish Industrials",
+      "family": "labor_jobs",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "daily spike in google trends searches for truck driver shortage signals bullish xli",
+        "matched_idea_id": "daily-spike-in-google-trends-searches-for-truck-driver-short",
+        "matched_origin": "history:2026-04-25",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-google-trends-searches-for-truck-driver-short",
+        "title": "Daily Spike In Google Trends Searches For Truck Driver Shortage Signals Bullish Industrials",
+        "family": "labor_jobs",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "A surge in searches around truck driver shortages suggests tightening labor supply, which often precedes freight pricing power and industrial logistics strength. Tight driver labor markets increase freight rates and benefit industrial transportation firms.",
+        "data_sources": [
+          "Google Trends daily search interest"
+        ],
+        "signal_logic": "Enter long on XLI when daily Google Trends for 'truck driver shortage' rises 20%+ compared to 5-day average",
+        "entry_exit": "Entry: Enter long on XLI when daily Google Trends for 'truck driver shortage' rises 20%+ compared to 5-day average Exit: Exit after 7 trading days or if searches drop below 5-day average",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Labor shortages and related news cycles frequently spike search interest.",
+        "schema": {
+          "idea": "Daily Spike In Google Trends Searches For 'Truck Driver Shortage' Signals Bullish Industrials",
+          "family": "labor_jobs",
+          "data": {
+            "source": "Google Trends daily search interest",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "A surge in searches around truck driver shortages suggests tightening labor supply, which often precedes freight pricing power and industrial logistics strength.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLI",
+            "rationale": "Tight driver labor markets increase freight rates and benefit industrial transportation firms."
+          },
+          "trade_logic": {
+            "entry": "Enter long on XLI when daily Google Trends for 'truck driver shortage' rises 20%+ compared to 5-day average",
+            "exit": "Exit after 7 trading days or if searches drop below 5-day average",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Labor shortages and related news cycles frequently spike search interest.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-google-trends-surge-in-diy-home-mold-remediation-sear",
+      "title": "Weekly Google Trends Surge In Diy Home Mold Remediation Searches Signals Bullish Consumer Discretionary",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.483,
+        "matched_title": "weekly surge in google trends for diy plumbing repair signals consumer stress rebound",
+        "matched_idea_id": "weekly-surge-in-google-trends-for-diy-plumbing-repair-signal",
+        "matched_origin": "history:2026-04-28",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-google-trends-surge-in-diy-home-mold-remediation-sear",
+        "title": "Weekly Google Trends Surge In Diy Home Mold Remediation Searches Signals Bullish Consumer Discretionary",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising mold remediation interest signals consumers delaying professional services and increasing DIY spending on home products. DIY home improvement spending benefits retailers in consumer discretionary.",
+        "data_sources": [
+          "Google Trends weekly search interest"
+        ],
+        "signal_logic": "Enter long on XLY if weekly Google Trends for 'DIY home mold remediation' rises 15%+ week-over-week",
+        "entry_exit": "Entry: Enter long on XLY if weekly Google Trends for 'DIY home mold remediation' rises 15%+ week-over-week Exit: Exit after 3 weeks or if search interest falls below 10% growth",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly search interest via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Home maintenance search trends fluctuate seasonally and with weather events.",
+        "schema": {
+          "idea": "Weekly Google Trends Surge In 'DIY Home Mold Remediation' Searches Signals Bullish Consumer Discretionary",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends weekly search interest",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Rising mold remediation interest signals consumers delaying professional services and increasing DIY spending on home products.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "DIY home improvement spending benefits retailers in consumer discretionary."
+          },
+          "trade_logic": {
+            "entry": "Enter long on XLY if weekly Google Trends for 'DIY home mold remediation' rises 15%+ week-over-week",
+            "exit": "Exit after 3 weeks or if search interest falls below 10% growth",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Home maintenance search trends fluctuate seasonally and with weather events.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-google-trends-surge-in-diy-auto-repair-searches-signa",
+      "title": "Weekly Google Trends Surge In Diy Auto Repair Searches Signals Bullish Consumer Discretionary",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.531,
+        "matched_title": "weekly google trends surge in home appliance repair searches signals bullish consumer discretionary",
+        "matched_idea_id": "weekly-google-trends-surge-in-home-appliance-repair-searches",
+        "matched_origin": "current_run",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-google-trends-surge-in-diy-auto-repair-searches-signa",
+        "title": "Weekly Google Trends Surge In Diy Auto Repair Searches Signals Bullish Consumer Discretionary",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Increasing DIY auto repair interest indicates cost-conscious consumers delaying professional repairs, boosting retail parts and tools sales. Retailers supplying auto parts and tools benefit from increased DIY repair activity.",
+        "data_sources": [
+          "Google Trends weekly search interest"
+        ],
+        "signal_logic": "Enter long on XLY if weekly Google Trends for 'DIY auto repair' rises 15%+ week-over-week",
+        "entry_exit": "Entry: Enter long on XLY if weekly Google Trends for 'DIY auto repair' rises 15%+ week-over-week Exit: Exit after 3 weeks or if search interest drops below 10% growth",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly search interest via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "DIY repair interest fluctuates seasonally and with economic stress.",
+        "schema": {
+          "idea": "Weekly Google Trends Surge In 'DIY Auto Repair' Searches Signals Bullish Consumer Discretionary",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends weekly search interest",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Increasing DIY auto repair interest indicates cost-conscious consumers delaying professional repairs, boosting retail parts and tools sales.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "Retailers supplying auto parts and tools benefit from increased DIY repair activity."
+          },
+          "trade_logic": {
+            "entry": "Enter long on XLY if weekly Google Trends for 'DIY auto repair' rises 15%+ week-over-week",
+            "exit": "Exit after 3 weeks or if search interest drops below 10% growth",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "DIY repair interest fluctuates seasonally and with economic stress.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-usgs-earthquake-activity-near-key-ports-signa",
+      "title": "Daily Spike In Usgs Earthquake Activity Near Key Ports Signals Bearish Industrials",
+      "family": "local_economy_weirdness",
+      "duplicate_of": {
+        "reason": "high_title_overlap",
+        "score": 0.6,
+        "matched_title": "earthquake activity daily spike in magnitude 4 events near key ports signals bearish xli",
+        "matched_idea_id": "earthquake-activity-daily-spike-in-magnitude-4-events-near-k",
+        "matched_origin": "history:2026-04-23",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-usgs-earthquake-activity-near-key-ports-signa",
+        "title": "Daily Spike In Usgs Earthquake Activity Near Key Ports Signals Bearish Industrials",
+        "family": "local_economy_weirdness",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Sudden increase in seismic activity near major ports can disrupt supply chains, hurting industrial and logistics sector stocks. Port disruptions reduce throughput and increase logistics costs for industrial companies.",
+        "data_sources": [
+          "USGS earthquake activity near major ports"
+        ],
+        "signal_logic": "Enter short on XLI if daily earthquake count near major ports exceeds 3 events (magnitude >3.0)",
+        "entry_exit": "Entry: Enter short on XLI if daily earthquake count near major ports exceeds 3 events (magnitude >3.0) Exit: Exit after 7 trading days or when activity returns to baseline",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use USGS earthquake activity near major ports via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Seismic events near ports occur regularly and can cluster.",
+        "schema": {
+          "idea": "Daily Spike In USGS Earthquake Activity Near Key Ports Signals Bearish Industrials",
+          "family": "local_economy_weirdness",
+          "data": {
+            "source": "USGS earthquake activity near major ports",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Sudden increase in seismic activity near major ports can disrupt supply chains, hurting industrial and logistics sector stocks.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLI",
+            "rationale": "Port disruptions reduce throughput and increase logistics costs for industrial companies."
+          },
+          "trade_logic": {
+            "entry": "Enter short on XLI if daily earthquake count near major ports exceeds 3 events (magnitude >3.0)",
+            "exit": "Exit after 7 trading days or when activity returns to baseline",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Seismic events near ports occur regularly and can cluster.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
