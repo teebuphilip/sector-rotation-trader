@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-29/publish/claude_small-cap-growth-momentum-rotation.md",
+  "target_file": "data/ideas/runs/2026-04-29/intervention/claude_small-cap-growth-momentum-rotation.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "price_only currently provides close/value data, not volume.",
+    "risk_flags": [
+      "adapter contract unclear on volume",
+      "momentum comparison complexity",
+      "price_only_volume_gap",
+      "volume data required"
+    ],
+    "route": {
+      "adapters": [
+        "price_only",
+        "twitter_activity"
+      ],
+      "scores": {
+        "twitter_activity": 2,
+        "price_only": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1011,
+    "output_tokens": 80
+  },
+  "cost_usd": 0.0033275,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires volume but price_only adapter may not provide volume data\",\n  \"risk_flags\": [\"volume data required\", \"adapter contract unclear on volume\", \"momentum comparison complexity\"]\n}\n```"
+}

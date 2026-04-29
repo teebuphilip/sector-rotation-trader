@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-29T23:31:09
+Updated (UTC): 2026-04-29T23:34:39
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 139
+Crazy models: 146
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -155,3 +155,10 @@ Crazy models: 139
 | weekly-surge-in-google-trends-for-hotel-room-shortage-signal | Weekly Surge In Google Trends For Hotel Room Shortage Signals Travel Sector Tightness | weekly |
 | recession-whisper-google-trends-unemployment-search-surge | Recession Whisper Google Trends Unemployment Search Surge | weekly |
 | wage-growth-demand-surge-fast-food-google-trends | Wage Growth Demand Surge Fast Food Google Trends | weekly |
+| weekly-google-trends-surge-in-fast-food-job-openings-signals | Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary | weekly |
+| weekly-google-trends-surge-in-home-appliance-repair-searches | Weekly Google Trends Surge In Home Appliance Repair Searches Signals Bullish Consumer Discretionary | weekly |
+| weekly-google-trends-surge-in-home-energy-bill-shock-signals | Weekly Google Trends Surge In Home Energy Bill Shock Signals Bullish Utilities | weekly |
+| ev-charger-installation-acceleration-play | Ev Charger Installation Acceleration Play | weekly |
+| financial-sector-volatility-crush-trade | Financial Sector Volatility Crush Trade | daily |
+| gold-volatility-vol-of-vol-spike | Gold Volatility Vol-of-vol Spike | daily |
+| mortgage-refinance-wave-google-trends-surge | Mortgage Refinance Wave Google Trends Surge | weekly |

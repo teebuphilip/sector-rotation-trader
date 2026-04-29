@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T23:31:09Z",
+  "generated_at": "2026-04-29T23:34:40Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -334,6 +334,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-google-trends-surge-in-home-appliance-repair-searches",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-in-home-appliance-repair-searches",
+      "name": "Weekly Google Trends Surge In Home Appliance Repair Searches Signals Bullish Consumer Discretionary",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99982.54,
+      "ytd_pct": -0.02,
+      "trade_count": 4,
+      "positions": 0,
+      "last_snapshot": "2026-04-29",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-rise-in-google-trends-interest-for-food-delivery-dela",
       "algo_type": "crazy",
       "algo_id": "weekly-rise-in-google-trends-interest-for-food-delivery-dela",
@@ -516,6 +540,30 @@
       "equity": 99799.52,
       "ytd_pct": -0.2,
       "trade_count": 18,
+      "positions": 0,
+      "last_snapshot": "2026-04-29",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-google-trends-surge-in-fast-food-job-openings-signals",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-in-fast-food-job-openings-signals",
+      "name": "Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99831.91,
+      "ytd_pct": -0.17,
+      "trade_count": 6,
       "positions": 0,
       "last_snapshot": "2026-04-29",
       "last_signal": null,
@@ -791,6 +839,30 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "Uses non-price adapter: crazy.adapters.eia_electricity",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:financial-sector-volatility-crush-trade",
+      "algo_type": "crazy",
+      "algo_id": "financial-sector-volatility-crush-trade",
+      "name": "Financial Sector Volatility Crush Trade",
+      "family": "macro_input_pressure",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLF"
+      ],
+      "equity": 99910.26,
+      "ytd_pct": -0.09,
+      "trade_count": 10,
+      "positions": 0,
+      "last_snapshot": "2026-04-29",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },

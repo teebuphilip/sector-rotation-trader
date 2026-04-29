@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-04-29/publish/claude_utility-demand-weather-whipsaw.md",
+  "target_file": "data/ideas/runs/2026-04-29/intervention/claude_utility-demand-weather-whipsaw.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "weather_series",
+    "needs_new_adapter": false,
+    "reason": "Spec requires volume data for XLU but weather_series adapter does not provide volume; adapter mismatch.",
+    "risk_flags": [
+      "adapter-data source mismatch",
+      "entry condition depends on volume spike",
+      "volume required but adapter is price_only"
+    ],
+    "route": {
+      "adapters": [
+        "eia_electricity",
+        "weather_series"
+      ],
+      "scores": {
+        "weather_series": 2,
+        "eia_electricity": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 971,
+    "output_tokens": 91
+  },
+  "cost_usd": 0.0033375,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"weather_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires volume data for XLU but weather_series adapter does not provide volume; adapter mismatch.\",\n  \"risk_flags\": [\"volume required but adapter is price_only\", \"adapter-data source mismatch\", \"entry condition depends on volume spike\"]\n}\n```"
+}

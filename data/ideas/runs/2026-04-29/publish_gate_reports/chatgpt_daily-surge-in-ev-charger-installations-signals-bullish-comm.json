@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-29/publish/chatgpt_daily-surge-in-ev-charger-installations-signals-bullish-comm.md",
+  "target_file": "data/ideas/runs/2026-04-29/intervention/chatgpt_daily-surge-in-ev-charger-installations-signals-bullish-comm.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "openchargemap",
+    "needs_new_adapter": false,
+    "reason": "Low confidence in deterministic adapter routing and potential data source mapping needs review",
+    "risk_flags": [
+      "data source stability",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "signal threshold clarity"
+    ],
+    "route": {
+      "adapters": [
+        "openchargemap"
+      ],
+      "scores": {
+        "openchargemap": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 930,
+    "output_tokens": 80
+  },
+  "cost_usd": 0.003125,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"openchargemap\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Low confidence in deterministic adapter routing and potential data source mapping needs review\",\n  \"risk_flags\": [\"low adapter routing confidence\", \"data source stability\", \"signal threshold clarity\"]\n}\n```"
+}

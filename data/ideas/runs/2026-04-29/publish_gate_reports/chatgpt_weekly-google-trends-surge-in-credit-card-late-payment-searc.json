@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-04-29/publish/chatgpt_weekly-google-trends-surge-in-credit-card-late-payment-searc.md",
+  "target_file": "data/ideas/runs/2026-04-29/intervention/chatgpt_weekly-google-trends-surge-in-credit-card-late-payment-searc.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "position sizing exceeds single signal allocation",
+      "potential data source instability",
+      "requires short position",
+      "short_trade_not_supported"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 3,
+        "html_table": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 932,
+    "output_tokens": 82
+  },
+  "cost_usd": 0.00315,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is not supported by current algo envelope\",\n  \"risk_flags\": [\"requires short position\", \"position sizing exceeds single signal allocation\", \"potential data source instability\"]\n}\n```"
+}

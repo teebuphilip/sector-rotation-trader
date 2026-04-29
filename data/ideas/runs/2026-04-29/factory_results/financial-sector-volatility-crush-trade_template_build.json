@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-04-29/build/claude_financial-sector-volatility-crush-trade.md",
+  "out": "crazy/algos/financial_sector_volatility_crush_trade.py",
+  "adapter": "price_only",
+  "idea_id": "financial-sector-volatility-crush-trade",
+  "name": "Financial Sector Volatility Crush Trade",
+  "universe": [
+    "XLF"
+  ],
+  "frequency": "daily",
+  "family": "macro_input_pressure",
+  "threshold": 0.02,
+  "direction": "down",
+  "hold_days": 5
+}

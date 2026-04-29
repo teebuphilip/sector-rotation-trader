@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T23:31:09Z",
+  "generated_at": "2026-04-29T23:34:40Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -786,6 +786,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:mortgage-refinance-wave-google-trends-surge",
+      "algo_type": "crazy",
+      "algo_id": "mortgage-refinance-wave-google-trends-surge",
+      "name": "Mortgage Refinance Wave Google Trends Surge",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-04-29",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:retail-roulette",
       "algo_type": "crazy",
       "algo_id": "retail-roulette",
@@ -944,6 +968,54 @@
       "algo_type": "crazy",
       "algo_id": "weekly-google-trends-surge-in-energy-bill-shock-signals-cons",
       "name": "Weekly Google Trends Surge In Energy Bill Shock Signals Consumer Stress Impacting Utilities",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLU"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-04-29",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-google-trends-surge-in-home-appliance-repair-searches",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-in-home-appliance-repair-searches",
+      "name": "Weekly Google Trends Surge In Home Appliance Repair Searches Signals Bullish Consumer Discretionary",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99982.54,
+      "ytd_pct": -0.02,
+      "trade_count": 4,
+      "positions": 0,
+      "last_snapshot": "2026-04-29",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-google-trends-surge-in-home-energy-bill-shock-signals",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-in-home-energy-bill-shock-signals",
+      "name": "Weekly Google Trends Surge In Home Energy Bill Shock Signals Bullish Utilities",
       "family": "consumer_stress",
       "status": "sandbox",
       "evidence_class": "needs_history",
@@ -1485,6 +1557,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-google-trends-surge-in-fast-food-job-openings-signals",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-in-fast-food-job-openings-signals",
+      "name": "Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99831.91,
+      "ytd_pct": -0.17,
+      "trade_count": 6,
+      "positions": 0,
+      "last_snapshot": "2026-04-29",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-surge-in-job-postings-for-warehouse-workers-signals-b",
       "algo_type": "crazy",
       "algo_id": "weekly-surge-in-job-postings-for-warehouse-workers-signals-b",
@@ -1602,6 +1698,30 @@
       "rebalance_frequency": "daily",
       "universe": [
         "XLC"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-04-29",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:ev-charger-installation-acceleration-play",
+      "algo_type": "crazy",
+      "algo_id": "ev-charger-installation-acceleration-play",
+      "name": "Ev Charger Installation Acceleration Play",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLK"
       ],
       "equity": 100000.0,
       "ytd_pct": 0.0,
@@ -2147,6 +2267,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:financial-sector-volatility-crush-trade",
+      "algo_type": "crazy",
+      "algo_id": "financial-sector-volatility-crush-trade",
+      "name": "Financial Sector Volatility Crush Trade",
+      "family": "macro_input_pressure",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLF"
+      ],
+      "equity": 99910.26,
+      "ytd_pct": -0.09,
+      "trade_count": 10,
+      "positions": 0,
+      "last_snapshot": "2026-04-29",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:fintech-disruption-wave",
       "algo_type": "crazy",
       "algo_id": "fintech-disruption-wave",
@@ -2191,6 +2335,30 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:gold-volatility-vol-of-vol-spike",
+      "algo_type": "crazy",
+      "algo_id": "gold-volatility-vol-of-vol-spike",
+      "name": "Gold Volatility Vol-of-vol Spike",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLK"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-04-29",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },

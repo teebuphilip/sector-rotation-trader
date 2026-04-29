@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-04-29/build/claude_gold-volatility-vol-of-vol-spike.md",
+  "out": "crazy/algos/gold_volatility_vol_of_vol_spike.py",
+  "adapter": "price_only",
+  "idea_id": "gold-volatility-vol-of-vol-spike",
+  "name": "Gold Volatility Vol-of-vol Spike",
+  "universe": [
+    "XLK"
+  ],
+  "frequency": "daily",
+  "family": "macro_input_pressure",
+  "threshold": 0.1,
+  "direction": "up",
+  "hold_days": 7
+}

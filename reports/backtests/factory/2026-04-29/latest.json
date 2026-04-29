@@ -1,0 +1,101 @@
+{
+  "run_date": "2026-04-29",
+  "start": "2024-01-01",
+  "end": "2026-04-29",
+  "slippage_bps": 5.0,
+  "generated_at": "2026-04-29T23:34:27Z",
+  "counts": {
+    "LIVE_ONLY_NON_PRICE": 5,
+    "BACKTEST_FAIL": 1,
+    "INSUFFICIENT_ACTIVITY": 1
+  },
+  "results": [
+    {
+      "algo_id": "ev-charger-installation-acceleration-play",
+      "name": "Ev Charger Installation Acceleration Play",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.openchargemap",
+      "metrics": {},
+      "run_date": "2026-04-29"
+    },
+    {
+      "algo_id": "financial-sector-volatility-crush-trade",
+      "name": "Financial Sector Volatility Crush Trade",
+      "family": "crazy",
+      "status": "BACKTEST_FAIL",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": -0.43,
+        "spy_return_pct": 54.72,
+        "alpha_vs_spy_pct": -55.14,
+        "max_drawdown_pct": -0.8,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": -16.47,
+        "spy_sharpe": 0.98,
+        "trade_count": 54,
+        "sell_count": 27,
+        "win_rate_pct": 59.26,
+        "turnover": 2.6858
+      },
+      "run_date": "2026-04-29"
+    },
+    {
+      "algo_id": "gold-volatility-vol-of-vol-spike",
+      "name": "Gold Volatility Vol-of-vol Spike",
+      "family": "crazy",
+      "status": "INSUFFICIENT_ACTIVITY",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.0,
+        "spy_return_pct": 54.72,
+        "alpha_vs_spy_pct": -54.72,
+        "max_drawdown_pct": 0.0,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": 0.0,
+        "spy_sharpe": 0.98,
+        "trade_count": 0,
+        "sell_count": 0,
+        "win_rate_pct": 0.0,
+        "turnover": 0.0
+      },
+      "run_date": "2026-04-29"
+    },
+    {
+      "algo_id": "mortgage-refinance-wave-google-trends-surge",
+      "name": "Mortgage Refinance Wave Google Trends Surge",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-29"
+    },
+    {
+      "algo_id": "weekly-google-trends-surge-in-fast-food-job-openings-signals",
+      "name": "Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-29"
+    },
+    {
+      "algo_id": "weekly-google-trends-surge-in-home-appliance-repair-searches",
+      "name": "Weekly Google Trends Surge In Home Appliance Repair Searches Signals Bullish Consumer Discretionary",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-29"
+    },
+    {
+      "algo_id": "weekly-google-trends-surge-in-home-energy-bill-shock-signals",
+      "name": "Weekly Google Trends Surge In Home Energy Bill Shock Signals Bullish Utilities",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-04-29"
+    }
+  ]
+}

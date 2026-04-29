@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-04-29/publish/claude_earthquake-swarm-near-oil-refinery-cluster-signal.md",
+  "target_file": "data/ideas/runs/2026-04-29/intervention/claude_earthquake-swarm-near-oil-refinery-cluster-signal.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": true,
+    "reason": "Selected adapter measures earthquakes, not geopolitical conflict or war data.",
+    "risk_flags": [
+      "adapter_behavior_mismatch",
+      "complex multi-source filtering",
+      "potential data source instability",
+      "volume data required but adapter is price_only"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity"
+      ],
+      "scores": {
+        "earthquake_activity": 3,
+        "price_only": 2
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1059,
+    "output_tokens": 93
+  },
+  "cost_usd": 0.0035775,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"The spec requires volume data for XLE but earthquake_activity adapter does not provide volume; adapter mapping incomplete.\",\n  \"risk_flags\": [\"volume data required but adapter is price_only\", \"complex multi-source filtering\", \"potential data source instability\"]\n}\n```"
+}

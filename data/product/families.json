@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T23:31:09Z",
+  "generated_at": "2026-04-29T23:34:40Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
@@ -176,15 +176,15 @@
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 18,
+      "count": 21,
       "by_status": {
         "failed": 1,
-        "live_only": 11,
-        "sandbox": 6
+        "live_only": 12,
+        "sandbox": 8
       },
       "by_evidence_class": {
-        "live_receipts_only": 11,
-        "needs_history": 6,
+        "live_receipts_only": 12,
+        "needs_history": 8,
         "v1_backtested": 1
       },
       "leaders": [
@@ -300,10 +300,10 @@
           "backtest_trade_count": null
         },
         {
-          "key": "crazy:retail-rush-ahead-of-holidays",
+          "key": "crazy:mortgage-refinance-wave-google-trends-surge",
           "algo_type": "crazy",
-          "algo_id": "retail-rush-ahead-of-holidays",
-          "name": "Retail Rush Ahead Of Holidays",
+          "algo_id": "mortgage-refinance-wave-google-trends-surge",
+          "name": "Mortgage Refinance Wave Google Trends Surge",
           "family": "consumer_stress",
           "status": "sandbox",
           "evidence_class": "needs_history",
@@ -318,8 +318,8 @@
           "last_snapshot": "2026-04-29",
           "last_signal": null,
           "new_algo_date": null,
-          "backtest_status": "UNSUPPORTED_DATA",
-          "backtest_reason": "Uses non-price adapter: crazy.adapters.google_trends",
+          "backtest_status": null,
+          "backtest_reason": null,
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
         }
@@ -650,13 +650,13 @@
     },
     "labor_jobs": {
       "family": "labor_jobs",
-      "count": 7,
+      "count": 8,
       "by_status": {
-        "live_only": 4,
+        "live_only": 5,
         "sandbox": 3
       },
       "by_evidence_class": {
-        "live_receipts_only": 4,
+        "live_receipts_only": 5,
         "needs_history": 3
       },
       "leaders": [
@@ -806,14 +806,14 @@
     },
     "local_economy_weirdness": {
       "family": "local_economy_weirdness",
-      "count": 9,
+      "count": 10,
       "by_status": {
         "live_only": 3,
-        "sandbox": 6
+        "sandbox": 7
       },
       "by_evidence_class": {
         "live_receipts_only": 3,
-        "needs_history": 6
+        "needs_history": 7
       },
       "leaders": [
         {
@@ -900,6 +900,30 @@
           "backtest_trade_count": null
         },
         {
+          "key": "crazy:ev-charger-installation-acceleration-play",
+          "algo_type": "crazy",
+          "algo_id": "ev-charger-installation-acceleration-play",
+          "name": "Ev Charger Installation Acceleration Play",
+          "family": "local_economy_weirdness",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "weekly",
+          "universe": [
+            "XLK"
+          ],
+          "equity": 100000.0,
+          "ytd_pct": 0.0,
+          "trade_count": 0,
+          "positions": 0,
+          "last_snapshot": "2026-04-29",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": null,
+          "backtest_reason": null,
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
+        {
           "key": "crazy:liquor",
           "algo_type": "crazy",
           "algo_id": "liquor",
@@ -927,45 +951,21 @@
           "backtest_reason": "No supported V1 price-only backtest path",
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:weekly-spike-in-google-trends-for-home-cooling-failure-signa",
-          "algo_type": "crazy",
-          "algo_id": "weekly-spike-in-google-trends-for-home-cooling-failure-signa",
-          "name": "Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu",
-          "family": "local_economy_weirdness",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "weekly",
-          "universe": [
-            "XLU"
-          ],
-          "equity": 100000.0,
-          "ytd_pct": 0.0,
-          "trade_count": 0,
-          "positions": 0,
-          "last_snapshot": "2026-04-29",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": null,
-          "backtest_reason": null,
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
         }
       ]
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 46,
+      "count": 48,
       "by_status": {
         "backtest_weak": 1,
-        "live_only": 13,
+        "live_only": 14,
         "parked": 2,
-        "sandbox": 30
+        "sandbox": 31
       },
       "by_evidence_class": {
-        "live_receipts_only": 13,
-        "needs_history": 28,
+        "live_receipts_only": 14,
+        "needs_history": 29,
         "pending_seed": 2,
         "v1_backtested": 3
       },

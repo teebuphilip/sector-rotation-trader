@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-04-29/publish/chatgpt_daily-spike-in-rss-counts-for-warehouse-automation-failure-s.md",
+  "target_file": "data/ideas/runs/2026-04-29/intervention/chatgpt_daily-spike-in-rss-counts-for-warehouse-automation-failure-s.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "adapter does not support shorting",
+      "potential data source instability",
+      "requires short position",
+      "short_trade_not_supported"
+    ],
+    "route": {
+      "adapters": [
+        "rss_count"
+      ],
+      "scores": {
+        "rss_count": 3,
+        "html_table": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 935,
+    "output_tokens": 81
+  },
+  "cost_usd": 0.0031475,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is not supported by current algo envelope.\",\n  \"risk_flags\": [\"requires short position\", \"adapter does not support shorting\", \"potential data source instability\"]\n}\n```"
+}

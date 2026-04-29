@@ -1,26 +1,26 @@
 {
   "schema_version": "v1",
   "run_date": "2026-04-29",
-  "generated_at": "2026-04-29T23:31:16Z",
+  "generated_at": "2026-04-29T23:34:40Z",
   "counts": {
-    "total": 144,
+    "total": 151,
     "normal": 5,
-    "crazy": 139,
-    "watchlist": 56,
+    "crazy": 146,
+    "watchlist": 59,
     "promoted": 5,
     "graveyard": 7
   },
   "by_status": {
     "backtest_weak": 4,
     "failed": 1,
-    "live_only": 47,
+    "live_only": 50,
     "parked": 6,
     "promoted": 5,
-    "sandbox": 81
+    "sandbox": 85
   },
   "by_evidence_class": {
-    "live_receipts_only": 47,
-    "needs_history": 79,
+    "live_receipts_only": 50,
+    "needs_history": 83,
     "pending_seed": 6,
     "v1_backtested": 12
   },
@@ -36,7 +36,7 @@
     "XLV"
   ],
   "ticker_count": 105,
-  "signal_count": 144,
+  "signal_count": 151,
   "sector_summary": {
     "XLK": {
       "etf": "XLK",
@@ -57,7 +57,7 @@
     "XLF": {
       "etf": "XLF",
       "sector": "Financial Services",
-      "composite": "1 of 26",
+      "composite": "1 of 27",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 4
@@ -65,10 +65,10 @@
     "XLY": {
       "etf": "XLY",
       "sector": "Consumer Cyclical",
-      "composite": "8 of 33",
+      "composite": "8 of 35",
       "composite_label": "BEARISH",
       "composite_color": "red",
-      "bullish_pct": 24
+      "bullish_pct": 23
     },
     "XLI": {
       "etf": "XLI",
@@ -385,7 +385,7 @@
     }
   ],
   "rolling_30d": {
-    "as_of": "2026-04-29T23:31:15.291891",
+    "as_of": "2026-04-29T23:34:39.235595",
     "spy_ret_30d_pct": 12.6,
     "leaders": [
       {

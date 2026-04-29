@@ -1,0 +1,37 @@
+{
+  "source_file": "data/ideas/runs/2026-04-29/publish/claude_freight-rail-carload-collapse-signal.md",
+  "target_file": "data/ideas/runs/2026-04-29/intervention/claude_freight-rail-carload-collapse-signal.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "low_adapter_confidence",
+      "regime shifts",
+      "rss_adapter_unclear",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "rss_count"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "rss_count": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 975,
+    "output_tokens": 83
+  },
+  "cost_usd": 0.0032675,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid fred_series data source with weekly carload data, and logic is deterministic.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

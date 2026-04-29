@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-04-29/publish/chatgpt_daily-spike-in-local-weather-heatwave-signals-bullish-utilit.md",
+  "target_file": "data/ideas/runs/2026-04-29/intervention/chatgpt_daily-spike-in-local-weather-heatwave-signals-bullish-utilit.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "weather_series",
+    "needs_new_adapter": true,
+    "reason": "Open-Meteo data is not directly supported by existing adapters, requiring a new adapter.",
+    "risk_flags": [
+      "daily frequency",
+      "data source mismatch",
+      "needs new adapter",
+      "no volume data"
+    ],
+    "route": {
+      "adapters": [
+        "eia_electricity",
+        "weather_series"
+      ],
+      "scores": {
+        "weather_series": 2,
+        "html_table": 1,
+        "eia_electricity": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 941,
+    "output_tokens": 86
+  },
+  "cost_usd": 0.0032125,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"weather_series\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Open-Meteo data is not directly supported by existing adapters, requiring a new adapter.\",\n  \"risk_flags\": [\"data source mismatch\", \"needs new adapter\", \"daily frequency\", \"no volume data\"]\n}\n```"
+}

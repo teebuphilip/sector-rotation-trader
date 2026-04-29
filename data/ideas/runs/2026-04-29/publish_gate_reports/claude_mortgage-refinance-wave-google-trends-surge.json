@@ -1,0 +1,32 @@
+{
+  "source_file": "data/ideas/runs/2026-04-29/publish/claude_mortgage-refinance-wave-google-trends-surge.md",
+  "target_file": "data/ideas/runs/2026-04-29/build/claude_mortgage-refinance-wave-google-trends-surge.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, deterministic, uses correct google_trends adapter, and is buildable as is.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 963,
+    "output_tokens": 78
+  },
+  "cost_usd": 0.0031875,
+  "raw_llm_response": "{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses correct google_trends adapter, and is buildable as is.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}"
+}
