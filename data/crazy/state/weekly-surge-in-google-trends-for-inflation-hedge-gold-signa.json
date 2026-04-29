@@ -1,19 +1,10 @@
 {
-  "cash": 94761.6280254662,
+  "cash": 99696.68056140505,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 171.38026853769816,
+  "fees_paid": 181.60664519330496,
   "taxes_paid": 43.677724581241975,
-  "positions": {
-    "XLB": {
-      "shares": 97.04236659025506,
-      "entry_price": 51.400001525878906,
-      "entry_date": "2026-04-28",
-      "cost": 4987.97779081401,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-01-26",
@@ -216,6 +207,20 @@
       "cost": 4987.98,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-29",
+      "action": "SELL",
+      "ticker": "XLB",
+      "shares": 97.0424,
+      "price": 50.96,
+      "proceeds": 4935.05,
+      "fees": 10.23,
+      "tax": 0.0,
+      "pnl": -52.93,
+      "pnl_pct": -1.06,
+      "entry_date": "2026-04-28",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -978,20 +983,29 @@
       },
       "sector": "Weekly Surge In Google Trends For Inflation Hedge Gold Signals Bullish Xlb",
       "num_positions": 1
+    },
+    {
+      "date": "2026-04-29",
+      "cash": 99696.68,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99696.68,
+      "positions": {},
+      "sector": "Weekly Surge In Google Trends For Inflation Hedge Gold Signals Bullish Xlb",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-26",
-  "last_run": "2026-04-28",
+  "last_run": "2026-04-29",
   "meta": {
     "weekly-surge-in-google-trends-for-inflation-hedge-gold-signa": {
-      "latest_value": 50.0,
-      "prior_avg": 36.7143,
-      "signal_change": 0.3619,
-      "signal_label": "RISK_ON",
-      "entry_date": "2026-04-28",
+      "latest_value": 14.0,
+      "prior_avg": 35.75,
+      "signal_change": -0.6084,
+      "signal_label": "RISK_OFF",
       "name": "Weekly Surge In Google Trends For Inflation Hedge Gold Signals Bullish Xlb",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-04-28"
+      "last_signal": "RISK_OFF",
+      "last_run": "2026-04-29"
     }
   }
 }

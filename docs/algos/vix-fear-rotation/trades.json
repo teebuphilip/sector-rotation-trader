@@ -1411,6 +1411,54 @@
       "cost": 32332.23,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-29",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 239.3982,
+      "price": 159.11,
+      "proceeds": 38078.73,
+      "fees": 11.93,
+      "tax": 417.21,
+      "pnl": 710.39,
+      "pnl_pct": 1.92,
+      "entry_date": "2026-04-17",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-29",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 268.5178,
+      "price": 116.84,
+      "proceeds": 31362.02,
+      "fees": 11.6,
+      "tax": 0.0,
+      "pnl": -970.21,
+      "pnl_pct": -3.0,
+      "entry_date": "2026-04-17",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-29",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 231.5331,
+      "price": 159.11,
+      "cost": 36839.23,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-29",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 275.8844,
+      "price": 116.84,
+      "cost": 32234.33,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -3564,6 +3612,35 @@
           "market_value": 31419.27,
           "unrealized_pnl": -912.96,
           "entry_date": "2026-04-17",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-04-29",
+      "cash": 23004.62,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 92078.19,
+      "positions": {
+        "XLK": {
+          "shares": 231.5331,
+          "entry_price": 159.11,
+          "current_price": 159.11,
+          "market_value": 36839.23,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-29",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 275.8844,
+          "entry_price": 116.84,
+          "current_price": 116.84,
+          "market_value": 32234.33,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-29",
           "margin": false
         }
       },

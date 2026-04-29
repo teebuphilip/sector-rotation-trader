@@ -1,10 +1,19 @@
 {
-  "cash": 99874.4572922223,
+  "cash": 94870.78442761119,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 40.32089608649297,
+  "fees_paid": 50.27089608649297,
   "taxes_paid": 0.0,
-  "positions": {},
+  "positions": {
+    "XLY": {
+      "shares": 42.73984098878028,
+      "entry_price": 116.83999633789062,
+      "entry_date": "2026-04-29",
+      "cost": 4993.722864611115,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-22",
@@ -53,6 +62,16 @@
       "pnl_pct": -0.91,
       "entry_date": "2026-04-27",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-29",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 42.7398,
+      "price": 116.84,
+      "cost": 4993.72,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -805,20 +824,40 @@
       "positions": {},
       "sector": "News Sentiment Rotation Fade Trade",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-29",
+      "cash": 94870.78,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99864.51,
+      "positions": {
+        "XLY": {
+          "shares": 42.7398,
+          "entry_price": 116.84,
+          "current_price": 116.84,
+          "market_value": 4993.72,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-29",
+          "margin": false
+        }
+      },
+      "sector": "News Sentiment Rotation Fade Trade",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-21",
-  "last_run": "2026-04-28",
+  "last_run": "2026-04-29",
   "meta": {
     "news-sentiment-rotation-fade-trade": {
       "latest_value": 23.0,
-      "prior_avg": 4.1429,
-      "signal_change": 4.5517,
-      "entry_date": "2026-04-27",
-      "signal_label": "HOLD",
+      "prior_avg": 7.1667,
+      "signal_change": 2.2093,
+      "entry_date": "2026-04-29",
+      "signal_label": "RISK_ON",
       "name": "News Sentiment Rotation Fade Trade",
-      "last_signal": "HOLD",
-      "last_run": "2026-04-28"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-04-29"
     }
   }
 }

@@ -1,10 +1,19 @@
 {
-  "cash": 99895.14659660694,
+  "cash": 94890.4392667766,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 20.15510680486654,
+  "fees_paid": 30.10510680486654,
   "taxes_paid": 0.0,
-  "positions": {},
+  "positions": {
+    "XLK": {
+      "shares": 31.39185035931294,
+      "entry_price": 159.11000061035156,
+      "entry_date": "2026-04-29",
+      "cost": 4994.757329830347,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-27",
@@ -29,6 +38,16 @@
       "pnl_pct": -1.9,
       "entry_date": "2026-04-27",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-29",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 31.3919,
+      "price": 159.11,
+      "cost": 4994.76,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -741,20 +760,40 @@
       "positions": {},
       "sector": "Daily Spike In Rss News Counts Mentioning Politician Insider Buying Tech Stock Signals Bullish Xlk",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-29",
+      "cash": 94890.44,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99885.2,
+      "positions": {
+        "XLK": {
+          "shares": 31.3919,
+          "entry_price": 159.11,
+          "current_price": 159.11,
+          "market_value": 4994.76,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-29",
+          "margin": false
+        }
+      },
+      "sector": "Daily Spike In Rss News Counts Mentioning Politician Insider Buying Tech Stock Signals Bullish Xlk",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-23",
-  "last_run": "2026-04-28",
+  "last_run": "2026-04-29",
   "meta": {
     "daily-spike-in-rss-news-counts-mentioning-politician-insider": {
       "latest_value": 2.0,
       "prior_avg": 1.0,
       "signal_change": 1.0,
-      "signal_label": "HOLD",
+      "signal_label": "RISK_ON",
       "name": "Daily Spike In Rss News Counts Mentioning Politician Insider Buying Tech Stock Signals Bullish Xlk",
-      "last_signal": "HOLD",
-      "last_run": "2026-04-28",
-      "entry_date": "2026-04-27"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-04-29",
+      "entry_date": "2026-04-29"
     }
   }
 }

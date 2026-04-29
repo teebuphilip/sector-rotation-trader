@@ -1,11 +1,31 @@
 {
-  "cash": 100000,
+  "cash": 94990.05,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 0.0,
+  "fees_paid": 9.95,
   "taxes_paid": 0.0,
-  "positions": {},
-  "trade_log": [],
+  "positions": {
+    "XLY": {
+      "shares": 42.79356518927351,
+      "entry_price": 116.83999633789062,
+      "entry_date": "2026-04-29",
+      "cost": 5000.0,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
+  "trade_log": [
+    {
+      "date": "2026-04-29",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 42.7936,
+      "price": 116.84,
+      "cost": 5000.0,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-01-27",
@@ -666,16 +686,40 @@
       "positions": {},
       "sector": "Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-29",
+      "cash": 94990.05,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99990.05,
+      "positions": {
+        "XLY": {
+          "shares": 42.7936,
+          "entry_price": 116.84,
+          "current_price": 116.84,
+          "market_value": 5000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-29",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-27",
-  "last_run": "2026-04-28",
+  "last_run": "2026-04-29",
   "meta": {
     "weekly-surge-in-google-trends-for-diy-plumbing-repair-signal": {
-      "signal_label": "HOLD",
+      "signal_label": "RISK_ON",
       "name": "Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound",
-      "last_signal": "HOLD",
-      "last_run": "2026-04-28"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-04-29",
+      "latest_value": 10.0,
+      "prior_avg": 7.3214,
+      "signal_change": 0.3659,
+      "entry_date": "2026-04-29"
     }
   }
 }

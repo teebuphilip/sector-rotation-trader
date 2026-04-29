@@ -706,19 +706,29 @@
       "positions": {},
       "sector": "Temperature Extremes Power Demand Spike Utility Boost",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-29",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Temperature Extremes Power Demand Spike Utility Boost",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-23",
-  "last_run": "2026-04-28",
+  "last_run": "2026-04-29",
   "meta": {
     "temperature-extremes-power-demand-spike-utility-boost": {
       "signal_label": "HOLD",
-      "latest_value": 10207526.0,
-      "prior_avg": 10133689.5143,
-      "signal_change": 0.0073,
+      "latest_value": 10142009.0,
+      "prior_avg": 10128457.6571,
+      "signal_change": 0.0013,
       "name": "Temperature Extremes Power Demand Spike Utility Boost",
       "last_signal": "HOLD",
-      "last_run": "2026-04-28"
+      "last_run": "2026-04-29"
     }
   }
 }
