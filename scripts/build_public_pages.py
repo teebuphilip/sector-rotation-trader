@@ -1000,7 +1000,8 @@ def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: li
         <li><strong>Families:</strong> what each signal family is trying to measure</li>
       </ul>
       <h3 style="margin-top:16px;">How it works</h3>
-      <p>Idea -> Signal -> Backtest -> Live run -> Public result</p>
+      <p>Idea -> signal -> backtest if we can -> live run if we can’t -> public result.</p>
+      <p>Signals can go idle. Signals that underperform can fail. We keep both visible.</p>
       <h3 style="margin-top:16px;">Why it matters</h3>
       <p>The point is not hype. The point is to see which signals add something beyond price alone.</p>
       <h3 style="margin-top:16px;">One example</h3>
@@ -1045,12 +1046,6 @@ def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: li
         <p>All {_e(total)} signals in one public list. Names, families, and status only. No rank and no returns.</p>
         <a class="cta" href="signals/index.html">Browse all signals</a>
       </div>
-    </div>
-
-    <div class="card waitlist" style="margin-top:16px;">
-      <h2>How The Lab Works</h2>
-      <p>We make new signals and test them honestly. If we can backtest one using our standard rules, it gets a backtest grade. If not, it stays live-only and has to earn trust from real results.</p>
-      <p>Signals that have not traded recently can go idle. Signals that trade and underperform can fail. Both stay visible. That is the whole point.</p>
     </div>
     <div class="card waitlist" id="waitlist">
       <h2>Get the weekly lab notes.</h2>
