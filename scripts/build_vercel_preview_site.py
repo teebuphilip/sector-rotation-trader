@@ -40,7 +40,6 @@ DIRS = [
     "docs/quality_checks",
     "docs/algos",
     "docs/normal",
-    "docs/crazy",
     "docs/ledgers",
     "docs/comparison",
 ]
@@ -82,6 +81,7 @@ def write_preview_index(out: Path) -> None:
         ("Landing", "landing.html"),
         ("Leaderboard", "leaderboard.html"),
         ("Full Leaderboard (Preview Only)", "leaderboard-full.html"),
+        ("Algo Index", "algos/index.html"),
         ("Families", "families.html"),
         ("Daily", "daily.html"),
         ("Premium Teaser", "premium.html"),
@@ -95,9 +95,8 @@ def write_preview_index(out: Path) -> None:
         ("Comparator Today JSON", "comparison/today.json"),
     ]
     sections = {
-        "Crazy Algo Dashboards": list_html(out, "algos"),
+        "Algo Dashboards": list_html(out, "algos"),
         "Normal Algo Dashboards": list_html(out, "normal"),
-        "Crazy Combined Dashboards": list_html(out, "crazy"),
         "Blog": list_html(out, "blog"),
         "Quality Checks": list_html(out, "quality_checks"),
     }
@@ -176,6 +175,30 @@ def write_full_preview_leaderboard(out: Path) -> None:
     (out / "leaderboard-full.html").write_text(html, encoding="utf-8")
 
 
+def write_algo_index(out: Path) -> None:
+    src = ROOT / "docs" / "crazy" / "index.html"
+    if not src.exists():
+        return
+    html = src.read_text(encoding="utf-8")
+    replacements = {
+        "Crazy Algos Dashboard": "Algo Dashboards",
+        "Crazy Algos — Portfolio Overview": "Algo Overview — Portfolio",
+        "Crazy Algos": "Algo Dashboards",
+        "crazy algos": "algos",
+        "active crazy algos": "active algos",
+        "Idle crazy algos": "Idle algos",
+        "idle crazy algos": "idle algos",
+        "Lab started: 2026-01-16 · Last updated: 2026-04-28": "Lab started: 2026-01-16 · Last updated: 2026-04-28",
+    }
+    for old, new in replacements.items():
+        html = html.replace(old, new)
+    html = html.replace("/crazy/", "/algos/")
+    html = html.replace("crazy/", "algos/")
+    html = html.replace("crazy algos", "algos")
+    (out / "algos").mkdir(parents=True, exist_ok=True)
+    (out / "algos" / "index.html").write_text(html, encoding="utf-8")
+
+
 def build(out: Path) -> None:
     if out.exists():
         shutil.rmtree(out)
@@ -184,6 +207,7 @@ def build(out: Path) -> None:
         copy_file(rel, out)
     for rel in DIRS:
         copy_dir(rel, out)
+    write_algo_index(out)
     write_full_preview_leaderboard(out)
     write_preview_index(out)
     write_vercel_config(out)
