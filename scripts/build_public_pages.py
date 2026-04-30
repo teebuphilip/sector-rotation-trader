@@ -403,6 +403,130 @@ def _leader_chart_html(rank_history: list[dict], leaderboard: dict) -> str:
     """
 
 
+def _biscotti_chart_html(snapshots: list[dict]) -> str:
+    rows = [row for row in snapshots if row.get("date")]
+    if not rows:
+        return '<p class="muted">No Biscotti equity data yet.</p>'
+
+    timeline = [str(row.get("date")) for row in rows]
+    equity_by_date: dict[str, float] = {}
+    spy_by_date: dict[str, float] = {}
+    last_spy = None
+    for row in rows:
+        date = str(row.get("date") or "")
+        if not date:
+            continue
+        try:
+            equity_by_date[date] = float(row.get("equity") or 0.0)
+        except (TypeError, ValueError):
+            equity_by_date[date] = 0.0
+        spy_value = row.get("spy_equity")
+        if spy_value is not None:
+            try:
+                last_spy = float(spy_value)
+            except (TypeError, ValueError):
+                pass
+        if last_spy is not None:
+            spy_by_date[date] = last_spy
+    if not equity_by_date:
+        return '<p class="muted">No Biscotti equity data yet.</p>'
+
+    values = list(equity_by_date.values()) + list(spy_by_date.values())
+    min_v = min(values)
+    max_v = max(values)
+    if max_v == min_v:
+        min_v -= 1.0
+        max_v += 1.0
+    pad = max((max_v - min_v) * 0.08, 100.0)
+    min_v -= pad
+    max_v += pad
+
+    width = 860
+    height = 330
+    pad_l = 62
+    pad_r = 18
+    pad_t = 18
+    pad_b = 42
+    chart_w = width - pad_l - pad_r
+    chart_h = height - pad_t - pad_b
+    steps = max(len(timeline) - 1, 1)
+
+    def xy(index: int, value: float):
+        x = pad_l + (chart_w * index / steps)
+        y = pad_t + chart_h - ((value - min_v) / (max_v - min_v) * chart_h)
+        return x, y
+
+    def path(values_by_date: dict[str, float]) -> str:
+        cmds = []
+        last_value = None
+        started = False
+        for i, date in enumerate(timeline):
+            value = values_by_date.get(date)
+            if value is None:
+                if last_value is None:
+                    continue
+                value = last_value
+            else:
+                last_value = value
+            x, y = xy(i, value)
+            cmds.append(f"{'M' if not started else 'L'} {x:.1f} {y:.1f}")
+            started = True
+        return " ".join(cmds)
+
+    def fmt_value(value: float) -> str:
+        return f"{value:,.0f}"
+
+    def fmt_date_label(value: str) -> str:
+        try:
+            dt = datetime.fromisoformat(value)
+            return f"{dt.strftime('%b')} {dt.day}"
+        except Exception:
+            return value
+
+    tick_values = [min_v, min_v + (max_v - min_v) * 0.33, min_v + (max_v - min_v) * 0.66, max_v]
+    tick_points = [
+        (pad_l, timeline[0], "start"),
+        (pad_l + (chart_w * 0.5), timeline[len(timeline) // 2], "middle"),
+        (width - pad_r, timeline[-1], "end"),
+    ]
+    equity_path = path(equity_by_date)
+    spy_path = path(spy_by_date)
+    current_equity = equity_by_date[timeline[-1]]
+    current_spy = spy_by_date.get(timeline[-1], current_equity)
+    title = "Equity curve vs carried-forward SPY baseline"
+    note = "This is the actual Biscotti record: equity line, baseline line, and the trade log below."
+    y_ticks = "".join(
+        f'<line x1="{pad_l}" y1="{xy(0, v)[1]:.1f}" x2="{width - pad_r}" y2="{xy(0, v)[1]:.1f}" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 6" stroke-width="1"/>'
+        f'<text x="{pad_l - 10}" y="{xy(0, v)[1] + 4:.1f}" text-anchor="end" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" fill="rgba(255,255,255,0.55)">{fmt_value(v)}</text>'
+        for v in tick_values
+    )
+    x_labels = "".join(
+        f'<text x="{x:.1f}" y="{height - 12}" text-anchor="{anchor}" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" fill="rgba(255,255,255,0.55)">{_e(fmt_date_label(d))}</text>'
+        for x, d, anchor in tick_points
+    )
+    return f"""
+    <div class="mini-chart-wrap">
+      <div class="mini-chart-meta">
+        <div class="mini-chart-title">{_e(title)}</div>
+        <div class="mini-chart-note">{_e(note)}</div>
+      </div>
+      <svg class="mini-chart biscotti-chart" viewBox="0 0 {width} {height}" role="img" aria-label="Biscotti equity curve versus SPY baseline">
+        <rect x="0" y="0" width="{width}" height="{height}" rx="14" fill="#0f0f0f" stroke="rgba(255,255,255,0.08)"/>
+        {y_ticks}
+        <line x1="{pad_l}" y1="{pad_t}" x2="{pad_l}" y2="{pad_t + chart_h}" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+        <line x1="{pad_l}" y1="{pad_t + chart_h}" x2="{width - pad_r}" y2="{pad_t + chart_h}" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+        <path d="{spy_path}" fill="none" stroke="#8faeff" stroke-width="4" stroke-dasharray="10 6" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
+        <path d="{equity_path}" fill="none" stroke="#19d38f" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        {x_labels}
+      </svg>
+      <div class="mini-chart-legend">
+        <span><i style="background:#19d38f;"></i>Biscotti equity {current_equity:,.0f}</span>
+        <span><i style="background:none;border-top:3px dashed #8faeff;width:18px;height:0;border-radius:0;"></i>SPY baseline {current_spy:,.0f}</span>
+      </div>
+    </div>
+    """
+
+
 def _signal_index_rows_html(entries: list[dict]) -> str:
     rows = []
     for item in sorted(entries, key=lambda row: (str(row.get("name") or "").lower(), str(row.get("algo_type") or ""))):
@@ -1352,6 +1476,193 @@ def build_premium(daily: dict, leaderboard: dict) -> str:
 </html>"""
 
 
+def build_biscotti_page(trades_data: dict) -> str:
+    trades = trades_data.get("trade_log") or []
+    snapshots = trades_data.get("daily_snapshots") or []
+    latest = snapshots[-1] if snapshots else {}
+    last_date = str(latest.get("date") or "")
+    start_equity = float(snapshots[0].get("equity") or 100000.0) if snapshots else 100000.0
+    last_equity = float(latest.get("equity") or start_equity)
+
+    max_peak = start_equity
+    max_dd = 0.0
+    for snap in snapshots:
+        try:
+            eq = float(snap.get("equity") or 0.0)
+        except (TypeError, ValueError):
+            continue
+        max_peak = max(max_peak, eq)
+        if max_peak:
+            max_dd = min(max_dd, (eq - max_peak) / max_peak)
+
+    completed = [t for t in trades if str(t.get("action") or "").upper() == "SELL"]
+    wins = sum(1 for t in completed if float(t.get("pnl") or 0.0) > 0)
+    win_rate = (wins / len(completed) * 100.0) if completed else 0.0
+    open_positions = latest.get("positions") or {}
+
+    open_rows = []
+    for ticker, pos in sorted(open_positions.items()):
+        current_price = float(pos.get("current_price") or 0.0)
+        entry_price = float(pos.get("entry_price") or 0.0)
+        market_value = float(pos.get("market_value") or 0.0)
+        unrealized = float(pos.get("unrealized_pnl") or 0.0)
+        open_rows.append(
+            "<tr>"
+            f"<td><strong>{_e(ticker)}</strong></td>"
+            f"<td>${entry_price:,.2f}</td>"
+            f"<td>${current_price:,.2f}</td>"
+            f"<td class=\"{'return-pos' if unrealized >= 0 else 'return-neg'}\">${unrealized:,.2f}</td>"
+            f"<td>${market_value:,.2f}</td>"
+            f"<td>{_e(pos.get('entry_date') or '')}</td>"
+            "</tr>"
+        )
+    if not open_rows:
+        open_rows.append('<tr><td colspan="6">No open position right now.</td></tr>')
+
+    trade_rows = []
+    for trade in reversed(trades):
+        action = str(trade.get("action") or "").upper()
+        action_cls = "action-buy" if action == "BUY" else "action-sell"
+        value = float(trade.get("cost") or trade.get("proceeds") or 0.0)
+        pnl = trade.get("pnl")
+        pnl_html = "—"
+        if pnl is not None:
+            pnl_val = float(pnl or 0.0)
+            pnl_pct = float(trade.get("pnl_pct") or 0.0)
+            pnl_html = f'<span class="{"return-pos" if pnl_val >= 0 else "return-neg"}">${pnl_val:,.2f} ({pnl_pct:+.1f}%)</span>'
+        trade_rows.append(
+            "<tr>"
+            f"<td>{_e(trade.get('date') or '')}</td>"
+            f"<td><span class=\"{action_cls}\">{_e(action)}</span></td>"
+            f"<td><span class=\"ticker\">{_e(trade.get('ticker') or '')}</span></td>"
+            f"<td>${float(trade.get('price') or 0.0):,.2f}</td>"
+            f"<td>{float(trade.get('shares') or 0.0):,.4f}</td>"
+            f"<td>${value:,.2f}</td>"
+            f"<td>{pnl_html}</td>"
+            f"<td>{_e(trade.get('reason') or ('entry' if action == 'BUY' else '—'))}</td>"
+            "</tr>"
+        )
+    trade_rows_html = "\n".join(trade_rows) if trade_rows else '<tr><td colspan="8">No trade log available.</td></tr>'
+
+    chart_html = _biscotti_chart_html(snapshots)
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StockArithm — Biscotti</title>
+<style>{REPORT_CSS}</style>
+<style>
+  .biscotti-hero {{ text-align: center; }}
+  .biscotti-title {{ color: var(--accent); text-align: center; }}
+  .biscotti-sub {{ text-align: center; margin-top: 8px; color: var(--muted); font-family: var(--mono); font-size: 14px; }}
+  .biscotti-top {{ display: grid; grid-template-columns: minmax(0, 280px) minmax(0, 1fr); gap: 20px; align-items: start; }}
+  .biscotti-photo {{ width: 100%; border-radius: 12px; border: 1px solid var(--border); display: block; object-fit: cover; aspect-ratio: 1 / 1; background: #111; }}
+  .biscotti-label {{ color: var(--muted); font-size: 12px; font-family: var(--mono); margin-top: 8px; text-align: center; }}
+  .biscotti-summary {{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }}
+  .biscotti-summary .hero-stat {{ background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; padding: 16px 14px; }}
+  .biscotti-summary .hero-stat .num {{ font-size: 26px; }}
+  .biscotti-summary .hero-stat .label {{ margin-top: 4px; }}
+  .biscotti-note {{ margin-top: 12px; color: var(--muted); font-size: 13px; line-height: 1.6; }}
+  .biscotti-chart {{ width: 100%; height: auto; display: block; margin: 0 auto; }}
+  .biscotti-table-wrap {{ overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); background: rgba(255,255,255,0.02); }}
+  .biscotti-table-wrap table {{ min-width: 100%; }}
+  .trade-table thead th, .trade-table tbody td {{ white-space: nowrap; }}
+  .trade-table tbody tr:hover td {{ background: rgba(25,211,143,0.04); }}
+  .free-preview-note {{ text-align: center; color: var(--muted); font-family: var(--mono); font-size: 12px; margin-top: 10px; }}
+  @media (max-width: 900px) {{
+    .biscotti-top {{ grid-template-columns: 1fr; }}
+    .biscotti-summary {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
+  }}
+</style>
+</head>
+<body>
+  <div class="hero biscotti-hero">
+  <div class="hero-badge">PUBLIC PREVIEW</div>
+    <h1 class="biscotti-title">Algo Biscotti</h1>
+    <p class="hero-sub">Unconditional loyalty. A monthly contrarian rotation.</p>
+    <div class="biscotti-sub">Public free view of the Biscotti page. The chart and trade log below are real; the deeper per-algo detail stays for premium later.</div>
+  </div>
+
+  <div class="wrap">
+    <section style="padding-top: 24px;">
+      <div class="card biscotti-top">
+        <div>
+          <img class="biscotti-photo" src="biscotti.jpg" alt="Biscotti" />
+          <div class="biscotti-label">Biscotti. The original signal.</div>
+        </div>
+        <div>
+          <h2 class="section-title">What Biscotti does</h2>
+          <p class="section-sub">The monthly contrarian rule that keeps showing up for the most beaten-down sector.</p>
+          <div class="biscotti-note">Find the weakest SPDR sector ETF by 30-day return on the last trading day of each month. Buy the loser. Hold for one month. Repeat. No filters, no hesitation.</div>
+          <div class="biscotti-note"><strong style="color:var(--text);">Why it exists:</strong> it is the kind of idea that sounds too simple until the tape proves otherwise.</div>
+          <div class="biscotti-note"><strong style="color:var(--text);">What this page shows:</strong> the live paper-trade record, the equity curve, and the actual trade log.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Current record</h2>
+        <p class="section-sub">The live paper-trade record as of the latest snapshot.</p>
+        <div class="biscotti-summary">
+          <div class="hero-stat"><div class="num">${last_equity:,.0f}</div><div class="label">Total equity</div></div>
+          <div class="hero-stat"><div class="num">{(last_equity - start_equity):+.0f}</div><div class="label">Net P&amp;L</div></div>
+          <div class="hero-stat"><div class="num">{((last_equity / start_equity - 1) * 100.0):+.2f}%</div><div class="label">Return</div></div>
+          <div class="hero-stat"><div class="num">{max_dd * 100.0:+.2f}%</div><div class="label">Max drawdown</div></div>
+          <div class="hero-stat"><div class="num">{win_rate:.0f}%</div><div class="label">Win rate</div></div>
+          <div class="hero-stat"><div class="num">{len(trades)}</div><div class="label">Trades</div></div>
+          <div class="hero-stat"><div class="num">{len(open_positions)}</div><div class="label">Open positions</div></div>
+          <div class="hero-stat"><div class="num">{len(completed)}</div><div class="label">Closed trades</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        {chart_html}
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Open position</h2>
+        <p class="section-sub">What Biscotti is holding right now.</p>
+        <div class="biscotti-table-wrap">
+          <table>
+            <thead>
+              <tr><th>Ticker</th><th>Entry</th><th>Current</th><th>Unrealized</th><th>Value</th><th>Opened</th></tr>
+            </thead>
+            <tbody>
+              {''.join(open_rows)}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Trade log</h2>
+        <p class="section-sub">The actual paper-trade history for the signal.</p>
+        <div class="biscotti-table-wrap">
+          <table class="trade-table">
+            <thead>
+              <tr><th>Date</th><th>Action</th><th>Ticker</th><th>Price</th><th>Shares</th><th>Value</th><th>P&amp;L</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              {trade_rows_html}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+{_footer_html(last_date, last_date, "Biscotti view")}
+</body>
+</html>"""
+
+
 def build_families_page(families: dict, daily: dict) -> str:
     generated_at = families.get("generated_at", "")
     run_date = daily.get("run_date", "")
@@ -1519,11 +1830,16 @@ def build_legal_page() -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>StockArithm — Legal</title>
 <style>{REPORT_CSS}</style>
+<style>
+  .legal-title {{ color: var(--accent); text-align: center; }}
+  .legal-hero {{ text-align: center; }}
+  .legal-page section .wrap {{ text-align: center; }}
+  .legal-page section .wrap p {{ margin-left: auto; margin-right: auto; max-width: 900px; }}
+</style>
 </head>
-<body>
-<div class="hero">
-  <div class="hero-badge">LEGAL</div>
-  <h1 class="daily-title">Disclaimers and disclosures</h1>
+<body class="legal-page">
+<div class="hero legal-hero">
+  <h1 class="legal-title">Disclaimers and disclosures</h1>
   <p class="hero-sub">The plain-English rules for using this site and its signals.</p>
 </div>
 {''.join(body)}
@@ -1551,6 +1867,7 @@ def build_main():
     leaderboard = _load("leaderboard.json")
     families = _load("families.json")
     rank_history = _load_rank_history()
+    biscotti = json.loads((REPO / "docs" / "normal" / "biscotti" / "trades.json").read_text(encoding="utf-8"))
 
     out_lb = REPO / "docs" / "leaderboard.html"
     out_lb.write_text(build_leaderboard(daily, leaderboard), encoding="utf-8")
@@ -1583,6 +1900,10 @@ def build_main():
     out_legal = REPO / "docs" / "legal.html"
     out_legal.write_text(build_legal_page(), encoding="utf-8")
     print(f"[pages] wrote {out_legal}")
+
+    out_biscotti = REPO / "docs" / "biscotti.html"
+    out_biscotti.write_text(build_biscotti_page(biscotti), encoding="utf-8")
+    print(f"[pages] wrote {out_biscotti}")
 
 
 def main():
