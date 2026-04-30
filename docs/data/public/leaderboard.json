@@ -1,8 +1,8 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-04-30T23:31:10Z",
+  "generated_at": "2026-04-30T23:36:06Z",
   "counts": {
-    "total": 151,
+    "total": 158,
     "beating_spy": 1
   },
   "algos": [
@@ -334,6 +334,42 @@
             "direction": "UP",
             "confidence": 1.0,
             "return_pct": 6.173
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:google-trends-surge-in-used-car-price-searches",
+      "algo_type": "crazy",
+      "algo_id": "google-trends-surge-in-used-car-price-searches",
+      "name": "Google Trends Surge In Used Car Price Searches",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.04,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.04,
+      "spy_delta_30d_pct": -10.47,
+      "last_snapshot": "2026-04-30",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.104,
+            "return_pct": 0.518
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 7.787
           }
         },
         "summary": "both_up"
@@ -1103,6 +1139,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
+      "name": "Weekly Surge In Google Trends For Diy Electronics Repair Signals Bullish Xlk",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.1,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.51,
+      "last_snapshot": "2026-04-30",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLK",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.47,
+            "return_pct": 2.349
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 18.227
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:weekly-google-trends-spike-for-diy-car-repair-signals-bullis",
       "algo_type": "crazy",
       "algo_id": "weekly-google-trends-spike-for-diy-car-repair-signals-bullis",
@@ -1826,6 +1898,42 @@
       "last_snapshot": "2026-04-30",
       "new_algo_date": null,
       "comparator": null
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-google-trends-searches-for-home-water-heater-r",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-searches-for-home-water-heater-r",
+      "name": "Daily Jump In Google Trends Searches For Home Water Heater Repair Signals Consumer Stress Lifting Xly",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.59,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.1,
+      "spy_delta_30d_pct": -10.6,
+      "last_snapshot": "2026-04-30",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.104,
+            "return_pct": 0.518
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 7.787
+          }
+        },
+        "summary": "both_up"
+      }
     },
     {
       "schema_version": "v1",
@@ -4526,6 +4634,150 @@
       "last_snapshot": "2026-04-30",
       "new_algo_date": null,
       "comparator": null
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-for-home-heating-oil-shortage-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-home-heating-oil-shortage-",
+      "name": "Weekly Surge In Google Trends For Home Heating Oil Shortage Signals Bullish Xle",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.51,
+      "last_snapshot": "2026-04-30",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.937,
+            "return_pct": 4.686
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.231,
+            "return_pct": 1.153
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:healthcare-cost-shock-google-trends-spike",
+      "algo_type": "crazy",
+      "algo_id": "healthcare-cost-shock-google-trends-spike",
+      "name": "Healthcare Cost Shock Google Trends Spike",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.51,
+      "last_snapshot": "2026-04-30",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLV",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.034,
+            "return_pct": -0.171
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.236,
+            "return_pct": -1.178
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:ev-charger-expansion-frenzy",
+      "algo_type": "crazy",
+      "algo_id": "ev-charger-expansion-frenzy",
+      "name": "Ev Charger Expansion Frenzy",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.51,
+      "last_snapshot": "2026-04-30",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.059,
+            "return_pct": 0.293
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.173
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:electricity-demand-spike-weather-anomaly",
+      "algo_type": "crazy",
+      "algo_id": "electricity-demand-spike-weather-anomaly",
+      "name": "Electricity Demand Spike Weather Anomaly",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.51,
+      "last_snapshot": "2026-04-30",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLU",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.33,
+            "return_pct": 1.649
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.321,
+            "return_pct": 1.605
+          }
+        },
+        "summary": "both_up"
+      }
     }
   ]
 }

@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-04-30/publish/claude_fred-m2-money-supply-growth-oscillation-trade.md",
+  "target_file": "data/ideas/runs/2026-04-30/intervention/claude_fred-m2-money-supply-growth-oscillation-trade.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "missing yield spread data source",
+      "requires volume or spread data beyond M2 money supply",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 1014,
+    "output_tokens": 90
+  },
+  "cost_usd": 0.003435,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"10-year yield spread data is required but no adapter for yield spreads is specified\",\n  \"risk_flags\": [\"missing yield spread data source\", \"low adapter routing confidence\", \"requires volume or spread data beyond M2 money supply\"]\n}\n```"
+}

@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-04-30T23:31:01
+Updated (UTC): 2026-04-30T23:36:05
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 146
+Crazy models: 153
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -162,3 +162,10 @@ Crazy models: 146
 | financial-sector-volatility-crush-trade | Financial Sector Volatility Crush Trade | daily |
 | gold-volatility-vol-of-vol-spike | Gold Volatility Vol-of-vol Spike | daily |
 | mortgage-refinance-wave-google-trends-surge | Mortgage Refinance Wave Google Trends Surge | weekly |
+| daily-jump-in-google-trends-searches-for-home-water-heater-r | Daily Jump In Google Trends Searches For Home Water Heater Repair Signals Consumer Stress Lifting Xly | daily |
+| weekly-surge-in-google-trends-for-diy-electronics-repair-sig | Weekly Surge In Google Trends For Diy Electronics Repair Signals Bullish Xlk | weekly |
+| weekly-surge-in-google-trends-for-home-heating-oil-shortage- | Weekly Surge In Google Trends For Home Heating Oil Shortage Signals Bullish Xle | weekly |
+| electricity-demand-spike-weather-anomaly | Electricity Demand Spike Weather Anomaly | daily |
+| ev-charger-expansion-frenzy | Ev Charger Expansion Frenzy | daily |
+| google-trends-surge-in-used-car-price-searches | Google Trends Surge In Used Car Price Searches | weekly |
+| healthcare-cost-shock-google-trends-spike | Healthcare Cost Shock Google Trends Spike | weekly |

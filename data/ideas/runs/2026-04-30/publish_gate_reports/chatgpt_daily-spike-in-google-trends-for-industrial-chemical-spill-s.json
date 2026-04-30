@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-04-30/publish/chatgpt_daily-spike-in-google-trends-for-industrial-chemical-spill-s.md",
+  "target_file": "data/ideas/runs/2026-04-30/intervention/chatgpt_daily-spike-in-google-trends-for-industrial-chemical-spill-s.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "potential data source instability",
+      "requires short position",
+      "short_trade_not_supported",
+      "signal logic depends on threshold crossing"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 3,
+        "html_table": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 925,
+    "output_tokens": 81
+  },
+  "cost_usd": 0.0031225,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which current algo envelope does not support.\",\n  \"risk_flags\": [\"requires short position\", \"potential data source instability\", \"signal logic depends on threshold crossing\"]\n}\n```"
+}

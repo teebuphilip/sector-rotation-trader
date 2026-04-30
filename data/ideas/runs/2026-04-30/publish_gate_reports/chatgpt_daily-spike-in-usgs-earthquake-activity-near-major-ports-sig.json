@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-30/publish/chatgpt_daily-spike-in-usgs-earthquake-activity-near-major-ports-sig.md",
+  "target_file": "data/ideas/runs/2026-04-30/intervention/chatgpt_daily-spike-in-usgs-earthquake-activity-near-major-ports-sig.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "adapter does not provide volume or short exposure",
+      "data source instability risk",
+      "needs location-filtered earthquake data near ports",
+      "requires shorting which is unsupported",
+      "short_trade_not_supported"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity"
+      ],
+      "scores": {
+        "earthquake_activity": 2,
+        "html_table": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 947,
+    "output_tokens": 111
+  },
+  "cost_usd": 0.0034775,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Spec requires short position and location-filtered earthquake counts near ports, which current adapter does not support.\",\n  \"risk_flags\": [\n    \"requires shorting which is unsupported\",\n    \"needs location-filtered earthquake data near ports\",\n    \"adapter does not provide volume or short exposure\",\n    \"data source instability risk\"\n  ]\n}\n```"
+}

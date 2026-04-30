@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-04-30/publish/claude_earthquake-swarm-insurance-repricing.md",
+  "target_file": "data/ideas/runs/2026-04-30/intervention/claude_earthquake-swarm-insurance-repricing.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "adapter_behavior_mismatch",
+      "position sizing exceeds long-only model",
+      "regional aggregation details unclear",
+      "requires short position",
+      "short_trade_not_supported"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity"
+      ],
+      "scores": {
+        "earthquake_activity": 3,
+        "html_table": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 993,
+    "output_tokens": 82
+  },
+  "cost_usd": 0.0033025,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is not supported by current algo envelope\",\n  \"risk_flags\": [\"requires short position\", \"position sizing exceeds long-only model\", \"regional aggregation details unclear\"]\n}\n```"
+}

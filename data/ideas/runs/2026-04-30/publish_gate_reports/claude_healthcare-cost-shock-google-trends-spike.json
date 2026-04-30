@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-30/publish/claude_healthcare-cost-shock-google-trends-spike.md",
+  "target_file": "data/ideas/runs/2026-04-30/build/claude_healthcare-cost-shock-google-trends-spike.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, deterministic, uses correct google_trends adapter for weekly search volume data.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 3,
+        "price_only": 2
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 988,
+    "output_tokens": 76
+  },
+  "cost_usd": 0.00323,
+  "raw_llm_response": "{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses correct google_trends adapter for weekly search volume data.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}"
+}

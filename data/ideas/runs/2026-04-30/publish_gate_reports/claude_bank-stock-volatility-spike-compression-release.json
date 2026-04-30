@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-30/publish/claude_bank-stock-volatility-spike-compression-release.md",
+  "target_file": "data/ideas/runs/2026-04-30/intervention/claude_bank-stock-volatility-spike-compression-release.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": true,
+    "reason": "price_only currently provides close/value data, not volume.",
+    "risk_flags": [
+      "intraday volatility required but not supported by price_only adapter",
+      "price_only_volume_gap",
+      "volume data required but price_only adapter lacks volume"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 980,
+    "output_tokens": 86
+  },
+  "cost_usd": 0.00331,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"price_only adapter does not provide intraday volatility or volume data required\",\n  \"risk_flags\": [\"volume data required but price_only adapter lacks volume\",\"intraday volatility required but not supported by price_only adapter\"]\n}\n```"
+}

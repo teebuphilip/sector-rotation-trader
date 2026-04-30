@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T23:31:01Z",
+  "generated_at": "2026-04-30T23:36:06Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -176,6 +176,54 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-jump-in-google-trends-searches-for-home-water-heater-r",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-searches-for-home-water-heater-r",
+      "name": "Daily Jump In Google Trends Searches For Home Water Heater Repair Signals Consumer Stress Lifting Xly",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99405.19,
+      "ytd_pct": -0.59,
+      "trade_count": 26,
+      "positions": 0,
+      "last_snapshot": "2026-04-30",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:google-trends-surge-in-used-car-price-searches",
+      "algo_type": "crazy",
+      "algo_id": "google-trends-surge-in-used-car-price-searches",
+      "name": "Google Trends Surge In Used Car Price Searches",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 100038.19,
+      "ytd_pct": 0.04,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-04-30",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },
@@ -372,6 +420,30 @@
       "equity": 99768.27,
       "ytd_pct": -0.23,
       "trade_count": 12,
+      "positions": 0,
+      "last_snapshot": "2026-04-30",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
+      "name": "Weekly Surge In Google Trends For Diy Electronics Repair Signals Bullish Xlk",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLK"
+      ],
+      "equity": 99902.82,
+      "ytd_pct": -0.1,
+      "trade_count": 4,
       "positions": 0,
       "last_snapshot": "2026-04-30",
       "last_signal": null,

@@ -2,15 +2,15 @@
   "ticker": "CRM",
   "sector": "Technology",
   "sector_etf": "XLK",
-  "composite": "10 of 26",
+  "composite": "10 of 27",
   "composite_label": "MIXED",
   "composite_color": "yellow",
   "bullish": 10,
-  "bearish": 16,
-  "neutral": 125,
-  "total_signals": 151,
-  "total_active": 26,
-  "bullish_pct": 38,
+  "bearish": 17,
+  "neutral": 131,
+  "total_signals": 158,
+  "total_active": 27,
+  "bullish_pct": 37,
   "breakdown": [
     {
       "algo_id": "reddit-subreddit-mention-spike",
@@ -85,6 +85,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "ev-charger-expansion-frenzy",
+      "name": "Ev Charger Expansion Frenzy",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "weekly-google-trends-surge-in-home-energy-bill-shock-signals",
       "name": "Weekly Google Trends Surge In Home Energy Bill Shock Signals Bullish Utilities",
       "algo_type": "crazy",
@@ -118,6 +127,15 @@
       "direction": "NEUTRAL",
       "days_running": 86,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
+      "name": "Weekly Surge In Google Trends For Diy Electronics Repair Signals Bullish Xlk",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 66,
+      "ytd_pct": -0.1,
       "beat_spy": false
     },
     {
@@ -229,6 +247,24 @@
       "beat_spy": false
     },
     {
+      "algo_id": "google-trends-surge-in-used-car-price-searches",
+      "name": "Google Trends Surge In Used Car Price Searches",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.04,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-for-home-heating-oil-shortage-",
+      "name": "Weekly Surge In Google Trends For Home Heating Oil Shortage Signals Bullish Xle",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "liquor",
       "name": "Liquor Store Leading Indicator",
       "algo_type": "crazy",
@@ -271,6 +307,24 @@
       "direction": "BEARISH",
       "days_running": 72,
       "ytd_pct": -0.13,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "healthcare-cost-shock-google-trends-spike",
+      "name": "Healthcare Cost Shock Google Trends Spike",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "electricity-demand-spike-weather-anomaly",
+      "name": "Electricity Demand Spike Weather Anomaly",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
       "beat_spy": false
     },
     {
@@ -1279,6 +1333,15 @@
       "direction": "NEUTRAL",
       "days_running": 72,
       "ytd_pct": 0.04,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "daily-jump-in-google-trends-searches-for-home-water-heater-r",
+      "name": "Daily Jump In Google Trends Searches For Home Water Heater Repair Signals Consumer Stress Lifting Xly",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": -0.59,
       "beat_spy": false
     },
     {

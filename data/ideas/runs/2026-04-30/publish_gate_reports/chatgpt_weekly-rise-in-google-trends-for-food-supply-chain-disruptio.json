@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-04-30/publish/chatgpt_weekly-rise-in-google-trends-for-food-supply-chain-disruptio.md",
+  "target_file": "data/ideas/runs/2026-04-30/intervention/chatgpt_weekly-rise-in-google-trends-for-food-supply-chain-disruptio.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "no explicit volume data required",
+      "position sizing exceeds single signal allocation",
+      "requires short position",
+      "short_trade_not_supported"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 920,
+    "output_tokens": 82
+  },
+  "cost_usd": 0.00312,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires short position which current algo envelope does not support.\",\n  \"risk_flags\": [\"requires short position\", \"position sizing exceeds single signal allocation\", \"no explicit volume data required\"]\n}\n```"
+}

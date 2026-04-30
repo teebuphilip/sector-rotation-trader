@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T23:31:01Z",
+  "generated_at": "2026-04-30T23:36:06Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
@@ -176,15 +176,15 @@
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 21,
+      "count": 25,
       "by_status": {
         "failed": 1,
-        "live_only": 12,
-        "sandbox": 8
+        "live_only": 15,
+        "sandbox": 9
       },
       "by_evidence_class": {
-        "live_receipts_only": 12,
-        "needs_history": 8,
+        "live_receipts_only": 15,
+        "needs_history": 9,
         "v1_backtested": 1
       },
       "leaders": [
@@ -247,6 +247,30 @@
           "backtest_trade_count": null
         },
         {
+          "key": "crazy:google-trends-surge-in-used-car-price-searches",
+          "algo_type": "crazy",
+          "algo_id": "google-trends-surge-in-used-car-price-searches",
+          "name": "Google Trends Surge In Used Car Price Searches",
+          "family": "consumer_stress",
+          "status": "live_only",
+          "evidence_class": "live_receipts_only",
+          "rebalance_frequency": "weekly",
+          "universe": [
+            "XLY"
+          ],
+          "equity": 100038.19,
+          "ytd_pct": 0.04,
+          "trade_count": 2,
+          "positions": 0,
+          "last_snapshot": "2026-04-30",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": null,
+          "backtest_reason": null,
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
+        {
           "key": "crazy:weekly-surge-in-google-trends-for-diy-plumbing-repair-signal",
           "algo_type": "crazy",
           "algo_id": "weekly-surge-in-google-trends-for-diy-plumbing-repair-signal",
@@ -291,35 +315,6 @@
           "new_algo_date": null,
           "backtest_status": null,
           "backtest_reason": null,
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:consumer-sentiment",
-          "algo_type": "crazy",
-          "algo_id": "consumer-sentiment",
-          "name": "Consumer Sentiment",
-          "family": "consumer_stress",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "monthly",
-          "universe": [
-            "XLY",
-            "XLK",
-            "XLF",
-            "XLP",
-            "XLU",
-            "XLV"
-          ],
-          "equity": 100000.0,
-          "ytd_pct": 0.0,
-          "trade_count": 0,
-          "positions": 0,
-          "last_snapshot": "2026-04-30",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": "UNSUPPORTED_DATA",
-          "backtest_reason": "No supported V1 price-only backtest path",
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
         }
@@ -955,16 +950,16 @@
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 48,
+      "count": 51,
       "by_status": {
         "backtest_weak": 1,
         "live_only": 14,
         "parked": 2,
-        "sandbox": 31
+        "sandbox": 34
       },
       "by_evidence_class": {
         "live_receipts_only": 14,
-        "needs_history": 29,
+        "needs_history": 32,
         "pending_seed": 2,
         "v1_backtested": 3
       },
