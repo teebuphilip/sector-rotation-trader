@@ -1125,11 +1125,12 @@ def build_signals_index(leaderboard: dict, daily: dict | None = None) -> str:
   tbody td strong {{ color: var(--text); }}
   .signal-note {{ color: var(--muted); font-size: 14px; line-height: 1.5; margin-top: 8px; }}
   .signal-table-sub {{ margin: 0 0 14px; color: var(--muted); font-size: 14px; }}
+  .page-title {{ color: var(--accent); font-size: clamp(28px, 5vw, 48px); font-weight: 700; letter-spacing: -0.5px; margin: 0 0 12px; }}
 </style>
 </head>
 <body>
     <header>
-    <h1>All signals, no scoreboard.</h1>
+    <h1 class="page-title">All signals, no scoreboard.</h1>
     <p>StockArithm's public inventory: names, families, and status only. No rank and no returns.</p>
     <div class="hero-actions">
       <a class="cta cta-primary" href="/leaderboard.html">See the public leaderboard</a>
@@ -1389,11 +1390,12 @@ def build_families_page(families: dict, daily: dict) -> str:
 <style>
   .family-legend ul {{ margin: 10px 0 0 18px; line-height: 1.7; }}
   .family-grid {{ margin-top: 20px; }}
+  .page-title {{ color: var(--accent); font-size: clamp(28px, 5vw, 48px); font-weight: 700; letter-spacing: -0.5px; margin: 0 0 12px; }}
 </style>
 </head>
 <body>
   <header>
-    <h1>Signal Families</h1>
+    <h1 class="page-title">Signal Families</h1>
     <p>The lab grouped by theme instead of one flat wall of alternative experiments.</p>
   </header>
   <div class="wrap">
