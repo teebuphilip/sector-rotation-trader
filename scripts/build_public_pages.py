@@ -1578,8 +1578,8 @@ def build_biscotti_page(trades_data: dict) -> str:
 </head>
 <body>
   <div class="hero biscotti-hero">
-  <div class="hero-badge">PUBLIC PREVIEW</div>
     <h1 class="biscotti-title">Algo Biscotti</h1>
+    <div class="hero-badge">PUBLIC PREVIEW</div>
     <p class="hero-sub">Unconditional loyalty. A monthly contrarian rotation.</p>
     <div class="biscotti-sub">Public free view of the Biscotti page. The chart and trade log below are real; the deeper per-algo detail stays for premium later.</div>
   </div>
@@ -1590,6 +1590,7 @@ def build_biscotti_page(trades_data: dict) -> str:
         <div>
           <img class="biscotti-photo" src="biscotti.jpg" alt="Biscotti" />
           <div class="biscotti-label">Biscotti. The original signal.</div>
+          <div class="biscotti-label" style="margin-top:6px;color:var(--text);font-style:italic;font-size:13px;line-height:1.5;">the best there is, the best there was, and the best there ever will be</div>
         </div>
         <div>
           <h2 class="section-title">What Biscotti does</h2>
