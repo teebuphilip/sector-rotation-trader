@@ -1524,7 +1524,6 @@ def build_legal_page() -> str:
 <div class="hero">
   <div class="hero-badge">LEGAL</div>
   <h1 class="daily-title">Disclaimers and disclosures</h1>
-  <p class="hero-sub">Legal</p>
   <p class="hero-sub">The plain-English rules for using this site and its signals.</p>
 </div>
 {''.join(body)}
