@@ -1523,8 +1523,8 @@ def build_legal_page() -> str:
 <body>
 <div class="hero">
   <div class="hero-badge">LEGAL</div>
-  <h1>Legal</h1>
   <h1><span>Disclaimers</span> and disclosures</h1>
+  <p class="hero-sub">Legal</p>
   <p class="hero-sub">The plain-English rules for using this site and its signals.</p>
 </div>
 {''.join(body)}
