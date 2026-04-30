@@ -1,0 +1,82 @@
+{
+  "date": "2026-04-30",
+  "input_count": 25,
+  "kept_count": 24,
+  "duplicate_count": 1,
+  "kept_by_source": {
+    "chatgpt": 14,
+    "claude": 10
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-surge-in-google-trends-searches-for-emergency-dental-",
+      "title": "Weekly Surge In Google Trends Searches For Emergency Dental Care Signals Consumer Stress Lifting Xly",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "high_title_overlap",
+        "score": 0.625,
+        "matched_title": "weekly surge in google trends searches for diy home repair signals consumer stress lifting xly",
+        "matched_idea_id": "weekly-surge-in-google-trends-searches-for-diy-home-repair-s",
+        "matched_origin": "history:2026-04-23",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-surge-in-google-trends-searches-for-emergency-dental-",
+        "title": "Weekly Surge In Google Trends Searches For Emergency Dental Care Signals Consumer Stress Lifting Xly",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "A sudden increase in emergency dental care searches often precedes discretionary spending rebounds after stress periods. Consumer discretionary spending tends to rebound as urgent health-related stress eases.",
+        "data_sources": [
+          "Google Trends weekly searches"
+        ],
+        "signal_logic": "Enter long XLY if weekly search interest for 'emergency dental care' rises by 15%+ over prior 2 weeks",
+        "entry_exit": "Entry: Enter long XLY if weekly search interest for 'emergency dental care' rises by 15%+ over prior 2 weeks Exit: Exit after 4 weeks or if interest falls below prior 2-week average",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly searches via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Dental emergency searches fluctuate often with consumer stress cycles and will reliably spike multiple times yearly.",
+        "schema": {
+          "idea": "Weekly surge in Google Trends searches for 'emergency dental care' signals consumer stress lifting XLY",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends weekly searches",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "A sudden increase in emergency dental care searches often precedes discretionary spending rebounds after stress periods.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "Consumer discretionary spending tends to rebound as urgent health-related stress eases."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLY if weekly search interest for 'emergency dental care' rises by 15%+ over prior 2 weeks",
+            "exit": "Exit after 4 weeks or if interest falls below prior 2-week average",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Dental emergency searches fluctuate often with consumer stress cycles and will reliably spike multiple times yearly.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
