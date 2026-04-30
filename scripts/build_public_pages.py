@@ -219,9 +219,9 @@ def _site_links() -> str:
     for i, (href, label) in enumerate(links):
         if i:
             parts.append('<span class="footer-sep">&middot;</span>')
-        parts.append(f'<a href="{href}">{_e(label)}</a>')
+        parts.append(f'<a href="{href}" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">{_e(label)}</a>')
     parts.append('<span class="footer-sep">&middot;</span>')
-    parts.append('<a href="/biscotti.html">Biscotti</a>')
+    parts.append('<a href="/biscotti.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Biscotti</a>')
     return "".join(parts)
 
 
@@ -458,7 +458,7 @@ def _footer_html(generated_at: str, run_date: str, label: str = "Updated nightly
     return f"""
 <footer>
   <div class="wrap">
-    <div class="footer-nav">{_site_links()}</div>
+    <div class="footer-nav" style="margin-top:8px;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:0 8px;width:100%;font-family:var(--mono);font-size:11px;line-height:1.6;letter-spacing:0.2px;color:rgba(255,255,255,0.58);">{_site_links()}</div>
     <div style="width:100%;max-width:520px;height:1px;margin:14px auto 14px;background:rgba(255,255,255,0.10);"></div>
     <div style="display:block;width:100%;text-align:center;font-size:11px;font-style:italic;letter-spacing:0.2px;color:rgba(255,255,255,0.58);margin:0 auto 10px;">
       StockArithm powered by R&amp;B AlgoLabs, LLC.
@@ -918,6 +918,12 @@ LANDING_CSS = """
   .cta-primary:hover { background: #33e3a3; }
   .hero-strip { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
   .pill { font-size: 12px; color: var(--muted); border: 1px solid rgba(255,255,255,0.08); border-radius: 999px; padding: 6px 10px; }
+  .hero-brand { font-size: clamp(42px, 7vw, 72px); font-weight: 700; letter-spacing: -1.5px; line-height: 1; color: var(--accent); margin: 0 0 10px; }
+  .hero-tagline { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; color: var(--muted); max-width: 860px; margin: 0 auto; }
+  .home-shell { max-width: 1120px; margin: 0 auto; }
+  .home-shell .card { text-align: center; }
+  .home-shell .card ul { display: inline-block; text-align: left; margin: 0 auto; }
+  .home-shell .card .cta { margin-top: 6px; }
   .mini-chart-wrap { display: flex; flex-direction: column; gap: 10px; }
   .mini-chart-meta { display: flex; flex-direction: column; gap: 4px; }
   .mini-chart-title { font-size: 18px; font-weight: 700; }
@@ -968,8 +974,9 @@ def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: li
 </head>
 <body>
   <header>
+    <div class="hero-brand">StockArithm</div>
     <h1>Alternative data signals, run in public.</h1>
-    <p>StockArithm is a public paper-trading lab for alternative data signals. Some are working. Some are failing. All of them stay visible.</p>
+    <p class="hero-tagline">StockArithm is a public paper-trading lab for alternative data signals. Some are working. Some are failing. All of them stay visible.</p>
     <div class="hero-actions">
       <a class="cta cta-primary" href="leaderboard.html">See the public leaderboard</a>
       <a class="cta" href="#waitlist">Get the weekly lab notes</a>
@@ -982,7 +989,7 @@ def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: li
     </div>
   </header>
 
-  <div class="wrap">
+  <div class="wrap home-shell">
     <div class="card" style="margin-bottom:16px;">
       {chart_html}
     </div>
@@ -1074,7 +1081,9 @@ def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: li
       <p>Trading and investing involve significant risk, including possible loss of principal. Past performance does not guarantee future results. Signals, models, results, and third-party data may be incomplete, incorrect, delayed, or revised.</p>
       <p>You are solely responsible for your own financial decisions. Do your own research and consult a qualified professional before making investment decisions.</p>
       <p>By using this service, you agree that the operators are not liable for losses, damages, or decisions made based on the information provided.</p>
-      <p><a href="legal.html">Read the full legal/disclaimer page &rarr;</a></p>
+      <div style="margin-top:14px;">
+        <a class="cta" href="legal.html">Read the full legal/disclaimer page</a>
+      </div>
     </div>
   </div>
 
