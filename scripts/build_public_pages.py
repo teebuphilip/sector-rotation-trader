@@ -370,11 +370,21 @@ def _leader_chart_html(rank_history: list[dict], leaderboard: dict) -> str:
         for x, d, anchor in tick_points
     )
 
+    beating_spy = sum(1 for a in (leaderboard.get("algos") or []) if a.get("beat_spy"))
+    total_algos = len(leaderboard.get("algos") or [])
+    weak_regime = beating_spy <= max(2, total_algos // 20)
+    caption = (
+        "Recent conditions have been rough and most signals are underwater. That is why we keep the full record visible."
+        if weak_regime
+        else
+        "Recent conditions have improved and more signals are beating SPY. That is why we keep the full record visible."
+    )
+
     return f"""
     <div class="mini-chart-wrap">
       <div class="mini-chart-meta">
         <div class="mini-chart-title">Top 10 rolling 30D leaders vs SPY</div>
-        <div class="mini-chart-note">Ten recent leaders, normalized to 100 at the start of the window, against the benchmark they need to beat.</div>
+        <div class="mini-chart-note">{_e(caption)}</div>
       </div>
       <svg class="mini-chart" viewBox="0 0 {width} {height}" role="img" aria-label="Top 10 rolling 30D leaders versus SPY chart">
         <rect x="0" y="0" width="{width}" height="{height}" rx="14" fill="#0f1c18" stroke="rgba(255,255,255,0.08)"/>
