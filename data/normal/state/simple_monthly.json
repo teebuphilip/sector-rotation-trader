@@ -1,11 +1,31 @@
 {
-  "cash": 100000,
+  "cash": -2.9096725029376103e-12,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 0.0,
+  "fees_paid": 9.95,
   "taxes_paid": 0.0,
-  "positions": {},
-  "trade_log": [],
+  "positions": {
+    "XLK": {
+      "shares": 626.8968652037618,
+      "entry_price": 159.5,
+      "entry_date": "2026-04-30",
+      "cost": 99990.05,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
+  "trade_log": [
+    {
+      "date": "2026-04-30",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 626.8969,
+      "price": 159.5,
+      "cost": 99990.05,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-01-12",
@@ -940,15 +960,35 @@
       "positions": {},
       "sector": "Quantified Simple Monthly Rotation",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-30",
+      "cash": -0.0,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99990.05,
+      "positions": {
+        "XLK": {
+          "shares": 626.8969,
+          "entry_price": 159.5,
+          "current_price": 159.5,
+          "market_value": 99990.05,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-30",
+          "margin": false
+        }
+      },
+      "sector": "Quantified Simple Monthly Rotation",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-11",
-  "last_run": "2026-04-29",
+  "last_run": "2026-04-30",
   "meta": {
     "simple_monthly": {
       "name": "Quantified Simple Monthly Rotation",
-      "last_run": "2026-04-29",
-      "last_signal": "CASH"
+      "last_run": "2026-04-30",
+      "last_signal": "XLK"
     }
   }
 }

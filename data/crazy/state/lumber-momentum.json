@@ -1267,14 +1267,43 @@
       },
       "sector": "Lumber Momentum",
       "num_positions": 2
+    },
+    {
+      "date": "2026-04-30",
+      "cash": 19980.1,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99561.52,
+      "positions": {
+        "XLB": {
+          "shares": 867.3863,
+          "entry_price": 51.88,
+          "current_price": 51.47,
+          "market_value": 44644.37,
+          "unrealized_pnl": -355.63,
+          "entry_date": "2026-04-19",
+          "margin": false
+        },
+        "XLRE": {
+          "shares": 786.8705,
+          "entry_price": 44.48,
+          "current_price": 44.4,
+          "market_value": 34937.05,
+          "unrealized_pnl": -62.95,
+          "entry_date": "2026-04-19",
+          "margin": false
+        }
+      },
+      "sector": "Lumber Momentum",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16",
-  "last_run": "2026-04-29",
+  "last_run": "2026-04-30",
   "meta": {
     "lumber-momentum": {
       "name": "Lumber Momentum",
-      "last_run": "2026-04-29",
+      "last_run": "2026-04-30",
       "series_id": "WPU081",
       "lumber_3m_chg": 0.0437,
       "signal_label": "BUILDING_DEMAND",

@@ -129,6 +129,16 @@
       "cost": 10000.0,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-30",
+      "action": "BUY",
+      "ticker": "XEL",
+      "shares": 120.5546,
+      "price": 82.95,
+      "cost": 10000.0,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -2041,6 +2051,35 @@
       },
       "sector": "XLU",
       "num_positions": 1
+    },
+    {
+      "date": "2026-04-30",
+      "cash": 80035.6,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100204.95,
+      "positions": {
+        "NEE": {
+          "shares": 103.8961,
+          "entry_price": 96.25,
+          "current_price": 97.88,
+          "market_value": 10169.35,
+          "unrealized_pnl": 169.35,
+          "entry_date": "2026-04-23",
+          "margin": false
+        },
+        "XEL": {
+          "shares": 120.5546,
+          "entry_price": 82.95,
+          "current_price": 82.95,
+          "market_value": 10000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-30",
+          "margin": false
+        }
+      },
+      "sector": "XLU",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-07"

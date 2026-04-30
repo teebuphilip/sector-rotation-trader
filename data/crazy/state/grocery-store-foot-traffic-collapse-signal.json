@@ -1,10 +1,19 @@
 {
-  "cash": 99682.85637028592,
+  "cash": 94688.76355177163,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 221.78589866584693,
+  "fees_paid": 231.73589866584692,
   "taxes_paid": 70.80206261004642,
-  "positions": {},
+  "positions": {
+    "XLY": {
+      "shares": 42.113585828259644,
+      "entry_price": 118.3499984741211,
+      "entry_date": "2026-04-30",
+      "cost": 4984.142818514297,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-01-23",
@@ -269,6 +278,16 @@
       "pnl_pct": 0.09,
       "entry_date": "2026-04-24",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-30",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 42.1136,
+      "price": 118.35,
+      "cost": 4984.14,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1121,19 +1140,40 @@
       "positions": {},
       "sector": "Grocery Store Foot Traffic Collapse Signal",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-30",
+      "cash": 94688.76,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99672.91,
+      "positions": {
+        "XLY": {
+          "shares": 42.1136,
+          "entry_price": 118.35,
+          "current_price": 118.35,
+          "market_value": 4984.14,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-30",
+          "margin": false
+        }
+      },
+      "sector": "Grocery Store Foot Traffic Collapse Signal",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-21",
-  "last_run": "2026-04-29",
+  "last_run": "2026-04-30",
   "meta": {
     "grocery-store-foot-traffic-collapse-signal": {
-      "latest_value": 26.0,
-      "prior_avg": 34.5714,
-      "signal_change": -0.2479,
-      "signal_label": "HOLD",
+      "latest_value": 42.0,
+      "prior_avg": 33.8571,
+      "signal_change": 0.2405,
+      "signal_label": "RISK_ON",
       "name": "Grocery Store Foot Traffic Collapse Signal",
-      "last_signal": "HOLD",
-      "last_run": "2026-04-29"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-04-30",
+      "entry_date": "2026-04-30"
     }
   }
 }

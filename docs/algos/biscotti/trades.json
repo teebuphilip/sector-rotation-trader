@@ -57,6 +57,30 @@
       "cost": 96029.92,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-04-30",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 1171.3823,
+      "price": 84.31,
+      "proceeds": 98744.0,
+      "fees": 15.24,
+      "tax": 1004.21,
+      "pnl": 1709.87,
+      "pnl_pct": 1.78,
+      "entry_date": "2026-03-31",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-30",
+      "action": "BUY",
+      "ticker": "XLV",
+      "shares": 669.4283,
+      "price": 145.99,
+      "cost": 97729.84,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1723,6 +1747,26 @@
           "market_value": 97131.01,
           "unrealized_pnl": 1101.09,
           "entry_date": "2026-03-31",
+          "margin": false
+        }
+      },
+      "sector": "Algo Biscotti (Unconditional Loyalty)",
+      "num_positions": 1
+    },
+    {
+      "date": "2026-04-30",
+      "cash": -0.0,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 97729.84,
+      "positions": {
+        "XLV": {
+          "shares": 669.4283,
+          "entry_price": 145.99,
+          "current_price": 145.99,
+          "market_value": 97729.84,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-30",
           "margin": false
         }
       },

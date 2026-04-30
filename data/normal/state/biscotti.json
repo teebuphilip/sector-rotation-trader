@@ -2,14 +2,14 @@
   "cash": -2.9096725029376103e-12,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 60.3309876443558,
-  "taxes_paid": 0.0,
+  "fees_paid": 85.41179806619972,
+  "taxes_paid": 2722.5192876750334,
   "positions": {
-    "XLI": {
-      "shares": 573.7966961248485,
-      "entry_price": 161.72999572753906,
-      "entry_date": "2026-03-31",
-      "cost": 92800.13721274778,
+    "XLV": {
+      "shares": 667.3458764038079,
+      "entry_price": 145.99000549316406,
+      "entry_date": "2026-04-30",
+      "cost": 97425.8281620323,
       "using_margin": false,
       "consec_below_ma": 0
     }
@@ -70,6 +70,30 @@
       "shares": 573.7967,
       "price": 161.73,
       "cost": 92800.14,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-30",
+      "action": "SELL",
+      "ticker": "XLI",
+      "shares": 573.7967,
+      "price": 174.58,
+      "proceeds": 100158.3,
+      "fees": 15.13,
+      "tax": 2722.52,
+      "pnl": 4635.64,
+      "pnl_pct": 5.0,
+      "entry_date": "2026-03-31",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-30",
+      "action": "BUY",
+      "ticker": "XLV",
+      "shares": 667.3459,
+      "price": 145.99,
+      "cost": 97425.83,
       "margin": false,
       "fees": 9.95
     }
@@ -1728,15 +1752,35 @@
       },
       "sector": "Algo Biscotti (Unconditional Loyalty)",
       "num_positions": 1
+    },
+    {
+      "date": "2026-04-30",
+      "cash": -0.0,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 97425.83,
+      "positions": {
+        "XLV": {
+          "shares": 667.3459,
+          "entry_price": 145.99,
+          "current_price": 145.99,
+          "market_value": 97425.83,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-30",
+          "margin": false
+        }
+      },
+      "sector": "Algo Biscotti (Unconditional Loyalty)",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-11",
-  "last_run": "2026-04-29",
+  "last_run": "2026-04-30",
   "meta": {
     "biscotti": {
       "name": "Algo Biscotti (Unconditional Loyalty)",
-      "last_run": "2026-04-29",
-      "last_signal": "CASH"
+      "last_run": "2026-04-30",
+      "last_signal": "XLV"
     }
   }
 }

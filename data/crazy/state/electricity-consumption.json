@@ -1,23 +1,23 @@
 {
-  "cash": 24769.409235576128,
+  "cash": 19986.58512940633,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 196.00774690363195,
-  "taxes_paid": 5.571308044679609,
+  "fees_paid": 239.9683002298456,
+  "taxes_paid": 531.2583251066296,
   "positions": {
-    "XLP": {
-      "shares": 481.6965817457782,
-      "entry_price": 82.33999633789062,
-      "entry_date": "2026-04-27",
-      "cost": 39662.89477692181,
+    "XLI": {
+      "shares": 257.84506283099904,
+      "entry_price": 174.5800018310547,
+      "entry_date": "2026-04-30",
+      "cost": 45014.59154116422,
       "using_margin": false,
       "consec_below_ma": 0
     },
-    "XLU": {
-      "shares": 751.3538419925103,
-      "entry_price": 46.189998626708984,
-      "entry_date": "2026-04-27",
-      "cost": 34705.03292980657,
+    "XLB": {
+      "shares": 680.2282523043385,
+      "entry_price": 51.470001220703125,
+      "entry_date": "2026-04-30",
+      "cost": 35011.34897646106,
       "using_margin": false,
       "consec_below_ma": 0
     }
@@ -232,6 +232,54 @@
       "shares": 751.3538,
       "price": 46.19,
       "cost": 34705.03,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-30",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 481.6966,
+      "price": 84.31,
+      "proceeds": 40599.71,
+      "fees": 12.13,
+      "tax": 346.62,
+      "pnl": 590.2,
+      "pnl_pct": 1.49,
+      "entry_date": "2026-04-27",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-30",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 751.3538,
+      "price": 46.85,
+      "proceeds": 35188.99,
+      "fees": 11.94,
+      "tax": 179.06,
+      "pnl": 304.89,
+      "pnl_pct": 0.88,
+      "entry_date": "2026-04-27",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-30",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 257.8451,
+      "price": 174.58,
+      "cost": 45014.59,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-30",
+      "action": "BUY",
+      "ticker": "XLB",
+      "shares": 680.2283,
+      "price": 51.47,
+      "cost": 35011.35,
       "margin": false,
       "fees": 9.95
     }
@@ -1459,20 +1507,49 @@
       },
       "sector": "Electricity Consumption",
       "num_positions": 2
+    },
+    {
+      "date": "2026-04-30",
+      "cash": 19986.59,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100012.53,
+      "positions": {
+        "XLI": {
+          "shares": 257.8451,
+          "entry_price": 174.58,
+          "current_price": 174.58,
+          "market_value": 45014.59,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-30",
+          "margin": false
+        },
+        "XLB": {
+          "shares": 680.2283,
+          "entry_price": 51.47,
+          "current_price": 51.47,
+          "market_value": 35011.35,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-30",
+          "margin": false
+        }
+      },
+      "sector": "Electricity Consumption",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16",
-  "last_run": "2026-04-29",
+  "last_run": "2026-04-30",
   "meta": {
     "electricity-consumption": {
       "name": "Electricity Consumption",
-      "last_run": "2026-04-29",
+      "last_run": "2026-04-30",
       "adapter": "eia_electricity",
       "respondent": "US48",
-      "electricity_4w_chg": -0.0214,
-      "signal_label": "POWER_DEMAND_SLOWDOWN",
-      "signal_key": "POWER_DEMAND_SLOWDOWN",
-      "last_signal": "POWER_DEMAND_SLOWDOWN"
+      "electricity_4w_chg": 0.0215,
+      "signal_label": "INDUSTRIAL_POWER_DEMAND",
+      "signal_key": "INDUSTRIAL_POWER_DEMAND",
+      "last_signal": "INDUSTRIAL_POWER_DEMAND"
     }
   }
 }

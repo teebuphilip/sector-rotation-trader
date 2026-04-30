@@ -167,6 +167,16 @@
       "pnl_pct": -0.61,
       "entry_date": "2026-04-09",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-30",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 106.6398,
+      "price": 46.85,
+      "cost": 4996.08,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1029,6 +1039,26 @@
       "positions": {},
       "sector": "Utilities Sector Negative Price Gap Fill",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-30",
+      "cash": 94915.51,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99911.58,
+      "positions": {
+        "XLU": {
+          "shares": 106.6398,
+          "entry_price": 46.85,
+          "current_price": 46.85,
+          "market_value": 4996.08,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-30",
+          "margin": false
+        }
+      },
+      "sector": "Utilities Sector Negative Price Gap Fill",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-19"

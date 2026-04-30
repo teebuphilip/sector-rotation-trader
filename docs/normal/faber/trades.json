@@ -95,6 +95,26 @@
       "pnl_pct": -6.06,
       "entry_date": "2026-02-27",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-04-30",
+      "action": "BUY",
+      "ticker": "XLE",
+      "shares": 580.3108,
+      "price": 59.65,
+      "cost": 34615.54,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-04-30",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 217.0253,
+      "price": 159.5,
+      "cost": 34615.54,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1829,6 +1849,35 @@
       "positions": {},
       "sector": "Faber Momentum Rotation",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-30",
+      "cash": 34595.64,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 103826.71,
+      "positions": {
+        "XLE": {
+          "shares": 580.3108,
+          "entry_price": 59.65,
+          "current_price": 59.65,
+          "market_value": 34615.54,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-30",
+          "margin": false
+        },
+        "XLK": {
+          "shares": 217.0253,
+          "entry_price": 159.5,
+          "current_price": 159.5,
+          "market_value": 34615.54,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-30",
+          "margin": false
+        }
+      },
+      "sector": "Faber Momentum Rotation",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-11"

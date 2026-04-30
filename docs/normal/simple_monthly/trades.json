@@ -1,5 +1,16 @@
 {
-  "trade_log": [],
+  "trade_log": [
+    {
+      "date": "2026-04-30",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 626.8969,
+      "price": 159.5,
+      "cost": 99990.05,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-01-12",
@@ -934,6 +945,26 @@
       "positions": {},
       "sector": "Quantified Simple Monthly Rotation",
       "num_positions": 0
+    },
+    {
+      "date": "2026-04-30",
+      "cash": -0.0,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99990.05,
+      "positions": {
+        "XLK": {
+          "shares": 626.8969,
+          "entry_price": 159.5,
+          "current_price": 159.5,
+          "market_value": 99990.05,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-04-30",
+          "margin": false
+        }
+      },
+      "sector": "Quantified Simple Monthly Rotation",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-11"
