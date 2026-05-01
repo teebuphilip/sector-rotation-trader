@@ -141,6 +141,43 @@ This keeps v1 and v2 completely separate. Operator can diff or inspect before us
 
 ---
 
+## Output Structure (Per Post)
+
+Each v2 generation should output in this structure:
+
+```
+1. Internal Factual Seed — what actually happened in the lab that day
+2. Public Hook / Title — Reddit-style headline
+3. X Version — 1-3 short tweets + optional thread starter
+4. Suggested Format — Deep Dive, Failure Autopsy, Snapshot, Personal Story, etc.
+5. Engine Notes / Angle — who it's for, key emphasis
+6. Visual Suggestion — leaderboard screenshot, chart, table, etc.
+```
+
+---
+
+## Tone Guidelines (Baked Into Prompts)
+
+- Honest, slightly self-deprecating, builder mindset
+- Never hype results
+- Always acknowledge small sample size / paper trading limitations
+- Mix data + personality (Biscotti mentions help)
+- For broader subs (r/stocks, r/investing): simpler language, no quant jargon
+- End every Reddit post with 1-2 genuine questions to drive comments
+- Never promise future performance
+
+---
+
+## X Tactics
+
+- First 2 weeks: Heavy replying to other threads + low own posting
+- Style: Short, visual, transparent, personality
+- Goal: Drive clicks to site + mailing list, not immediate followers
+- Keep under 280 characters per tweet
+- Emojis used sparingly
+
+---
+
 ## Dependencies
 
 - `reports/deep_validation/latest.json` must exist (same as v1)
