@@ -1,0 +1,39 @@
+Title: I named a trading algorithm after my dog. It's ranked #1 this month and #140 overall.
+
+---
+
+I'm 55. I've been in DevOps my whole career. I have a 3-year-old daughter. The math is not great.
+
+A year ago I started building a paper-trading lab as a side project. The idea: run sector rotation signals off alternative economic data — TSA checkpoint counts, bankruptcy filings, freight rail carloads, electricity demand, Google Trends. Not price patterns. Weird external stuff that might move sectors before the market notices.
+
+I called it StockArithm. Everything is paper-traded, everything is public, and I publish the failures alongside the wins.
+
+Right now I have 151 signals running. 2 are beating SPY. 149 are flat or losing.
+
+I'm not hiding that number. That IS the project.
+
+**The dog thing**
+
+Each algo gets a name. One of them is called Biscotti, after my dog. It's a consumer sentiment signal — when sentiment craters, rotate to defensive sectors.
+
+This month, Biscotti is ranked #1 on the rolling 30-day leaderboard. 7.24% return, best momentum in the lab.
+
+On the full-window force rank? #140 out of 151.
+
+Good month. Bad overall record. I can't tell yet if it found the right regime or just had a lucky stretch.
+
+That's the whole tension of this project. Short-term winners aren't long-term winners. But you have to keep running them to find out.
+
+**What I'm not doing**
+
+- Not selling anything yet
+- Not claiming 86 days of paper trading means anything statistically
+- Not pretending 2/151 is a success rate worth bragging about
+
+**Why I'm posting here**
+
+I put the first public post on r/algotrading last week. Got some good methodological feedback, some skepticism, some silence. Now I'm trying to figure out if anyone outside the quant bubble cares about this kind of thing.
+
+If you're building something weird and lonely and you're not sure if it matters — I'm in the same spot. Happy to trade notes.
+
+The full leaderboard is at stockarithm.com. Winners, losers, Biscotti, all of it.
