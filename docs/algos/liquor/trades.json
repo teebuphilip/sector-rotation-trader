@@ -1,5 +1,26 @@
 {
-  "trade_log": [],
+  "trade_log": [
+    {
+      "date": "2026-05-01",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 594.0359,
+      "price": 84.17,
+      "cost": 50000.0,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-01",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 644.4683,
+      "price": 46.55,
+      "cost": 30000.0,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-01-16",
@@ -929,6 +950,35 @@
       "positions": {},
       "sector": "Liquor Store Leading Indicator",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-01",
+      "cash": 19980.1,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99980.1,
+      "positions": {
+        "XLP": {
+          "shares": 594.0359,
+          "entry_price": 84.17,
+          "current_price": 84.17,
+          "market_value": 50000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-01",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 644.4683,
+          "entry_price": 46.55,
+          "current_price": 46.55,
+          "market_value": 30000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-01",
+          "margin": false
+        }
+      },
+      "sector": "Liquor Store Leading Indicator",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16"

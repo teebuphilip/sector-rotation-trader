@@ -19,6 +19,54 @@
       "cost": 30000.0,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-01",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 485.0837,
+      "price": 84.17,
+      "proceeds": 40817.36,
+      "fees": 12.14,
+      "tax": 302.42,
+      "pnl": 514.93,
+      "pnl_pct": 1.29,
+      "entry_date": "2026-04-19",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-01",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 649.9133,
+      "price": 46.55,
+      "proceeds": 30241.81,
+      "fees": 11.66,
+      "tax": 89.47,
+      "pnl": 152.34,
+      "pnl_pct": 0.51,
+      "entry_date": "2026-04-19",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-01",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 478.3052,
+      "price": 84.17,
+      "cost": 40258.95,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-01",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 648.6404,
+      "price": 46.55,
+      "cost": 30194.21,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1268,6 +1316,35 @@
           "market_value": 30448.44,
           "unrealized_pnl": 448.44,
           "entry_date": "2026-04-19",
+          "margin": false
+        }
+      },
+      "sector": "Mortgage Rate Housing Proxy",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-05-01",
+      "cash": 30174.31,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100627.47,
+      "positions": {
+        "XLP": {
+          "shares": 478.3052,
+          "entry_price": 84.17,
+          "current_price": 84.17,
+          "market_value": 40258.95,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-01",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 648.6404,
+          "entry_price": 46.55,
+          "current_price": 46.55,
+          "market_value": 30194.21,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-01",
           "margin": false
         }
       },

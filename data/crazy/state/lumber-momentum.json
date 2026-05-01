@@ -1,23 +1,23 @@
 {
-  "cash": 19980.100000000002,
+  "cash": 19854.12337502991,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 19.9,
+  "fees_paid": 64.16699622452636,
   "taxes_paid": 0.0,
   "positions": {
     "XLB": {
-      "shares": 867.3862581636762,
-      "entry_price": 51.880001068115234,
-      "entry_date": "2026-04-19",
-      "cost": 45000.0,
+      "shares": 870.818966359914,
+      "entry_price": 51.349998474121094,
+      "entry_date": "2026-05-01",
+      "cost": 44716.552593817294,
       "using_margin": false,
       "consec_below_ma": 0
     },
     "XLRE": {
-      "shares": 786.8705116951604,
-      "entry_price": 44.47999954223633,
-      "entry_date": "2026-04-19",
-      "cost": 35000.0,
+      "shares": 784.7369392099514,
+      "entry_price": 44.31999969482422,
+      "entry_date": "2026-05-01",
+      "cost": 34779.54090630234,
       "using_margin": false,
       "consec_below_ma": 0
     }
@@ -40,6 +40,54 @@
       "shares": 786.8705,
       "price": 44.48,
       "cost": 35000.0,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-01",
+      "action": "SELL",
+      "ticker": "XLB",
+      "shares": 867.3863,
+      "price": 51.35,
+      "proceeds": 44527.85,
+      "fees": 12.44,
+      "tax": 0.0,
+      "pnl": -472.15,
+      "pnl_pct": -1.05,
+      "entry_date": "2026-04-19",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-01",
+      "action": "SELL",
+      "ticker": "XLRE",
+      "shares": 786.8705,
+      "price": 44.32,
+      "proceeds": 34862.17,
+      "fees": 11.93,
+      "tax": 0.0,
+      "pnl": -137.83,
+      "pnl_pct": -0.39,
+      "entry_date": "2026-04-19",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-01",
+      "action": "BUY",
+      "ticker": "XLB",
+      "shares": 870.819,
+      "price": 51.35,
+      "cost": 44716.55,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-01",
+      "action": "BUY",
+      "ticker": "XLRE",
+      "shares": 784.7369,
+      "price": 44.32,
+      "cost": 34779.54,
       "margin": false,
       "fees": 9.95
     }
@@ -1296,14 +1344,43 @@
       },
       "sector": "Lumber Momentum",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-01",
+      "cash": 19854.12,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99350.22,
+      "positions": {
+        "XLB": {
+          "shares": 870.819,
+          "entry_price": 51.35,
+          "current_price": 51.35,
+          "market_value": 44716.55,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-01",
+          "margin": false
+        },
+        "XLRE": {
+          "shares": 784.7369,
+          "entry_price": 44.32,
+          "current_price": 44.32,
+          "market_value": 34779.54,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-01",
+          "margin": false
+        }
+      },
+      "sector": "Lumber Momentum",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16",
-  "last_run": "2026-04-30",
+  "last_run": "2026-05-01",
   "meta": {
     "lumber-momentum": {
       "name": "Lumber Momentum",
-      "last_run": "2026-04-30",
+      "last_run": "2026-05-01",
       "series_id": "WPU081",
       "lumber_3m_chg": 0.0437,
       "signal_label": "BUILDING_DEMAND",

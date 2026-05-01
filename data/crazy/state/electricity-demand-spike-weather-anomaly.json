@@ -666,19 +666,29 @@
       "positions": {},
       "sector": "Electricity Demand Spike Weather Anomaly",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-01",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Electricity Demand Spike Weather Anomaly",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-29",
-  "last_run": "2026-04-30",
+  "last_run": "2026-05-01",
   "meta": {
     "electricity-demand-spike-weather-anomaly": {
       "signal_label": "HOLD",
-      "latest_value": 10649165.0,
-      "prior_avg": 10522828.6,
-      "signal_change": 0.012,
+      "latest_value": 9914075.0,
+      "prior_avg": 10542411.1714,
+      "signal_change": -0.0596,
       "name": "Electricity Demand Spike Weather Anomaly",
       "last_signal": "HOLD",
-      "last_run": "2026-04-30"
+      "last_run": "2026-05-01"
     }
   }
 }

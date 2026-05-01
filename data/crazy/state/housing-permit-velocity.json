@@ -1,23 +1,23 @@
 {
-  "cash": 29980.100000000002,
+  "cash": 30191.585028944603,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 19.9,
-  "taxes_paid": 0.0,
+  "fees_paid": 63.60045837759813,
+  "taxes_paid": 425.70561221959014,
   "positions": {
     "XLP": {
-      "shares": 482.39267828373585,
-      "entry_price": 82.91999816894531,
-      "entry_date": "2026-04-29",
-      "cost": 40000.0,
+      "shares": 478.578839430876,
+      "entry_price": 84.16999816894531,
+      "entry_date": "2026-05-01",
+      "cost": 40281.9800385928,
       "using_margin": false,
       "consec_below_ma": 0
     },
     "XLU": {
-      "shares": 656.742552530168,
-      "entry_price": 45.68000030517578,
-      "entry_date": "2026-04-29",
-      "cost": 30000.0,
+      "shares": 649.0115042771446,
+      "entry_price": 46.54999923706055,
+      "entry_date": "2026-05-01",
+      "cost": 30211.4850289446,
       "using_margin": false,
       "consec_below_ma": 0
     }
@@ -40,6 +40,54 @@
       "shares": 656.7426,
       "price": 45.68,
       "cost": 30000.0,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-01",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 482.3927,
+      "price": 84.17,
+      "proceeds": 40590.87,
+      "fees": 12.12,
+      "tax": 218.62,
+      "pnl": 372.25,
+      "pnl_pct": 0.93,
+      "entry_date": "2026-04-29",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-01",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 656.7426,
+      "price": 46.55,
+      "proceeds": 30559.69,
+      "fees": 11.68,
+      "tax": 207.09,
+      "pnl": 352.6,
+      "pnl_pct": 1.18,
+      "entry_date": "2026-04-29",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-01",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 478.5788,
+      "price": 84.17,
+      "cost": 40281.98,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-01",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 649.0115,
+      "price": 46.55,
+      "cost": 30211.49,
       "margin": false,
       "fees": 9.95
     }
@@ -1011,14 +1059,43 @@
       },
       "sector": "Housing Permit Velocity",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-01",
+      "cash": 30191.59,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100685.05,
+      "positions": {
+        "XLP": {
+          "shares": 478.5788,
+          "entry_price": 84.17,
+          "current_price": 84.17,
+          "market_value": 40281.98,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-01",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 649.0115,
+          "entry_price": 46.55,
+          "current_price": 46.55,
+          "market_value": 30211.49,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-01",
+          "margin": false
+        }
+      },
+      "sector": "Housing Permit Velocity",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16",
-  "last_run": "2026-04-30",
+  "last_run": "2026-05-01",
   "meta": {
     "housing-permit-velocity": {
       "name": "Housing Permit Velocity",
-      "last_run": "2026-04-30",
+      "last_run": "2026-05-01",
       "series_id": "PERMIT",
       "permits_3m_chg": -0.057,
       "signal_label": "HOUSING_SLOWDOWN",

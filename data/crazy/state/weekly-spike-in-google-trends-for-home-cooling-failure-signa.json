@@ -1,19 +1,10 @@
 {
-  "cash": 94990.05,
+  "cash": 99947.80258838007,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 9.95,
+  "fees_paid": 20.180416227046877,
   "taxes_paid": 0.0,
-  "positions": {
-    "XLU": {
-      "shares": 106.72358938841566,
-      "entry_price": 46.849998474121094,
-      "entry_date": "2026-04-30",
-      "cost": 5000.0,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-30",
@@ -24,6 +15,20 @@
       "cost": 5000.0,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-01",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 106.7236,
+      "price": 46.55,
+      "proceeds": 4957.75,
+      "fees": 10.23,
+      "tax": 0.0,
+      "pnl": -42.25,
+      "pnl_pct": -0.84,
+      "entry_date": "2026-04-30",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -756,20 +761,29 @@
       },
       "sector": "Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-01",
+      "cash": 99947.8,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99947.8,
+      "positions": {},
+      "sector": "Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-23",
-  "last_run": "2026-04-30",
+  "last_run": "2026-05-01",
   "meta": {
     "weekly-spike-in-google-trends-for-home-cooling-failure-signa": {
-      "signal_label": "RISK_ON",
-      "latest_value": 3.0,
-      "prior_avg": 0.5357,
-      "signal_change": 4.6,
+      "signal_label": "RISK_OFF",
+      "latest_value": 0.0,
+      "prior_avg": 0.2143,
+      "signal_change": -1.0,
       "name": "Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-04-30",
-      "entry_date": "2026-04-30"
+      "last_signal": "RISK_OFF",
+      "last_run": "2026-05-01"
     }
   }
 }

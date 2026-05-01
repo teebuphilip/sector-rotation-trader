@@ -2103,9 +2103,38 @@
       },
       "sector": "XLU",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-01",
+      "cash": 80035.6,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100063.73,
+      "positions": {
+        "NEE": {
+          "shares": 103.8961,
+          "entry_price": 96.25,
+          "current_price": 96.95,
+          "market_value": 10072.73,
+          "unrealized_pnl": 72.73,
+          "entry_date": "2026-04-23",
+          "margin": false
+        },
+        "XEL": {
+          "shares": 120.5546,
+          "entry_price": 82.95,
+          "current_price": 82.58,
+          "market_value": 9955.4,
+          "unrealized_pnl": -44.6,
+          "entry_date": "2026-04-30",
+          "margin": false
+        }
+      },
+      "sector": "XLK",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-07",
-  "last_run": "2026-04-30",
+  "last_run": "2026-05-01",
   "meta": {}
 }

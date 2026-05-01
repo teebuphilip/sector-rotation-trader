@@ -1,19 +1,10 @@
 {
-  "cash": 94688.76355177163,
+  "cash": 99673.90134303216,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 231.73589866584692,
-  "taxes_paid": 70.80206261004642,
-  "positions": {
-    "XLY": {
-      "shares": 42.113585828259644,
-      "entry_price": 118.3499984741211,
-      "entry_date": "2026-04-30",
-      "cost": 4984.142818514297,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "fees_paid": 241.9483294701523,
+  "taxes_paid": 71.38641168323228,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-01-23",
@@ -288,6 +279,20 @@
       "cost": 4984.14,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-01",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 42.1136,
+      "price": 118.63,
+      "proceeds": 4985.72,
+      "fees": 10.21,
+      "tax": 0.58,
+      "pnl": 0.99,
+      "pnl_pct": 0.02,
+      "entry_date": "2026-04-30",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1160,20 +1165,29 @@
       },
       "sector": "Grocery Store Foot Traffic Collapse Signal",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-01",
+      "cash": 99673.9,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99673.9,
+      "positions": {},
+      "sector": "Grocery Store Foot Traffic Collapse Signal",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-21",
-  "last_run": "2026-04-30",
+  "last_run": "2026-05-01",
   "meta": {
     "grocery-store-foot-traffic-collapse-signal": {
-      "latest_value": 42.0,
-      "prior_avg": 33.8571,
-      "signal_change": 0.2405,
-      "signal_label": "RISK_ON",
+      "latest_value": 36.0,
+      "prior_avg": 34.75,
+      "signal_change": 0.036,
+      "signal_label": "RISK_OFF",
       "name": "Grocery Store Foot Traffic Collapse Signal",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-04-30",
-      "entry_date": "2026-04-30"
+      "last_signal": "RISK_OFF",
+      "last_run": "2026-05-01"
     }
   }
 }
