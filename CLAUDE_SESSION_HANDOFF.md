@@ -1,8 +1,29 @@
-# Session Handoff — 2026-04-25
+# Session Handoff — 2026-04-29
 
 ## Where We Are
 
-Reddit launch: May 15. Paid open: July 1. ~20 days to launch.
+Free public launch + Reddit: May 15. July 1 = traction review / paid-path decision, not an automatic paid open.
+
+**Single most important thing before May 15:** MailerLite signup form live on the landing page. Nothing else matters if people can't sign up.
+
+## Added This Session (2026-04-29)
+
+- **4 Claude Code Routines scheduled** (automatic, no maintenance needed):
+  - Saturday 1am EST: code review → GitHub issues for `new-courtdominion` and `dbb2-engine`
+  - Sunday 1am EST: code review → GitHub issues for `sector-rotation-trader`
+  - Sunday 2am EST: content + website review → GitHub issues for `sector-rotation-trader`
+  - Manage at: https://claude.ai/code/scheduled
+
+- **Launch drafts written** — `drafts/launch/`:
+  - `may15_reddit_algotrading.md` — ready to post, update "Why I'm posting" in your own words
+  - `june1_subscriber_email.md` — first email to list, fill in brackets
+  - `july1_paid_open.md` — paid open email + Reddit follow-up, fill in price and real numbers
+
+- **WFO feature PRD added** — `drafts/features/2026-04-29/anthropic-feature-01-walk-forward-backtest.md` — gets auto-scored Friday, targets v1.1 ~Aug 20
+
+- **Feature scoring system confirmed running** — `reports/virality/master_rank.md` has 20 features scored, 15 are BUILD_NOW. Top pick for July blitz: Receipts Guy's Trade History Scroll (score 11.2).
+
+- **First session rule saved to memory**: Every session opens with "how do we get signups?" before any code/ops work.
 
 ## Immediate Stack (in order)
 
@@ -49,6 +70,13 @@ Reddit launch: May 15. Paid open: July 1. ~20 days to launch.
 - Polygon runtime-only migration (week of May 19): snapshot builder → 4 runtime consumers → 7-day shadow run → flip
 - Bucket Thesis Statement feature: Teebu writes copy, wire as data field, ship before June 15 second Reddit post
 - needs_history 80 algos: NOT a Polygon problem — alt-data signals can't be backtested regardless of price provider
+
+## Urgent May 2-4
+
+- Pre-8:30am on `2026-05-02`: move durable algo-page rendering into `dashboard.py`
+- Pre-8:30am on `2026-05-03`: validate rebuilt preview algo pages after overnight refresh
+- Pre-8:30am on `2026-05-04`: finish minimizing `scripts/build_vercel_preview_site.py` into a thin bundler only
+- Goal: preview builder stays temporary glue; lasting algo-page logic lives in `dashboard.py` + `algo_copy_registry.py`
 
 ## Claude Code Situation
 
