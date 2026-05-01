@@ -1,94 +1,84 @@
-# Session Handoff — 2026-04-29
+# Session Handoff — 2026-05-01
 
 ## Where We Are
 
-Free public launch + Reddit: May 15. July 1 = traction review / paid-path decision, not an automatic paid open.
+Free public launch + Reddit: May 15. July 1 = traction review / paid-path decision.
 
-**Single most important thing before May 15:** MailerLite signup form live on the landing page. Nothing else matters if people can't sign up.
+**Single most important thing before May 15:** MailerLite signup form live on the landing page.
 
-## Added This Session (2026-04-29)
+---
 
-- **4 Claude Code Routines scheduled** (automatic, no maintenance needed):
-  - Saturday 1am EST: code review → GitHub issues for `new-courtdominion` and `dbb2-engine`
-  - Sunday 1am EST: code review → GitHub issues for `sector-rotation-trader`
-  - Sunday 2am EST: content + website review → GitHub issues for `sector-rotation-trader`
-  - Manage at: https://claude.ai/code/scheduled
+## Completed This Session (2026-05-01 evening)
 
-- **Launch drafts written** — `drafts/launch/`:
-  - `may15_reddit_algotrading.md` — ready to post, update "Why I'm posting" in your own words
-  - `june1_subscriber_email.md` — first email to list, fill in brackets
-  - `july1_paid_open.md` — paid open email + Reddit follow-up, fill in price and real numbers
+**Marketing strategy locked:**
+- Full content schedule committed: `CONTENT_SCHEDULE.md` (May 7 – July 1)
+- First post May 7 (r/algotrading), launch May 15, IndieHackers May 16
+- Reddit cadence: 3-4 posts/week across r/algotrading, r/quant, r/SecurityAnalysis, r/investing, r/stocks
+- X cadence: 4-7 posts/week, reply-first strategy for first 2 weeks
+- Success metrics defined: 50+ upvotes = good, <25 after 24h = flop, slow down
 
-- **WFO feature PRD added** — `drafts/features/2026-04-29/anthropic-feature-01-walk-forward-backtest.md` — gets auto-scored Friday, targets v1.1 ~Aug 20
+**Drafts ready:**
+- `drafts/launch/indiehackerspost.05162026.txt` — Biscotti story for IndieHackers
+- `drafts/launch/x_post_samples.md` — 4 X post templates (lab update, Biscotti spotlight, failure mention, alt data hook)
+- `drafts/launch/grok_strategy_prompt.txt` — strategy prompt used for schedule review
+- May 7 r/algotrading post ready (from Codex, reviewed by Claude/Gemini/Grok)
 
-- **Feature scoring system confirmed running** — `reports/virality/master_rank.md` has 20 features scored, 15 are BUILD_NOW. Top pick for July blitz: Receipts Guy's Trade History Scroll (score 11.2).
+**Content engine v2 planned:**
+- Spec at `specs/content_v2_spec.md`
+- Parallel engine with `--theme` and `--focus-algo` flags
+- Does NOT touch existing v1 engine
+- Outputs to `content_v2/output/` for inspection
+- If v2 sucks, operator uses Grok manually
+- Scheduled for build: **Saturday May 3**
 
-- **First session rule saved to memory**: Every session opens with "how do we get signups?" before any code/ops work.
+---
 
 ## Immediate Stack (in order)
 
-1. **Thesis text for top 10 algos** — Teebu writes, not code. 10 sentences, lab-notebook voice.
-   - Pattern: "**Biscotti (Unconditional Loyalty)** — Bets that when consumer sentiment collapses, defensive sectors absorb the rotation first. Good month. Bad long-run record. Still running."
-   - Do NOT use Chat's "Tests whether X predicts Y" voice — sounds generic.
-   - Before writing: verify Biscotti's actual signal logic (it's top rolling-30D, not mean reversion).
-   - Before writing: check FINRA Dark Pool Signal sourcing — if shaky, swap it out.
+1. **May 2 pre-8:30am:** Move durable algo-page rendering into `dashboard.py`
+2. **May 3 (Saturday):** Build content engine v2 (spec ready)
+3. **May 3 pre-8:30am:** Validate rebuilt preview algo pages
+4. **May 4 pre-8:30am:** Minimize `build_vercel_preview_site.py` to thin bundler
+5. **May 4:** Quality Check #4 — first real signal check, comparator patterns
+6. **May 5:** MailerLite verification/update (Critical)
+7. **May 7:** First Reddit post (r/algotrading)
 
-2. **Ops/pipeline integrity deep scan** — Sunday Apr 27 (Quality Check #3 on CSV).
+---
 
-3. **Landing page copy pass** — Tuesday Apr 29.
-   - Agreed outline: hero sharpening, proof strip, "What you're looking at" block with Biscotti hook.
-   - Biscotti hook: "Each row is one live paper-traded signal. Some are working. Some are failing. One of them is named after my dog. That is the point."
-   - Drop the free/paid bridge section entirely.
-   - Do after Yahoo pipeline stabilizes.
+## Key Files Added This Session
 
-## Due Dates from CSV
+| File | Purpose |
+|------|---------|
+| `CONTENT_SCHEDULE.md` | Full posting schedule May 7 – July 1 |
+| `specs/content_v2_spec.md` | Content engine v2 spec |
+| `drafts/launch/indiehackerspost.05162026.txt` | IndieHackers Biscotti post |
+| `drafts/launch/x_post_samples.md` | X post templates |
+| `drafts/launch/grok_strategy_prompt.txt` | Strategy prompt for LLM review |
 
-- Apr 27: Quality Check #3
-- May 12: Update landing page with real content
-- May 14: MailerLite setup
-- May 15: Write Biscotti origin email + Reddit first post
-- May 19: Polygon runtime-only migration sprint (post-launch)
+---
 
-## May 15 Reddit Post Checklist
+## Session Rules
 
-- Run `python scripts/refresh_reddit_drafts.py --date 2026-05-15` day before
-- Add personal questions to algotrading.md and quant.md manually
-- Check Biscotti line is current
-- Rewrite macro note in security_analysis.md by hand (script keeps it neutral)
+- Every session opens with "how do we get signups?"
+- Grok is better for social hooks/timing, Claude is better for scope control
+- Gemini is being set up as personal assistant — needs visibility into schedule
 
-## Key Architecture Facts
+---
 
-- Force rank = `data/rank_history.csv` (full-window since seed, long-term trust)
-- Rolling 30D = `docs/leaderboards/rolling_30d.json` (recent momentum)
-- Public contract = `docs/data/public/` (schema v1, feeds static pages)
-- Reddit draft templates = `drafts/reddit_launch/*.md`, refreshed daily by `reddit_draft_refresh.yml` until May 15
-- Social drafts (daily) = `drafts/social/YYYY-MM-DD/` via `scripts/social_content_generator.py`
-- Deep validation = `reports/deep_validation/latest.json` (source of truth for content)
+## Architecture Reminder
 
-## Deferred (Post May 15)
+- Content engine v1: `scripts/social_content_generator.py` → `drafts/social/YYYY-MM-DD/`
+- Content engine v2 (to build): `content_v2/` → `content_v2/output/YYYY-MM-DD/`
+- Deep validation report: `reports/deep_validation/latest.json`
+- Force rank: `data/rank_history.csv`
+- Rolling 30D: `docs/leaderboards/rolling_30d.json`
 
-- Polygon runtime-only migration (week of May 19): snapshot builder → 4 runtime consumers → 7-day shadow run → flip
-- Bucket Thesis Statement feature: Teebu writes copy, wire as data field, ship before June 15 second Reddit post
-- needs_history 80 algos: NOT a Polygon problem — alt-data signals can't be backtested regardless of price provider
-
-## Urgent May 2-4
-
-- Pre-8:30am on `2026-05-02`: move durable algo-page rendering into `dashboard.py`
-- Pre-8:30am on `2026-05-03`: validate rebuilt preview algo pages after overnight refresh
-- Pre-8:30am on `2026-05-04`: finish minimizing `scripts/build_vercel_preview_site.py` into a thin bundler only
-- Goal: preview builder stays temporary glue; lasting algo-page logic lives in `dashboard.py` + `algo_copy_registry.py`
-
-## Claude Code Situation
-
-- Old laptop, Claude Code upgraded, can't restart
-- Current session running in RAM
-- If it dies: uninstall, reinstall older version
-- On restart: read this file + MEMORY.md + tldr-architecture.md to rebuild context
-- Then `/compact` and start fresh
+---
 
 ## Files to Read on Restart
 
-1. `SESSION_HANDOFF.md` (this file)
-2. `~/.claude/projects/.../memory/MEMORY.md`
-3. `tldr-architecture.md`
+1. `CLAUDE_SESSION_HANDOFF.md` (this file)
+2. `CONTENT_SCHEDULE.md`
+3. `specs/content_v2_spec.md`
 4. `stockarithm_execution_plan.csv`
+5. `tldr-architecture.md`
