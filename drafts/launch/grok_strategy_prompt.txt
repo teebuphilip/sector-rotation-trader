@@ -1,0 +1,87 @@
+CONTEXT: StockArithm Marketing Strategy Review
+
+---
+
+PROJECT SUMMARY
+
+StockArithm is a public paper-trading lab running sector rotation algorithms driven by alternative economic data — TSA checkpoint counts, bankruptcy filing rates, freight rail carloads, electricity demand, Google Trends, Reddit sentiment, FRED macro series, and other non-price inputs.
+
+Key facts:
+- 151 signals running live, all paper-traded
+- 2 beating SPY on full-window alpha, 149 flat or losing
+- 0 beating SPY on rolling 30D
+- 86 days of data so far
+- Everything is public including failures
+- No paid product yet — free launch first, July 1 traction review decides paid path
+- One algo is named Biscotti (after my dog) — currently #1 on rolling 30D momentum, #140 on full-window force rank
+
+The differentiation: we publish the graveyard. Most trading "signals" hide failures. We show them.
+
+---
+
+WHAT WE HAVE IN PLACE
+
+1. Content engine: Generates daily social drafts from validated pipeline data (no invented facts)
+   - Outputs to drafts/social/YYYY-MM-DD/ with channel-specific posts
+   - Channels: r/algotrading, r/quant, r/investing, r/stocks, r/SecurityAnalysis, Twitter/X
+
+2. Reddit launch templates: drafts/reddit_launch/*.md with placeholders that get filled with live numbers
+
+3. Landing page: stockarithm.com with leaderboard, failures, mailing list signup (MailerLite)
+
+4. Two post drafts ready:
+   - r/algotrading first post (May 7) — methodology + failure rate + two real questions
+   - IndieHackers post (May 16) — Biscotti story, building in public angle
+
+---
+
+SAMPLE: r/algotrading First Post (May 7)
+
+Title: I've been running 151 alternative-data sector signals against SPY for 86 days. 149 are flat or losing. Here's the full board.
+
+[Post leads with failure rate, explains methodology, shows force rank vs rolling 30D split, asks two methodological questions, links to stockarithm.com]
+
+---
+
+SAMPLE: IndieHackers Post (May 16)
+
+Title: I named a trading algorithm after my dog. It's ranked #1 this month and #140 overall.
+
+[Post is personal — 55yo DevOps guy, 3yo daughter, building weird thing, Biscotti story, 2/151 success rate, building in public framing]
+
+---
+
+CURRENT PROPOSED SCHEDULE
+
+Phase 1: Warm-Up (May 7-14)
+- May 7 (Thu): r/algotrading — first post
+- May 9 (Sat): r/quant
+- May 11 (Mon): r/SecurityAnalysis
+- May 13 (Tue): r/algotrading — mid-week update
+- May 14 (Wed): r/algotrading — pre-launch tease
+
+Phase 2: Launch Week (May 15-18)
+- May 15 (Thu): r/algotrading — THE LAUNCH POST
+- May 16 (Fri): IndieHackers — Biscotti story
+- May 17 (Sat): r/stocks
+- May 18 (Sun): r/SecurityAnalysis
+
+Phase 3: Sustained (May 19+)
+- Mon: r/investing (weekly recap)
+- Wed: r/algotrading
+- Fri: r/algotrading
+- Sun: rotate r/quant / r/SecurityAnalysis
+
+---
+
+QUESTIONS FOR YOU
+
+1. Does this posting schedule make sense, or is it too aggressive / too slow / wrong subreddit mix?
+
+2. What about X/Twitter? The content engine generates daily Twitter drafts but we haven't included X in the schedule. Should we be posting there? When? Same content or different angle? The audience there is different — more retail, more noise, harder to get traction without followers.
+
+3. Is the "lead with failure rate" hook the right angle for all channels, or should some channels get a different framing?
+
+4. Any platform we're missing that makes sense for a "weird paper-trading lab" positioning? (Not ProductHunt yet — saving that for post-traction.)
+
+5. What's the realistic engagement expectation for the first few posts? How do we know if it's working vs flopping?
