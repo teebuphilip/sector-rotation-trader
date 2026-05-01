@@ -369,5 +369,149 @@
     "verdict": "BUILD_NOW",
     "source_file": "drafts/features/2026-04-24/openai-feature-04-trade-history-time-machine.md",
     "_hash": "9c7f9b353d0d90082a09859363c4a251"
+  },
+  "drafts/features/2026-05-01/anthropic-feature-01-signal-divorce-papers.md": {
+    "feature_name": "Signal Divorce Papers",
+    "scores": {
+      "proof_of_work": 4,
+      "invitation_loop": 2,
+      "public_evidence": 4,
+      "cooperative_gain": 2,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 12,
+    "adjusted_score": 9.6,
+    "top_viral_mechanic": "Honest failure narratives are rare in fintech and deeply shareable among skeptical traders\u2014users screenshot and post 'finally someone admits when they're wrong' to r/algotrading.",
+    "biggest_weakness": "No incentive loop: reading a dead algo's memo doesn't require inviting others or unlock new value for the reader, so virality caps at 'interesting content' rather than 'must-share to unlock'.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-05-01/anthropic-feature-01-signal-divorce-papers.md",
+    "_hash": "c33a5fcc98c4521e7a1f88049f0e01f2"
+  },
+  "drafts/features/2026-05-01/anthropic-feature-02-rolling-rank-divergence-view.md": {
+    "feature_name": "Rolling Rank Divergence View",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 7,
+    "adjusted_score": 8.4,
+    "top_viral_mechanic": "Divergence badge directly proves the lab's transparency claim by surfacing algos that look good overall but are actually failing now\u2014a perfect 'receipts' moment for skeptical traders to screenshot and share.",
+    "biggest_weakness": "Feature is purely analytical; it doesn't create a reason for users to invite others or generate public social footprints\u2014it's a power-user tool, not a sharing mechanism.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-05-01/anthropic-feature-02-rolling-rank-divergence-view.md",
+    "_hash": "f123f232c5c8e2881d817e63652dfd70"
+  },
+  "drafts/features/2026-05-01/anthropic-feature-03-raw-trade-log-export.md": {
+    "feature_name": "Raw Trade Log Export (CSV)",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 7,
+    "adjusted_score": 8.4,
+    "top_viral_mechanic": "Enables power users to publicly validate/stress-test signals and share reproducible findings, turning Stockarithm into a credibility engine for skeptical communities.",
+    "biggest_weakness": "No inherent sharing mechanism\u2014users must manually evangelize their findings; the feature itself leaves no public footprint and creates no FOMO or invitation pressure.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-05-01/anthropic-feature-03-raw-trade-log-export.md",
+    "_hash": "822904f436b29c0f80743c20682971a4"
+  },
+  "drafts/features/2026-05-01/anthropic-feature-04-algo-lineage-iteration.md": {
+    "feature_name": "Algo Lineage & Iteration",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 3,
+      "cooperative_gain": 2,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 9,
+    "adjusted_score": 7.2,
+    "top_viral_mechanic": "Operators can publicly display their iteration journey (failures + refinements), turning the 'published losses' angle into a narrative of learning that resonates with r/algotrading's skeptical, process-focused culture.",
+    "biggest_weakness": "No incentive for users to *share* lineage chains or invite others; discovery is passive browsing, not active propagation\u2014lineage is interesting to followers but doesn't create FOMO or require network participation.",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-05-01/anthropic-feature-04-algo-lineage-iteration.md",
+    "_hash": "ef735ca934733081a227864d105997be"
+  },
+  "drafts/features/2026-05-01/openai-feature-01-failure-waterfall-view.md": {
+    "feature_name": "Failure Waterfall View",
+    "scores": {
+      "proof_of_work": 4,
+      "invitation_loop": 1,
+      "public_evidence": 3,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 9,
+    "adjusted_score": 14.4,
+    "top_viral_mechanic": "Receipts Guys can screenshot brutal drawdown visualizations to prove survivorship bias callouts on Reddit, turning failure transparency into social proof of intellectual rigor.",
+    "biggest_weakness": "Zero network effects or invitation loops\u2014users don't need others to join for the feature to deliver value, so it won't compound growth.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-05-01/openai-feature-01-failure-waterfall-view.md",
+    "_hash": "fd3b6d2b4610e2191f6442d31cf9a7fa"
+  },
+  "drafts/features/2026-05-01/openai-feature-02-signal-divergence-flags.md": {
+    "feature_name": "Signal Divergence Flags",
+    "scores": {
+      "proof_of_work": 2,
+      "invitation_loop": 1,
+      "public_evidence": 1,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 3
+    },
+    "viral_total": 5,
+    "adjusted_score": 3.6,
+    "top_viral_mechanic": "Badges create a small status signal for finding 'honest interesting divergence,' but only within the product\u2014no natural sharing mechanism.",
+    "biggest_weakness": "Zero incentive to invite others, zero public footprint, zero network effects; it's a personal research tool that doesn't make users look smart to outsiders or require collaboration.",
+    "verdict": "SKIP",
+    "source_file": "drafts/features/2026-05-01/openai-feature-02-signal-divergence-flags.md",
+    "_hash": "31914b3d0f883c3dc15da80a85841578"
+  },
+  "drafts/features/2026-05-01/openai-feature-03-alt-data-signal-lifecycle-tracker.md": {
+    "feature_name": "Alt-Data Signal Lifecycle Tracker",
+    "scores": {
+      "proof_of_work": 2,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 3
+    },
+    "viral_total": 6,
+    "adjusted_score": 5.04,
+    "top_viral_mechanic": "Lifecycle badges create minimal social currency by letting users identify 'dead' signals before others, but the mechanic is too passive and internal to drive sharing.",
+    "biggest_weakness": "Zero invitation loop, zero network effect, and zero public footprint\u2014users consume this privately on the leaderboard with no reason to tell anyone else about it.",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-05-01/openai-feature-03-alt-data-signal-lifecycle-tracker.md",
+    "_hash": "c1aaf63d76b2f8a169606eabc237343f"
+  },
+  "drafts/features/2026-05-01/openai-feature-04-receipts-guy-raw-trade-logs.md": {
+    "feature_name": "Receipts Guy Raw Trade Logs",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 7,
+    "adjusted_score": 8.4,
+    "top_viral_mechanic": "Radical transparency (showing all losses, no-trade days, failed signals) is the unfair advantage\u2014users can screenshot/share receipts as proof of honesty, which is countercultural in fintech and resonates with r/algotrading skeptics.",
+    "biggest_weakness": "No built-in sharing mechanism, no social loop, and no reason for non-subscribers to care\u2014it's a power-user feature that doesn't recruit new users or create FOMO.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-05-01/openai-feature-04-receipts-guy-raw-trade-logs.md",
+    "_hash": "3e0d790dacbb631feedfcff80835a5cc"
   }
 }
