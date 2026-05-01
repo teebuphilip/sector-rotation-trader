@@ -1,0 +1,152 @@
+{
+  "date": "2026-05-01",
+  "input_count": 25,
+  "kept_count": 23,
+  "duplicate_count": 2,
+  "kept_by_source": {
+    "chatgpt": 13,
+    "claude": 10
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-surge-in-google-trends-searches-for-urgent-home-pest-",
+      "title": "Weekly Surge In Google Trends Searches For Urgent Home Pest Control Signals Consumer Stress Lifting Xly",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.485,
+        "matched_title": "weekly surge in google trends searches for diy home repair signals consumer stress lifting xly",
+        "matched_idea_id": "weekly-surge-in-google-trends-searches-for-diy-home-repair-s",
+        "matched_origin": "history:2026-04-23",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-surge-in-google-trends-searches-for-urgent-home-pest-",
+        "title": "Weekly Surge In Google Trends Searches For Urgent Home Pest Control Signals Consumer Stress Lifting Xly",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "A sudden spike in urgent pest control searches indicates rising consumer stress and home maintenance urgency, often preceding discretionary spending rebounds. Increased home-related service searches correlate with discretionary consumer sector demand growth.",
+        "data_sources": [
+          "Google Trends weekly search interest"
+        ],
+        "signal_logic": "Enter long XLY when 3-week moving average of 'urgent home pest control' search volume rises 25% above its 12-week average",
+        "entry_exit": "Entry: Enter long XLY when 3-week moving average of 'urgent home pest control' search volume rises 25% above its 12-week average Exit: Exit after 4 weeks or if the search volume drops below its 12-week average",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly search interest via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 18,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Consumer stress-driven home service searches fluctuate often, creating multiple monthly signals.",
+        "schema": {
+          "idea": "Weekly surge in Google Trends searches for 'urgent home pest control' signals consumer stress lifting XLY",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends weekly search interest",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "A sudden spike in urgent pest control searches indicates rising consumer stress and home maintenance urgency, often preceding discretionary spending rebounds.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "Increased home-related service searches correlate with discretionary consumer sector demand growth."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLY when 3-week moving average of 'urgent home pest control' search volume rises 25% above its 12-week average",
+            "exit": "Exit after 4 weeks or if the search volume drops below its 12-week average",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 18,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Consumer stress-driven home service searches fluctuate often, creating multiple monthly signals.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-jump-in-google-trends-searches-for-bulk-commodity-shi",
+      "title": "Weekly Jump In Google Trends Searches For Bulk Commodity Shipment Delay Triggers Bearish Materials Sector",
+      "family": "freight_logistics",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.537,
+        "matched_title": "weekly increase in google trends searches for bulk shipping delay signals bearish xlb",
+        "matched_idea_id": "weekly-increase-in-google-trends-searches-for-bulk-shipping-",
+        "matched_origin": "history:2026-04-24",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-jump-in-google-trends-searches-for-bulk-commodity-shi",
+        "title": "Weekly Jump In Google Trends Searches For Bulk Commodity Shipment Delay Triggers Bearish Materials Sector",
+        "family": "freight_logistics",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising concern about shipment delays signals supply chain stress impacting raw materials availability. Delayed commodity shipments disrupt production and increase costs for materials companies.",
+        "data_sources": [
+          "Google Trends weekly search interest"
+        ],
+        "signal_logic": "Enter short XLB when weekly search volume for 'bulk commodity shipment delay' rises 35% above 10-week average",
+        "entry_exit": "Entry: Enter short XLB when weekly search volume for 'bulk commodity shipment delay' rises 35% above 10-week average Exit: Exit after 5 weeks or when volume falls below 10-week average",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLB"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly search interest via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 18,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Commodity logistics issues regularly generate weekly search volume bursts.",
+        "schema": {
+          "idea": "Weekly jump in Google Trends searches for 'bulk commodity shipment delay' triggers bearish materials sector",
+          "family": "freight_logistics",
+          "data": {
+            "source": "Google Trends weekly search interest",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Rising concern about shipment delays signals supply chain stress impacting raw materials availability.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLB",
+            "rationale": "Delayed commodity shipments disrupt production and increase costs for materials companies."
+          },
+          "trade_logic": {
+            "entry": "Enter short XLB when weekly search volume for 'bulk commodity shipment delay' rises 35% above 10-week average",
+            "exit": "Exit after 5 weeks or when volume falls below 10-week average",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 18,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Commodity logistics issues regularly generate weekly search volume bursts.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
