@@ -1,0 +1,106 @@
+{
+  "run_date": "2026-05-01",
+  "start": "2024-01-01",
+  "end": "2026-05-01",
+  "slippage_bps": 5.0,
+  "generated_at": "2026-05-01T23:21:28Z",
+  "counts": {
+    "LIVE_ONLY_NON_PRICE": 8,
+    "BACKTEST_WEAK": 1
+  },
+  "results": [
+    {
+      "algo_id": "daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
+      "name": "Daily Spike In Google Trends For Emergency Plumbing Repair Signals Consumer Stress Rebound Benefiting Discretionary Sector",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-01"
+    },
+    {
+      "algo_id": "daily-spike-in-google-trends-for-emergency-vehicle-repair-si",
+      "name": "Daily Spike In Google Trends For Emergency Vehicle Repair Signals Consumer Stress Lifting Industrial Sector",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-01"
+    },
+    {
+      "algo_id": "daily-spike-in-google-trends-for-home-air-purifier-repair-si",
+      "name": "Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-01"
+    },
+    {
+      "algo_id": "daily-surge-in-google-trends-searches-for-home-heating-syste",
+      "name": "Daily Surge In Google Trends Searches For Home Heating System Failure Signals Consumer Stress Impacting Utilities",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-01"
+    },
+    {
+      "algo_id": "eia-electricity-demand-shock-rebound-spread",
+      "name": "Eia Electricity Demand Shock Rebound Spread",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.eia_electricity",
+      "metrics": {},
+      "run_date": "2026-05-01"
+    },
+    {
+      "algo_id": "ev-charger-network-expansion-velocity-surge",
+      "name": "Ev Charger Network Expansion Velocity Surge",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.openchargemap",
+      "metrics": {},
+      "run_date": "2026-05-01"
+    },
+    {
+      "algo_id": "google-trends-surge-in-flight-delay-complaints",
+      "name": "Google Trends Surge In Flight Delay Complaints",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-01"
+    },
+    {
+      "algo_id": "price-momentum-reversion-in-defensive-sectors-after-tech-cra",
+      "name": "Price Momentum Reversion In Defensive Sectors After Tech Crash",
+      "family": "crazy",
+      "status": "BACKTEST_WEAK",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.24,
+        "spy_return_pct": 56.23,
+        "alpha_vs_spy_pct": -55.99,
+        "max_drawdown_pct": -0.21,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": -27.2,
+        "spy_sharpe": 1.0,
+        "trade_count": 28,
+        "sell_count": 14,
+        "win_rate_pct": 64.29,
+        "turnover": 1.4037
+      },
+      "run_date": "2026-05-01"
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-for-diy-solar-panel-repair-sig",
+      "name": "Weekly Surge In Google Trends For Diy Solar Panel Repair Signals Green Energy Sector Rebound",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-01"
+    }
+  ]
+}

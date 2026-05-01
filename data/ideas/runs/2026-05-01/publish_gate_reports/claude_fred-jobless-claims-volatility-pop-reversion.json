@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-05-01/publish/claude_fred-jobless-claims-volatility-pop-reversion.md",
+  "target_file": "data/ideas/runs/2026-05-01/intervention/claude_fred-jobless-claims-volatility-pop-reversion.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "low_adapter_confidence",
+      "regime shifts",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 974,
+    "output_tokens": 75
+  },
+  "cost_usd": 0.003185,
+  "raw_llm_response": "{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is deterministic, uses a real FRED series adapter with weekly frequency and clear logic.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}"
+}

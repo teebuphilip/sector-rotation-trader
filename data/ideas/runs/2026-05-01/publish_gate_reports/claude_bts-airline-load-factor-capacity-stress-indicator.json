@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-01/publish/claude_bts-airline-load-factor-capacity-stress-indicator.md",
+  "target_file": "data/ideas/runs/2026-05-01/intervention/claude_bts-airline-load-factor-capacity-stress-indicator.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "bts_airline_load_factor",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support bts_airline_load_factor yet.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "bts_airline_load_factor"
+      ],
+      "scores": {
+        "tsa_table": 1,
+        "bts_airline_load_factor": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 991,
+    "output_tokens": 82
+  },
+  "cost_usd": 0.0032975,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"bts_airline_load_factor\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses a real adapter matching the data source and frequency.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

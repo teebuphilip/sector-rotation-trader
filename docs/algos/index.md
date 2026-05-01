@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-05-01T23:16:09
+Updated (UTC): 2026-05-01T23:21:44
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 153
+Crazy models: 162
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -169,3 +169,12 @@ Crazy models: 153
 | ev-charger-expansion-frenzy | Ev Charger Expansion Frenzy | daily |
 | google-trends-surge-in-used-car-price-searches | Google Trends Surge In Used Car Price Searches | weekly |
 | healthcare-cost-shock-google-trends-spike | Healthcare Cost Shock Google Trends Spike | weekly |
+| daily-spike-in-google-trends-for-emergency-plumbing-repair-s | Daily Spike In Google Trends For Emergency Plumbing Repair Signals Consumer Stress Rebound Benefiting Discretionary Sector | daily |
+| daily-spike-in-google-trends-for-emergency-vehicle-repair-si | Daily Spike In Google Trends For Emergency Vehicle Repair Signals Consumer Stress Lifting Industrial Sector | daily |
+| daily-spike-in-google-trends-for-home-air-purifier-repair-si | Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector | daily |
+| daily-surge-in-google-trends-searches-for-home-heating-syste | Daily Surge In Google Trends Searches For Home Heating System Failure Signals Consumer Stress Impacting Utilities | daily |
+| weekly-surge-in-google-trends-for-diy-solar-panel-repair-sig | Weekly Surge In Google Trends For Diy Solar Panel Repair Signals Green Energy Sector Rebound | weekly |
+| eia-electricity-demand-shock-rebound-spread | Eia Electricity Demand Shock Rebound Spread | weekly |
+| ev-charger-network-expansion-velocity-surge | Ev Charger Network Expansion Velocity Surge | daily |
+| google-trends-surge-in-flight-delay-complaints | Google Trends Surge In Flight Delay Complaints | weekly |
+| price-momentum-reversion-in-defensive-sectors-after-tech-cra | Price Momentum Reversion In Defensive Sectors After Tech Crash | daily |

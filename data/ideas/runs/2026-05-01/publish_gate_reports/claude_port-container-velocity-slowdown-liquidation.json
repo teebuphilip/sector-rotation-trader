@@ -1,0 +1,32 @@
+{
+  "source_file": "data/ideas/runs/2026-05-01/publish/claude_port-container-velocity-slowdown-liquidation.md",
+  "target_file": "data/ideas/runs/2026-05-01/intervention/claude_port-container-velocity-slowdown-liquidation.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "port_container_volume",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "requires short position",
+      "short_trade_not_supported",
+      "weekly frequency vs 8 trading days exit mismatch"
+    ],
+    "route": {
+      "adapters": [
+        "port_container_volume"
+      ],
+      "scores": {
+        "port_container_volume": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 959,
+    "output_tokens": 79
+  },
+  "cost_usd": 0.0031875,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"port_container_volume\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is not supported by current algo envelope.\",\n  \"risk_flags\": [\"requires short position\", \"weekly frequency vs 8 trading days exit mismatch\"]\n}\n```"
+}

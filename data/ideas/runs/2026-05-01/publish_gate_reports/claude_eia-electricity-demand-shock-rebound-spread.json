@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-05-01/publish/claude_eia-electricity-demand-shock-rebound-spread.md",
+  "target_file": "data/ideas/runs/2026-05-01/build/claude_eia-electricity-demand-shock-rebound-spread.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "eia_electricity",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, deterministic, uses a real adapter matching the data source and frequency.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "eia_electricity"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "eia_electricity": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 971,
+    "output_tokens": 81
+  },
+  "cost_usd": 0.0032375,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"eia_electricity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses a real adapter matching the data source and frequency.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

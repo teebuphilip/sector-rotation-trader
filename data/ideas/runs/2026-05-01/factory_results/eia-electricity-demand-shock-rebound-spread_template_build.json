@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-05-01/build/claude_eia-electricity-demand-shock-rebound-spread.md",
+  "out": "crazy/algos/eia_electricity_demand_shock_rebound_spread.py",
+  "adapter": "eia_electricity",
+  "idea_id": "eia-electricity-demand-shock-rebound-spread",
+  "name": "Eia Electricity Demand Shock Rebound Spread",
+  "universe": [
+    "XLU"
+  ],
+  "frequency": "weekly",
+  "family": "macro_input_pressure",
+  "threshold": 0.08,
+  "direction": "down",
+  "hold_days": 7
+}

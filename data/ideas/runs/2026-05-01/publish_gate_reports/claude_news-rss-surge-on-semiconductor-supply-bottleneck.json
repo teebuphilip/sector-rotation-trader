@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-05-01/publish/claude_news-rss-surge-on-semiconductor-supply-bottleneck.md",
+  "target_file": "data/ideas/runs/2026-05-01/intervention/claude_news-rss-surge-on-semiconductor-supply-bottleneck.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "adapter mismatch",
+      "data source filtering unclear",
+      "requires new adapter for filtered RSS counts",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "rss_count": 2,
+        "html_table": 2,
+        "price_only": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1006,
+    "output_tokens": 85
+  },
+  "cost_usd": 0.003365,
+  "raw_llm_response": "{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"rss_count adapter is required but not in deterministic adapter route; needs new adapter for filtered RSS article counts\",\n  \"risk_flags\": [\"adapter mismatch\", \"data source filtering unclear\", \"requires new adapter for filtered RSS counts\"]\n}"
+}

@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-05-01/publish/chatgpt_weekly-surge-in-rss-news-count-mentioning-union-contract-dis.md",
+  "target_file": "data/ideas/runs/2026-05-01/intervention/chatgpt_weekly-surge-in-rss-news-count-mentioning-union-contract-dis.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "adapter mismatch",
+      "data source instability",
+      "requires short position",
+      "short_trade_not_supported",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "rss_count": 2,
+        "html_table": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 942,
+    "output_tokens": 78
+  },
+  "cost_usd": 0.003135,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"RSS feed count data source requires a dedicated rss_count adapter not html_table\",\n  \"risk_flags\": [\"adapter mismatch\", \"requires short position\", \"data source instability\"]\n}\n```"
+}

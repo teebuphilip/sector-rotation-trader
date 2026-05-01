@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T23:16:09Z",
+  "generated_at": "2026-05-01T23:21:44Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -89,6 +89,30 @@
       "ytd_pct": -0.11,
       "trade_count": 7,
       "positions": 1,
+      "last_snapshot": "2026-05-01",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:price-momentum-reversion-in-defensive-sectors-after-tech-cra",
+      "algo_type": "crazy",
+      "algo_id": "price-momentum-reversion-in-defensive-sectors-after-tech-cra",
+      "name": "Price Momentum Reversion In Defensive Sectors After Tech Crash",
+      "family": "attention_sentiment",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLK"
+      ],
+      "equity": 100065.78,
+      "ytd_pct": 0.07,
+      "trade_count": 4,
+      "positions": 0,
       "last_snapshot": "2026-05-01",
       "last_signal": null,
       "new_algo_date": null,
@@ -195,6 +219,30 @@
       "ytd_pct": -0.6,
       "trade_count": 27,
       "positions": 1,
+      "last_snapshot": "2026-05-01",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
+      "name": "Daily Spike In Google Trends For Emergency Plumbing Repair Signals Consumer Stress Rebound Benefiting Discretionary Sector",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99572.85,
+      "ytd_pct": -0.43,
+      "trade_count": 26,
+      "positions": 0,
       "last_snapshot": "2026-05-01",
       "last_signal": null,
       "new_algo_date": null,

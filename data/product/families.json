@@ -1,20 +1,44 @@
 {
-  "generated_at": "2026-05-01T23:16:09Z",
+  "generated_at": "2026-05-01T23:21:44Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
-      "count": 22,
+      "count": 23,
       "by_status": {
-        "live_only": 6,
+        "live_only": 7,
         "parked": 2,
         "sandbox": 14
       },
       "by_evidence_class": {
-        "live_receipts_only": 6,
+        "live_receipts_only": 7,
         "needs_history": 14,
         "pending_seed": 2
       },
       "leaders": [
+        {
+          "key": "crazy:price-momentum-reversion-in-defensive-sectors-after-tech-cra",
+          "algo_type": "crazy",
+          "algo_id": "price-momentum-reversion-in-defensive-sectors-after-tech-cra",
+          "name": "Price Momentum Reversion In Defensive Sectors After Tech Crash",
+          "family": "attention_sentiment",
+          "status": "live_only",
+          "evidence_class": "live_receipts_only",
+          "rebalance_frequency": "daily",
+          "universe": [
+            "XLK"
+          ],
+          "equity": 100065.78,
+          "ytd_pct": 0.07,
+          "trade_count": 4,
+          "positions": 0,
+          "last_snapshot": "2026-05-01",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": null,
+          "backtest_reason": null,
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
         {
           "key": "crazy:reddit-emoji-sentiment-spike",
           "algo_type": "crazy",
@@ -139,52 +163,20 @@
           "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMD, AMZN, BABA, GOOGL, META, MSFT, NFLX, NVDA, TSLA",
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:reddit-sentiment-spike-trend",
-          "algo_type": "crazy",
-          "algo_id": "reddit-sentiment-spike-trend",
-          "name": "Reddit Sentiment Spike Trend",
-          "family": "attention_sentiment",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "daily",
-          "universe": [
-            "AAPL",
-            "TSLA",
-            "AMD",
-            "NVDA",
-            "MSFT",
-            "AMZN",
-            "GME",
-            "PLTR",
-            "NFLX"
-          ],
-          "equity": 100000.0,
-          "ytd_pct": 0.0,
-          "trade_count": 0,
-          "positions": 0,
-          "last_snapshot": "2026-05-01",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": "UNSUPPORTED_DATA",
-          "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMD, AMZN, GME, MSFT, NFLX, NVDA, PLTR, TSLA",
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
         }
       ]
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 25,
+      "count": 30,
       "by_status": {
         "failed": 1,
-        "live_only": 15,
-        "sandbox": 9
+        "live_only": 16,
+        "sandbox": 13
       },
       "by_evidence_class": {
-        "live_receipts_only": 15,
-        "needs_history": 9,
+        "live_receipts_only": 16,
+        "needs_history": 13,
         "v1_backtested": 1
       },
       "leaders": [
@@ -949,16 +941,16 @@
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 51,
+      "count": 53,
       "by_status": {
         "backtest_weak": 1,
         "live_only": 14,
         "parked": 2,
-        "sandbox": 34
+        "sandbox": 36
       },
       "by_evidence_class": {
         "live_receipts_only": 14,
-        "needs_history": 32,
+        "needs_history": 34,
         "pending_seed": 2,
         "v1_backtested": 3
       },
@@ -1247,14 +1239,14 @@
     },
     "travel_mobility": {
       "family": "travel_mobility",
-      "count": 10,
+      "count": 11,
       "by_status": {
         "live_only": 2,
-        "sandbox": 8
+        "sandbox": 9
       },
       "by_evidence_class": {
         "live_receipts_only": 2,
-        "needs_history": 8
+        "needs_history": 9
       },
       "leaders": [
         {

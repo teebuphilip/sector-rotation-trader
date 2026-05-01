@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-01/publish/claude_earthquake-activity-reinsurance-volatility-spike.md",
+  "target_file": "data/ideas/runs/2026-05-01/intervention/claude_earthquake-activity-reinsurance-volatility-spike.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "position sizing with short exposure",
+      "short_trade_not_supported",
+      "shorting required",
+      "weekly frequency with trading day exit"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity"
+      ],
+      "scores": {
+        "earthquake_activity": 2,
+        "html_table": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 991,
+    "output_tokens": 88
+  },
+  "cost_usd": 0.0033575,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting XLF which is not supported by current long/flat allocation model.\",\n  \"risk_flags\": [\"shorting required\", \"position sizing with short exposure\", \"weekly frequency with trading day exit\"]\n}\n```"
+}

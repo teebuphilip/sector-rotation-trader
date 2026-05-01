@@ -1,0 +1,37 @@
+{
+  "source_file": "data/ideas/runs/2026-05-01/publish/claude_temperature-shock-utility-bill-anxiety-google-spike.md",
+  "target_file": "data/ideas/runs/2026-05-01/intervention/claude_temperature-shock-utility-bill-anxiety-google-spike.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "requires pairing Google Trends with Open-Meteo temperature anomaly data",
+      "short_trade_not_supported",
+      "shorting position not supported by current algo envelope",
+      "volume data not relevant but shorting is required",
+      "weekly and daily frequency mismatch"
+    ],
+    "route": {
+      "adapters": [
+        "eia_electricity",
+        "google_trends"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "google_trends": 2,
+        "eia_electricity": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1031,
+    "output_tokens": 114
+  },
+  "cost_usd": 0.0037175,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter covers both Google Trends and regional temperature anomaly data together.\",\n  \"risk_flags\": [\n    \"requires pairing Google Trends with Open-Meteo temperature anomaly data\",\n    \"shorting position not supported by current algo envelope\",\n    \"weekly and daily frequency mismatch\",\n    \"volume data not relevant but shorting is required\"\n  ]\n}\n```"
+}

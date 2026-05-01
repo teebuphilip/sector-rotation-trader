@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-05-01/publish/chatgpt_weekly-google-trends-surge-in-electric-vehicle-charging-stat.md",
+  "target_file": "data/ideas/runs/2026-05-01/intervention/chatgpt_weekly-google-trends-surge-in-electric-vehicle-charging-stat.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "no volume data but shorting requested",
+      "potential data source instability",
+      "requires short position",
+      "short_trade_not_supported"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "openchargemap": 2,
+        "google_trends": 4,
+        "html_table": 1,
+        "price_only": 1
+      },
+      "top_score": 4,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 949,
+    "output_tokens": 83
+  },
+  "cost_usd": 0.0032025,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is not supported by current algo envelope.\",\n  \"risk_flags\": [\"requires short position\", \"potential data source instability\", \"no volume data but shorting requested\"]\n}\n```"
+}

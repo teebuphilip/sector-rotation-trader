@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-05-01/build/claude_ev-charger-network-expansion-velocity-surge.md",
+  "out": "crazy/algos/ev_charger_network_expansion_velocity_surge.py",
+  "adapter": "openchargemap",
+  "idea_id": "ev-charger-network-expansion-velocity-surge",
+  "name": "Ev Charger Network Expansion Velocity Surge",
+  "universe": [
+    "XLI"
+  ],
+  "frequency": "daily",
+  "family": "macro_input_pressure",
+  "threshold": 0.03,
+  "direction": "up",
+  "hold_days": 10
+}

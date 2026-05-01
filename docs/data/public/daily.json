@@ -1,26 +1,26 @@
 {
   "schema_version": "v1",
   "run_date": "2026-05-01",
-  "generated_at": "2026-05-01T23:16:16Z",
+  "generated_at": "2026-05-01T23:21:45Z",
   "counts": {
-    "total": 158,
+    "total": 167,
     "normal": 5,
-    "crazy": 153,
-    "watchlist": 66,
+    "crazy": 162,
+    "watchlist": 68,
     "promoted": 5,
     "graveyard": 7
   },
   "by_status": {
     "backtest_weak": 4,
     "failed": 1,
-    "live_only": 57,
+    "live_only": 59,
     "parked": 6,
     "promoted": 5,
-    "sandbox": 85
+    "sandbox": 92
   },
   "by_evidence_class": {
-    "live_receipts_only": 58,
-    "needs_history": 82,
+    "live_receipts_only": 60,
+    "needs_history": 89,
     "pending_seed": 6,
     "v1_backtested": 12
   },
@@ -36,12 +36,12 @@
     "XLRE"
   ],
   "ticker_count": 105,
-  "signal_count": 158,
+  "signal_count": 167,
   "sector_summary": {
     "XLK": {
       "etf": "XLK",
       "sector": "Technology",
-      "composite": "10 of 34",
+      "composite": "10 of 35",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 29
@@ -65,10 +65,10 @@
     "XLY": {
       "etf": "XLY",
       "sector": "Consumer Cyclical",
-      "composite": "9 of 39",
+      "composite": "9 of 40",
       "composite_label": "BEARISH",
       "composite_color": "red",
-      "bullish_pct": 23
+      "bullish_pct": 22
     },
     "XLI": {
       "etf": "XLI",
@@ -340,7 +340,7 @@
     }
   ],
   "rolling_30d": {
-    "as_of": "2026-05-01T23:16:14.968805",
+    "as_of": "2026-05-01T23:21:43.706258",
     "spy_ret_30d_pct": 9.98,
     "leaders": [
       {

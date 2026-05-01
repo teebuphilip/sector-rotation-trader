@@ -1,0 +1,39 @@
+{
+  "source_file": "data/ideas/runs/2026-05-01/publish/chatgpt_weekly-increase-in-fred-series-us-import-price-index-signals.md",
+  "target_file": "data/ideas/runs/2026-05-01/intervention/chatgpt_weekly-increase-in-fred-series-us-import-price-index-signals.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "adapter_data_source_conflict",
+      "frequency_mismatch",
+      "low_adapter_confidence",
+      "short_position_not_supported",
+      "short_trade_not_supported",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table",
+        "price_only"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 940,
+    "output_tokens": 85
+  },
+  "cost_usd": 0.0032,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires weekly frequency but FRED Import Price Index data is monthly, causing adapter mismatch.\",\n  \"risk_flags\": [\"frequency_mismatch\", \"short_position_not_supported\", \"adapter_data_source_conflict\"]\n}\n```"
+}
