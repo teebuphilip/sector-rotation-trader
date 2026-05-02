@@ -1,0 +1,152 @@
+{
+  "date": "2026-05-02",
+  "input_count": 25,
+  "kept_count": 23,
+  "duplicate_count": 2,
+  "kept_by_source": {
+    "chatgpt": 13,
+    "claude": 10
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
+      "title": "Daily Spike In Google Trends For Emergency Plumbing Repair Signals Consumer Stress And Industrial Sector Rebound",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "daily spike in google trends for emergency plumbing repair signals consumer stress rebound benefiting discretionary sector",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
+        "title": "Daily Spike In Google Trends For Emergency Plumbing Repair Signals Consumer Stress And Industrial Sector Rebound",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "High-frequency spikes in emergency plumbing repair searches indicate urgent home maintenance and lift industrial sector activity. Industrial sector benefits from increased demand for repair and construction related services.",
+        "data_sources": [
+          "Google Trends daily searches"
+        ],
+        "signal_logic": "If daily searches for 'emergency plumbing repair' increase 30% day-over-day",
+        "entry_exit": "Entry: If daily searches for 'emergency plumbing repair' increase 30% day-over-day Exit: After 5 days or when searches fall 15% day-over-day",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily searches via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 18,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Plumbing emergencies happen frequently and create short-term consumer stress signals.",
+        "schema": {
+          "idea": "Daily spike in Google Trends for 'emergency plumbing repair' signals consumer stress and industrial sector rebound",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily searches",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "High-frequency spikes in emergency plumbing repair searches indicate urgent home maintenance and lift industrial sector activity.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLI",
+            "rationale": "Industrial sector benefits from increased demand for repair and construction related services."
+          },
+          "trade_logic": {
+            "entry": "If daily searches for 'emergency plumbing repair' increase 30% day-over-day",
+            "exit": "After 5 days or when searches fall 15% day-over-day",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 18,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Plumbing emergencies happen frequently and create short-term consumer stress signals.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-surge-in-google-trends-for-emergency-septic-tank-repa",
+      "title": "Weekly Surge In Google Trends For Emergency Septic Tank Repair Signals Local Economy Weirdness And Consumer Stress",
+      "family": "local_economy_weirdness",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.538,
+        "matched_title": "weekly surge in google trends for home pest control emergency signals local economy weirdness and consumer stress",
+        "matched_idea_id": "weekly-surge-in-google-trends-for-home-pest-control-emergenc",
+        "matched_origin": "current_run",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-surge-in-google-trends-for-emergency-septic-tank-repa",
+        "title": "Weekly Surge In Google Trends For Emergency Septic Tank Repair Signals Local Economy Weirdness And Consumer Stress",
+        "family": "local_economy_weirdness",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Increased septic tank repair searches indicate local infrastructure issues and consumer emergency spending. Consumer stress from home infrastructure failures tends to reduce discretionary spending.",
+        "data_sources": [
+          "Google Trends weekly searches"
+        ],
+        "signal_logic": "If weekly searches for 'emergency septic tank repair' rise 20% week-over-week",
+        "entry_exit": "Entry: If weekly searches for 'emergency septic tank repair' rise 20% week-over-week Exit: After 4 weeks or when searches drop 15% week-over-week",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLP"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly searches via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 14,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Seasonal and infrastructure failures cause periodic search volume spikes.",
+        "schema": {
+          "idea": "Weekly surge in Google Trends for 'emergency septic tank repair' signals local economy weirdness and consumer stress",
+          "family": "local_economy_weirdness",
+          "data": {
+            "source": "Google Trends weekly searches",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Increased septic tank repair searches indicate local infrastructure issues and consumer emergency spending.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLP",
+            "rationale": "Consumer stress from home infrastructure failures tends to reduce discretionary spending."
+          },
+          "trade_logic": {
+            "entry": "If weekly searches for 'emergency septic tank repair' rise 20% week-over-week",
+            "exit": "After 4 weeks or when searches drop 15% week-over-week",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 14,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Seasonal and infrastructure failures cause periodic search volume spikes.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
