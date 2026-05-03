@@ -1031,8 +1031,8 @@ LANDING_CSS = """
   .card { background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 16px; box-shadow: 0 14px 30px rgba(0,0,0,0.22); }
   .card h2 { margin: 0 0 8px; font-size: 18px; }
   .card p { margin: 0 0 12px; color: var(--muted); font-size: 14px; line-height: 1.4; }
-  .cta { display: inline-block; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--accent); color: var(--accent); text-decoration: none; font-weight: 600; font-size: 13px; }
-  .cta:hover { background: rgba(25, 211, 143, 0.1); }
+  .cta { display: inline-block; padding: 10px 12px; border-radius: 8px; border: none; background: var(--accent); color: #062018; text-decoration: none; font-weight: 700; font-size: 13px; transition: background 0.2s; }
+  .cta:hover { background: #33e3a3; }
   .winners h3 { margin: 0 0 8px; font-size: 16px; }
   .winners ul { margin: 0; padding: 0; list-style: none; }
   .winners li { padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 14px; }
@@ -1043,13 +1043,11 @@ LANDING_CSS = """
   .waitlist { margin-top: 16px; border: 1px solid rgba(25, 211, 143, 0.28); }
   .waitlist-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; margin-top: 12px; }
   .waitlist-form input { min-width: 0; border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; background: #0f1c18; color: var(--text); padding: 10px 12px; font: inherit; font-size: 14px; }
-  .waitlist-form button { border: 1px solid var(--accent); border-radius: 8px; background: transparent; color: var(--accent); padding: 10px 12px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
-  .waitlist-form button:hover { background: rgba(25, 211, 143, 0.1); }
+  .waitlist-form button { border: none; border-radius: 8px; background: var(--accent); color: #062018; padding: 10px 12px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+  .waitlist-form button:hover { background: #33e3a3; }
   .notice { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.4; }
   .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; justify-content: center; }
   .hero-actions .cta { padding: 10px 14px; }
-  .cta-primary { background: var(--accent); color: #062018; font-weight: 700; }
-  .cta-primary:hover { background: #33e3a3; }
   .hero-strip { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
   .pill { font-size: 12px; color: var(--muted); border: 1px solid rgba(255,255,255,0.08); border-radius: 999px; padding: 6px 10px; }
   .hero-brand { font-size: clamp(42px, 7vw, 72px); font-weight: 700; letter-spacing: -1.5px; line-height: 1; color: var(--accent); margin: 0 0 10px; }
@@ -1112,7 +1110,7 @@ def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: li
     <h1>Alternative data signals, run in public.</h1>
     <p class="hero-tagline">StockArithm is a public paper-trading lab for alternative data signals. Some are working. Some are failing. All of them stay visible.</p>
     <div class="hero-actions">
-      <a class="cta cta-primary" href="leaderboard.html">See the public leaderboard</a>
+      <a class="cta" href="leaderboard.html">See the public leaderboard</a>
       <a class="cta" href="#waitlist">Get the weekly lab notes</a>
     </div>
     <div class="hero-strip">
@@ -1245,7 +1243,7 @@ def build_signals_index(leaderboard: dict, daily: dict | None = None) -> str:
     <h1 class="page-title">All signals, no scoreboard.</h1>
     <p>StockArithm's public inventory: names, families, and status only. No rank and no returns.</p>
     <div class="hero-actions">
-      <a class="cta cta-primary" href="/leaderboard.html">See the public leaderboard</a>
+      <a class="cta" href="/leaderboard.html">See the public leaderboard</a>
       <a class="cta" href="/families.html">Browse families</a>
     </div>
     <div class="hero-strip">
