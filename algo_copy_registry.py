@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 OUT_PATH = ROOT / "docs" / "data" / "public" / "algo_copy.json"
+LEGACY_COPY_PATH = ROOT / "data" / "algos" / "legacy_copy.json"
 
 
 SECTION_KEYS = {
@@ -38,6 +39,10 @@ def _parse_bullets(text: str) -> list[str]:
 
 def _clean_text(text: str) -> str:
     return re.sub(r"\s+", " ", text.strip())
+
+
+def _slugify(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
 
 def _public_summary(record: dict) -> str:
@@ -115,6 +120,23 @@ def _iter_markdown_paths() -> list[tuple[str, Path]]:
 
 def build_algo_copy_registry() -> dict[str, dict]:
     records: dict[str, dict] = {}
+
+    if LEGACY_COPY_PATH.exists():
+        try:
+            legacy_data = json.loads(LEGACY_COPY_PATH.read_text(encoding="utf-8"))
+        except Exception:
+            legacy_data = {}
+        if isinstance(legacy_data, dict):
+            for algo_id, payload in legacy_data.items():
+                if not isinstance(payload, dict):
+                    continue
+                record = dict(payload)
+                record.setdefault("algo_id", algo_id)
+                record.setdefault("title", algo_id)
+                record.setdefault("public_summary", _public_summary(record))
+                record["source_path"] = str(LEGACY_COPY_PATH.relative_to(ROOT))
+                records[str(algo_id)] = record
+
     for category, md_path in _iter_markdown_paths():
         parsed = _parse_markdown(md_path, category)
         if not parsed:
@@ -158,11 +180,18 @@ def lookup_algo_copy(
             if prefixed in data:
                 return data[prefixed]
     if name:
-        slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+        slug = _slugify(name)
         if slug in data:
             return data[slug]
         for prefix in ("crazy", "normal"):
             prefixed = f"{prefix}:{slug}"
             if prefixed in data:
                 return data[prefixed]
+        for record in data.values():
+            if not isinstance(record, dict):
+                continue
+            title_slug = _slugify(str(record.get("title") or ""))
+            name_slug = _slugify(str(record.get("name") or ""))
+            if slug and slug in {title_slug, name_slug}:
+                return record
     return None

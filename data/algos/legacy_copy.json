@@ -1,0 +1,172 @@
+{
+  "airline-load-factor": {
+    "title": "Airline Load Factor Proxy",
+    "public_summary": "Tracks airline occupancy as a read on travel demand and cyclical consumer activity.",
+    "thesis": "Airline load factors move with business and leisure travel. Rising occupancy tends to support discretionary and industrial demand, while falling occupancy points toward slowdown and defense."
+  },
+  "baileymol": {
+    "title": "Algo Baileymol (Chaos Monger)",
+    "public_summary": "A weekly sector momentum rotation with a hard stop-loss designed to stay with strength until it breaks.",
+    "thesis": "Baileymol rotates into the strongest sector setup on a weekly cadence, but exits quickly when the move fails. It is a faster, rougher rule than the slower monthly systems."
+  },
+  "bankruptcy-filing-rate": {
+    "title": "Bankruptcy Filing Rate",
+    "public_summary": "Tracks changes in business bankruptcy filings as a read on credit stress and economic pressure.",
+    "thesis": "Rising bankruptcy filings usually show up when financing conditions worsen and weaker businesses crack. Falling filings point toward stabilization and a cleaner risk backdrop."
+  },
+  "biscotti": {
+    "title": "Algo Biscotti (Unconditional Loyalty)",
+    "public_summary": "A monthly contrarian sector rotation that buys the weakest recent sector and holds for one month.",
+    "thesis": "Biscotti assumes the hardest-hit sector over the last 30 trading days is often the best mean-reversion candidate over the next month. It is intentionally simple and fully unconditional."
+  },
+  "calls311": {
+    "title": "311 Call Rotation",
+    "public_summary": "Uses major-city 311 complaint volume as a read on housing stress, infrastructure strain, and local business pressure.",
+    "thesis": "Spikes in municipal complaint traffic can signal real-world stress before it appears in price data. Housing, infrastructure, and noise complaints are treated as a rough proxy for consumer and city-level strain."
+  },
+  "cardboard": {
+    "title": "Cardboard Box Index",
+    "public_summary": "Tracks packaging and industrial-price pressure as a read on manufacturing demand and shipping activity.",
+    "thesis": "Cardboard demand sits close to physical goods flow. When box-related pricing and industrial production accelerate together, the signal treats that as expansion; when both weaken, it leans defensive."
+  },
+  "congress": {
+    "title": "Congress Trading Fade",
+    "public_summary": "Tracks reported congressional trading clusters and fades crowded political-positioning signals into sector rotation.",
+    "thesis": "Congressional trade disclosures are noisy and delayed, but cluster behavior can still reveal where politically connected capital is leaning. The signal uses those clusters as a contrarian positioning read."
+  },
+  "consumer-sentiment": {
+    "title": "Consumer Sentiment",
+    "public_summary": "Tracks University of Michigan consumer sentiment as a read on confidence, fear, and spending appetite.",
+    "thesis": "Consumer sentiment is a blunt macro gauge, but sharp multi-month changes can precede shifts in discretionary demand and defensive rotation."
+  },
+  "copper-momentum": {
+    "title": "Copper Momentum",
+    "public_summary": "Tracks multi-month copper price momentum as a read on global growth and industrial demand.",
+    "thesis": "Copper often behaves like a growth proxy. Persistent upside momentum tends to align with expansion-sensitive sectors, while downside momentum points toward growth scares."
+  },
+  "craigslist": {
+    "title": "Craigslist Desperation Index",
+    "public_summary": "Tracks Craigslist posting pressure across resale categories as a read on household stress and local demand weakness.",
+    "thesis": "A surge in distressed resale activity can signal tightening household conditions before official macro data catches up. The signal treats extreme posting activity as a consumer-stress tell."
+  },
+  "credit-card-delinquency": {
+    "title": "Credit Card Delinquency",
+    "public_summary": "Tracks changes in credit-card delinquency rates as a direct read on consumer balance-sheet stress.",
+    "thesis": "When delinquency rates rise, consumer strain is usually broadening. When they improve, discretionary and financial risk appetite tends to improve with it."
+  },
+  "electricity-consumption": {
+    "title": "Electricity Consumption",
+    "public_summary": "Tracks U.S. electricity demand as a read on industrial load, weather pressure, and economic activity.",
+    "thesis": "Electricity demand is one of the cleaner physical-economy inputs in the system. Sustained changes can reflect shifts in industrial production, utility load, and broad activity."
+  },
+  "finra-dark-pool-signal": {
+    "title": "FINRA Dark Pool Signal",
+    "public_summary": "Tracks dark-pool volume patterns as a read on hidden risk appetite and institutional positioning.",
+    "thesis": "Dark-pool activity can surface shifts in large-player participation before those flows become obvious in public price action. The signal treats unusual activity as a positioning clue."
+  },
+  "freight-rail-carloads": {
+    "title": "Freight Rail Carloads",
+    "public_summary": "Tracks freight rail carloads as a read on industrial demand, commodity flow, and shipping pressure.",
+    "thesis": "Rail traffic is a direct physical-economy signal. When carloads accelerate, the system treats it as a sign of expansion-sensitive demand; when they slow, it leans defensive."
+  },
+  "glassdoor": {
+    "title": "Glassdoor Hiring Mood",
+    "public_summary": "Tracks employer-review and hiring sentiment as a read on labor demand and company-level stress.",
+    "thesis": "Hiring mood and employer sentiment can shift before labor-market reports catch up. The signal uses that soft labor information as an early cyclical clue."
+  },
+  "high-yield-spread-regime": {
+    "title": "High Yield Spread Regime",
+    "public_summary": "Tracks high-yield credit spreads as a read on risk appetite and corporate-stress regimes.",
+    "thesis": "Widening junk-bond spreads usually mean the market is pricing more stress. Tightening spreads point toward healthier credit conditions and better cyclical risk tolerance."
+  },
+  "housing-permit-velocity": {
+    "title": "Housing Permit Velocity",
+    "public_summary": "Tracks the rate of change in housing permits as a read on construction momentum and housing-cycle demand.",
+    "thesis": "Housing permits are a forward-looking construction signal. When permit growth accelerates, materials and cyclical demand often follow; when it slows, the housing impulse is fading."
+  },
+  "job-posting-acceleration": {
+    "title": "Job Posting Acceleration",
+    "public_summary": "Tracks hiring-posting growth as a read on labor demand and economic expansion.",
+    "thesis": "Hiring demand often softens before broader macro data. The signal uses changes in job-posting intensity as an early labor-market and activity proxy."
+  },
+  "linkedin": {
+    "title": "LinkedIn Hiring Heat",
+    "public_summary": "Tracks professional-network hiring intensity as a read on white-collar demand and business confidence.",
+    "thesis": "Professional hiring appetite can reveal where firms are still expanding and where they are pulling back. The signal treats that as a cyclical business-confidence input."
+  },
+  "liquor": {
+    "title": "Liquor Demand Rotation",
+    "public_summary": "Tracks alcohol-demand proxies as a rough read on consumer stress and defensive spending behavior.",
+    "thesis": "Some consumer categories hold up differently under stress. This signal uses liquor-related demand as a niche consumption proxy for defensive rotation."
+  },
+  "lumber-momentum": {
+    "title": "Lumber Momentum",
+    "public_summary": "Tracks multi-month lumber price momentum as a read on housing, construction, and cyclical demand.",
+    "thesis": "Lumber prices sit close to housing and building demand. Sustained moves can reveal whether construction-sensitive activity is expanding or rolling over."
+  },
+  "misery-rotation": {
+    "title": "Misery Rotation",
+    "public_summary": "Combines inflation and labor stress into a macro discomfort signal for defensive versus cyclical sector rotation.",
+    "thesis": "When inflation and labor pain rise together, markets tend to get less forgiving. The signal turns that macro misery backdrop into a simple sector-rotation regime."
+  },
+  "mortgage-rate-housing-proxy": {
+    "title": "Mortgage Rate Housing Proxy",
+    "public_summary": "Tracks mortgage-rate pressure as a read on housing demand, affordability, and cyclical slowdown risk.",
+    "thesis": "Mortgage rates change housing demand at the margin faster than most housing reports do. The signal uses that financing pressure as a housing-cycle proxy."
+  },
+  "patent-filing-velocity": {
+    "title": "Patent Filing Velocity",
+    "public_summary": "Tracks changes in patent-filing activity as a read on innovation spending and business expansion.",
+    "thesis": "Patent activity is slow-moving, but directional shifts can still reflect whether firms are expanding, investing, and taking risk on future products."
+  },
+  "port-container-volume": {
+    "title": "Port Container Volume",
+    "public_summary": "Tracks port container throughput as a read on supply-chain expansion, slowdown, and goods demand.",
+    "thesis": "Container volume is a direct signal from the physical economy. Rising throughput points to stronger industrial and consumer goods flow; falling throughput points to slowdown."
+  },
+  "retail-sales-momentum": {
+    "title": "Retail Sales Momentum",
+    "public_summary": "Tracks multi-month retail-sales growth as a read on consumer spending momentum.",
+    "thesis": "Retail sales are one of the clearest macro inputs for consumer demand. Persistent acceleration supports risk-on consumer and cyclical positioning; contraction argues for defense."
+  },
+  "small-business-formation": {
+    "title": "Small Business Formation",
+    "public_summary": "Tracks small-business optimism and formation as a read on grassroots economic expansion.",
+    "thesis": "Small-business optimism is an imperfect but useful local-economy gauge. Stronger formation and confidence tend to support cyclical exposure; deterioration points defensive."
+  },
+  "truck-tonnage": {
+    "title": "Truck Tonnage Index",
+    "public_summary": "Tracks truck tonnage and freight confirmation as a read on industrial demand and goods movement.",
+    "thesis": "Truck tonnage is another physical-economy flow signal. When shipping intensity accelerates alongside rail, the system treats that as confirmation of broader demand."
+  },
+  "tsa": {
+    "title": "TSA Body Count",
+    "public_summary": "Tracks TSA checkpoint volume as a daily read on U.S. travel activity and discretionary demand.",
+    "thesis": "Passenger throughput is one of the fastest-moving public travel indicators available. Sharp acceleration or slowdown can signal changes in mobility and consumer activity before earnings do."
+  },
+  "uber-mobility": {
+    "title": "Uber Mobility Index",
+    "public_summary": "Tracks Uber and Lyft search-interest momentum as a proxy for mobility demand and consumer movement.",
+    "thesis": "Ride-share interest is a rough but fast-moving mobility signal. When interest rises together, the system reads that as expanding travel and discretionary activity; when it falls, it leans defensive."
+  },
+  "vix-fear-rotation": {
+    "title": "VIX Fear Rotation",
+    "public_summary": "Tracks the absolute level of the VIX as a read on near-term fear and defensive rotation.",
+    "thesis": "A high VIX usually means the market is pricing stress aggressively. A low VIX signals calm and more tolerance for cyclical and growth risk."
+  },
+  "vix-term-structure": {
+    "title": "VIX Term Structure",
+    "public_summary": "Tracks the VIX/VXV term-structure ratio as a read on volatility regime and market stress.",
+    "thesis": "Backwardation in the volatility curve often signals acute near-term fear, while steep contango suggests calmer conditions. The signal converts that regime into sector rotation."
+  },
+  "yelp-closure-velocity": {
+    "title": "Yelp Closure Velocity",
+    "public_summary": "Tracks business-closure rates from Yelp-style business data as a read on consumer and local-economy stress.",
+    "thesis": "A rising closure rate usually means local demand and business conditions are weakening. A low closure rate points toward a healthier operating backdrop."
+  },
+  "yield-curve-regime": {
+    "title": "Yield Curve Regime",
+    "public_summary": "Tracks yield-curve inversion and steepening as a read on recession risk versus risk-on recovery.",
+    "thesis": "The 10Y-2Y curve is one of the oldest macro regime indicators in the system. Inversion argues defensive; steepening out of stress supports more cyclical risk."
+  }
+}
