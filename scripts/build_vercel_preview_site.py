@@ -195,6 +195,13 @@ def write_algo_index(out: Path) -> None:
     }
     for old, new in replacements.items():
         html = html.replace(old, new)
+    html = html.replace(
+        "background: radial-gradient(1200px 600px at 10% -20%, #1f4a3d, transparent),\n                radial-gradient(1000px 800px at 100% 0%, #1a3f35, transparent),\n                var(--bg);",
+        "background: var(--bg);",
+    )
+    html = html.replace("--bg: #0f1d1a;", "--bg: #0a0d12;")
+    html = html.replace("--bg-2: #12312a;", "--bg-2: #111520;")
+    html = html.replace("--card: #152a25;", "--card: #111520;")
     html = html.replace("/crazy/", "/algos/")
     html = html.replace("crazy/", "algos/")
     html = html.replace("crazy algos", "algos")

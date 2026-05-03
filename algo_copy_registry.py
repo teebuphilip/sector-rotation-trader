@@ -93,30 +93,37 @@ def _parse_markdown(path: Path, category: str) -> dict | None:
     return record
 
 
-def _scan_markdown_roots() -> list[tuple[str, Path]]:
-    roots = []
-    for pattern in (
-        ("crazy", ROOT / "data" / "ideas" / "runs"),
-        ("normal", ROOT / "data" / "normal_ideas" / "runs"),
-    ):
-        roots.append(pattern)
-    return roots
+def _iter_markdown_paths() -> list[tuple[str, Path]]:
+    pairs: list[tuple[str, Path]] = []
+
+    roots = (
+        ("crazy", ROOT / "data" / "ideas" / "runs", "*/publish/*.md"),
+        ("normal", ROOT / "data" / "normal_ideas" / "runs", "*/publish/*.md"),
+        ("crazy", ROOT / "data" / "ideas" / "completed", "*/*.md"),
+        ("crazy", ROOT / "data" / "ideas" / "failed", "*/*.md"),
+        ("normal", ROOT / "data" / "normal_ideas" / "completed", "*/*.md"),
+        ("normal", ROOT / "data" / "normal_ideas" / "failed", "*/*.md"),
+    )
+
+    for category, base, pattern in roots:
+        if not base.exists():
+            continue
+        for md_path in sorted(base.glob(pattern)):
+            pairs.append((category, md_path))
+    return pairs
 
 
 def build_algo_copy_registry() -> dict[str, dict]:
     records: dict[str, dict] = {}
-    for category, base in _scan_markdown_roots():
-        if not base.exists():
+    for category, md_path in _iter_markdown_paths():
+        parsed = _parse_markdown(md_path, category)
+        if not parsed:
             continue
-        for md_path in sorted(base.glob("*/publish/*.md")):
-            parsed = _parse_markdown(md_path, category)
-            if not parsed:
-                continue
-            algo_id = str(parsed["algo_id"])
-            record = dict(parsed)
-            record["source_path"] = str(md_path.relative_to(ROOT))
-            records[f"{category}:{algo_id}"] = record
-            records[algo_id] = record
+        algo_id = str(parsed["algo_id"])
+        record = dict(parsed)
+        record["source_path"] = str(md_path.relative_to(ROOT))
+        records[f"{category}:{algo_id}"] = record
+        records[algo_id] = record
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(records, indent=2) + "\n", encoding="utf-8")
@@ -159,4 +166,3 @@ def lookup_algo_copy(
             if prefixed in data:
                 return data[prefixed]
     return None
-
