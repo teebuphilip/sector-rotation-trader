@@ -1,19 +1,10 @@
 {
-  "cash": 95013.15728005987,
+  "cash": 100004.16074445372,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 30.116068988299414,
+  "fees_paid": 40.32877722917028,
   "taxes_paid": 20.128853169835985,
-  "positions": {
-    "XLY": {
-      "shares": 42.158107463756465,
-      "entry_price": 118.62999725341797,
-      "entry_date": "2026-05-01",
-      "cost": 5001.216172634729,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-29",
@@ -48,6 +39,20 @@
       "cost": 5001.22,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-03",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 42.1581,
+      "price": 118.63,
+      "proceeds": 4991.0,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -10.21,
+      "pnl_pct": -0.2,
+      "entry_date": "2026-05-01",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -760,20 +765,29 @@
       },
       "sector": "Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-03",
+      "cash": 100004.16,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100004.16,
+      "positions": {},
+      "sector": "Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-27",
-  "last_run": "2026-05-01",
+  "last_run": "2026-05-03",
   "meta": {
     "weekly-surge-in-google-trends-for-diy-plumbing-repair-signal": {
-      "signal_label": "RISK_ON",
+      "signal_label": "RISK_OFF",
       "name": "Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-01",
-      "latest_value": 6.0,
-      "prior_avg": 3.1071,
-      "signal_change": 0.931,
-      "entry_date": "2026-05-01"
+      "last_signal": "RISK_OFF",
+      "last_run": "2026-05-03",
+      "latest_value": 0.0,
+      "prior_avg": 3.6786,
+      "signal_change": -1.0
     }
   }
 }

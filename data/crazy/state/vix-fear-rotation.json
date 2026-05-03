@@ -3727,16 +3727,45 @@
       },
       "sector": "VIX Fear Rotation",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-03",
+      "cash": 23004.62,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 93211.05,
+      "positions": {
+        "XLK": {
+          "shares": 231.5331,
+          "entry_price": 159.11,
+          "current_price": 161.87,
+          "market_value": 37478.26,
+          "unrealized_pnl": 639.03,
+          "entry_date": "2026-04-29",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 275.8844,
+          "entry_price": 116.84,
+          "current_price": 118.63,
+          "market_value": 32728.16,
+          "unrealized_pnl": 493.83,
+          "entry_date": "2026-04-29",
+          "margin": false
+        }
+      },
+      "sector": "VIX Fear Rotation",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-20",
-  "last_run": "2026-05-01",
+  "last_run": "2026-05-03",
   "meta": {
     "vix-fear-rotation": {
       "vix": 16.89,
       "signal_label": "LOW_FEAR",
       "name": "VIX Fear Rotation",
-      "last_run": "2026-05-01",
+      "last_run": "2026-05-03",
       "last_signal": "LOW_FEAR"
     }
   }

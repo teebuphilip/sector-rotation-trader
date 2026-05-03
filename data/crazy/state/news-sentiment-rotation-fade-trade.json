@@ -1,19 +1,10 @@
 {
-  "cash": 94893.84335507911,
+  "cash": 99878.56746907534,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 70.43663104457991,
+  "fees_paid": 80.64900942093423,
   "taxes_paid": 20.098961007735333,
-  "positions": {
-    "XLY": {
-      "shares": 42.10517245231303,
-      "entry_price": 118.62999725341797,
-      "entry_date": "2026-05-01",
-      "cost": 4994.936492372584,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-22",
@@ -96,6 +87,20 @@
       "cost": 4994.94,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-03",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 42.1052,
+      "price": 118.63,
+      "proceeds": 4984.72,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -10.21,
+      "pnl_pct": -0.2,
+      "entry_date": "2026-05-01",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -898,20 +903,29 @@
       },
       "sector": "News Sentiment Rotation Fade Trade",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-03",
+      "cash": 99878.57,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99878.57,
+      "positions": {},
+      "sector": "News Sentiment Rotation Fade Trade",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-21",
-  "last_run": "2026-05-01",
+  "last_run": "2026-05-03",
   "meta": {
     "news-sentiment-rotation-fade-trade": {
-      "latest_value": 22.0,
-      "prior_avg": 10.2,
-      "signal_change": 1.1569,
-      "entry_date": "2026-05-01",
-      "signal_label": "RISK_ON",
+      "latest_value": 6.0,
+      "prior_avg": 9.8571,
+      "signal_change": -0.3913,
+      "signal_label": "RISK_OFF",
       "name": "News Sentiment Rotation Fade Trade",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-01"
+      "last_signal": "RISK_OFF",
+      "last_run": "2026-05-03"
     }
   }
 }
