@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Freight Rail Carloads</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Tracks freight rail carloads as a read on industrial demand, commodity flow, and shipping pressure.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>Rail traffic is a direct physical-economy signal. When carloads accelerate, the system treats it as a sign of expansion-sensitive demand; when they slow, it leans defensive.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

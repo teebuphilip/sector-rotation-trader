@@ -24,6 +24,26 @@
     "title": "Algo Biscotti (Unconditional Loyalty)",
     "public_summary": "A monthly contrarian sector rotation that buys the weakest recent sector and holds for one month.",
     "thesis": "Biscotti assumes the hardest-hit sector over the last 30 trading days is often the best mean-reversion candidate over the next month. It is intentionally simple and fully unconditional.",
+    "universe": [
+      "XLK",
+      "XLV",
+      "XLF",
+      "XLY",
+      "XLI",
+      "XLC",
+      "XLP",
+      "XLE",
+      "XLB",
+      "XLRE",
+      "XLU"
+    ],
+    "data_sources": [
+      "Yahoo Finance daily prices for the 11 SPDR sector ETFs"
+    ],
+    "signal_logic": "On the last trading day of the month, rank all 11 SPDR sector ETFs by trailing 30-day return and buy the single worst performer.",
+    "entry_exit": "Enter the weakest 30-day sector at month-end. Hold for one month. Exit at the next month-end rebalance and repeat with the new weakest sector.",
+    "position_sizing": "100% allocation to the selected sector ETF each month.",
+    "risks": "The strategy is fully unconditional and can stay long a collapsing sector. Mean reversion can fail for long stretches in strong trend regimes.",
     "algo_id": "biscotti",
     "source_path": "data/algos/legacy_copy.json"
   },
@@ -80,6 +100,20 @@
     "title": "Electricity Consumption",
     "public_summary": "Tracks U.S. electricity demand as a read on industrial load, weather pressure, and economic activity.",
     "thesis": "Electricity demand is one of the cleaner physical-economy inputs in the system. Sustained changes can reflect shifts in industrial production, utility load, and broad activity.",
+    "universe": [
+      "XLI",
+      "XLB",
+      "XLU",
+      "XLP",
+      "XLV"
+    ],
+    "data_sources": [
+      "U.S. electricity demand and load data"
+    ],
+    "signal_logic": "Compare current electricity consumption against its recent trend. Rising load supports industrial and utility-sensitive sectors; weak demand pushes the ranking toward defense.",
+    "entry_exit": "Enter on the next scheduled rebalance when electricity demand confirms stronger activity. Exit or rotate out when load growth fades or the next rebalance ranks defensive sectors higher.",
+    "position_sizing": "Allocate across the ranked sector basket at the scheduled rebalance; no single sleeve exceeds the model target weight.",
+    "risks": "Weather can dominate the signal, masking underlying economic demand. Load data can also reflect temporary anomalies rather than durable activity shifts.",
     "algo_id": "electricity-consumption",
     "source_path": "data/algos/legacy_copy.json"
   },
@@ -178,6 +212,21 @@
     "title": "Retail Sales Momentum",
     "public_summary": "Tracks multi-month retail-sales growth as a read on consumer spending momentum.",
     "thesis": "Retail sales are one of the clearest macro inputs for consumer demand. Persistent acceleration supports risk-on consumer and cyclical positioning; contraction argues for defense.",
+    "universe": [
+      "XLY",
+      "XLK",
+      "XLF",
+      "XLP",
+      "XLU",
+      "XLV"
+    ],
+    "data_sources": [
+      "Retail sales growth series and related consumer-spending releases"
+    ],
+    "signal_logic": "Track multi-month retail-sales acceleration versus slowdown. Stronger consumer demand lifts cyclical and discretionary rankings; weaker prints shift the basket toward defensive sectors.",
+    "entry_exit": "Enter on the next scheduled rebalance when retail-sales momentum improves. Exit or rotate defensive when the growth trend rolls over or the next rebalance ranks safer sectors higher.",
+    "position_sizing": "Allocate across the ranked sector basket at the scheduled rebalance; no single sleeve exceeds the model target weight.",
+    "risks": "Retail data is revised, lagged, and sensitive to seasonal adjustments. Strong nominal sales can also be inflation noise rather than real demand.",
     "algo_id": "retail-sales-momentum",
     "source_path": "data/algos/legacy_copy.json"
   },
@@ -199,6 +248,21 @@
     "title": "TSA Body Count",
     "public_summary": "Tracks TSA checkpoint volume as a daily read on U.S. travel activity and discretionary demand.",
     "thesis": "Passenger throughput is one of the fastest-moving public travel indicators available. Sharp acceleration or slowdown can signal changes in mobility and consumer activity before earnings do.",
+    "universe": [
+      "XLY",
+      "XLK",
+      "XLI",
+      "XLP",
+      "XLU",
+      "XLV"
+    ],
+    "data_sources": [
+      "TSA checkpoint throughput data via the tsa_table adapter"
+    ],
+    "signal_logic": "Measure current passenger throughput against a recent baseline. Rising travel volume pushes the ranking toward travel- and activity-sensitive sectors; slowing throughput pushes the model defensive.",
+    "entry_exit": "Enter on the next scheduled rebalance when TSA throughput confirms improving travel demand. Exit or rotate out when throughput momentum fades or the next rebalance ranks defensive sectors higher.",
+    "position_sizing": "Allocate across the ranked sector basket at the scheduled rebalance; no single sleeve exceeds the model target weight.",
+    "risks": "Holiday effects, weather disruptions, and event-driven travel spikes can create false positives. TSA data is fast-moving but can still be revised or temporarily distorted.",
     "algo_id": "tsa",
     "source_path": "data/algos/legacy_copy.json"
   },
@@ -206,6 +270,21 @@
     "title": "Uber Mobility Index",
     "public_summary": "Tracks Uber and Lyft search-interest momentum as a proxy for mobility demand and consumer movement.",
     "thesis": "Ride-share interest is a rough but fast-moving mobility signal. When interest rises together, the system reads that as expanding travel and discretionary activity; when it falls, it leans defensive.",
+    "universe": [
+      "XLY",
+      "XLK",
+      "XLF",
+      "XLP",
+      "XLU",
+      "XLV"
+    ],
+    "data_sources": [
+      "Google Trends search-interest for Uber and Lyft terms"
+    ],
+    "signal_logic": "Compare current ride-share search interest against its recent baseline. When mobility demand accelerates, rank toward cyclical and consumer-sensitive sectors; when it fades, rotate toward defense.",
+    "entry_exit": "Enter on the next scheduled rebalance when the mobility signal turns positive. Exit or rotate defensive when search momentum drops back below its baseline or the next rebalance flips the ranking.",
+    "position_sizing": "Allocate across the ranked sector basket at the scheduled rebalance; no single sleeve exceeds the model target weight.",
+    "risks": "Search activity can be noisy, brand-specific, and disconnected from actual bookings. Mobility interest can also spike for reasons that do not translate into sector performance.",
     "algo_id": "uber-mobility",
     "source_path": "data/algos/legacy_copy.json"
   },

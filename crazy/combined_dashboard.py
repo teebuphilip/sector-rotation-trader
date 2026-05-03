@@ -32,7 +32,7 @@ def generate_combined_dashboard(summaries):
           <td>{s['last_signal']}</td>
           <td>{s.get('num_trades', 0)}</td>
           <td>{status}</td>
-          <td><a href="../algos/{s['algo_id']}/index.html">Open</a></td>
+          <td><a href="../algos/{s['algo_id']}/index.html" target="_blank" rel="noopener noreferrer">Open</a></td>
         </tr>
         """
         if is_idle:

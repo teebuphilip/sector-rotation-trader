@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Reddit Sentiment Spike</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Sudden spikes in positive sentiment towards specific stocks on Reddit communities like r/stocks or r/investing often precede short-term price movements as retail trader interest surges. By tracking the daily sentiment score changes, one can detect emerging momentum before widespread recognition. This can provide early entry signals for momentum-driven trades.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>Sudden spikes in positive sentiment towards specific stocks on Reddit communities like r/stocks or r/investing often precede short-term price movements as retail trader interest surges. By tracking the daily sentiment score changes, one can detect emerging momentum before widespread recognition. This can provide early entry signals for momentum-driven trades.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>AAPL</li><li>TSLA</li><li>AMD</li><li>MSFT</li><li>NVDA</li><li>AMZN</li><li>GOOGL</li><li>META</li><li>NFLX</li><li>BABA</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>Pushshift Reddit API</li><li>Reddit public posts and comments</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>Calculate daily sentiment score for each stock ticker mentioned on Reddit using simple polarity analysis. Identify tickers with an increase in sentiment score exceeding 40% compared to the previous day and mention volume above 50 posts/comments.</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Entry: Buy at next market open when sentiment spike is confirmed. Exit: Sell when sentiment score drops below 80% of spike day&#x27;s peak or after 5 trading days, whichever is earlier.</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Allocate 2% of portfolio per position, limit to 5 concurrent positions to manage risk.</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>Sentiment spikes may be driven by hype, misinformation, or short-term noise leading to false signals. Sudden market-wide events can override signals. Low liquidity stocks may have exaggerated sentiment effects.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

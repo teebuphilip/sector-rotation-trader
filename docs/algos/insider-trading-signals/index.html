@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Insider Trading Signals</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Insiders at publicly traded companies often buy or sell their company's stock before major announcements. By tracking and analyzing these insider transactions, we can potentially identify trading signals to profit from before the wider market reacts.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>Insiders at publicly traded companies often buy or sell their company&#x27;s stock before major announcements. By tracking and analyzing these insider transactions, we can potentially identify trading signals to profit from before the wider market reacts.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>Russell 3000 index</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>SEC Insider Transactions (https://www.sec.gov/edgar/searchedgar/companysearch.html)</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>Monitor SEC filings for insider buy/sell transactions. Look for large transactions (e.g. over $100,000) by C-level executives or directors. Generate buy signal when insiders are buying, sell signal when insiders are selling.</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Buy when insider buying threshold is met, sell when insider selling threshold is met.</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Size positions based on transaction size and confidence in signal. Larger transactions by senior insiders warrant larger position sizes.</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>Insider transactions may not always predict future stock price movements. Insider trading laws and regulations must be carefully followed.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

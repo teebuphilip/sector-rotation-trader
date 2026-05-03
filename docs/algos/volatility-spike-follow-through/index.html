@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Volatility Spike Follow-Through</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Sudden large spikes in implied volatility often indicate upcoming sharp moves in the underlying asset's price. By identifying when implied volatility surges beyond recent norms and then observing the following day's price direction, we can capture momentum trades that exploit volatility-driven breakouts or breakdowns.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>Sudden large spikes in implied volatility often indicate upcoming sharp moves in the underlying asset&#x27;s price. By identifying when implied volatility surges beyond recent norms and then observing the following day&#x27;s price direction, we can capture momentum trades that exploit volatility-driven breakouts or breakdowns.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>SPY</li><li>AAPL</li><li>TSLA</li><li>MSFT</li><li>AMZN</li><li>NVDA</li><li>GOOG</li><li>META</li><li>NFLX</li><li>AMD</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>Yahoo Finance (for options implied volatility and price data)</li><li>CBOE website (for VIX and related volatility indices)</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>Identify stocks where the implied volatility percentile (over the last 30 days) jumps above 80% compared to the previous day, with at least a 15% increase in IV. On the following trading day, if the stock price moves at least 1.5% in the direction of the IV spike (positive or negative), trigger entry.</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Entry: Buy if IV spikes and next-day price moves up &gt;=1.5%; short if price moves down &gt;=1.5%. Exit: Close position after 3 trading days or if price retraces 1% against the position.</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Allocate 2% of portfolio capital per position to limit risk from volatility whipsaws.</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>False signals during earnings or news events; IV spikes can be driven by option demand unrelated to directional moves; rapid reversals causing stop-loss hits; liquidity constraints in options data.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

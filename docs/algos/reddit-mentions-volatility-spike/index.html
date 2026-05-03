@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Reddit Mentions Volatility Spike</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Sudden spikes in the daily mention count of a stock ticker on Reddit's r/wallstreetbets often precede heightened volatility and potential price swings. By tracking the frequency of ticker mentions and combining it with realized volatility measures, traders can identify breakout or breakdown opportunities. This signal aims to capture momentum driven by retail investor attention surges.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>Sudden spikes in the daily mention count of a stock ticker on Reddit&#x27;s r/wallstreetbets often precede heightened volatility and potential price swings. By tracking the frequency of ticker mentions and combining it with realized volatility measures, traders can identify breakout or breakdown opportunities. This signal aims to capture momentum driven by retail investor attention surges.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>AAPL</li><li>TSLA</li><li>GME</li><li>AMC</li><li>MSFT</li><li>NVDA</li><li>AMD</li><li>NFLX</li><li>META</li><li>BABA</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>Pushshift Reddit API (for historical Reddit comments)</li><li>Yahoo Finance (for price and volatility data)</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>1) Calculate the daily count of ticker mentions on r/wallstreetbets. 2) Compute a 5-day moving average of mention counts. 3) Identify days where mention count &gt; 2x the 5-day moving average. 4) Calculate the 10-day realized volatility (standard deviation of log returns). 5) Confirm volatility is above the 30-day average volatility. Signal triggers when both mention spike and volatility elevation occur simultaneously.</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Entry (Buy): On the day a mention spike combined with elevated volatility is detected, buy at close. Exit (Sell): Exit after 5 trading days or if realized volatility drops below 80% of the 30-day average before 5 days.</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Allocate 5% of portfolio capital per signal to limit exposure to volatile moves and diversify across multiple triggered tickers if applicable.</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>High false positives from meme-driven noise without sustained price moves; sudden regulatory or news events can disrupt patterns; limited liquidity in smaller tickers can cause slippage; Reddit mention counts can be artificially inflated or spammed.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Electricity Demand Spike Weather Anomaly</div><div class="algo-hero-meta">Lab started: 2026-01-29 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Daily electricity demand exceeds 30-day average by 15% while temperature is 10+ degrees above seasonal normal, signaling heat stress and utility margin compression. Extreme demand spikes during heat waves reduce utility margins, strain grid capacity, and increase regulatory scrutiny.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>Daily electricity demand exceeds 30-day average by 15% while temperature is 10+ degrees above seasonal normal, signaling heat stress and utility margin compression. Extreme demand spikes during heat waves reduce utility margins, strain grid capacity, and increase regulatory scrutiny.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>XLU</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>EIA electricity demand (total US, daily) through eia_electricity adapter combined with Open-Meteo daily temperature through weather_series adapter</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>If daily electricity demand is 15%+ above 30-day rolling average and daily temp is 10+ degrees above normal for region</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Entry: If daily electricity demand is 15%+ above 30-day rolling average and daily temp is 10+ degrees above normal for region Exit: After 5 trading days or when daily demand returns to within 5% of 30-day average</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Allocate 5% per signal, max 20% total exposure.</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>Data source instability, false positives, and regime shifts.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

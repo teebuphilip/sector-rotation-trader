@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Reddit Volatility Spike</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Sudden spikes in Reddit mentions of a stock combined with a surge in implied volatility can predict short-term price reversals or breakouts. Retail interest often precedes volatility expansions, creating trading opportunities by capturing momentum or mean reversion shortly after the spike.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>Sudden spikes in Reddit mentions of a stock combined with a surge in implied volatility can predict short-term price reversals or breakouts. Retail interest often precedes volatility expansions, creating trading opportunities by capturing momentum or mean reversion shortly after the spike.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>AAPL</li><li>TSLA</li><li>GME</li><li>AMC</li><li>MSFT</li><li>NVDA</li><li>AMD</li><li>NFLX</li><li>META</li><li>GOOGL</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>Pushshift Reddit API</li><li>Yahoo Finance (implied volatility data via options prices)</li><li>Alpha Vantage (free stock price and volume data)</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>1) Identify a 100%+ day-over-day increase in Reddit daily mentions of a ticker&#x27;s cashtag or symbol on r/stocks or r/investing. 2) Confirm that the stock&#x27;s implied volatility (IV) has increased by at least 10% over the previous trading day. 3) Entry signal triggers if both conditions are met on the same day. 4) Exit signal triggers when IV drops below its 5-day moving average or after 5 trading days, whichever comes first.</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Buy at market open the day after the signal triggers. Sell when IV drops below its 5-day moving average or hold for a maximum of 5 trading days to limit risk.</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Allocate 2% of portfolio capital per trade to limit risk from volatility spikes and avoid overexposure to retail-driven moves.</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>High false positives due to noise in Reddit mentions or IV spikes unrelated to fundamental news. Sudden regulatory actions or market-wide volatility can invalidate signal. Low liquidity stocks may have unreliable IV data.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

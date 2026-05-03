@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Electric Vehicle Charge Station Density</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">The density of electric vehicle charge stations in a geographic region can provide insights into the adoption of electric vehicles and future demand. This signal can be used to identify regions primed for EV growth and investment opportunities.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>The density of electric vehicle charge stations in a geographic region can provide insights into the adoption of electric vehicles and future demand. This signal can be used to identify regions primed for EV growth and investment opportunities.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>Tesla (TSLA)</li><li>ChargePoint (CHPT)</li><li>Blink Charging (BLNK)</li><li>Volta (VLTA)</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>U.S. Department of Energy Alternative Fuels Data Center</li><li>OpenChargeMap API</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>Calculate the density of electric vehicle charge stations per square mile or square kilometer in a given region. Monitor changes in charge station density over time to identify regions with accelerating EV adoption.</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Enter long positions in companies with exposure to regions with increasing charge station density. Exit positions as density growth slows or levels off.</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Size positions based on the rate of change in charge station density. Larger positions for regions with rapidly increasing density, smaller positions for regions with slower growth.</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>Charge station data may not be comprehensive, regional adoption patterns may diverge from national trends, and competitive landscape changes could impact investment thesis.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

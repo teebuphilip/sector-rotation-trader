@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Reddit Sentiment Volatility Spike</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Sudden spikes in sentiment volatility on Reddit's r/investing subreddit often precede short-term price reversals in popular stocks discussed there. Tracking the daily variance in sentiment scores can reveal overreactions or panic moments where mean reversion trading can be profitable. By capturing these sentiment swings, traders can enter contrarian positions ahead of price corrections.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>Sudden spikes in sentiment volatility on Reddit&#x27;s r/investing subreddit often precede short-term price reversals in popular stocks discussed there. Tracking the daily variance in sentiment scores can reveal overreactions or panic moments where mean reversion trading can be profitable. By capturing these sentiment swings, traders can enter contrarian positions ahead of price corrections.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>AAPL</li><li>TSLA</li><li>AMZN</li><li>MSFT</li><li>GME</li><li>NVDA</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>Pushshift Reddit API (https://pushshift.io/)</li><li>Yahoo Finance (historical price data)</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>1) Collect all posts and comments mentioning tickers in the universe on r/investing daily. 2) Compute daily sentiment scores per ticker using a simple lexicon-based sentiment analyzer. 3) Calculate daily volatility as the standard deviation of sentiment scores over a rolling 3-day window. 4) Signal triggers when sentiment volatility spikes above the 90th percentile of its historical distribution for that ticker.</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Entry: Buy if volatility spike occurs and the average sentiment score that day is negative (contrarian long). Sell if volatility spike occurs and average sentiment is positive (contrarian short). Exit positions when sentiment volatility drops below the 50th percentile or after 5 trading days.</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Allocate 5% of portfolio per position, max 20% total exposure. Reduce size by half if average daily volume is below 1 million shares.</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>Sentiment analysis errors, low Reddit mention volume causing noisy signals, stocks with high natural volatility may trigger false signals, sudden fundamental changes not reflected in social sentiment.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

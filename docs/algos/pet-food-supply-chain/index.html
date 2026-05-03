@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Pet Food Supply Chain Disruption</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">The pet food industry is highly sensitive to supply chain disruptions. By monitoring key indicators, we can potentially identify upcoming shortages or price increases and trade accordingly.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>The pet food industry is highly sensitive to supply chain disruptions. By monitoring key indicators, we can potentially identify upcoming shortages or price increases and trade accordingly.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>PETS</li><li>CHWY</li><li>CENT</li><li>CENTA</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>US Department of Agriculture (USDA) reports on pet food production and inventory</li><li>Federal Reserve&#x27;s Freight Transportation Services Index</li><li>Google Trends data on pet food-related searches</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>{&#x27;pet_food_production_decline&#x27;: &#x27;If USDA monthly pet food production index drops by more than 5% year-over-year&#x27;, &#x27;freight_transportation_index_drop&#x27;: &#x27;If Freight Transportation Services Index falls by more than 3% month-over-month&#x27;, &#x27;pet_food_search_spike&#x27;: &#x27;If Google Trends index for pet food-related searches increases by more than 20% month-over-month&#x27;}</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>{&#x27;entry&#x27;: &#x27;If 2 out of 3 signals are triggered, enter long positions in major pet food manufacturers&#x27;, &#x27;exit&#x27;: &#x27;If all 3 signals return to normal levels, exit long positions&#x27;}</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Equal-weight positions, sizing based on overall portfolio risk tolerance</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>{&#x27;false_signals&#x27;: &#x27;Signals may be triggered by temporary or isolated events, leading to incorrect trades&#x27;, &#x27;demand_changes&#x27;: &#x27;Unexpected changes in pet ownership or consumer preferences could impact the effectiveness of the strategy&#x27;}</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

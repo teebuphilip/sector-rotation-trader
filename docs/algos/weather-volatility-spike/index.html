@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Weather Volatility Spike</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Sudden spikes in weather forecast volatility for major economic hubs can predict short-term market turbulence. By measuring daily changes in weather forecast uncertainty, we can anticipate increased market volatility and adjust trading positions accordingly. This signal exploits the psychological and operational impact of unpredictable weather on supply chains and consumer behavior.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>Sudden spikes in weather forecast volatility for major economic hubs can predict short-term market turbulence. By measuring daily changes in weather forecast uncertainty, we can anticipate increased market volatility and adjust trading positions accordingly. This signal exploits the psychological and operational impact of unpredictable weather on supply chains and consumer behavior.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>VXX</li><li>UVXY</li><li>SPY</li><li>QQQ</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>NOAA National Weather Service API</li><li>OpenWeatherMap Free API</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>Calculate the daily standard deviation of temperature forecasts over the next 7 days for major economic cities (e.g., New York, London, Tokyo). If the 3-day moving average of this std dev rises by more than 20% compared to the previous week’s average, trigger a volatility spike signal.</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Entry (Buy volatility): When a volatility spike signal is triggered, buy VIX-related ETFs or options proxies. Exit (Sell volatility): When the 3-day moving average of forecast volatility drops back below the 7-day average, close the position.</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Allocate 5% of portfolio per signal, scaling linearly with the magnitude of the volatility spike (e.g., if spike is 40% above baseline, allocate 10%).</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>Weather forecast models can change due to seasonal effects unrelated to market impact. Market volatility may not always correlate with weather unpredictability. False positives during hurricane seasons or extreme weather events may occur.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Reddit Subreddit Sentiment Spike</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Sudden spikes in positive sentiment and activity within finance-related subreddits often precede short-term price moves in related stocks or ETFs. By monitoring sentiment and volume of posts/comments on targeted subreddits, this signal aims to capture early retail enthusiasm shifts that may drive momentum.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>Sudden spikes in positive sentiment and activity within finance-related subreddits often precede short-term price moves in related stocks or ETFs. By monitoring sentiment and volume of posts/comments on targeted subreddits, this signal aims to capture early retail enthusiasm shifts that may drive momentum.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>SPY</li><li>GME</li><li>AMC</li><li>AAPL</li><li>TSLA</li><li>MSFT</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>Reddit API (r/wallstreetbets, r/stocks, r/investing)</li><li>Free sentiment analysis libraries (e.g., VADER, TextBlob)</li><li>Yahoo Finance (for price data)</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>Calculate daily post and comment volume on selected subreddits. Compute average sentiment scores for all posts/comments each day. Trigger signal when daily volume exceeds 150% of 7-day average AND average sentiment is above 0.3 (on a -1 to 1 scale).</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Entry: Buy at next market open when signal triggers. Exit: Sell when daily sentiment drops below 0 or volume falls below 80% of 7-day average.</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Allocate 5% of portfolio per triggered asset. Limit total exposure to 20% to diversify across signals.</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>High noise and false positives due to hype cycles. Sentiment may be manipulated or delayed. Stocks may be illiquid or volatile. Correlation between subreddit sentiment and price may weaken over time.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Twitter Sentiment Spike</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Sudden spikes in positive or negative Twitter sentiment about a specific stock often precede short-term price moves as retail attention surges. By tracking unusually large daily sentiment changes, traders can anticipate momentum shifts before they appear in traditional volume or price indicators. This can capture early moves driven by viral news or social trends.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>Sudden spikes in positive or negative Twitter sentiment about a specific stock often precede short-term price moves as retail attention surges. By tracking unusually large daily sentiment changes, traders can anticipate momentum shifts before they appear in traditional volume or price indicators. This can capture early moves driven by viral news or social trends.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>AAPL</li><li>TSLA</li><li>AMZN</li><li>MSFT</li><li>GOOGL</li><li>NFLX</li><li>NVDA</li><li>META</li><li>AMD</li><li>BABA</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>Twitter API (free tier)</li><li>Yahoo Finance (for price and volume data)</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>Calculate daily sentiment score for each ticker from tweets mentioning its ticker symbol or company name. Generate a 7-day moving average of sentiment scores. Signal triggers when daily sentiment changes by more than ±30% compared to the 7-day average.</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Entry: Buy if sentiment spikes positively by &gt;30%, sell/short if sentiment drops negatively by &gt;30%. Exit: Close position when sentiment returns to within ±10% of the 7-day average or after 5 trading days, whichever comes first.</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Allocate no more than 5% of portfolio per position to limit risk from volatile sentiment-driven moves.</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>Sentiment can be noisy and manipulated (e.g., bot activity). Spike may not translate to price moves, causing false signals. Sudden news events may cause whipsaws. Limited tweet volume for smaller tickers can reduce reliability.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

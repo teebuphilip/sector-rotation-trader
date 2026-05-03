@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Reddit Subreddit Surge Momentum</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Sudden surges in mentions of a stock ticker within specific finance-related subreddits often precede increased retail investor interest and potential short-term price movements. By tracking the daily percentage increase in mentions, one can capture early momentum shifts driven by the retail crowd before they fully materialize in price.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>Sudden surges in mentions of a stock ticker within specific finance-related subreddits often precede increased retail investor interest and potential short-term price movements. By tracking the daily percentage increase in mentions, one can capture early momentum shifts driven by the retail crowd before they fully materialize in price.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>AAPL</li><li>TSLA</li><li>AMC</li><li>GME</li><li>NVDA</li><li>MSFT</li><li>AMD</li><li>NIO</li><li>PLTR</li><li>NFLX</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>Pushshift Reddit API</li><li>Yahoo Finance for price data</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>Calculate the daily count of mentions of a ticker’s cashtag (e.g., $TSLA) in r/wallstreetbets, r/investing, and r/stocks. Generate a 3-day moving average of mentions. Signal triggers when daily mentions increase by more than 100% compared to the 3-day moving average and the average mentions are above 20 posts per day.</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Enter a long position at market open the day after the surge. Exit when mentions fall below the 3-day moving average or after 5 trading days, whichever comes first.</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Allocate 5% of portfolio per signal, max 3 concurrent positions. Reduce size by 50% if market volatility (VIX) is above 25.</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>High noise and false positives due to meme stock hype. Mentions may spike without price follow-through. Risk of sudden short squeezes or dumps. Data latency and API rate limits may delay signals.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

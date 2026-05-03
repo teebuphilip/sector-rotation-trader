@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Earthquake Energy Demand Indicator</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Earthquakes can significantly impact energy demand as businesses and residents react to the event. By tracking changes in real-time energy consumption data, we can identify potential trading opportunities in energy-related assets.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>Earthquakes can significantly impact energy demand as businesses and residents react to the event. By tracking changes in real-time energy consumption data, we can identify potential trading opportunities in energy-related assets.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>CL1!</li><li>NG1!</li><li>EL1!</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>US Energy Information Administration (EIA) - Real-time electricity demand data</li><li>USGS Earthquake Hazards Program - Real-time earthquake data</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>Monitor the EIA&#x27;s real-time electricity demand data for a region. When a significant earthquake is detected by USGS in that region, look for a sudden spike or drop in energy demand over the following 1-2 days. The magnitude of the demand change can signal the scale of the event&#x27;s impact.</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Buy or sell energy-related assets (e.g., oil, natural gas, electricity futures) based on the direction and magnitude of the post-earthquake energy demand shift.</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Scale position size based on the earthquake&#x27;s magnitude and the resulting energy demand change. Larger earthquakes with bigger demand impacts warrant larger positions.</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>Earthquakes can have unpredictable effects on energy demand, and the relationship may be affected by other factors like weather, time of day, or infrastructure damage. False signals are possible, and the strategy may have limited applicability to small or remote earthquakes.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

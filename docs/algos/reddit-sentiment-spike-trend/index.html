@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Reddit Sentiment Spike Trend</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Sudden spikes in positive sentiment on Reddit's r/investing and r/stocks often precede short-term bullish momentum in related equities. By quantifying sentiment surge through keyword frequency and sentiment analysis, one can capture early retail-driven buying trends before broader institutional recognition.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>Sudden spikes in positive sentiment on Reddit&#x27;s r/investing and r/stocks often precede short-term bullish momentum in related equities. By quantifying sentiment surge through keyword frequency and sentiment analysis, one can capture early retail-driven buying trends before broader institutional recognition.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>AAPL</li><li>TSLA</li><li>AMD</li><li>NVDA</li><li>MSFT</li><li>AMZN</li><li>GME</li><li>PLTR</li><li>NFLX</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>Reddit API (r/investing, r/stocks)</li><li>Free sentiment analysis libraries (e.g., VADER, TextBlob)</li><li>Yahoo Finance for price data</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>Calculate daily sentiment score for each ticker mentioned in r/investing and r/stocks by aggregating posts/comments containing ticker symbols. A signal triggers when (1) daily sentiment score increases by at least 50% compared to the 7-day moving average, and (2) the number of mentions increases by at least 30% over the same period.</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Enter a long position at next market open after signal triggers. Exit when sentiment score falls back below the 7-day moving average or after 5 trading days, whichever comes first.</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Allocate 2% of portfolio per position to limit exposure due to retail noise and potential volatility.</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>High noise and false positives due to viral meme posts or coordinated pump attempts. Sentiment may not translate to price movement if fundamentals are weak or market conditions are unfavorable.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

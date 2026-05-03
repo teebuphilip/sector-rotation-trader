@@ -4,6 +4,7 @@ Committed to repo → served via GitHub Pages.
 """
 import json
 import os
+import html
 from datetime import date
 from config import STARTING_CASH, DASHBOARD_FILE
 from algo_copy_registry import lookup_algo_copy
@@ -73,6 +74,61 @@ def _algo_description(algo_name: str, meta: dict) -> str:
     if any(term in name for term in ("sentiment", "reddit", "twitter", "social", "attention")):
         return "A sentiment signal that looks for crowd attention before it shows up in price."
     return "Tests whether this signal can add information beyond price alone."
+
+
+def _escape(text) -> str:
+    return html.escape(str(text or ""))
+
+
+def _render_brief_value(value) -> str:
+    if not value:
+        return ""
+    if isinstance(value, list):
+        items = "".join(f"<li>{_escape(item)}</li>" for item in value if str(item).strip())
+        if not items:
+            return ""
+        return f"<ul>{items}</ul>"
+    return f"<p>{_escape(value)}</p>"
+
+
+def _signal_brief_html(algo_name: str, meta: dict) -> str:
+    algo_id = str(meta.get("algo_id", "") or "")
+    copy = lookup_algo_copy(algo_id=algo_id, name=algo_name)
+    if not copy:
+        return ""
+
+    fields = [
+        ("Thesis", copy.get("thesis")),
+        ("Universe", copy.get("universe")),
+        ("Data Sources", copy.get("data_sources")),
+        ("Signal Logic", copy.get("signal_logic")),
+        ("Entry / Exit", copy.get("entry_exit")),
+        ("Position Sizing", copy.get("position_sizing")),
+        ("Risks", copy.get("risks")),
+    ]
+    rows = []
+    for label, value in fields:
+        rendered = _render_brief_value(value)
+        if rendered:
+            rows.append(
+                f'<div class="brief-item"><div class="brief-label">{_escape(label)}</div><div class="brief-value">{rendered}</div></div>'
+            )
+    if not rows:
+        return ""
+
+    return """
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+""" + "".join(rows) + """
+      </div>
+    </div>
+  </div>
+"""
 
 
 def generate_dashboard(state: dict, current_px: dict, sector: str,
@@ -198,6 +254,7 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
     is_algo_page = bool(strategy_value)
     algo_meta = _first_algo_meta(state)
     algo_desc = strategy_description or _algo_description(sector_str, algo_meta)
+    signal_brief_html = _signal_brief_html(sector_str, algo_meta) if is_algo_page else ""
     if is_algo_page:
         header_block = ""
         hero_style = "font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);"
@@ -351,6 +408,40 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
     color: var(--accent);
   }}
   .panel-body {{ padding: 20px; }}
+  .brief-grid {{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }}
+  .brief-item {{
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }}
+  .brief-item:last-child {{
+    border-bottom: none;
+    padding-bottom: 0;
+  }}
+  .brief-label {{
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }}
+  .brief-value p {{
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }}
+  .brief-value ul {{
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }}
+  .brief-value li {{
+    margin: 0 0 6px;
+  }}
 
   /* ── Chart ── */
   .chart-wrap {{
@@ -466,6 +557,8 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
 <div class="container">
 
   {'<section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="' + hero_style + '">' + sector_str + '</div><div class="algo-hero-meta">Lab started: ' + str(lab_start) + ' &nbsp;·&nbsp; Last run: ' + str(date.today()) + ' &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">' + algo_desc + '</div></section>' if is_algo_page else ''}
+
+  {signal_brief_html}
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

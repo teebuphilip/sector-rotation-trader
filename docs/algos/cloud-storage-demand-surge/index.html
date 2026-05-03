@@ -139,6 +139,40 @@
     color: var(--accent);
   }
   .panel-body { padding: 20px; }
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .brief-item {
+    border-bottom: 1px solid rgba(30,37,53,0.6);
+    padding-bottom: 14px;
+  }
+  .brief-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .brief-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .brief-value p {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .brief-value ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text);
+  }
+  .brief-value li {
+    margin: 0 0 6px;
+  }
 
   /* ── Chart ── */
   .chart-wrap {
@@ -254,6 +288,20 @@
 <div class="container">
 
   <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Cloud Storage Demand Surge</div><div class="algo-hero-meta">Lab started: 2026-01-16 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">The global shift to remote work and online learning has led to a surge in demand for cloud storage services. By monitoring web traffic and search trends, we can identify spikes in this demand and capitalize on the corresponding stock price movements of leading cloud storage providers.</div></section>
+
+  
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot yellow"></span>
+      <span class="panel-title">Signal Brief</span>
+    </div>
+    <div class="panel-body">
+      <div class="brief-grid">
+<div class="brief-item"><div class="brief-label">Thesis</div><div class="brief-value"><p>The global shift to remote work and online learning has led to a surge in demand for cloud storage services. By monitoring web traffic and search trends, we can identify spikes in this demand and capitalize on the corresponding stock price movements of leading cloud storage providers.</p></div></div><div class="brief-item"><div class="brief-label">Universe</div><div class="brief-value"><ul><li>BOX</li><li>DROPBOX</li><li>GOOGL</li><li>MSFT</li></ul></div></div><div class="brief-item"><div class="brief-label">Data Sources</div><div class="brief-value"><ul><li>Google Trends</li><li>Alexa Web Traffic Rankings</li><li>SEC filings of major cloud storage companies</li></ul></div></div><div class="brief-item"><div class="brief-label">Signal Logic</div><div class="brief-value"><p>Monitor Google Trends for search terms related to cloud storage (e.g., &#x27;cloud storage&#x27;, &#x27;online storage&#x27;, &#x27;file hosting&#x27;). Identify spikes in search interest that exceed the 90th percentile of the past 12 months. Confirm the trend with Alexa web traffic rankings for top cloud storage providers. Look for correlated increases in website traffic and user signups reported in company filings.</p></div></div><div class="brief-item"><div class="brief-label">Entry / Exit</div><div class="brief-value"><p>Enter long positions in leading cloud storage providers when search and web traffic signals indicate a demand surge. Exit positions when the signals show a sustained decline in demand.</p></div></div><div class="brief-item"><div class="brief-label">Position Sizing</div><div class="brief-value"><p>Size positions based on the strength of the demand signal. Allocate a larger percentage of the portfolio to positions when the demand surge is more pronounced.</p></div></div><div class="brief-item"><div class="brief-label">Risks</div><div class="brief-value"><p>The demand surge may be temporary, and stock prices may not reflect the underlying trend. Additionally, geopolitical events or changes in technology could disrupt the cloud storage industry.</p></div></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- KPI Bar -->
   <div class="kpi-grid">

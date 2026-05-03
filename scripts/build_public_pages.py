@@ -1014,9 +1014,9 @@ def build_leaderboard(daily: dict, leaderboard: dict) -> str:
 LANDING_CSS = """
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
   :root {
-    --bg: #0d1412;
-    --bg-2: #13231f;
-    --card: #182b26;
+    --bg: #0a0d12;
+    --bg-2: #111520;
+    --card: #111520;
     --accent: #19d38f;
     --muted: #9ab0a7;
     --text: #ecf5f2;
