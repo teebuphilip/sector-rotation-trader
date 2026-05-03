@@ -70,6 +70,7 @@ def run_all(dry_run: bool = False, as_of: date = None, algo_ids=None, update_com
         state_path = os.path.join(CRAZY_STATE_DIR, f"{algo.algo_id}.json")
         trade_log_path = os.path.join(CRAZY_LOG_DIR, algo.algo_id, "trades.json")
         dashboard_path = os.path.join(CRAZY_DASHBOARD_DIR, algo.algo_id, "index.html")
+        spy_prices = None
 
         state = ensure_state(load_state_from(state_path))
 
@@ -83,6 +84,9 @@ def run_all(dry_run: bool = False, as_of: date = None, algo_ids=None, update_com
                     s = prices_df[t].dropna()
                     if len(s):
                         prices[t] = float(s.iloc[-1])
+        spy_raw = safe_download(["SPY"], period="1y")
+        if not spy_raw.empty:
+            spy_prices = spy_raw["Close"] if "Close" in spy_raw.columns else spy_raw
 
         signal = algo.compute_signal(as_of, state, historical=False)
         meta = algo.meta(state)
@@ -118,10 +122,11 @@ def run_all(dry_run: bool = False, as_of: date = None, algo_ids=None, update_com
                 prices,
                 algo.name,
                 analytics=analytics,
+                spy_prices=spy_prices,
                 output_path=dashboard_path,
                 strategy_label="Strategy",
                 strategy_value=algo.name,
-                title=f"Crazy Algo | {algo.name}",
+                title="StockArithm",
             )
 
         equity = state["daily_snapshots"][-1]["equity"] if state["daily_snapshots"] else state["cash"]

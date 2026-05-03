@@ -2,6 +2,18 @@
   {
     "date": "2026-01-30",
     "action": "BUY",
+    "ticker": "XLF",
+    "shares": 1880.6893,
+    "price": 53.1667,
+    "cost": 99990.05,
+    "margin": false,
+    "fees": 9.95,
+    "algo_id": "biscotti",
+    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
+  },
+  {
+    "date": "2026-01-30",
+    "action": "BUY",
     "ticker": "XLK",
     "shares": 173.9719,
     "price": 143.7013,
@@ -60,18 +72,6 @@
     "algo_name": "Faber Momentum Rotation"
   },
   {
-    "date": "2026-01-30",
-    "action": "BUY",
-    "ticker": "XLF",
-    "shares": 1880.6893,
-    "price": 53.1667,
-    "cost": 99990.05,
-    "margin": false,
-    "fees": 9.95,
-    "algo_id": "biscotti",
-    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
-  },
-  {
     "date": "2026-02-16",
     "action": "BUY",
     "ticker": "XLE",
@@ -126,6 +126,34 @@
     "reason": "rebalance",
     "algo_id": "baileymol",
     "algo_name": "Algo Baileymol (Chaos Monger)"
+  },
+  {
+    "date": "2026-02-27",
+    "action": "SELL",
+    "ticker": "XLF",
+    "shares": 1880.6893,
+    "price": 51.167,
+    "proceeds": 96213.88,
+    "fees": 15.33,
+    "tax": 0.0,
+    "pnl": -3776.17,
+    "pnl_pct": -3.78,
+    "entry_date": "2026-01-30",
+    "reason": "rebalance",
+    "algo_id": "biscotti",
+    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
+  },
+  {
+    "date": "2026-02-27",
+    "action": "BUY",
+    "ticker": "XLF",
+    "shares": 1880.1954,
+    "price": 51.167,
+    "cost": 96203.93,
+    "margin": false,
+    "fees": 9.95,
+    "algo_id": "biscotti",
+    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
   },
   {
     "date": "2026-02-27",
@@ -266,34 +294,6 @@
     "fees": 9.95,
     "algo_id": "faber",
     "algo_name": "Faber Momentum Rotation"
-  },
-  {
-    "date": "2026-02-27",
-    "action": "SELL",
-    "ticker": "XLF",
-    "shares": 1880.6893,
-    "price": 51.167,
-    "proceeds": 96213.88,
-    "fees": 15.33,
-    "tax": 0.0,
-    "pnl": -3776.17,
-    "pnl_pct": -3.78,
-    "entry_date": "2026-01-30",
-    "reason": "rebalance",
-    "algo_id": "biscotti",
-    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
-  },
-  {
-    "date": "2026-02-27",
-    "action": "BUY",
-    "ticker": "XLF",
-    "shares": 1880.1954,
-    "price": 51.167,
-    "cost": 96203.93,
-    "margin": false,
-    "fees": 9.95,
-    "algo_id": "biscotti",
-    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
   },
   {
     "date": "2026-03-02",
@@ -490,6 +490,34 @@
   {
     "date": "2026-03-31",
     "action": "SELL",
+    "ticker": "XLF",
+    "shares": 1880.1954,
+    "price": 49.37,
+    "proceeds": 92810.09,
+    "fees": 15.16,
+    "tax": 0.0,
+    "pnl": -3393.84,
+    "pnl_pct": -3.53,
+    "entry_date": "2026-02-27",
+    "reason": "rebalance",
+    "algo_id": "biscotti",
+    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
+  },
+  {
+    "date": "2026-03-31",
+    "action": "BUY",
+    "ticker": "XLI",
+    "shares": 573.7967,
+    "price": 161.73,
+    "cost": 92800.14,
+    "margin": false,
+    "fees": 9.95,
+    "algo_id": "biscotti",
+    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
+  },
+  {
+    "date": "2026-03-31",
+    "action": "SELL",
     "ticker": "XLI",
     "shares": 143.8932,
     "price": 161.73,
@@ -602,34 +630,6 @@
     "reason": "rebalance",
     "algo_id": "faber",
     "algo_name": "Faber Momentum Rotation"
-  },
-  {
-    "date": "2026-03-31",
-    "action": "SELL",
-    "ticker": "XLF",
-    "shares": 1880.1954,
-    "price": 49.37,
-    "proceeds": 92810.09,
-    "fees": 15.16,
-    "tax": 0.0,
-    "pnl": -3393.84,
-    "pnl_pct": -3.53,
-    "entry_date": "2026-02-27",
-    "reason": "rebalance",
-    "algo_id": "biscotti",
-    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
-  },
-  {
-    "date": "2026-03-31",
-    "action": "BUY",
-    "ticker": "XLI",
-    "shares": 573.7967,
-    "price": 161.73,
-    "cost": 92800.14,
-    "margin": false,
-    "fees": 9.95,
-    "algo_id": "biscotti",
-    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
   },
   {
     "date": "2026-04-06",
@@ -1021,6 +1021,46 @@
   },
   {
     "date": "2026-04-30",
+    "action": "BUY",
+    "ticker": "XLK",
+    "shares": 626.8969,
+    "price": 159.5,
+    "cost": 99990.05,
+    "margin": false,
+    "fees": 9.95,
+    "algo_id": "simple_monthly",
+    "algo_name": "Quantified Simple Monthly Rotation"
+  },
+  {
+    "date": "2026-04-30",
+    "action": "SELL",
+    "ticker": "XLI",
+    "shares": 573.7967,
+    "price": 174.58,
+    "proceeds": 100158.3,
+    "fees": 15.13,
+    "tax": 2722.52,
+    "pnl": 4635.64,
+    "pnl_pct": 5.0,
+    "entry_date": "2026-03-31",
+    "reason": "rebalance",
+    "algo_id": "biscotti",
+    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
+  },
+  {
+    "date": "2026-04-30",
+    "action": "BUY",
+    "ticker": "XLV",
+    "shares": 667.3459,
+    "price": 145.99,
+    "cost": 97425.83,
+    "margin": false,
+    "fees": 9.95,
+    "algo_id": "biscotti",
+    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
+  },
+  {
+    "date": "2026-04-30",
     "action": "SELL",
     "ticker": "XLE",
     "shares": 409.323,
@@ -1106,18 +1146,6 @@
   {
     "date": "2026-04-30",
     "action": "BUY",
-    "ticker": "XLK",
-    "shares": 626.8969,
-    "price": 159.5,
-    "cost": 99990.05,
-    "margin": false,
-    "fees": 9.95,
-    "algo_id": "simple_monthly",
-    "algo_name": "Quantified Simple Monthly Rotation"
-  },
-  {
-    "date": "2026-04-30",
-    "action": "BUY",
     "ticker": "XLE",
     "shares": 580.3108,
     "price": 59.65,
@@ -1138,33 +1166,5 @@
     "fees": 9.95,
     "algo_id": "faber",
     "algo_name": "Faber Momentum Rotation"
-  },
-  {
-    "date": "2026-04-30",
-    "action": "SELL",
-    "ticker": "XLI",
-    "shares": 573.7967,
-    "price": 174.58,
-    "proceeds": 100158.3,
-    "fees": 15.13,
-    "tax": 2722.52,
-    "pnl": 4635.64,
-    "pnl_pct": 5.0,
-    "entry_date": "2026-03-31",
-    "reason": "rebalance",
-    "algo_id": "biscotti",
-    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
-  },
-  {
-    "date": "2026-04-30",
-    "action": "BUY",
-    "ticker": "XLV",
-    "shares": 667.3459,
-    "price": 145.99,
-    "cost": 97425.83,
-    "margin": false,
-    "fees": 9.95,
-    "algo_id": "biscotti",
-    "algo_name": "Algo Biscotti (Unconditional Loyalty)"
   }
 ]

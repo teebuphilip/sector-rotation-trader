@@ -6,6 +6,73 @@ import json
 import os
 from datetime import date
 from config import STARTING_CASH, DASHBOARD_FILE
+from algo_copy_registry import lookup_algo_copy
+
+
+def _first_algo_meta(state: dict) -> dict:
+    meta = state.get("meta")
+    if not isinstance(meta, dict):
+        return {}
+    for value in meta.values():
+        if isinstance(value, dict):
+            return value
+    return {}
+
+
+def _algo_description(algo_name: str, meta: dict) -> str:
+    name = (algo_name or "").lower()
+    adapter = str(meta.get("adapter", "") or "").lower()
+    algo_id = str(meta.get("algo_id", "") or "")
+
+    copy = lookup_algo_copy(algo_id=algo_id, name=algo_name)
+    if copy:
+        summary = str(copy.get("public_summary") or copy.get("thesis") or "").strip()
+        if summary:
+            return summary
+
+    if any(term in name for term in ("google", "gust", "search", "trends")) or adapter == "google_trends":
+        return "Tracks search interest as a read on crowd attention and narrative pressure before price moves."
+    if adapter == "eia_electricity" or "electricity" in name or "power" in name:
+        return "Tracks electricity demand to read industrial activity and power-sector pressure."
+    if adapter == "openchargemap" or "charger" in name or "ev" in name:
+        return "Tracks EV charging buildout as a read on adoption and infrastructure demand."
+    if adapter == "tsa_table" or "tsa" in name or "airport" in name or "travel" in name:
+        return "Tracks travel activity as an early read on mobility and discretionary demand."
+    if adapter == "port_container_volume" or "freight" in name or "truck" in name or "container" in name or "port" in name or "shipping" in name:
+        return "Tracks freight activity as a read on industrial demand and logistics pressure."
+    if adapter == "weather_series" or "weather" in name or "temperature" in name or "storm" in name:
+        return "Tracks weather pressure as a read on utility load and consumer stress."
+    if adapter == "earthquake_activity" or "earthquake" in name or "seismic" in name or "tremor" in name:
+        return "Tracks physical disruption as a read on local construction and supply-chain stress."
+    if adapter == "google_trends":
+        if any(term in name for term in ("reddit", "social", "sentiment", "attention")):
+            return "Tracks attention spikes as a read on crowd behavior before price moves."
+        if any(term in name for term in ("labor", "job", "wage", "employment")):
+            return "Tracks labor search pressure as a read on hiring and cyclical demand."
+        if any(term in name for term in ("repair", "home", "appliance", "car", "diy")):
+            return "Tracks household repair and consumer stress as a read on spending pressure."
+        return "Tracks search interest as a read on consumer or sector pressure."
+    if adapter == "rss_count":
+        if any(term in name for term in ("insider", "congress", "political")):
+            return "Tracks filing and news volume as a read on positioning and policy risk."
+        return "Tracks news volume spikes as a read on sector pressure before it shows up in price."
+    if "biscotti" in name:
+        return "A monthly contrarian rotation that keeps showing up for the weakest sector."
+    if "faber" in name:
+        return "A sector momentum rule that stays with strength until it clearly breaks."
+    if "antonacci" in name or "dual momentum" in name:
+        return "A sector momentum rule that rotates toward the strongest names and away from the weakest."
+    if "bailey" in name or "chaos" in name:
+        return "A faster rotation rule that tries to turn noisy sector movement into a trade."
+    if "vix" in name:
+        return "A volatility regime rule that tries to read fear before the tape does."
+    if any(term in name for term in ("consumer", "retail", "sales", "credit", "apparel", "grocery", "food")):
+        return "A consumer-pressure signal that watches spending behavior and stress for sector shifts."
+    if any(term in name for term in ("job", "labor", "wage", "employment")):
+        return "A labor signal that watches hiring pressure and worker demand for sector clues."
+    if any(term in name for term in ("sentiment", "reddit", "twitter", "social", "attention")):
+        return "A sentiment signal that looks for crowd attention before it shows up in price."
+    return "Tests whether this signal can add information beyond price alone."
 
 
 def generate_dashboard(state: dict, current_px: dict, sector: str,
@@ -13,7 +80,8 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
                        output_path: str = None,
                        strategy_label: str = None,
                        strategy_value: str = None,
-                       title: str = None):
+                       title: str = None,
+                       strategy_description: str = None):
     out_path = output_path or DASHBOARD_FILE
     os.makedirs(os.path.dirname(out_path) or "docs", exist_ok=True)
     legal_href = os.path.relpath(os.path.join("docs", "legal.html"), os.path.dirname(out_path) or ".")
@@ -44,24 +112,30 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
     avg_loss     = analytics.get("avg_loss", 0.0)
     dd_series    = analytics.get("drawdown_series", [])
 
-    # ── SPY benchmark data ────────────────────────────────────
-    spy_returns_js = "[]"
-    if spy_prices is not None and not spy_prices.empty:
-        import pandas as pd
-        sim_start = state.get("sim_start", "")
-        if sim_start:
-            spy_s = spy_prices.squeeze() if hasattr(spy_prices, 'squeeze') else spy_prices
-            spy_s = spy_s.dropna()
-            spy_s = spy_s[spy_s.index >= sim_start]
-            if len(spy_s) > 0:
-                base = float(spy_s.iloc[0])
-                spy_norm = [round(float(v) / base * STARTING_CASH, 2) for v in spy_s]
-                spy_returns_js = json.dumps(spy_norm)
-
     # ── Equity curve data ──────────────────────────────────────
     snap_dates  = [s["date"] for s in state["daily_snapshots"]]
     snap_equity = [s["equity"] for s in state["daily_snapshots"]]
 
+    # ── SPY benchmark data ────────────────────────────────────
+    spy_returns_js = "[]"
+    if spy_prices is not None and not spy_prices.empty and snap_dates:
+        import pandas as pd
+        sim_start = state.get("sim_start", "")
+        spy_s = spy_prices.squeeze() if hasattr(spy_prices, 'squeeze') else spy_prices
+        spy_s = spy_s.dropna()
+        if sim_start:
+            spy_s = spy_s[spy_s.index >= sim_start]
+        if len(spy_s) > 0:
+            spy_dates = pd.to_datetime(spy_s.index).strftime("%Y-%m-%d")
+            spy_map = {str(d): float(v) for d, v in zip(spy_dates, spy_s.tolist())}
+            base = float(next(iter(spy_map.values())))
+            last = base
+            spy_norm = []
+            for d in snap_dates:
+                if d in spy_map:
+                    last = float(spy_map[d])
+                spy_norm.append(round(float(last) / base * STARTING_CASH, 2))
+            spy_returns_js = json.dumps(spy_norm)
     # ── Positions table rows ───────────────────────────────────
     pos_rows = ""
     for ticker, pos in state["positions"].items():
@@ -119,15 +193,29 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
     pnl_color  = "#00ff88" if net_pnl >= 0 else "#ff4d6d"
     sector_str = strategy_value or sector or "—"
     label_str = strategy_label or "Leading Sector"
-    title_str = title or "Sector<span>/</span>Rotation <span>|</span> Paper Trader"
+    title_str = title or "StockArithm"
     lab_start = state.get("sim_start") or (snap_dates[0] if snap_dates else "unknown")
+    is_algo_page = bool(strategy_value)
+    algo_meta = _first_algo_meta(state)
+    algo_desc = strategy_description or _algo_description(sector_str, algo_meta)
+    if is_algo_page:
+        header_block = ""
+        hero_style = "font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);"
+    else:
+        header_block = f"""
+<header>
+  <div class="logo">{title_str}</div>
+  <div class="last-update">Lab started: {lab_start} &nbsp;·&nbsp; Last run: {date.today()} &nbsp;·&nbsp; $100k base · $10k/trade</div>
+</header>
+"""
+        hero_style = ""
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sector Rotation Trader</title>
+<title>StockArithm</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -168,7 +256,7 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
   .logo {{
     font-family: var(--font-mono);
     font-size: 13px;
-    color: var(--accent);
+    color: var(--green);
     letter-spacing: 0.15em;
     text-transform: uppercase;
   }}
@@ -177,6 +265,33 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
     font-family: var(--font-mono);
     font-size: 11px;
     color: var(--muted);
+  }}
+  .algo-hero {{
+    max-width: 980px;
+    margin: 0 auto 28px;
+    padding: 26px 18px 4px;
+    text-align: center;
+  }}
+  .algo-hero-title {{
+    font-family: var(--font-mono);
+    font-size: 54px;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    color: var(--green);
+  }}
+  .algo-hero-meta {{
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }}
+  .algo-hero-desc {{
+    margin: 14px auto 0;
+    max-width: 760px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text);
   }}
 
   /* ── Layout ── */
@@ -300,16 +415,38 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
   .dot.green {{ background: var(--green); box-shadow: 0 0 6px var(--green); }}
   .dot.yellow {{ background: var(--yellow); }}
 
-  .disclaimer {{
-    margin-top: 28px;
-    padding: 18px 20px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: rgba(17, 21, 32, 0.72);
+  footer {{
+    border-top: 1px solid var(--border);
+    padding: 32px 20px;
+    text-align: center;
+    font-size: 12px;
     color: var(--muted);
+    line-height: 1.8;
+  }}
+  .footer-nav {{
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 8px;
+    width: 100%;
     font-family: var(--font-mono);
     font-size: 11px;
-    line-height: 1.7;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    color: rgba(255,255,255,0.58);
+  }}
+  .footer-nav a, .footer-nav a:visited {{
+    color: rgba(255,255,255,0.58);
+    text-decoration: none;
+    white-space: nowrap;
+  }}
+  .footer-nav .footer-sep {{
+    color: rgba(255,255,255,0.40);
+  }}
+  .footer-nav a:hover {{
+    text-decoration: underline;
   }}
 
   @media (max-width: 1100px) {{
@@ -324,12 +461,11 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
 </head>
 <body>
 
-<header>
-  <div class="logo">{title_str}</div>
-  <div class="last-update">Lab started: {lab_start} &nbsp;·&nbsp; Last run: {date.today()} &nbsp;·&nbsp; $100k base · $10k/trade</div>
-</header>
+  {header_block}
 
 <div class="container">
+
+  {'<section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="' + hero_style + '">' + sector_str + '</div><div class="algo-hero-meta">Lab started: ' + str(lab_start) + ' &nbsp;·&nbsp; Last run: ' + str(date.today()) + ' &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">' + algo_desc + '</div></section>' if is_algo_page else ''}
 
   <!-- KPI Bar -->
   <div class="kpi-grid">
@@ -446,12 +582,34 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
     </div>
   </div>
 
-  <div class="disclaimer">
-    <strong>Signal Lab Notice:</strong> This is an experimental signal lab. Signals are generated, tracked, and evaluated as research outputs. Many signals will fail, and some may only appear to work because of randomness or limited sample size.<br>
-    <strong>Not financial advice:</strong> Nothing here is a recommendation to buy, sell, or hold any asset. Past performance does not guarantee future results.<br>
-    <strong>Performance/data disclosure:</strong> Results are model outputs from simulated or simplified conditions and may not reflect slippage, fees, liquidity, execution delays, or market impact. Third-party data may be incomplete, delayed, inaccurate, or revised.<br>
-    <strong>Your responsibility:</strong> Do your own research and consult a qualified professional before making investment decisions. Paper-traded only &mdash; no real money at risk. <a href="{legal_href}">Full disclaimer</a>.
-  </div>
+  <footer>
+    <div class="footer-nav">
+      <a href="/landing.html">Home</a><span class="footer-sep">&middot;</span>
+      <a href="/leaderboard.html">Leaderboard</a><span class="footer-sep">&middot;</span>
+      <a href="/signals/index.html">Signals</a><span class="footer-sep">&middot;</span>
+      <a href="/families.html">Families</a><span class="footer-sep">&middot;</span>
+      <a href="/daily.html">Daily Report</a><span class="footer-sep">&middot;</span>
+      <a href="/how-it-works.html">How It Works</a><span class="footer-sep">&middot;</span>
+      <a href="/premium.html">Premium Preview</a><span class="footer-sep">&middot;</span>
+      <a href="/blog/index.html">Blog</a><span class="footer-sep">&middot;</span>
+      <a href="/legal.html">Legal</a><span class="footer-sep">&middot;</span>
+      <a href="/biscotti.html">Biscotti</a>
+    </div>
+    <div style="width:100%;max-width:520px;height:1px;margin:14px auto 14px;background:rgba(255,255,255,0.10);"></div>
+    <div style="display:block;width:100%;text-align:center;font-size:11px;font-style:italic;letter-spacing:0.2px;color:rgba(255,255,255,0.58);margin:0 auto 10px;">
+      StockArithm powered by R&amp;B AlgoLabs, LLC.
+    </div>
+    <div style="text-align:center;font-size:11px;font-style:italic;letter-spacing:0.2px;color:rgba(255,255,255,0.50);margin-bottom:14px;">Last updated: {date.today().isoformat()}</div>
+    <div style="margin-top:12px;max-width:920px;margin-left:auto;margin-right:auto;text-align:center;font-size:11px;font-style:italic;letter-spacing:0.2px;color:rgba(255,255,255,0.58);">
+      <strong>Signal Lab Notice:</strong> Experimental research only. Signals can and will fail. Do not interpret any signal as a recommendation.<br>
+      <strong>Performance Disclosure:</strong> Leaderboards are model/simulation outputs and may not reflect slippage, fees, liquidity, execution delays, or market impact.<br>
+      <strong>Data Disclaimer:</strong> Third-party data may be incomplete, delayed, inaccurate, or revised. Use at your own risk.<br>
+      <strong>Not financial advice:</strong> Do your own research. You are responsible for your own decisions. Paper-traded only &mdash; no real money at risk.
+    </div>
+    <div style="margin:20px auto 0;padding-top:16px;border-top:1px solid var(--border);max-width:720px;text-align:center;font-size:10px;font-style:italic;letter-spacing:0.15px;color:rgba(255,255,255,0.42);">
+      In loving memory of Biscotti (2008&ndash;2026). Good boy. Best algo. &hearts;
+    </div>
+  </footer>
 
 </div>
 
@@ -489,11 +647,12 @@ new Chart(ctx, {{
         label: 'SPY Benchmark',
         data: spyData.length ? spyData.slice(0, dates.length) : [],
         borderColor: '#ffd166',
-        borderWidth: 1.5,
+        borderWidth: 3,
         borderDash: [6,3],
         fill: false,
-        tension: 0.3,
+        tension: 0.25,
         pointRadius: 0,
+        pointHoverRadius: 0,
       }},
       {{
         label: 'Starting Capital',

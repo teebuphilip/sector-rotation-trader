@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sector Rotation Trader</title>
+<title>StockArithm</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -44,7 +44,7 @@
   .logo {
     font-family: var(--font-mono);
     font-size: 13px;
-    color: var(--accent);
+    color: var(--green);
     letter-spacing: 0.15em;
     text-transform: uppercase;
   }
@@ -53,6 +53,33 @@
     font-family: var(--font-mono);
     font-size: 11px;
     color: var(--muted);
+  }
+  .algo-hero {
+    max-width: 980px;
+    margin: 0 auto 28px;
+    padding: 26px 18px 4px;
+    text-align: center;
+  }
+  .algo-hero-title {
+    font-family: var(--font-mono);
+    font-size: 54px;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    color: var(--green);
+  }
+  .algo-hero-meta {
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+  .algo-hero-desc {
+    margin: 14px auto 0;
+    max-width: 760px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text);
   }
 
   /* ── Layout ── */
@@ -176,16 +203,38 @@
   .dot.green { background: var(--green); box-shadow: 0 0 6px var(--green); }
   .dot.yellow { background: var(--yellow); }
 
-  .disclaimer {
-    margin-top: 28px;
-    padding: 18px 20px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: rgba(17, 21, 32, 0.72);
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 20px;
+    text-align: center;
+    font-size: 12px;
     color: var(--muted);
+    line-height: 1.8;
+  }
+  .footer-nav {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 8px;
+    width: 100%;
     font-family: var(--font-mono);
     font-size: 11px;
-    line-height: 1.7;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    color: rgba(255,255,255,0.58);
+  }
+  .footer-nav a, .footer-nav a:visited {
+    color: rgba(255,255,255,0.58);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .footer-nav .footer-sep {
+    color: rgba(255,255,255,0.40);
+  }
+  .footer-nav a:hover {
+    text-decoration: underline;
   }
 
   @media (max-width: 1100px) {
@@ -200,12 +249,11 @@
 </head>
 <body>
 
-<header>
-  <div class="logo">Crazy Algo | Xlb Daily Volatility Contraction Breakout</div>
-  <div class="last-update">Lab started: 2026-01-18 &nbsp;·&nbsp; Last run: 2026-05-03 &nbsp;·&nbsp; $100k base · $10k/trade</div>
-</header>
+  
 
 <div class="container">
+
+  <section class="algo-hero" style="max-width:980px;margin:0 auto 28px;padding:26px 18px 4px;text-align:center;"><div class="algo-hero-title" style="font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);">Xlb Daily Volatility Contraction Breakout</div><div class="algo-hero-meta">Lab started: 2026-01-18 &nbsp;·&nbsp; Last run: 2026-05-02 &nbsp;·&nbsp; $100k base · $10k/trade</div><div class="algo-hero-desc">Periods of low volatility contraction in materials ETFs often precede explosive directional moves. Breakouts from volatility compression signal new trends in materials stocks.</div></section>
 
   <!-- KPI Bar -->
   <div class="kpi-grid">
@@ -322,21 +370,43 @@
     </div>
   </div>
 
-  <div class="disclaimer">
-    <strong>Signal Lab Notice:</strong> This is an experimental signal lab. Signals are generated, tracked, and evaluated as research outputs. Many signals will fail, and some may only appear to work because of randomness or limited sample size.<br>
-    <strong>Not financial advice:</strong> Nothing here is a recommendation to buy, sell, or hold any asset. Past performance does not guarantee future results.<br>
-    <strong>Performance/data disclosure:</strong> Results are model outputs from simulated or simplified conditions and may not reflect slippage, fees, liquidity, execution delays, or market impact. Third-party data may be incomplete, delayed, inaccurate, or revised.<br>
-    <strong>Your responsibility:</strong> Do your own research and consult a qualified professional before making investment decisions. Paper-traded only &mdash; no real money at risk. <a href="../../legal.html">Full disclaimer</a>.
-  </div>
+  <footer>
+    <div class="footer-nav">
+      <a href="/landing.html">Home</a><span class="footer-sep">&middot;</span>
+      <a href="/leaderboard.html">Leaderboard</a><span class="footer-sep">&middot;</span>
+      <a href="/signals/index.html">Signals</a><span class="footer-sep">&middot;</span>
+      <a href="/families.html">Families</a><span class="footer-sep">&middot;</span>
+      <a href="/daily.html">Daily Report</a><span class="footer-sep">&middot;</span>
+      <a href="/how-it-works.html">How It Works</a><span class="footer-sep">&middot;</span>
+      <a href="/premium.html">Premium Preview</a><span class="footer-sep">&middot;</span>
+      <a href="/blog/index.html">Blog</a><span class="footer-sep">&middot;</span>
+      <a href="/legal.html">Legal</a><span class="footer-sep">&middot;</span>
+      <a href="/biscotti.html">Biscotti</a>
+    </div>
+    <div style="width:100%;max-width:520px;height:1px;margin:14px auto 14px;background:rgba(255,255,255,0.10);"></div>
+    <div style="display:block;width:100%;text-align:center;font-size:11px;font-style:italic;letter-spacing:0.2px;color:rgba(255,255,255,0.58);margin:0 auto 10px;">
+      StockArithm powered by R&amp;B AlgoLabs, LLC.
+    </div>
+    <div style="text-align:center;font-size:11px;font-style:italic;letter-spacing:0.2px;color:rgba(255,255,255,0.50);margin-bottom:14px;">Last updated: 2026-05-02</div>
+    <div style="margin-top:12px;max-width:920px;margin-left:auto;margin-right:auto;text-align:center;font-size:11px;font-style:italic;letter-spacing:0.2px;color:rgba(255,255,255,0.58);">
+      <strong>Signal Lab Notice:</strong> Experimental research only. Signals can and will fail. Do not interpret any signal as a recommendation.<br>
+      <strong>Performance Disclosure:</strong> Leaderboards are model/simulation outputs and may not reflect slippage, fees, liquidity, execution delays, or market impact.<br>
+      <strong>Data Disclaimer:</strong> Third-party data may be incomplete, delayed, inaccurate, or revised. Use at your own risk.<br>
+      <strong>Not financial advice:</strong> Do your own research. You are responsible for your own decisions. Paper-traded only &mdash; no real money at risk.
+    </div>
+    <div style="margin:20px auto 0;padding-top:16px;border-top:1px solid var(--border);max-width:720px;text-align:center;font-size:10px;font-style:italic;letter-spacing:0.15px;color:rgba(255,255,255,0.42);">
+      In loving memory of Biscotti (2008&ndash;2026). Good boy. Best algo. &hearts;
+    </div>
+  </footer>
 
 </div>
 
 <script>
-const dates  = ["2026-01-19", "2026-01-20", "2026-01-21", "2026-01-22", "2026-01-23", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-19", "2026-04-19", "2026-04-20", "2026-04-20", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-24", "2026-04-24", "2026-04-25", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-03"];
-const equity = [100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0];
+const dates  = ["2026-01-19", "2026-01-20", "2026-01-21", "2026-01-22", "2026-01-23", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-19", "2026-04-19", "2026-04-20", "2026-04-20", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-24", "2026-04-24", "2026-04-25", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30"];
+const equity = [100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0, 100000.0];
 const startV = 100000.0;
-const spyData = [];
-const ddData  = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+const spyData = [100000.0, 100000.0, 101154.11, 101682.46, 101719.35, 102235.89, 102643.23, 102632.9, 102429.23, 102123.73, 102631.42, 101763.63, 101270.7, 100005.91, 101924.49, 102415.95, 102145.87, 102122.27, 100544.59, 100615.42, 100615.42, 100777.76, 101285.46, 101018.32, 101748.87, 100709.88, 101441.89, 102297.89, 101729.68, 101241.18, 101298.74, 100405.86, 101114.26, 100550.49, 99232.56, 100101.84, 99940.96, 99815.52, 98299.83, 97743.44, 98738.16, 98997.9, 97616.52, 97375.96, 95980.0, 96987.79, 96662.22, 97200.89, 95465.0, 93837.15, 93523.41, 96241.94, 96967.07, 97054.38, 97054.38, 97513.14, 97556.05, 100040.76, 100617.91, 100551.32, 101533.95, 102771.13, 103582.09, 103836.63, 105091.56, 105091.56, 105091.56, 104881.42, 104881.42, 104881.42, 104194.76, 105249.91, 105249.91, 104841.47, 105653.91, 105653.91, 105653.91, 105653.91, 105835.93, 105320.94, 105304.67, 106352.41];
+const ddData  = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
 
 const ctx = document.getElementById('equityChart').getContext('2d');
 
@@ -365,11 +435,12 @@ new Chart(ctx, {
         label: 'SPY Benchmark',
         data: spyData.length ? spyData.slice(0, dates.length) : [],
         borderColor: '#ffd166',
-        borderWidth: 1.5,
+        borderWidth: 3,
         borderDash: [6,3],
         fill: false,
-        tension: 0.3,
+        tension: 0.25,
         pointRadius: 0,
+        pointHoverRadius: 0,
       },
       {
         label: 'Starting Capital',

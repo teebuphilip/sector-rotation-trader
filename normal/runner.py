@@ -63,6 +63,7 @@ def run_all(dry_run: bool = False, as_of: date = None):
     all_tickers = sorted({t for algo in algos for t in algo.universe()})
     prices = {}
     prices_df = pd.DataFrame()
+    spy_prices = None
     if all_tickers:
         raw = safe_download(all_tickers, period="2y")
         if not raw.empty:
@@ -71,6 +72,9 @@ def run_all(dry_run: bool = False, as_of: date = None):
                 s = prices_df[t].dropna()
                 if len(s):
                     prices[t] = float(s.iloc[-1])
+    spy_raw = safe_download(["SPY"], period="2y")
+    if not spy_raw.empty:
+        spy_prices = spy_raw["Close"] if "Close" in spy_raw.columns else spy_raw
 
     for algo in algos:
         state_path = os.path.join("data/normal/state", f"{algo.algo_id}.json")
@@ -113,10 +117,11 @@ def run_all(dry_run: bool = False, as_of: date = None):
                 prices,
                 algo.name,
                 analytics=analytics,
+                spy_prices=spy_prices,
                 output_path=dashboard_path,
                 strategy_label="Strategy",
                 strategy_value=algo.name,
-                title=f"Normal Algo | {algo.name}",
+                title="StockArithm",
             )
 
     if not dry_run:
