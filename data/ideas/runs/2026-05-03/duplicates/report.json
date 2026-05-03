@@ -1,0 +1,222 @@
+{
+  "date": "2026-05-03",
+  "input_count": 25,
+  "kept_count": 22,
+  "duplicate_count": 3,
+  "kept_by_source": {
+    "chatgpt": 12,
+    "claude": 10
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-surge-in-google-trends-for-emergency-hvac-repair-sign",
+      "title": "Weekly Surge In Google Trends For Emergency Hvac Repair Signals Consumer Stress Lifting Xly",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "high_title_overlap",
+        "score": 0.667,
+        "matched_title": "weekly surge in google trends searches for diy home repair signals consumer stress lifting xly",
+        "matched_idea_id": "weekly-surge-in-google-trends-searches-for-diy-home-repair-s",
+        "matched_origin": "history:2026-04-23",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-surge-in-google-trends-for-emergency-hvac-repair-sign",
+        "title": "Weekly Surge In Google Trends For Emergency Hvac Repair Signals Consumer Stress Lifting Xly",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "A sudden weekly spike in emergency HVAC repair searches indicates rising consumer stress and likely increased discretionary spending on urgent home services. Consumer urgency on home repairs often drives discretionary sector strength.",
+        "data_sources": [
+          "Google Trends weekly HVAC emergency repair search volume"
+        ],
+        "signal_logic": "Enter long XLY when weekly HVAC emergency repair search volume rises 15% over prior 3-week average",
+        "entry_exit": "Entry: Enter long XLY when weekly HVAC emergency repair search volume rises 15% over prior 3-week average Exit: Exit after 4 weeks or when search volume falls below prior 3-week average",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly HVAC emergency repair search volume via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 18,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Weekly search volume for emergency HVAC repair fluctuates seasonally and on weather-related stress, causing multiple spikes annually.",
+        "schema": {
+          "idea": "Weekly Surge In Google Trends For Emergency HVAC Repair Signals Consumer Stress Lifting XLY",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends weekly HVAC emergency repair search volume",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "A sudden weekly spike in emergency HVAC repair searches indicates rising consumer stress and likely increased discretionary spending on urgent home services.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "Consumer urgency on home repairs often drives discretionary sector strength."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLY when weekly HVAC emergency repair search volume rises 15% over prior 3-week average",
+            "exit": "Exit after 4 weeks or when search volume falls below prior 3-week average",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 18,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Weekly search volume for emergency HVAC repair fluctuates seasonally and on weather-related stress, causing multiple spikes annually.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-earthquake-activity-near-key-california-ports",
+      "title": "Daily Spike In Earthquake Activity Near Key California Ports Signals Freight Disruption Risk",
+      "family": "local_economy_weirdness",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "daily spike in earthquake activity near key california ports signals supply chain risk",
+        "matched_idea_id": "daily-spike-in-earthquake-activity-near-key-california-ports",
+        "matched_origin": "history:2026-04-28",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-earthquake-activity-near-key-california-ports",
+        "title": "Daily Spike In Earthquake Activity Near Key California Ports Signals Freight Disruption Risk",
+        "family": "local_economy_weirdness",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "A daily spike in local earthquake activity near major ports signals imminent freight logistics disruptions. Port disruptions weigh on industrial and logistics sector performance.",
+        "data_sources": [
+          "USGS daily earthquake activity near California ports"
+        ],
+        "signal_logic": "Enter short XLI if daily earthquake events near ports exceed 3 events per day",
+        "entry_exit": "Entry: Enter short XLI if daily earthquake events near ports exceed 3 events per day Exit: Exit after 7 trading days or when earthquake counts fall below 2 per day",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use USGS daily earthquake activity near California ports via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "California earthquake activity fluctuates frequently and can cluster in short bursts.",
+        "schema": {
+          "idea": "Daily Spike In Earthquake Activity Near Key California Ports Signals Freight Disruption Risk",
+          "family": "local_economy_weirdness",
+          "data": {
+            "source": "USGS daily earthquake activity near California ports",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "A daily spike in local earthquake activity near major ports signals imminent freight logistics disruptions.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLI",
+            "rationale": "Port disruptions weigh on industrial and logistics sector performance."
+          },
+          "trade_logic": {
+            "entry": "Enter short XLI if daily earthquake events near ports exceed 3 events per day",
+            "exit": "Exit after 7 trading days or when earthquake counts fall below 2 per day",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "California earthquake activity fluctuates frequently and can cluster in short bursts.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
+      "title": "Daily Spike In Google Trends For Emergency Plumbing Repair Searches Signals Consumer Stress Boosting Discretionary",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "daily spike in google trends for emergency plumbing repair signals consumer stress rebound benefiting discretionary sector",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
+        "title": "Daily Spike In Google Trends For Emergency Plumbing Repair Searches Signals Consumer Stress Boosting Discretionary",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "A daily spike in emergency plumbing repair searches indicates consumer stress and urgent home repair spending. Urgent home repair demand supports discretionary sector strength.",
+        "data_sources": [
+          "Google Trends daily emergency plumbing repair searches"
+        ],
+        "signal_logic": "Enter long XLY if daily plumbing repair searches jump 25% above 7-day average",
+        "entry_exit": "Entry: Enter long XLY if daily plumbing repair searches jump 25% above 7-day average Exit: Exit after 5 trading days or when searches fall below 7-day average",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily emergency plumbing repair searches via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Home emergency repairs fluctuate frequently with weather and infrastructure issues.",
+        "schema": {
+          "idea": "Daily Spike In Google Trends For Emergency Plumbing Repair Searches Signals Consumer Stress Boosting Discretionary",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily emergency plumbing repair searches",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "A daily spike in emergency plumbing repair searches indicates consumer stress and urgent home repair spending.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "Urgent home repair demand supports discretionary sector strength."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLY if daily plumbing repair searches jump 25% above 7-day average",
+            "exit": "Exit after 5 trading days or when searches fall below 7-day average",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Home emergency repairs fluctuate frequently with weather and infrastructure issues.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
