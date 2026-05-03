@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-03T10:36:08Z",
+  "generated_at": "2026-05-03T10:41:19Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -64,6 +64,30 @@
       "equity": 99846.17,
       "ytd_pct": -0.15,
       "trade_count": 8,
+      "positions": 0,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:google-trends-surge-in-luxury-good-searches",
+      "algo_type": "crazy",
+      "algo_id": "google-trends-surge-in-luxury-good-searches",
+      "name": "Google Trends Surge In Luxury Good Searches",
+      "family": "attention_sentiment",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99979.84,
+      "ytd_pct": -0.02,
+      "trade_count": 2,
       "positions": 0,
       "last_snapshot": "2026-05-03",
       "last_signal": null,
@@ -313,6 +337,30 @@
       ],
       "equity": 99673.9,
       "ytd_pct": -0.33,
+      "trade_count": 24,
+      "positions": 0,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:healthcare-cost-google-trends-acceleration-index",
+      "algo_type": "crazy",
+      "algo_id": "healthcare-cost-google-trends-acceleration-index",
+      "name": "Healthcare Cost Google Trends Acceleration Index",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLV"
+      ],
+      "equity": 99466.5,
+      "ytd_pct": -0.53,
       "trade_count": 24,
       "positions": 0,
       "last_snapshot": "2026-05-03",
@@ -627,6 +675,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:rss-news-volume-spike-on-food-supply-chain-disruptions",
+      "algo_type": "crazy",
+      "algo_id": "rss-news-volume-spike-on-food-supply-chain-disruptions",
+      "name": "Rss News Volume Spike On Food Supply Chain Disruptions",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLP"
+      ],
+      "equity": 99990.05,
+      "ytd_pct": -0.01,
+      "trade_count": 1,
+      "positions": 1,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:truck-tonnage",
       "algo_type": "crazy",
       "algo_id": "truck-tonnage",
@@ -813,6 +885,30 @@
       ],
       "equity": 99775.64,
       "ytd_pct": -0.22,
+      "trade_count": 6,
+      "positions": 0,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:earthquake-aftershock-insurance-claims-spike",
+      "algo_type": "crazy",
+      "algo_id": "earthquake-aftershock-insurance-claims-spike",
+      "name": "Earthquake Aftershock Insurance Claims Spike",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLF"
+      ],
+      "equity": 100070.66,
+      "ytd_pct": 0.07,
       "trade_count": 6,
       "positions": 0,
       "last_snapshot": "2026-05-03",

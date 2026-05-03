@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-05-03/publish/chatgpt_daily-spike-in-freight-rail-carloads-signals-industrial-grow.md",
+  "target_file": "data/ideas/runs/2026-05-03/intervention/chatgpt_daily-spike-in-freight-rail-carloads-signals-industrial-grow.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "data source adapter missing",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "requires volume data",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 925,
+    "output_tokens": 81
+  },
+  "cost_usd": 0.0031225,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly supports Federal Railroad Administration daily freight carloads API data.\",\n  \"risk_flags\": [\"data source adapter missing\", \"low adapter routing confidence\", \"requires volume data\"]\n}\n```"
+}

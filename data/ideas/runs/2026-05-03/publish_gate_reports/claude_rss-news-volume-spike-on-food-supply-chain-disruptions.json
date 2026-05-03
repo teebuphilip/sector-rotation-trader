@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-03/publish/claude_rss-news-volume-spike-on-food-supply-chain-disruptions.md",
+  "target_file": "data/ideas/runs/2026-05-03/build/claude_rss-news-volume-spike-on-food-supply-chain-disruptions.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a valid rss_count adapter with matching data source and frequency.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "rss_count"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "rss_count": 3,
+        "price_only": 2
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1019,
+    "output_tokens": 78
+  },
+  "cost_usd": 0.0033275,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid rss_count adapter with matching data source and frequency.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-05-03/publish/claude_fred-unemployment-rate-surprise-downside.md",
+  "target_file": "data/ideas/runs/2026-05-03/intervention/claude_fred-unemployment-rate-surprise-downside.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "fred_consensus_surprise_gap",
+      "low_adapter_confidence",
+      "missing consensus forecast data",
+      "requires external forecast data integration",
+      "unsupported_template_adapter",
+      "weekly frequency mismatch with monthly employment reports"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series"
+      ],
+      "scores": {
+        "fred_series": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 956,
+    "output_tokens": 85
+  },
+  "cost_usd": 0.00324,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Consensus forecast data is missing and requires a new adapter or manual integration.\",\n  \"risk_flags\": [\"missing consensus forecast data\", \"weekly frequency mismatch with monthly employment reports\", \"requires external forecast data integration\"]\n}\n```"
+}

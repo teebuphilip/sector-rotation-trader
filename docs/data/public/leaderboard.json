@@ -1,8 +1,8 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-03T10:36:17Z",
+  "generated_at": "2026-05-03T10:41:19Z",
   "counts": {
-    "total": 167,
+    "total": 179,
     "beating_spy": 1
   },
   "algos": [
@@ -283,6 +283,42 @@
             "direction": "UP",
             "confidence": 1.0,
             "return_pct": 19.031
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:earthquake-aftershock-insurance-claims-spike",
+      "algo_type": "crazy",
+      "algo_id": "earthquake-aftershock-insurance-claims-spike",
+      "name": "Earthquake Aftershock Insurance Claims Spike",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.07,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.07,
+      "spy_delta_30d_pct": -9.91,
+      "last_snapshot": "2026-05-03",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLF",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.194,
+            "return_pct": 0.972
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.965,
+            "return_pct": 4.825
           }
         },
         "summary": "both_up"
@@ -578,6 +614,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:rss-news-volume-spike-on-food-supply-chain-disruptions",
+      "algo_type": "crazy",
+      "algo_id": "rss-news-volume-spike-on-food-supply-chain-disruptions",
+      "name": "Rss News Volume Spike On Food Supply Chain Disruptions",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.01,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.01,
+      "spy_delta_30d_pct": -9.99,
+      "last_snapshot": "2026-05-03",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLP",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.226,
+            "return_pct": 1.129
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.557,
+            "return_pct": 2.784
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:weekly-surge-in-job-postings-for-warehouse-workers-signals-b",
       "algo_type": "crazy",
       "algo_id": "weekly-surge-in-job-postings-for-warehouse-workers-signals-b",
@@ -745,6 +817,42 @@
           }
         },
         "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:google-trends-surge-in-luxury-good-searches",
+      "algo_type": "crazy",
+      "algo_id": "google-trends-surge-in-luxury-good-searches",
+      "name": "Google Trends Surge In Luxury Good Searches",
+      "family": "attention_sentiment",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.02,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.98,
+      "last_snapshot": "2026-05-03",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.01,
+            "return_pct": -0.051
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 9.69
+          }
+        },
+        "summary": "mixed"
       }
     },
     {
@@ -2027,6 +2135,42 @@
       "last_snapshot": "2026-05-03",
       "new_algo_date": null,
       "comparator": null
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:healthcare-cost-google-trends-acceleration-index",
+      "algo_type": "crazy",
+      "algo_id": "healthcare-cost-google-trends-acceleration-index",
+      "name": "Healthcare Cost Google Trends Acceleration Index",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.53,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.03,
+      "spy_delta_30d_pct": -10.02,
+      "last_snapshot": "2026-05-03",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLV",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.136,
+            "return_pct": 0.68
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.225,
+            "return_pct": -1.124
+          }
+        },
+        "summary": "mixed"
+      }
     },
     {
       "schema_version": "v1",
@@ -5101,6 +5245,294 @@
           }
         },
         "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-google-trends-surge-in-searches-for-home-solar-instal",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-in-searches-for-home-solar-instal",
+      "name": "Weekly Google Trends Surge In Searches For Home Solar Installation Financing Signals Xle Bullish",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.98,
+      "last_snapshot": "2026-05-03",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.696,
+            "return_pct": 3.482
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.135,
+            "return_pct": -0.675
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-google-trends-surge-for-used-truck-purchase-searches-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-for-used-truck-purchase-searches-",
+      "name": "Weekly Google Trends Surge For Used Truck Purchase Searches Signals Bullish Freight Logistics",
+      "family": "freight_logistics",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.98,
+      "last_snapshot": "2026-05-03",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.057,
+            "return_pct": 0.284
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 5.612
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-google-trends-surge-for-home-pest-control-searches-si",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-for-home-pest-control-searches-si",
+      "name": "Weekly Google Trends Surge For Home Pest Control Searches Signals Consumer Stress Boosting Staples",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.98,
+      "last_snapshot": "2026-05-03",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLP",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.226,
+            "return_pct": 1.129
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.557,
+            "return_pct": 2.784
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-google-trends-surge-for-diy-roof-repair-searches-sign",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-for-diy-roof-repair-searches-sign",
+      "name": "Weekly Google Trends Surge For Diy Roof Repair Searches Signals Consumer Stress Impacting Xli",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.98,
+      "last_snapshot": "2026-05-03",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.057,
+            "return_pct": 0.284
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 5.612
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-google-trends-spike-for-diy-electronics-repair-signal",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-spike-for-diy-electronics-repair-signal",
+      "name": "Weekly Google Trends Spike For Diy Electronics Repair Signals Bullish Tech Sector",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.98,
+      "last_snapshot": "2026-05-03",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLK",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.206,
+            "return_pct": 1.03
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 19.031
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:ev-charger-network-expansion-acceleration",
+      "algo_type": "crazy",
+      "algo_id": "ev-charger-network-expansion-acceleration",
+      "name": "Ev Charger Network Expansion Acceleration",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.98,
+      "last_snapshot": "2026-05-03",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.057,
+            "return_pct": 0.284
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 5.612
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-spike-in-google-trends-searches-for-emergency-car-batt",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-searches-for-emergency-car-batt",
+      "name": "Daily Spike In Google Trends Searches For Emergency Car Battery Replacement Signals Consumer Stress Impacting Discretionary",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.98,
+      "last_snapshot": "2026-05-03",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.01,
+            "return_pct": -0.051
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 9.69
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-google-trends-for-solar-panel-repair-searches-",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-solar-panel-repair-searches-",
+      "name": "Daily Jump In Google Trends For Solar Panel Repair Searches Signals Green Energy Sector Rebound",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.98,
+      "last_snapshot": "2026-05-03",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.696,
+            "return_pct": 3.482
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.135,
+            "return_pct": -0.675
+          }
+        },
+        "summary": "mixed"
       }
     }
   ]

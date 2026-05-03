@@ -1,17 +1,17 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-03T10:36:08Z",
+  "generated_at": "2026-05-03T10:41:19Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
-      "count": 23,
+      "count": 24,
       "by_status": {
-        "live_only": 7,
+        "live_only": 8,
         "parked": 2,
         "sandbox": 14
       },
       "by_evidence_class": {
-        "live_receipts_only": 7,
+        "live_receipts_only": 8,
         "needs_history": 14,
         "pending_seed": 2
       },
@@ -140,15 +140,15 @@
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 30,
+      "count": 37,
       "by_status": {
         "failed": 1,
-        "live_only": 17,
-        "sandbox": 12
+        "live_only": 18,
+        "sandbox": 18
       },
       "by_evidence_class": {
-        "live_receipts_only": 17,
-        "needs_history": 12,
+        "live_receipts_only": 18,
+        "needs_history": 18,
         "v1_backtested": 1
       },
       "leaders": [
@@ -394,14 +394,14 @@
     },
     "freight_logistics": {
       "family": "freight_logistics",
-      "count": 9,
+      "count": 11,
       "by_status": {
-        "live_only": 3,
-        "sandbox": 6
+        "live_only": 4,
+        "sandbox": 7
       },
       "by_evidence_class": {
-        "live_receipts_only": 3,
-        "needs_history": 6
+        "live_receipts_only": 4,
+        "needs_history": 7
       },
       "leaders": [
         {
@@ -707,36 +707,51 @@
     },
     "local_economy_weirdness": {
       "family": "local_economy_weirdness",
-      "count": 10,
+      "count": 11,
       "by_status": {
-        "live_only": 5,
+        "live_only": 6,
         "sandbox": 5
       },
       "by_evidence_class": {
-        "live_receipts_only": 5,
+        "live_receipts_only": 6,
         "needs_history": 5
       },
       "leaders": [
         {
           "schema_version": "v1",
-          "key": "crazy:yelp-closure-velocity",
+          "key": "crazy:earthquake-aftershock-insurance-claims-spike",
           "algo_type": "crazy",
-          "algo_id": "yelp-closure-velocity",
-          "name": "Yelp Closure Velocity",
+          "algo_id": "earthquake-aftershock-insurance-claims-spike",
+          "name": "Earthquake Aftershock Insurance Claims Spike",
           "family": "local_economy_weirdness",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "weekly",
-          "ytd_pct": 0.0,
-          "days_running": 79,
-          "beat_spy": false,
-          "spy_pct": 5.77,
-          "alpha_pct": -5.77,
-          "ret_30d_pct": 0.0,
-          "spy_delta_30d_pct": -9.98,
+          "status": "live_only",
+          "evidence_class": "live_receipts_only",
+          "rebalance_frequency": "daily",
+          "ytd_pct": 0.07,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.07,
+          "spy_delta_30d_pct": -9.91,
           "last_snapshot": "2026-05-03",
           "new_algo_date": null,
-          "comparator": null
+          "comparator": {
+            "primary_etf": "XLF",
+            "signals": {
+              "momentum_5d": {
+                "direction": "UP",
+                "confidence": 0.194,
+                "return_pct": 0.972
+              },
+              "momentum_20d": {
+                "direction": "UP",
+                "confidence": 0.965,
+                "return_pct": 4.825
+              }
+            },
+            "summary": "both_up"
+          }
         },
         {
           "schema_version": "v1",
@@ -856,16 +871,16 @@
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 53,
+      "count": 54,
       "by_status": {
         "backtest_weak": 1,
         "live_only": 15,
         "parked": 2,
-        "sandbox": 35
+        "sandbox": 36
       },
       "by_evidence_class": {
         "live_receipts_only": 15,
-        "needs_history": 33,
+        "needs_history": 34,
         "pending_seed": 2,
         "v1_backtested": 3
       },

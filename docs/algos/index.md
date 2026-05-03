@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-05-03T10:36:07
+Updated (UTC): 2026-05-03T10:41:19
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 162
+Crazy models: 174
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -178,3 +178,15 @@ Crazy models: 162
 | ev-charger-network-expansion-velocity-surge | Ev Charger Network Expansion Velocity Surge | daily |
 | google-trends-surge-in-flight-delay-complaints | Google Trends Surge In Flight Delay Complaints | weekly |
 | price-momentum-reversion-in-defensive-sectors-after-tech-cra | Price Momentum Reversion In Defensive Sectors After Tech Crash | daily |
+| daily-jump-in-google-trends-for-solar-panel-repair-searches- | Daily Jump In Google Trends For Solar Panel Repair Searches Signals Green Energy Sector Rebound | daily |
+| daily-spike-in-google-trends-searches-for-emergency-car-batt | Daily Spike In Google Trends Searches For Emergency Car Battery Replacement Signals Consumer Stress Impacting Discretionary | daily |
+| weekly-google-trends-spike-for-diy-electronics-repair-signal | Weekly Google Trends Spike For Diy Electronics Repair Signals Bullish Tech Sector | weekly |
+| weekly-google-trends-surge-for-diy-roof-repair-searches-sign | Weekly Google Trends Surge For Diy Roof Repair Searches Signals Consumer Stress Impacting Xli | weekly |
+| weekly-google-trends-surge-for-home-pest-control-searches-si | Weekly Google Trends Surge For Home Pest Control Searches Signals Consumer Stress Boosting Staples | weekly |
+| weekly-google-trends-surge-for-used-truck-purchase-searches- | Weekly Google Trends Surge For Used Truck Purchase Searches Signals Bullish Freight Logistics | weekly |
+| weekly-google-trends-surge-in-searches-for-home-solar-instal | Weekly Google Trends Surge In Searches For Home Solar Installation Financing Signals Xle Bullish | weekly |
+| earthquake-aftershock-insurance-claims-spike | Earthquake Aftershock Insurance Claims Spike | daily |
+| ev-charger-network-expansion-acceleration | Ev Charger Network Expansion Acceleration | daily |
+| google-trends-surge-in-luxury-good-searches | Google Trends Surge In Luxury Good Searches | weekly |
+| healthcare-cost-google-trends-acceleration-index | Healthcare Cost Google Trends Acceleration Index | weekly |
+| rss-news-volume-spike-on-food-supply-chain-disruptions | Rss News Volume Spike On Food Supply Chain Disruptions | weekly |

@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-05-03/publish/claude_bank-equity-vs-bond-spread-inversion-signal.md",
+  "target_file": "data/ideas/runs/2026-05-03/intervention/claude_bank-equity-vs-bond-spread-inversion-signal.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "Spec requires data from two tickers (XLF and TLT) and relative performance calculation not directly supported by single price_only adapter.",
+    "risk_flags": [
+      "adapter mismatch",
+      "multi-symbol data source",
+      "relative performance calculation",
+      "yield curve proxy derived data"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1013,
+    "output_tokens": 98
+  },
+  "cost_usd": 0.0035125,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires data from two tickers (XLF and TLT) and relative performance calculation not directly supported by single price_only adapter.\",\n  \"risk_flags\": [\"multi-symbol data source\", \"relative performance calculation\", \"yield curve proxy derived data\", \"adapter mismatch\"]\n}\n```"
+}

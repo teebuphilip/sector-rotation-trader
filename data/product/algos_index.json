@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-03T10:36:08Z",
+  "generated_at": "2026-05-03T10:41:19Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -64,6 +64,30 @@
       "equity": 99846.17,
       "ytd_pct": -0.15,
       "trade_count": 8,
+      "positions": 0,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:google-trends-surge-in-luxury-good-searches",
+      "algo_type": "crazy",
+      "algo_id": "google-trends-surge-in-luxury-good-searches",
+      "name": "Google Trends Surge In Luxury Good Searches",
+      "family": "attention_sentiment",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99979.84,
+      "ytd_pct": -0.02,
+      "trade_count": 2,
       "positions": 0,
       "last_snapshot": "2026-05-03",
       "last_signal": null,
@@ -733,6 +757,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-jump-in-google-trends-for-solar-panel-repair-searches-",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-solar-panel-repair-searches-",
+      "name": "Daily Jump In Google Trends For Solar Panel Repair Searches Signals Green Energy Sector Rebound",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLE"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:daily-jump-in-google-trends-searches-for-home-water-heater-r",
       "algo_type": "crazy",
       "algo_id": "daily-jump-in-google-trends-searches-for-home-water-heater-r",
@@ -829,6 +877,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-spike-in-google-trends-searches-for-emergency-car-batt",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-searches-for-emergency-car-batt",
+      "name": "Daily Spike In Google Trends Searches For Emergency Car Battery Replacement Signals Consumer Stress Impacting Discretionary",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:daily-surge-in-google-trends-searches-for-home-heating-syste",
       "algo_type": "crazy",
       "algo_id": "daily-surge-in-google-trends-searches-for-home-heating-syste",
@@ -890,6 +962,30 @@
       ],
       "equity": 99673.9,
       "ytd_pct": -0.33,
+      "trade_count": 24,
+      "positions": 0,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:healthcare-cost-google-trends-acceleration-index",
+      "algo_type": "crazy",
+      "algo_id": "healthcare-cost-google-trends-acceleration-index",
+      "name": "Healthcare Cost Google Trends Acceleration Index",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLV"
+      ],
+      "equity": 99466.5,
+      "ytd_pct": -0.53,
       "trade_count": 24,
       "positions": 0,
       "last_snapshot": "2026-05-03",
@@ -1132,6 +1228,78 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-google-trends-spike-for-diy-electronics-repair-signal",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-spike-for-diy-electronics-repair-signal",
+      "name": "Weekly Google Trends Spike For Diy Electronics Repair Signals Bullish Tech Sector",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLK"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-google-trends-surge-for-diy-roof-repair-searches-sign",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-for-diy-roof-repair-searches-sign",
+      "name": "Weekly Google Trends Surge For Diy Roof Repair Searches Signals Consumer Stress Impacting Xli",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-google-trends-surge-for-home-pest-control-searches-si",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-for-home-pest-control-searches-si",
+      "name": "Weekly Google Trends Surge For Home Pest Control Searches Signals Consumer Stress Boosting Staples",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLP"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-google-trends-surge-in-diy-electronics-repair-signals",
       "algo_type": "crazy",
       "algo_id": "weekly-google-trends-surge-in-diy-electronics-repair-signals",
@@ -1214,6 +1382,30 @@
       "rebalance_frequency": "weekly",
       "universe": [
         "XLU"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-google-trends-surge-in-searches-for-home-solar-instal",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-in-searches-for-home-solar-instal",
+      "name": "Weekly Google Trends Surge In Searches For Home Solar Installation Financing Signals Xle Bullish",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLE"
       ],
       "equity": 100000.0,
       "ytd_pct": 0.0,
@@ -1530,6 +1722,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:rss-news-volume-spike-on-food-supply-chain-disruptions",
+      "algo_type": "crazy",
+      "algo_id": "rss-news-volume-spike-on-food-supply-chain-disruptions",
+      "name": "Rss News Volume Spike On Food Supply Chain Disruptions",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLP"
+      ],
+      "equity": 99990.05,
+      "ytd_pct": -0.01,
+      "trade_count": 1,
+      "positions": 1,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:shipping-container-squeeze-play",
       "algo_type": "crazy",
       "algo_id": "shipping-container-squeeze-play",
@@ -1579,6 +1795,30 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "No supported V1 price-only backtest path",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-google-trends-surge-for-used-truck-purchase-searches-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-for-used-truck-purchase-searches-",
+      "name": "Weekly Google Trends Surge For Used Truck Purchase Searches Signals Bullish Freight Logistics",
+      "family": "freight_logistics",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },
@@ -1942,6 +2182,30 @@
       "equity": 100000.0,
       "ytd_pct": 0.0,
       "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:earthquake-aftershock-insurance-claims-spike",
+      "algo_type": "crazy",
+      "algo_id": "earthquake-aftershock-insurance-claims-spike",
+      "name": "Earthquake Aftershock Insurance Claims Spike",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLF"
+      ],
+      "equity": 100070.66,
+      "ytd_pct": 0.07,
+      "trade_count": 6,
       "positions": 0,
       "last_snapshot": "2026-05-03",
       "last_signal": null,
@@ -2493,6 +2757,30 @@
       "rebalance_frequency": "daily",
       "universe": [
         "XLK"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-03",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:ev-charger-network-expansion-acceleration",
+      "algo_type": "crazy",
+      "algo_id": "ev-charger-network-expansion-acceleration",
+      "name": "Ev Charger Network Expansion Acceleration",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLI"
       ],
       "equity": 100000.0,
       "ytd_pct": 0.0,

@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-03/publish/chatgpt_weekly-google-trends-surge-for-diy-roof-repair-searches-sign.md",
+  "target_file": "data/ideas/runs/2026-05-03/build/chatgpt_weekly-google-trends-surge-for-diy-roof-repair-searches-sign.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a valid existing adapter with deterministic routing and matches data source.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "google_trends": 3,
+        "html_table": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 948,
+    "output_tokens": 79
+  },
+  "cost_usd": 0.00316,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid existing adapter with deterministic routing and matches data source.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

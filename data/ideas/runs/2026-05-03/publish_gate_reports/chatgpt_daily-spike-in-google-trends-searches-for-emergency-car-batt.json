@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-03/publish/chatgpt_daily-spike-in-google-trends-searches-for-emergency-car-batt.md",
+  "target_file": "data/ideas/runs/2026-05-03/build/chatgpt_daily-spike-in-google-trends-searches-for-emergency-car-batt.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a real adapter with matching data source and deterministic routing.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "google_trends": 2,
+        "html_table": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 937,
+    "output_tokens": 78
+  },
+  "cost_usd": 0.0031225,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a real adapter with matching data source and deterministic routing.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

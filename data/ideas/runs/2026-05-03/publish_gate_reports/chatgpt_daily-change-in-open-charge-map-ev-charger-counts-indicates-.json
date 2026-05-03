@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-05-03/publish/chatgpt_daily-change-in-open-charge-map-ev-charger-counts-indicates-.md",
+  "target_file": "data/ideas/runs/2026-05-03/intervention/chatgpt_daily-change-in-open-charge-map-ev-charger-counts-indicates-.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "data source instability",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "needs volume proxy clarification",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "openchargemap": 1,
+        "html_table": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 931,
+    "output_tokens": 82
+  },
+  "cost_usd": 0.0031475,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly supports Open Charge Map API data for daily EV charger counts.\",\n  \"risk_flags\": [\"data source instability\", \"low adapter routing confidence\", \"needs volume proxy clarification\"]\n}\n```"
+}
