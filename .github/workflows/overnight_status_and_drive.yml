@@ -1,0 +1,51 @@
+name: Overnight Status And Drive Sync
+
+on:
+  schedule:
+    - cron: "30 7 * * *"
+  workflow_dispatch:
+
+jobs:
+  overnight-status:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build schedule views
+        env:
+          PYTHONPATH: .
+        run: python scripts/export_schedule_views.py
+
+      - name: Build overnight status report
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PYTHONPATH: .
+        run: python scripts/overnight_status_report.py
+
+      - name: Authenticate to Google
+        id: google_auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GOOGLE_DRIVE_SERVICE_ACCOUNT_JSON }}
+          token_format: access_token
+
+      - name: Push latest ops files to Drive
+        env:
+          GDRIVE_ACCESS_TOKEN: ${{ steps.google_auth.outputs.access_token }}
+          GOOGLE_DRIVE_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
+        run: >
+          python scripts/push_ops_files_to_drive.py
+          reports/morning_status/latest.json
+          reports/morning_status/latest.md
+          stockarithm_execution_plan.csv
+          reports/morning_status/master_schedule.csv
+          reports/morning_status/content_schedule.csv

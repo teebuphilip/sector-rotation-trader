@@ -6,6 +6,8 @@ import datetime as dt
 import json
 from pathlib import Path
 
+from algo_copy_registry import build_algo_copy_registry
+
 
 def _today_iso() -> str:
     return dt.date.today().isoformat()
@@ -89,6 +91,7 @@ def main() -> int:
         docs_dir = Path("docs") / "normal_ideas"
         docs_dir.mkdir(parents=True, exist_ok=True)
         (docs_dir / f"{args.date}.md").write_text("\n\n---\n\n".join(combined_md))
+        build_algo_copy_registry()
 
     print(f"✅ Published markdown to {pub_dir}")
     return 0

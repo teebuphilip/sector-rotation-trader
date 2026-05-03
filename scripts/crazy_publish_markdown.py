@@ -6,6 +6,8 @@ import datetime as dt
 import json
 from pathlib import Path
 
+from algo_copy_registry import build_algo_copy_registry
+
 
 def _today_iso() -> str:
     return dt.date.today().isoformat()
@@ -117,6 +119,8 @@ def main() -> int:
         if entry not in index_text:
             index_text = index_text.strip() + "\n" + entry
             index_path.write_text(index_text + ("\n" if not index_text.endswith("\n") else ""))
+
+        build_algo_copy_registry()
 
     print(f"✅ Published markdown to {pub_dir}")
     return 0
