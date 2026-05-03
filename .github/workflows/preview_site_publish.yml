@@ -2,8 +2,8 @@ name: Preview Site Publish
 
 on:
   schedule:
-    # 9:15 PM ET Tue-Sat UTC, after the 6:30 PM ET weekday nightly run has usually finished
-    - cron: "15 1 * * 2-6"
+    # 9:22 PM ET Tue-Sat UTC, after the weekday nightly run and off the crowded :15 slot
+    - cron: "22 1 * * 2-6"
   workflow_dispatch:
 
 permissions:

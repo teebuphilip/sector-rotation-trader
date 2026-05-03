@@ -2,8 +2,8 @@ name: Daily Sector Rotation Run
 
 on:
   schedule:
-    # 6:30 PM ET (22:30 UTC) — after US market close
-    - cron: '30 22 * * 1-5'
+    # 6:37 PM ET (22:37 UTC) — after US market close, off the crowded :30 slot
+    - cron: '37 22 * * 1-5'
   workflow_dispatch:   # manual trigger any time
 
 permissions:
