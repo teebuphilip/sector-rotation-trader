@@ -16,7 +16,7 @@
   }
   * { box-sizing: border-box; }
   body { margin: 0; font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--text); background: radial-gradient(1000px 600px at 15% -10%, #1e3f35, transparent), radial-gradient(900px 500px at 90% 0%, #1b352f, transparent), var(--bg); }
-  header { padding: 28px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  header { padding: 28px; border-bottom: 1px solid rgba(255,255,255,0.08); text-align: center; }
   header h1 { margin: 0; font-size: 30px; letter-spacing: 0.5px; }
   header p { margin: 6px 0 0; color: var(--muted); font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; }
   .wrap { padding: 24px; }
@@ -39,11 +39,11 @@
   .waitlist-form button { border: 1px solid var(--accent); border-radius: 8px; background: transparent; color: var(--accent); padding: 10px 12px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
   .waitlist-form button:hover { background: rgba(25, 211, 143, 0.1); }
   .notice { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.4; }
-  .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; justify-content: center; }
   .hero-actions .cta { padding: 10px 14px; }
   .cta-primary { background: var(--accent); color: #062018; font-weight: 700; }
   .cta-primary:hover { background: #33e3a3; }
-  .hero-strip { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .hero-strip { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
   .pill { font-size: 12px; color: var(--muted); border: 1px solid rgba(255,255,255,0.08); border-radius: 999px; padding: 6px 10px; }
   .hero-brand { font-size: clamp(42px, 7vw, 72px); font-weight: 700; letter-spacing: -1.5px; line-height: 1; color: var(--accent); margin: 0 0 10px; }
   .hero-tagline { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; color: var(--muted); max-width: 860px; margin: 0 auto; }
@@ -112,7 +112,7 @@
       <h3 style="margin-top:16px;">What to look at first</h3>
       <ul>
         <li><strong>Leaderboard:</strong> which signals are working right now</li>
-        <li><strong>Signals:</strong> the full public list of all 158 signals</li>
+        <li><strong>Signals:</strong> the full public list of all 179 signals</li>
         <li><strong>Daily Report:</strong> what changed after the nightly run</li>
         <li><strong>Families:</strong> what each signal family is trying to measure</li>
       </ul>
@@ -126,17 +126,6 @@
     </div>
 
     <div class="grid">
-
-      <div class="card">
-        <h2>What you're looking at</h2>
-        <p>Each row is one live paper-traded signal. Some are working. Some are failing. One of them is named after my dog. That is the point.</p>
-      </div>
-
-      <div class="card">
-        <h2>Why so many names stay flat</h2>
-        <p>A lot of the lab is still collecting data, waiting on better history, or sitting in sandbox until the first real trade fires. We leave those names visible instead of pretending they do not exist.</p>
-      </div>
-
       <div class="card winners">
         <h3>30-Day Rolling Leaders</h3>
         <ul>
@@ -144,7 +133,8 @@
 <li>2. Faber Momentum Rotation &mdash; <span class="ret-pos">+0.03%</span></li>
 <li>3. Antonacci Dual Momentum Sector Rotation &mdash; <span class="ret-pos">+3.41%</span></li>
         </ul>
-        <p class="muted">Source: rolling 30-day leaderboard &mdash; <a href="leaderboard.html">full leaderboard</a></p>
+        <p class="muted">Recent leaders over the last 30 days.</p>
+        <a class="cta" href="leaderboard.html">View the leaderboard</a>
       </div>
 
       <div class="card">
@@ -155,15 +145,13 @@
       </div>
 
       <div class="card">
-        <h2>Build Log</h2>
-        <p>Ship notes, failures, receipts, and founder context. This is the public lab notebook, not a polished black box.</p>
-        <a class="cta" href="blog/index.html">Read the blog</a>
-      </div>
-
-      <div class="card">
         <h2>Signal Index</h2>
         <p>All 179 signals in one public list. Names, families, and status only. No rank and no returns.</p>
-        <a class="cta" href="signals/index.html">Browse all signals</a>
+        <p class="muted" style="margin-top:10px;">A lot of the lab is still collecting data, waiting on better history, or sitting in sandbox until the first real trade fires. Families show what each cluster is trying to measure.</p>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:8px;">
+          <a class="cta" href="signals/index.html">Browse all signals</a>
+          <a class="cta" href="families.html">Browse families</a>
+        </div>
       </div>
     </div>
     <div class="card waitlist" id="waitlist">
@@ -202,7 +190,7 @@
 
 <footer>
   <div class="wrap">
-    <div class="footer-nav" style="margin-top:8px;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:0 8px;width:100%;font-family:var(--mono);font-size:11px;line-height:1.6;letter-spacing:0.2px;color:rgba(255,255,255,0.58);"><a href="/landing.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Home</a><span class="footer-sep">&middot;</span><a href="/leaderboard.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Leaderboard</a><span class="footer-sep">&middot;</span><a href="/signals/index.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Signals</a><span class="footer-sep">&middot;</span><a href="/families.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Families</a><span class="footer-sep">&middot;</span><a href="/daily.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Daily Report</a><span class="footer-sep">&middot;</span><a href="/how-it-works.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">How It Works</a><span class="footer-sep">&middot;</span><a href="/premium.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Premium Preview</a><span class="footer-sep">&middot;</span><a href="/blog/index.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Blog</a><span class="footer-sep">&middot;</span><a href="/legal.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Legal</a><span class="footer-sep">&middot;</span><a href="/biscotti.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Biscotti</a></div>
+    <div class="footer-nav" style="margin-top:8px;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:0 8px;width:100%;font-family:var(--mono);font-size:11px;line-height:1.6;letter-spacing:0.2px;color:rgba(255,255,255,0.58);"><a href="/landing.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Home</a><span class="footer-sep">&middot;</span><a href="/leaderboard.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Leaderboard</a><span class="footer-sep">&middot;</span><a href="/signals/index.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Signals</a><span class="footer-sep">&middot;</span><a href="/families.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Families</a><span class="footer-sep">&middot;</span><a href="/daily.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Daily Report</a><span class="footer-sep">&middot;</span><a href="/premium.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Premium Preview</a><span class="footer-sep">&middot;</span><a href="/blog/index.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Blog</a><span class="footer-sep">&middot;</span><a href="/legal.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Legal</a><span class="footer-sep">&middot;</span><a href="/biscotti.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Biscotti</a></div>
     <div style="width:100%;max-width:520px;height:1px;margin:14px auto 14px;background:rgba(255,255,255,0.10);"></div>
     <div style="display:block;width:100%;text-align:center;font-size:11px;font-style:italic;letter-spacing:0.2px;color:rgba(255,255,255,0.58);margin:0 auto 10px;">
       StockArithm powered by R&amp;B AlgoLabs, LLC.

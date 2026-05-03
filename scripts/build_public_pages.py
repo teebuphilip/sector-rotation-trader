@@ -1023,7 +1023,7 @@ LANDING_CSS = """
   }
   * { box-sizing: border-box; }
   body { margin: 0; font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--text); background: radial-gradient(1000px 600px at 15% -10%, #1e3f35, transparent), radial-gradient(900px 500px at 90% 0%, #1b352f, transparent), var(--bg); }
-  header { padding: 28px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  header { padding: 28px; border-bottom: 1px solid rgba(255,255,255,0.08); text-align: center; }
   header h1 { margin: 0; font-size: 30px; letter-spacing: 0.5px; }
   header p { margin: 6px 0 0; color: var(--muted); font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; }
   .wrap { padding: 24px; }
@@ -1046,11 +1046,11 @@ LANDING_CSS = """
   .waitlist-form button { border: 1px solid var(--accent); border-radius: 8px; background: transparent; color: var(--accent); padding: 10px 12px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
   .waitlist-form button:hover { background: rgba(25, 211, 143, 0.1); }
   .notice { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.4; }
-  .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; justify-content: center; }
   .hero-actions .cta { padding: 10px 14px; }
   .cta-primary { background: var(--accent); color: #062018; font-weight: 700; }
   .cta-primary:hover { background: #33e3a3; }
-  .hero-strip { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .hero-strip { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
   .pill { font-size: 12px; color: var(--muted); border: 1px solid rgba(255,255,255,0.08); border-radius: 999px; padding: 6px 10px; }
   .hero-brand { font-size: clamp(42px, 7vw, 72px); font-weight: 700; letter-spacing: -1.5px; line-height: 1; color: var(--accent); margin: 0 0 10px; }
   .hero-tagline { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; color: var(--muted); max-width: 860px; margin: 0 auto; }
@@ -1150,23 +1150,13 @@ def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: li
     </div>
 
     <div class="grid">
-
-      <div class="card">
-        <h2>What you're looking at</h2>
-        <p>Each row is one live paper-traded signal. Some are working. Some are failing. One of them is named after my dog. That is the point.</p>
-      </div>
-
-      <div class="card">
-        <h2>Why so many names stay flat</h2>
-        <p>A lot of the lab is still collecting data, waiting on better history, or sitting in sandbox until the first real trade fires. We leave those names visible instead of pretending they do not exist.</p>
-      </div>
-
       <div class="card winners">
         <h3>30-Day Rolling Leaders</h3>
         <ul>
 {winners_html}
         </ul>
-        <p class="muted">Source: rolling 30-day leaderboard &mdash; <a href="leaderboard.html">full leaderboard</a></p>
+        <p class="muted">Recent leaders over the last 30 days.</p>
+        <a class="cta" href="leaderboard.html">View the leaderboard</a>
       </div>
 
       <div class="card">
@@ -1177,15 +1167,13 @@ def build_landing(leaderboard: dict, daily: dict | None = None, rank_history: li
       </div>
 
       <div class="card">
-        <h2>Build Log</h2>
-        <p>Ship notes, failures, receipts, and founder context. This is the public lab notebook, not a polished black box.</p>
-        <a class="cta" href="blog/index.html">Read the blog</a>
-      </div>
-
-      <div class="card">
         <h2>Signal Index</h2>
         <p>All {_e(total)} signals in one public list. Names, families, and status only. No rank and no returns.</p>
-        <a class="cta" href="signals/index.html">Browse all signals</a>
+        <p class="muted" style="margin-top:10px;">A lot of the lab is still collecting data, waiting on better history, or sitting in sandbox until the first real trade fires. Families show what each cluster is trying to measure.</p>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:8px;">
+          <a class="cta" href="signals/index.html">Browse all signals</a>
+          <a class="cta" href="families.html">Browse families</a>
+        </div>
       </div>
     </div>
     <div class="card waitlist" id="waitlist">
@@ -1385,7 +1373,7 @@ def build_premium(daily: dict, leaderboard: dict) -> str:
 <div class="hero">
   <div class="hero-badge">PREMIUM PREVIEW</div>
   <h1><span>July 1</span> premium launch</h1>
-  <p class="hero-sub">June 15 is free public launch. July 1 adds the paid operating layer.</p>
+  <p class="hero-sub">May 15 is free public launch. July 1 adds the paid operating layer.</p>
   <div class="hero-stats">
     <div class="hero-stat">
       <div class="num">{_e(total)}</div>
@@ -1408,7 +1396,7 @@ def build_premium(daily: dict, leaderboard: dict) -> str:
   <div class="wrap">
     <h2 class="section-title">What Premium Will Add</h2>
     <p class="section-sub">This page is a teaser, not a gated member area yet.</p>
-    <div class="hero-stats" style="justify-content:flex-start; gap:20px; margin:0 0 24px;">
+    <div class="hero-stats" style="justify-content:center; gap:20px; margin:0 0 24px;">
       <div class="hero-stat">
         <div class="num">{_e(promoted)}</div>
         <div class="label">Promoted</div>
@@ -1423,7 +1411,7 @@ def build_premium(daily: dict, leaderboard: dict) -> str:
       </div>
     </div>
     <div class="rank-note">
-      <strong>Free on June 15:</strong> blog, stripped leaderboard, families, promoted/watchlist summaries, graveyard, public daily report, and public ticker pages.
+      <strong>Free on May 15:</strong> blog, stripped leaderboard, families, promoted/watchlist summaries, graveyard, public daily report, and public ticker pages.
       <br>
       <strong>Paid on July 1:</strong> full leaderboard, full per-algo detail, full per-ticker detail, trade history, equity curves, and premium summaries.
     </div>

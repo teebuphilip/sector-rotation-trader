@@ -174,6 +174,7 @@ def write_full_preview_leaderboard(out: Path) -> None:
     marker = '<p class="section-sub">A stripped public view of the lab. The rows below are the names that have actually moved. The zero-trade names are collapsed underneath with reasons.</p>'
     replacement = marker + '\n    <div class="rank-note"><strong>Preview-only note:</strong> This private preview page removes the public blur/paywall treatment so you can inspect the full leaderboard before launch.</div>'
     html = html.replace(marker, replacement)
+    src.write_text(html, encoding="utf-8")
     (out / "leaderboard-full.html").write_text(html, encoding="utf-8")
 
 
