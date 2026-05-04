@@ -1,19 +1,10 @@
 {
-  "cash": 94929.79158860797,
+  "cash": 99921.96744887864,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 171.2378416311123,
+  "fees_paid": 181.44722171104925,
   "taxes_paid": 126.09972743995755,
-  "positions": {
-    "XLK": {
-      "shares": 30.86939306476207,
-      "entry_price": 161.8699951171875,
-      "entry_date": "2026-05-04",
-      "cost": 4996.828504663577,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-02-26",
@@ -216,6 +207,20 @@
       "cost": 4996.83,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 30.8694,
+      "price": 162.05,
+      "proceeds": 4992.18,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -4.65,
+      "pnl_pct": -0.09,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1028,20 +1033,29 @@
       },
       "sector": "Weekly Google Trends Surge In Diy Electronics Repair Signals Tech Consumer Stress Lift",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-04",
+      "cash": 99921.97,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99921.97,
+      "positions": {},
+      "sector": "Weekly Google Trends Surge In Diy Electronics Repair Signals Tech Consumer Stress Lift",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-27",
   "last_run": "2026-05-04",
   "meta": {
     "weekly-google-trends-surge-in-diy-electronics-repair-signals": {
-      "signal_label": "RISK_ON",
-      "latest_value": 18.0,
-      "prior_avg": 10.0357,
-      "signal_change": 0.7936,
+      "signal_label": "RISK_OFF",
+      "latest_value": 9.0,
+      "prior_avg": 9.1071,
+      "signal_change": -0.0118,
       "name": "Weekly Google Trends Surge In Diy Electronics Repair Signals Tech Consumer Stress Lift",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-04",
-      "entry_date": "2026-05-04"
+      "last_signal": "RISK_OFF",
+      "last_run": "2026-05-04"
     }
   }
 }

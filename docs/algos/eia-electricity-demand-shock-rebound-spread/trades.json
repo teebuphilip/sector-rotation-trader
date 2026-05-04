@@ -33,6 +33,20 @@
       "cost": 4998.99,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 107.3897,
+      "price": 46.37,
+      "proceeds": 4969.43,
+      "fees": 10.23,
+      "tax": 0.0,
+      "pnl": -29.56,
+      "pnl_pct": -0.59,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -745,6 +759,16 @@
       },
       "sector": "Eia Electricity Demand Shock Rebound Spread",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-04",
+      "cash": 99940.31,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99940.31,
+      "positions": {},
+      "sector": "Eia Electricity Demand Shock Rebound Spread",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-30"

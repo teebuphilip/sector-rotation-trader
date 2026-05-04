@@ -499,6 +499,54 @@
       "cost": 35539.25,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 219.5543,
+      "price": 162.05,
+      "proceeds": 35566.97,
+      "fees": 11.79,
+      "tax": 10.26,
+      "pnl": 17.47,
+      "pnl_pct": 0.05,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLE",
+      "shares": 603.8954,
+      "price": 59.39,
+      "proceeds": 35853.43,
+      "fees": 11.92,
+      "tax": 116.25,
+      "pnl": 197.93,
+      "pnl_pct": 0.56,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-04",
+      "action": "BUY",
+      "ticker": "XLE",
+      "shares": 599.5018,
+      "price": 59.39,
+      "cost": 35604.41,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 219.7125,
+      "price": 162.05,
+      "cost": 35604.41,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -2542,6 +2590,35 @@
           "entry_price": 58.85,
           "current_price": 58.85,
           "market_value": 35539.25,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-04",
+          "margin": false
+        }
+      },
+      "sector": "Algo Baileymol (Chaos Monger)",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-05-04",
+      "cash": 35584.51,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 106793.34,
+      "positions": {
+        "XLE": {
+          "shares": 599.5018,
+          "entry_price": 59.39,
+          "current_price": 59.39,
+          "market_value": 35604.41,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-04",
+          "margin": false
+        },
+        "XLK": {
+          "shares": 219.7125,
+          "entry_price": 162.05,
+          "current_price": 162.05,
+          "market_value": 35604.41,
           "unrealized_pnl": 0.0,
           "entry_date": "2026-05-04",
           "margin": false

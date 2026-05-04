@@ -33,6 +33,20 @@
       "cost": 4998.99,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 59.3916,
+      "price": 83.54,
+      "proceeds": 4951.36,
+      "fees": 10.22,
+      "tax": 0.0,
+      "pnl": -47.63,
+      "pnl_pct": -0.95,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -735,6 +749,16 @@
       },
       "sector": "Rss News Volume Spike On Food Supply Chain Disruptions",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-04",
+      "cash": 99922.25,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99922.25,
+      "positions": {},
+      "sector": "Rss News Volume Spike On Food Supply Chain Disruptions",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-02-01"
