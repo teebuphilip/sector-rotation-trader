@@ -1,10 +1,19 @@
 {
-  "cash": 99979.81777658379,
+  "cash": 94970.87688775461,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 20.182223416210192,
+  "fees_paid": 30.13222341621019,
   "taxes_paid": 0.0,
-  "positions": {},
+  "positions": {
+    "XLU": {
+      "shares": 107.38970936113934,
+      "entry_price": 46.54999923706055,
+      "entry_date": "2026-05-04",
+      "cost": 4998.99088882919,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-05-03",
@@ -29,6 +38,16 @@
       "pnl_pct": -0.2,
       "entry_date": "2026-05-03",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-04",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 107.3897,
+      "price": 46.55,
+      "cost": 4998.99,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -721,20 +740,40 @@
       "positions": {},
       "sector": "Eia Electricity Demand Shock Rebound Spread",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-04",
+      "cash": 94970.88,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99969.87,
+      "positions": {
+        "XLU": {
+          "shares": 107.3897,
+          "entry_price": 46.55,
+          "current_price": 46.55,
+          "market_value": 4998.99,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-04",
+          "margin": false
+        }
+      },
+      "sector": "Eia Electricity Demand Shock Rebound Spread",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-30",
   "last_run": "2026-05-04",
   "meta": {
     "eia-electricity-demand-shock-rebound-spread": {
-      "signal_label": "HOLD",
-      "latest_value": 8063364.0,
-      "prior_avg": 10366144.5143,
-      "signal_change": -0.2221,
+      "signal_label": "RISK_ON",
+      "latest_value": 9249650.0,
+      "prior_avg": 10366148.1786,
+      "signal_change": -0.1077,
       "name": "Eia Electricity Demand Shock Rebound Spread",
-      "last_signal": "HOLD",
+      "last_signal": "RISK_ON",
       "last_run": "2026-05-04",
-      "entry_date": "2026-05-03"
+      "entry_date": "2026-05-04"
     }
   }
 }

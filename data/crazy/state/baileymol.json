@@ -1,23 +1,23 @@
 {
-  "cash": 31320.863343652796,
+  "cash": 31306.479367852557,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 3639.34221457821,
+  "fees_paid": 3682.4941419789293,
   "taxes_paid": 18076.651488538475,
   "positions": {
     "XLK": {
-      "shares": 193.61687952707547,
+      "shares": 193.52801824188282,
       "entry_price": 161.8699951171875,
       "entry_date": "2026-05-04",
-      "cost": 31340.763343652787,
+      "cost": 31326.379367852547,
       "using_margin": false,
       "consec_below_ma": 0
     },
     "XLE": {
-      "shares": 532.5533416527561,
+      "shares": 532.308924045735,
       "entry_price": 58.849998474121094,
       "entry_date": "2026-05-04",
-      "cost": 31340.763343652787,
+      "cost": 31326.379367852547,
       "using_margin": false,
       "consec_below_ma": 0
     }
@@ -856,6 +856,54 @@
       "shares": 532.5533,
       "price": 58.85,
       "cost": 31340.76,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 193.6169,
+      "price": 161.87,
+      "proceeds": 31329.19,
+      "fees": 11.58,
+      "tax": 0.0,
+      "pnl": -11.58,
+      "pnl_pct": -0.04,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLE",
+      "shares": 532.5533,
+      "price": 58.85,
+      "proceeds": 31329.09,
+      "fees": 11.68,
+      "tax": 0.0,
+      "pnl": -11.68,
+      "pnl_pct": -0.04,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-04",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 193.528,
+      "price": 161.87,
+      "cost": 31326.38,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "BUY",
+      "ticker": "XLE",
+      "shares": 532.3089,
+      "price": 58.85,
+      "cost": 31326.38,
       "margin": false,
       "fees": 9.95
     }
@@ -3028,6 +3076,35 @@
           "entry_price": 58.85,
           "current_price": 58.85,
           "market_value": 31340.76,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-04",
+          "margin": false
+        }
+      },
+      "sector": "Chaos Rotation Lab",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-05-04",
+      "cash": 31306.48,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 93959.24,
+      "positions": {
+        "XLK": {
+          "shares": 193.528,
+          "entry_price": 161.87,
+          "current_price": 161.87,
+          "market_value": 31326.38,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-04",
+          "margin": false
+        },
+        "XLE": {
+          "shares": 532.3089,
+          "entry_price": 58.85,
+          "current_price": 58.85,
+          "market_value": 31326.38,
           "unrealized_pnl": 0.0,
           "entry_date": "2026-05-04",
           "margin": false

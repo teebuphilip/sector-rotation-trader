@@ -355,6 +355,54 @@
       "cost": 34805.8,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 472.5918,
+      "price": 84.17,
+      "proceeds": 39765.97,
+      "fees": 12.08,
+      "tax": 0.0,
+      "pnl": -12.08,
+      "pnl_pct": -0.03,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 747.7078,
+      "price": 46.55,
+      "proceeds": 34793.88,
+      "fees": 11.91,
+      "tax": 0.0,
+      "pnl": -11.91,
+      "pnl_pct": -0.03,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-04",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 472.3832,
+      "price": 84.17,
+      "cost": 39760.5,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 747.3777,
+      "price": 46.55,
+      "cost": 34790.43,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1689,6 +1737,35 @@
           "entry_price": 46.55,
           "current_price": 46.55,
           "market_value": 34805.8,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-04",
+          "margin": false
+        }
+      },
+      "sector": "Electricity Consumption",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-05-04",
+      "cash": 24830.41,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99381.34,
+      "positions": {
+        "XLP": {
+          "shares": 472.3832,
+          "entry_price": 84.17,
+          "current_price": 84.17,
+          "market_value": 39760.5,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-04",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 747.3777,
+          "entry_price": 46.55,
+          "current_price": 46.55,
+          "market_value": 34790.43,
           "unrealized_pnl": 0.0,
           "entry_date": "2026-05-04",
           "margin": false

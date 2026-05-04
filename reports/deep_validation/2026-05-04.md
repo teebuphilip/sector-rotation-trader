@@ -20,14 +20,14 @@ Full-window/since-seed rank; not the same as recent 30D performance.
 ### Top 10
 | Rank | Algo | Type | Return | Alpha vs SPY | Rank Change |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Algo Baileymol (Chaos Monger) | normal | +6.64% | +0.87% | +165 |
+| 1 | Algo Baileymol (Chaos Monger) | normal | +6.60% | +0.82% | +165 |
 | 2 | Faber Momentum Rotation | normal | +3.88% | -1.90% | +0 |
 | 3 | Antonacci Dual Momentum Sector Rotation | normal | +3.77% | -2.00% | +0 |
 | 4 | Quantified Simple Monthly Rotation | normal | +1.48% | -4.30% | +1 |
-| 5 | FINRA Dark Pool Signal | crazy | +1.41% | -4.36% | -1 |
+| 5 | FINRA Dark Pool Signal | crazy | +1.37% | -4.41% | -1 |
 | 6 | Uber Mobility Index | crazy | +0.86% | -4.91% | +1 |
-| 7 | Insider Trading Signals | crazy | +0.85% | -4.93% | -1 |
-| 8 | Retail Sales Momentum | crazy | +0.85% | -4.92% | +0 |
+| 7 | Retail Sales Momentum | crazy | +0.85% | -4.92% | +1 |
+| 8 | Insider Trading Signals | crazy | +0.83% | -4.95% | -2 |
 | 9 | Housing Permit Velocity | crazy | +0.69% | -5.09% | +0 |
 | 10 | Mortgage Rate Housing Proxy | crazy | +0.63% | -5.15% | +0 |
 
@@ -37,7 +37,7 @@ Full-window/since-seed rank; not the same as recent 30D performance.
 | 175 | Algo Biscotti (Unconditional Loyalty) | crazy | -2.83% | -8.60% | -11 |
 | 176 | Algo Biscotti (Unconditional Loyalty) | normal | -3.13% | -8.90% | -12 |
 | 177 | VIX Term Structure | crazy | -5.10% | -10.88% | -12 |
-| 178 | Chaos Rotation Lab | crazy | -6.00% | -11.77% | -12 |
+| 178 | Chaos Rotation Lab | crazy | -6.04% | -11.82% | -12 |
 | 179 | VIX Fear Rotation | crazy | -6.79% | -12.56% | -12 |
 
 ## Rolling 30D
@@ -46,13 +46,13 @@ SPY 30D: +9.98%
 
 | Rank | Algo | Category | 30D Return | 30D vs SPY |
 | --- | --- | --- | --- | --- |
-| 1 | Algo Baileymol (Chaos Monger) | standard | +5.19% | -4.80% |
+| 1 | Algo Baileymol (Chaos Monger) | standard | +5.14% | -4.84% |
 | 2 | VIX Term Structure | crazy | +4.02% | -5.96% |
-| 3 | Chaos Rotation Lab | crazy | +3.75% | -6.24% |
+| 3 | Chaos Rotation Lab | crazy | +3.70% | -6.28% |
 | 4 | Antonacci Dual Momentum Sector Rotation | standard | +2.94% | -7.04% |
 | 5 | Algo Biscotti (Unconditional Loyalty) | standard | +2.56% | -7.42% |
 | 6 | Quantified Simple Monthly Rotation | standard | +1.48% | -8.51% |
-| 7 | FINRA Dark Pool Signal | crazy | +1.41% | -8.57% |
+| 7 | FINRA Dark Pool Signal | crazy | +1.37% | -8.62% |
 | 8 | VIX Fear Rotation | crazy | +1.09% | -8.89% |
 | 9 | Uber Mobility Index | crazy | +0.86% | -9.12% |
 | 10 | Retail Sales Momentum | crazy | +0.85% | -9.13% |
@@ -63,17 +63,17 @@ SPY 30D: +9.98%
 
 | ETF | Sector | Composite | Label | Bullish % |
 | --- | --- | --- | --- | --- |
-| XLK | Technology | 11 of 29 | MIXED | 38% |
-| XLP | Consumer Defensive | 6 of 26 | BEARISH | 23% |
-| XLU | Utilities | 5 of 27 | BEARISH | 19% |
-| XLI | Industrials | 5 of 28 | BEARISH | 18% |
-| XLE | Energy | 4 of 26 | BEARISH | 15% |
-| XLB | Basic Materials | 4 of 27 | BEARISH | 15% |
-| XLY | Consumer Cyclical | 5 of 39 | BEARISH | 13% |
-| XLV | Healthcare | 2 of 27 | BEARISH | 7% |
-| XLRE | Real Estate | 1 of 25 | BEARISH | 4% |
-| XLF | Financial Services | 0 of 27 | BEARISH | 0% |
-| XLC | Communication Services | 0 of 26 | BEARISH | 0% |
+| XLK | Technology | 13 of 31 | MIXED | 42% |
+| XLP | Consumer Defensive | 7 of 28 | BEARISH | 25% |
+| XLU | Utilities | 6 of 29 | BEARISH | 21% |
+| XLI | Industrials | 6 of 30 | BEARISH | 20% |
+| XLE | Energy | 4 of 29 | BEARISH | 14% |
+| XLB | Basic Materials | 4 of 30 | BEARISH | 13% |
+| XLY | Consumer Cyclical | 5 of 43 | BEARISH | 12% |
+| XLV | Healthcare | 2 of 30 | BEARISH | 7% |
+| XLRE | Real Estate | 1 of 28 | BEARISH | 4% |
+| XLF | Financial Services | 0 of 30 | BEARISH | 0% |
+| XLC | Communication Services | 0 of 29 | BEARISH | 0% |
 
 ## Content Facts
 - Signal of day: Algo Baileymol (Chaos Monger) (Ranked #1 on rolling 30D leaderboard)

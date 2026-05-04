@@ -1,23 +1,23 @@
 {
-  "cash": 25337.428208715184,
+  "cash": 25326.43396033406,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 107.90226704809191,
+  "fees_paid": 151.87926057258406,
   "taxes_paid": 862.812299838834,
   "positions": {
     "XLP": {
-      "shares": 482.0212191582691,
+      "shares": 481.81222785742,
       "entry_price": 84.16999816894531,
       "entry_date": "2026-05-04",
-      "cost": 40571.725133944296,
+      "cost": 40554.1343365345,
       "using_margin": false,
       "consec_below_ma": 0
     },
     "XLU": {
-      "shares": 762.6264247913864,
+      "shares": 762.2957706993169,
       "entry_price": 46.54999923706055,
       "entry_date": "2026-05-04",
-      "cost": 35500.25949220125,
+      "cost": 35484.867544467685,
       "using_margin": false,
       "consec_below_ma": 0
     }
@@ -136,6 +136,54 @@
       "shares": 762.6264,
       "price": 46.55,
       "cost": 35500.26,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 482.0212,
+      "price": 84.17,
+      "proceeds": 40559.6,
+      "fees": 12.12,
+      "tax": 0.0,
+      "pnl": -12.12,
+      "pnl_pct": -0.03,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 762.6264,
+      "price": 46.55,
+      "proceeds": 35488.31,
+      "fees": 11.95,
+      "tax": 0.0,
+      "pnl": -11.95,
+      "pnl_pct": -0.03,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-04",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 481.8122,
+      "price": 84.17,
+      "cost": 40554.13,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 762.2958,
+      "price": 46.55,
+      "cost": 35484.87,
       "margin": false,
       "fees": 9.95
     }
@@ -1218,6 +1266,35 @@
           "entry_price": 46.55,
           "current_price": 46.55,
           "market_value": 35500.26,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-04",
+          "margin": false
+        }
+      },
+      "sector": "FINRA Dark Pool Signal",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-05-04",
+      "cash": 25326.43,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 101365.44,
+      "positions": {
+        "XLP": {
+          "shares": 481.8122,
+          "entry_price": 84.17,
+          "current_price": 84.17,
+          "market_value": 40554.13,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-04",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 762.2958,
+          "entry_price": 46.55,
+          "current_price": 46.55,
+          "market_value": 35484.87,
           "unrealized_pnl": 0.0,
           "entry_date": "2026-05-04",
           "margin": false

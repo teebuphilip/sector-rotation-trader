@@ -1,10 +1,19 @@
 {
-  "cash": 99979.83217892323,
+  "cash": 94970.89056997707,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 20.167821076780697,
+  "fees_paid": 30.117821076780697,
   "taxes_paid": 0.0,
-  "positions": {},
+  "positions": {
+    "XLP": {
+      "shares": 59.391608859397,
+      "entry_price": 84.16999816894531,
+      "entry_date": "2026-05-04",
+      "cost": 4998.991608946162,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-05-03",
@@ -29,6 +38,16 @@
       "pnl_pct": -0.2,
       "entry_date": "2026-05-03",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-04",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 59.3916,
+      "price": 84.17,
+      "cost": 4998.99,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -711,6 +730,26 @@
       "positions": {},
       "sector": "Rss News Volume Spike On Food Supply Chain Disruptions",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-04",
+      "cash": 94970.89,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99969.88,
+      "positions": {
+        "XLP": {
+          "shares": 59.3916,
+          "entry_price": 84.17,
+          "current_price": 84.17,
+          "market_value": 4998.99,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-04",
+          "margin": false
+        }
+      },
+      "sector": "Rss News Volume Spike On Food Supply Chain Disruptions",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-02-01",
@@ -720,10 +759,10 @@
       "latest_value": 10.0,
       "prior_avg": 3.7059,
       "signal_change": 1.6984,
-      "entry_date": "2026-05-03",
-      "signal_label": "HOLD",
+      "entry_date": "2026-05-04",
+      "signal_label": "RISK_ON",
       "name": "Rss News Volume Spike On Food Supply Chain Disruptions",
-      "last_signal": "HOLD",
+      "last_signal": "RISK_ON",
       "last_run": "2026-05-04"
     }
   }

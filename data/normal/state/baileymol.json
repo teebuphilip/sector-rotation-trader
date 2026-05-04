@@ -1,23 +1,23 @@
 {
-  "cash": 35533.88027454854,
+  "cash": 35519.34610322672,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 411.0709450380714,
+  "fees_paid": 454.67345900349926,
   "taxes_paid": 5402.084358667606,
   "positions": {
     "XLK": {
-      "shares": 219.64404365867176,
+      "shares": 219.55425449600898,
       "entry_price": 161.8699951171875,
       "entry_date": "2026-05-04",
-      "cost": 35553.78027454852,
+      "cost": 35539.24610322672,
       "using_margin": false,
       "consec_below_ma": 0
     },
     "XLE": {
-      "shares": 604.1424162514305,
+      "shares": 603.8954464689557,
       "entry_price": 58.849998474121094,
       "entry_date": "2026-05-04",
-      "cost": 35553.78027454852,
+      "cost": 35539.24610322672,
       "using_margin": false,
       "consec_below_ma": 0
     }
@@ -472,6 +472,54 @@
       "shares": 604.1424,
       "price": 58.85,
       "cost": 35553.78,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 219.644,
+      "price": 161.87,
+      "proceeds": 35541.99,
+      "fees": 11.79,
+      "tax": 0.0,
+      "pnl": -11.79,
+      "pnl_pct": -0.03,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLE",
+      "shares": 604.1424,
+      "price": 58.85,
+      "proceeds": 35541.87,
+      "fees": 11.91,
+      "tax": 0.0,
+      "pnl": -11.91,
+      "pnl_pct": -0.03,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-04",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 219.5543,
+      "price": 161.87,
+      "cost": 35539.25,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "BUY",
+      "ticker": "XLE",
+      "shares": 603.8954,
+      "price": 58.85,
+      "cost": 35539.25,
       "margin": false,
       "fees": 9.95
     }
@@ -2488,6 +2536,35 @@
           "entry_price": 58.85,
           "current_price": 58.85,
           "market_value": 35553.78,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-04",
+          "margin": false
+        }
+      },
+      "sector": "Algo Baileymol (Chaos Monger)",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-05-04",
+      "cash": 35519.35,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 106597.84,
+      "positions": {
+        "XLK": {
+          "shares": 219.5543,
+          "entry_price": 161.87,
+          "current_price": 161.87,
+          "market_value": 35539.25,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-04",
+          "margin": false
+        },
+        "XLE": {
+          "shares": 603.8954,
+          "entry_price": 58.85,
+          "current_price": 58.85,
+          "market_value": 35539.25,
           "unrealized_pnl": 0.0,
           "entry_date": "2026-05-04",
           "margin": false

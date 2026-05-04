@@ -1,10 +1,19 @@
 {
-  "cash": 99882.66177594836,
+  "cash": 94878.57868715095,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 60.47727434745862,
+  "fees_paid": 70.42727434745862,
   "taxes_paid": 1.6725601623846342,
-  "positions": {},
+  "positions": {
+    "XLK": {
+      "shares": 30.85274133221455,
+      "entry_price": 161.8699951171875,
+      "entry_date": "2026-05-04",
+      "cost": 4994.133088797418,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-02-10",
@@ -77,6 +86,16 @@
       "pnl_pct": -0.2,
       "entry_date": "2026-05-03",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-04",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 30.8527,
+      "price": 161.87,
+      "cost": 4994.13,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -799,19 +818,40 @@
       "positions": {},
       "sector": "Weekly Surge In Google Trends For Diy Electronics Repair Signals Bullish Xlk",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-04",
+      "cash": 94878.58,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99872.71,
+      "positions": {
+        "XLK": {
+          "shares": 30.8527,
+          "entry_price": 161.87,
+          "current_price": 161.87,
+          "market_value": 4994.13,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-04",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Surge In Google Trends For Diy Electronics Repair Signals Bullish Xlk",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-29",
   "last_run": "2026-05-04",
   "meta": {
     "weekly-surge-in-google-trends-for-diy-electronics-repair-sig": {
-      "latest_value": 13.0,
-      "prior_avg": 12.5357,
-      "signal_change": 0.037,
-      "signal_label": "RISK_OFF",
+      "latest_value": 18.0,
+      "prior_avg": 10.0357,
+      "signal_change": 0.7936,
+      "signal_label": "RISK_ON",
       "name": "Weekly Surge In Google Trends For Diy Electronics Repair Signals Bullish Xlk",
-      "last_signal": "RISK_OFF",
-      "last_run": "2026-05-04"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-04",
+      "entry_date": "2026-05-04"
     }
   }
 }
