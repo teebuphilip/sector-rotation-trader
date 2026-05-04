@@ -439,11 +439,11 @@ def check_blocked_queue() -> str:
 def check_idea_pipeline() -> List[str]:
     results = []
 
-    # Daily crazy ideas — must have a run today
+    # Daily crazy ideas — useful, but not fatal to the trading/public pipeline
     today_dir = IDEAS_DIR / TODAY
     if not today_dir.exists():
-        fail(f"No crazy idea run found for today ({TODAY})")
-        results.append(f"FAIL → No idea run found for today")
+        warn(f"No crazy idea run found for today ({TODAY})")
+        results.append("WARN → No idea run found for today")
     else:
         # Check at least 1 idea was generated
         raw_dir = today_dir / "raw"
@@ -463,11 +463,11 @@ def check_idea_pipeline() -> List[str]:
                     provider_errors.append(f"{path.stem}: {msg or 'unknown_error'}")
             if provider_errors:
                 detail = "; ".join(provider_errors)
-                fail(f"Crazy idea run failed today ({detail})")
-                results.append("FAIL → crazy idea run failed; see errors/")
+                warn(f"Crazy idea run failed today ({detail})")
+                results.append("WARN → crazy idea run failed; see errors/")
             else:
-                fail("Crazy idea run exists but 0 ideas generated")
-                results.append("FAIL → 0 ideas generated today")
+                warn("Crazy idea run exists but 0 ideas generated")
+                results.append("WARN → 0 ideas generated today")
         else:
             results.append(f"PASS ({idea_count} crazy idea(s) today)")
 

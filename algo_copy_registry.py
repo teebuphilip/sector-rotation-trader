@@ -134,7 +134,6 @@ def build_algo_copy_registry() -> dict[str, dict]:
                 record.setdefault("algo_id", algo_id)
                 record.setdefault("title", algo_id)
                 record.setdefault("public_summary", _public_summary(record))
-                record["source_path"] = str(LEGACY_COPY_PATH.relative_to(ROOT))
                 records[str(algo_id)] = record
 
     for category, md_path in _iter_markdown_paths():
@@ -143,7 +142,6 @@ def build_algo_copy_registry() -> dict[str, dict]:
             continue
         algo_id = str(parsed["algo_id"])
         record = dict(parsed)
-        record["source_path"] = str(md_path.relative_to(ROOT))
         records[f"{category}:{algo_id}"] = record
         records[algo_id] = record
 
