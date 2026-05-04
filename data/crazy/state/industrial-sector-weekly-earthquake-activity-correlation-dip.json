@@ -1,19 +1,10 @@
 {
-  "cash": 94905.11444260663,
+  "cash": 99890.43570885551,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 110.74356266604693,
+  "fees_paid": 120.9520039227802,
   "taxes_paid": 0.0,
-  "positions": {
-    "XLI": {
-      "shares": 28.882571193292467,
-      "entry_price": 172.9600067138672,
-      "entry_date": "2026-05-03",
-      "cost": 4995.529707505612,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-20",
@@ -144,6 +135,20 @@
       "cost": 4995.53,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLI",
+      "shares": 28.8826,
+      "price": 172.96,
+      "proceeds": 4985.32,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -10.21,
+      "pnl_pct": -0.2,
+      "entry_date": "2026-05-03",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1026,20 +1031,30 @@
       },
       "sector": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-04",
+      "cash": 99890.44,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99890.44,
+      "positions": {},
+      "sector": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-19",
-  "last_run": "2026-05-03",
+  "last_run": "2026-05-04",
   "meta": {
     "industrial-sector-weekly-earthquake-activity-correlation-dip": {
-      "signal_label": "RISK_ON",
-      "latest_value": 108.0,
-      "prior_avg": 358.9643,
-      "signal_change": -0.6991,
+      "signal_label": "HOLD",
+      "latest_value": 101.0,
+      "prior_avg": 356.7143,
+      "signal_change": -0.7169,
       "entry_date": "2026-05-03",
       "name": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-03"
+      "last_signal": "HOLD",
+      "last_run": "2026-05-04"
     }
   }
 }

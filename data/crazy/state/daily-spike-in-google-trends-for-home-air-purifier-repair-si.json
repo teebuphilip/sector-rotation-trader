@@ -1,19 +1,10 @@
 {
-  "cash": 94990.05,
+  "cash": 99979.8373556433,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 9.95,
+  "fees_paid": 20.162644356695004,
   "taxes_paid": 0.0,
-  "positions": {
-    "XLY": {
-      "shares": 42.147855650025654,
-      "entry_price": 118.62999725341797,
-      "entry_date": "2026-05-03",
-      "cost": 5000.0,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-05-03",
@@ -24,6 +15,20 @@
       "cost": 5000.0,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-04",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 42.1479,
+      "price": 118.63,
+      "proceeds": 4989.79,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -10.21,
+      "pnl_pct": -0.2,
+      "entry_date": "2026-05-03",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -706,19 +711,29 @@
       },
       "sector": "Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-04",
+      "cash": 99979.84,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99979.84,
+      "positions": {},
+      "sector": "Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-30",
-  "last_run": "2026-05-03",
+  "last_run": "2026-05-04",
   "meta": {
     "daily-spike-in-google-trends-for-home-air-purifier-repair-si": {
-      "signal_label": "RISK_ON",
+      "signal_label": "HOLD",
       "name": "Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-03",
-      "latest_value": 38.0,
-      "prior_avg": 27.0,
-      "signal_change": 0.4074,
+      "last_signal": "HOLD",
+      "last_run": "2026-05-04",
+      "latest_value": 35.0,
+      "prior_avg": 28.2857,
+      "signal_change": 0.2374,
       "entry_date": "2026-05-03"
     }
   }
