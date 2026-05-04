@@ -1,0 +1,89 @@
+name: Nightly Fallback Guard
+
+on:
+  schedule:
+    # 11:00 PM ET (03:00 UTC) Tue-Sat. Checks the prior evening's ET run health.
+    - cron: "0 3 * * 2-6"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  fallback-guard:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Evaluate nightly and preview health for current ET date
+        id: check
+        run: |
+          ET_DATE=$(TZ=America/New_York date +%F)
+          echo "et_date=$ET_DATE" >> "$GITHUB_OUTPUT"
+
+          DAILY_JSON=$(gh run list \
+            --repo "$GITHUB_REPOSITORY" \
+            --workflow "Daily Sector Rotation Run" \
+            --limit 12 \
+            --json databaseId,status,conclusion,createdAt)
+
+          PREVIEW_JSON=$(gh run list \
+            --repo "$GITHUB_REPOSITORY" \
+            --workflow "Preview Site Publish" \
+            --limit 12 \
+            --json databaseId,status,conclusion,createdAt)
+
+          export ET_DATE DAILY_JSON PREVIEW_JSON
+          python - <<'PY'
+import json
+import os
+from datetime import datetime
+from zoneinfo import ZoneInfo
+
+et_date = os.environ["ET_DATE"]
+et = ZoneInfo("America/New_York")
+
+def classify(raw: str):
+    rows = json.loads(raw)
+    today = []
+    for row in rows:
+        created = row.get("createdAt")
+        if not created:
+            continue
+        dt = datetime.fromisoformat(created.replace("Z", "+00:00")).astimezone(et)
+        if dt.date().isoformat() == et_date:
+            today.append(row)
+    healthy = any(r.get("status") in {"queued", "in_progress"} or r.get("conclusion") == "success" for r in today)
+    return healthy, today
+
+daily_ok, daily_rows = classify(os.environ["DAILY_JSON"])
+preview_ok, preview_rows = classify(os.environ["PREVIEW_JSON"])
+
+with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
+    fh.write(f"daily_ok={'true' if daily_ok else 'false'}\n")
+    fh.write(f"preview_ok={'true' if preview_ok else 'false'}\n")
+    fh.write(f"daily_seen={len(daily_rows)}\n")
+    fh.write(f"preview_seen={len(preview_rows)}\n")
+PY
+
+      - name: Trigger fallback nightly run if missing or failed
+        id: dispatch_daily
+        if: steps.check.outputs.daily_ok != 'true'
+        run: |
+          gh workflow run "Daily Sector Rotation Run" --repo "$GITHUB_REPOSITORY"
+          sleep 5
+          RUN_ID=$(gh run list \
+            --repo "$GITHUB_REPOSITORY" \
+            --workflow "Daily Sector Rotation Run" \
+            --limit 1 \
+            --json databaseId | jq -r '.[0].databaseId')
+          echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
+          gh run watch "$RUN_ID" --repo "$GITHUB_REPOSITORY"
+
+      - name: Trigger fallback preview publish if missing or failed
+        if: steps.check.outputs.preview_ok != 'true'
+        run: |
+          gh workflow run "Preview Site Publish" --repo "$GITHUB_REPOSITORY"
+
