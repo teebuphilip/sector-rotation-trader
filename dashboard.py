@@ -247,14 +247,16 @@ def generate_dashboard(state: dict, current_px: dict, sector: str,
     dd_js     = json.dumps(dd_series)
 
     pnl_color  = "#00ff88" if net_pnl >= 0 else "#ff4d6d"
-    sector_str = strategy_value or sector or "—"
+    raw_sector_str = strategy_value or sector or "—"
     label_str = strategy_label or "Leading Sector"
     title_str = title or "StockArithm"
     lab_start = state.get("sim_start") or (snap_dates[0] if snap_dates else "unknown")
     is_algo_page = bool(strategy_value)
     algo_meta = _first_algo_meta(state)
-    algo_desc = strategy_description or _algo_description(sector_str, algo_meta)
-    signal_brief_html = _signal_brief_html(sector_str, algo_meta) if is_algo_page else ""
+    algo_copy = lookup_algo_copy(algo_id=str(algo_meta.get("algo_id", "") or ""), name=raw_sector_str) if is_algo_page else None
+    sector_str = str((algo_copy or {}).get("title") or raw_sector_str)
+    algo_desc = strategy_description or _algo_description(raw_sector_str, algo_meta)
+    signal_brief_html = _signal_brief_html(raw_sector_str, algo_meta) if is_algo_page else ""
     if is_algo_page:
         header_block = ""
         hero_style = "font-family:var(--font-body);font-size:54px;font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--green);"
