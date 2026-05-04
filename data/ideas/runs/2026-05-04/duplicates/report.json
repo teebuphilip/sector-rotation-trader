@@ -1,0 +1,82 @@
+{
+  "date": "2026-05-04",
+  "input_count": 24,
+  "kept_count": 23,
+  "duplicate_count": 1,
+  "kept_by_source": {
+    "chatgpt": 14,
+    "claude": 9
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-surge-in-google-trends-for-urgent-hvac-repair-signals-",
+      "title": "Daily Surge In Google Trends For Urgent Hvac Repair Signals Consumer Stress Lifting Industrial Sector",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.517,
+        "matched_title": "daily spike in google trends for emergency vehicle repair signals consumer stress lifting industrial sector",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-vehicle-repair-si",
+        "matched_origin": "history:2026-05-01",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-surge-in-google-trends-for-urgent-hvac-repair-signals-",
+        "title": "Daily Surge In Google Trends For Urgent Hvac Repair Signals Consumer Stress Lifting Industrial Sector",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Sharp daily increases in urgent HVAC repair searches indicate consumer stress leading to increased industrial repair activity. HVAC repair demand drives industrial sector revenues in maintenance and construction-related industries.",
+        "data_sources": [
+          "Google Trends daily search interest"
+        ],
+        "signal_logic": "Enter long when daily search interest surges 35% above 10-day average",
+        "entry_exit": "Entry: Enter long when daily search interest surges 35% above 10-day average Exit: Exit after 7 days or when interest falls below average",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "HVAC repair searches spike with sudden weather changes and consumer budget stress.",
+        "schema": {
+          "idea": "Daily surge in Google Trends for 'urgent HVAC repair' signals consumer stress lifting industrial sector",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Sharp daily increases in urgent HVAC repair searches indicate consumer stress leading to increased industrial repair activity.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLI",
+            "rationale": "HVAC repair demand drives industrial sector revenues in maintenance and construction-related industries."
+          },
+          "trade_logic": {
+            "entry": "Enter long when daily search interest surges 35% above 10-day average",
+            "exit": "Exit after 7 days or when interest falls below average",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "HVAC repair searches spike with sudden weather changes and consumer budget stress.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
