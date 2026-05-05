@@ -1887,17 +1887,37 @@
       },
       "sector": "Algo Biscotti (Unconditional Loyalty)",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-05",
+      "cash": -0.0,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 97267.93,
+      "positions": {
+        "XLV": {
+          "shares": 669.4283,
+          "entry_price": 145.99,
+          "current_price": 145.3,
+          "market_value": 97267.93,
+          "unrealized_pnl": -461.91,
+          "entry_date": "2026-04-30",
+          "margin": false
+        }
+      },
+      "sector": "Algo Biscotti (Unconditional Loyalty)",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-16",
-  "last_run": "2026-05-04",
+  "last_run": "2026-05-05",
   "meta": {
     "biscotti": {
-      "target_sector": "XLV",
-      "signal_label": "BUY:XLV",
-      "signal_key": "XLV",
+      "target_sector": "XLE",
+      "signal_label": "BUY:XLE",
+      "signal_key": "XLE",
       "name": "Algo Biscotti (Unconditional Loyalty)",
-      "last_run": "2026-05-04",
+      "last_run": "2026-05-05",
       "last_signal": "XLV"
     }
   }

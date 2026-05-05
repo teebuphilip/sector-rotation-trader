@@ -1,10 +1,19 @@
 {
-  "cash": 99988.60148027039,
+  "cash": 94979.22140625687,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 40.320787658229136,
+  "fees_paid": 50.27078765822914,
   "taxes_paid": 10.988864732652601,
-  "positions": {},
+  "positions": {
+    "XLK": {
+      "shares": 30.184326067917134,
+      "entry_price": 165.6300048828125,
+      "entry_date": "2026-05-05",
+      "cost": 4999.4300740135195,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-28",
@@ -53,6 +62,16 @@
       "pnl_pct": -0.2,
       "entry_date": "2026-05-03",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-05",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 30.1843,
+      "price": 165.63,
+      "cost": 4999.43,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -845,19 +864,40 @@
       "positions": {},
       "sector": "Weekly Surge In Google Trends Searches For Diy Electronics Repair Signals Bullish Xlk",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-05",
+      "cash": 94979.22,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99978.65,
+      "positions": {
+        "XLK": {
+          "shares": 30.1843,
+          "entry_price": 165.63,
+          "current_price": 165.63,
+          "market_value": 4999.43,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-05",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Surge In Google Trends Searches For Diy Electronics Repair Signals Bullish Xlk",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-23",
-  "last_run": "2026-05-04",
+  "last_run": "2026-05-05",
   "meta": {
     "weekly-surge-in-google-trends-searches-for-diy-electronics-r": {
-      "signal_label": "HOLD",
+      "signal_label": "RISK_ON",
       "name": "Weekly Surge In Google Trends Searches For Diy Electronics Repair Signals Bullish Xlk",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-04",
-      "latest_value": 9.0,
-      "prior_avg": 9.1071,
-      "signal_change": -0.0118
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-05",
+      "latest_value": 14.0,
+      "prior_avg": 9.5714,
+      "signal_change": 0.4627,
+      "entry_date": "2026-05-05"
     }
   }
 }

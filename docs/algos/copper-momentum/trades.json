@@ -1466,6 +1466,35 @@
       },
       "sector": "Copper Momentum",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-05",
+      "cash": 19857.15,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99411.51,
+      "positions": {
+        "XLB": {
+          "shares": 870.9516,
+          "entry_price": 51.35,
+          "current_price": 51.53,
+          "market_value": 44880.13,
+          "unrealized_pnl": 156.77,
+          "entry_date": "2026-05-01",
+          "margin": false
+        },
+        "XLI": {
+          "shares": 201.1149,
+          "entry_price": 172.96,
+          "current_price": 172.41,
+          "market_value": 34674.22,
+          "unrealized_pnl": -110.61,
+          "entry_date": "2026-05-01",
+          "margin": false
+        }
+      },
+      "sector": "Copper Momentum",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16"

@@ -139,6 +139,16 @@
       "cost": 10000.0,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-05",
+      "action": "BUY",
+      "ticker": "QCOM",
+      "shares": 53.6049,
+      "price": 186.55,
+      "cost": 10000.0,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -2225,6 +2235,44 @@
       },
       "sector": "XLU",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-05",
+      "cash": 70025.65,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99847.94,
+      "positions": {
+        "NEE": {
+          "shares": 103.8961,
+          "entry_price": 96.25,
+          "current_price": 96.28,
+          "market_value": 10003.12,
+          "unrealized_pnl": 3.12,
+          "entry_date": "2026-04-23",
+          "margin": false
+        },
+        "XEL": {
+          "shares": 120.5546,
+          "entry_price": 82.95,
+          "current_price": 81.45,
+          "market_value": 9819.17,
+          "unrealized_pnl": -180.83,
+          "entry_date": "2026-04-30",
+          "margin": false
+        },
+        "QCOM": {
+          "shares": 53.6049,
+          "entry_price": 186.55,
+          "current_price": 186.55,
+          "market_value": 10000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-05",
+          "margin": false
+        }
+      },
+      "sector": "XLK",
+      "num_positions": 3
     }
   ],
   "sim_start": "2026-01-07"
