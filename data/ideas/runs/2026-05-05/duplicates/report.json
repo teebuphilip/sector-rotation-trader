@@ -1,0 +1,82 @@
+{
+  "date": "2026-05-05",
+  "input_count": 25,
+  "kept_count": 24,
+  "duplicate_count": 1,
+  "kept_by_source": {
+    "chatgpt": 14,
+    "claude": 10
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-usgs-earthquake-activity-near-major-ports-sig",
+      "title": "Daily Spike In Usgs Earthquake Activity Near Major Ports Signals Bearish Industrials",
+      "family": "local_economy_weirdness",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "daily spike in usgs earthquake activity near major ports signals short-term freight logistics disruption and bearish xli",
+        "matched_idea_id": "daily-spike-in-usgs-earthquake-activity-near-major-ports-sig",
+        "matched_origin": "history:2026-04-30",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-usgs-earthquake-activity-near-major-ports-sig",
+        "title": "Daily Spike In Usgs Earthquake Activity Near Major Ports Signals Bearish Industrials",
+        "family": "local_economy_weirdness",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Sudden increase in earthquake activity near ports disrupts logistics and manufacturing supply chains. Port disruptions reduce industrial sector output and increase costs temporarily.",
+        "data_sources": [
+          "USGS daily earthquake activity near major US ports"
+        ],
+        "signal_logic": "Enter short XLI when daily earthquake count near major ports exceeds 3 times the 14-day average",
+        "entry_exit": "Entry: Enter short XLI when daily earthquake count near major ports exceeds 3 times the 14-day average Exit: Exit after 5 trading days or when earthquake counts normalize",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use USGS daily earthquake activity near major US ports via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Earthquake activity near ports can cluster episodically and cause measurable supply chain disruptions.",
+        "schema": {
+          "idea": "Daily Spike In USGS Earthquake Activity Near Major Ports Signals Bearish Industrials",
+          "family": "local_economy_weirdness",
+          "data": {
+            "source": "USGS daily earthquake activity near major US ports",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Sudden increase in earthquake activity near ports disrupts logistics and manufacturing supply chains.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLI",
+            "rationale": "Port disruptions reduce industrial sector output and increase costs temporarily."
+          },
+          "trade_logic": {
+            "entry": "Enter short XLI when daily earthquake count near major ports exceeds 3 times the 14-day average",
+            "exit": "Exit after 5 trading days or when earthquake counts normalize",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Earthquake activity near ports can cluster episodically and cause measurable supply chain disruptions.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
