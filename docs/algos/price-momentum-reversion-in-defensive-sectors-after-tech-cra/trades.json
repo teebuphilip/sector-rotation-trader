@@ -47,6 +47,16 @@
       "pnl_pct": 0.84,
       "entry_date": "2026-04-16",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-06",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 29.4259,
+      "price": 170.03,
+      "cost": 5003.29,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -779,6 +789,26 @@
       "positions": {},
       "sector": "Price Momentum Reversion In Defensive Sectors After Tech Crash",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-06",
+      "cash": 95052.54,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100055.83,
+      "positions": {
+        "XLK": {
+          "shares": 29.4259,
+          "entry_price": 170.03,
+          "current_price": 170.03,
+          "market_value": 5003.29,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-06",
+          "margin": false
+        }
+      },
+      "sector": "Price Momentum Reversion In Defensive Sectors After Tech Crash",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-30"

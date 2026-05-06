@@ -1,19 +1,10 @@
 {
-  "cash": 94994.00270723103,
+  "cash": 100035.79877186942,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 50.278777229170274,
-  "taxes_paid": 20.128853169835985,
-  "positions": {
-    "XLY": {
-      "shares": 42.3495218950346,
-      "entry_price": 118.06999969482422,
-      "entry_date": "2026-05-05",
-      "cost": 5000.2080372226865,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "fees_paid": 60.4953039510325,
+  "taxes_paid": 44.55356768381911,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-29",
@@ -72,6 +63,20 @@
       "cost": 5000.21,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-06",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 42.3495,
+      "price": 119.87,
+      "proceeds": 5066.22,
+      "fees": 10.22,
+      "tax": 24.42,
+      "pnl": 41.59,
+      "pnl_pct": 0.83,
+      "entry_date": "2026-05-05",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -844,19 +849,29 @@
       },
       "sector": "Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-06",
+      "cash": 100035.8,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100035.8,
+      "positions": {},
+      "sector": "Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-27",
-  "last_run": "2026-05-05",
+  "last_run": "2026-05-06",
   "meta": {
     "weekly-surge-in-google-trends-for-diy-plumbing-repair-signal": {
-      "signal_label": "RISK_ON",
+      "signal_label": "HOLD",
       "name": "Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-05",
-      "latest_value": 6.0,
-      "prior_avg": 3.0714,
-      "signal_change": 0.9535,
+      "last_signal": "HOLD",
+      "last_run": "2026-05-06",
+      "latest_value": 8.0,
+      "prior_avg": 4.4286,
+      "signal_change": 0.8065,
       "entry_date": "2026-05-05"
     }
   }
