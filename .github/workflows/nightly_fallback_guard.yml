@@ -1,9 +1,6 @@
 name: Nightly Fallback Guard
 
 on:
-  schedule:
-    # 11:00 PM ET (03:00 UTC) Tue-Sat. Checks the prior evening's ET run health.
-    - cron: "0 3 * * 2-6"
   workflow_dispatch:
 
 permissions:
@@ -86,4 +83,3 @@ PY
         if: steps.check.outputs.preview_ok != 'true'
         run: |
           gh workflow run "Preview Site Publish" --repo "$GITHUB_REPOSITORY"
-
