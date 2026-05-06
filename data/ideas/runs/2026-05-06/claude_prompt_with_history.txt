@@ -1,0 +1,162 @@
+You are generating HIGH-ACTION crazy trading signal ideas.
+
+Return ONLY valid JSON (no markdown). The JSON must be a list with exactly 10 objects.
+
+Goal:
+Generate weird but frequently observable signals that can plausibly fire within 30 days. These are "shots on goal" for a paper-trading lab, not rare museum pieces.
+
+Hard constraints:
+- Use daily or weekly data only.
+- Must be historically backfillable for at least 12 months.
+- Must use an existing adapter/data family whenever possible.
+- Must assign exactly ONE family from: consumer_stress, travel_mobility, labor_jobs, freight_logistics, attention_sentiment, political_insider_filing, local_economy_weirdness, macro_input_pressure.
+- Must map to exactly ONE sector ETF.
+- Must have simple deterministic entry/exit logic.
+- Expected fire rate must be daily, weekly, or monthly. Never rare.
+- Trigger sensitivity must be high or medium. Never low.
+- Entry threshold should be loose enough to fire several times per year.
+- Prefer signals that are likely to produce a position within 30 days.
+- Avoid fragile one-off event data.
+- Avoid ideas already used: TSA throughput, Craigslist listings, 311 calls, LinkedIn workforce report, Congress trading, Reddit gaming thread spike, Port of Los Angeles TEU, EIA electricity demand, BTS airline traffic.
+- Do not output near-duplicates of the same idea with cosmetic wording changes.
+- If two ideas would use the same family, same primary data source, same sector ETF, and nearly the same trigger logic, keep only the strongest one and replace the others with genuinely different ideas.
+
+Existing adapter/data families to prefer:
+- price_only: Yahoo Finance ETF/stock price, returns, volume, momentum, drawdown, volatility.
+- fred_series: FRED macro series with an API key.
+- google_trends: Google Trends weekly search interest.
+- weather_series: Open-Meteo daily weather.
+- earthquake_activity: USGS earthquake activity.
+- openchargemap: EV charger counts.
+- tsa_table: TSA throughput.
+- html_table: stable public tables.
+- rss_count: RSS/news feed counts.
+- eia_electricity: EIA electricity demand.
+- port_container_volume: Port container volume.
+- bts_airline_load_factor: BTS airline traffic/load-factor proxy.
+
+Required keys in every object:
+{
+  "idea": "",
+  "family": "consumer_stress|travel_mobility|labor_jobs|freight_logistics|attention_sentiment|political_insider_filing|local_economy_weirdness|macro_input_pressure",
+  "data": {
+    "source": "",
+    "type": "api|scrape",
+    "frequency": "daily|weekly",
+    "stable": true
+  },
+  "behavior": "",
+  "market_impact": {
+    "direction": "bullish|bearish",
+    "sector": "XLK|XLY|XLF|XLI|XLP|XLV|XLE|XLB|XLU|XLRE|XLC",
+    "rationale": ""
+  },
+  "trade_logic": {
+    "entry": "",
+    "exit": "",
+    "expected_frequency": "high|medium"
+  },
+  "expected_fire_rate": "daily|weekly|monthly",
+  "historical_backfill": true,
+  "minimum_history_months": 12,
+  "adapter_status": "existing",
+  "trigger_sensitivity": "high|medium",
+  "reason_it_will_fire_in_30_days": ""
+}
+
+Good example format, do not reuse:
+{
+  "idea": "Semiconductor tantrum bounce",
+  "data": {
+    "source": "Yahoo Finance daily prices for SOXX and SPY through price_only adapter",
+    "type": "api",
+    "frequency": "daily",
+    "stable": true
+  },
+  "behavior": "Semiconductors are selling off faster than the broad market, which often creates short-term mean reversion pressure in technology leadership.",
+  "market_impact": {
+    "direction": "bullish",
+    "sector": "XLK",
+    "rationale": "Semiconductors are a major technology risk appetite proxy."
+  },
+  "trade_logic": {
+    "entry": "If SOXX underperforms SPY by more than 2% over 5 trading days and closes above its prior day close",
+    "exit": "After 5 trading days or once SOXX outperforms SPY over 3 trading days",
+    "expected_frequency": "medium"
+  },
+  "expected_fire_rate": "monthly",
+  "historical_backfill": true,
+  "minimum_history_months": 24,
+  "adapter_status": "existing",
+  "trigger_sensitivity": "medium",
+  "reason_it_will_fire_in_30_days": "Daily ETF relative moves frequently cross 2% over rolling 5-day windows, especially in volatile sectors."
+}
+
+Output must be strict JSON and parseable.
+
+ANTI-DUPLICATE CONTEXT
+----------------------
+The lab already has these existing or recently generated ideas/titles.
+Do not output the same idea again with cosmetic wording changes.
+If your idea is materially similar to any item below, replace it with a different one.
+
+- Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc
+- Bank Stress Index Volatility Fear Crush Reversal
+- Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk
+- Google Trends Surge In Luxury Good Searches
+- News Sentiment Rotation Fade Trade
+- Price Momentum Reversion In Defensive Sectors After Tech Crash
+- Reddit Emoji Sentiment Spike
+- Reddit Gaming Thread Spike
+- Reddit Mentions Volatility Spike
+- Reddit Sentiment Spike
+- Reddit Sentiment Spike Trend
+- Reddit Sentiment Volatility Spike
+- Reddit Subreddit Mention Spike
+- Reddit Subreddit Sentiment Spike
+- Reddit Subreddit Surge Momentum
+- Reddit Volatility Spike
+- Rss Roar
+- Social Media Sentiment Spike
+- Twitter Sentiment Spike
+- VIX Fear Rotation
+- VIX Term Structure
+- Xlb Weekly Rss News Count Spike On Commodity Shortage
+- Xlc Weekly Google Trends Surge In 5g Rollout
+- Xlv Google Trends Flu Search Spike
+- Consumer Discretionary Google Trends Surge For Sale Keywords
+- Consumer Sentiment
+- Credit Card Delinquency
+- Daily Jump In Google Trends For Solar Panel Repair Searches Signals Green Energy Sector Rebound
+- Daily Jump In Google Trends Searches For Home Water Heater Repair Signals Consumer Stress Lifting Xly
+- Daily Spike In Google Trends For Emergency Plumbing Repair Signals Consumer Stress Rebound Benefiting Discretionary Sector
+- Daily Spike In Google Trends For Emergency Vehicle Repair Signals Consumer Stress Lifting Industrial Sector
+- Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector
+- Daily Spike In Google Trends Searches For Emergency Car Battery Replacement Signals Consumer Stress Impacting Discretionary
+- Daily Surge In Google Trends Searches For Home Heating System Failure Signals Consumer Stress Impacting Utilities
+- Google Trends Surge In Used Car Price Searches
+- Grocery Store Foot Traffic Collapse Signal
+- Healthcare Cost Google Trends Acceleration Index
+- Healthcare Cost Shock Google Search Spike
+- Healthcare Cost Shock Google Trends Spike
+- Mortgage Rate Housing Proxy
+- Mortgage Refinance Wave Google Trends Surge
+- Retail Roulette
+- Retail Rush Ahead Of Holidays
+- Retail Sales Momentum
+- Small Business Formation
+- Weekly Google Trends Spike For Diy Car Repair Signals Bullish Xly
+- Weekly Google Trends Spike For Diy Electronics Repair Signals Bullish Tech Sector
+- Weekly Google Trends Surge For Diy Roof Repair Searches Signals Consumer Stress Impacting Xli
+- Weekly Google Trends Surge For Home Pest Control Searches Signals Consumer Stress Boosting Staples
+- Weekly Google Trends Surge In Diy Electronics Repair Signals Tech Consumer Stress Lift
+- Weekly Google Trends Surge In Energy Bill Shock Signals Consumer Stress Impacting Utilities
+- Weekly Google Trends Surge In Home Appliance Repair Searches Signals Bullish Consumer Discretionary
+- Weekly Google Trends Surge In Home Energy Bill Shock Signals Bullish Utilities
+- Weekly Google Trends Surge In Searches For Home Solar Installation Financing Signals Xle Bullish
+- Weekly Rise In Google Trends Interest For Food Delivery Delay Signals Bearish Xlp
+- Weekly Surge In Google Trends For Diy Electronics Repair Signals Bullish Xlk
+- Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound
+- Weekly Surge In Google Trends For Diy Solar Panel Repair Signals Green Energy Sector Rebound
+- Weekly Surge In Google Trends Searches For Diy Electronics Repair Signals Bullish Xlk
+- Weekly Surge In Google Trends Searches For Diy Home Repair Signals Consumer Stress Lifting Xly

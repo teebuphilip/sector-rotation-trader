@@ -1,0 +1,292 @@
+{
+  "date": "2026-05-06",
+  "input_count": 25,
+  "kept_count": 21,
+  "duplicate_count": 4,
+  "kept_by_source": {
+    "chatgpt": 11,
+    "claude": 10
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-google-trends-for-urgent-car-tire-repair-sign",
+      "title": "Daily Spike In Google Trends For Urgent Car Tire Repair Signals Consumer Stress Lifting Industrial Demand",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.5,
+        "matched_title": "daily spike in google trends for emergency vehicle repair signals consumer stress lifting industrial sector",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-vehicle-repair-si",
+        "matched_origin": "history:2026-05-01",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-google-trends-for-urgent-car-tire-repair-sign",
+        "title": "Daily Spike In Google Trends For Urgent Car Tire Repair Signals Consumer Stress Lifting Industrial Demand",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Sudden increases in urgent car tire repair searches often indicate rising vehicle maintenance demand. Industrial sector benefits as auto repair demand rises with consumer stress.",
+        "data_sources": [
+          "Google Trends daily search interest"
+        ],
+        "signal_logic": "Enter long XLI if daily search interest for 'urgent car tire repair' rises 20% vs prior day",
+        "entry_exit": "Entry: Enter long XLI if daily search interest for 'urgent car tire repair' rises 20% vs prior day Exit: Exit after 5 trading days or if interest drops below 10% gain vs baseline",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 18,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Car maintenance searches regularly spike daily with weather and seasonal stress.",
+        "schema": {
+          "idea": "Daily spike in Google Trends for 'urgent car tire repair' signals consumer stress lifting industrial demand",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Sudden increases in urgent car tire repair searches often indicate rising vehicle maintenance demand.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLI",
+            "rationale": "Industrial sector benefits as auto repair demand rises with consumer stress."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLI if daily search interest for 'urgent car tire repair' rises 20% vs prior day",
+            "exit": "Exit after 5 trading days or if interest drops below 10% gain vs baseline",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 18,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Car maintenance searches regularly spike daily with weather and seasonal stress.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-jump-in-google-trends-for-urgent-plumbing-repair-signa",
+      "title": "Daily Jump In Google Trends For Urgent Plumbing Repair Signals Consumer Stress Lifting Industrial Sector",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.517,
+        "matched_title": "daily spike in google trends for emergency vehicle repair signals consumer stress lifting industrial sector",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-vehicle-repair-si",
+        "matched_origin": "history:2026-05-01",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-jump-in-google-trends-for-urgent-plumbing-repair-signa",
+        "title": "Daily Jump In Google Trends For Urgent Plumbing Repair Signals Consumer Stress Lifting Industrial Sector",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Spike in urgent plumbing repair searches signals immediate consumer stress and increased industrial repair demand. Industrial sector benefits from elevated home repair and maintenance demand.",
+        "data_sources": [
+          "Google Trends daily search interest"
+        ],
+        "signal_logic": "Enter long XLI if daily 'urgent plumbing repair' search interest rises 25% vs prior day",
+        "entry_exit": "Entry: Enter long XLI if daily 'urgent plumbing repair' search interest rises 25% vs prior day Exit: Exit after 5 trading days or if interest falls below 15% from peak",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 18,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Plumbing repair searches spike frequently due to weather and consumer stress.",
+        "schema": {
+          "idea": "Daily jump in Google Trends for 'urgent plumbing repair' signals consumer stress lifting industrial sector",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Spike in urgent plumbing repair searches signals immediate consumer stress and increased industrial repair demand.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLI",
+            "rationale": "Industrial sector benefits from elevated home repair and maintenance demand."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLI if daily 'urgent plumbing repair' search interest rises 25% vs prior day",
+            "exit": "Exit after 5 trading days or if interest falls below 15% from peak",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 18,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Plumbing repair searches spike frequently due to weather and consumer stress.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-jump-in-google-trends-for-urgent-hvac-repair-signals-c",
+      "title": "Daily Jump In Google Trends For Urgent Hvac Repair Signals Consumer Stress Lifting Discretionary Sector",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.536,
+        "matched_title": "daily spike in google trends for emergency dental repair signals consumer stress lifting discretionary demand",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-dental-repair-sig",
+        "matched_origin": "current_run",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-jump-in-google-trends-for-urgent-hvac-repair-signals-c",
+        "title": "Daily Jump In Google Trends For Urgent Hvac Repair Signals Consumer Stress Lifting Discretionary Sector",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Spikes in urgent HVAC repair searches signal rising consumer stress and increased discretionary spending. Consumer discretionary sector benefits from urgent home repair demand.",
+        "data_sources": [
+          "Google Trends daily search interest"
+        ],
+        "signal_logic": "Enter long XLY if daily 'urgent HVAC repair' search interest rises 25% vs prior day",
+        "entry_exit": "Entry: Enter long XLY if daily 'urgent HVAC repair' search interest rises 25% vs prior day Exit: Exit after 6 trading days or if interest declines 15% from peak",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 18,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "HVAC repair interest is highly sensitive to weather and consumer stress, causing daily spikes.",
+        "schema": {
+          "idea": "Daily jump in Google Trends for 'urgent HVAC repair' signals consumer stress lifting discretionary sector",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Spikes in urgent HVAC repair searches signal rising consumer stress and increased discretionary spending.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "Consumer discretionary sector benefits from urgent home repair demand."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLY if daily 'urgent HVAC repair' search interest rises 25% vs prior day",
+            "exit": "Exit after 6 trading days or if interest declines 15% from peak",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 18,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "HVAC repair interest is highly sensitive to weather and consumer stress, causing daily spikes.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-surge-in-google-trends-for-truck-driver-shortage-sign",
+      "title": "Weekly Surge In Google Trends For Truck Driver Shortage Signals Freight Logistics Stress",
+      "family": "freight_logistics",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "weekly surge in google trends for truck driver shortage signals bearish xli",
+        "matched_idea_id": "weekly-surge-in-google-trends-for-truck-driver-shortage-sign",
+        "matched_origin": "history:2026-04-30",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-surge-in-google-trends-for-truck-driver-shortage-sign",
+        "title": "Weekly Surge In Google Trends For Truck Driver Shortage Signals Freight Logistics Stress",
+        "family": "freight_logistics",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising searches for truck driver shortages often precede elevated freight costs and supply chain delays. Logistics disruptions pressure industrial sector earnings and margins.",
+        "data_sources": [
+          "Google Trends weekly search interest"
+        ],
+        "signal_logic": "Enter short XLI if weekly Google Trends for 'truck driver shortage' rises 30% WoW",
+        "entry_exit": "Entry: Enter short XLI if weekly Google Trends for 'truck driver shortage' rises 30% WoW Exit: Exit after 3 weeks or if trend drops below 10% WoW gain",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly search interest via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Truck driver shortage is a frequent news and search theme, with weekly volatility in search interest.",
+        "schema": {
+          "idea": "Weekly surge in Google Trends for 'truck driver shortage' signals freight logistics stress",
+          "family": "freight_logistics",
+          "data": {
+            "source": "Google Trends weekly search interest",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Rising searches for truck driver shortages often precede elevated freight costs and supply chain delays.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLI",
+            "rationale": "Logistics disruptions pressure industrial sector earnings and margins."
+          },
+          "trade_logic": {
+            "entry": "Enter short XLI if weekly Google Trends for 'truck driver shortage' rises 30% WoW",
+            "exit": "Exit after 3 weeks or if trend drops below 10% WoW gain",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Truck driver shortage is a frequent news and search theme, with weekly volatility in search interest.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
