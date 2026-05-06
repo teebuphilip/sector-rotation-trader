@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-05-06/publish/chatgpt_daily-spike-in-google-trends-searches-for-airline-flight-del.md",
+  "target_file": "data/ideas/runs/2026-05-06/build/chatgpt_daily-spike-in-google-trends-searches-for-airline-flight-del.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, deterministic, uses a valid existing adapter matching the data source.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "tsa_table": 1,
+        "google_trends": 4
+      },
+      "top_score": 4,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 915,
+    "output_tokens": 78
+  },
+  "cost_usd": 0.0030675,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses a valid existing adapter matching the data source.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

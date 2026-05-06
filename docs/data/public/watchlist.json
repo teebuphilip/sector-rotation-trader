@@ -1,6 +1,6 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-06T23:37:33Z",
+  "generated_at": "2026-05-06T23:47:34Z",
   "algos": [
     {
       "schema_version": "v1",
@@ -715,6 +715,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:daily-spike-in-usgs-earthquake-activity-near-key-industrial-",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-usgs-earthquake-activity-near-key-industrial-",
+      "name": "Daily Spike In Usgs Earthquake Activity Near Key Industrial Hubs",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.02,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.02,
+      "spy_delta_30d_pct": -11.35,
+      "last_snapshot": "2026-05-06",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.817,
+            "return_pct": 4.084
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.755,
+            "return_pct": 3.773
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:weekly-google-trends-surge-in-home-energy-bill-shock-signals",
       "algo_type": "crazy",
       "algo_id": "weekly-google-trends-surge-in-home-energy-bill-shock-signals",
@@ -1219,6 +1255,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:daily-spike-in-google-trends-searches-for-electric-vehicle-b",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-searches-for-electric-vehicle-b",
+      "name": "Daily Spike In Google Trends Searches For Electric Vehicle Battery Replacement",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.08,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -11.37,
+      "last_snapshot": "2026-05-06",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.519,
+            "return_pct": 2.593
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 8.166
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:rss-news-volume-spike-on-food-supply-chain-disruptions",
       "algo_type": "crazy",
       "algo_id": "rss-news-volume-spike-on-food-supply-chain-disruptions",
@@ -1464,6 +1536,42 @@
             "direction": "UP",
             "confidence": 0.622,
             "return_pct": 3.11
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-google-trends-searches-for-home-renovation-per",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-searches-for-home-renovation-per",
+      "name": "Daily Jump In Google Trends Searches For Home Renovation Permits",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.12,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -11.37,
+      "last_snapshot": "2026-05-06",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLB",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.569,
+            "return_pct": 2.845
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.255,
+            "return_pct": 1.275
           }
         },
         "summary": "both_up"
@@ -1738,6 +1846,42 @@
       "alpha_pct": -7.87,
       "ret_30d_pct": -0.16,
       "spy_delta_30d_pct": -11.53,
+      "last_snapshot": "2026-05-06",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.519,
+            "return_pct": 2.593
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 8.166
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-google-trends-searches-for-emergency-dental-ca",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-searches-for-emergency-dental-ca",
+      "name": "Daily Jump In Google Trends Searches For Emergency Dental Care",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.17,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.14,
+      "spy_delta_30d_pct": -11.51,
       "last_snapshot": "2026-05-06",
       "new_algo_date": null,
       "comparator": {
@@ -2079,6 +2223,42 @@
           }
         },
         "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-surge-in-google-trends-searches-for-electric-vehicle-c",
+      "algo_type": "crazy",
+      "algo_id": "daily-surge-in-google-trends-searches-for-electric-vehicle-c",
+      "name": "Daily Surge In Google Trends Searches For Electric Vehicle Charging Station Outages",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.35,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.34,
+      "spy_delta_30d_pct": -11.71,
+      "last_snapshot": "2026-05-06",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.688,
+            "return_pct": -3.439
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.362,
+            "return_pct": -1.809
+          }
+        },
+        "summary": "mixed"
       }
     },
     {

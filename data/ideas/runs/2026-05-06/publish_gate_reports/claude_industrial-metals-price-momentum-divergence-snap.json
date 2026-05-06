@@ -1,0 +1,37 @@
+{
+  "source_file": "data/ideas/runs/2026-05-06/publish/claude_industrial-metals-price-momentum-divergence-snap.md",
+  "target_file": "data/ideas/runs/2026-05-06/intervention/claude_industrial-metals-price-momentum-divergence-snap.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "multiple data sources require multiple adapters",
+      "no explicit volume or volatility adapter specified",
+      "price_only adapter does not cover FRED industrial production index",
+      "unsupported_template_adapter",
+      "volatility rising condition unclear if supported by price_only adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "price_only"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1,
+        "price_only": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1030,
+    "output_tokens": 115
+  },
+  "cost_usd": 0.003725,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires multiple data sources including FRED series not covered by price_only adapter\",\n  \"risk_flags\": [\n    \"multiple data sources require multiple adapters\",\n    \"price_only adapter does not cover FRED industrial production index\",\n    \"volatility rising condition unclear if supported by price_only adapter\",\n    \"no explicit volume or volatility adapter specified\"\n  ]\n}\n```"
+}

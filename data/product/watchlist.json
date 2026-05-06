@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T23:37:33Z",
+  "generated_at": "2026-05-06T23:47:34Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -228,6 +228,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-jump-in-google-trends-searches-for-emergency-dental-ca",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-searches-for-emergency-dental-ca",
+      "name": "Daily Jump In Google Trends Searches For Emergency Dental Care",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99832.34,
+      "ytd_pct": -0.17,
+      "trade_count": 12,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:daily-jump-in-google-trends-searches-for-home-water-heater-r",
       "algo_type": "crazy",
       "algo_id": "daily-jump-in-google-trends-searches-for-home-water-heater-r",
@@ -290,6 +314,30 @@
       "equity": 99979.84,
       "ytd_pct": -0.02,
       "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-spike-in-google-trends-searches-for-electric-vehicle-b",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-searches-for-electric-vehicle-b",
+      "name": "Daily Spike In Google Trends Searches For Electric Vehicle Battery Replacement",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99921.33,
+      "ytd_pct": -0.08,
+      "trade_count": 6,
       "positions": 0,
       "last_snapshot": "2026-05-06",
       "last_signal": null,
@@ -949,6 +997,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-jump-in-google-trends-searches-for-home-renovation-per",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-searches-for-home-renovation-per",
+      "name": "Daily Jump In Google Trends Searches For Home Renovation Permits",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLB"
+      ],
+      "equity": 99884.41,
+      "ytd_pct": -0.12,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:daily-spike-in-daily-earthquake-activity-near-major-logistic",
       "algo_type": "crazy",
       "algo_id": "daily-spike-in-daily-earthquake-activity-near-major-logistic",
@@ -963,6 +1035,54 @@
       "equity": 99775.64,
       "ytd_pct": -0.22,
       "trade_count": 6,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-spike-in-usgs-earthquake-activity-near-key-industrial-",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-usgs-earthquake-activity-near-key-industrial-",
+      "name": "Daily Spike In Usgs Earthquake Activity Near Key Industrial Hubs",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100015.96,
+      "ytd_pct": 0.02,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-surge-in-google-trends-searches-for-electric-vehicle-c",
+      "algo_type": "crazy",
+      "algo_id": "daily-surge-in-google-trends-searches-for-electric-vehicle-c",
+      "name": "Daily Surge In Google Trends Searches For Electric Vehicle Charging Station Outages",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLE"
+      ],
+      "equity": 99651.01,
+      "ytd_pct": -0.35,
+      "trade_count": 8,
       "positions": 0,
       "last_snapshot": "2026-05-06",
       "last_signal": null,

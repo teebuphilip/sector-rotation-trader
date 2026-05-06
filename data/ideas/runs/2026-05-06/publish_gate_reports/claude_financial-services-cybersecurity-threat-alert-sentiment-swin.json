@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-05-06/publish/claude_financial-services-cybersecurity-threat-alert-sentiment-swin.md",
+  "target_file": "data/ideas/runs/2026-05-06/intervention/claude_financial-services-cybersecurity-threat-alert-sentiment-swin.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "data source aggregation complexity",
+      "requires shorting",
+      "rss_count adapter usage",
+      "short_trade_not_supported",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "rss_count": 2,
+        "html_table": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1036,
+    "output_tokens": 93
+  },
+  "cost_usd": 0.00352,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting but current algo envelope supports only long/flat; rss_count adapter matches data source but shorting needs manual review.\",\n  \"risk_flags\": [\"requires shorting\", \"rss_count adapter usage\", \"data source aggregation complexity\"]\n}\n```"
+}

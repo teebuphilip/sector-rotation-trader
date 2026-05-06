@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-05-06T23:37:33
+Updated (UTC): 2026-05-06T23:47:33
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 174
+Crazy models: 189
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -190,3 +190,18 @@ Crazy models: 174
 | google-trends-surge-in-luxury-good-searches | Google Trends Surge In Luxury Good Searches | weekly |
 | healthcare-cost-google-trends-acceleration-index | Healthcare Cost Google Trends Acceleration Index | weekly |
 | rss-news-volume-spike-on-food-supply-chain-disruptions | Rss News Volume Spike On Food Supply Chain Disruptions | weekly |
+| daily-jump-in-google-trends-searches-for-emergency-dental-ca | Daily Jump In Google Trends Searches For Emergency Dental Care | daily |
+| daily-jump-in-google-trends-searches-for-home-renovation-per | Daily Jump In Google Trends Searches For Home Renovation Permits | daily |
+| daily-spike-in-google-trends-searches-for-airline-flight-del | Daily Spike In Google Trends Searches For Airline Flight Delay Compensation | daily |
+| daily-spike-in-google-trends-searches-for-electric-vehicle-b | Daily Spike In Google Trends Searches For Electric Vehicle Battery Replacement | daily |
+| daily-spike-in-usgs-earthquake-activity-near-key-industrial- | Daily Spike In Usgs Earthquake Activity Near Key Industrial Hubs | daily |
+| daily-surge-in-google-trends-searches-for-electric-vehicle-c | Daily Surge In Google Trends Searches For Electric Vehicle Charging Station Outages | daily |
+| weekly-google-trends-spike-for-small-business-loan-default-s | Weekly Google Trends Spike For Small Business Loan Default Searches | weekly |
+| weekly-google-trends-spike-in-searches-for-food-supply-chain | Weekly Google Trends Spike In Searches For Food Supply Chain Disruptions | weekly |
+| weekly-google-trends-surge-in-searches-for-diesel-fuel-price | Weekly Google Trends Surge In Searches For Diesel Fuel Price Increase | weekly |
+| weekly-google-trends-surge-in-searches-for-truck-driver-shor | Weekly Google Trends Surge In Searches For Truck Driver Shortage | weekly |
+| weekly-rise-in-google-trends-searches-for-emergency-hvac-rep | Weekly Rise In Google Trends Searches For Emergency Hvac Repair | weekly |
+| weekly-surge-in-google-trends-for-job-interview-preparation- | Weekly Surge In Google Trends For Job Interview Preparation Searches | weekly |
+| weekly-surge-in-google-trends-searches-for-diy-bicycle-repai | Weekly Surge In Google Trends Searches For Diy Bicycle Repair | weekly |
+| ev-charger-expansion-momentum-surge | Ev Charger Expansion Momentum Surge | daily |
+| residential-real-estate-search-momentum-rotation | Residential Real Estate Search Momentum Rotation | weekly |

@@ -2,14 +2,14 @@
   "ticker": "MCD",
   "sector": "Consumer Cyclical",
   "sector_etf": "XLY",
-  "composite": "7 of 46",
+  "composite": "7 of 48",
   "composite_label": "BEARISH",
   "composite_color": "red",
   "bullish": 7,
-  "bearish": 39,
-  "neutral": 133,
-  "total_signals": 179,
-  "total_active": 46,
+  "bearish": 41,
+  "neutral": 146,
+  "total_signals": 194,
+  "total_active": 48,
   "bullish_pct": 15,
   "breakdown": [
     {
@@ -72,6 +72,15 @@
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 79,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "residential-real-estate-search-momentum-rotation",
+      "name": "Residential Real Estate Search Momentum Rotation",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -166,11 +175,29 @@
       "beat_spy": false
     },
     {
+      "algo_id": "weekly-surge-in-google-trends-for-job-interview-preparation-",
+      "name": "Weekly Surge In Google Trends For Job Interview Preparation Searches",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "crypto-derivative-arbitrage",
       "name": "Crypto Derivative Arbitrage",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 93,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-google-trends-surge-in-searches-for-diesel-fuel-price",
+      "name": "Weekly Google Trends Surge In Searches For Diesel Fuel Price Increase",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -364,6 +391,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "ev-charger-expansion-momentum-surge",
+      "name": "Ev Charger Expansion Momentum Surge",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "electricity-demand-spike-weather-anomaly",
       "name": "Electricity Demand Spike Weather Anomaly",
       "algo_type": "crazy",
@@ -424,6 +460,15 @@
       "direction": "NEUTRAL",
       "days_running": 71,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "daily-spike-in-google-trends-searches-for-electric-vehicle-b",
+      "name": "Daily Spike In Google Trends Searches For Electric Vehicle Battery Replacement",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 66,
+      "ytd_pct": -0.08,
       "beat_spy": false
     },
     {
@@ -523,6 +568,24 @@
       "direction": "NEUTRAL",
       "days_running": 93,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "daily-spike-in-google-trends-searches-for-airline-flight-del",
+      "name": "Daily Spike In Google Trends Searches For Airline Flight Delay Compensation",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "daily-jump-in-google-trends-searches-for-emergency-dental-ca",
+      "name": "Daily Jump In Google Trends Searches For Emergency Dental Care",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 66,
+      "ytd_pct": -0.17,
       "beat_spy": false
     },
     {
@@ -643,6 +706,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "weekly-google-trends-spike-for-small-business-loan-default-s",
+      "name": "Weekly Google Trends Spike For Small Business Loan Default Searches",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "news-sentiment-rotation-fade-trade",
       "name": "News Sentiment Rotation Fade Trade",
       "algo_type": "crazy",
@@ -703,6 +775,15 @@
       "direction": "NEUTRAL",
       "days_running": 87,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "daily-surge-in-google-trends-searches-for-electric-vehicle-c",
+      "name": "Daily Surge In Google Trends Searches For Electric Vehicle Charging Station Outages",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": -0.35,
       "beat_spy": false
     },
     {
@@ -796,6 +877,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "daily-jump-in-google-trends-searches-for-home-renovation-per",
+      "name": "Daily Jump In Google Trends Searches For Home Renovation Permits",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": -0.12,
+      "beat_spy": false
+    },
+    {
       "algo_id": "truck-tonnage",
       "name": "Truck Tonnage Index",
       "algo_type": "crazy",
@@ -846,6 +936,15 @@
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 93,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-searches-for-diy-bicycle-repai",
+      "name": "Weekly Surge In Google Trends Searches For Diy Bicycle Repair",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -958,6 +1057,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "weekly-google-trends-spike-in-searches-for-food-supply-chain",
+      "name": "Weekly Google Trends Spike In Searches For Food Supply Chain Disruptions",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "weekly-google-trends-surge-for-used-truck-purchase-searches-",
       "name": "Weekly Google Trends Surge For Used Truck Purchase Searches Signals Bullish Freight Logistics",
       "algo_type": "crazy",
@@ -1030,6 +1138,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "daily-spike-in-usgs-earthquake-activity-near-key-industrial-",
+      "name": "Daily Spike In Usgs Earthquake Activity Near Key Industrial Hubs",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.02,
+      "beat_spy": false
+    },
+    {
       "algo_id": "weekly-surge-in-openchargemap-ev-charger-installations-signa",
       "name": "Weekly Surge In Openchargemap Ev Charger Installations Signals Bullish Xlc",
       "algo_type": "crazy",
@@ -1062,6 +1179,15 @@
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 93,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-google-trends-surge-in-searches-for-truck-driver-shor",
+      "name": "Weekly Google Trends Surge In Searches For Truck Driver Shortage",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -1414,6 +1540,15 @@
       "direction": "NEUTRAL",
       "days_running": 89,
       "ytd_pct": -0.13,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-rise-in-google-trends-searches-for-emergency-hvac-rep",
+      "name": "Weekly Rise In Google Trends Searches For Emergency Hvac Repair",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
       "beat_spy": false
     },
     {

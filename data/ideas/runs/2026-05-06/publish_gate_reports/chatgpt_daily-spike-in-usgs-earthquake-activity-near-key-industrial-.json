@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-05-06/publish/chatgpt_daily-spike-in-usgs-earthquake-activity-near-key-industrial-.md",
+  "target_file": "data/ideas/runs/2026-05-06/build/chatgpt_daily-spike-in-usgs-earthquake-activity-near-key-industrial-.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses correct earthquake_activity adapter, and is deterministic.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity"
+      ],
+      "scores": {
+        "earthquake_activity": 2,
+        "html_table": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 921,
+    "output_tokens": 76
+  },
+  "cost_usd": 0.0030625,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses correct earthquake_activity adapter, and is deterministic.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

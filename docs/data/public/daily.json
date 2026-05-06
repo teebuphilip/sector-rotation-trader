@@ -1,26 +1,26 @@
 {
   "schema_version": "v1",
   "run_date": "2026-05-06",
-  "generated_at": "2026-05-06T23:37:40Z",
+  "generated_at": "2026-05-06T23:47:34Z",
   "counts": {
-    "total": 179,
+    "total": 194,
     "normal": 5,
-    "crazy": 174,
-    "watchlist": 77,
+    "crazy": 189,
+    "watchlist": 82,
     "promoted": 5,
     "graveyard": 7
   },
   "by_status": {
     "backtest_weak": 4,
     "failed": 1,
-    "live_only": 68,
+    "live_only": 73,
     "parked": 6,
     "promoted": 5,
-    "sandbox": 95
+    "sandbox": 105
   },
   "by_evidence_class": {
-    "live_receipts_only": 69,
-    "needs_history": 92,
+    "live_receipts_only": 74,
+    "needs_history": 102,
     "pending_seed": 6,
     "v1_backtested": 12
   },
@@ -36,7 +36,7 @@
     "XLF"
   ],
   "ticker_count": 105,
-  "signal_count": 179,
+  "signal_count": 194,
   "sector_summary": {
     "XLK": {
       "etf": "XLK",
@@ -65,7 +65,7 @@
     "XLY": {
       "etf": "XLY",
       "sector": "Consumer Cyclical",
-      "composite": "7 of 46",
+      "composite": "7 of 48",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 15
@@ -73,7 +73,7 @@
     "XLI": {
       "etf": "XLI",
       "sector": "Industrials",
-      "composite": "5 of 36",
+      "composite": "5 of 37",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 14
@@ -97,15 +97,15 @@
     "XLE": {
       "etf": "XLE",
       "sector": "Energy",
-      "composite": "4 of 34",
+      "composite": "4 of 35",
       "composite_label": "BEARISH",
       "composite_color": "red",
-      "bullish_pct": 12
+      "bullish_pct": 11
     },
     "XLB": {
       "etf": "XLB",
       "sector": "Basic Materials",
-      "composite": "4 of 35",
+      "composite": "4 of 36",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 11
@@ -340,7 +340,7 @@
     }
   ],
   "rolling_30d": {
-    "as_of": "2026-05-06T23:37:39.093488",
+    "as_of": "2026-05-06T23:47:33.220067",
     "spy_ret_30d_pct": 11.37,
     "leaders": [
       {

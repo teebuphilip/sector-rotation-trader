@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-05-06/build/chatgpt_daily-spike-in-google-trends-searches-for-airline-flight-del.md",
+  "out": "crazy/algos/daily_spike_in_google_trends_searches_for_airline_flight_del.py",
+  "adapter": "google_trends",
+  "idea_id": "daily-spike-in-google-trends-searches-for-airline-flight-del",
+  "name": "Daily Spike In Google Trends Searches For Airline Flight Delay Compensation",
+  "universe": [
+    "XLY"
+  ],
+  "frequency": "daily",
+  "family": "travel_mobility",
+  "threshold": 0.25,
+  "direction": "up",
+  "hold_days": 5
+}

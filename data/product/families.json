@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T23:37:33Z",
+  "generated_at": "2026-05-06T23:47:34Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
@@ -168,15 +168,15 @@
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 37,
+      "count": 42,
       "by_status": {
         "failed": 1,
-        "live_only": 20,
-        "sandbox": 16
+        "live_only": 22,
+        "sandbox": 19
       },
       "by_evidence_class": {
-        "live_receipts_only": 20,
-        "needs_history": 16,
+        "live_receipts_only": 22,
+        "needs_history": 19,
         "v1_backtested": 1
       },
       "leaders": [
@@ -641,14 +641,14 @@
     },
     "labor_jobs": {
       "family": "labor_jobs",
-      "count": 8,
+      "count": 10,
       "by_status": {
         "live_only": 6,
-        "sandbox": 2
+        "sandbox": 4
       },
       "by_evidence_class": {
         "live_receipts_only": 6,
-        "needs_history": 2
+        "needs_history": 4
       },
       "leaders": [
         {
@@ -770,20 +770,20 @@
           "backtest_trade_count": null
         },
         {
-          "key": "crazy:daily-spike-in-rss-news-counts-around-labor-union-contract-n",
+          "key": "crazy:weekly-google-trends-surge-in-searches-for-truck-driver-shor",
           "algo_type": "crazy",
-          "algo_id": "daily-spike-in-rss-news-counts-around-labor-union-contract-n",
-          "name": "Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf",
+          "algo_id": "weekly-google-trends-surge-in-searches-for-truck-driver-shor",
+          "name": "Weekly Google Trends Surge In Searches For Truck Driver Shortage",
           "family": "labor_jobs",
-          "status": "live_only",
-          "evidence_class": "live_receipts_only",
-          "rebalance_frequency": "daily",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "weekly",
           "universe": [
-            "XLF"
+            "XLI"
           ],
-          "equity": 99982.53,
-          "ytd_pct": -0.02,
-          "trade_count": 8,
+          "equity": 100000.0,
+          "ytd_pct": 0.0,
+          "trade_count": 0,
           "positions": 0,
           "last_snapshot": "2026-05-06",
           "last_signal": null,
@@ -797,14 +797,14 @@
     },
     "local_economy_weirdness": {
       "family": "local_economy_weirdness",
-      "count": 11,
+      "count": 17,
       "by_status": {
-        "live_only": 6,
-        "sandbox": 5
+        "live_only": 9,
+        "sandbox": 8
       },
       "by_evidence_class": {
-        "live_receipts_only": 6,
-        "needs_history": 5
+        "live_receipts_only": 9,
+        "needs_history": 8
       },
       "leaders": [
         {
@@ -822,6 +822,30 @@
           "equity": 100070.66,
           "ytd_pct": 0.07,
           "trade_count": 6,
+          "positions": 0,
+          "last_snapshot": "2026-05-06",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": null,
+          "backtest_reason": null,
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
+        {
+          "key": "crazy:daily-spike-in-usgs-earthquake-activity-near-key-industrial-",
+          "algo_type": "crazy",
+          "algo_id": "daily-spike-in-usgs-earthquake-activity-near-key-industrial-",
+          "name": "Daily Spike In Usgs Earthquake Activity Near Key Industrial Hubs",
+          "family": "local_economy_weirdness",
+          "status": "live_only",
+          "evidence_class": "live_receipts_only",
+          "rebalance_frequency": "daily",
+          "universe": [
+            "XLI"
+          ],
+          "equity": 100015.96,
+          "ytd_pct": 0.02,
+          "trade_count": 2,
           "positions": 0,
           "last_snapshot": "2026-05-06",
           "last_signal": null,
@@ -913,45 +937,21 @@
           "backtest_reason": null,
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:ev-charger-installation-acceleration-play",
-          "algo_type": "crazy",
-          "algo_id": "ev-charger-installation-acceleration-play",
-          "name": "Ev Charger Installation Acceleration Play",
-          "family": "local_economy_weirdness",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "weekly",
-          "universe": [
-            "XLK"
-          ],
-          "equity": 100000.0,
-          "ytd_pct": 0.0,
-          "trade_count": 0,
-          "positions": 0,
-          "last_snapshot": "2026-05-06",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": null,
-          "backtest_reason": null,
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
         }
       ]
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 54,
+      "count": 55,
       "by_status": {
         "backtest_weak": 1,
         "live_only": 15,
         "parked": 2,
-        "sandbox": 36
+        "sandbox": 37
       },
       "by_evidence_class": {
         "live_receipts_only": 15,
-        "needs_history": 34,
+        "needs_history": 35,
         "pending_seed": 2,
         "v1_backtested": 3
       },
@@ -1247,14 +1247,14 @@
     },
     "travel_mobility": {
       "family": "travel_mobility",
-      "count": 11,
+      "count": 12,
       "by_status": {
         "live_only": 2,
-        "sandbox": 9
+        "sandbox": 10
       },
       "by_evidence_class": {
         "live_receipts_only": 2,
-        "needs_history": 9
+        "needs_history": 10
       },
       "leaders": [
         {
@@ -1367,16 +1367,16 @@
           "backtest_trade_count": null
         },
         {
-          "key": "crazy:ev-charger-density-saturation-play",
+          "key": "crazy:daily-spike-in-google-trends-searches-for-airline-flight-del",
           "algo_type": "crazy",
-          "algo_id": "ev-charger-density-saturation-play",
-          "name": "Ev Charger Density Saturation Play",
+          "algo_id": "daily-spike-in-google-trends-searches-for-airline-flight-del",
+          "name": "Daily Spike In Google Trends Searches For Airline Flight Delay Compensation",
           "family": "travel_mobility",
           "status": "sandbox",
           "evidence_class": "needs_history",
           "rebalance_frequency": "daily",
           "universe": [
-            "XLK"
+            "XLY"
           ],
           "equity": 100000.0,
           "ytd_pct": 0.0,

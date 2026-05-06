@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T23:37:33Z",
+  "generated_at": "2026-05-06T23:47:34Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -781,6 +781,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-jump-in-google-trends-searches-for-emergency-dental-ca",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-searches-for-emergency-dental-ca",
+      "name": "Daily Jump In Google Trends Searches For Emergency Dental Care",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99832.34,
+      "ytd_pct": -0.17,
+      "trade_count": 12,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:daily-jump-in-google-trends-searches-for-home-water-heater-r",
       "algo_type": "crazy",
       "algo_id": "daily-jump-in-google-trends-searches-for-home-water-heater-r",
@@ -867,6 +891,30 @@
       "equity": 99979.84,
       "ytd_pct": -0.02,
       "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-spike-in-google-trends-searches-for-electric-vehicle-b",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-searches-for-electric-vehicle-b",
+      "name": "Daily Spike In Google Trends Searches For Electric Vehicle Battery Replacement",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99921.33,
+      "ytd_pct": -0.08,
+      "trade_count": 6,
       "positions": 0,
       "last_snapshot": "2026-05-06",
       "last_signal": null,
@@ -1252,6 +1300,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-google-trends-spike-for-small-business-loan-default-s",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-spike-for-small-business-loan-default-s",
+      "name": "Weekly Google Trends Spike For Small Business Loan Default Searches",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLF"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-google-trends-surge-for-diy-roof-repair-searches-sign",
       "algo_type": "crazy",
       "algo_id": "weekly-google-trends-surge-for-diy-roof-repair-searches-sign",
@@ -1444,6 +1516,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-rise-in-google-trends-searches-for-emergency-hvac-rep",
+      "algo_type": "crazy",
+      "algo_id": "weekly-rise-in-google-trends-searches-for-emergency-hvac-rep",
+      "name": "Weekly Rise In Google Trends Searches For Emergency Hvac Repair",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
       "algo_type": "crazy",
       "algo_id": "weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
@@ -1502,6 +1598,30 @@
       "rebalance_frequency": "weekly",
       "universe": [
         "XLE"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-surge-in-google-trends-searches-for-diy-bicycle-repai",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-searches-for-diy-bicycle-repai",
+      "name": "Weekly Surge In Google Trends Searches For Diy Bicycle Repair",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
       ],
       "equity": 100000.0,
       "ytd_pct": 0.0,
@@ -2061,6 +2181,54 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-google-trends-surge-in-searches-for-truck-driver-shor",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-in-searches-for-truck-driver-shor",
+      "name": "Weekly Google Trends Surge In Searches For Truck Driver Shortage",
+      "family": "labor_jobs",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-surge-in-google-trends-for-job-interview-preparation-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-job-interview-preparation-",
+      "name": "Weekly Surge In Google Trends For Job Interview Preparation Searches",
+      "family": "labor_jobs",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-surge-in-job-postings-for-warehouse-workers-signals-b",
       "algo_type": "crazy",
       "algo_id": "weekly-surge-in-job-postings-for-warehouse-workers-signals-b",
@@ -2144,6 +2312,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-jump-in-google-trends-searches-for-home-renovation-per",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-searches-for-home-renovation-per",
+      "name": "Daily Jump In Google Trends Searches For Home Renovation Permits",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLB"
+      ],
+      "equity": 99884.41,
+      "ytd_pct": -0.12,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:daily-spike-in-daily-earthquake-activity-near-major-logistic",
       "algo_type": "crazy",
       "algo_id": "daily-spike-in-daily-earthquake-activity-near-major-logistic",
@@ -2192,6 +2384,54 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-spike-in-usgs-earthquake-activity-near-key-industrial-",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-usgs-earthquake-activity-near-key-industrial-",
+      "name": "Daily Spike In Usgs Earthquake Activity Near Key Industrial Hubs",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100015.96,
+      "ytd_pct": 0.02,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-surge-in-google-trends-searches-for-electric-vehicle-c",
+      "algo_type": "crazy",
+      "algo_id": "daily-surge-in-google-trends-searches-for-electric-vehicle-c",
+      "name": "Daily Surge In Google Trends Searches For Electric Vehicle Charging Station Outages",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLE"
+      ],
+      "equity": 99651.01,
+      "ytd_pct": -0.35,
+      "trade_count": 8,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:earthquake-aftershock-insurance-claims-spike",
       "algo_type": "crazy",
       "algo_id": "earthquake-aftershock-insurance-claims-spike",
@@ -2206,6 +2446,30 @@
       "equity": 100070.66,
       "ytd_pct": 0.07,
       "trade_count": 6,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:ev-charger-expansion-momentum-surge",
+      "algo_type": "crazy",
+      "algo_id": "ev-charger-expansion-momentum-surge",
+      "name": "Ev Charger Expansion Momentum Surge",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLK"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
       "positions": 0,
       "last_snapshot": "2026-05-06",
       "last_signal": null,
@@ -2269,6 +2533,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:residential-real-estate-search-momentum-rotation",
+      "algo_type": "crazy",
+      "algo_id": "residential-real-estate-search-momentum-rotation",
+      "name": "Residential Real Estate Search Momentum Rotation",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLRE"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:seismic-activity-construction-halt-signal",
       "algo_type": "crazy",
       "algo_id": "seismic-activity-construction-halt-signal",
@@ -2283,6 +2571,30 @@
       "equity": 99861.92,
       "ytd_pct": -0.14,
       "trade_count": 6,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-google-trends-spike-in-searches-for-food-supply-chain",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-spike-in-searches-for-food-supply-chain",
+      "name": "Weekly Google Trends Spike In Searches For Food Supply Chain Disruptions",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLP"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
       "positions": 0,
       "last_snapshot": "2026-05-06",
       "last_signal": null,
@@ -3506,6 +3818,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-google-trends-surge-in-searches-for-diesel-fuel-price",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-in-searches-for-diesel-fuel-price",
+      "name": "Weekly Google Trends Surge In Searches For Diesel Fuel Price Increase",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-rise-in-google-trends-searches-for-gas-price-protest-",
       "algo_type": "crazy",
       "algo_id": "weekly-rise-in-google-trends-searches-for-gas-price-protest-",
@@ -4287,6 +4623,30 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: EXPE, MAR, TCOM",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-spike-in-google-trends-searches-for-airline-flight-del",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-searches-for-airline-flight-del",
+      "name": "Daily Spike In Google Trends Searches For Airline Flight Delay Compensation",
+      "family": "travel_mobility",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-06",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },

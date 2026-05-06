@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-06/publish/chatgpt_daily-surge-in-google-trends-searches-for-electric-vehicle-c.md",
+  "target_file": "data/ideas/runs/2026-05-06/build/chatgpt_daily-surge-in-google-trends-searches-for-electric-vehicle-c.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a valid existing adapter with deterministic routing and matches data source.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "openchargemap": 2,
+        "google_trends": 4,
+        "html_table": 1
+      },
+      "top_score": 4,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 927,
+    "output_tokens": 79
+  },
+  "cost_usd": 0.0031075,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid existing adapter with deterministic routing and matches data source.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

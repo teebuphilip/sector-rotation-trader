@@ -1,0 +1,39 @@
+{
+  "source_file": "data/ideas/runs/2026-05-06/publish/chatgpt_daily-spike-in-freight-logistics-container-volume-growth-rat.md",
+  "target_file": "data/ideas/runs/2026-05-06/intervention/chatgpt_daily-spike-in-freight-logistics-container-volume-growth-rat.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "port_container_volume",
+    "needs_new_adapter": true,
+    "reason": "price_only currently provides close/value data, not volume.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "low_adapter_confidence",
+      "price_only_volume_gap",
+      "regime shifts",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table",
+        "port_container_volume",
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "port_container_volume": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 930,
+    "output_tokens": 77
+  },
+  "cost_usd": 0.003095,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"port_container_volume\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses a real adapter matching the data source.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

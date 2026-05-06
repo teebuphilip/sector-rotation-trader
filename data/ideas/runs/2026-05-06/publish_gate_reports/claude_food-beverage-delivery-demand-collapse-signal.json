@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-05-06/publish/claude_food-beverage-delivery-demand-collapse-signal.md",
+  "target_file": "data/ideas/runs/2026-05-06/intervention/claude_food-beverage-delivery-demand-collapse-signal.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "data source instability",
+      "position sizing complexity",
+      "requires short position",
+      "short_trade_not_supported"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 996,
+    "output_tokens": 76
+  },
+  "cost_usd": 0.00325,
+  "raw_llm_response": "{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting XLY which is not supported by current algo envelope\",\n  \"risk_flags\": [\"requires short position\", \"position sizing complexity\", \"data source instability\"]\n}"
+}
