@@ -429,6 +429,50 @@ Rule:
   - Strong ops idea.
   - Not launch-critical, but very worth preserving.
 
+### Research Paper Ingestion For Ideation
+- Status: `score-next`
+- Earliest target: `by July 1 if implemented narrowly, otherwise immediately after`
+- Source: Reddit advice to mine arXiv, SSRN, and similar sources for testable ideas instead of smashing indicators together blindly.
+- What it means:
+  - Add a structured research-sourcing step to the ideation pipeline:
+    - ingest paper summaries or notes
+    - extract thesis, mechanism, universe, benchmark, and practical caveats
+    - convert only the testable core idea into a candidate signal
+- Why it matters:
+  - Pushes ideation toward mechanism-driven concepts instead of indicator soup.
+  - Gives the lab a better source of explainable ideas and stronger comparison baselines.
+  - Could improve the quality of thesis/spec pages if papers become upstream inputs.
+- Product implications:
+  - paper-sourced idea queue
+  - research note attachments on candidate algos
+  - "source inspiration" metadata for signals
+  - stronger ideation prompts grounded in published reasoning
+- Notes:
+  - Useful for the ideation pipeline, but easy to overdo.
+  - Should focus on extracting simple testable cores, not recreating academic machinery.
+  - Strong anti-duplication value because it pushes ideation away from repetitive "Google this / Google that" variants.
+
+### Ideation Source Diversity Guardrails
+- Status: `score-next`
+- Earliest target: `by July 1 if implemented narrowly, otherwise immediately after`
+- Source: Internal observation from Reddit-response review that the ideation pipeline is drifting toward repetitive "Google this / Google that" variants.
+- What it means:
+  - Add explicit diversity constraints to ideation:
+    - limit repeated source families per run
+    - penalize near-duplicate concepts
+    - require broader source/type spread before ideas advance
+- Why it matters:
+  - Improves idea breadth.
+  - Reduces cosmetic rewrites of the same concept.
+  - Makes the lab feel more like genuine research and less like variant spam.
+- Product implications:
+  - source-family quotas
+  - duplicate-theme penalties
+  - broader ideation coverage across adapters and concepts
+- Notes:
+  - Separate from paper ingestion.
+  - This is direct quality control for the generator itself.
+
 ## Rejected / Do Not Build
 
 ### "Anything Is Possible If You're Stubborn Enough"
