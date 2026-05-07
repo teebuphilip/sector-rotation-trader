@@ -1,0 +1,432 @@
+{
+  "date": "2026-05-07",
+  "input_count": 25,
+  "kept_count": 19,
+  "duplicate_count": 6,
+  "kept_by_source": {
+    "chatgpt": 10,
+    "claude": 9
+  },
+  "duplicates": [
+    {
+      "source": "claude",
+      "idea_id": "weather-driven-utility-demand-spike",
+      "title": "Weather-driven Utility Demand Spike",
+      "family": "macro_input_pressure",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "weather-driven utility demand spike",
+        "matched_idea_id": "weather-driven-utility-demand-spike",
+        "matched_origin": "history:2026-05-03",
+        "matched_source": "claude"
+      },
+      "idea": {
+        "idea_id": "weather-driven-utility-demand-spike",
+        "title": "Weather-driven Utility Demand Spike",
+        "family": "macro_input_pressure",
+        "source_provider": "anthropic",
+        "source_model": "claude-haiku-4-5-20251001",
+        "thesis": "Extreme temperature deviations (>3 sigma from 30-year normal) drive utility peak demand and grid stress, lifting wholesale power prices and utility margins. Extreme weather increases peak load, emergency demand response costs, and pricing power for utilities.",
+        "data_sources": [
+          "Open-Meteo daily temperature and humidity for US grid zones"
+        ],
+        "signal_logic": "When area-weighted US temperature deviation exceeds 3 sigma from historical norm for that date",
+        "entry_exit": "Entry: When area-weighted US temperature deviation exceeds 3 sigma from historical norm for that date Exit: After 5 trading days or when temperature normalizes to within 1.5 sigma",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLU"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Open-Meteo daily temperature and humidity for US grid zones via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Extreme weather events occur weekly during peak summer/winter seasons; several per month year-round.",
+        "schema": {
+          "idea": "Weather-Driven Utility Demand Spike",
+          "family": "macro_input_pressure",
+          "data": {
+            "source": "Open-Meteo daily temperature and humidity for US grid zones",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Extreme temperature deviations (>3 sigma from 30-year normal) drive utility peak demand and grid stress, lifting wholesale power prices and utility margins.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLU",
+            "rationale": "Extreme weather increases peak load, emergency demand response costs, and pricing power for utilities."
+          },
+          "trade_logic": {
+            "entry": "When area-weighted US temperature deviation exceeds 3 sigma from historical norm for that date",
+            "exit": "After 5 trading days or when temperature normalizes to within 1.5 sigma",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Extreme weather events occur weekly during peak summer/winter seasons; several per month year-round.",
+          "source_provider": "anthropic",
+          "source_model": "claude-haiku-4-5-20251001"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-rise-in-google-trends-for-home-solar-panel-repair-sig",
+      "title": "Weekly Rise In Google Trends For Home Solar Panel Repair Signals Green Energy Sector Rebound",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "high_title_overlap",
+        "score": 0.733,
+        "matched_title": "weekly surge in google trends for diy solar panel repair signals green energy sector rebound",
+        "matched_idea_id": "weekly-surge-in-google-trends-for-diy-solar-panel-repair-sig",
+        "matched_origin": "history:2026-05-01",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-rise-in-google-trends-for-home-solar-panel-repair-sig",
+        "title": "Weekly Rise In Google Trends For Home Solar Panel Repair Signals Green Energy Sector Rebound",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Increasing searches reflect rising consumer investment and stress in solar energy equipment maintenance. Higher maintenance demand signals sustained consumer interest in renewable energy assets.",
+        "data_sources": [
+          "Google Trends weekly search interest for 'home solar panel repair'"
+        ],
+        "signal_logic": "Enter long XLE if weekly search interest rises 25% above 6-week average",
+        "entry_exit": "Entry: Enter long XLE if weekly search interest rises 25% above 6-week average Exit: Exit after 5 weeks or if interest falls below 10% above baseline",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLE"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly search interest for 'home solar panel repair' via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Solar repair searches spike seasonally and in response to weather or subsidy news.",
+        "schema": {
+          "idea": "Weekly rise in Google Trends for 'home solar panel repair' signals green energy sector rebound",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends weekly search interest for 'home solar panel repair'",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Increasing searches reflect rising consumer investment and stress in solar energy equipment maintenance.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLE",
+            "rationale": "Higher maintenance demand signals sustained consumer interest in renewable energy assets."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLE if weekly search interest rises 25% above 6-week average",
+            "exit": "Exit after 5 weeks or if interest falls below 10% above baseline",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Solar repair searches spike seasonally and in response to weather or subsidy news.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-surge-in-google-trends-for-energy-bill-shock-signals-",
+      "title": "Weekly Surge In Google Trends For Energy Bill Shock Signals Utilities Sector Stress",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "weekly surge in google trends for energy bill shock signals bearish xle",
+        "matched_idea_id": "weekly-surge-in-google-trends-for-energy-bill-shock-signals-",
+        "matched_origin": "history:2026-04-27",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-surge-in-google-trends-for-energy-bill-shock-signals-",
+        "title": "Weekly Surge In Google Trends For Energy Bill Shock Signals Utilities Sector Stress",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising energy bill shock searches indicate increasing consumer cost pressure affecting utilities. Consumer cost stress reduces discretionary spending and can pressure utilities demand growth.",
+        "data_sources": [
+          "Google Trends weekly searches for 'energy bill shock'"
+        ],
+        "signal_logic": "Enter short XLU if weekly search interest rises 30% above 12-week average",
+        "entry_exit": "Entry: Enter short XLU if weekly search interest rises 30% above 12-week average Exit: Exit after 5 weeks or if search interest falls below 15% above baseline",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLU"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly searches for 'energy bill shock' via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Energy cost shocks are common in winter and summer months with volatile fuel prices.",
+        "schema": {
+          "idea": "Weekly surge in Google Trends for 'energy bill shock' signals utilities sector stress",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends weekly searches for 'energy bill shock'",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Rising energy bill shock searches indicate increasing consumer cost pressure affecting utilities.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLU",
+            "rationale": "Consumer cost stress reduces discretionary spending and can pressure utilities demand growth."
+          },
+          "trade_logic": {
+            "entry": "Enter short XLU if weekly search interest rises 30% above 12-week average",
+            "exit": "Exit after 5 weeks or if search interest falls below 15% above baseline",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Energy cost shocks are common in winter and summer months with volatile fuel prices.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-jump-in-google-trends-for-home-pest-control-signals-c",
+      "title": "Weekly Jump In Google Trends For Home Pest Control Signals Consumer Stress Boosting Staples Sector",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "high_title_overlap",
+        "score": 0.733,
+        "matched_title": "weekly google trends surge for home pest control searches signals consumer stress boosting staples",
+        "matched_idea_id": "weekly-google-trends-surge-for-home-pest-control-searches-si",
+        "matched_origin": "history:2026-05-03",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-jump-in-google-trends-for-home-pest-control-signals-c",
+        "title": "Weekly Jump In Google Trends For Home Pest Control Signals Consumer Stress Boosting Staples Sector",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising pest control searches indicate increasing consumer spending on home care and essentials. Increased pest control demand supports staples companies providing household products.",
+        "data_sources": [
+          "Google Trends weekly searches for 'home pest control'"
+        ],
+        "signal_logic": "Enter long XLP if weekly search interest increases 25% above 10-week average",
+        "entry_exit": "Entry: Enter long XLP if weekly search interest increases 25% above 10-week average Exit: Exit after 4 weeks or if interest falls below 15% above baseline",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLP"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly searches for 'home pest control' via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 18,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Pest control demand fluctuates seasonally and with regional weather patterns.",
+        "schema": {
+          "idea": "Weekly jump in Google Trends for 'home pest control' signals consumer stress boosting staples sector",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends weekly searches for 'home pest control'",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Rising pest control searches indicate increasing consumer spending on home care and essentials.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLP",
+            "rationale": "Increased pest control demand supports staples companies providing household products."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLP if weekly search interest increases 25% above 10-week average",
+            "exit": "Exit after 4 weeks or if interest falls below 15% above baseline",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 18,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Pest control demand fluctuates seasonally and with regional weather patterns.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-jump-in-google-trends-for-emergency-vehicle-repair-sig",
+      "title": "Daily Jump In Google Trends For Emergency Vehicle Repair Signals Consumer Stress Lifting Industrial Sector",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "high_title_overlap",
+        "score": 0.857,
+        "matched_title": "daily spike in google trends for emergency vehicle repair signals consumer stress lifting industrial sector",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-vehicle-repair-si",
+        "matched_origin": "history:2026-05-01",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-jump-in-google-trends-for-emergency-vehicle-repair-sig",
+        "title": "Daily Jump In Google Trends For Emergency Vehicle Repair Signals Consumer Stress Lifting Industrial Sector",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising emergency vehicle repair searches signal increased consumer spending on urgent maintenance. Higher urgent repair demand supports industrial equipment and automotive services.",
+        "data_sources": [
+          "Google Trends daily searches for 'emergency vehicle repair'"
+        ],
+        "signal_logic": "Enter long XLI if daily searches rise 50% above 14-day average",
+        "entry_exit": "Entry: Enter long XLI if daily searches rise 50% above 14-day average Exit: Exit after 7 days or if searches fall below 20% above baseline",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily searches for 'emergency vehicle repair' via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Vehicle repair emergencies spike frequently due to accidents and breakdowns.",
+        "schema": {
+          "idea": "Daily jump in Google Trends for 'emergency vehicle repair' signals consumer stress lifting industrial sector",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily searches for 'emergency vehicle repair'",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Rising emergency vehicle repair searches signal increased consumer spending on urgent maintenance.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLI",
+            "rationale": "Higher urgent repair demand supports industrial equipment and automotive services."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLI if daily searches rise 50% above 14-day average",
+            "exit": "Exit after 7 days or if searches fall below 20% above baseline",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Vehicle repair emergencies spike frequently due to accidents and breakdowns.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-jump-in-google-trends-for-emergency-hvac-repair-signa",
+      "title": "Weekly Jump In Google Trends For Emergency Hvac Repair Signals Consumer Stress Lifting Discretionary Sector",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "high_title_overlap",
+        "score": 0.733,
+        "matched_title": "weekly surge in google trends for emergency plumbing repair signals consumer stress lifting discretionary sector",
+        "matched_idea_id": "weekly-surge-in-google-trends-for-emergency-plumbing-repair-",
+        "matched_origin": "current_run",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-jump-in-google-trends-for-emergency-hvac-repair-signa",
+        "title": "Weekly Jump In Google Trends For Emergency Hvac Repair Signals Consumer Stress Lifting Discretionary Sector",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising emergency repair interest indicates discretionary spending stress but also service demand. Increased repair activity supports demand for consumer discretionary services.",
+        "data_sources": [
+          "Google Trends weekly searches for 'emergency HVAC repair'"
+        ],
+        "signal_logic": "Enter long XLY if weekly searches exceed 30% above 8-week average",
+        "entry_exit": "Entry: Enter long XLY if weekly searches exceed 30% above 8-week average Exit: Exit after 4 weeks or if searches fall below 15% above baseline",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly searches for 'emergency HVAC repair' via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 18,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "HVAC repair needs spike seasonally and during weather stress events.",
+        "schema": {
+          "idea": "Weekly jump in Google Trends for 'emergency HVAC repair' signals consumer stress lifting discretionary sector",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends weekly searches for 'emergency HVAC repair'",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Rising emergency repair interest indicates discretionary spending stress but also service demand.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "Increased repair activity supports demand for consumer discretionary services."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLY if weekly searches exceed 30% above 8-week average",
+            "exit": "Exit after 4 weeks or if searches fall below 15% above baseline",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 18,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "HVAC repair needs spike seasonally and during weather stress events.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
