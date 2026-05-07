@@ -1,8 +1,8 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-07T23:35:10Z",
+  "generated_at": "2026-05-07T23:39:08Z",
   "counts": {
-    "total": 194,
+    "total": 202,
     "beating_spy": 0
   },
   "algos": [
@@ -923,6 +923,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:weekly-spike-in-google-trends-for-electric-vehicle-battery-r",
+      "algo_type": "crazy",
+      "algo_id": "weekly-spike-in-google-trends-for-electric-vehicle-battery-r",
+      "name": "Weekly Spike In Google Trends For Electric Vehicle Battery Replacement Signals Consumer Stress Lifting Industrial Sector",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.03,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.98,
+      "last_snapshot": "2026-05-07",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.066,
+            "return_pct": -0.332
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.21,
+            "return_pct": 1.051
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:consumer-discretionary-google-trends-surge-for-sale-keywords",
       "algo_type": "crazy",
       "algo_id": "consumer-discretionary-google-trends-surge-for-sale-keywords",
@@ -1031,6 +1067,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:travel-booking-momentum-divergence",
+      "algo_type": "crazy",
+      "algo_id": "travel-booking-momentum-divergence",
+      "name": "Travel Booking Momentum Divergence",
+      "family": "travel_mobility",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.06,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.98,
+      "last_snapshot": "2026-05-07",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.259,
+            "return_pct": 1.293
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.333
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
       "algo_type": "crazy",
       "algo_id": "weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
@@ -1063,6 +1135,42 @@
           }
         },
         "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-spike-in-google-trends-for-emergency-dental-care-signa",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-for-emergency-dental-care-signa",
+      "name": "Daily Spike In Google Trends For Emergency Dental Care Signals Consumer Stress Impacting Health Sector",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.07,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.98,
+      "last_snapshot": "2026-05-07",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLV",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.174,
+            "return_pct": -0.87
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.617,
+            "return_pct": -3.087
+          }
+        },
+        "summary": "mixed"
       }
     },
     {
@@ -6074,6 +6182,186 @@
       "last_snapshot": "2026-05-07",
       "new_algo_date": null,
       "comparator": null
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-for-emergency-plumbing-repair-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-emergency-plumbing-repair-",
+      "name": "Weekly Surge In Google Trends For Emergency Plumbing Repair Signals Consumer Stress Lifting Discretionary Sector",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.98,
+      "last_snapshot": "2026-05-07",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.259,
+            "return_pct": 1.293
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.333
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-for-diy-roof-repair-signals-co",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-diy-roof-repair-signals-co",
+      "name": "Weekly Surge In Google Trends For Diy Roof Repair Signals Consumer Stress Lifting Industrial Sector",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.98,
+      "last_snapshot": "2026-05-07",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.066,
+            "return_pct": -0.332
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.21,
+            "return_pct": 1.051
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:renewable-energy-rss-news-volume-surge",
+      "algo_type": "crazy",
+      "algo_id": "renewable-energy-rss-news-volume-surge",
+      "name": "Renewable Energy Rss News Volume Surge",
+      "family": "attention_sentiment",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.98,
+      "last_snapshot": "2026-05-07",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.066,
+            "return_pct": -0.332
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.21,
+            "return_pct": 1.051
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:health-insurance-deductible-shock-searches",
+      "algo_type": "crazy",
+      "algo_id": "health-insurance-deductible-shock-searches",
+      "name": "Health Insurance Deductible Shock Searches",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.98,
+      "last_snapshot": "2026-05-07",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.259,
+            "return_pct": 1.293
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.333
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:ev-charger-deployment-sprint-acceleration",
+      "algo_type": "crazy",
+      "algo_id": "ev-charger-deployment-sprint-acceleration",
+      "name": "Ev Charger Deployment Sprint Acceleration",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.98,
+      "last_snapshot": "2026-05-07",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 1.0,
+            "return_pct": -6.203
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.481,
+            "return_pct": -2.407
+          }
+        },
+        "summary": "mixed"
+      }
     }
   ]
 }

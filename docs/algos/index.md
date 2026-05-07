@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-05-07T23:35:03
+Updated (UTC): 2026-05-07T23:39:07
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 189
+Crazy models: 197
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -205,3 +205,11 @@ Crazy models: 189
 | weekly-surge-in-google-trends-searches-for-diy-bicycle-repai | Weekly Surge In Google Trends Searches For Diy Bicycle Repair | weekly |
 | ev-charger-expansion-momentum-surge | Ev Charger Expansion Momentum Surge | daily |
 | residential-real-estate-search-momentum-rotation | Residential Real Estate Search Momentum Rotation | weekly |
+| daily-spike-in-google-trends-for-emergency-dental-care-signa | Daily Spike In Google Trends For Emergency Dental Care Signals Consumer Stress Impacting Health Sector | daily |
+| weekly-spike-in-google-trends-for-electric-vehicle-battery-r | Weekly Spike In Google Trends For Electric Vehicle Battery Replacement Signals Consumer Stress Lifting Industrial Sector | weekly |
+| weekly-surge-in-google-trends-for-diy-roof-repair-signals-co | Weekly Surge In Google Trends For Diy Roof Repair Signals Consumer Stress Lifting Industrial Sector | weekly |
+| weekly-surge-in-google-trends-for-emergency-plumbing-repair- | Weekly Surge In Google Trends For Emergency Plumbing Repair Signals Consumer Stress Lifting Discretionary Sector | weekly |
+| ev-charger-deployment-sprint-acceleration | Ev Charger Deployment Sprint Acceleration | daily |
+| health-insurance-deductible-shock-searches | Health Insurance Deductible Shock Searches | weekly |
+| renewable-energy-rss-news-volume-surge | Renewable Energy Rss News Volume Surge | weekly |
+| travel-booking-momentum-divergence | Travel Booking Momentum Divergence | weekly |

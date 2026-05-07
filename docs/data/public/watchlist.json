@@ -1,6 +1,6 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-07T23:35:04Z",
+  "generated_at": "2026-05-07T23:39:08Z",
   "algos": [
     {
       "schema_version": "v1",
@@ -919,6 +919,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:weekly-spike-in-google-trends-for-electric-vehicle-battery-r",
+      "algo_type": "crazy",
+      "algo_id": "weekly-spike-in-google-trends-for-electric-vehicle-battery-r",
+      "name": "Weekly Spike In Google Trends For Electric Vehicle Battery Replacement Signals Consumer Stress Lifting Industrial Sector",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.03,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.98,
+      "last_snapshot": "2026-05-07",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.066,
+            "return_pct": -0.332
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.21,
+            "return_pct": 1.051
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:consumer-discretionary-google-trends-surge-for-sale-keywords",
       "algo_type": "crazy",
       "algo_id": "consumer-discretionary-google-trends-surge-for-sale-keywords",
@@ -1027,6 +1063,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:travel-booking-momentum-divergence",
+      "algo_type": "crazy",
+      "algo_id": "travel-booking-momentum-divergence",
+      "name": "Travel Booking Momentum Divergence",
+      "family": "travel_mobility",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.06,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.98,
+      "last_snapshot": "2026-05-07",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.259,
+            "return_pct": 1.293
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.333
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
       "algo_type": "crazy",
       "algo_id": "weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
@@ -1059,6 +1131,42 @@
           }
         },
         "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-spike-in-google-trends-for-emergency-dental-care-signa",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-for-emergency-dental-care-signa",
+      "name": "Daily Spike In Google Trends For Emergency Dental Care Signals Consumer Stress Impacting Health Sector",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.07,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -10.98,
+      "last_snapshot": "2026-05-07",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLV",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.174,
+            "return_pct": -0.87
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.617,
+            "return_pct": -3.087
+          }
+        },
+        "summary": "mixed"
       }
     },
     {

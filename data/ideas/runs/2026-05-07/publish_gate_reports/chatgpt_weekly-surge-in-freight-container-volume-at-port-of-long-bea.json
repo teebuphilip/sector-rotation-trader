@@ -1,0 +1,38 @@
+{
+  "source_file": "data/ideas/runs/2026-05-07/publish/chatgpt_weekly-surge-in-freight-container-volume-at-port-of-long-bea.md",
+  "target_file": "data/ideas/runs/2026-05-07/intervention/chatgpt_weekly-surge-in-freight-container-volume-at-port-of-long-bea.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "port_container_volume",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "data source stability risk",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "uncertain data frequency support",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table",
+        "port_container_volume",
+        "tsa_table"
+      ],
+      "scores": {
+        "tsa_table": 1,
+        "html_table": 1,
+        "port_container_volume": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 941,
+    "output_tokens": 92
+  },
+  "cost_usd": 0.0032725,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"port_container_volume\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Low confidence in deterministic adapter routing and unclear if port_container_volume adapter directly supports weekly data for Port of Long Beach\",\n  \"risk_flags\": [\"low adapter routing confidence\", \"uncertain data frequency support\", \"data source stability risk\"]\n}\n```"
+}

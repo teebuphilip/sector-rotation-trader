@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-05-07/publish/claude_consumer-staples-relative-weakness-reversion.md",
+  "target_file": "data/ideas/runs/2026-05-07/intervention/claude_consumer-staples-relative-weakness-reversion.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "VIX data is required but price_only adapter does not provide VIX or multi-symbol data.",
+    "risk_flags": [
+      "intra-day bounce requires higher frequency data",
+      "missing VIX data",
+      "multi-symbol comparison not supported by adapter"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 982,
+    "output_tokens": 93
+  },
+  "cost_usd": 0.003385,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"VIX data is required but price_only adapter does not provide VIX or multi-symbol data.\",\n  \"risk_flags\": [\"missing VIX data\", \"multi-symbol comparison not supported by adapter\", \"intra-day bounce requires higher frequency data\"]\n}\n```"
+}

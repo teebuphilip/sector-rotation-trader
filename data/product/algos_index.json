@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-07T23:35:04Z",
+  "generated_at": "2026-05-07T23:39:08Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -457,6 +457,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:renewable-energy-rss-news-volume-surge",
+      "algo_type": "crazy",
+      "algo_id": "renewable-energy-rss-news-volume-surge",
+      "name": "Renewable Energy Rss News Volume Surge",
+      "family": "attention_sentiment",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-07",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:rss-roar",
       "algo_type": "crazy",
       "algo_id": "rss-roar",
@@ -829,6 +853,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-spike-in-google-trends-for-emergency-dental-care-signa",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-for-emergency-dental-care-signa",
+      "name": "Daily Spike In Google Trends For Emergency Dental Care Signals Consumer Stress Impacting Health Sector",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLV"
+      ],
+      "equity": 99927.72,
+      "ytd_pct": -0.07,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-07",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
       "algo_type": "crazy",
       "algo_id": "daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
@@ -1011,6 +1059,30 @@
       "equity": 99673.9,
       "ytd_pct": -0.33,
       "trade_count": 24,
+      "positions": 0,
+      "last_snapshot": "2026-05-07",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:health-insurance-deductible-shock-searches",
+      "algo_type": "crazy",
+      "algo_id": "health-insurance-deductible-shock-searches",
+      "name": "Health Insurance Deductible Shock Searches",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
       "positions": 0,
       "last_snapshot": "2026-05-07",
       "last_signal": null,
@@ -1540,6 +1612,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-spike-in-google-trends-for-electric-vehicle-battery-r",
+      "algo_type": "crazy",
+      "algo_id": "weekly-spike-in-google-trends-for-electric-vehicle-battery-r",
+      "name": "Weekly Spike In Google Trends For Electric Vehicle Battery Replacement Signals Consumer Stress Lifting Industrial Sector",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 99969.08,
+      "ytd_pct": -0.03,
+      "trade_count": 6,
+      "positions": 0,
+      "last_snapshot": "2026-05-07",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
       "algo_type": "crazy",
       "algo_id": "weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
@@ -1588,6 +1684,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-surge-in-google-trends-for-diy-roof-repair-signals-co",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-diy-roof-repair-signals-co",
+      "name": "Weekly Surge In Google Trends For Diy Roof Repair Signals Consumer Stress Lifting Industrial Sector",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-07",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-surge-in-google-trends-for-diy-solar-panel-repair-sig",
       "algo_type": "crazy",
       "algo_id": "weekly-surge-in-google-trends-for-diy-solar-panel-repair-sig",
@@ -1598,6 +1718,30 @@
       "rebalance_frequency": "weekly",
       "universe": [
         "XLE"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-07",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-surge-in-google-trends-for-emergency-plumbing-repair-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-emergency-plumbing-repair-",
+      "name": "Weekly Surge In Google Trends For Emergency Plumbing Repair Signals Consumer Stress Lifting Discretionary Sector",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
       ],
       "equity": 100000.0,
       "ytd_pct": 0.0,
@@ -3031,6 +3175,30 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "Uses non-price adapter: crazy.adapters.eia_electricity",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:ev-charger-deployment-sprint-acceleration",
+      "algo_type": "crazy",
+      "algo_id": "ev-charger-deployment-sprint-acceleration",
+      "name": "Ev Charger Deployment Sprint Acceleration",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLE"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-07",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },
@@ -4737,6 +4905,30 @@
       "equity": 100000.0,
       "ytd_pct": 0.0,
       "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-07",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:travel-booking-momentum-divergence",
+      "algo_type": "crazy",
+      "algo_id": "travel-booking-momentum-divergence",
+      "name": "Travel Booking Momentum Divergence",
+      "family": "travel_mobility",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99943.44,
+      "ytd_pct": -0.06,
+      "trade_count": 4,
       "positions": 0,
       "last_snapshot": "2026-05-07",
       "last_signal": null,

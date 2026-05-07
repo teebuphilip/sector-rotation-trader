@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-07T23:35:04Z",
+  "generated_at": "2026-05-07T23:39:08Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -266,6 +266,30 @@
       "equity": 99385.03,
       "ytd_pct": -0.61,
       "trade_count": 28,
+      "positions": 0,
+      "last_snapshot": "2026-05-07",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-spike-in-google-trends-for-emergency-dental-care-signa",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-for-emergency-dental-care-signa",
+      "name": "Daily Spike In Google Trends For Emergency Dental Care Signals Consumer Stress Impacting Health Sector",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLV"
+      ],
+      "equity": 99927.72,
+      "ytd_pct": -0.07,
+      "trade_count": 2,
       "positions": 0,
       "last_snapshot": "2026-05-07",
       "last_signal": null,
@@ -636,6 +660,30 @@
       "equity": 99768.27,
       "ytd_pct": -0.23,
       "trade_count": 12,
+      "positions": 0,
+      "last_snapshot": "2026-05-07",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-spike-in-google-trends-for-electric-vehicle-battery-r",
+      "algo_type": "crazy",
+      "algo_id": "weekly-spike-in-google-trends-for-electric-vehicle-battery-r",
+      "name": "Weekly Spike In Google Trends For Electric Vehicle Battery Replacement Signals Consumer Stress Lifting Industrial Sector",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 99969.08,
+      "ytd_pct": -0.03,
+      "trade_count": 6,
       "positions": 0,
       "last_snapshot": "2026-05-07",
       "last_signal": null,
@@ -1888,6 +1936,30 @@
       "backtest_reason": "Backtest completed",
       "backtest_alpha_vs_spy_pct": -50.82,
       "backtest_trade_count": 118
+    },
+    {
+      "key": "crazy:travel-booking-momentum-divergence",
+      "algo_type": "crazy",
+      "algo_id": "travel-booking-momentum-divergence",
+      "name": "Travel Booking Momentum Divergence",
+      "family": "travel_mobility",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99943.44,
+      "ytd_pct": -0.06,
+      "trade_count": 4,
+      "positions": 0,
+      "last_snapshot": "2026-05-07",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
     },
     {
       "key": "crazy:uber-mobility",
