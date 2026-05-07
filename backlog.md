@@ -88,6 +88,16 @@ This is the backlog for features and product work that are explicitly out of sco
 
 ## Content / Research
 
+### Publishable Plain-English Algo Spec
+- Add a plain-English spec block to algo pages shortly after the May 15 launch.
+- Each algo page should answer:
+  - what this signal is trying to detect
+  - what data it uses
+  - what makes it fire
+  - when it exits
+  - why it could fail
+- Goal: make each algo page legible to a normal reader without requiring them to infer the strategy from stats and trade logs alone.
+
 ### Legacy Algo Thesis Backfill
 - Backfill full structured thesis inventory for legacy algo pages that still rely on thin copy.
 - Include:
@@ -103,6 +113,18 @@ This is the backlog for features and product work that are explicitly out of sco
 ### Premium Signal Change Notes
 - Add short premium change logs for signals that moved materially in rank, alpha, or drawdown.
 - Goal: give subscribers a reason to come back beyond static dashboards.
+
+## Public Ops Visibility
+
+### Public Ops Notes / Daily Changelog Page
+- Add a visible ops notes page shortly after launch.
+- It should log operationally meaningful daily events in plain English, for example:
+  - `6:30am - 5 new signals generated`
+  - `6:30pm - market analysis complete`
+  - `preview publish succeeded`
+  - `daily run recovered manually`
+- Goal: make the lab feel alive, transparent, and inspectable instead of opaque.
+- Secondary goal: create a lightweight public-facing audit trail without forcing users into raw logs.
 
 ## Rule
 
