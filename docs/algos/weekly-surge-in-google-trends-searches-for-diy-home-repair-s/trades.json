@@ -407,6 +407,16 @@
       "pnl_pct": 0.96,
       "entry_date": "2026-04-08",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-07",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 41.3833,
+      "price": 119.88,
+      "cost": 4961.03,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1389,6 +1399,26 @@
       "positions": {},
       "sector": "Weekly Surge In Google Trends Searches For Diy Home Repair Signals Consumer Stress Lifting Xly",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-07",
+      "cash": 94249.54,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99210.57,
+      "positions": {
+        "XLY": {
+          "shares": 41.3833,
+          "entry_price": 119.88,
+          "current_price": 119.88,
+          "market_value": 4961.03,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-07",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Surge In Google Trends Searches For Diy Home Repair Signals Consumer Stress Lifting Xly",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-22"

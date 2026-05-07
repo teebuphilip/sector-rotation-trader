@@ -95,6 +95,16 @@
       "pnl_pct": 0.18,
       "entry_date": "2026-05-05",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-07",
+      "action": "BUY",
+      "ticker": "XLF",
+      "shares": 96.9763,
+      "price": 51.55,
+      "cost": 4999.13,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -927,6 +937,26 @@
       "positions": {},
       "sector": "Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-07",
+      "cash": 94973.45,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99972.58,
+      "positions": {
+        "XLF": {
+          "shares": 96.9763,
+          "entry_price": 51.55,
+          "current_price": 51.55,
+          "market_value": 4999.13,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-07",
+          "margin": false
+        }
+      },
+      "sector": "Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-23"

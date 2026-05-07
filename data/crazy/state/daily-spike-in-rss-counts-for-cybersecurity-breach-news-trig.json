@@ -1,19 +1,10 @@
 {
-  "cash": 94875.19446197922,
+  "cash": 99848.95538371512,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 130.9062394267858,
+  "fees_paid": 141.11424918020177,
   "taxes_paid": 37.771045431247344,
-  "positions": {
-    "XLK": {
-      "shares": 29.37102280501333,
-      "entry_price": 170.02999877929688,
-      "entry_date": "2026-05-06",
-      "cost": 4993.954971683117,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-24",
@@ -168,6 +159,20 @@
       "cost": 4993.95,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-07",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 29.371,
+      "price": 169.69,
+      "proceeds": 4973.76,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -20.19,
+      "pnl_pct": -0.4,
+      "entry_date": "2026-05-06",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1030,19 +1035,29 @@
       },
       "sector": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-07",
+      "cash": 99848.96,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99848.96,
+      "positions": {},
+      "sector": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-23",
-  "last_run": "2026-05-06",
+  "last_run": "2026-05-07",
   "meta": {
     "daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig": {
-      "latest_value": 45.0,
-      "prior_avg": 10.5,
-      "signal_change": 3.2857,
-      "signal_label": "RISK_ON",
+      "latest_value": 81.0,
+      "prior_avg": 3.6667,
+      "signal_change": 21.0909,
+      "signal_label": "HOLD",
       "name": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-06",
+      "last_signal": "HOLD",
+      "last_run": "2026-05-07",
       "entry_date": "2026-05-06"
     }
   }

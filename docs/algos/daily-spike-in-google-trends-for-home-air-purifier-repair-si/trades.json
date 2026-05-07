@@ -23,6 +23,16 @@
       "pnl_pct": -0.2,
       "entry_date": "2026-05-03",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-07",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 41.7,
+      "price": 119.88,
+      "cost": 4998.99,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -755,6 +765,26 @@
       "positions": {},
       "sector": "Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-07",
+      "cash": 94970.9,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99969.89,
+      "positions": {
+        "XLY": {
+          "shares": 41.7,
+          "entry_price": 119.88,
+          "current_price": 119.88,
+          "market_value": 4998.99,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-07",
+          "margin": false
+        }
+      },
+      "sector": "Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-30"

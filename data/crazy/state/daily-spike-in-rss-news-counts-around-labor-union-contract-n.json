@@ -1,10 +1,19 @@
 {
-  "cash": 99982.53128081754,
+  "cash": 94973.45471677666,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 80.72013287366389,
+  "fees_paid": 90.67013287366389,
   "taxes_paid": 19.122646652252815,
-  "positions": {},
+  "positions": {
+    "XLF": {
+      "shares": 96.97626843895051,
+      "entry_price": 51.54999923706055,
+      "entry_date": "2026-05-07",
+      "cost": 4999.126564040877,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-25",
@@ -101,6 +110,16 @@
       "pnl_pct": 0.18,
       "entry_date": "2026-05-05",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-07",
+      "action": "BUY",
+      "ticker": "XLF",
+      "shares": 96.9763,
+      "price": 51.55,
+      "cost": 4999.13,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -933,19 +952,40 @@
       "positions": {},
       "sector": "Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-07",
+      "cash": 94973.45,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99972.58,
+      "positions": {
+        "XLF": {
+          "shares": 96.9763,
+          "entry_price": 51.55,
+          "current_price": 51.55,
+          "market_value": 4999.13,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-07",
+          "margin": false
+        }
+      },
+      "sector": "Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-23",
-  "last_run": "2026-05-06",
+  "last_run": "2026-05-07",
   "meta": {
     "daily-spike-in-rss-news-counts-around-labor-union-contract-n": {
-      "latest_value": 1.0,
-      "prior_avg": 2.5,
-      "signal_change": -0.6,
-      "signal_label": "RISK_OFF",
+      "latest_value": 2.0,
+      "prior_avg": 1.75,
+      "signal_change": 0.1429,
+      "signal_label": "RISK_ON",
       "name": "Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf",
-      "last_signal": "RISK_OFF",
-      "last_run": "2026-05-06"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-07",
+      "entry_date": "2026-05-07"
     }
   }
 }

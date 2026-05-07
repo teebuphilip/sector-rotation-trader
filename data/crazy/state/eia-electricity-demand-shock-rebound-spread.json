@@ -795,19 +795,29 @@
       "positions": {},
       "sector": "Eia Electricity Demand Shock Rebound Spread",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-07",
+      "cash": 99940.31,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99940.31,
+      "positions": {},
+      "sector": "Eia Electricity Demand Shock Rebound Spread",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-30",
-  "last_run": "2026-05-06",
+  "last_run": "2026-05-07",
   "meta": {
     "eia-electricity-demand-shock-rebound-spread": {
       "signal_label": "HOLD",
-      "latest_value": 10056884.0,
-      "prior_avg": 10424359.5357,
-      "signal_change": -0.0353,
+      "latest_value": 10106747.0,
+      "prior_avg": 10420071.3143,
+      "signal_change": -0.0301,
       "name": "Eia Electricity Demand Shock Rebound Spread",
       "last_signal": "HOLD",
-      "last_run": "2026-05-06",
+      "last_run": "2026-05-07",
       "entry_date": "2026-05-04"
     }
   }

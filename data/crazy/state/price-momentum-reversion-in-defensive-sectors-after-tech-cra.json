@@ -1,19 +1,10 @@
 {
-  "cash": 95052.5379078009,
+  "cash": 100035.61354864115,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 50.27791550994431,
+  "fees_paid": 60.48640749204829,
   "taxes_paid": 50.31808836479557,
-  "positions": {
-    "XLK": {
-      "shares": 29.425918209568838,
-      "entry_price": 170.02999877929688,
-      "entry_date": "2026-05-06",
-      "cost": 5003.2888372526795,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-14",
@@ -72,6 +63,20 @@
       "cost": 5003.29,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-07",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 29.4259,
+      "price": 169.69,
+      "proceeds": 4983.08,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -20.21,
+      "pnl_pct": -0.4,
+      "entry_date": "2026-05-06",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -824,20 +829,30 @@
       },
       "sector": "Price Momentum Reversion In Defensive Sectors After Tech Crash",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-07",
+      "cash": 100035.61,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100035.61,
+      "positions": {},
+      "sector": "Price Momentum Reversion In Defensive Sectors After Tech Crash",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-30",
-  "last_run": "2026-05-06",
+  "last_run": "2026-05-07",
   "meta": {
     "price-momentum-reversion-in-defensive-sectors-after-tech-cra": {
-      "latest_value": 170.03,
-      "prior_avg": 161.632,
-      "signal_change": 0.052,
-      "signal_label": "RISK_ON",
+      "latest_value": 169.69,
+      "prior_avg": 163.816,
+      "signal_change": 0.0359,
+      "signal_label": "HOLD",
       "entry_date": "2026-05-06",
       "name": "Price Momentum Reversion In Defensive Sectors After Tech Crash",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-06"
+      "last_signal": "HOLD",
+      "last_run": "2026-05-07"
     }
   }
 }

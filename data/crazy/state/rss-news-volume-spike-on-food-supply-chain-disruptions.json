@@ -1,10 +1,19 @@
 {
-  "cash": 99912.60223369823,
+  "cash": 94907.02212201332,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 60.50188837661067,
+  "fees_paid": 70.45188837661067,
   "taxes_paid": 0.17765959236413437,
-  "positions": {},
+  "positions": {
+    "XLP": {
+      "shares": 59.48594798755102,
+      "entry_price": 83.9800033569336,
+      "entry_date": "2026-05-07",
+      "cost": 4995.630111684912,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-05-03",
@@ -77,6 +86,16 @@
       "pnl_pct": 0.01,
       "entry_date": "2026-05-05",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-07",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 59.4859,
+      "price": 83.98,
+      "cost": 4995.63,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -819,20 +838,40 @@
       "positions": {},
       "sector": "Rss News Volume Spike On Food Supply Chain Disruptions",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-07",
+      "cash": 94907.02,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99902.65,
+      "positions": {
+        "XLP": {
+          "shares": 59.4859,
+          "entry_price": 83.98,
+          "current_price": 83.98,
+          "market_value": 4995.63,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-07",
+          "margin": false
+        }
+      },
+      "sector": "Rss News Volume Spike On Food Supply Chain Disruptions",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-02-01",
-  "last_run": "2026-05-06",
+  "last_run": "2026-05-07",
   "meta": {
     "rss-news-volume-spike-on-food-supply-chain-disruptions": {
-      "latest_value": 16.0,
-      "prior_avg": 2.6,
-      "signal_change": 5.1538,
-      "entry_date": "2026-05-05",
-      "signal_label": "HOLD",
+      "latest_value": 11.0,
+      "prior_avg": 2.8667,
+      "signal_change": 2.8372,
+      "entry_date": "2026-05-07",
+      "signal_label": "RISK_ON",
       "name": "Rss News Volume Spike On Food Supply Chain Disruptions",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-06"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-07"
     }
   }
 }
