@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T23:39:43Z",
+  "generated_at": "2026-05-08T23:46:41Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
@@ -168,15 +168,15 @@
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 47,
+      "count": 52,
       "by_status": {
         "failed": 1,
-        "live_only": 24,
-        "sandbox": 22
+        "live_only": 25,
+        "sandbox": 26
       },
       "by_evidence_class": {
-        "live_receipts_only": 24,
-        "needs_history": 22,
+        "live_receipts_only": 25,
+        "needs_history": 26,
         "v1_backtested": 1
       },
       "leaders": [
@@ -234,6 +234,30 @@
           "backtest_trade_count": null
         },
         {
+          "key": "crazy:daily-jump-in-consumer-stress-google-trends-searches-for-car",
+          "algo_type": "crazy",
+          "algo_id": "daily-jump-in-consumer-stress-google-trends-searches-for-car",
+          "name": "Daily Jump In Consumer Stress Google Trends Searches For Car Repossession Signals Rising Financial Distress",
+          "family": "consumer_stress",
+          "status": "live_only",
+          "evidence_class": "live_receipts_only",
+          "rebalance_frequency": "daily",
+          "universe": [
+            "XLY"
+          ],
+          "equity": 100070.09,
+          "ytd_pct": 0.07,
+          "trade_count": 16,
+          "positions": 0,
+          "last_snapshot": "2026-05-08",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": null,
+          "backtest_reason": null,
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
+        {
           "key": "crazy:weekly-surge-in-google-trends-searches-for-diy-electronics-r",
           "algo_type": "crazy",
           "algo_id": "weekly-surge-in-google-trends-searches-for-diy-electronics-r",
@@ -272,30 +296,6 @@
           "equity": 100038.19,
           "ytd_pct": 0.04,
           "trade_count": 2,
-          "positions": 0,
-          "last_snapshot": "2026-05-08",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": null,
-          "backtest_reason": null,
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:weekly-surge-in-google-trends-for-diy-plumbing-repair-signal",
-          "algo_type": "crazy",
-          "algo_id": "weekly-surge-in-google-trends-for-diy-plumbing-repair-signal",
-          "name": "Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound",
-          "family": "consumer_stress",
-          "status": "live_only",
-          "evidence_class": "live_receipts_only",
-          "rebalance_frequency": "weekly",
-          "universe": [
-            "XLY"
-          ],
-          "equity": 100035.8,
-          "ytd_pct": 0.04,
-          "trade_count": 6,
           "positions": 0,
           "last_snapshot": "2026-05-08",
           "last_signal": null,
@@ -487,13 +487,13 @@
     },
     "freight_logistics": {
       "family": "freight_logistics",
-      "count": 11,
+      "count": 12,
       "by_status": {
-        "live_only": 4,
+        "live_only": 5,
         "sandbox": 7
       },
       "by_evidence_class": {
-        "live_receipts_only": 4,
+        "live_receipts_only": 5,
         "needs_history": 7
       },
       "leaders": [
@@ -636,14 +636,14 @@
     },
     "labor_jobs": {
       "family": "labor_jobs",
-      "count": 10,
+      "count": 13,
       "by_status": {
-        "live_only": 6,
-        "sandbox": 4
+        "live_only": 7,
+        "sandbox": 6
       },
       "by_evidence_class": {
-        "live_receipts_only": 6,
-        "needs_history": 4
+        "live_receipts_only": 7,
+        "needs_history": 6
       },
       "leaders": [
         {
@@ -690,6 +690,30 @@
           "equity": 100072.76,
           "ytd_pct": 0.07,
           "trade_count": 2,
+          "positions": 0,
+          "last_snapshot": "2026-05-08",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": null,
+          "backtest_reason": null,
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
+        {
+          "key": "crazy:daily-jump-in-rss-news-counts-mentioning-labor-strike-signal",
+          "algo_type": "crazy",
+          "algo_id": "daily-jump-in-rss-news-counts-mentioning-labor-strike-signal",
+          "name": "Daily Jump In Rss News Counts Mentioning Labor Strike Signals Imminent Industrial Disruption",
+          "family": "labor_jobs",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "universe": [
+            "XLI"
+          ],
+          "equity": 100000.0,
+          "ytd_pct": 0.0,
+          "trade_count": 0,
           "positions": 0,
           "last_snapshot": "2026-05-08",
           "last_signal": null,
@@ -763,42 +787,18 @@
           "backtest_reason": "No supported V1 price-only backtest path",
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:weekly-google-trends-surge-in-searches-for-truck-driver-shor",
-          "algo_type": "crazy",
-          "algo_id": "weekly-google-trends-surge-in-searches-for-truck-driver-shor",
-          "name": "Weekly Google Trends Surge In Searches For Truck Driver Shortage",
-          "family": "labor_jobs",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "weekly",
-          "universe": [
-            "XLI"
-          ],
-          "equity": 100000.0,
-          "ytd_pct": 0.0,
-          "trade_count": 0,
-          "positions": 0,
-          "last_snapshot": "2026-05-08",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": null,
-          "backtest_reason": null,
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
         }
       ]
     },
     "local_economy_weirdness": {
       "family": "local_economy_weirdness",
-      "count": 17,
+      "count": 18,
       "by_status": {
-        "live_only": 9,
+        "live_only": 10,
         "sandbox": 8
       },
       "by_evidence_class": {
-        "live_receipts_only": 9,
+        "live_receipts_only": 10,
         "needs_history": 8
       },
       "leaders": [
@@ -937,16 +937,16 @@
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 56,
+      "count": 58,
       "by_status": {
         "backtest_weak": 1,
         "live_only": 15,
         "parked": 2,
-        "sandbox": 38
+        "sandbox": 40
       },
       "by_evidence_class": {
         "live_receipts_only": 15,
-        "needs_history": 36,
+        "needs_history": 38,
         "pending_seed": 2,
         "v1_backtested": 3
       },
@@ -1239,14 +1239,14 @@
     },
     "travel_mobility": {
       "family": "travel_mobility",
-      "count": 13,
+      "count": 14,
       "by_status": {
         "live_only": 3,
-        "sandbox": 10
+        "sandbox": 11
       },
       "by_evidence_class": {
         "live_receipts_only": 3,
-        "needs_history": 10
+        "needs_history": 11
       },
       "leaders": [
         {

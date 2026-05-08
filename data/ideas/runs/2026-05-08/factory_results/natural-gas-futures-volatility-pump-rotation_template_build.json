@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-05-08/build/claude_natural-gas-futures-volatility-pump-rotation.md",
+  "out": "crazy/algos/natural_gas_futures_volatility_pump_rotation.py",
+  "adapter": "eia_electricity",
+  "idea_id": "natural-gas-futures-volatility-pump-rotation",
+  "name": "Natural Gas Futures Volatility Pump Rotation",
+  "universe": [
+    "XLE"
+  ],
+  "frequency": "daily",
+  "family": "macro_input_pressure",
+  "threshold": 0.1,
+  "direction": "up",
+  "hold_days": 10
+}

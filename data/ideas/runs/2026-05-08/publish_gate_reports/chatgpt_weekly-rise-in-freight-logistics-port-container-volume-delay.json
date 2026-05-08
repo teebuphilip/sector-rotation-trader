@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-05-08/publish/chatgpt_weekly-rise-in-freight-logistics-port-container-volume-delay.md",
+  "target_file": "data/ideas/runs/2026-05-08/intervention/chatgpt_weekly-rise-in-freight-logistics-port-container-volume-delay.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "port_container_volume",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "potential data source mismatch",
+      "uncertain data granularity",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table",
+        "port_container_volume"
+      ],
+      "scores": {
+        "html_table": 1,
+        "port_container_volume": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 921,
+    "output_tokens": 85
+  },
+  "cost_usd": 0.0031525,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"port_container_volume\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Low confidence in adapter mapping and unclear if adapter provides delay index data as required\",\n  \"risk_flags\": [\"low adapter routing confidence\", \"uncertain data granularity\", \"potential data source mismatch\"]\n}\n```"
+}

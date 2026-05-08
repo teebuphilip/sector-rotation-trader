@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-05-08/publish/claude_regional-earthquake-cluster-insurance-demand-spike.md",
+  "target_file": "data/ideas/runs/2026-05-08/build/claude_regional-earthquake-cluster-insurance-demand-spike.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": false,
+    "reason": "Spec uses valid earthquake_activity and google_trends adapters with clear, deterministic logic.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity",
+        "google_trends"
+      ],
+      "scores": {
+        "earthquake_activity": 2,
+        "google_trends": 2,
+        "rss_count": 1,
+        "price_only": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1121,
+    "output_tokens": 74
+  },
+  "cost_usd": 0.0035425,
+  "raw_llm_response": "{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec uses valid earthquake_activity and google_trends adapters with clear, deterministic logic.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}"
+}

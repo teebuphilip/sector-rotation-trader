@@ -1,8 +1,8 @@
 {
   "generated": "2026-05-08",
   "lab_started": "2026-01-11",
-  "signal_count": 202,
-  "total_algos": 202,
+  "signal_count": 215,
+  "total_algos": 215,
   "ticker_count": 105,
   "top_bullish_etfs": [
     "XLK",
@@ -42,7 +42,7 @@
     "XLY": {
       "etf": "XLY",
       "sector": "Consumer Cyclical",
-      "composite": "6 of 48",
+      "composite": "6 of 49",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 12
@@ -50,7 +50,7 @@
     "XLI": {
       "etf": "XLI",
       "sector": "Industrials",
-      "composite": "5 of 35",
+      "composite": "5 of 37",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 14
@@ -90,7 +90,7 @@
     "XLRE": {
       "etf": "XLRE",
       "sector": "Real Estate",
-      "composite": "1 of 30",
+      "composite": "1 of 31",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 3
@@ -216,6 +216,16 @@
       "equity": 100081.02
     },
     {
+      "algo_id": "daily-jump-in-consumer-stress-google-trends-searches-for-car",
+      "name": "Daily Jump In Consumer Stress Google Trends Searches For Car Repossession Signals Rising Financial Distress",
+      "algo_type": "crazy",
+      "ytd_pct": 0.07,
+      "spy_pct": 0.07,
+      "beat_spy": false,
+      "days_running": 66,
+      "equity": 100070.09
+    },
+    {
       "algo_id": "earthquake-aftershock-insurance-claims-spike",
       "name": "Earthquake Aftershock Insurance Claims Spike",
       "algo_type": "crazy",
@@ -294,16 +304,6 @@
       "beat_spy": false,
       "days_running": 75,
       "equity": 100027.01
-    },
-    {
-      "algo_id": "price-momentum-reversion-in-defensive-sectors-after-tech-cra",
-      "name": "Price Momentum Reversion In Defensive Sectors After Tech Crash",
-      "algo_type": "crazy",
-      "ytd_pct": 0.03,
-      "spy_pct": 0.03,
-      "beat_spy": false,
-      "days_running": 74,
-      "equity": 100025.66
     }
   ],
   "ticker_index": {
@@ -833,7 +833,7 @@
       "bullish_pct": 41
     }
   },
-  "idle_algos": 114,
+  "idle_algos": 123,
   "blocked_algos": [
     {
       "timestamp": "2026-05-08T23:35:53",

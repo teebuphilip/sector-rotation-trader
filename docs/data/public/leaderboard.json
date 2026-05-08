@@ -1,8 +1,8 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-08T23:39:52Z",
+  "generated_at": "2026-05-08T23:46:41Z",
   "counts": {
-    "total": 202,
+    "total": 215,
     "beating_spy": 1
   },
   "algos": [
@@ -322,6 +322,42 @@
           }
         },
         "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-consumer-stress-google-trends-searches-for-car",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-consumer-stress-google-trends-searches-for-car",
+      "name": "Daily Jump In Consumer Stress Google Trends Searches For Car Repossession Signals Rising Financial Distress",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.07,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.01,
+      "spy_delta_30d_pct": -9.11,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.265,
+            "return_pct": 1.323
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.475
+          }
+        },
+        "summary": "both_up"
       }
     },
     {
@@ -851,6 +887,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:regional-earthquake-cluster-insurance-demand-spike",
+      "algo_type": "crazy",
+      "algo_id": "regional-earthquake-cluster-insurance-demand-spike",
+      "name": "Regional Earthquake Cluster Insurance Demand Spike",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.02,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.02,
+      "spy_delta_30d_pct": -9.14,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLRE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.041,
+            "return_pct": 0.203
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.743,
+            "return_pct": 3.713
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:daily-spike-in-google-trends-for-home-air-purifier-repair-si",
       "algo_type": "crazy",
       "algo_id": "daily-spike-in-google-trends-for-home-air-purifier-repair-si",
@@ -1315,6 +1387,78 @@
           }
         },
         "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-searches-for-truck-driver-stri",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-searches-for-truck-driver-stri",
+      "name": "Weekly Surge In Google Trends Searches For Truck Driver Strike Signals Imminent Logistics Disruption",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.08,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.08,
+      "spy_delta_30d_pct": -9.19,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.028,
+            "return_pct": 0.139
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.196,
+            "return_pct": 0.979
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-increase-in-usgs-earthquake-activity-within-key-logis",
+      "algo_type": "crazy",
+      "algo_id": "weekly-increase-in-usgs-earthquake-activity-within-key-logis",
+      "name": "Weekly Increase In Usgs Earthquake Activity Within Key Logistics Hubs Signals Potential Freight Delays",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.08,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.08,
+      "spy_delta_30d_pct": -9.19,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.028,
+            "return_pct": 0.139
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.196,
+            "return_pct": 0.979
+          }
+        },
+        "summary": "both_up"
       }
     },
     {
@@ -6362,6 +6506,330 @@
       "last_snapshot": "2026-05-08",
       "new_algo_date": null,
       "comparator": null
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-searches-for-warehouse-worker-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-searches-for-warehouse-worker-",
+      "name": "Weekly Surge In Google Trends Searches For Warehouse Worker Shortage Signals Labor Tightness",
+      "family": "labor_jobs",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.11,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.028,
+            "return_pct": 0.139
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.196,
+            "return_pct": 0.979
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-jump-in-google-trends-searches-for-airport-security-d",
+      "algo_type": "crazy",
+      "algo_id": "weekly-jump-in-google-trends-searches-for-airport-security-d",
+      "name": "Weekly Jump In Google Trends Searches For Airport Security Delay Signals Travel Mobility Disruptions",
+      "family": "travel_mobility",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.11,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.265,
+            "return_pct": 1.323
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.475
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-increase-in-google-trends-searches-for-small-business",
+      "algo_type": "crazy",
+      "algo_id": "weekly-increase-in-google-trends-searches-for-small-business",
+      "name": "Weekly Increase In Google Trends Searches For Small Business Loan Default Signals Rising Credit Stress",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.11,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLF",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.262,
+            "return_pct": -1.31
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.185,
+            "return_pct": 0.926
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:utility-volatility-compression-reversion-bounce",
+      "algo_type": "crazy",
+      "algo_id": "utility-volatility-compression-reversion-bounce",
+      "name": "Utility Volatility Compression Reversion Bounce",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.11,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLU",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.786,
+            "return_pct": -3.931
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.954,
+            "return_pct": -4.77
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:natural-gas-futures-volatility-pump-rotation",
+      "algo_type": "crazy",
+      "algo_id": "natural-gas-futures-volatility-pump-rotation",
+      "name": "Natural Gas Futures Volatility Pump Rotation",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.11,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 1.0,
+            "return_pct": -5.353
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.436,
+            "return_pct": -2.178
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-spike-in-google-trends-searches-for-home-heating-syste",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-searches-for-home-heating-syste",
+      "name": "Daily Spike In Google Trends Searches For Home Heating System Failure Signals Winter Utility Stress",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.11,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLU",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.786,
+            "return_pct": -3.931
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.954,
+            "return_pct": -4.77
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-spike-in-google-trends-searches-for-emergency-plumber-",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-searches-for-emergency-plumber-",
+      "name": "Daily Spike In Google Trends Searches For Emergency Plumber Signals Consumer Home Repair Stress",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.11,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.265,
+            "return_pct": 1.323
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.475
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-rss-news-counts-mentioning-labor-strike-signal",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-rss-news-counts-mentioning-labor-strike-signal",
+      "name": "Daily Jump In Rss News Counts Mentioning Labor Strike Signals Imminent Industrial Disruption",
+      "family": "labor_jobs",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.11,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.028,
+            "return_pct": 0.139
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.196,
+            "return_pct": 0.979
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-google-trends-searches-for-electric-vehicle-ba",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-searches-for-electric-vehicle-ba",
+      "name": "Daily Jump In Google Trends Searches For Electric Vehicle Battery Failure Signals Consumer Tech Stress",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -9.11,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLC",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.038,
+            "return_pct": 0.188
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.525,
+            "return_pct": 2.624
+          }
+        },
+        "summary": "both_up"
+      }
     }
   ]
 }

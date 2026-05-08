@@ -1,0 +1,37 @@
+{
+  "source_file": "data/ideas/runs/2026-05-08/publish/claude_bank-stress-premium-decompression-fade.md",
+  "target_file": "data/ideas/runs/2026-05-08/intervention/claude_bank-stress-premium-decompression-fade.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "missing VIX adapter",
+      "mixed frequency data",
+      "unsupported_template_adapter",
+      "volume proxy unclear"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "price_only"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 1064,
+    "output_tokens": 93
+  },
+  "cost_usd": 0.00359,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"VIX data is required but no adapter for VIX is specified; multiple data sources need proper adapter mapping\",\n  \"risk_flags\": [\"missing VIX adapter\", \"mixed frequency data\", \"volume proxy unclear\", \"low adapter routing confidence\"]\n}\n```"
+}

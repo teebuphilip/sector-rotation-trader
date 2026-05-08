@@ -1,0 +1,142 @@
+{
+  "run_date": "2026-05-08",
+  "start": "2024-01-01",
+  "end": "2026-05-08",
+  "slippage_bps": 5.0,
+  "generated_at": "2026-05-08T23:46:17Z",
+  "counts": {
+    "LIVE_ONLY_NON_PRICE": 12,
+    "INSUFFICIENT_ACTIVITY": 1
+  },
+  "results": [
+    {
+      "algo_id": "daily-jump-in-consumer-stress-google-trends-searches-for-car",
+      "name": "Daily Jump In Consumer Stress Google Trends Searches For Car Repossession Signals Rising Financial Distress",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-08"
+    },
+    {
+      "algo_id": "daily-jump-in-google-trends-searches-for-electric-vehicle-ba",
+      "name": "Daily Jump In Google Trends Searches For Electric Vehicle Battery Failure Signals Consumer Tech Stress",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-08"
+    },
+    {
+      "algo_id": "daily-jump-in-rss-news-counts-mentioning-labor-strike-signal",
+      "name": "Daily Jump In Rss News Counts Mentioning Labor Strike Signals Imminent Industrial Disruption",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.rss_count",
+      "metrics": {},
+      "run_date": "2026-05-08"
+    },
+    {
+      "algo_id": "daily-spike-in-google-trends-searches-for-emergency-plumber-",
+      "name": "Daily Spike In Google Trends Searches For Emergency Plumber Signals Consumer Home Repair Stress",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-08"
+    },
+    {
+      "algo_id": "daily-spike-in-google-trends-searches-for-home-heating-syste",
+      "name": "Daily Spike In Google Trends Searches For Home Heating System Failure Signals Winter Utility Stress",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-08"
+    },
+    {
+      "algo_id": "natural-gas-futures-volatility-pump-rotation",
+      "name": "Natural Gas Futures Volatility Pump Rotation",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.eia_electricity",
+      "metrics": {},
+      "run_date": "2026-05-08"
+    },
+    {
+      "algo_id": "regional-earthquake-cluster-insurance-demand-spike",
+      "name": "Regional Earthquake Cluster Insurance Demand Spike",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.earthquake_activity",
+      "metrics": {},
+      "run_date": "2026-05-08"
+    },
+    {
+      "algo_id": "utility-volatility-compression-reversion-bounce",
+      "name": "Utility Volatility Compression Reversion Bounce",
+      "family": "crazy",
+      "status": "INSUFFICIENT_ACTIVITY",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.0,
+        "spy_return_pct": 59.04,
+        "alpha_vs_spy_pct": -59.04,
+        "max_drawdown_pct": 0.0,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": 0.0,
+        "spy_sharpe": 1.04,
+        "trade_count": 0,
+        "sell_count": 0,
+        "win_rate_pct": 0.0,
+        "turnover": 0.0
+      },
+      "run_date": "2026-05-08"
+    },
+    {
+      "algo_id": "weekly-increase-in-google-trends-searches-for-small-business",
+      "name": "Weekly Increase In Google Trends Searches For Small Business Loan Default Signals Rising Credit Stress",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-08"
+    },
+    {
+      "algo_id": "weekly-increase-in-usgs-earthquake-activity-within-key-logis",
+      "name": "Weekly Increase In Usgs Earthquake Activity Within Key Logistics Hubs Signals Potential Freight Delays",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.earthquake_activity",
+      "metrics": {},
+      "run_date": "2026-05-08"
+    },
+    {
+      "algo_id": "weekly-jump-in-google-trends-searches-for-airport-security-d",
+      "name": "Weekly Jump In Google Trends Searches For Airport Security Delay Signals Travel Mobility Disruptions",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-08"
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-searches-for-truck-driver-stri",
+      "name": "Weekly Surge In Google Trends Searches For Truck Driver Strike Signals Imminent Logistics Disruption",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-08"
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-searches-for-warehouse-worker-",
+      "name": "Weekly Surge In Google Trends Searches For Warehouse Worker Shortage Signals Labor Tightness",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-08"
+    }
+  ]
+}

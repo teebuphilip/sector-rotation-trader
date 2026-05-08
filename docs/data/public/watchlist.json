@@ -1,6 +1,6 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-08T23:39:43Z",
+  "generated_at": "2026-05-08T23:46:41Z",
   "algos": [
     {
       "schema_version": "v1",
@@ -318,6 +318,42 @@
           }
         },
         "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-consumer-stress-google-trends-searches-for-car",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-consumer-stress-google-trends-searches-for-car",
+      "name": "Daily Jump In Consumer Stress Google Trends Searches For Car Repossession Signals Rising Financial Distress",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.07,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.01,
+      "spy_delta_30d_pct": -9.11,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.265,
+            "return_pct": 1.323
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.475
+          }
+        },
+        "summary": "both_up"
       }
     },
     {
@@ -847,6 +883,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:regional-earthquake-cluster-insurance-demand-spike",
+      "algo_type": "crazy",
+      "algo_id": "regional-earthquake-cluster-insurance-demand-spike",
+      "name": "Regional Earthquake Cluster Insurance Demand Spike",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.02,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.02,
+      "spy_delta_30d_pct": -9.14,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLRE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.041,
+            "return_pct": 0.203
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.743,
+            "return_pct": 3.713
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:daily-spike-in-google-trends-for-home-air-purifier-repair-si",
       "algo_type": "crazy",
       "algo_id": "daily-spike-in-google-trends-for-home-air-purifier-repair-si",
@@ -1311,6 +1383,78 @@
           }
         },
         "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-searches-for-truck-driver-stri",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-searches-for-truck-driver-stri",
+      "name": "Weekly Surge In Google Trends Searches For Truck Driver Strike Signals Imminent Logistics Disruption",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.08,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.08,
+      "spy_delta_30d_pct": -9.19,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.028,
+            "return_pct": 0.139
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.196,
+            "return_pct": 0.979
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-increase-in-usgs-earthquake-activity-within-key-logis",
+      "algo_type": "crazy",
+      "algo_id": "weekly-increase-in-usgs-earthquake-activity-within-key-logis",
+      "name": "Weekly Increase In Usgs Earthquake Activity Within Key Logistics Hubs Signals Potential Freight Delays",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.08,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.08,
+      "spy_delta_30d_pct": -9.19,
+      "last_snapshot": "2026-05-08",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.028,
+            "return_pct": 0.139
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.196,
+            "return_pct": 0.979
+          }
+        },
+        "summary": "both_up"
       }
     },
     {

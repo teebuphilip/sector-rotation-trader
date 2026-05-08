@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-05-08/publish/claude_political-insider-buying-conviction-clusters.md",
+  "target_file": "data/ideas/runs/2026-05-08/intervention/claude_political-insider-buying-conviction-clusters.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "adapter mismatch",
+      "data source instability",
+      "requires volume aggregation",
+      "unsupported_template_adapter",
+      "weekly frequency from daily filings"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "html_table": 5,
+        "price_only": 2
+      },
+      "top_score": 5,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1050,
+    "output_tokens": 88
+  },
+  "cost_usd": 0.003505,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"html_table adapter does not reliably provide structured SEC Form 4 aggregate buy volume data needed\",\n  \"risk_flags\": [\"data source instability\", \"adapter mismatch\", \"requires volume aggregation\", \"weekly frequency from daily filings\"]\n}\n```"
+}

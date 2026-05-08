@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-08/publish/claude_ev-charger-buildout-acceleration-signal.md",
+  "target_file": "data/ideas/runs/2026-05-08/intervention/claude_ev-charger-buildout-acceleration-signal.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "openchargemap",
+    "needs_new_adapter": false,
+    "reason": "OpenChargeMap adapter likely does not provide volume data needed for volume filter",
+    "risk_flags": [
+      "potential mismatch in data granularity",
+      "volume data required but adapter is price_only",
+      "volume threshold in signal logic"
+    ],
+    "route": {
+      "adapters": [
+        "openchargemap"
+      ],
+      "scores": {
+        "openchargemap": 2,
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1032,
+    "output_tokens": 90
+  },
+  "cost_usd": 0.00348,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"openchargemap\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"OpenChargeMap adapter likely does not provide volume data needed for volume filter\",\n  \"risk_flags\": [\"volume data required but adapter is price_only\", \"volume threshold in signal logic\", \"potential mismatch in data granularity\"]\n}\n```"
+}

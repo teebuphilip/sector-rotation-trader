@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-05-08T23:39:43
+Updated (UTC): 2026-05-08T23:46:40
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 197
+Crazy models: 210
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -213,3 +213,16 @@ Crazy models: 197
 | health-insurance-deductible-shock-searches | Health Insurance Deductible Shock Searches | weekly |
 | renewable-energy-rss-news-volume-surge | Renewable Energy Rss News Volume Surge | weekly |
 | travel-booking-momentum-divergence | Travel Booking Momentum Divergence | weekly |
+| daily-jump-in-consumer-stress-google-trends-searches-for-car | Daily Jump In Consumer Stress Google Trends Searches For Car Repossession Signals Rising Financial Distress | daily |
+| daily-jump-in-google-trends-searches-for-electric-vehicle-ba | Daily Jump In Google Trends Searches For Electric Vehicle Battery Failure Signals Consumer Tech Stress | daily |
+| daily-jump-in-rss-news-counts-mentioning-labor-strike-signal | Daily Jump In Rss News Counts Mentioning Labor Strike Signals Imminent Industrial Disruption | daily |
+| daily-spike-in-google-trends-searches-for-emergency-plumber- | Daily Spike In Google Trends Searches For Emergency Plumber Signals Consumer Home Repair Stress | daily |
+| daily-spike-in-google-trends-searches-for-home-heating-syste | Daily Spike In Google Trends Searches For Home Heating System Failure Signals Winter Utility Stress | daily |
+| weekly-increase-in-google-trends-searches-for-small-business | Weekly Increase In Google Trends Searches For Small Business Loan Default Signals Rising Credit Stress | weekly |
+| weekly-increase-in-usgs-earthquake-activity-within-key-logis | Weekly Increase In Usgs Earthquake Activity Within Key Logistics Hubs Signals Potential Freight Delays | weekly |
+| weekly-jump-in-google-trends-searches-for-airport-security-d | Weekly Jump In Google Trends Searches For Airport Security Delay Signals Travel Mobility Disruptions | weekly |
+| weekly-surge-in-google-trends-searches-for-truck-driver-stri | Weekly Surge In Google Trends Searches For Truck Driver Strike Signals Imminent Logistics Disruption | weekly |
+| weekly-surge-in-google-trends-searches-for-warehouse-worker- | Weekly Surge In Google Trends Searches For Warehouse Worker Shortage Signals Labor Tightness | weekly |
+| natural-gas-futures-volatility-pump-rotation | Natural Gas Futures Volatility Pump Rotation | daily |
+| regional-earthquake-cluster-insurance-demand-spike | Regional Earthquake Cluster Insurance Demand Spike | daily |
+| utility-volatility-compression-reversion-bounce | Utility Volatility Compression Reversion Bounce | daily |

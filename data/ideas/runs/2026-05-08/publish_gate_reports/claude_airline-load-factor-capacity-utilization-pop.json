@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-05-08/publish/claude_airline-load-factor-capacity-utilization-pop.md",
+  "target_file": "data/ideas/runs/2026-05-08/intervention/claude_airline-load-factor-capacity-utilization-pop.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "bts_airline_load_factor",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support bts_airline_load_factor yet.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "monthly frequency",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "bts_airline_load_factor",
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "bts_airline_load_factor": 2,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1009,
+    "output_tokens": 79
+  },
+  "cost_usd": 0.0033125,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"bts_airline_load_factor\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses existing BTS adapter with matching data source and logic.\",\n  \"risk_flags\": [\"monthly frequency\", \"data source instability\", \"false positives\"]\n}\n```"
+}
