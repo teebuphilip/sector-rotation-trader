@@ -1,27 +1,10 @@
 {
-  "cash": 31362.63968473073,
+  "cash": 93802.32904467327,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 3725.660645192659,
-  "taxes_paid": 18187.287919863506,
-  "positions": {
-    "XLE": {
-      "shares": 528.4145480257512,
-      "entry_price": 59.38999938964844,
-      "entry_date": "2026-05-04",
-      "cost": 31382.53968473072,
-      "using_margin": false,
-      "consec_below_ma": 0
-    },
-    "XLK": {
-      "shares": 193.65960563855913,
-      "entry_price": 162.0500030517578,
-      "entry_date": "2026-05-04",
-      "cost": 31382.53968473072,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "fees_paid": 3748.9484587156217,
+  "taxes_paid": 19148.136283663654,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-01-19",
@@ -954,6 +937,34 @@
       "cost": 31382.54,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-08",
+      "action": "SELL",
+      "ticker": "XLE",
+      "shares": 528.4145,
+      "price": 55.7,
+      "proceeds": 29421.11,
+      "fees": 11.58,
+      "tax": 0.0,
+      "pnl": -1961.43,
+      "pnl_pct": -6.25,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-08",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 193.6596,
+      "price": 175.52,
+      "proceeds": 33979.43,
+      "fees": 11.71,
+      "tax": 960.85,
+      "pnl": 1636.04,
+      "pnl_pct": 5.21,
+      "entry_date": "2026-05-04",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -3276,10 +3287,20 @@
       },
       "sector": "Chaos Rotation Lab",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-08",
+      "cash": 93802.33,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 93802.33,
+      "positions": {},
+      "sector": "Chaos Rotation Lab",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-16",
-  "last_run": "2026-05-07",
+  "last_run": "2026-05-08",
   "meta": {
     "baileymol": {
       "target_sectors": [
@@ -3287,11 +3308,11 @@
         "XLK",
         "XLI"
       ],
-      "signal_label": "TOP:XLE,XLK,XLI",
-      "signal_key": "XLE|XLK|XLI",
+      "signal_label": "FRIDAY_EXIT",
+      "signal_key": "FRIDAY_EXIT",
       "name": "Chaos Rotation Lab",
-      "last_run": "2026-05-07",
-      "last_signal": "XLE|XLK|XLI"
+      "last_run": "2026-05-08",
+      "last_signal": "FRIDAY_EXIT"
     }
   }
 }

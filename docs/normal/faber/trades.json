@@ -2110,6 +2110,35 @@
       },
       "sector": "Faber Momentum Rotation",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-08",
+      "cash": 34595.64,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 105011.23,
+      "positions": {
+        "XLE": {
+          "shares": 580.3108,
+          "entry_price": 59.65,
+          "current_price": 55.7,
+          "market_value": 32323.31,
+          "unrealized_pnl": -2292.23,
+          "entry_date": "2026-04-30",
+          "margin": false
+        },
+        "XLK": {
+          "shares": 217.0253,
+          "entry_price": 159.5,
+          "current_price": 175.52,
+          "market_value": 38092.28,
+          "unrealized_pnl": 3476.75,
+          "entry_date": "2026-04-30",
+          "margin": false
+        }
+      },
+      "sector": "Faber Momentum Rotation",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-11"

@@ -95,6 +95,16 @@
       "pnl_pct": -0.4,
       "entry_date": "2026-05-06",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-08",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 28.4912,
+      "price": 175.52,
+      "cost": 5000.77,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1017,6 +1027,26 @@
       "positions": {},
       "sector": "Semiconductor Moonshot Warning",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-08",
+      "cash": 95004.73,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100005.51,
+      "positions": {
+        "XLK": {
+          "shares": 28.4912,
+          "entry_price": 175.52,
+          "current_price": 175.52,
+          "market_value": 5000.77,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-08",
+          "margin": false
+        }
+      },
+      "sector": "Semiconductor Moonshot Warning",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-19"

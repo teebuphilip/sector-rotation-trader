@@ -1,19 +1,10 @@
 {
-  "cash": 94970.89548786114,
+  "cash": 99971.85979099681,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 30.112644356695004,
-  "taxes_paid": 0.0,
-  "positions": {
-    "XLY": {
-      "shares": 41.69996648577364,
-      "entry_price": 119.87999725341797,
-      "entry_date": "2026-05-07",
-      "cost": 4998.991867782166,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "fees_paid": 40.32577113885733,
+  "taxes_paid": 1.1584144139622004,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-05-03",
@@ -48,6 +39,20 @@
       "cost": 4998.99,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-08",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 41.7,
+      "price": 120.2,
+      "proceeds": 5002.12,
+      "fees": 10.21,
+      "tax": 1.16,
+      "pnl": 1.97,
+      "pnl_pct": 0.04,
+      "entry_date": "2026-05-07",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -800,16 +805,26 @@
       },
       "sector": "Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-08",
+      "cash": 99971.86,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99971.86,
+      "positions": {},
+      "sector": "Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-30",
-  "last_run": "2026-05-07",
+  "last_run": "2026-05-08",
   "meta": {
     "daily-spike-in-google-trends-for-home-air-purifier-repair-si": {
-      "signal_label": "RISK_ON",
+      "signal_label": "HOLD",
       "name": "Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-07",
+      "last_signal": "HOLD",
+      "last_run": "2026-05-08",
       "latest_value": 50.0,
       "prior_avg": 34.2857,
       "signal_change": 0.4583,

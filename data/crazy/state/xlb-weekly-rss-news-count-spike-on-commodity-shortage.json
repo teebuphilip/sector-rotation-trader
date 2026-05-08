@@ -1,10 +1,19 @@
 {
-  "cash": 99865.3398530405,
+  "cash": 94862.12286038847,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 121.07279777011061,
+  "fees_paid": 131.0227977701106,
   "taxes_paid": 14.704928364088119,
-  "positions": {},
+  "positions": {
+    "XLB": {
+      "shares": 96.78749714835094,
+      "entry_price": 51.59000015258789,
+      "entry_date": "2026-05-08",
+      "cost": 4993.266992652025,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-20",
@@ -149,6 +158,16 @@
       "pnl_pct": -0.2,
       "entry_date": "2026-05-01",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-08",
+      "action": "BUY",
+      "ticker": "XLB",
+      "shares": 96.7875,
+      "price": 51.59,
+      "cost": 4993.27,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1111,19 +1130,40 @@
       "positions": {},
       "sector": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-08",
+      "cash": 94862.12,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99855.39,
+      "positions": {
+        "XLB": {
+          "shares": 96.7875,
+          "entry_price": 51.59,
+          "current_price": 51.59,
+          "market_value": 4993.27,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-08",
+          "margin": false
+        }
+      },
+      "sector": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-18",
-  "last_run": "2026-05-07",
+  "last_run": "2026-05-08",
   "meta": {
     "xlb-weekly-rss-news-count-spike-on-commodity-shortage": {
-      "latest_value": 1.0,
-      "prior_avg": 1.6,
-      "signal_change": -0.375,
-      "signal_label": "HOLD",
+      "latest_value": 4.0,
+      "prior_avg": 1.5,
+      "signal_change": 1.6667,
+      "signal_label": "RISK_ON",
       "name": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-07"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-08",
+      "entry_date": "2026-05-08"
     }
   }
 }

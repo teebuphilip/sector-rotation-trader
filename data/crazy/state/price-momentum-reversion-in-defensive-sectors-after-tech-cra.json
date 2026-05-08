@@ -1,10 +1,19 @@
 {
-  "cash": 100035.61354864115,
+  "cash": 95023.88287120909,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 60.48640749204829,
+  "fees_paid": 70.43640749204829,
   "taxes_paid": 50.31808836479557,
-  "positions": {},
+  "positions": {
+    "XLK": {
+      "shares": 28.496926593436942,
+      "entry_price": 175.52000427246094,
+      "entry_date": "2026-05-08",
+      "cost": 5001.780677432058,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-14",
@@ -77,6 +86,16 @@
       "pnl_pct": -0.4,
       "entry_date": "2026-05-06",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-08",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 28.4969,
+      "price": 175.52,
+      "cost": 5001.78,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -839,20 +858,40 @@
       "positions": {},
       "sector": "Price Momentum Reversion In Defensive Sectors After Tech Crash",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-08",
+      "cash": 95023.88,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100025.66,
+      "positions": {
+        "XLK": {
+          "shares": 28.4969,
+          "entry_price": 175.52,
+          "current_price": 175.52,
+          "market_value": 5001.78,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-08",
+          "margin": false
+        }
+      },
+      "sector": "Price Momentum Reversion In Defensive Sectors After Tech Crash",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-30",
-  "last_run": "2026-05-07",
+  "last_run": "2026-05-08",
   "meta": {
     "price-momentum-reversion-in-defensive-sectors-after-tech-cra": {
-      "latest_value": 169.69,
-      "prior_avg": 163.816,
-      "signal_change": 0.0359,
-      "signal_label": "HOLD",
-      "entry_date": "2026-05-06",
+      "latest_value": 175.52,
+      "prior_avg": 165.854,
+      "signal_change": 0.0583,
+      "signal_label": "RISK_ON",
+      "entry_date": "2026-05-08",
       "name": "Price Momentum Reversion In Defensive Sectors After Tech Crash",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-07"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-08"
     }
   }
 }

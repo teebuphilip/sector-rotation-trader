@@ -1,25 +1,17 @@
 {
-  "cash": 60015.70312143791,
+  "cash": 59668.01543044543,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 142.0830617973961,
+  "fees_paid": 162.49786698427465,
   "taxes_paid": 1453.6303536904825,
   "positions": {
-    "NEE": {
-      "shares": 103.8961038961039,
-      "entry_price": 96.25,
-      "entry_date": "2026-04-23",
-      "cost": 10000.0,
-      "using_margin": false,
-      "consec_below_ma": 1
-    },
     "XEL": {
       "shares": 120.55455536953956,
       "entry_price": 82.94999694824219,
       "entry_date": "2026-04-30",
       "cost": 10000.0,
       "using_margin": false,
-      "consec_below_ma": 0
+      "consec_below_ma": 1
     },
     "QCOM": {
       "shares": 53.604930776793,
@@ -33,6 +25,14 @@
       "shares": 23.7309847228889,
       "entry_price": 421.3900146484375,
       "entry_date": "2026-05-06",
+      "cost": 10000.0,
+      "using_margin": false,
+      "consec_below_ma": 0
+    },
+    "INTC": {
+      "shares": 80.05123396236141,
+      "entry_price": 124.91999816894531,
+      "entry_date": "2026-05-08",
       "cost": 10000.0,
       "using_margin": false,
       "consec_below_ma": 0
@@ -195,6 +195,30 @@
       "ticker": "AMD",
       "shares": 23.731,
       "price": 421.39,
+      "cost": 10000.0,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-08",
+      "action": "SELL",
+      "ticker": "NEE",
+      "shares": 103.8961,
+      "price": 93.1,
+      "proceeds": 9662.26,
+      "fees": 10.46,
+      "tax": 0.0,
+      "pnl": -337.74,
+      "pnl_pct": -3.38,
+      "entry_date": "2026-04-23",
+      "reason": "20MA_exit"
+    },
+    {
+      "date": "2026-05-08",
+      "action": "BUY",
+      "ticker": "INTC",
+      "shares": 80.0512,
+      "price": 124.92,
       "cost": 10000.0,
       "margin": false,
       "fees": 9.95
@@ -2416,9 +2440,56 @@
       },
       "sector": "XLK",
       "num_positions": 4
+    },
+    {
+      "date": "2026-05-08",
+      "cash": 59668.02,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 101785.25,
+      "positions": {
+        "XEL": {
+          "shares": 120.5546,
+          "entry_price": 82.95,
+          "current_price": 79.39,
+          "market_value": 9570.83,
+          "unrealized_pnl": -429.17,
+          "entry_date": "2026-04-30",
+          "margin": false
+        },
+        "QCOM": {
+          "shares": 53.6049,
+          "entry_price": 186.55,
+          "current_price": 219.09,
+          "market_value": 11744.3,
+          "unrealized_pnl": 1744.3,
+          "entry_date": "2026-05-05",
+          "margin": false
+        },
+        "AMD": {
+          "shares": 23.731,
+          "entry_price": 421.39,
+          "current_price": 455.19,
+          "market_value": 10802.11,
+          "unrealized_pnl": 802.11,
+          "entry_date": "2026-05-06",
+          "margin": false
+        },
+        "INTC": {
+          "shares": 80.0512,
+          "entry_price": 124.92,
+          "current_price": 124.92,
+          "market_value": 10000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-08",
+          "margin": false
+        }
+      },
+      "sector": "XLK",
+      "num_positions": 4
     }
   ],
   "sim_start": "2026-01-07",
-  "last_run": "2026-05-07",
+  "last_run": "2026-05-08",
   "meta": {}
 }
