@@ -1,0 +1,152 @@
+{
+  "date": "2026-05-08",
+  "input_count": 24,
+  "kept_count": 22,
+  "duplicate_count": 2,
+  "kept_by_source": {
+    "chatgpt": 13,
+    "claude": 9
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-surge-in-google-trends-searches-for-diy-electronics-r",
+      "title": "Weekly Surge In Google Trends Searches For Diy Electronics Repair Signals Consumer Tech Stress",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "weekly surge in google trends searches for diy electronics repair signals bullish xlk",
+        "matched_idea_id": "weekly-surge-in-google-trends-searches-for-diy-electronics-r",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "weekly-surge-in-google-trends-searches-for-diy-electronics-r",
+        "title": "Weekly Surge In Google Trends Searches For Diy Electronics Repair Signals Consumer Tech Stress",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising DIY electronics repair searches indicate consumers delaying professional repairs, signaling cost-conscious behavior. Consumer tech services and retailers may see pressure as users self-serve repairs.",
+        "data_sources": [
+          "Google Trends weekly search interest"
+        ],
+        "signal_logic": "If weekly searches rise 20% above prior 4-week average",
+        "entry_exit": "Entry: If weekly searches rise 20% above prior 4-week average Exit: When searches fall below 10% above prior 4-week average",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLK"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly search interest via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 18,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "DIY consumer behavior shifts often trend seasonally or after new product launches.",
+        "schema": {
+          "idea": "Weekly surge in Google Trends searches for 'DIY electronics repair' signals consumer tech stress",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends weekly search interest",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Rising DIY electronics repair searches indicate consumers delaying professional repairs, signaling cost-conscious behavior.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLK",
+            "rationale": "Consumer tech services and retailers may see pressure as users self-serve repairs."
+          },
+          "trade_logic": {
+            "entry": "If weekly searches rise 20% above prior 4-week average",
+            "exit": "When searches fall below 10% above prior 4-week average",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 18,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "DIY consumer behavior shifts often trend seasonally or after new product launches.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-google-trends-searches-for-emergency-car-batt",
+      "title": "Daily Spike In Google Trends Searches For Emergency Car Battery Replacement Signals Auto Repair Stress",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "daily spike in google trends searches for emergency car battery replacement signals consumer stress impacting discretionary",
+        "matched_idea_id": "daily-spike-in-google-trends-searches-for-emergency-car-batt",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-google-trends-searches-for-emergency-car-batt",
+        "title": "Daily Spike In Google Trends Searches For Emergency Car Battery Replacement Signals Auto Repair Stress",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Spikes in emergency car battery replacement searches indicate urgent vehicle maintenance demand impacting consumer discretionary. Auto parts and repair services benefit from increased urgent maintenance searches.",
+        "data_sources": [
+          "Google Trends daily search interest"
+        ],
+        "signal_logic": "If daily searches exceed prior 7-day average by 30%",
+        "entry_exit": "Entry: If daily searches exceed prior 7-day average by 30% Exit: Once daily searches drop below 10% above prior 7-day average",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Vehicle maintenance issues frequently spike due to weather or seasonal demands.",
+        "schema": {
+          "idea": "Daily spike in Google Trends searches for 'emergency car battery replacement' signals auto repair stress",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Spikes in emergency car battery replacement searches indicate urgent vehicle maintenance demand impacting consumer discretionary.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "Auto parts and repair services benefit from increased urgent maintenance searches."
+          },
+          "trade_logic": {
+            "entry": "If daily searches exceed prior 7-day average by 30%",
+            "exit": "Once daily searches drop below 10% above prior 7-day average",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Vehicle maintenance issues frequently spike due to weather or seasonal demands.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
