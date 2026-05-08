@@ -513,5 +513,149 @@
     "verdict": "BUILD_NOW",
     "source_file": "drafts/features/2026-05-01/openai-feature-04-receipts-guy-raw-trade-logs.md",
     "_hash": "3e0d790dacbb631feedfcff80835a5cc"
+  },
+  "drafts/features/2026-05-08/anthropic-feature-01-force-rank-divergence-view.md": {
+    "feature_name": "Force Rank Divergence View",
+    "scores": {
+      "proof_of_work": 2,
+      "invitation_loop": 1,
+      "public_evidence": 1,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 5,
+    "adjusted_score": 4.0,
+    "top_viral_mechanic": "Surfaces honest rank divergence (comebacks, hidden winners) which aligns with stockarithm's transparency brand and gives data-literate traders a genuine edge to discuss.",
+    "biggest_weakness": "Zero incentive to share findings; no public artifact, no leaderboard post, no social loop \u2014 users consume privately and move on.",
+    "verdict": "SKIP",
+    "source_file": "drafts/features/2026-05-08/anthropic-feature-01-force-rank-divergence-view.md",
+    "_hash": "4f409ac2fa649a3c1eadb351bc89db57"
+  },
+  "drafts/features/2026-05-08/anthropic-feature-02-signal-bucket-audit-trail.md": {
+    "feature_name": "Signal Bucket Audit Trail",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 7,
+    "adjusted_score": 8.4,
+    "top_viral_mechanic": "Transparency of failure reasoning (why algos moved to NOISE) directly exploits stockarithm's unfair advantage and gives skeptical traders proof of intellectual honesty to share.",
+    "biggest_weakness": "Zero network effects or invitation loops\u2014a user gains value alone; there's no reason to recruit others or share the audit trail publicly, limiting organic spread.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-05-08/anthropic-feature-02-signal-bucket-audit-trail.md",
+    "_hash": "f2904e4338bc8f4590cb747e203f6986"
+  },
+  "drafts/features/2026-05-08/anthropic-feature-03-real-time-trade-ticker-paying-only.md": {
+    "feature_name": "Real-Time Trade Ticker (Paying Only)",
+    "scores": {
+      "proof_of_work": 2,
+      "invitation_loop": 1,
+      "public_evidence": 1,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 5,
+    "adjusted_score": 4.8,
+    "top_viral_mechanic": "Paid-only paywall creates FOMO and signals insider status, but only within existing user base\u2014no external sharing mechanism.",
+    "biggest_weakness": "Zero invitation loop, zero public evidence, zero network effect\u2014this is pure retention theater for paying users, not a viral growth lever. Users cannot share the ticker or prove anything to outsiders.",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-05-08/anthropic-feature-03-real-time-trade-ticker-paying-only.md",
+    "_hash": "7bcda0c2d7249622b742b1c04312a795"
+  },
+  "drafts/features/2026-05-08/anthropic-feature-04-cross-signal-correlation-snapshot.md": {
+    "feature_name": "Cross-Signal Correlation Snapshot",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 7,
+    "adjusted_score": 8.4,
+    "top_viral_mechanic": "Lets skeptical traders publicly prove they've done deeper due diligence than casual users by sharing correlation matrices that expose lazy algo design\u2014high social currency in r/algotrading.",
+    "biggest_weakness": "Zero network effects or invitation loops; a user gets full value alone, so there's no reason to recruit others or share results beyond personal credibility.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-05-08/anthropic-feature-04-cross-signal-correlation-snapshot.md",
+    "_hash": "324bc372a356f5639d4cc58b9f442607"
+  },
+  "drafts/features/2026-05-08/openai-feature-01-failure-footprint-overlay.md": {
+    "feature_name": "Failure Footprint Overlay",
+    "scores": {
+      "proof_of_work": 4,
+      "invitation_loop": 1,
+      "public_evidence": 3,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 9,
+    "adjusted_score": 10.8,
+    "top_viral_mechanic": "Lets users screenshot and share leaderboard rows with brutal loss visualization\u2014proof of radical transparency that skeptical traders will cite as evidence of legitimacy.",
+    "biggest_weakness": "Zero network effects or invitation mechanics; users don't need others to join for this to work, so it spreads only through organic word-of-mouth, not compounding growth loops.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-05-08/openai-feature-01-failure-footprint-overlay.md",
+    "_hash": "1779f297b4c4d8741c6c760bdd408446"
+  },
+  "drafts/features/2026-05-08/openai-feature-02-bucket-switcher-tabs.md": {
+    "feature_name": "Bucket Switcher Tabs",
+    "scores": {
+      "proof_of_work": 2,
+      "invitation_loop": 1,
+      "public_evidence": 1,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 5,
+    "adjusted_score": 6.4,
+    "top_viral_mechanic": "Fits Stockarithm's transparency DNA by making failure visibility a first-class feature, not a footnote\u2014users can credibly show 'here's what didn't work' alongside wins.",
+    "biggest_weakness": "It's a UX convenience feature with zero social sharing incentive, no invitation mechanism, and no public footprint\u2014users toggle tabs privately and never tell anyone.",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-05-08/openai-feature-02-bucket-switcher-tabs.md",
+    "_hash": "eb57062bfd31a81f49a81a08998633ef"
+  },
+  "drafts/features/2026-05-08/openai-feature-03-signal-divergence-flags.md": {
+    "feature_name": "Signal Divergence Flags",
+    "scores": {
+      "proof_of_work": 2,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 6,
+    "adjusted_score": 7.2,
+    "top_viral_mechanic": "Honest contradiction-surfacing fits the transparency brand and appeals to skeptical traders who distrust polished dashboards, but the mechanic itself is passive observation, not shareable.",
+    "biggest_weakness": "No incentive or mechanism for users to share findings with others; it's a personal discovery tool that doesn't create social currency or require network participation.",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-05-08/openai-feature-03-signal-divergence-flags.md",
+    "_hash": "953a3b08793961b9ecb2d5e40625d7f5"
+  },
+  "drafts/features/2026-05-08/openai-feature-04-trade-history-lightbox.md": {
+    "feature_name": "Trade History Lightbox",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 7,
+    "adjusted_score": 6.72,
+    "top_viral_mechanic": "Raw, unfiltered trade receipts in monospace font directly exploit the core unfair advantage (transparency of failures) and appeal to skeptical r/algotrading audience who demand proof.",
+    "biggest_weakness": "Zero network effects or invitation mechanics\u2014viewing trade history is purely individual verification with no incentive to share findings or invite others.",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-05-08/openai-feature-04-trade-history-lightbox.md",
+    "_hash": "0443ca6dd26f801e37b2cb58a17fe26e"
   }
 }
