@@ -1,0 +1,80 @@
+{
+  "schema_version": "v1",
+  "purpose": "Define the files that should be pushed to the Gemini-facing Google Drive folder, including which files are source files and which files must be derived first.",
+  "drive_sync_mode": "overwrite_in_place",
+  "dated_status_files": true,
+  "required_source_files": [
+    {
+      "path": "README.md",
+      "label": "readme",
+      "description": "Primary repo overview and operating instructions."
+    },
+    {
+      "path": "architecture.md",
+      "label": "architecture",
+      "description": "System architecture and component relationships."
+    },
+    {
+      "path": "tldr-architecture.md",
+      "label": "tldr_architecture",
+      "description": "Short architecture summary for quick reading."
+    },
+    {
+      "path": "stockarithm_execution_plan.csv",
+      "label": "execution_plan",
+      "description": "Technical / master project schedule and operating plan."
+    },
+    {
+      "path": "marketing_schedule.csv",
+      "label": "marketing_schedule",
+      "description": "Marketing / content schedule source file."
+    }
+  ],
+  "derived_files": [
+    {
+      "path": "reports/morning_status/YYYY-MM-DD.json",
+      "label": "overnight_status_json",
+      "description": "Machine-readable overnight status verdict for Gemini.",
+      "derived_from": [
+        "GitHub Actions run state",
+        "docs/data/public/daily.json",
+        "docs/comparison/today.json",
+        "reports/deep_validation/latest.json"
+      ],
+      "build_command": "python scripts/overnight_status_report.py",
+      "notes": "Locally writes both latest.json and dated JSON copies. Drive sync should push the dated file."
+    },
+    {
+      "path": "reports/morning_status/YYYY-MM-DD.md",
+      "label": "overnight_status_markdown",
+      "description": "Human-readable overnight status summary for Gemini.",
+      "derived_from": [
+        "GitHub Actions run state",
+        "docs/data/public/daily.json",
+        "docs/comparison/today.json",
+        "reports/deep_validation/latest.json"
+      ],
+      "build_command": "python scripts/overnight_status_report.py",
+      "notes": "Locally writes both latest.md and dated Markdown copies. Drive sync should push the dated file."
+    }
+  ],
+  "push_set": [
+    "README.md",
+    "architecture.md",
+    "tldr-architecture.md",
+    "stockarithm_execution_plan.csv",
+    "marketing_schedule.csv",
+    "reports/morning_status/YYYY-MM-DD.json",
+    "reports/morning_status/YYYY-MM-DD.md"
+  ],
+  "sync_workflow": {
+    "workflow_file": ".github/workflows/overnight_status_and_drive.yml",
+    "push_script": "scripts/push_ops_files_to_drive.py",
+    "notes": [
+      "The push script can consume this config directly via --config gemini_feed_config.json.",
+      "Derived files must be built before push.",
+      "Google Drive sync should overwrite source files in place and write dated status files as separate snapshots.",
+      "This config is intended to be copied and adapted in other repos even if their file names differ."
+    ]
+  }
+}
