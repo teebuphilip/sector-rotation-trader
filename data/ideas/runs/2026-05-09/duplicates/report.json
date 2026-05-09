@@ -1,0 +1,152 @@
+{
+  "date": "2026-05-09",
+  "input_count": 25,
+  "kept_count": 23,
+  "duplicate_count": 2,
+  "kept_by_source": {
+    "chatgpt": 13,
+    "claude": 10
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-google-trends-surge-for-emergency-plumbing-repair-pred",
+      "title": "Daily Google Trends Surge For Emergency Plumbing Repair Predicts Industrials Sector Strength",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.5,
+        "matched_title": "daily spike in google trends for emergency vehicle repair signals consumer stress lifting industrial sector",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-vehicle-repair-si",
+        "matched_origin": "history:2026-05-01",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-google-trends-surge-for-emergency-plumbing-repair-pred",
+        "title": "Daily Google Trends Surge For Emergency Plumbing Repair Predicts Industrials Sector Strength",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Spike in plumbing emergency searches reveals consumer stress on household maintenance, lifting demand for industrial repair services. Industrials benefit from increased emergency repair service demand.",
+        "data_sources": [
+          "Google Trends daily search interest"
+        ],
+        "signal_logic": "Enter long if daily search interest for emergency plumbing rises by 25% over 7-day average",
+        "entry_exit": "Entry: Enter long if daily search interest for emergency plumbing rises by 25% over 7-day average Exit: Exit after 7 days or if interest falls below 7-day average",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 14,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Plumbing emergencies occur frequently and unpredictably.",
+        "schema": {
+          "idea": "Daily Google Trends Surge For 'Emergency Plumbing Repair' Predicts Industrials Sector Strength",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Spike in plumbing emergency searches reveals consumer stress on household maintenance, lifting demand for industrial repair services.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLI",
+            "rationale": "Industrials benefit from increased emergency repair service demand."
+          },
+          "trade_logic": {
+            "entry": "Enter long if daily search interest for emergency plumbing rises by 25% over 7-day average",
+            "exit": "Exit after 7 days or if interest falls below 7-day average",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 14,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Plumbing emergencies occur frequently and unpredictably.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-freight-container-volume-surge-signals-industrial-sec",
+      "title": "Weekly Freight Container Volume Surge Signals Industrial Sector Demand Spike",
+      "family": "freight_logistics",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.483,
+        "matched_title": "weekly rise in freight logistics port container volume signals bullish industrials",
+        "matched_idea_id": "weekly-rise-in-freight-logistics-port-container-volume-signa",
+        "matched_origin": "history:2026-05-05",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-freight-container-volume-surge-signals-industrial-sec",
+        "title": "Weekly Freight Container Volume Surge Signals Industrial Sector Demand Spike",
+        "family": "freight_logistics",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "An increase in container throughput signals rising import/export activity and industrial production demand. Industrials benefit from higher freight flows indicating economic activity acceleration.",
+        "data_sources": [
+          "Port container volume weekly data"
+        ],
+        "signal_logic": "Enter long if weekly container volume increases 10% over prior 4-week average",
+        "entry_exit": "Entry: Enter long if weekly container volume increases 10% over prior 4-week average Exit: Exit after 4 weeks or if volume falls below 5% increase",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Port container volume weekly data via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Freight volume regularly fluctuates with seasonal trade cycles.",
+        "schema": {
+          "idea": "Weekly Freight Container Volume Surge Signals Industrial Sector Demand Spike",
+          "family": "freight_logistics",
+          "data": {
+            "source": "Port container volume weekly data",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "An increase in container throughput signals rising import/export activity and industrial production demand.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLI",
+            "rationale": "Industrials benefit from higher freight flows indicating economic activity acceleration."
+          },
+          "trade_logic": {
+            "entry": "Enter long if weekly container volume increases 10% over prior 4-week average",
+            "exit": "Exit after 4 weeks or if volume falls below 5% increase",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Freight volume regularly fluctuates with seasonal trade cycles.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
