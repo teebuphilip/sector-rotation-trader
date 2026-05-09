@@ -11,17 +11,21 @@ import urllib.request
 from urllib.error import HTTPError
 from datetime import datetime
 from pathlib import Path
+from functools import lru_cache
 from zoneinfo import ZoneInfo
 
 
 FOLDER_ID = os.environ.get("GOOGLE_DRIVE_FOLDER_ID", "")
 ACCESS_TOKEN = os.environ.get("GDRIVE_ACCESS_TOKEN", "")
+OAUTH_CLIENT_ID = os.environ.get("GOOGLE_DRIVE_OAUTH_CLIENT_ID", "")
+OAUTH_CLIENT_SECRET = os.environ.get("GOOGLE_DRIVE_OAUTH_CLIENT_SECRET", "")
+OAUTH_REFRESH_TOKEN = os.environ.get("GOOGLE_DRIVE_OAUTH_REFRESH_TOKEN", "")
 ET_REPORT_DATE = os.environ.get("ET_REPORT_DATE") or datetime.now(ZoneInfo("America/New_York")).date().isoformat()
 
 
 def _api_request(url: str, method: str = "GET", data: bytes | None = None, content_type: str | None = None) -> dict:
     req = urllib.request.Request(url, method=method, data=data)
-    req.add_header("Authorization", f"Bearer {ACCESS_TOKEN}")
+    req.add_header("Authorization", f"Bearer {_access_token()}")
     if content_type:
         req.add_header("Content-Type", content_type)
     try:
@@ -34,6 +38,44 @@ def _api_request(url: str, method: str = "GET", data: bytes | None = None, conte
         if body:
             message += f": {body}"
         raise RuntimeError(message) from exc
+
+
+def _exchange_refresh_token() -> str:
+    if not OAUTH_CLIENT_ID or not OAUTH_CLIENT_SECRET or not OAUTH_REFRESH_TOKEN:
+        raise RuntimeError(
+            "Missing OAuth credentials. Set GOOGLE_DRIVE_OAUTH_CLIENT_ID, "
+            "GOOGLE_DRIVE_OAUTH_CLIENT_SECRET, and GOOGLE_DRIVE_OAUTH_REFRESH_TOKEN."
+        )
+    payload = urllib.parse.urlencode(
+        {
+            "client_id": OAUTH_CLIENT_ID,
+            "client_secret": OAUTH_CLIENT_SECRET,
+            "refresh_token": OAUTH_REFRESH_TOKEN,
+            "grant_type": "refresh_token",
+        }
+    ).encode("utf-8")
+    req = urllib.request.Request("https://oauth2.googleapis.com/token", method="POST", data=payload)
+    req.add_header("Content-Type", "application/x-www-form-urlencoded")
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+    except HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace") if exc.fp else ""
+        message = f"HTTP {exc.code} {exc.reason}"
+        if body:
+            message += f": {body}"
+        raise RuntimeError(message) from exc
+    token = data.get("access_token")
+    if not token:
+        raise RuntimeError(f"OAuth token response missing access_token: {data}")
+    return token
+
+
+@lru_cache(maxsize=1)
+def _access_token() -> str:
+    if ACCESS_TOKEN:
+        return ACCESS_TOKEN
+    return _exchange_refresh_token()
 
 
 def _find_existing(remote_name: str) -> str | None:
@@ -104,8 +146,8 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--config", type=Path)
     args, extras = parser.parse_known_args(argv[1:])
 
-    if not FOLDER_ID or not ACCESS_TOKEN:
-        print("Missing GOOGLE_DRIVE_FOLDER_ID or GDRIVE_ACCESS_TOKEN", file=sys.stderr)
+    if not FOLDER_ID:
+        print("Missing GOOGLE_DRIVE_FOLDER_ID", file=sys.stderr)
         return 1
 
     if args.config:
