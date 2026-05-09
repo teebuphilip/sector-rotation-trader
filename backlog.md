@@ -114,6 +114,25 @@ This is the backlog for features and product work that are explicitly out of sco
 - Add short premium change logs for signals that moved materially in rank, alpha, or drawdown.
 - Goal: give subscribers a reason to come back beyond static dashboards.
 
+### AI-Assisted Ideation + Validation Loop
+- Use AI to generate candidate ideas and implementation sketches, but keep a strict validation gate before anything is treated as a real signal.
+- The workflow should be:
+  - generate
+  - criticize
+  - implement
+  - brute-force / exploratory scan
+  - validate with harsher tests
+  - keep or kill
+- Goal: speed up ideation without letting AI blur the line between exploration and validated edge.
+
+### AI Critic / Red-Team Preflight
+- Before coding starts on a new idea, run a bounded critique pass that attacks the assumptions, failure modes, and simplest alternative.
+- The critique should answer:
+  - what is likely wrong
+  - what would falsify it
+  - whether there is a simpler explanation or a simpler design
+- Goal: stop weak ideas from becoming code by default, while keeping the critique short enough to avoid consensus-thrashing.
+
 ## Public Ops Visibility
 
 ### Public Ops Notes / Daily Changelog Page

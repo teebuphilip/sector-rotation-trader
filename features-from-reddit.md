@@ -320,6 +320,31 @@ Rule:
   - Strong and practical.
   - Can start simple before it becomes a full product surface.
 
+### AI Critic / Red-Team Preflight
+- Status: `score-next`
+- Earliest target: `post July 1`
+- Source: Reddit discussion about using Claude and ChatGPT to criticize each other before coding starts.
+- What it means:
+  - Run a bounded critique pass before implementation begins.
+  - The critique should attack:
+    - assumptions
+    - failure modes
+    - simpler alternatives
+    - what evidence would falsify the idea
+  - The goal is to decide build / revise / kill before code starts mutating the idea.
+- Why it matters:
+  - Stops weak ideas from becoming code by default.
+  - Helps distinguish a genuinely promising idea from one that only sounds good in conversation.
+  - Supports a cleaner research loop when multiple AIs are used to pressure-test the same concept.
+- Product implications:
+  - pre-code critique gate
+  - red-team prompt template
+  - build/revise/kill decision log
+  - tighter upstream idea quality
+- Notes:
+  - Keep it short and bounded.
+  - If the critique becomes consensus-thrashing, it has failed.
+
 ### Execution Wrapper Reliability
 - Status: `candidate`
 - Earliest target: `post July 1`
