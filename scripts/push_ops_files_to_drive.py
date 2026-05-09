@@ -8,6 +8,7 @@ import os
 import sys
 import urllib.parse
 import urllib.request
+from urllib.error import HTTPError
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -23,9 +24,16 @@ def _api_request(url: str, method: str = "GET", data: bytes | None = None, conte
     req.add_header("Authorization", f"Bearer {ACCESS_TOKEN}")
     if content_type:
         req.add_header("Content-Type", content_type)
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        body = resp.read().decode("utf-8")
-        return json.loads(body) if body else {}
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            body = resp.read().decode("utf-8")
+            return json.loads(body) if body else {}
+    except HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace") if exc.fp else ""
+        message = f"HTTP {exc.code} {exc.reason}"
+        if body:
+            message += f": {body}"
+        raise RuntimeError(message) from exc
 
 
 def _find_existing(remote_name: str) -> str | None:
