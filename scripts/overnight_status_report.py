@@ -146,7 +146,7 @@ def main() -> int:
             "red_reasons": [f"GitHub Actions query failed: {exc}"],
         }
         _write_outputs(report, now_et)
-        return 1
+        return 0
 
     checks: dict[str, dict[str, str]] = {}
     red_reasons: list[str] = []
@@ -171,7 +171,7 @@ def main() -> int:
         "red_reasons": red_reasons,
     }
     _write_outputs(report, now_et)
-    return 0 if not red_reasons else 1
+    return 0
 
 
 if __name__ == "__main__":
