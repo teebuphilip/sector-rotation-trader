@@ -1,0 +1,82 @@
+{
+  "date": "2026-05-10",
+  "input_count": 25,
+  "kept_count": 24,
+  "duplicate_count": 1,
+  "kept_by_source": {
+    "chatgpt": 15,
+    "claude": 9
+  },
+  "duplicates": [
+    {
+      "source": "claude",
+      "idea_id": "ev-charger-network-expansion-acceleration",
+      "title": "Ev Charger Network Expansion Acceleration",
+      "family": "macro_input_pressure",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "ev charger network expansion acceleration",
+        "matched_idea_id": "ev-charger-network-expansion-acceleration",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "ev-charger-network-expansion-acceleration",
+        "title": "Ev Charger Network Expansion Acceleration",
+        "family": "macro_input_pressure",
+        "source_provider": "anthropic",
+        "source_model": "claude-haiku-4-5-20251001",
+        "thesis": "Rapid week-over-week growth in operational EV charging infrastructure signals infrastructure investment cycle acceleration and policy tailwinds, driving energy and industrial demand. EV charger buildout requires industrial equipment, electrical contractors, and grid upgrades; correlates with industrials capex cycles.",
+        "data_sources": [
+          "OpenChargeMap public API for active charger counts by region, daily snapshots"
+        ],
+        "signal_logic": "If weekly charger count growth exceeds 1.2% and 20-day moving average of daily growth rate is positive, enter long",
+        "entry_exit": "Entry: If weekly charger count growth exceeds 1.2% and 20-day moving average of daily growth rate is positive, enter long Exit: Exit after 10 trading days or if weekly growth drops below 0.3% for 2 consecutive weeks",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use OpenChargeMap public API for active charger counts by region, daily snapshots via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Charger networks expand continuously; weekly growth crossing 1.2% threshold occurs 2\u20134 times per quarter in major markets.",
+        "schema": {
+          "idea": "EV Charger Network Expansion Acceleration",
+          "family": "macro_input_pressure",
+          "data": {
+            "source": "OpenChargeMap public API for active charger counts by region, daily snapshots",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Rapid week-over-week growth in operational EV charging infrastructure signals infrastructure investment cycle acceleration and policy tailwinds, driving energy and industrial demand.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLI",
+            "rationale": "EV charger buildout requires industrial equipment, electrical contractors, and grid upgrades; correlates with industrials capex cycles."
+          },
+          "trade_logic": {
+            "entry": "If weekly charger count growth exceeds 1.2% and 20-day moving average of daily growth rate is positive, enter long",
+            "exit": "Exit after 10 trading days or if weekly growth drops below 0.3% for 2 consecutive weeks",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Charger networks expand continuously; weekly growth crossing 1.2% threshold occurs 2\u20134 times per quarter in major markets.",
+          "source_provider": "anthropic",
+          "source_model": "claude-haiku-4-5-20251001"
+        }
+      }
+    }
+  ]
+}
