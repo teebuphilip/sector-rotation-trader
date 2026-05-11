@@ -1,0 +1,292 @@
+{
+  "date": "2026-05-11",
+  "input_count": 25,
+  "kept_count": 21,
+  "duplicate_count": 4,
+  "kept_by_source": {
+    "chatgpt": 11,
+    "claude": 10
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-jump-in-consumer-google-trends-for-car-insurance-claim",
+      "title": "Daily Jump In Consumer Google Trends For Car Insurance Claims Signals Rising Stress In Discretionary Auto Spending",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.623,
+        "matched_title": "daily jump in google trends for emergency car battery replacement signals auto sector consumer stress",
+        "matched_idea_id": "daily-jump-in-google-trends-for-emergency-car-battery-replac",
+        "matched_origin": "current_run",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-jump-in-consumer-google-trends-for-car-insurance-claim",
+        "title": "Daily Jump In Consumer Google Trends For Car Insurance Claims Signals Rising Stress In Discretionary Auto Spending",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Increased searches for car insurance claims often indicate consumer financial strain impacting discretionary auto purchases. Consumer discretionary spending on autos is pressured by rising insurance claims and costs.",
+        "data_sources": [
+          "Google Trends daily search interest"
+        ],
+        "signal_logic": "Enter short XLY when daily Google Trends for 'car insurance claims' rises 20%+ from previous day",
+        "entry_exit": "Entry: Enter short XLY when daily Google Trends for 'car insurance claims' rises 20%+ from previous day Exit: Exit after 7 trading days or when searches decline by 10%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Consumer stress topics frequently spike during insurance claim waves and weather events.",
+        "schema": {
+          "idea": "Daily jump in consumer Google Trends for 'car insurance claims' signals rising stress in discretionary auto spending",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Increased searches for car insurance claims often indicate consumer financial strain impacting discretionary auto purchases.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLY",
+            "rationale": "Consumer discretionary spending on autos is pressured by rising insurance claims and costs."
+          },
+          "trade_logic": {
+            "entry": "Enter short XLY when daily Google Trends for 'car insurance claims' rises 20%+ from previous day",
+            "exit": "Exit after 7 trading days or when searches decline by 10%",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Consumer stress topics frequently spike during insurance claim waves and weather events.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
+      "title": "Weekly Surge In Google Trends For Diy Electronics Repair Signals Tech Consumer Stress Rebound",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "weekly surge in google trends for diy electronics repair signals bullish xlk",
+        "matched_idea_id": "weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
+        "title": "Weekly Surge In Google Trends For Diy Electronics Repair Signals Tech Consumer Stress Rebound",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising interest in DIY electronics repair reflects consumer stress leading to deferred professional repairs, indicating tech sector pressure. Tech sector revenues may soften when consumers shift to DIY fixes.",
+        "data_sources": [
+          "Google Trends weekly search interest"
+        ],
+        "signal_logic": "Enter short XLK when weekly Google Trends for 'DIY electronics repair' rises 30%+ week-over-week",
+        "entry_exit": "Entry: Enter short XLK when weekly Google Trends for 'DIY electronics repair' rises 30%+ week-over-week Exit: Exit after 4 weeks or when trend falls below 10% increase",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLK"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly search interest via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 18,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Consumer repair interest spikes seasonally and with economic stress cycles.",
+        "schema": {
+          "idea": "Weekly surge in Google Trends for 'DIY electronics repair' signals tech consumer stress rebound",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends weekly search interest",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Rising interest in DIY electronics repair reflects consumer stress leading to deferred professional repairs, indicating tech sector pressure.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLK",
+            "rationale": "Tech sector revenues may soften when consumers shift to DIY fixes."
+          },
+          "trade_logic": {
+            "entry": "Enter short XLK when weekly Google Trends for 'DIY electronics repair' rises 30%+ week-over-week",
+            "exit": "Exit after 4 weeks or when trend falls below 10% increase",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 18,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Consumer repair interest spikes seasonally and with economic stress cycles.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-jump-in-google-trends-for-emergency-vehicle-repair-sig",
+      "title": "Daily Jump In Google Trends For Emergency Vehicle Repair Signals Industrial Sector Stress Rebound",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.526,
+        "matched_title": "daily spike in google trends for emergency vehicle repair signals consumer stress lifting industrial sector",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-vehicle-repair-si",
+        "matched_origin": "history:2026-05-01",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-jump-in-google-trends-for-emergency-vehicle-repair-sig",
+        "title": "Daily Jump In Google Trends For Emergency Vehicle Repair Signals Industrial Sector Stress Rebound",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Spikes in emergency vehicle repair searches signal increased industrial sector activity due to urgent maintenance needs. Industrial sector benefits from higher maintenance and repair demand.",
+        "data_sources": [
+          "Google Trends daily search interest"
+        ],
+        "signal_logic": "Enter long XLI when daily Google Trends for 'emergency vehicle repair' rises 35%+ day-over-day",
+        "entry_exit": "Entry: Enter long XLI when daily Google Trends for 'emergency vehicle repair' rises 35%+ day-over-day Exit: Exit after 7 trading days or when searches decline by 15%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Vehicle repair emergencies spike often due to accidents and weather.",
+        "schema": {
+          "idea": "Daily jump in Google Trends for 'emergency vehicle repair' signals industrial sector stress rebound",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Spikes in emergency vehicle repair searches signal increased industrial sector activity due to urgent maintenance needs.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLI",
+            "rationale": "Industrial sector benefits from higher maintenance and repair demand."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLI when daily Google Trends for 'emergency vehicle repair' rises 35%+ day-over-day",
+            "exit": "Exit after 7 trading days or when searches decline by 15%",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Vehicle repair emergencies spike often due to accidents and weather.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-surge-in-google-trends-for-emergency-dental-care-signa",
+      "title": "Daily Surge In Google Trends For Emergency Dental Care Signals Consumer Health Stress Lifting Health Sector",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.483,
+        "matched_title": "daily spike in google trends for emergency dental care predicts healthcare sector defensive demand",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-dental-care-predi",
+        "matched_origin": "history:2026-05-09",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-surge-in-google-trends-for-emergency-dental-care-signa",
+        "title": "Daily Surge In Google Trends For Emergency Dental Care Signals Consumer Health Stress Lifting Health Sector",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising emergency dental care searches reflect consumer health stress increasing demand for health services. Health sector benefits from increased urgent care and elective dental services.",
+        "data_sources": [
+          "Google Trends daily search interest"
+        ],
+        "signal_logic": "Enter long XLV when daily Google Trends for 'emergency dental care' rises 35%+ day-over-day",
+        "entry_exit": "Entry: Enter long XLV when daily Google Trends for 'emergency dental care' rises 35%+ day-over-day Exit: Exit after 7 trading days or when searches drop 15%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLV"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Dental emergencies and related searches spike unpredictably but often.",
+        "schema": {
+          "idea": "Daily surge in Google Trends for 'emergency dental care' signals consumer health stress lifting health sector",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Rising emergency dental care searches reflect consumer health stress increasing demand for health services.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLV",
+            "rationale": "Health sector benefits from increased urgent care and elective dental services."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLV when daily Google Trends for 'emergency dental care' rises 35%+ day-over-day",
+            "exit": "Exit after 7 trading days or when searches drop 15%",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Dental emergencies and related searches spike unpredictably but often.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
