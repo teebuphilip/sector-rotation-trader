@@ -1,8 +1,8 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-11T23:42:42Z",
+  "generated_at": "2026-05-11T23:47:17Z",
   "counts": {
-    "total": 215,
+    "total": 223,
     "beating_spy": 1
   },
   "algos": [
@@ -724,6 +724,42 @@
           }
         },
         "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:healthcare-cost-inflation-google-trends-acceleration",
+      "algo_type": "crazy",
+      "algo_id": "healthcare-cost-inflation-google-trends-acceleration",
+      "name": "Healthcare Cost Inflation Google Trends Acceleration",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.03,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.03,
+      "spy_delta_30d_pct": -7.72,
+      "last_snapshot": "2026-05-11",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLV",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.234,
+            "return_pct": -1.168
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.666,
+            "return_pct": -3.332
+          }
+        },
+        "summary": "mixed"
       }
     },
     {
@@ -2275,6 +2311,42 @@
             "direction": "UP",
             "confidence": 0.267,
             "return_pct": 1.337
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:luxury-discretionary-google-trends-collapse-signal",
+      "algo_type": "crazy",
+      "algo_id": "luxury-discretionary-google-trends-collapse-signal",
+      "name": "Luxury Discretionary Google Trends Collapse Signal",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.19,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.03,
+      "spy_delta_30d_pct": -7.79,
+      "last_snapshot": "2026-05-11",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.28,
+            "return_pct": 1.402
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.957,
+            "return_pct": 4.784
           }
         },
         "summary": "both_up"
@@ -6830,6 +6902,222 @@
       "last_snapshot": "2026-05-11",
       "new_algo_date": null,
       "comparator": null
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-jump-in-google-trends-for-home-heating-oil-shortage-s",
+      "algo_type": "crazy",
+      "algo_id": "weekly-jump-in-google-trends-for-home-heating-oil-shortage-s",
+      "name": "Weekly Jump In Google Trends For Home Heating Oil Shortage Signals Winter Energy Stress",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.75,
+      "last_snapshot": "2026-05-11",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLU",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.531,
+            "return_pct": -2.653
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.539,
+            "return_pct": -2.695
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weather-extremes-utility-demand-spike",
+      "algo_type": "crazy",
+      "algo_id": "weather-extremes-utility-demand-spike",
+      "name": "Weather Extremes Utility Demand Spike",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.75,
+      "last_snapshot": "2026-05-11",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLU",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.531,
+            "return_pct": -2.653
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.539,
+            "return_pct": -2.695
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:freight-rail-congestion-rss-volume-explosion",
+      "algo_type": "crazy",
+      "algo_id": "freight-rail-congestion-rss-volume-explosion",
+      "name": "Freight Rail Congestion Rss Volume Explosion",
+      "family": "freight_logistics",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.75,
+      "last_snapshot": "2026-05-11",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.475,
+            "return_pct": 2.375
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.267,
+            "return_pct": 1.337
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:ev-charger-expansion-velocity-boom",
+      "algo_type": "crazy",
+      "algo_id": "ev-charger-expansion-velocity-boom",
+      "name": "Ev Charger Expansion Velocity Boom",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.75,
+      "last_snapshot": "2026-05-11",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.748,
+            "return_pct": -3.738
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.021,
+            "return_pct": 0.105
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-google-trends-for-emergency-plumber-signals-ri",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-emergency-plumber-signals-ri",
+      "name": "Daily Jump In Google Trends For Emergency Plumber Signals Rising Local Economy Stress Benefiting Staples",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.75,
+      "last_snapshot": "2026-05-11",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLP",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.041,
+            "return_pct": -0.203
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.446,
+            "return_pct": 2.232
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:airline-fuel-cost-volatility-expansion",
+      "algo_type": "crazy",
+      "algo_id": "airline-fuel-cost-volatility-expansion",
+      "name": "Airline Fuel Cost Volatility Expansion",
+      "family": "travel_mobility",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.75,
+      "last_snapshot": "2026-05-11",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.28,
+            "return_pct": 1.402
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.957,
+            "return_pct": 4.784
+          }
+        },
+        "summary": "both_up"
+      }
     }
   ]
 }

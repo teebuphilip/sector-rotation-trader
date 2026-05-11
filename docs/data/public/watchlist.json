@@ -1,6 +1,6 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-11T23:42:33Z",
+  "generated_at": "2026-05-11T23:47:16Z",
   "algos": [
     {
       "schema_version": "v1",
@@ -720,6 +720,42 @@
           }
         },
         "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:healthcare-cost-inflation-google-trends-acceleration",
+      "algo_type": "crazy",
+      "algo_id": "healthcare-cost-inflation-google-trends-acceleration",
+      "name": "Healthcare Cost Inflation Google Trends Acceleration",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.03,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.03,
+      "spy_delta_30d_pct": -7.72,
+      "last_snapshot": "2026-05-11",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLV",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.234,
+            "return_pct": -1.168
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.666,
+            "return_pct": -3.332
+          }
+        },
+        "summary": "mixed"
       }
     },
     {
@@ -2206,6 +2242,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:luxury-discretionary-google-trends-collapse-signal",
+      "algo_type": "crazy",
+      "algo_id": "luxury-discretionary-google-trends-collapse-signal",
+      "name": "Luxury Discretionary Google Trends Collapse Signal",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.19,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.03,
+      "spy_delta_30d_pct": -7.79,
+      "last_snapshot": "2026-05-11",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.28,
+            "return_pct": 1.402
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.957,
+            "return_pct": 4.784
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:wage-growth-demand-surge-fast-food-google-trends",
       "algo_type": "crazy",
       "algo_id": "wage-growth-demand-surge-fast-food-google-trends",
@@ -2964,6 +3036,42 @@
             "direction": "UP",
             "confidence": 0.021,
             "return_pct": 0.105
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-google-trends-for-emergency-plumber-signals-ri",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-emergency-plumber-signals-ri",
+      "name": "Daily Jump In Google Trends For Emergency Plumber Signals Rising Local Economy Stress Benefiting Staples",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.75,
+      "last_snapshot": "2026-05-11",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLP",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.041,
+            "return_pct": -0.203
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.446,
+            "return_pct": 2.232
           }
         },
         "summary": "mixed"

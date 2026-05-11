@@ -1,0 +1,97 @@
+{
+  "run_date": "2026-05-11",
+  "start": "2024-01-01",
+  "end": "2026-05-11",
+  "slippage_bps": 5.0,
+  "generated_at": "2026-05-11T23:47:02Z",
+  "counts": {
+    "INSUFFICIENT_ACTIVITY": 1,
+    "LIVE_ONLY_NON_PRICE": 7
+  },
+  "results": [
+    {
+      "algo_id": "airline-fuel-cost-volatility-expansion",
+      "name": "Airline Fuel Cost Volatility Expansion",
+      "family": "crazy",
+      "status": "INSUFFICIENT_ACTIVITY",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.0,
+        "spy_return_pct": 60.36,
+        "alpha_vs_spy_pct": -60.36,
+        "max_drawdown_pct": 0.0,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": 0.0,
+        "spy_sharpe": 1.06,
+        "trade_count": 0,
+        "sell_count": 0,
+        "win_rate_pct": 0.0,
+        "turnover": 0.0
+      },
+      "run_date": "2026-05-11"
+    },
+    {
+      "algo_id": "daily-jump-in-google-trends-for-emergency-plumber-signals-ri",
+      "name": "Daily Jump In Google Trends For Emergency Plumber Signals Rising Local Economy Stress Benefiting Staples",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-11"
+    },
+    {
+      "algo_id": "ev-charger-expansion-velocity-boom",
+      "name": "Ev Charger Expansion Velocity Boom",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.openchargemap",
+      "metrics": {},
+      "run_date": "2026-05-11"
+    },
+    {
+      "algo_id": "freight-rail-congestion-rss-volume-explosion",
+      "name": "Freight Rail Congestion Rss Volume Explosion",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.rss_count",
+      "metrics": {},
+      "run_date": "2026-05-11"
+    },
+    {
+      "algo_id": "healthcare-cost-inflation-google-trends-acceleration",
+      "name": "Healthcare Cost Inflation Google Trends Acceleration",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-11"
+    },
+    {
+      "algo_id": "luxury-discretionary-google-trends-collapse-signal",
+      "name": "Luxury Discretionary Google Trends Collapse Signal",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-11"
+    },
+    {
+      "algo_id": "weather-extremes-utility-demand-spike",
+      "name": "Weather Extremes Utility Demand Spike",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.eia_electricity",
+      "metrics": {},
+      "run_date": "2026-05-11"
+    },
+    {
+      "algo_id": "weekly-jump-in-google-trends-for-home-heating-oil-shortage-s",
+      "name": "Weekly Jump In Google Trends For Home Heating Oil Shortage Signals Winter Energy Stress",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-11"
+    }
+  ]
+}

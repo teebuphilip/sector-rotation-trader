@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T23:42:33Z",
+  "generated_at": "2026-05-11T23:47:16Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -1213,6 +1213,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:healthcare-cost-inflation-google-trends-acceleration",
+      "algo_type": "crazy",
+      "algo_id": "healthcare-cost-inflation-google-trends-acceleration",
+      "name": "Healthcare Cost Inflation Google Trends Acceleration",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLV"
+      ],
+      "equity": 100030.67,
+      "ytd_pct": 0.03,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-11",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:healthcare-cost-shock-google-search-spike",
       "algo_type": "crazy",
       "algo_id": "healthcare-cost-shock-google-search-spike",
@@ -1251,6 +1275,30 @@
       "equity": 100000.0,
       "ytd_pct": 0.0,
       "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-11",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:luxury-discretionary-google-trends-collapse-signal",
+      "algo_type": "crazy",
+      "algo_id": "luxury-discretionary-google-trends-collapse-signal",
+      "name": "Luxury Discretionary Google Trends Collapse Signal",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99811.09,
+      "ytd_pct": -0.19,
+      "trade_count": 22,
       "positions": 0,
       "last_snapshot": "2026-05-11",
       "last_signal": null,
@@ -2054,6 +2102,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:freight-rail-congestion-rss-volume-explosion",
+      "algo_type": "crazy",
+      "algo_id": "freight-rail-congestion-rss-volume-explosion",
+      "name": "Freight Rail Congestion Rss Volume Explosion",
+      "family": "freight_logistics",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-11",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:port-congestion-squeeze",
       "algo_type": "crazy",
       "algo_id": "port-congestion-squeeze",
@@ -2668,6 +2740,30 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: GLD",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-jump-in-google-trends-for-emergency-plumber-signals-ri",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-emergency-plumber-signals-ri",
+      "name": "Daily Jump In Google Trends For Emergency Plumber Signals Rising Local Economy Stress Benefiting Staples",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLP"
+      ],
+      "equity": 100000.24,
+      "ytd_pct": 0.0,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-11",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },
@@ -3467,6 +3563,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:ev-charger-expansion-velocity-boom",
+      "algo_type": "crazy",
+      "algo_id": "ev-charger-expansion-velocity-boom",
+      "name": "Ev Charger Expansion Velocity Boom",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLE"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-11",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:ev-charger-network-density-surge-bullish-signal",
       "algo_type": "crazy",
       "algo_id": "ev-charger-network-density-surge-bullish-signal",
@@ -4223,6 +4343,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weather-extremes-utility-demand-spike",
+      "algo_type": "crazy",
+      "algo_id": "weather-extremes-utility-demand-spike",
+      "name": "Weather Extremes Utility Demand Spike",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLU"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-11",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weather-volatility-spike",
       "algo_type": "crazy",
       "algo_id": "weather-volatility-spike",
@@ -4284,6 +4428,30 @@
       "rebalance_frequency": "weekly",
       "universe": [
         "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-11",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-jump-in-google-trends-for-home-heating-oil-shortage-s",
+      "algo_type": "crazy",
+      "algo_id": "weekly-jump-in-google-trends-for-home-heating-oil-shortage-s",
+      "name": "Weekly Jump In Google Trends For Home Heating Oil Shortage Signals Winter Energy Stress",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLU"
       ],
       "equity": 100000.0,
       "ytd_pct": 0.0,
@@ -4999,6 +5167,30 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "Uses non-price adapter: crazy.adapters.weather_series",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:airline-fuel-cost-volatility-expansion",
+      "algo_type": "crazy",
+      "algo_id": "airline-fuel-cost-volatility-expansion",
+      "name": "Airline Fuel Cost Volatility Expansion",
+      "family": "travel_mobility",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-11",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },

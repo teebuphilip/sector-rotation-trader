@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T23:42:33Z",
+  "generated_at": "2026-05-11T23:47:16Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -468,6 +468,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:healthcare-cost-inflation-google-trends-acceleration",
+      "algo_type": "crazy",
+      "algo_id": "healthcare-cost-inflation-google-trends-acceleration",
+      "name": "Healthcare Cost Inflation Google Trends Acceleration",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLV"
+      ],
+      "equity": 100030.67,
+      "ytd_pct": 0.03,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-11",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:healthcare-cost-shock-google-search-spike",
       "algo_type": "crazy",
       "algo_id": "healthcare-cost-shock-google-search-spike",
@@ -481,6 +505,30 @@
       ],
       "equity": 99617.84,
       "ytd_pct": -0.38,
+      "trade_count": 22,
+      "positions": 0,
+      "last_snapshot": "2026-05-11",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:luxury-discretionary-google-trends-collapse-signal",
+      "algo_type": "crazy",
+      "algo_id": "luxury-discretionary-google-trends-collapse-signal",
+      "name": "Luxury Discretionary Google Trends Collapse Signal",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99811.09,
+      "ytd_pct": -0.19,
       "trade_count": 22,
       "positions": 0,
       "last_snapshot": "2026-05-11",
@@ -1184,6 +1232,30 @@
       "ytd_pct": -0.03,
       "trade_count": 3,
       "positions": 1,
+      "last_snapshot": "2026-05-11",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-jump-in-google-trends-for-emergency-plumber-signals-ri",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-emergency-plumber-signals-ri",
+      "name": "Daily Jump In Google Trends For Emergency Plumber Signals Rising Local Economy Stress Benefiting Staples",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLP"
+      ],
+      "equity": 100000.24,
+      "ytd_pct": 0.0,
+      "trade_count": 2,
+      "positions": 0,
       "last_snapshot": "2026-05-11",
       "last_signal": null,
       "new_algo_date": null,

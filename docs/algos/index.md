@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-05-11T23:42:32
+Updated (UTC): 2026-05-11T23:47:16
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 210
+Crazy models: 218
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -226,3 +226,11 @@ Crazy models: 210
 | natural-gas-futures-volatility-pump-rotation | Natural Gas Futures Volatility Pump Rotation | daily |
 | regional-earthquake-cluster-insurance-demand-spike | Regional Earthquake Cluster Insurance Demand Spike | daily |
 | utility-volatility-compression-reversion-bounce | Utility Volatility Compression Reversion Bounce | daily |
+| daily-jump-in-google-trends-for-emergency-plumber-signals-ri | Daily Jump In Google Trends For Emergency Plumber Signals Rising Local Economy Stress Benefiting Staples | daily |
+| weekly-jump-in-google-trends-for-home-heating-oil-shortage-s | Weekly Jump In Google Trends For Home Heating Oil Shortage Signals Winter Energy Stress | weekly |
+| airline-fuel-cost-volatility-expansion | Airline Fuel Cost Volatility Expansion | daily |
+| ev-charger-expansion-velocity-boom | Ev Charger Expansion Velocity Boom | daily |
+| freight-rail-congestion-rss-volume-explosion | Freight Rail Congestion Rss Volume Explosion | daily |
+| healthcare-cost-inflation-google-trends-acceleration | Healthcare Cost Inflation Google Trends Acceleration | weekly |
+| luxury-discretionary-google-trends-collapse-signal | Luxury Discretionary Google Trends Collapse Signal | weekly |
+| weather-extremes-utility-demand-spike | Weather Extremes Utility Demand Spike | daily |

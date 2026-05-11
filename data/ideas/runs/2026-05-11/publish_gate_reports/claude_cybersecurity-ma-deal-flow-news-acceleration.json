@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-05-11/publish/claude_cybersecurity-ma-deal-flow-news-acceleration.md",
+  "target_file": "data/ideas/runs/2026-05-11/intervention/claude_cybersecurity-ma-deal-flow-news-acceleration.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "adapter mismatch",
+      "data source instability",
+      "false positives",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "rss_count": 2,
+        "html_table": 2,
+        "price_only": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 984,
+    "output_tokens": 80
+  },
+  "cost_usd": 0.00326,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"rss_count adapter is required but html_table was top scored; adapter mismatch needs manual review\",\n  \"risk_flags\": [\"adapter mismatch\", \"data source instability\", \"false positives\"]\n}\n```"
+}

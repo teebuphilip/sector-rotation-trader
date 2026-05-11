@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-11/publish/claude_freight-rail-congestion-rss-volume-explosion.md",
+  "target_file": "data/ideas/runs/2026-05-11/build/claude_freight-rail-congestion-rss-volume-explosion.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a valid rss_count adapter with deterministic routing and matches data source.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "rss_count"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "rss_count": 2,
+        "html_table": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 988,
+    "output_tokens": 79
+  },
+  "cost_usd": 0.00326,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid rss_count adapter with deterministic routing and matches data source.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

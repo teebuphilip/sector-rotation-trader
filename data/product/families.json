@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T23:42:33Z",
+  "generated_at": "2026-05-11T23:47:16Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
@@ -168,14 +168,14 @@
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 52,
+      "count": 54,
       "by_status": {
         "failed": 1,
-        "live_only": 25,
+        "live_only": 27,
         "sandbox": 26
       },
       "by_evidence_class": {
-        "live_receipts_only": 25,
+        "live_receipts_only": 27,
         "needs_history": 26,
         "v1_backtested": 1
       },
@@ -487,14 +487,14 @@
     },
     "freight_logistics": {
       "family": "freight_logistics",
-      "count": 12,
+      "count": 13,
       "by_status": {
         "live_only": 8,
-        "sandbox": 4
+        "sandbox": 5
       },
       "by_evidence_class": {
         "live_receipts_only": 8,
-        "needs_history": 4
+        "needs_history": 5
       },
       "leaders": [
         {
@@ -792,13 +792,13 @@
     },
     "local_economy_weirdness": {
       "family": "local_economy_weirdness",
-      "count": 18,
+      "count": 19,
       "by_status": {
-        "live_only": 10,
+        "live_only": 11,
         "sandbox": 8
       },
       "by_evidence_class": {
-        "live_receipts_only": 10,
+        "live_receipts_only": 11,
         "needs_history": 8
       },
       "leaders": [
@@ -910,20 +910,20 @@
           "backtest_trade_count": null
         },
         {
-          "key": "crazy:daily-spike-in-ev-charger-installations-signals-bullish-xlc",
+          "key": "crazy:daily-jump-in-google-trends-for-emergency-plumber-signals-ri",
           "algo_type": "crazy",
-          "algo_id": "daily-spike-in-ev-charger-installations-signals-bullish-xlc",
-          "name": "Daily Spike In Ev Charger Installations Signals Bullish Xlc",
+          "algo_id": "daily-jump-in-google-trends-for-emergency-plumber-signals-ri",
+          "name": "Daily Jump In Google Trends For Emergency Plumber Signals Rising Local Economy Stress Benefiting Staples",
           "family": "local_economy_weirdness",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
+          "status": "live_only",
+          "evidence_class": "live_receipts_only",
           "rebalance_frequency": "daily",
           "universe": [
-            "XLC"
+            "XLP"
           ],
-          "equity": 100000.0,
+          "equity": 100000.24,
           "ytd_pct": 0.0,
-          "trade_count": 0,
+          "trade_count": 2,
           "positions": 0,
           "last_snapshot": "2026-05-11",
           "last_signal": null,
@@ -937,16 +937,16 @@
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 58,
+      "count": 61,
       "by_status": {
         "backtest_weak": 1,
         "live_only": 15,
         "parked": 2,
-        "sandbox": 40
+        "sandbox": 43
       },
       "by_evidence_class": {
         "live_receipts_only": 15,
-        "needs_history": 38,
+        "needs_history": 41,
         "pending_seed": 2,
         "v1_backtested": 3
       },
@@ -1245,14 +1245,14 @@
     },
     "travel_mobility": {
       "family": "travel_mobility",
-      "count": 14,
+      "count": 15,
       "by_status": {
         "live_only": 3,
-        "sandbox": 11
+        "sandbox": 12
       },
       "by_evidence_class": {
         "live_receipts_only": 3,
-        "needs_history": 11
+        "needs_history": 12
       },
       "leaders": [
         {
@@ -1281,6 +1281,30 @@
           "new_algo_date": null,
           "backtest_status": "UNSUPPORTED_DATA",
           "backtest_reason": "No supported V1 price-only backtest path",
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
+        {
+          "key": "crazy:airline-fuel-cost-volatility-expansion",
+          "algo_type": "crazy",
+          "algo_id": "airline-fuel-cost-volatility-expansion",
+          "name": "Airline Fuel Cost Volatility Expansion",
+          "family": "travel_mobility",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "universe": [
+            "XLY"
+          ],
+          "equity": 100000.0,
+          "ytd_pct": 0.0,
+          "trade_count": 0,
+          "positions": 0,
+          "last_snapshot": "2026-05-11",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": null,
+          "backtest_reason": null,
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
         },
@@ -1361,30 +1385,6 @@
           "new_algo_date": null,
           "backtest_status": "UNSUPPORTED_DATA",
           "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: EXPE, MAR, TCOM",
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:daily-spike-in-google-trends-searches-for-airline-flight-del",
-          "algo_type": "crazy",
-          "algo_id": "daily-spike-in-google-trends-searches-for-airline-flight-del",
-          "name": "Daily Spike In Google Trends Searches For Airline Flight Delay Compensation",
-          "family": "travel_mobility",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "daily",
-          "universe": [
-            "XLY"
-          ],
-          "equity": 100000.0,
-          "ytd_pct": 0.0,
-          "trade_count": 0,
-          "positions": 0,
-          "last_snapshot": "2026-05-11",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": null,
-          "backtest_reason": null,
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
         }
