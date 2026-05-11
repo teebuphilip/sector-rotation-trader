@@ -23,6 +23,16 @@
       "pnl_pct": -0.11,
       "entry_date": "2026-04-24",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-11",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 28.5605,
+      "price": 175.04,
+      "cost": 4999.22,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -845,6 +855,26 @@
       "positions": {},
       "sector": "Weekly Surge In Job Postings For Warehouse Workers Signals Bullish Xli",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-11",
+      "cash": 94975.31,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99974.53,
+      "positions": {
+        "XLI": {
+          "shares": 28.5605,
+          "entry_price": 175.04,
+          "current_price": 175.04,
+          "market_value": 4999.22,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-11",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Surge In Job Postings For Warehouse Workers Signals Bullish Xli",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-23"

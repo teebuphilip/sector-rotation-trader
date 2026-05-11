@@ -2448,6 +2448,53 @@
       },
       "sector": "XLK",
       "num_positions": 4
+    },
+    {
+      "date": "2026-05-11",
+      "cash": 59668.02,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 103366.86,
+      "positions": {
+        "XEL": {
+          "shares": 120.5546,
+          "entry_price": 82.95,
+          "current_price": 80.6,
+          "market_value": 9716.7,
+          "unrealized_pnl": -283.3,
+          "entry_date": "2026-04-30",
+          "margin": false
+        },
+        "QCOM": {
+          "shares": 53.6049,
+          "entry_price": 186.55,
+          "current_price": 237.53,
+          "market_value": 12732.78,
+          "unrealized_pnl": 2732.78,
+          "entry_date": "2026-05-05",
+          "margin": false
+        },
+        "AMD": {
+          "shares": 23.731,
+          "entry_price": 421.39,
+          "current_price": 458.79,
+          "market_value": 10887.54,
+          "unrealized_pnl": 887.54,
+          "entry_date": "2026-05-06",
+          "margin": false
+        },
+        "INTC": {
+          "shares": 80.0512,
+          "entry_price": 124.92,
+          "current_price": 129.44,
+          "market_value": 10361.83,
+          "unrealized_pnl": 361.83,
+          "entry_date": "2026-05-08",
+          "margin": false
+        }
+      },
+      "sector": "XLU",
+      "num_positions": 4
     }
   ],
   "sim_start": "2026-01-07"

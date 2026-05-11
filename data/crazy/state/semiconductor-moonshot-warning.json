@@ -1,19 +1,10 @@
 {
-  "cash": 95004.73294095717,
+  "cash": 100041.43290385294,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 90.59624442136591,
-  "taxes_paid": 50.31808836479557,
-  "positions": {
-    "XLK": {
-      "shares": 28.49118427893514,
-      "entry_price": 175.52000427246094,
-      "entry_date": "2026-05-08",
-      "cost": 5000.772786366168,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "fees_paid": 100.8081923765823,
+  "taxes_paid": 71.41817616789787,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-14",
@@ -120,6 +111,20 @@
       "cost": 5000.77,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-11",
+      "action": "SELL",
+      "ticker": "XLK",
+      "shares": 28.4912,
+      "price": 177.88,
+      "proceeds": 5057.8,
+      "fees": 10.21,
+      "tax": 21.1,
+      "pnl": 35.93,
+      "pnl_pct": 0.72,
+      "entry_date": "2026-05-08",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1062,20 +1067,29 @@
       },
       "sector": "Semiconductor Moonshot Warning",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-11",
+      "cash": 100041.43,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100041.43,
+      "positions": {},
+      "sector": "Semiconductor Moonshot Warning",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-19",
-  "last_run": "2026-05-08",
+  "last_run": "2026-05-11",
   "meta": {
     "semiconductor-moonshot-warning": {
-      "latest_value": 175.52,
-      "prior_avg": 165.854,
-      "signal_change": 0.0583,
-      "signal_label": "RISK_ON",
-      "entry_date": "2026-05-08",
+      "latest_value": 177.88,
+      "prior_avg": 168.584,
+      "signal_change": 0.0551,
+      "signal_label": "RISK_OFF",
       "name": "Semiconductor Moonshot Warning",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-08"
+      "last_signal": "RISK_OFF",
+      "last_run": "2026-05-11"
     }
   }
 }

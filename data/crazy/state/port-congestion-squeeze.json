@@ -1,11 +1,31 @@
 {
-  "cash": 100000,
+  "cash": 94990.05,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 0.0,
+  "fees_paid": 9.95,
   "taxes_paid": 0.0,
-  "positions": {},
-  "trade_log": [],
+  "positions": {
+    "XLI": {
+      "shares": 28.564900547194632,
+      "entry_price": 175.0399932861328,
+      "entry_date": "2026-05-11",
+      "cost": 5000.0,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
+  "trade_log": [
+    {
+      "date": "2026-05-11",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 28.5649,
+      "price": 175.04,
+      "cost": 5000.0,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-01-19",
@@ -1003,19 +1023,40 @@
       "positions": {},
       "sector": "Port Congestion Squeeze",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-11",
+      "cash": 94990.05,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99990.05,
+      "positions": {
+        "XLI": {
+          "shares": 28.5649,
+          "entry_price": 175.04,
+          "current_price": 175.04,
+          "market_value": 5000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-11",
+          "margin": false
+        }
+      },
+      "sector": "Port Congestion Squeeze",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-18",
-  "last_run": "2026-05-08",
+  "last_run": "2026-05-11",
   "meta": {
     "port-congestion-squeeze": {
-      "latest_value": 752519.5,
-      "prior_avg": 824323.25,
-      "signal_change": -0.0871,
-      "signal_label": "HOLD",
+      "latest_value": 890861.0,
+      "prior_avg": 795107.6875,
+      "signal_change": 0.1204,
+      "signal_label": "RISK_ON",
       "name": "Port Congestion Squeeze",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-08"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-11",
+      "entry_date": "2026-05-11"
     }
   }
 }

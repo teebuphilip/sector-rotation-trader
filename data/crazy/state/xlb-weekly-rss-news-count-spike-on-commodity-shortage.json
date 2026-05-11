@@ -1,19 +1,10 @@
 {
-  "cash": 94862.12286038847,
+  "cash": 99889.79762049441,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 131.0227977701106,
-  "taxes_paid": 14.704928364088119,
-  "positions": {
-    "XLB": {
-      "shares": 96.78749714835094,
-      "entry_price": 51.59000015258789,
-      "entry_date": "2026-05-08",
-      "cost": 4993.266992652025,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "fees_paid": 141.25473974118103,
+  "taxes_paid": 34.91266480528425,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-20",
@@ -168,6 +159,20 @@
       "cost": 4993.27,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-11",
+      "action": "SELL",
+      "ticker": "XLB",
+      "shares": 96.7875,
+      "price": 52.26,
+      "proceeds": 5047.88,
+      "fees": 10.23,
+      "tax": 20.21,
+      "pnl": 34.41,
+      "pnl_pct": 0.69,
+      "entry_date": "2026-05-08",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1150,20 +1155,29 @@
       },
       "sector": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-11",
+      "cash": 99889.8,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99889.8,
+      "positions": {},
+      "sector": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-18",
-  "last_run": "2026-05-08",
+  "last_run": "2026-05-11",
   "meta": {
     "xlb-weekly-rss-news-count-spike-on-commodity-shortage": {
-      "latest_value": 4.0,
-      "prior_avg": 1.5,
-      "signal_change": 1.6667,
-      "signal_label": "RISK_ON",
+      "latest_value": 1.0,
+      "prior_avg": 1.5556,
+      "signal_change": -0.3571,
+      "signal_label": "RISK_OFF",
       "name": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-08",
-      "entry_date": "2026-05-08"
+      "last_signal": "RISK_OFF",
+      "last_run": "2026-05-11"
     }
   }
 }

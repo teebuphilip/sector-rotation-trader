@@ -1,10 +1,27 @@
 {
-  "cash": 93802.32904467327,
+  "cash": 31247.543014891093,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 3748.9484587156217,
+  "fees_paid": 3768.8484587156213,
   "taxes_paid": 19148.136283663654,
-  "positions": {},
+  "positions": {
+    "XLE": {
+      "shares": 546.9204830563654,
+      "entry_price": 57.16999816894531,
+      "entry_date": "2026-05-11",
+      "cost": 31267.44301489109,
+      "using_margin": false,
+      "consec_below_ma": 0
+    },
+    "XLI": {
+      "shares": 178.6302800170879,
+      "entry_price": 175.0399932861328,
+      "entry_date": "2026-05-11",
+      "cost": 31267.44301489109,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-01-19",
@@ -965,6 +982,26 @@
       "pnl_pct": 5.21,
       "entry_date": "2026-05-04",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-11",
+      "action": "BUY",
+      "ticker": "XLE",
+      "shares": 546.9205,
+      "price": 57.17,
+      "cost": 31267.44,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-11",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 178.6303,
+      "price": 175.04,
+      "cost": 31267.44,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -3297,22 +3334,51 @@
       "positions": {},
       "sector": "Chaos Rotation Lab",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-11",
+      "cash": 31247.54,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 93782.43,
+      "positions": {
+        "XLE": {
+          "shares": 546.9205,
+          "entry_price": 57.17,
+          "current_price": 57.17,
+          "market_value": 31267.44,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-11",
+          "margin": false
+        },
+        "XLI": {
+          "shares": 178.6303,
+          "entry_price": 175.04,
+          "current_price": 175.04,
+          "market_value": 31267.44,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-11",
+          "margin": false
+        }
+      },
+      "sector": "Chaos Rotation Lab",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16",
-  "last_run": "2026-05-08",
+  "last_run": "2026-05-11",
   "meta": {
     "baileymol": {
       "target_sectors": [
         "XLE",
-        "XLK",
-        "XLI"
+        "XLI",
+        "XLK"
       ],
-      "signal_label": "FRIDAY_EXIT",
-      "signal_key": "FRIDAY_EXIT",
+      "signal_label": "TOP:XLE,XLI,XLK",
+      "signal_key": "XLE|XLI|XLK",
       "name": "Chaos Rotation Lab",
-      "last_run": "2026-05-08",
-      "last_signal": "FRIDAY_EXIT"
+      "last_run": "2026-05-11",
+      "last_signal": "XLE|XLI|XLK"
     }
   }
 }

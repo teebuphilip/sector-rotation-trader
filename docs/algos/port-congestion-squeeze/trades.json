@@ -1,5 +1,16 @@
 {
-  "trade_log": [],
+  "trade_log": [
+    {
+      "date": "2026-05-11",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 28.5649,
+      "price": 175.04,
+      "cost": 5000.0,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-01-19",
@@ -997,6 +1008,26 @@
       "positions": {},
       "sector": "Port Congestion Squeeze",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-11",
+      "cash": 94990.05,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99990.05,
+      "positions": {
+        "XLI": {
+          "shares": 28.5649,
+          "entry_price": 175.04,
+          "current_price": 175.04,
+          "market_value": 5000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-11",
+          "margin": false
+        }
+      },
+      "sector": "Port Congestion Squeeze",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-18"
