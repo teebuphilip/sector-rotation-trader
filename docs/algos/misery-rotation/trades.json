@@ -1,5 +1,26 @@
 {
-  "trade_log": [],
+  "trade_log": [
+    {
+      "date": "2026-05-12",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 473.7091,
+      "price": 84.44,
+      "cost": 40000.0,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-12",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 663.8637,
+      "price": 45.19,
+      "cost": 30000.0,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-01-16",
@@ -1029,6 +1050,35 @@
       "positions": {},
       "sector": "Misery Rotation",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-12",
+      "cash": 29980.1,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99980.1,
+      "positions": {
+        "XLP": {
+          "shares": 473.7091,
+          "entry_price": 84.44,
+          "current_price": 84.44,
+          "market_value": 40000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-12",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 663.8637,
+          "entry_price": 45.19,
+          "current_price": 45.19,
+          "market_value": 30000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-12",
+          "margin": false
+        }
+      },
+      "sector": "Misery Rotation",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16"

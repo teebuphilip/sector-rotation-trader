@@ -1,19 +1,10 @@
 {
-  "cash": 94898.5743753867,
+  "cash": 99927.70994728268,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 90.62011051699422,
-  "taxes_paid": 0.798810382919728,
-  "positions": {
-    "XLP": {
-      "shares": 59.91586096770514,
-      "entry_price": 83.37000274658203,
-      "entry_date": "2026-05-11",
-      "cost": 4995.185493441405,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "fees_paid": 100.84105004760413,
+  "taxes_paid": 20.737745348306635,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-05-03",
@@ -120,6 +111,20 @@
       "cost": 4995.19,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-12",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 59.9159,
+      "price": 84.44,
+      "proceeds": 5049.07,
+      "fees": 10.22,
+      "tax": 19.94,
+      "pnl": 33.95,
+      "pnl_pct": 0.68,
+      "entry_date": "2026-05-11",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -912,20 +917,30 @@
       },
       "sector": "Rss News Volume Spike On Food Supply Chain Disruptions",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-12",
+      "cash": 99927.71,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99927.71,
+      "positions": {},
+      "sector": "Rss News Volume Spike On Food Supply Chain Disruptions",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-02-01",
-  "last_run": "2026-05-11",
+  "last_run": "2026-05-12",
   "meta": {
     "rss-news-volume-spike-on-food-supply-chain-disruptions": {
-      "latest_value": 9.0,
-      "prior_avg": 3.1333,
-      "signal_change": 1.8723,
+      "latest_value": 20.0,
+      "prior_avg": 2.4667,
+      "signal_change": 7.1081,
       "entry_date": "2026-05-11",
-      "signal_label": "RISK_ON",
+      "signal_label": "HOLD",
       "name": "Rss News Volume Spike On Food Supply Chain Disruptions",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-11"
+      "last_signal": "HOLD",
+      "last_run": "2026-05-12"
     }
   }
 }

@@ -1,19 +1,10 @@
 {
-  "cash": 94769.90823494134,
+  "cash": 99792.2173809522,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 130.95269166386942,
-  "taxes_paid": 29.728729904028633,
-  "positions": {
-    "XLP": {
-      "shares": 59.83463388475437,
-      "entry_price": 83.37000274658203,
-      "entry_date": "2026-05-11",
-      "cost": 4988.413591312702,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "fees_paid": 141.1732638856003,
+  "taxes_paid": 49.63564298073252,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-02-10",
@@ -168,6 +159,20 @@
       "cost": 4988.41,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-12",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 59.8346,
+      "price": 84.44,
+      "proceeds": 5042.22,
+      "fees": 10.22,
+      "tax": 19.91,
+      "pnl": 33.9,
+      "pnl_pct": 0.68,
+      "entry_date": "2026-05-11",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1060,20 +1065,30 @@
       },
       "sector": "Weekly Rise In Google Trends Interest For Food Delivery Delay Signals Bearish Xlp",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-12",
+      "cash": 99792.22,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99792.22,
+      "positions": {},
+      "sector": "Weekly Rise In Google Trends Interest For Food Delivery Delay Signals Bearish Xlp",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-23",
-  "last_run": "2026-05-11",
+  "last_run": "2026-05-12",
   "meta": {
     "weekly-rise-in-google-trends-interest-for-food-delivery-dela": {
-      "signal_label": "RISK_ON",
-      "latest_value": 7.0,
-      "prior_avg": 5.7857,
-      "signal_change": 0.2099,
+      "signal_label": "HOLD",
+      "latest_value": 12.0,
+      "prior_avg": 9.8929,
+      "signal_change": 0.213,
       "entry_date": "2026-05-11",
       "name": "Weekly Rise In Google Trends Interest For Food Delivery Delay Signals Bearish Xlp",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-11"
+      "last_signal": "HOLD",
+      "last_run": "2026-05-12"
     }
   }
 }

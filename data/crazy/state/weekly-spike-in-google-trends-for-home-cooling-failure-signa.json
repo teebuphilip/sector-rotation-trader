@@ -1,10 +1,19 @@
 {
-  "cash": 99869.63754520017,
+  "cash": 94866.20566794016,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 60.54454057612288,
+  "fees_paid": 70.49454057612287,
   "taxes_paid": 13.56263900691125,
-  "positions": {},
+  "positions": {
+    "XLU": {
+      "shares": 110.49971296765372,
+      "entry_price": 45.189998626708984,
+      "entry_date": "2026-05-12",
+      "cost": 4993.481877260008,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-30",
@@ -77,6 +86,16 @@
       "pnl_pct": 0.46,
       "entry_date": "2026-05-08",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-12",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 110.4997,
+      "price": 45.19,
+      "cost": 4993.48,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -929,19 +948,40 @@
       "positions": {},
       "sector": "Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-12",
+      "cash": 94866.21,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99859.69,
+      "positions": {
+        "XLU": {
+          "shares": 110.4997,
+          "entry_price": 45.19,
+          "current_price": 45.19,
+          "market_value": 4993.48,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-12",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-23",
-  "last_run": "2026-05-11",
+  "last_run": "2026-05-12",
   "meta": {
     "weekly-spike-in-google-trends-for-home-cooling-failure-signa": {
-      "signal_label": "RISK_OFF",
-      "latest_value": 0.0,
-      "prior_avg": 0.25,
-      "signal_change": -1.0,
+      "signal_label": "RISK_ON",
+      "latest_value": 3.0,
+      "prior_avg": 0.7857,
+      "signal_change": 2.8182,
       "name": "Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu",
-      "last_signal": "RISK_OFF",
-      "last_run": "2026-05-11"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-12",
+      "entry_date": "2026-05-12"
     }
   }
 }
