@@ -1,0 +1,37 @@
+{
+  "source_file": "data/ideas/runs/2026-05-12/publish/claude_freight-rail-utilization-recovery-signal.md",
+  "target_file": "data/ideas/runs/2026-05-12/intervention/claude_freight-rail-utilization-recovery-signal.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "data source instability",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "unsupported_template_adapter",
+      "volume data required",
+      "weekly frequency"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 990,
+    "output_tokens": 90
+  },
+  "cost_usd": 0.003375,
+  "raw_llm_response": "{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": null,\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly supports AAR weekly carload data; new adapter needed for FRED series RAILCDF or AAR scrape.\",\n  \"risk_flags\": [\"data source instability\", \"low adapter routing confidence\", \"volume data required\", \"weekly frequency\"]\n}"
+}

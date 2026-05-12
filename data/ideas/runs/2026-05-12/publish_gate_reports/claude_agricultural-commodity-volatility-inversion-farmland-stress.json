@@ -1,0 +1,39 @@
+{
+  "source_file": "data/ideas/runs/2026-05-12/publish/claude_agricultural-commodity-volatility-inversion-farmland-stress.md",
+  "target_file": "data/ideas/runs/2026-05-12/intervention/claude_agricultural-commodity-volatility-inversion-farmland-stress.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "shorting or bearish exposure implied by 'XLI closes down >1%' condition",
+      "unsupported_template_adapter",
+      "volatility calculation required but not explicit in adapter",
+      "volume data missing for XLI"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "price_only",
+        "weather_series"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "fred_series": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 1031,
+    "output_tokens": 131
+  },
+  "cost_usd": 0.0038875,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires volatility calculation from price data and volume info for XLI, but fred_series only provides price data without volume; also, shorting is not supported.\",\n  \"risk_flags\": [\n    \"volume data missing for XLI\",\n    \"volatility calculation required but not explicit in adapter\",\n    \"shorting or bearish exposure implied by 'XLI closes down >1%' condition\",\n    \"low adapter routing confidence\"\n  ]\n}\n```"
+}

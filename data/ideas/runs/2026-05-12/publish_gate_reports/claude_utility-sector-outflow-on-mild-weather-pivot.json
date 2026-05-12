@@ -1,0 +1,37 @@
+{
+  "source_file": "data/ideas/runs/2026-05-12/publish/claude_utility-sector-outflow-on-mild-weather-pivot.md",
+  "target_file": "data/ideas/runs/2026-05-12/intervention/claude_utility-sector-outflow-on-mild-weather-pivot.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "weather_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "low_adapter_confidence",
+      "regime shifts",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "reddit_activity": 1,
+        "weather_series": 1,
+        "html_table": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 1005,
+    "output_tokens": 76
+  },
+  "cost_usd": 0.0032725,
+  "raw_llm_response": "{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"weather_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is deterministic, uses a real weather adapter with HDD data, and is structurally valid.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}"
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-12T23:44:35Z",
+  "generated_at": "2026-05-12T23:52:31Z",
   "algos": [
     {
       "schema_version": "v1",
@@ -810,6 +810,42 @@
             "direction": "UP",
             "confidence": 0.115,
             "return_pct": 0.577
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:healthcare-procedure-google-trends-demand-resurgence",
+      "algo_type": "crazy",
+      "algo_id": "healthcare-procedure-google-trends-demand-resurgence",
+      "name": "Healthcare Procedure Google Trends Demand Resurgence",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.01,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.59,
+      "last_snapshot": "2026-05-12",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.037,
+            "return_pct": 0.186
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.318,
+            "return_pct": 1.589
           }
         },
         "summary": "both_up"
@@ -1903,6 +1939,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:ev-charger-network-expansion-sentiment-surge",
+      "algo_type": "crazy",
+      "algo_id": "ev-charger-network-expansion-sentiment-surge",
+      "name": "Ev Charger Network Expansion Sentiment Surge",
+      "family": "attention_sentiment",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.12,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.59,
+      "last_snapshot": "2026-05-12",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLK",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 5.778
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 18.426
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:mortgage-rate-housing-proxy",
       "algo_type": "crazy",
       "algo_id": "mortgage-rate-housing-proxy",
@@ -2565,6 +2637,42 @@
             "direction": "UP",
             "confidence": 0.53,
             "return_pct": 2.648
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-spike-in-freight-container-volumes-at-east-coast-port",
+      "algo_type": "crazy",
+      "algo_id": "weekly-spike-in-freight-container-volumes-at-east-coast-port",
+      "name": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.23,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.24,
+      "spy_delta_30d_pct": -7.83,
+      "last_snapshot": "2026-05-12",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.225,
+            "return_pct": 1.125
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.115,
+            "return_pct": 0.577
           }
         },
         "summary": "both_up"

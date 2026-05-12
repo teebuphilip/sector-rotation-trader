@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-05-12/publish/claude_copper-contango-collapse-industrial-demand-proxy.md",
+  "target_file": "data/ideas/runs/2026-05-12/intervention/claude_copper-contango-collapse-industrial-demand-proxy.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "needs new adapter for futures curve slope",
+      "requires combining multiple data sources",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "price_only"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 1032,
+    "output_tokens": 87
+  },
+  "cost_usd": 0.00345,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": null,\n  \"needs_new_adapter\": true,\n  \"reason\": \"No single existing adapter covers both FRED spot series and CME futures curve slope data together.\",\n  \"risk_flags\": [\"low adapter routing confidence\", \"requires combining multiple data sources\", \"needs new adapter for futures curve slope\"]\n}\n```"
+}

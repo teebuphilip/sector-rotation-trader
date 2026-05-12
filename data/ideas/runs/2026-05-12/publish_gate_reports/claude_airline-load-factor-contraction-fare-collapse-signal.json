@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-12/publish/claude_airline-load-factor-contraction-fare-collapse-signal.md",
+  "target_file": "data/ideas/runs/2026-05-12/intervention/claude_airline-load-factor-contraction-fare-collapse-signal.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "bts_airline_load_factor",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support bts_airline_load_factor yet.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "bts_airline_load_factor"
+      ],
+      "scores": {
+        "html_table": 1,
+        "bts_airline_load_factor": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 987,
+    "output_tokens": 81
+  },
+  "cost_usd": 0.0032775,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"bts_airline_load_factor\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid existing adapter with matching data source and frequency.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

@@ -1,0 +1,40 @@
+{
+  "source_file": "data/ideas/runs/2026-05-12/publish/claude_natural-gas-volatility-spike-reversal-in-energy.md",
+  "target_file": "data/ideas/runs/2026-05-12/intervention/claude_natural-gas-volatility-spike-reversal-in-energy.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "conditional entry logic on XLE price movement",
+      "low_adapter_confidence",
+      "position sizing and exit rules need manual validation",
+      "unsupported_template_adapter",
+      "volatility calculation not explicit in adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table",
+        "price_only",
+        "weather_series"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "fred_series": 1,
+        "html_table": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 1024,
+    "output_tokens": 94
+  },
+  "cost_usd": 0.0035,
+  "raw_llm_response": "{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec uses FRED series for natural gas price but requires volatility calc and conditional logic needing manual review.\",\n  \"risk_flags\": [\"volatility calculation not explicit in adapter\", \"conditional entry logic on XLE price movement\", \"position sizing and exit rules need manual validation\"]\n}"
+}

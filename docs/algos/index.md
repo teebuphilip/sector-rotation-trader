@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-05-12T23:44:34
+Updated (UTC): 2026-05-12T23:52:30
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 218
+Crazy models: 229
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -234,3 +234,14 @@ Crazy models: 218
 | healthcare-cost-inflation-google-trends-acceleration | Healthcare Cost Inflation Google Trends Acceleration | weekly |
 | luxury-discretionary-google-trends-collapse-signal | Luxury Discretionary Google Trends Collapse Signal | weekly |
 | weather-extremes-utility-demand-spike | Weather Extremes Utility Demand Spike | daily |
+| daily-jump-in-google-trends-for-emergency-roadside-assistanc | Daily Jump In Google Trends For Emergency Roadside Assistance Signals Consumer Stress Impacting Discretionary Sector | daily |
+| daily-jump-in-openchargemap-ev-charger-counts-in-key-states- | Daily Jump In Openchargemap Ev Charger Counts In Key States Signals Tech Sector Acceleration | daily |
+| weekly-google-trends-surge-for-small-business-loan-applicati | Weekly Google Trends Surge For Small Business Loan Application Signals Financial Sector Activity Boost | weekly |
+| weekly-google-trends-surge-for-truck-tire-replacement-search | Weekly Google Trends Surge For Truck Tire Replacement Searches Signals Industrial Sector Repair Cycle | weekly |
+| weekly-jump-in-google-trends-for-job-quitting-searches-signa | Weekly Jump In Google Trends For Job Quitting Searches Signals Labor Market Tightness Benefiting Financial Sector | weekly |
+| weekly-jump-in-google-trends-home-pest-control-emergency-sea | Weekly Jump In Google Trends Home Pest Control Emergency Searches Signals Consumer Stress And Discretionary Rebound | weekly |
+| weekly-spike-in-freight-container-volumes-at-east-coast-port | Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength | weekly |
+| weekly-surge-in-google-trends-diy-home-roofing-repair-search | Weekly Surge In Google Trends Diy Home Roofing Repair Searches Signals Industrial Sector Demand Spike | weekly |
+| weekly-surge-in-google-trends-for-sudden-appliance-breakdown | Weekly Surge In Google Trends For Sudden Appliance Breakdowns Signals Discretionary Sector Rebound | weekly |
+| ev-charger-network-expansion-sentiment-surge | Ev Charger Network Expansion Sentiment Surge | weekly |
+| healthcare-procedure-google-trends-demand-resurgence | Healthcare Procedure Google Trends Demand Resurgence | weekly |

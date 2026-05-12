@@ -1,0 +1,37 @@
+{
+  "source_file": "data/ideas/runs/2026-05-12/publish/chatgpt_daily-spike-in-rss-news-counts-for-electric-grid-emergency-r.md",
+  "target_file": "data/ideas/runs/2026-05-12/intervention/chatgpt_daily-spike-in-rss-news-counts-for-electric-grid-emergency-r.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "data source scraping unclear",
+      "requires short position",
+      "rss_count adapter not confirmed",
+      "short_trade_not_supported",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "rss_count": 2,
+        "html_table": 2,
+        "price_only": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 954,
+    "output_tokens": 86
+  },
+  "cost_usd": 0.003245,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting and RSS feed counts but adapter mapping is unclear and shorting is unsupported.\",\n  \"risk_flags\": [\"requires short position\", \"rss_count adapter not confirmed\", \"data source scraping unclear\"]\n}\n```"
+}

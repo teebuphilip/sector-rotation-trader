@@ -1,8 +1,8 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-12T23:44:42Z",
+  "generated_at": "2026-05-12T23:52:31Z",
   "counts": {
-    "total": 223,
+    "total": 234,
     "beating_spy": 1
   },
   "algos": [
@@ -814,6 +814,42 @@
             "direction": "UP",
             "confidence": 0.115,
             "return_pct": 0.577
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:healthcare-procedure-google-trends-demand-resurgence",
+      "algo_type": "crazy",
+      "algo_id": "healthcare-procedure-google-trends-demand-resurgence",
+      "name": "Healthcare Procedure Google Trends Demand Resurgence",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.01,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.59,
+      "last_snapshot": "2026-05-12",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.037,
+            "return_pct": 0.186
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.318,
+            "return_pct": 1.589
           }
         },
         "summary": "both_up"
@@ -1979,6 +2015,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:ev-charger-network-expansion-sentiment-surge",
+      "algo_type": "crazy",
+      "algo_id": "ev-charger-network-expansion-sentiment-surge",
+      "name": "Ev Charger Network Expansion Sentiment Surge",
+      "family": "attention_sentiment",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.12,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.59,
+      "last_snapshot": "2026-05-12",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLK",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 5.778
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 18.426
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:mortgage-rate-housing-proxy",
       "algo_type": "crazy",
       "algo_id": "mortgage-rate-housing-proxy",
@@ -2641,6 +2713,42 @@
             "direction": "UP",
             "confidence": 0.53,
             "return_pct": 2.648
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-spike-in-freight-container-volumes-at-east-coast-port",
+      "algo_type": "crazy",
+      "algo_id": "weekly-spike-in-freight-container-volumes-at-east-coast-port",
+      "name": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.23,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.24,
+      "spy_delta_30d_pct": -7.83,
+      "last_snapshot": "2026-05-12",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.225,
+            "return_pct": 1.125
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.115,
+            "return_pct": 0.577
           }
         },
         "summary": "both_up"
@@ -7098,6 +7206,294 @@
       "beat_spy": false,
       "spy_pct": 8.35,
       "alpha_pct": -8.35,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.59,
+      "last_snapshot": "2026-05-12",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.037,
+            "return_pct": 0.186
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.318,
+            "return_pct": 1.589
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-for-sudden-appliance-breakdown",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-sudden-appliance-breakdown",
+      "name": "Weekly Surge In Google Trends For Sudden Appliance Breakdowns Signals Discretionary Sector Rebound",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.59,
+      "last_snapshot": "2026-05-12",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.037,
+            "return_pct": 0.186
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.318,
+            "return_pct": 1.589
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-diy-home-roofing-repair-search",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-diy-home-roofing-repair-search",
+      "name": "Weekly Surge In Google Trends Diy Home Roofing Repair Searches Signals Industrial Sector Demand Spike",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.59,
+      "last_snapshot": "2026-05-12",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.225,
+            "return_pct": 1.125
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.115,
+            "return_pct": 0.577
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-jump-in-google-trends-home-pest-control-emergency-sea",
+      "algo_type": "crazy",
+      "algo_id": "weekly-jump-in-google-trends-home-pest-control-emergency-sea",
+      "name": "Weekly Jump In Google Trends Home Pest Control Emergency Searches Signals Consumer Stress And Discretionary Rebound",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.59,
+      "last_snapshot": "2026-05-12",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.037,
+            "return_pct": 0.186
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.318,
+            "return_pct": 1.589
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-jump-in-google-trends-for-job-quitting-searches-signa",
+      "algo_type": "crazy",
+      "algo_id": "weekly-jump-in-google-trends-for-job-quitting-searches-signa",
+      "name": "Weekly Jump In Google Trends For Job Quitting Searches Signals Labor Market Tightness Benefiting Financial Sector",
+      "family": "labor_jobs",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.59,
+      "last_snapshot": "2026-05-12",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLF",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.004,
+            "return_pct": -0.019
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.077,
+            "return_pct": -0.386
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-google-trends-surge-for-truck-tire-replacement-search",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-for-truck-tire-replacement-search",
+      "name": "Weekly Google Trends Surge For Truck Tire Replacement Searches Signals Industrial Sector Repair Cycle",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.59,
+      "last_snapshot": "2026-05-12",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.225,
+            "return_pct": 1.125
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.115,
+            "return_pct": 0.577
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-google-trends-surge-for-small-business-loan-applicati",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-for-small-business-loan-applicati",
+      "name": "Weekly Google Trends Surge For Small Business Loan Application Signals Financial Sector Activity Boost",
+      "family": "labor_jobs",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.59,
+      "last_snapshot": "2026-05-12",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLF",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.004,
+            "return_pct": -0.019
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.077,
+            "return_pct": -0.386
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-openchargemap-ev-charger-counts-in-key-states-",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-openchargemap-ev-charger-counts-in-key-states-",
+      "name": "Daily Jump In Openchargemap Ev Charger Counts In Key States Signals Tech Sector Acceleration",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.59,
+      "last_snapshot": "2026-05-12",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLK",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 5.778
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 18.426
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-google-trends-for-emergency-roadside-assistanc",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-emergency-roadside-assistanc",
+      "name": "Daily Jump In Google Trends For Emergency Roadside Assistance Signals Consumer Stress Impacting Discretionary Sector",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
       "ret_30d_pct": 0.0,
       "spy_delta_30d_pct": -7.59,
       "last_snapshot": "2026-05-12",

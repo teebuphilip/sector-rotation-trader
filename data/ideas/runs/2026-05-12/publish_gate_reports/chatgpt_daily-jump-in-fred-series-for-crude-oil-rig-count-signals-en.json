@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-05-12/publish/chatgpt_daily-jump-in-fred-series-for-crude-oil-rig-count-signals-en.md",
+  "target_file": "data/ideas/runs/2026-05-12/intervention/chatgpt_daily-jump-in-fred-series-for-crude-oil-rig-count-signals-en.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "price_only"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 937,
+    "output_tokens": 81
+  },
+  "cost_usd": 0.0031525,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a real FRED series adapter with weekly rig count data and deterministic logic.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

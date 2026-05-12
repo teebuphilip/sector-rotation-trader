@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-05-12T23:44:35Z",
+  "generated_at": "2026-05-12T23:52:31Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
-      "count": 25,
+      "count": 26,
       "by_status": {
-        "live_only": 8,
+        "live_only": 9,
         "parked": 2,
         "sandbox": 15
       },
       "by_evidence_class": {
-        "live_receipts_only": 8,
+        "live_receipts_only": 9,
         "needs_history": 15,
         "pending_seed": 2
       },
@@ -168,15 +168,15 @@
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 54,
+      "count": 60,
       "by_status": {
         "failed": 1,
-        "live_only": 27,
-        "sandbox": 26
+        "live_only": 28,
+        "sandbox": 31
       },
       "by_evidence_class": {
-        "live_receipts_only": 27,
-        "needs_history": 26,
+        "live_receipts_only": 28,
+        "needs_history": 31,
         "v1_backtested": 1
       },
       "leaders": [
@@ -487,13 +487,13 @@
     },
     "freight_logistics": {
       "family": "freight_logistics",
-      "count": 13,
+      "count": 14,
       "by_status": {
-        "live_only": 8,
+        "live_only": 9,
         "sandbox": 5
       },
       "by_evidence_class": {
-        "live_receipts_only": 8,
+        "live_receipts_only": 9,
         "needs_history": 5
       },
       "leaders": [
@@ -636,14 +636,14 @@
     },
     "labor_jobs": {
       "family": "labor_jobs",
-      "count": 13,
+      "count": 15,
       "by_status": {
         "live_only": 7,
-        "sandbox": 6
+        "sandbox": 8
       },
       "by_evidence_class": {
         "live_receipts_only": 7,
-        "needs_history": 6
+        "needs_history": 8
       },
       "leaders": [
         {
@@ -792,14 +792,14 @@
     },
     "local_economy_weirdness": {
       "family": "local_economy_weirdness",
-      "count": 19,
+      "count": 20,
       "by_status": {
         "live_only": 11,
-        "sandbox": 8
+        "sandbox": 9
       },
       "by_evidence_class": {
         "live_receipts_only": 11,
-        "needs_history": 8
+        "needs_history": 9
       },
       "leaders": [
         {
