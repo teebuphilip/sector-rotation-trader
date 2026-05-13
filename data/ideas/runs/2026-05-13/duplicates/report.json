@@ -1,0 +1,82 @@
+{
+  "date": "2026-05-13",
+  "input_count": 24,
+  "kept_count": 23,
+  "duplicate_count": 1,
+  "kept_by_source": {
+    "chatgpt": 14,
+    "claude": 9
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig",
+      "title": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Tech Sector Rotation",
+      "family": "attention_sentiment",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "daily spike in rss counts for cybersecurity breach news triggers bearish xlk",
+        "matched_idea_id": "daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig",
+        "title": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Tech Sector Rotation",
+        "family": "attention_sentiment",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "A daily surge in cybersecurity breach news increases risk aversion for tech stocks, often triggering rotation away from technology. Breach news raises perceived risk and potential costs for tech companies.",
+        "data_sources": [
+          "RSS news feed counts"
+        ],
+        "signal_logic": "If daily RSS count for 'cybersecurity breach' news rises 30% day-over-day",
+        "entry_exit": "Entry: If daily RSS count for 'cybersecurity breach' news rises 30% day-over-day Exit: After 5 trading days or when counts decline 20% from peak",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLK"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use RSS news feed counts via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Cyber attack news spikes often cluster around new revelations or exploits.",
+        "schema": {
+          "idea": "Daily spike in RSS counts for cybersecurity breach news triggers bearish tech sector rotation",
+          "family": "attention_sentiment",
+          "data": {
+            "source": "RSS news feed counts",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "A daily surge in cybersecurity breach news increases risk aversion for tech stocks, often triggering rotation away from technology.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLK",
+            "rationale": "Breach news raises perceived risk and potential costs for tech companies."
+          },
+          "trade_logic": {
+            "entry": "If daily RSS count for 'cybersecurity breach' news rises 30% day-over-day",
+            "exit": "After 5 trading days or when counts decline 20% from peak",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Cyber attack news spikes often cluster around new revelations or exploits.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
