@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-05-13/build/chatgpt_weekly-spike-in-google-trends-for-fuel-shortage-predicts-ene.md",
+  "out": "crazy/algos/weekly_spike_in_google_trends_for_fuel_shortage_predicts_ene.py",
+  "adapter": "google_trends",
+  "idea_id": "weekly-spike-in-google-trends-for-fuel-shortage-predicts-ene",
+  "name": "Weekly Spike In Google Trends For Fuel Shortage Predicts Energy Sector Volatility",
+  "universe": [
+    "XLE"
+  ],
+  "frequency": "weekly",
+  "family": "macro_input_pressure",
+  "threshold": 0.2,
+  "direction": "up",
+  "hold_days": 28
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-13T23:46:26Z",
+  "generated_at": "2026-05-13T23:58:31Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
@@ -140,15 +140,15 @@
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 60,
+      "count": 63,
       "by_status": {
         "failed": 1,
-        "live_only": 28,
-        "sandbox": 31
+        "live_only": 30,
+        "sandbox": 32
       },
       "by_evidence_class": {
-        "live_receipts_only": 28,
-        "needs_history": 31,
+        "live_receipts_only": 30,
+        "needs_history": 32,
         "v1_backtested": 1
       },
       "leaders": [
@@ -439,14 +439,14 @@
     },
     "freight_logistics": {
       "family": "freight_logistics",
-      "count": 14,
+      "count": 17,
       "by_status": {
-        "live_only": 9,
-        "sandbox": 5
+        "live_only": 11,
+        "sandbox": 6
       },
       "by_evidence_class": {
-        "live_receipts_only": 9,
-        "needs_history": 5
+        "live_receipts_only": 11,
+        "needs_history": 6
       },
       "leaders": [
         {
@@ -588,14 +588,14 @@
     },
     "labor_jobs": {
       "family": "labor_jobs",
-      "count": 15,
+      "count": 20,
       "by_status": {
-        "live_only": 7,
-        "sandbox": 8
+        "live_only": 11,
+        "sandbox": 9
       },
       "by_evidence_class": {
-        "live_receipts_only": 7,
-        "needs_history": 8
+        "live_receipts_only": 11,
+        "needs_history": 9
       },
       "leaders": [
         {
@@ -737,13 +737,13 @@
     },
     "local_economy_weirdness": {
       "family": "local_economy_weirdness",
-      "count": 20,
+      "count": 21,
       "by_status": {
-        "live_only": 11,
+        "live_only": 12,
         "sandbox": 9
       },
       "by_evidence_class": {
-        "live_receipts_only": 11,
+        "live_receipts_only": 12,
         "needs_history": 9
       },
       "leaders": [
@@ -821,38 +821,38 @@
         },
         {
           "schema_version": "v1",
-          "key": "crazy:daily-jump-in-google-trends-for-emergency-plumber-signals-ri",
+          "key": "crazy:daily-jump-in-google-trends-for-home-building-permit-delay-s",
           "algo_type": "crazy",
-          "algo_id": "daily-jump-in-google-trends-for-emergency-plumber-signals-ri",
-          "name": "Daily Jump In Google Trends For Emergency Plumber Signals Rising Local Economy Stress Benefiting Staples",
+          "algo_id": "daily-jump-in-google-trends-for-home-building-permit-delay-s",
+          "name": "Daily Jump In Google Trends For Home Building Permit Delay Signals Local Economy Construction Stress Hurting Real Estate Sector",
           "family": "local_economy_weirdness",
           "status": "live_only",
           "evidence_class": "live_receipts_only",
           "rebalance_frequency": "daily",
-          "ytd_pct": 0.0,
-          "days_running": 68,
-          "beat_spy": false,
-          "spy_pct": 8.95,
-          "alpha_pct": -8.95,
-          "ret_30d_pct": 0.0,
-          "spy_delta_30d_pct": -8.19,
+          "ytd_pct": 0.02,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.02,
+          "spy_delta_30d_pct": -8.17,
           "last_snapshot": "2026-05-13",
           "new_algo_date": null,
           "comparator": {
-            "primary_etf": "XLP",
+            "primary_etf": "XLRE",
             "signals": {
               "momentum_5d": {
-                "direction": "UP",
-                "confidence": 0.114,
-                "return_pct": 0.57
+                "direction": "DOWN",
+                "confidence": 0.237,
+                "return_pct": -1.185
               },
               "momentum_20d": {
                 "direction": "UP",
-                "confidence": 0.903,
-                "return_pct": 4.515
+                "confidence": 0.369,
+                "return_pct": 1.843
               }
             },
-            "summary": "both_up"
+            "summary": "mixed"
           }
         },
         {
@@ -901,16 +901,16 @@
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 61,
+      "count": 64,
       "by_status": {
         "backtest_weak": 1,
         "live_only": 16,
         "parked": 2,
-        "sandbox": 42
+        "sandbox": 45
       },
       "by_evidence_class": {
         "live_receipts_only": 16,
-        "needs_history": 40,
+        "needs_history": 43,
         "pending_seed": 2,
         "v1_backtested": 3
       },
@@ -1222,14 +1222,14 @@
     },
     "travel_mobility": {
       "family": "travel_mobility",
-      "count": 15,
+      "count": 17,
       "by_status": {
         "live_only": 3,
-        "sandbox": 12
+        "sandbox": 14
       },
       "by_evidence_class": {
         "live_receipts_only": 3,
-        "needs_history": 12
+        "needs_history": 14
       },
       "leaders": [
         {

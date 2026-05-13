@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-13/publish/claude_rare-earth-element-and-lithium-commodity-price-surge-signals.md",
+  "target_file": "data/ideas/runs/2026-05-13/intervention/claude_rare-earth-element-and-lithium-commodity-price-surge-signals.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": true,
+    "reason": "Current price_only adapter does not directly cover lithium and rare earth futures data as required.",
+    "risk_flags": [
+      "adapter mismatch",
+      "data source ambiguity",
+      "low routing confidence",
+      "low_adapter_confidence",
+      "proxy ETF may be insufficient"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 1051,
+    "output_tokens": 87
+  },
+  "cost_usd": 0.0034975,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Current price_only adapter does not directly cover lithium and rare earth futures data as required.\",\n  \"risk_flags\": [\"adapter mismatch\", \"data source ambiguity\", \"proxy ETF may be insufficient\", \"low routing confidence\"]\n}\n```"
+}

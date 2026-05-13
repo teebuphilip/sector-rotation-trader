@@ -2,15 +2,15 @@
   "ticker": "AVGO",
   "sector": "Technology",
   "sector_etf": "XLK",
-  "composite": "8 of 41",
+  "composite": "8 of 44",
   "composite_label": "BEARISH",
   "composite_color": "red",
   "bullish": 8,
-  "bearish": 33,
-  "neutral": 193,
-  "total_signals": 234,
-  "total_active": 41,
-  "bullish_pct": 20,
+  "bearish": 36,
+  "neutral": 207,
+  "total_signals": 251,
+  "total_active": 44,
+  "bullish_pct": 18,
   "breakdown": [
     {
       "algo_id": "reddit-subreddit-mention-spike",
@@ -175,6 +175,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "daily-jump-in-google-trends-for-emergency-dental-care-signal",
+      "name": "Daily Jump In Google Trends For Emergency Dental Care Signals Consumer Stress Lifting Healthcare Sector Demand",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": -0.27,
+      "beat_spy": false
+    },
+    {
       "algo_id": "reddit-sentiment-spike-trend",
       "name": "Reddit Sentiment Spike Trend",
       "algo_type": "crazy",
@@ -274,6 +283,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "electricity-demand-spike-during-extreme-cold-snap-triggers-u",
+      "name": "Electricity Demand Spike During Extreme Cold Snap Triggers Utility Sector Rally",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "grocery-store-foot-traffic-collapse-signal",
       "name": "Grocery Store Foot Traffic Collapse Signal",
       "algo_type": "crazy",
@@ -307,6 +325,15 @@
       "direction": "NEUTRAL",
       "days_running": 98,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-google-trends-surge-for-truck-driver-shortage-signals",
+      "name": "Weekly Google Trends Surge For Truck Driver Shortage Signals Freight Logistics Risk And Industrial Cost Pressure",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": -0.01,
       "beat_spy": false
     },
     {
@@ -553,6 +580,24 @@
       "beat_spy": false
     },
     {
+      "algo_id": "daily-jump-in-google-trends-searches-for-job-quitting-signal",
+      "name": "Daily Jump In Google Trends Searches For Job Quitting Signals Labor Market Tightness Benefiting Consumer Discretionary",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": -0.17,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "google-trends-spike-in-bankruptcy-filing-and-debt-consolidat",
+      "name": "Google Trends Spike In Bankruptcy Filing And Debt Consolidation Signals Consumer Default Risk Surge",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "daily-jump-in-rss-news-counts-mentioning-labor-strike-signal",
       "name": "Daily Jump In Rss News Counts Mentioning Labor Strike Signals Imminent Industrial Disruption",
       "algo_type": "crazy",
@@ -733,6 +778,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "daily-surge-in-google-trends-for-car-rental-price-spike-trig",
+      "name": "Daily Surge In Google Trends For Car Rental Price Spike Triggers Travel Mobility Sector Pullback",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "small-business-formation",
       "name": "Small Business Formation",
       "algo_type": "crazy",
@@ -805,6 +859,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "port-container-volume-surge-signals-import-demand-recovery-a",
+      "name": "Port Container Volume Surge Signals Import Demand Recovery And Consumer Spending Rebound",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 66,
+      "ytd_pct": -0.21,
+      "beat_spy": false
+    },
+    {
       "algo_id": "weekly-google-trends-surge-for-truck-tire-replacement-search",
       "name": "Weekly Google Trends Surge For Truck Tire Replacement Searches Signals Industrial Sector Repair Cycle",
       "algo_type": "crazy",
@@ -838,6 +901,15 @@
       "direction": "BEARISH",
       "days_running": 98,
       "ytd_pct": -0.23,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-searches-for-freight-container",
+      "name": "Weekly Surge In Google Trends Searches For Freight Container Backlog Signals Industrial Sector Pressure",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
       "beat_spy": false
     },
     {
@@ -1399,6 +1471,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "weekly-jump-in-google-trends-for-warehouse-labor-shortage-si",
+      "name": "Weekly Jump In Google Trends For Warehouse Labor Shortage Signals Supply Chain Labor Stress And Industrial Sector Risk",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "xlc-weekly-google-trends-surge-in-5g-rollout",
       "name": "Xlc Weekly Google Trends Surge In 5g Rollout",
       "algo_type": "crazy",
@@ -1552,6 +1633,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "ev-charger-network-contraction-signals-electric-vehicle-adop",
+      "name": "Ev Charger Network Contraction Signals Electric Vehicle Adoption Slowdown",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "weekly-surge-in-google-trends-searches-for-home-improvement-",
       "name": "Weekly Surge In Google Trends Searches For Home Improvement Loan Signals Consumer Stress Lifting Xly",
       "algo_type": "crazy",
@@ -1588,12 +1678,39 @@
       "beat_spy": false
     },
     {
+      "algo_id": "weekly-spike-in-google-trends-for-fuel-shortage-predicts-ene",
+      "name": "Weekly Spike In Google Trends For Fuel Shortage Predicts Energy Sector Volatility",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "energy-sector-weekly-drawdown-exhaustion",
       "name": "Energy Sector Weekly Drawdown Exhaustion",
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 92,
       "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-spike-in-earthquake-activity-in-port-regions-signals-",
+      "name": "Weekly Spike In Earthquake Activity In Port Regions Signals Potential Freight Logistics Disruption",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": -0.04,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "daily-surge-in-rss-news-counts-for-new-labor-union-formation",
+      "name": "Daily Surge In Rss News Counts For New Labor Union Formations Signals Labor Market Pressure On Industrial Sector",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 66,
+      "ytd_pct": -0.01,
       "beat_spy": false
     },
     {
@@ -1705,6 +1822,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "daily-jump-in-google-trends-for-home-building-permit-delay-s",
+      "name": "Daily Jump In Google Trends For Home Building Permit Delay Signals Local Economy Construction Stress Hurting Real Estate Sector",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.02,
+      "beat_spy": false
+    },
+    {
       "algo_id": "recession-whisper-google-trends-unemployment-search-surge",
       "name": "Recession Whisper Google Trends Unemployment Search Surge",
       "algo_type": "crazy",
@@ -1729,6 +1855,15 @@
       "direction": "NEUTRAL",
       "days_running": 94,
       "ytd_pct": -0.22,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "daily-jump-in-google-trends-for-home-appliance-repair-signal",
+      "name": "Daily Jump In Google Trends For Home Appliance Repair Signals Consumer Stress Lifting Consumer Staples",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": -0.19,
       "beat_spy": false
     },
     {
@@ -1948,6 +2083,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "weekly-rise-in-rss-count-for-labor-strike-news-signals-indus",
+      "name": "Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 66,
+      "ytd_pct": -0.01,
+      "beat_spy": false
+    },
+    {
       "algo_id": "retail-sales-momentum",
       "name": "Retail Sales Momentum",
       "algo_type": "crazy",
@@ -1980,6 +2124,15 @@
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 94,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-google-trends-surge-in-home-heating-oil-shortage-sign",
+      "name": "Weekly Google Trends Surge In Home Heating Oil Shortage Signals Winter Utility Stress Favoring Utilities Sector",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
       "ytd_pct": 0.0,
       "beat_spy": false
     },

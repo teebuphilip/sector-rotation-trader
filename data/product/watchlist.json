@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T23:46:26Z",
+  "generated_at": "2026-05-13T23:58:31Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -289,6 +289,54 @@
       ],
       "equity": 100070.09,
       "ytd_pct": 0.07,
+      "trade_count": 16,
+      "positions": 0,
+      "last_snapshot": "2026-05-13",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-jump-in-google-trends-for-emergency-dental-care-signal",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-emergency-dental-care-signal",
+      "name": "Daily Jump In Google Trends For Emergency Dental Care Signals Consumer Stress Lifting Healthcare Sector Demand",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLV"
+      ],
+      "equity": 99732.03,
+      "ytd_pct": -0.27,
+      "trade_count": 16,
+      "positions": 0,
+      "last_snapshot": "2026-05-13",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-jump-in-google-trends-for-home-appliance-repair-signal",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-home-appliance-repair-signal",
+      "name": "Daily Jump In Google Trends For Home Appliance Repair Signals Consumer Stress Lifting Consumer Staples",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLP"
+      ],
+      "equity": 99795.5,
+      "ytd_pct": -0.2,
       "trade_count": 16,
       "positions": 0,
       "last_snapshot": "2026-05-13",
@@ -1015,6 +1063,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:port-container-volume-surge-signals-import-demand-recovery-a",
+      "algo_type": "crazy",
+      "algo_id": "port-container-volume-surge-signals-import-demand-recovery-a",
+      "name": "Port Container Volume Surge Signals Import Demand Recovery And Consumer Spending Rebound",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99786.54,
+      "ytd_pct": -0.21,
+      "trade_count": 31,
+      "positions": 1,
+      "last_snapshot": "2026-05-13",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:rss-news-volume-spike-on-food-supply-chain-disruptions",
       "algo_type": "crazy",
       "algo_id": "rss-news-volume-spike-on-food-supply-chain-disruptions",
@@ -1116,6 +1188,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-spike-in-earthquake-activity-in-port-regions-signals-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-spike-in-earthquake-activity-in-port-regions-signals-",
+      "name": "Weekly Spike In Earthquake Activity In Port Regions Signals Potential Freight Logistics Disruption",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 99955.02,
+      "ytd_pct": -0.04,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-13",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-spike-in-freight-container-volumes-at-east-coast-port",
       "algo_type": "crazy",
       "algo_id": "weekly-spike-in-freight-container-volumes-at-east-coast-port",
@@ -1164,6 +1260,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-jump-in-google-trends-searches-for-job-quitting-signal",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-searches-for-job-quitting-signal",
+      "name": "Daily Jump In Google Trends Searches For Job Quitting Signals Labor Market Tightness Benefiting Consumer Discretionary",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99834.55,
+      "ytd_pct": -0.17,
+      "trade_count": 14,
+      "positions": 0,
+      "last_snapshot": "2026-05-13",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:daily-spike-in-rss-news-counts-around-labor-union-contract-n",
       "algo_type": "crazy",
       "algo_id": "daily-spike-in-rss-news-counts-around-labor-union-contract-n",
@@ -1178,6 +1298,30 @@
       "equity": 99930.55,
       "ytd_pct": -0.07,
       "trade_count": 13,
+      "positions": 1,
+      "last_snapshot": "2026-05-13",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-surge-in-rss-news-counts-for-new-labor-union-formation",
+      "algo_type": "crazy",
+      "algo_id": "daily-surge-in-rss-news-counts-for-new-labor-union-formation",
+      "name": "Daily Surge In Rss News Counts For New Labor Union Formations Signals Labor Market Pressure On Industrial Sector",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 99990.05,
+      "ytd_pct": -0.01,
+      "trade_count": 1,
       "positions": 1,
       "last_snapshot": "2026-05-13",
       "last_signal": null,
@@ -1265,6 +1409,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-google-trends-surge-for-truck-driver-shortage-signals",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-for-truck-driver-shortage-signals",
+      "name": "Weekly Google Trends Surge For Truck Driver Shortage Signals Freight Logistics Risk And Industrial Cost Pressure",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 99993.13,
+      "ytd_pct": -0.01,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-13",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-google-trends-surge-in-fast-food-job-openings-signals",
       "algo_type": "crazy",
       "algo_id": "weekly-google-trends-surge-in-fast-food-job-openings-signals",
@@ -1280,6 +1448,30 @@
       "ytd_pct": -0.21,
       "trade_count": 12,
       "positions": 0,
+      "last_snapshot": "2026-05-13",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-rise-in-rss-count-for-labor-strike-news-signals-indus",
+      "algo_type": "crazy",
+      "algo_id": "weekly-rise-in-rss-count-for-labor-strike-news-signals-indus",
+      "name": "Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 99990.05,
+      "ytd_pct": -0.01,
+      "trade_count": 1,
+      "positions": 1,
       "last_snapshot": "2026-05-13",
       "last_signal": null,
       "new_algo_date": null,
@@ -1350,6 +1542,30 @@
       ],
       "equity": 100000.24,
       "ytd_pct": 0.0,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-13",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-jump-in-google-trends-for-home-building-permit-delay-s",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-home-building-permit-delay-s",
+      "name": "Daily Jump In Google Trends For Home Building Permit Delay Signals Local Economy Construction Stress Hurting Real Estate Sector",
+      "family": "local_economy_weirdness",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLRE"
+      ],
+      "equity": 100024.25,
+      "ytd_pct": 0.02,
       "trade_count": 2,
       "positions": 0,
       "last_snapshot": "2026-05-13",

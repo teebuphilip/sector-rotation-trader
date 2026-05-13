@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-05-13/build/claude_ev-charger-network-contraction-signals-electric-vehicle-adop.md",
+  "out": "crazy/algos/ev_charger_network_contraction_signals_electric_vehicle_adop.py",
+  "adapter": "openchargemap",
+  "idea_id": "ev-charger-network-contraction-signals-electric-vehicle-adop",
+  "name": "Ev Charger Network Contraction Signals Electric Vehicle Adoption Slowdown",
+  "universe": [
+    "XLK"
+  ],
+  "frequency": "weekly",
+  "family": "travel_mobility",
+  "threshold": 0.03,
+  "direction": "down",
+  "hold_days": 12
+}

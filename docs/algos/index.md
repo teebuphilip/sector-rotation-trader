@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-05-13T23:46:25
+Updated (UTC): 2026-05-13T23:58:31
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 229
+Crazy models: 246
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -245,3 +245,20 @@ Crazy models: 229
 | weekly-surge-in-google-trends-for-sudden-appliance-breakdown | Weekly Surge In Google Trends For Sudden Appliance Breakdowns Signals Discretionary Sector Rebound | weekly |
 | ev-charger-network-expansion-sentiment-surge | Ev Charger Network Expansion Sentiment Surge | weekly |
 | healthcare-procedure-google-trends-demand-resurgence | Healthcare Procedure Google Trends Demand Resurgence | weekly |
+| daily-jump-in-google-trends-for-emergency-dental-care-signal | Daily Jump In Google Trends For Emergency Dental Care Signals Consumer Stress Lifting Healthcare Sector Demand | daily |
+| daily-jump-in-google-trends-for-home-appliance-repair-signal | Daily Jump In Google Trends For Home Appliance Repair Signals Consumer Stress Lifting Consumer Staples | daily |
+| daily-jump-in-google-trends-for-home-building-permit-delay-s | Daily Jump In Google Trends For Home Building Permit Delay Signals Local Economy Construction Stress Hurting Real Estate Sector | daily |
+| daily-jump-in-google-trends-searches-for-job-quitting-signal | Daily Jump In Google Trends Searches For Job Quitting Signals Labor Market Tightness Benefiting Consumer Discretionary | daily |
+| daily-surge-in-google-trends-for-car-rental-price-spike-trig | Daily Surge In Google Trends For Car Rental Price Spike Triggers Travel Mobility Sector Pullback | daily |
+| daily-surge-in-rss-news-counts-for-new-labor-union-formation | Daily Surge In Rss News Counts For New Labor Union Formations Signals Labor Market Pressure On Industrial Sector | daily |
+| weekly-google-trends-surge-for-truck-driver-shortage-signals | Weekly Google Trends Surge For Truck Driver Shortage Signals Freight Logistics Risk And Industrial Cost Pressure | weekly |
+| weekly-google-trends-surge-in-home-heating-oil-shortage-sign | Weekly Google Trends Surge In Home Heating Oil Shortage Signals Winter Utility Stress Favoring Utilities Sector | weekly |
+| weekly-jump-in-google-trends-for-warehouse-labor-shortage-si | Weekly Jump In Google Trends For Warehouse Labor Shortage Signals Supply Chain Labor Stress And Industrial Sector Risk | weekly |
+| weekly-rise-in-rss-count-for-labor-strike-news-signals-indus | Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk | weekly |
+| weekly-spike-in-earthquake-activity-in-port-regions-signals- | Weekly Spike In Earthquake Activity In Port Regions Signals Potential Freight Logistics Disruption | weekly |
+| weekly-spike-in-google-trends-for-fuel-shortage-predicts-ene | Weekly Spike In Google Trends For Fuel Shortage Predicts Energy Sector Volatility | weekly |
+| weekly-surge-in-google-trends-searches-for-freight-container | Weekly Surge In Google Trends Searches For Freight Container Backlog Signals Industrial Sector Pressure | weekly |
+| electricity-demand-spike-during-extreme-cold-snap-triggers-u | Electricity Demand Spike During Extreme Cold Snap Triggers Utility Sector Rally | weekly |
+| ev-charger-network-contraction-signals-electric-vehicle-adop | Ev Charger Network Contraction Signals Electric Vehicle Adoption Slowdown | weekly |
+| google-trends-spike-in-bankruptcy-filing-and-debt-consolidat | Google Trends Spike In Bankruptcy Filing And Debt Consolidation Signals Consumer Default Risk Surge | weekly |
+| port-container-volume-surge-signals-import-demand-recovery-a | Port Container Volume Surge Signals Import Demand Recovery And Consumer Spending Rebound | weekly |

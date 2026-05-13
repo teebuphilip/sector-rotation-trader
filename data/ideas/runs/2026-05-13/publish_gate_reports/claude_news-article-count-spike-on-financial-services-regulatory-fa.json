@@ -1,0 +1,37 @@
+{
+  "source_file": "data/ideas/runs/2026-05-13/publish/claude_news-article-count-spike-on-financial-services-regulatory-fa.md",
+  "target_file": "data/ideas/runs/2026-05-13/intervention/claude_news-article-count-spike-on-financial-services-regulatory-fa.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "html_table",
+        "rss_count"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "rss_count": 2,
+        "html_table": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1037,
+    "output_tokens": 76
+  },
+  "cost_usd": 0.0033525,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec uses rss_count adapter correctly with clear deterministic logic and valid data source.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}
