@@ -1,19 +1,10 @@
 {
-  "cash": 94866.20566794016,
+  "cash": 99791.99769286155,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 70.49454057612287,
+  "fees_paid": 80.72449158880987,
   "taxes_paid": 13.56263900691125,
-  "positions": {
-    "XLU": {
-      "shares": 110.49971296765372,
-      "entry_price": 45.189998626708984,
-      "entry_date": "2026-05-12",
-      "cost": 4993.481877260008,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-30",
@@ -96,6 +87,20 @@
       "cost": 4993.48,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-13",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 110.4997,
+      "price": 44.67,
+      "proceeds": 4925.79,
+      "fees": 10.23,
+      "tax": 0.0,
+      "pnl": -67.69,
+      "pnl_pct": -1.36,
+      "entry_date": "2026-05-12",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -968,20 +973,29 @@
       },
       "sector": "Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-13",
+      "cash": 99792.0,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99792.0,
+      "positions": {},
+      "sector": "Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-23",
-  "last_run": "2026-05-12",
+  "last_run": "2026-05-13",
   "meta": {
     "weekly-spike-in-google-trends-for-home-cooling-failure-signa": {
-      "signal_label": "RISK_ON",
-      "latest_value": 3.0,
-      "prior_avg": 0.7857,
-      "signal_change": 2.8182,
+      "signal_label": "RISK_OFF",
+      "latest_value": 2.0,
+      "prior_avg": 2.0357,
+      "signal_change": -0.0175,
       "name": "Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-12",
-      "entry_date": "2026-05-12"
+      "last_signal": "RISK_OFF",
+      "last_run": "2026-05-13"
     }
   }
 }

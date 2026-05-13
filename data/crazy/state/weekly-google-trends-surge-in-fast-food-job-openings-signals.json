@@ -1,19 +1,10 @@
 {
-  "cash": 94792.45086425725,
+  "cash": 99787.04355658036,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 110.75625355407473,
-  "taxes_paid": 0.0,
-  "positions": {
-    "XLY": {
-      "shares": 42.181080453709455,
-      "entry_price": 118.29000091552734,
-      "entry_date": "2026-05-12",
-      "cost": 4989.600045487224,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "fees_paid": 120.96929477435859,
+  "taxes_paid": 2.93218941155852,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-17",
@@ -144,6 +135,20 @@
       "cost": 4989.6,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-13",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 42.1811,
+      "price": 118.72,
+      "proceeds": 4997.52,
+      "fees": 10.21,
+      "tax": 2.93,
+      "pnl": 4.99,
+      "pnl_pct": 0.1,
+      "entry_date": "2026-05-12",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -986,20 +991,29 @@
       },
       "sector": "Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-13",
+      "cash": 99787.04,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99787.04,
+      "positions": {},
+      "sector": "Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-28",
-  "last_run": "2026-05-12",
+  "last_run": "2026-05-13",
   "meta": {
     "weekly-google-trends-surge-in-fast-food-job-openings-signals": {
-      "latest_value": 8.0,
-      "prior_avg": 1.6071,
-      "signal_change": 3.9778,
-      "signal_label": "RISK_ON",
+      "latest_value": 0.0,
+      "prior_avg": 1.6786,
+      "signal_change": -1.0,
+      "signal_label": "RISK_OFF",
       "name": "Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-12",
-      "entry_date": "2026-05-12"
+      "last_signal": "RISK_OFF",
+      "last_run": "2026-05-13"
     }
   }
 }

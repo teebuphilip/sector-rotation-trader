@@ -167,6 +167,16 @@
       "pnl_pct": 0.68,
       "entry_date": "2026-05-11",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-13",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 58.8953,
+      "price": 84.72,
+      "cost": 4989.61,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1069,6 +1079,26 @@
       "positions": {},
       "sector": "Weekly Rise In Google Trends Interest For Food Delivery Delay Signals Bearish Xlp",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-13",
+      "cash": 94792.66,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99782.27,
+      "positions": {
+        "XLP": {
+          "shares": 58.8953,
+          "entry_price": 84.72,
+          "current_price": 84.72,
+          "market_value": 4989.61,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-13",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Rise In Google Trends Interest For Food Delivery Delay Signals Bearish Xlp",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-23"

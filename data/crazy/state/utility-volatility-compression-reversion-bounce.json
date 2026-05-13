@@ -686,19 +686,29 @@
       "positions": {},
       "sector": "Utility Volatility Compression Reversion Bounce",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-13",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Utility Volatility Compression Reversion Bounce",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-02-06",
-  "last_run": "2026-05-12",
+  "last_run": "2026-05-13",
   "meta": {
     "utility-volatility-compression-reversion-bounce": {
-      "latest_value": 45.19,
-      "prior_avg": 45.412,
-      "signal_change": -0.0049,
+      "latest_value": 44.67,
+      "prior_avg": 45.176,
+      "signal_change": -0.0112,
       "signal_label": "HOLD",
       "name": "Utility Volatility Compression Reversion Bounce",
       "last_signal": "HOLD",
-      "last_run": "2026-05-12"
+      "last_run": "2026-05-13"
     }
   }
 }

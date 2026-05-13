@@ -3176,3 +3176,237 @@ date,rank_return,rank_alpha,algo_id,algo_type,name,ytd_pct,spy_pct,alpha_pct,equ
 2026-05-12,221,221,biscotti,normal,Algo Biscotti (Unconditional Loyalty),-2.67,8.35,-11.01,97332.4,False,98
 2026-05-12,222,222,vix-fear-rotation,crazy,VIX Fear Rotation,-3.8,8.35,-12.14,96203.59,False,88
 2026-05-12,223,223,baileymol,crazy,Chaos Rotation Lab,-6.12,8.35,-14.47,93877.95,False,97
+2026-05-13,1,1,simple_monthly,normal,Quantified Simple Monthly Rotation,10.87,8.95,1.91,110866.71,True,99
+2026-05-13,2,2,baileymol,normal,Algo Baileymol (Chaos Monger),7.61,8.95,-1.34,107611.96,False,99
+2026-05-13,3,3,faber,normal,Faber Momentum Rotation,6.42,8.95,-2.53,106419.88,False,99
+2026-05-13,4,4,dmsr,normal,Antonacci Dual Momentum Sector Rotation,5.78,8.95,-3.18,105777.92,False,99
+2026-05-13,5,5,uber-mobility,crazy,Uber Mobility Index,4.16,8.95,-4.8,104157.85,False,98
+2026-05-13,6,6,retail-sales-momentum,crazy,Retail Sales Momentum,4.15,8.95,-4.81,104147.64,False,98
+2026-05-13,7,7,job-posting-acceleration,crazy,Job Posting Acceleration,2.54,8.95,-6.41,102543.73,False,98
+2026-05-13,8,8,insider-trading-signals,crazy,Insider Trading Signals,1.11,8.95,-7.84,101112.77,False,98
+2026-05-13,9,9,freight-rail-carloads,crazy,Freight Rail Carloads,0.64,8.95,-8.32,100635.75,False,98
+2026-05-13,10,10,truck-tonnage,crazy,Truck Tonnage Index,0.55,8.95,-8.41,100547.54,False,98
+2026-05-13,11,11,finra-dark-pool-signal,crazy,FINRA Dark Pool Signal,0.14,8.95,-8.81,100144.2,False,89
+2026-05-13,12,12,copper-momentum,crazy,Copper Momentum,0.12,8.95,-8.84,100116.46,False,98
+2026-05-13,13,13,weekly-google-trends-surge-in-diy-electronics-repair-signals,crazy,Weekly Google Trends Surge In Diy Electronics Repair Signals Tech Consumer Stress Lift,0.08,8.95,-8.87,100081.02,False,80
+2026-05-13,14,14,weekly-surge-in-google-trends-searches-for-diy-electronics-r,crazy,Weekly Surge In Google Trends Searches For Diy Electronics Repair Signals Bullish Xlk,0.08,8.95,-8.87,100081.88,False,84
+2026-05-13,15,15,daily-jump-in-consumer-stress-google-trends-searches-for-car,crazy,Daily Jump In Consumer Stress Google Trends Searches For Car Repossession Signals Rising Financial Distress,0.07,8.95,-8.88,100070.09,False,69
+2026-05-13,16,16,earthquake-aftershock-insurance-claims-spike,crazy,Earthquake Aftershock Insurance Claims Spike,0.07,8.95,-8.88,100070.66,False,76
+2026-05-13,17,17,recession-whisper-google-trends-unemployment-search-surge,crazy,Recession Whisper Google Trends Unemployment Search Surge,0.07,8.95,-8.88,100072.76,False,80
+2026-05-13,18,18,price-momentum-reversion-in-defensive-sectors-after-tech-cra,crazy,Price Momentum Reversion In Defensive Sectors After Tech Crash,0.06,8.95,-8.89,100061.6,False,77
+2026-05-13,19,19,earthquake-aftershock-amplifier,crazy,Earthquake Aftershock Amplifier,0.05,8.95,-8.91,100047.52,False,92
+2026-05-13,20,22,google-trends-surge-in-used-car-price-searches,crazy,Google Trends Surge In Used Car Price Searches,0.04,8.95,-8.92,100038.19,False,78
+2026-05-13,21,20,semiconductor-moonshot-warning,crazy,Semiconductor Moonshot Warning,0.04,8.95,-8.91,100041.43,False,92
+2026-05-13,22,21,weekly-spike-in-google-trends-searches-for-warehouse-automat,crazy,Weekly Spike In Google Trends Searches For Warehouse Automation Failure Signals Bearish Xli,0.04,8.95,-8.91,100039.42,False,84
+2026-05-13,23,23,healthcare-cost-inflation-google-trends-acceleration,crazy,Healthcare Cost Inflation Google Trends Acceleration,0.03,8.95,-8.92,100030.67,False,68
+2026-05-13,24,24,materials-sector-weekly-positive-correlation-breakdown-with-,crazy,Materials Sector Weekly Positive Correlation Breakdown With Xlb,0.03,8.95,-8.93,100025.87,False,92
+2026-05-13,25,26,weekly-surge-in-google-trends-for-diy-electronics-repair-sig,crazy,Weekly Surge In Google Trends For Diy Electronics Repair Signals Bullish Xlk,0.03,8.95,-8.93,100027.01,False,78
+2026-05-13,26,27,daily-spike-in-usgs-earthquake-activity-near-key-industrial-,crazy,Daily Spike In Usgs Earthquake Activity Near Key Industrial Hubs,0.02,8.95,-8.94,100015.96,False,71
+2026-05-13,27,25,staples-sector-drawdown-rapid-recovery,crazy,Staples Sector Drawdown Rapid Recovery,0.02,8.95,-8.93,100024.7,False,92
+2026-05-13,28,83,healthcare-procedure-google-trends-demand-resurgence,crazy,Healthcare Procedure Google Trends Demand Resurgence,0.01,8.95,-8.95,100005.77,False,67
+2026-05-13,29,28,airline-fuel-cost-volatility-expansion,crazy,Airline Fuel Cost Volatility Expansion,0.0,8.95,-8.95,100000.0,False,68
+2026-05-13,30,29,airline-load-factor,crazy,Airline Load Factor Proxy,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,31,30,airport-security-surge,crazy,Airport Security Surge,0.0,8.95,-8.95,100000.0,False,96
+2026-05-13,32,31,airport-shopping-spree,crazy,Airport Shopping Spree,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,33,32,bankruptcy-filing-rate,crazy,Bankruptcy Filing Rate,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,34,33,calls311,crazy,311 Call Rotation,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,35,34,cardboard,crazy,Cardboard Box Index,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,36,35,cloud-storage-demand-surge,crazy,Cloud Storage Demand Surge,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,37,36,congress,crazy,Congress Trading Fade,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,38,37,consumer-sentiment,crazy,Consumer Sentiment,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,39,38,craigslist,crazy,Craigslist Desperation Index,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,40,39,credit-card-delinquency,crazy,Credit Card Delinquency,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,41,40,crypto-capitulation-countdown,crazy,Crypto Capitulation Countdown,0.0,8.95,-8.95,100000.0,False,92
+2026-05-13,42,41,crypto-derivative-arbitrage,crazy,Crypto Derivative Arbitrage,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,43,42,daily-jump-in-google-trends-for-emergency-plumber-signals-ri,crazy,Daily Jump In Google Trends For Emergency Plumber Signals Rising Local Economy Stress Benefiting Staples,0.0,8.95,-8.95,100000.24,False,68
+2026-05-13,44,43,daily-jump-in-google-trends-for-emergency-roadside-assistanc,crazy,Daily Jump In Google Trends For Emergency Roadside Assistance Signals Consumer Stress Impacting Discretionary Sector,0.0,8.95,-8.95,100000.0,False,67
+2026-05-13,45,44,daily-jump-in-google-trends-for-solar-panel-repair-searches-,crazy,Daily Jump In Google Trends For Solar Panel Repair Searches Signals Green Energy Sector Rebound,0.0,8.95,-8.95,100000.0,False,76
+2026-05-13,46,45,daily-jump-in-google-trends-searches-for-electric-vehicle-ba,crazy,Daily Jump In Google Trends Searches For Electric Vehicle Battery Failure Signals Consumer Tech Stress,0.0,8.95,-8.95,100000.0,False,69
+2026-05-13,47,46,daily-jump-in-openchargemap-ev-charger-counts-in-key-states-,crazy,Daily Jump In Openchargemap Ev Charger Counts In Key States Signals Tech Sector Acceleration,0.0,8.95,-8.95,100000.0,False,67
+2026-05-13,48,47,daily-jump-in-rss-news-counts-mentioning-labor-strike-signal,crazy,Daily Jump In Rss News Counts Mentioning Labor Strike Signals Imminent Industrial Disruption,0.0,8.95,-8.95,100000.0,False,69
+2026-05-13,49,48,daily-spike-in-ev-charger-installations-signals-bullish-xlc,crazy,Daily Spike In Ev Charger Installations Signals Bullish Xlc,0.0,8.95,-8.95,100000.0,False,81
+2026-05-13,50,49,daily-spike-in-freight-logistics-rss-news-volume-mentioning-,crazy,Daily Spike In Freight Logistics Rss News Volume Mentioning Port Labor Strike Triggers Bearish Xli,0.0,8.95,-8.95,100000.0,False,84
+2026-05-13,51,50,daily-spike-in-google-trends-for-emergency-vehicle-repair-si,crazy,Daily Spike In Google Trends For Emergency Vehicle Repair Signals Consumer Stress Lifting Industrial Sector,0.0,8.95,-8.95,100000.0,False,77
+2026-05-13,52,51,daily-spike-in-google-trends-searches-for-airline-flight-del,crazy,Daily Spike In Google Trends Searches For Airline Flight Delay Compensation,0.0,8.95,-8.95,100000.0,False,71
+2026-05-13,53,52,daily-spike-in-google-trends-searches-for-emergency-car-batt,crazy,Daily Spike In Google Trends Searches For Emergency Car Battery Replacement Signals Consumer Stress Impacting Discretionary,0.0,8.95,-8.95,100000.0,False,76
+2026-05-13,54,53,daily-spike-in-google-trends-searches-for-emergency-plumber-,crazy,Daily Spike In Google Trends Searches For Emergency Plumber Signals Consumer Home Repair Stress,0.0,8.95,-8.95,100000.0,False,69
+2026-05-13,55,54,daily-spike-in-google-trends-searches-for-home-heating-syste,crazy,Daily Spike In Google Trends Searches For Home Heating System Failure Signals Winter Utility Stress,0.0,8.95,-8.95,100000.0,False,69
+2026-05-13,56,55,daily-surge-in-google-trends-searches-for-home-heating-syste,crazy,Daily Surge In Google Trends Searches For Home Heating System Failure Signals Consumer Stress Impacting Utilities,0.0,8.95,-8.95,100000.0,False,77
+2026-05-13,57,56,earthquake-energy-demand,crazy,Earthquake Energy Demand Indicator,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,58,57,electric-vehicle-charge-station-density,crazy,Electric Vehicle Charge Station Density,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,59,58,electricity-demand-spike-weather-anomaly,crazy,Electricity Demand Spike Weather Anomaly,0.0,8.95,-8.95,100000.0,False,78
+2026-05-13,60,59,energy-sector-sudden-weekly-volatility-spike,crazy,Energy Sector Sudden Weekly Volatility Spike,0.0,8.95,-8.95,100000.0,False,89
+2026-05-13,61,60,energy-sector-weekly-drawdown-exhaustion,crazy,Energy Sector Weekly Drawdown Exhaustion,0.0,8.95,-8.95,100000.0,False,92
+2026-05-13,62,61,ev-charger-density-saturation-play,crazy,Ev Charger Density Saturation Play,0.0,8.95,-8.95,100000.0,False,87
+2026-05-13,63,62,ev-charger-deployment-sprint-acceleration,crazy,Ev Charger Deployment Sprint Acceleration,0.0,8.95,-8.95,100000.0,False,70
+2026-05-13,64,63,ev-charger-expansion-frenzy,crazy,Ev Charger Expansion Frenzy,0.0,8.95,-8.95,100000.0,False,78
+2026-05-13,65,64,ev-charger-expansion-momentum-surge,crazy,Ev Charger Expansion Momentum Surge,0.0,8.95,-8.95,100000.0,False,71
+2026-05-13,66,65,ev-charger-expansion-velocity-boom,crazy,Ev Charger Expansion Velocity Boom,0.0,8.95,-8.95,100000.0,False,68
+2026-05-13,67,66,ev-charger-installation-acceleration-play,crazy,Ev Charger Installation Acceleration Play,0.0,8.95,-8.95,100000.0,False,79
+2026-05-13,68,67,ev-charger-network-density-surge-bullish-signal,crazy,Ev Charger Network Density Surge Bullish Signal,0.0,8.95,-8.95,100000.0,False,81
+2026-05-13,69,68,ev-charger-network-expansion-acceleration,crazy,Ev Charger Network Expansion Acceleration,0.0,8.95,-8.95,100000.0,False,76
+2026-05-13,70,69,ev-charger-network-expansion-sprint-demand-surge,crazy,Ev Charger Network Expansion Sprint Demand Surge,0.0,8.95,-8.95,100000.0,False,84
+2026-05-13,71,70,ev-charger-network-expansion-velocity-surge,crazy,Ev Charger Network Expansion Velocity Surge,0.0,8.95,-8.95,100000.0,False,77
+2026-05-13,72,71,ev-charging-boom,crazy,Ev Charging Boom,0.0,8.95,-8.95,100000.0,False,96
+2026-05-13,73,72,ev-charging-station-stampede,crazy,Ev Charging Station Stampede,0.0,8.95,-8.95,100000.0,False,92
+2026-05-13,74,73,ev-euphoria,crazy,Ev Euphoria,0.0,8.95,-8.95,100000.0,False,94
+2026-05-13,75,74,financial-sector-momentum-divergence-with-spy,crazy,Financial Sector Momentum Divergence With Spy,0.0,8.95,-8.95,100000.0,False,92
+2026-05-13,76,75,fintech-disruption-wave,crazy,Fintech Disruption Wave,0.0,8.95,-8.95,100000.0,False,96
+2026-05-13,77,76,freight-rail-congestion-rss-volume-explosion,crazy,Freight Rail Congestion Rss Volume Explosion,0.0,8.95,-8.95,100000.0,False,68
+2026-05-13,78,77,glassdoor,crazy,Glassdoor Misery Gradient,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,79,78,global-tech-earnings-momentum,crazy,Global Tech Earnings Momentum,0.0,8.95,-8.95,100000.0,False,96
+2026-05-13,80,79,gold-volatility-vol-of-vol-spike,crazy,Gold Volatility Vol-of-vol Spike,0.0,8.95,-8.95,100000.0,False,79
+2026-05-13,81,80,google-trends-surge-in-flight-delay-complaints,crazy,Google Trends Surge In Flight Delay Complaints,0.0,8.95,-8.95,100000.0,False,77
+2026-05-13,82,81,health-insurance-deductible-shock-searches,crazy,Health Insurance Deductible Shock Searches,0.0,8.95,-8.95,100000.0,False,70
+2026-05-13,83,82,healthcare-cost-shock-google-trends-spike,crazy,Healthcare Cost Shock Google Trends Spike,0.0,8.95,-8.95,100000.0,False,78
+2026-05-13,84,84,high-yield-spread-regime,crazy,High Yield Spread Regime,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,85,85,linkedin,crazy,LinkedIn Layoff Propagation,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,86,86,lumber-futures-rollercoaster,crazy,Lumber Futures Rollercoaster,0.0,8.95,-8.95,100000.0,False,92
+2026-05-13,87,87,materials-sector-weekly-volatility-contraction-breakout,crazy,Materials Sector Weekly Volatility Contraction Breakout,0.0,8.95,-8.95,100000.0,False,89
+2026-05-13,88,88,mortgage-refinance-wave-google-trends-surge,crazy,Mortgage Refinance Wave Google Trends Surge,0.0,8.95,-8.95,100000.0,False,79
+2026-05-13,89,89,natural-gas-futures-volatility-pump-rotation,crazy,Natural Gas Futures Volatility Pump Rotation,0.0,8.95,-8.95,100000.0,False,69
+2026-05-13,90,90,online-ad-impression-volatility,crazy,Online Ad Impression Volatility Trader,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,91,91,patent-filing-velocity,crazy,Patent Filing Velocity,0.0,8.95,-8.95,100000.0,False,89
+2026-05-13,92,92,pet-food-supply-chain,crazy,Pet Food Supply Chain Disruption,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,93,93,reddit-emoji-sentiment-spike,crazy,Reddit Emoji Sentiment Spike,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,94,94,reddit-gaming-thread-spike,crazy,Reddit Gaming Thread Spike,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,95,95,reddit-mentions-volatility-spike,crazy,Reddit Mentions Volatility Spike,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,96,96,reddit-sentiment-spike-trend,crazy,Reddit Sentiment Spike Trend,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,97,97,reddit-sentiment-spike,crazy,Reddit Sentiment Spike,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,98,98,reddit-sentiment-volatility-spike,crazy,Reddit Sentiment Volatility Spike,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,99,99,reddit-subreddit-mention-spike,crazy,Reddit Subreddit Mention Spike,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,100,100,reddit-subreddit-sentiment-spike,crazy,Reddit Subreddit Sentiment Spike,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,101,101,reddit-subreddit-surge-momentum,crazy,Reddit Subreddit Surge Momentum,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,102,102,reddit-volatility-spike,crazy,Reddit Volatility Spike,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,103,103,rental-car-shortage-volatility-spike,crazy,Rental Car Shortage Volatility Spike,0.0,8.95,-8.95,100000.0,False,87
+2026-05-13,104,104,residential-real-estate-search-momentum-rotation,crazy,Residential Real Estate Search Momentum Rotation,0.0,8.95,-8.95,100000.0,False,71
+2026-05-13,105,105,retail-rush-ahead-of-holidays,crazy,Retail Rush Ahead Of Holidays,0.0,8.95,-8.95,100000.0,False,96
+2026-05-13,106,106,rss-roar,crazy,Rss Roar,0.0,8.95,-8.95,100000.0,False,94
+2026-05-13,107,107,small-business-formation,crazy,Small Business Formation,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,108,108,social-media-sentiment-spike,crazy,Social Media Sentiment Spike,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,109,109,solar-storm-scorcher,crazy,Solar Storm Scorcher,0.0,8.95,-8.95,100000.0,False,92
+2026-05-13,110,110,superbowl-futures-trade,crazy,Superbowl Futures Trade,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,111,111,technology-sector-daily-ev-charger-count-surge,crazy,Technology Sector Daily Ev Charger Count Surge,0.0,8.95,-8.95,100000.0,False,92
+2026-05-13,112,112,temperature-extremes-power-demand-spike-utility-boost,crazy,Temperature Extremes Power Demand Spike Utility Boost,0.0,8.95,-8.95,100000.0,False,84
+2026-05-13,113,113,temperature-shock-energy-demand-flip,crazy,Temperature Shock Energy Demand Flip,0.0,8.95,-8.95,100000.0,False,87
+2026-05-13,114,114,tsa,crazy,TSA Body Count,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,115,115,twitter-sentiment-spike,crazy,Twitter Sentiment Spike,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,116,116,utilities-sector-weekly-temperature-drop-signal,crazy,Utilities Sector Weekly Temperature Drop Signal,0.0,8.95,-8.95,100000.0,False,96
+2026-05-13,117,117,utility-power-grid-stress,crazy,Utility Power Grid Stress,0.0,8.95,-8.95,100000.0,False,96
+2026-05-13,118,118,utility-volatility-compression-reversion-bounce,crazy,Utility Volatility Compression Reversion Bounce,0.0,8.95,-8.95,100000.0,False,69
+2026-05-13,119,119,volatility-spike-follow-through,crazy,Volatility Spike Follow-Through,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,120,120,weather-disruption-ripple-effects,crazy,Weather Disruption Ripple Effects,0.0,8.95,-8.95,100000.0,False,96
+2026-05-13,121,121,weather-extremes-utility-demand-spike,crazy,Weather Extremes Utility Demand Spike,0.0,8.95,-8.95,100000.0,False,68
+2026-05-13,122,122,weather-volatility-spike,crazy,Weather Volatility Spike,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,123,123,weather-windfall,crazy,Weather Windfall,0.0,8.95,-8.95,100000.0,False,94
+2026-05-13,124,124,weekly-google-trends-spike-for-diy-electronics-repair-signal,crazy,Weekly Google Trends Spike For Diy Electronics Repair Signals Bullish Tech Sector,0.0,8.95,-8.95,100000.0,False,76
+2026-05-13,125,125,weekly-google-trends-spike-for-small-business-loan-default-s,crazy,Weekly Google Trends Spike For Small Business Loan Default Searches,0.0,8.95,-8.95,100000.0,False,71
+2026-05-13,126,126,weekly-google-trends-spike-in-searches-for-food-supply-chain,crazy,Weekly Google Trends Spike In Searches For Food Supply Chain Disruptions,0.0,8.95,-8.95,100000.0,False,71
+2026-05-13,127,127,weekly-google-trends-surge-for-diy-roof-repair-searches-sign,crazy,Weekly Google Trends Surge For Diy Roof Repair Searches Signals Consumer Stress Impacting Xli,0.0,8.95,-8.95,100000.0,False,76
+2026-05-13,128,128,weekly-google-trends-surge-for-home-pest-control-searches-si,crazy,Weekly Google Trends Surge For Home Pest Control Searches Signals Consumer Stress Boosting Staples,0.0,8.95,-8.95,100000.0,False,76
+2026-05-13,129,129,weekly-google-trends-surge-for-small-business-loan-applicati,crazy,Weekly Google Trends Surge For Small Business Loan Application Signals Financial Sector Activity Boost,0.0,8.95,-8.95,100000.0,False,67
+2026-05-13,130,130,weekly-google-trends-surge-for-truck-tire-replacement-search,crazy,Weekly Google Trends Surge For Truck Tire Replacement Searches Signals Industrial Sector Repair Cycle,0.0,8.95,-8.95,100000.0,False,67
+2026-05-13,131,131,weekly-google-trends-surge-for-used-truck-purchase-searches-,crazy,Weekly Google Trends Surge For Used Truck Purchase Searches Signals Bullish Freight Logistics,0.0,8.95,-8.95,100000.0,False,76
+2026-05-13,132,132,weekly-google-trends-surge-in-searches-for-diesel-fuel-price,crazy,Weekly Google Trends Surge In Searches For Diesel Fuel Price Increase,0.0,8.95,-8.95,100000.0,False,71
+2026-05-13,133,133,weekly-google-trends-surge-in-searches-for-home-solar-instal,crazy,Weekly Google Trends Surge In Searches For Home Solar Installation Financing Signals Xle Bullish,0.0,8.95,-8.95,100000.0,False,76
+2026-05-13,134,134,weekly-google-trends-surge-in-searches-for-truck-driver-shor,crazy,Weekly Google Trends Surge In Searches For Truck Driver Shortage,0.0,8.95,-8.95,100000.0,False,71
+2026-05-13,135,135,weekly-increase-in-google-trends-searches-for-bulk-shipping-,crazy,Weekly Increase In Google Trends Searches For Bulk Shipping Delay Signals Bearish Xlb,0.0,8.95,-8.95,100000.0,False,84
+2026-05-13,136,136,weekly-increase-in-google-trends-searches-for-small-business,crazy,Weekly Increase In Google Trends Searches For Small Business Loan Default Signals Rising Credit Stress,0.0,8.95,-8.95,100000.0,False,69
+2026-05-13,137,137,weekly-jump-in-google-trends-for-home-heating-oil-shortage-s,crazy,Weekly Jump In Google Trends For Home Heating Oil Shortage Signals Winter Energy Stress,0.0,8.95,-8.95,100000.0,False,68
+2026-05-13,138,138,weekly-jump-in-google-trends-for-job-quitting-searches-signa,crazy,Weekly Jump In Google Trends For Job Quitting Searches Signals Labor Market Tightness Benefiting Financial Sector,0.0,8.95,-8.95,100000.0,False,67
+2026-05-13,139,139,weekly-jump-in-google-trends-home-pest-control-emergency-sea,crazy,Weekly Jump In Google Trends Home Pest Control Emergency Searches Signals Consumer Stress And Discretionary Rebound,0.0,8.95,-8.95,100000.0,False,67
+2026-05-13,140,140,weekly-jump-in-google-trends-searches-for-airport-security-d,crazy,Weekly Jump In Google Trends Searches For Airport Security Delay Signals Travel Mobility Disruptions,0.0,8.95,-8.95,100000.0,False,69
+2026-05-13,141,141,weekly-rise-in-google-trends-searches-for-emergency-hvac-rep,crazy,Weekly Rise In Google Trends Searches For Emergency Hvac Repair,0.0,8.95,-8.95,100000.0,False,71
+2026-05-13,142,142,weekly-rise-in-google-trends-searches-for-gas-price-protest-,crazy,Weekly Rise In Google Trends Searches For Gas Price Protest Signals Bearish Xle,0.0,8.95,-8.95,100000.0,False,84
+2026-05-13,143,143,weekly-surge-in-google-trends-diy-home-roofing-repair-search,crazy,Weekly Surge In Google Trends Diy Home Roofing Repair Searches Signals Industrial Sector Demand Spike,0.0,8.95,-8.95,100000.0,False,67
+2026-05-13,144,144,weekly-surge-in-google-trends-for-diy-roof-repair-signals-co,crazy,Weekly Surge In Google Trends For Diy Roof Repair Signals Consumer Stress Lifting Industrial Sector,0.0,8.95,-8.95,100000.0,False,70
+2026-05-13,145,145,weekly-surge-in-google-trends-for-diy-solar-panel-repair-sig,crazy,Weekly Surge In Google Trends For Diy Solar Panel Repair Signals Green Energy Sector Rebound,0.0,8.95,-8.95,100000.0,False,77
+2026-05-13,146,146,weekly-surge-in-google-trends-for-emergency-plumbing-repair-,crazy,Weekly Surge In Google Trends For Emergency Plumbing Repair Signals Consumer Stress Lifting Discretionary Sector,0.0,8.95,-8.95,100000.0,False,70
+2026-05-13,147,147,weekly-surge-in-google-trends-for-home-heating-oil-shortage-,crazy,Weekly Surge In Google Trends For Home Heating Oil Shortage Signals Bullish Xle,0.0,8.95,-8.95,100000.0,False,78
+2026-05-13,148,148,weekly-surge-in-google-trends-for-hotel-room-shortage-signal,crazy,Weekly Surge In Google Trends For Hotel Room Shortage Signals Travel Sector Tightness,0.0,8.95,-8.95,100000.0,False,80
+2026-05-13,149,149,weekly-surge-in-google-trends-for-job-interview-preparation-,crazy,Weekly Surge In Google Trends For Job Interview Preparation Searches,0.0,8.95,-8.95,100000.0,False,71
+2026-05-13,150,150,weekly-surge-in-google-trends-for-sudden-appliance-breakdown,crazy,Weekly Surge In Google Trends For Sudden Appliance Breakdowns Signals Discretionary Sector Rebound,0.0,8.95,-8.95,100000.0,False,67
+2026-05-13,151,151,weekly-surge-in-google-trends-searches-for-diy-bicycle-repai,crazy,Weekly Surge In Google Trends Searches For Diy Bicycle Repair,0.0,8.95,-8.95,100000.0,False,71
+2026-05-13,152,152,weekly-surge-in-google-trends-searches-for-home-improvement-,crazy,Weekly Surge In Google Trends Searches For Home Improvement Loan Signals Consumer Stress Lifting Xly,0.0,8.95,-8.95,100000.0,False,84
+2026-05-13,153,153,weekly-surge-in-google-trends-searches-for-warehouse-worker-,crazy,Weekly Surge In Google Trends Searches For Warehouse Worker Shortage Signals Labor Tightness,0.0,8.95,-8.95,100000.0,False,69
+2026-05-13,154,154,weekly-surge-in-openchargemap-ev-charger-installations-signa,crazy,Weekly Surge In Openchargemap Ev Charger Installations Signals Bullish Xlc,0.0,8.95,-8.95,100000.0,False,86
+2026-05-13,155,155,work-from-home-frenzy,crazy,Work From Home Frenzy,0.0,8.95,-8.95,100000.0,False,96
+2026-05-13,156,156,xlb-daily-volatility-contraction-breakout,crazy,Xlb Daily Volatility Contraction Breakout,0.0,8.95,-8.95,100000.0,False,94
+2026-05-13,157,157,xlu-weekly-cold-snap-weather-correlation,crazy,Xlu Weekly Cold Snap Weather Correlation,0.0,8.95,-8.95,100000.0,False,94
+2026-05-13,158,158,xlv-google-trends-flu-search-spike,crazy,Xlv Google Trends Flu Search Spike,0.0,8.95,-8.95,100000.0,False,94
+2026-05-13,159,159,yelp-closure-velocity,crazy,Yelp Closure Velocity,0.0,8.95,-8.95,100000.0,False,89
+2026-05-13,160,160,yield-curve-regime,crazy,Yield Curve Regime,0.0,8.95,-8.95,100000.0,False,98
+2026-05-13,161,161,renewable-energy-rss-news-volume-surge,crazy,Renewable Energy Rss News Volume Surge,-0.01,8.95,-8.96,99990.05,False,70
+2026-05-13,162,162,google-trends-surge-in-luxury-good-searches,crazy,Google Trends Surge In Luxury Good Searches,-0.02,8.95,-8.97,99979.84,False,76
+2026-05-13,163,165,regional-earthquake-cluster-insurance-demand-spike,crazy,Regional Earthquake Cluster Insurance Demand Spike,-0.02,8.95,-8.98,99975.83,False,69
+2026-05-13,164,163,weekly-google-trends-surge-in-home-appliance-repair-searches,crazy,Weekly Google Trends Surge In Home Appliance Repair Searches Signals Bullish Consumer Discretionary,-0.02,8.95,-8.97,99982.54,False,79
+2026-05-13,165,164,daily-spike-in-google-trends-for-home-air-purifier-repair-si,crazy,Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector,-0.03,8.95,-8.98,99971.86,False,77
+2026-05-13,166,166,weekly-spike-in-google-trends-for-electric-vehicle-battery-r,crazy,Weekly Spike In Google Trends For Electric Vehicle Battery Replacement Signals Consumer Stress Lifting Industrial Sector,-0.03,8.95,-8.98,99969.08,False,70
+2026-05-13,167,167,weekly-surge-in-google-trends-for-diy-plumbing-repair-signal,crazy,Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound,-0.03,8.95,-8.98,99970.38,False,80
+2026-05-13,168,168,consumer-discretionary-google-trends-surge-for-sale-keywords,crazy,Consumer Discretionary Google Trends Surge For Sale Keywords,-0.04,8.95,-8.99,99960.96,False,92
+2026-05-13,169,169,port-congestion-squeeze,crazy,Port Congestion Squeeze,-0.05,8.95,-9.0,99950.18,False,96
+2026-05-13,170,170,real-estate-sector-weekly-google-trends-home-buying-surge,crazy,Real Estate Sector Weekly Google Trends Home Buying Surge,-0.05,8.95,-9.0,99954.77,False,96
+2026-05-13,171,171,shipping-container-squeeze-play,crazy,Shipping Container Squeeze Play,-0.05,8.95,-9.0,99950.18,False,87
+2026-05-13,172,172,eia-electricity-demand-shock-rebound-spread,crazy,Eia Electricity Demand Shock Rebound Spread,-0.06,8.95,-9.01,99940.31,False,77
+2026-05-13,173,173,travel-booking-momentum-divergence,crazy,Travel Booking Momentum Divergence,-0.06,8.95,-9.01,99943.44,False,70
+2026-05-13,174,174,weekly-surge-in-job-postings-for-warehouse-workers-signals-b,crazy,Weekly Surge In Job Postings For Warehouse Workers Signals Bullish Xli,-0.06,8.95,-9.01,99944.62,False,84
+2026-05-13,175,176,daily-spike-in-google-trends-for-emergency-dental-care-signa,crazy,Daily Spike In Google Trends For Emergency Dental Care Signals Consumer Stress Impacting Health Sector,-0.07,8.95,-9.03,99927.72,False,70
+2026-05-13,176,175,daily-spike-in-rss-news-counts-around-labor-union-contract-n,crazy,Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf,-0.07,8.95,-9.02,99930.55,False,84
+2026-05-13,177,177,daily-spike-in-google-trends-searches-for-electric-vehicle-b,crazy,Daily Spike In Google Trends Searches For Electric Vehicle Battery Replacement,-0.08,8.95,-9.03,99921.33,False,71
+2026-05-13,178,182,healthcare-sector-google-trends-spike-in-flu-symptoms,crazy,Healthcare Sector Google Trends Spike In Flu Symptoms,-0.08,8.95,-9.04,99917.38,False,92
+2026-05-13,179,184,rss-news-volume-spike-on-food-supply-chain-disruptions,crazy,Rss News Volume Spike On Food Supply Chain Disruptions,-0.08,8.95,-9.04,99917.76,False,76
+2026-05-13,180,185,weekly-google-trends-surge-in-energy-bill-shock-signals-cons,crazy,Weekly Google Trends Surge In Energy Bill Shock Signals Consumer Stress Impacting Utilities,-0.08,8.95,-9.04,99915.28,False,80
+2026-05-13,181,186,weekly-google-trends-surge-in-home-energy-bill-shock-signals,crazy,Weekly Google Trends Surge In Home Energy Bill Shock Signals Bullish Utilities,-0.08,8.95,-9.04,99915.28,False,79
+2026-05-13,182,178,weekly-increase-in-usgs-earthquake-activity-within-key-logis,crazy,Weekly Increase In Usgs Earthquake Activity Within Key Logistics Hubs Signals Potential Freight Delays,-0.08,8.95,-9.03,99923.09,False,69
+2026-05-13,183,179,weekly-surge-in-google-trends-searches-for-truck-driver-stri,crazy,Weekly Surge In Google Trends Searches For Truck Driver Strike Signals Imminent Logistics Disruption,-0.08,8.95,-9.03,99922.61,False,69
+2026-05-13,184,180,bank-stress-index-volatility-fear-crush-reversal,crazy,Bank Stress Index Volatility Fear Crush Reversal,-0.09,8.95,-9.04,99910.26,False,84
+2026-05-13,185,181,financial-sector-volatility-crush-trade,crazy,Financial Sector Volatility Crush Trade,-0.09,8.95,-9.04,99910.26,False,79
+2026-05-13,186,183,retail-roulette,crazy,Retail Roulette,-0.09,8.95,-9.04,99913.43,False,94
+2026-05-13,187,187,xlu-daily-electricity-demand-surge,crazy,Xlu Daily Electricity Demand Surge,-0.1,8.95,-9.05,99898.68,False,94
+2026-05-13,188,193,daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig,crazy,Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk,-0.11,8.95,-9.07,99888.11,False,84
+2026-05-13,189,194,daily-spike-in-rss-news-counts-mentioning-politician-insider,crazy,Daily Spike In Rss News Counts Mentioning Politician Insider Buying Tech Stock Signals Bullish Xlk,-0.11,8.95,-9.07,99886.48,False,84
+2026-05-13,190,188,weekly-google-trends-spike-for-diy-car-repair-signals-bullis,crazy,Weekly Google Trends Spike For Diy Car Repair Signals Bullish Xly,-0.11,8.95,-9.06,99892.81,False,81
+2026-05-13,191,189,weekly-surge-in-google-trends-searches-for-commuting-strike-,crazy,Weekly Surge In Google Trends Searches For Commuting Strike Signals Bearish Xly,-0.11,8.95,-9.06,99892.92,False,84
+2026-05-13,192,190,xlb-weekly-rss-news-count-spike-on-commodity-shortage,crazy,Xlb Weekly Rss News Count Spike On Commodity Shortage,-0.11,8.95,-9.06,99889.8,False,94
+2026-05-13,193,191,attention-sentiment-spike-daily-surge-in-news-rss-counts-men,crazy,Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc,-0.12,8.95,-9.07,99882.46,False,86
+2026-05-13,194,192,daily-jump-in-google-trends-searches-for-home-renovation-per,crazy,Daily Jump In Google Trends Searches For Home Renovation Permits,-0.12,8.95,-9.07,99884.41,False,71
+2026-05-13,195,195,ev-charger-network-expansion-sentiment-surge,crazy,Ev Charger Network Expansion Sentiment Surge,-0.12,8.95,-9.07,99884.44,False,67
+2026-05-13,196,196,lumber-momentum,crazy,Lumber Momentum,-0.12,8.95,-9.07,99882.18,False,98
+2026-05-13,197,197,utilities-sector-negative-price-gap-fill,crazy,Utilities Sector Negative Price Gap Fill,-0.13,8.95,-9.08,99869.36,False,92
+2026-05-13,198,200,electricity-enlightenment,crazy,Electricity Enlightenment,-0.14,8.95,-9.1,99857.33,False,94
+2026-05-13,199,198,seismic-activity-construction-halt-signal,crazy,Seismic Activity Construction Halt Signal,-0.14,8.95,-9.09,99861.92,False,87
+2026-05-13,200,199,tremor-tension,crazy,Tremor Tension,-0.14,8.95,-9.09,99864.21,False,94
+2026-05-13,201,201,oil-price-momentum-reversal-energy-sector-bounce,crazy,Oil Price Momentum Reversal Energy Sector Bounce,-0.15,8.95,-9.1,99849.11,False,81
+2026-05-13,202,202,daily-jump-in-google-trends-searches-for-emergency-dental-ca,crazy,Daily Jump In Google Trends Searches For Emergency Dental Care,-0.17,8.95,-9.12,99832.34,False,71
+2026-05-13,203,203,industrial-sector-weekly-earthquake-activity-correlation-dip,crazy,Industrial Sector Weekly Earthquake Activity Correlation Dip,-0.19,8.95,-9.14,99813.1,False,92
+2026-05-13,204,204,luxury-discretionary-google-trends-collapse-signal,crazy,Luxury Discretionary Google Trends Collapse Signal,-0.19,8.95,-9.14,99811.09,False,68
+2026-05-13,205,205,wage-growth-demand-surge-fast-food-google-trends,crazy,Wage Growth Demand Surge Fast Food Google Trends,-0.2,8.95,-9.15,99799.52,False,80
+2026-05-13,206,207,weekly-google-trends-surge-in-fast-food-job-openings-signals,crazy,Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary,-0.21,8.95,-9.17,99787.04,False,79
+2026-05-13,207,206,weekly-spike-in-google-trends-for-home-cooling-failure-signa,crazy,Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu,-0.21,8.95,-9.16,99792.0,False,84
+2026-05-13,208,210,daily-spike-in-daily-earthquake-activity-near-major-logistic,crazy,Daily Spike In Daily Earthquake Activity Near Major Logistics Hubs Signals Bearish Xli,-0.22,8.95,-9.18,99775.64,False,84
+2026-05-13,209,211,google-gusts,crazy,Google Gusts,-0.22,8.95,-9.18,99777.92,False,94
+2026-05-13,210,208,weekly-rise-in-google-trends-interest-for-food-delivery-dela,crazy,Weekly Rise In Google Trends Interest For Food Delivery Delay Signals Bearish Xlp,-0.22,8.95,-9.17,99782.27,False,84
+2026-05-13,211,209,weekly-surge-in-google-trends-searches-for-city-water-outage,crazy,Weekly Surge In Google Trends Searches For City Water Outage Signals Bearish Xlre,-0.22,8.95,-9.17,99773.32,False,84
+2026-05-13,212,212,misery-rotation,crazy,Misery Rotation,-0.23,8.95,-9.19,99767.53,False,98
+2026-05-13,213,213,news-sentiment-rotation-fade-trade,crazy,News Sentiment Rotation Fade Trade,-0.23,8.95,-9.19,99767.05,False,87
+2026-05-13,214,214,weekly-spike-in-freight-container-volumes-at-east-coast-port,crazy,Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength,-0.24,8.95,-9.19,99764.24,False,67
+2026-05-13,215,215,housing-permit-velocity,crazy,Housing Permit Velocity,-0.27,8.95,-9.23,99728.13,False,98
+2026-05-13,216,216,weekly-surge-in-google-trends-for-inflation-hedge-gold-signa,crazy,Weekly Surge In Google Trends For Inflation Hedge Gold Signals Bullish Xlb,-0.29,8.95,-9.25,99696.68,False,81
+2026-05-13,217,217,grocery-store-foot-traffic-collapse-signal,crazy,Grocery Store Foot Traffic Collapse Signal,-0.33,8.95,-9.28,99673.9,False,87
+2026-05-13,218,218,mortgage-rate-housing-proxy,crazy,Mortgage Rate Housing Proxy,-0.33,8.95,-9.28,99671.1,False,98
+2026-05-13,219,219,xle-weekly-drawdown-rebound-signal,crazy,Xle Weekly Drawdown Rebound Signal,-0.33,8.95,-9.29,99667.3,False,94
+2026-05-13,220,220,daily-surge-in-google-trends-searches-for-electric-vehicle-c,crazy,Daily Surge In Google Trends Searches For Electric Vehicle Charging Station Outages,-0.35,8.95,-9.3,99651.01,False,71
+2026-05-13,221,221,healthcare-cost-shock-google-search-spike,crazy,Healthcare Cost Shock Google Search Spike,-0.37,8.95,-9.33,99617.84,False,87
+2026-05-13,222,222,xlc-weekly-google-trends-surge-in-5g-rollout,crazy,Xlc Weekly Google Trends Surge In 5g Rollout,-0.41,8.95,-9.36,99592.39,False,94
+2026-05-13,223,223,daily-spike-in-google-trends-for-emergency-plumbing-repair-s,crazy,Daily Spike In Google Trends For Emergency Plumbing Repair Signals Consumer Stress Rebound Benefiting Discretionary Sector,-0.42,8.95,-9.37,99572.85,False,77
+2026-05-13,224,224,port-container-volume,crazy,Port Container Volume,-0.52,8.95,-9.47,99481.1,False,98
+2026-05-13,225,225,healthcare-cost-google-trends-acceleration-index,crazy,Healthcare Cost Google Trends Acceleration Index,-0.53,8.95,-9.49,99466.5,False,76
+2026-05-13,226,226,daily-jump-in-google-trends-searches-for-home-water-heater-r,crazy,Daily Jump In Google Trends Searches For Home Water Heater Repair Signals Consumer Stress Lifting Xly,-0.61,8.95,-9.57,99385.03,False,78
+2026-05-13,227,227,weekly-surge-in-google-trends-searches-for-diy-home-repair-s,crazy,Weekly Surge In Google Trends Searches For Diy Home Repair Signals Consumer Stress Lifting Xly,-0.79,8.95,-9.74,99212.48,False,86
+2026-05-13,228,228,liquor,crazy,Liquor Store Leading Indicator,-0.9,8.95,-9.86,99095.22,False,98
+2026-05-13,229,229,vix-term-structure,crazy,VIX Term Structure,-1.56,8.95,-10.51,98443.96,False,89
+2026-05-13,230,230,biscotti,crazy,Algo Biscotti (Unconditional Loyalty),-1.79,8.95,-10.74,98211.83,False,98
+2026-05-13,231,231,biscotti,normal,Algo Biscotti (Unconditional Loyalty),-2.09,8.95,-11.05,97906.32,False,99
+2026-05-13,232,232,electricity-consumption,crazy,Electricity Consumption,-2.63,8.95,-11.58,97374.13,False,98
+2026-05-13,233,233,vix-fear-rotation,crazy,VIX Fear Rotation,-3.3,8.95,-12.25,96704.25,False,89
+2026-05-13,234,234,baileymol,crazy,Chaos Rotation Lab,-6.22,8.95,-15.17,93780.36,False,98

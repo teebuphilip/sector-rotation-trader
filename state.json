@@ -1,18 +1,10 @@
 {
-  "cash": 59668.01543044543,
+  "cash": 69291.06254939464,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 162.49786698427465,
+  "fees_paid": 172.9657090989387,
   "taxes_paid": 1453.6303536904825,
   "positions": {
-    "XEL": {
-      "shares": 120.55455536953956,
-      "entry_price": 82.94999694824219,
-      "entry_date": "2026-04-30",
-      "cost": 10000.0,
-      "using_margin": false,
-      "consec_below_ma": 1
-    },
     "QCOM": {
       "shares": 53.604930776793,
       "entry_price": 186.5500030517578,
@@ -222,6 +214,20 @@
       "cost": 10000.0,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-13",
+      "action": "SELL",
+      "ticker": "XEL",
+      "shares": 120.5546,
+      "price": 79.91,
+      "proceeds": 9623.05,
+      "fees": 10.47,
+      "tax": 0.0,
+      "pnl": -376.95,
+      "pnl_pct": -3.77,
+      "entry_date": "2026-04-30",
+      "reason": "20MA_exit"
     }
   ],
   "daily_snapshots": [
@@ -2581,9 +2587,47 @@
       },
       "sector": "XLK",
       "num_positions": 4
+    },
+    {
+      "date": "2026-05-13",
+      "cash": 69291.06,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100919.54,
+      "positions": {
+        "QCOM": {
+          "shares": 53.6049,
+          "entry_price": 186.55,
+          "current_price": 213.17,
+          "market_value": 11426.96,
+          "unrealized_pnl": 1426.96,
+          "entry_date": "2026-05-05",
+          "margin": false
+        },
+        "AMD": {
+          "shares": 23.731,
+          "entry_price": 421.39,
+          "current_price": 445.5,
+          "market_value": 10572.15,
+          "unrealized_pnl": 572.15,
+          "entry_date": "2026-05-06",
+          "margin": false
+        },
+        "INTC": {
+          "shares": 80.0512,
+          "entry_price": 124.92,
+          "current_price": 120.29,
+          "market_value": 9629.36,
+          "unrealized_pnl": -370.64,
+          "entry_date": "2026-05-08",
+          "margin": false
+        }
+      },
+      "sector": "XLK",
+      "num_positions": 3
     }
   ],
   "sim_start": "2026-01-07",
-  "last_run": "2026-05-12",
+  "last_run": "2026-05-13",
   "meta": {}
 }
