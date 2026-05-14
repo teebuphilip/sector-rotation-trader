@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-05-14/publish/chatgpt_daily-spike-in-weather-series-wind-speed-variability-signals.md",
+  "target_file": "data/ideas/runs/2026-05-14/intervention/chatgpt_daily-spike-in-weather-series-wind-speed-variability-signals.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "adapter mismatch",
+      "data source instability",
+      "low_adapter_confidence",
+      "needs volume check not applicable",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 916,
+    "output_tokens": 79
+  },
+  "cost_usd": 0.00308,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"null\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly supports Open-Meteo daily wind speed variance data.\",\n  \"risk_flags\": [\"adapter mismatch\", \"data source instability\", \"needs volume check not applicable\"]\n}\n```"
+}

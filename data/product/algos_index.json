@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T23:40:22Z",
+  "generated_at": "2026-05-14T23:49:50Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -65,6 +65,30 @@
       "ytd_pct": -0.12,
       "trade_count": 19,
       "positions": 1,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-surge-in-google-trends-for-home-office-setup-signals-b",
+      "algo_type": "crazy",
+      "algo_id": "daily-surge-in-google-trends-for-home-office-setup-signals-b",
+      "name": "Daily Surge In Google Trends For Home Office Setup Signals Bullish Technology Sector",
+      "family": "attention_sentiment",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLK"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
       "last_snapshot": "2026-05-14",
       "last_signal": null,
       "new_algo_date": null,
@@ -651,6 +675,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-surge-in-google-trends-for-warehouse-automation-signa",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-warehouse-automation-signa",
+      "name": "Weekly Surge In Google Trends For Warehouse Automation Signals Industrial Sector Demand",
+      "family": "attention_sentiment",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:xlb-weekly-rss-news-count-spike-on-commodity-shortage",
       "algo_type": "crazy",
       "algo_id": "xlb-weekly-rss-news-count-spike-on-commodity-shortage",
@@ -863,6 +911,30 @@
       "rebalance_frequency": "daily",
       "universe": [
         "XLY"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-jump-in-google-trends-for-food-delivery-delay-complain",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-food-delivery-delay-complain",
+      "name": "Daily Jump In Google Trends For Food Delivery Delay Complaints Signals Bearish Consumer Staples",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLP"
       ],
       "equity": 100000.0,
       "ytd_pct": 0.0,
@@ -1179,6 +1251,30 @@
       "equity": 100000.0,
       "ytd_pct": 0.0,
       "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-surge-in-google-trends-for-electric-bike-repair-signal",
+      "algo_type": "crazy",
+      "algo_id": "daily-surge-in-google-trends-for-electric-bike-repair-signal",
+      "name": "Daily Surge In Google Trends For Electric Bike Repair Signals Bullish Consumer Discretionary",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99828.7,
+      "ytd_pct": -0.17,
+      "trade_count": 12,
       "positions": 0,
       "last_snapshot": "2026-05-14",
       "last_signal": null,
@@ -1506,6 +1602,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:pet-emergency-vet-visit-spike",
+      "algo_type": "crazy",
+      "algo_id": "pet-emergency-vet-visit-spike",
+      "name": "Pet Emergency Vet Visit Spike",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLV"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:retail-roulette",
       "algo_type": "crazy",
       "algo_id": "retail-roulette",
@@ -1650,6 +1770,30 @@
       "equity": 100000.0,
       "ytd_pct": 0.0,
       "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-google-trends-spike-for-diy-home-renovation-signals-b",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-spike-for-diy-home-renovation-signals-b",
+      "name": "Weekly Google Trends Spike For Diy Home Renovation Signals Bullish Consumer Staples",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLP"
+      ],
+      "equity": 100010.87,
+      "ytd_pct": 0.01,
+      "trade_count": 2,
       "positions": 0,
       "last_snapshot": "2026-05-14",
       "last_signal": null,
@@ -2519,6 +2663,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:usgs-earthquake-activity-spike-near-major-freight-hubs-signa",
+      "algo_type": "crazy",
+      "algo_id": "usgs-earthquake-activity-spike-near-major-freight-hubs-signa",
+      "name": "Usgs Earthquake Activity Spike Near Major Freight Hubs Signals Temporary Freight Disruption",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100042.42,
+      "ytd_pct": 0.04,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-google-trends-surge-for-used-truck-purchase-searches-",
       "algo_type": "crazy",
       "algo_id": "weekly-google-trends-surge-for-used-truck-purchase-searches-",
@@ -2997,6 +3165,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-google-trends-surge-in-job-training-programs-signals-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-in-job-training-programs-signals-",
+      "name": "Weekly Google Trends Surge In Job Training Programs Signals Bullish Industrial Sector",
+      "family": "labor_jobs",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-google-trends-surge-in-searches-for-truck-driver-shor",
       "algo_type": "crazy",
       "algo_id": "weekly-google-trends-surge-in-searches-for-truck-driver-shor",
@@ -3031,6 +3223,30 @@
       "rebalance_frequency": "weekly",
       "universe": [
         "XLF"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-jump-in-google-trends-for-small-business-layoffs-sign",
+      "algo_type": "crazy",
+      "algo_id": "weekly-jump-in-google-trends-for-small-business-layoffs-sign",
+      "name": "Weekly Jump In Google Trends For Small Business Layoffs Signals Consumer Discretionary Downturn",
+      "family": "labor_jobs",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
       ],
       "equity": 100000.0,
       "ytd_pct": 0.0,
@@ -3512,6 +3728,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:ev-charger-network-density-jump",
+      "algo_type": "crazy",
+      "algo_id": "ev-charger-network-density-jump",
+      "name": "Ev Charger Network Density Jump",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLK"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:liquor",
       "algo_type": "crazy",
       "algo_id": "liquor",
@@ -3637,6 +3877,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-increase-in-google-trends-for-home-solar-panel-instal",
+      "algo_type": "crazy",
+      "algo_id": "weekly-increase-in-google-trends-for-home-solar-panel-instal",
+      "name": "Weekly Increase In Google Trends For Home Solar Panel Installation Delay Signals Bearish Utilities Sector",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLU"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-spike-in-google-trends-for-home-cooling-failure-signa",
       "algo_type": "crazy",
       "algo_id": "weekly-spike-in-google-trends-for-home-cooling-failure-signa",
@@ -3700,6 +3964,30 @@
         "XLP",
         "XLU",
         "XLV"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:appliance-shortage-supply-chain-stress",
+      "algo_type": "crazy",
+      "algo_id": "appliance-shortage-supply-chain-stress",
+      "name": "Appliance Shortage Supply Chain Stress",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
       ],
       "equity": 100000.0,
       "ytd_pct": 0.0,
@@ -4015,6 +4303,30 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "Uses non-price adapter: crazy.adapters.eia_electricity",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:electricity-demand-collapse-during-mild-weather",
+      "algo_type": "crazy",
+      "algo_id": "electricity-demand-collapse-during-mild-weather",
+      "name": "Electricity Demand Collapse During Mild Weather",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLU"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },
@@ -5899,6 +6211,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-jump-in-openchargemap-ev-charger-counts-expansion-rate",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-openchargemap-ev-charger-counts-expansion-rate",
+      "name": "Daily Jump In Openchargemap Ev Charger Counts Expansion Rate Signals Bullish Consumer Discretionary",
+      "family": "travel_mobility",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:daily-spike-in-google-trends-searches-for-airline-flight-del",
       "algo_type": "crazy",
       "algo_id": "daily-spike-in-google-trends-searches-for-airline-flight-del",
@@ -6145,6 +6481,30 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "No supported V1 price-only backtest path",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-google-trends-spike-in-business-travel-rebound-signal",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-spike-in-business-travel-rebound-signal",
+      "name": "Weekly Google Trends Spike In Business Travel Rebound Signals Bullish Industrial Sector",
+      "family": "travel_mobility",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },

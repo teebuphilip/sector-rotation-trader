@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-05-14T23:40:22Z",
+  "generated_at": "2026-05-14T23:49:50Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
-      "count": 26,
+      "count": 28,
       "by_status": {
         "live_only": 10,
         "parked": 2,
-        "sandbox": 14
+        "sandbox": 16
       },
       "by_evidence_class": {
         "live_receipts_only": 10,
-        "needs_history": 14,
+        "needs_history": 16,
         "pending_seed": 2
       },
       "leaders": [
@@ -30,6 +30,30 @@
           "equity": 100061.6,
           "ytd_pct": 0.06,
           "trade_count": 8,
+          "positions": 0,
+          "last_snapshot": "2026-05-14",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": null,
+          "backtest_reason": null,
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
+        {
+          "key": "crazy:daily-surge-in-google-trends-for-home-office-setup-signals-b",
+          "algo_type": "crazy",
+          "algo_id": "daily-surge-in-google-trends-for-home-office-setup-signals-b",
+          "name": "Daily Surge In Google Trends For Home Office Setup Signals Bullish Technology Sector",
+          "family": "attention_sentiment",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "universe": [
+            "XLK"
+          ],
+          "equity": 100000.0,
+          "ytd_pct": 0.0,
+          "trade_count": 0,
           "positions": 0,
           "last_snapshot": "2026-05-14",
           "last_signal": null,
@@ -130,53 +154,20 @@
           "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMC, AMD, BABA, GME, META, MSFT, NFLX, NVDA, TSLA",
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:reddit-sentiment-spike",
-          "algo_type": "crazy",
-          "algo_id": "reddit-sentiment-spike",
-          "name": "Reddit Sentiment Spike",
-          "family": "attention_sentiment",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "daily",
-          "universe": [
-            "AAPL",
-            "TSLA",
-            "AMD",
-            "MSFT",
-            "NVDA",
-            "AMZN",
-            "GOOGL",
-            "META",
-            "NFLX",
-            "BABA"
-          ],
-          "equity": 100000.0,
-          "ytd_pct": 0.0,
-          "trade_count": 0,
-          "positions": 0,
-          "last_snapshot": "2026-05-14",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": "UNSUPPORTED_DATA",
-          "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMD, AMZN, BABA, GOOGL, META, MSFT, NFLX, NVDA, TSLA",
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
         }
       ]
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 63,
+      "count": 67,
       "by_status": {
         "failed": 1,
-        "live_only": 30,
-        "sandbox": 32
+        "live_only": 32,
+        "sandbox": 34
       },
       "by_evidence_class": {
-        "live_receipts_only": 30,
-        "needs_history": 32,
+        "live_receipts_only": 32,
+        "needs_history": 34,
         "v1_backtested": 1
       },
       "leaders": [
@@ -487,13 +478,13 @@
     },
     "freight_logistics": {
       "family": "freight_logistics",
-      "count": 17,
+      "count": 18,
       "by_status": {
-        "live_only": 11,
+        "live_only": 12,
         "sandbox": 6
       },
       "by_evidence_class": {
-        "live_receipts_only": 11,
+        "live_receipts_only": 12,
         "needs_history": 6
       },
       "leaders": [
@@ -556,6 +547,30 @@
           "backtest_trade_count": null
         },
         {
+          "key": "crazy:usgs-earthquake-activity-spike-near-major-freight-hubs-signa",
+          "algo_type": "crazy",
+          "algo_id": "usgs-earthquake-activity-spike-near-major-freight-hubs-signa",
+          "name": "Usgs Earthquake Activity Spike Near Major Freight Hubs Signals Temporary Freight Disruption",
+          "family": "freight_logistics",
+          "status": "live_only",
+          "evidence_class": "live_receipts_only",
+          "rebalance_frequency": "daily",
+          "universe": [
+            "XLI"
+          ],
+          "equity": 100042.42,
+          "ytd_pct": 0.04,
+          "trade_count": 2,
+          "positions": 0,
+          "last_snapshot": "2026-05-14",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": null,
+          "backtest_reason": null,
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
+        {
           "key": "crazy:weekly-spike-in-google-trends-searches-for-warehouse-automat",
           "algo_type": "crazy",
           "algo_id": "weekly-spike-in-google-trends-searches-for-warehouse-automat",
@@ -607,43 +622,19 @@
           "backtest_reason": "No supported V1 price-only backtest path",
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:daily-spike-in-freight-logistics-rss-news-volume-mentioning-",
-          "algo_type": "crazy",
-          "algo_id": "daily-spike-in-freight-logistics-rss-news-volume-mentioning-",
-          "name": "Daily Spike In Freight Logistics Rss News Volume Mentioning Port Labor Strike Triggers Bearish Xli",
-          "family": "freight_logistics",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "daily",
-          "universe": [
-            "XLI"
-          ],
-          "equity": 100000.0,
-          "ytd_pct": 0.0,
-          "trade_count": 0,
-          "positions": 0,
-          "last_snapshot": "2026-05-14",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": null,
-          "backtest_reason": null,
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
         }
       ]
     },
     "labor_jobs": {
       "family": "labor_jobs",
-      "count": 20,
+      "count": 22,
       "by_status": {
         "live_only": 11,
-        "sandbox": 9
+        "sandbox": 11
       },
       "by_evidence_class": {
         "live_receipts_only": 11,
-        "needs_history": 9
+        "needs_history": 11
       },
       "leaders": [
         {
@@ -785,14 +776,14 @@
     },
     "local_economy_weirdness": {
       "family": "local_economy_weirdness",
-      "count": 21,
+      "count": 23,
       "by_status": {
         "live_only": 12,
-        "sandbox": 9
+        "sandbox": 11
       },
       "by_evidence_class": {
         "live_receipts_only": 12,
-        "needs_history": 9
+        "needs_history": 11
       },
       "leaders": [
         {
@@ -930,16 +921,16 @@
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 64,
+      "count": 66,
       "by_status": {
         "backtest_weak": 1,
         "live_only": 16,
         "parked": 2,
-        "sandbox": 45
+        "sandbox": 47
       },
       "by_evidence_class": {
         "live_receipts_only": 16,
-        "needs_history": 43,
+        "needs_history": 45,
         "pending_seed": 2,
         "v1_backtested": 3
       },
@@ -1022,6 +1013,30 @@
           "backtest_trade_count": 24
         },
         {
+          "key": "crazy:appliance-shortage-supply-chain-stress",
+          "algo_type": "crazy",
+          "algo_id": "appliance-shortage-supply-chain-stress",
+          "name": "Appliance Shortage Supply Chain Stress",
+          "family": "macro_input_pressure",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "weekly",
+          "universe": [
+            "XLI"
+          ],
+          "equity": 100000.0,
+          "ytd_pct": 0.0,
+          "trade_count": 0,
+          "positions": 0,
+          "last_snapshot": "2026-05-14",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": null,
+          "backtest_reason": null,
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
+        {
           "key": "crazy:cloud-storage-demand-surge",
           "algo_type": "crazy",
           "algo_id": "cloud-storage-demand-surge",
@@ -1047,30 +1062,6 @@
           "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: BOX, DBX, GOOGL, MSFT",
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:crypto-capitulation-countdown",
-          "algo_type": "crazy",
-          "algo_id": "crypto-capitulation-countdown",
-          "name": "Crypto Capitulation Countdown",
-          "family": "macro_input_pressure",
-          "status": "sandbox",
-          "evidence_class": "v1_backtested",
-          "rebalance_frequency": "daily",
-          "universe": [
-            "XLC"
-          ],
-          "equity": 100000.0,
-          "ytd_pct": 0.0,
-          "trade_count": 0,
-          "positions": 0,
-          "last_snapshot": "2026-05-14",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": "INSUFFICIENT_ACTIVITY",
-          "backtest_reason": "Backtest completed",
-          "backtest_alpha_vs_spy_pct": -50.97,
-          "backtest_trade_count": 0
         }
       ]
     },
@@ -1228,14 +1219,14 @@
     },
     "travel_mobility": {
       "family": "travel_mobility",
-      "count": 17,
+      "count": 19,
       "by_status": {
         "live_only": 4,
-        "sandbox": 13
+        "sandbox": 15
       },
       "by_evidence_class": {
         "live_receipts_only": 4,
-        "needs_history": 13
+        "needs_history": 15
       },
       "leaders": [
         {

@@ -1,8 +1,8 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-14T23:40:31Z",
+  "generated_at": "2026-05-14T23:49:50Z",
   "counts": {
-    "total": 251,
+    "total": 266,
     "beating_spy": 1
   },
   "algos": [
@@ -620,6 +620,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:usgs-earthquake-activity-spike-near-major-freight-hubs-signa",
+      "algo_type": "crazy",
+      "algo_id": "usgs-earthquake-activity-spike-near-major-freight-hubs-signa",
+      "name": "Usgs Earthquake Activity Spike Near Major Freight Hubs Signals Temporary Freight Disruption",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.04,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.04,
+      "spy_delta_30d_pct": -7.69,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.059,
+            "return_pct": 0.293
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.491,
+            "return_pct": 2.454
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:healthcare-cost-inflation-google-trends-acceleration",
       "algo_type": "crazy",
       "algo_id": "healthcare-cost-inflation-google-trends-acceleration",
@@ -868,6 +904,42 @@
           }
         },
         "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-google-trends-spike-for-diy-home-renovation-signals-b",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-spike-for-diy-home-renovation-signals-b",
+      "name": "Weekly Google Trends Spike For Diy Home Renovation Signals Bullish Consumer Staples",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.01,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLP",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.238,
+            "return_pct": 1.191
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.872,
+            "return_pct": 4.36
+          }
+        },
+        "summary": "both_up"
       }
     },
     {
@@ -2477,6 +2549,42 @@
       "alpha_pct": -9.98,
       "ret_30d_pct": -0.06,
       "spy_delta_30d_pct": -7.79,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.202,
+            "return_pct": -1.009
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.177,
+            "return_pct": 0.884
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-surge-in-google-trends-for-electric-bike-repair-signal",
+      "algo_type": "crazy",
+      "algo_id": "daily-surge-in-google-trends-for-electric-bike-repair-signal",
+      "name": "Daily Surge In Google Trends For Electric Bike Repair Signals Bullish Consumer Discretionary",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.17,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
       "last_snapshot": "2026-05-14",
       "new_algo_date": null,
       "comparator": {
@@ -8125,6 +8233,438 @@
           }
         },
         "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-for-warehouse-automation-signa",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-warehouse-automation-signa",
+      "name": "Weekly Surge In Google Trends For Warehouse Automation Signals Industrial Sector Demand",
+      "family": "attention_sentiment",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.059,
+            "return_pct": 0.293
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.491,
+            "return_pct": 2.454
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-jump-in-google-trends-for-small-business-layoffs-sign",
+      "algo_type": "crazy",
+      "algo_id": "weekly-jump-in-google-trends-for-small-business-layoffs-sign",
+      "name": "Weekly Jump In Google Trends For Small Business Layoffs Signals Consumer Discretionary Downturn",
+      "family": "labor_jobs",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.202,
+            "return_pct": -1.009
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.177,
+            "return_pct": 0.884
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-increase-in-google-trends-for-home-solar-panel-instal",
+      "algo_type": "crazy",
+      "algo_id": "weekly-increase-in-google-trends-for-home-solar-panel-instal",
+      "name": "Weekly Increase In Google Trends For Home Solar Panel Installation Delay Signals Bearish Utilities Sector",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLU",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.098,
+            "return_pct": -0.488
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.626,
+            "return_pct": -3.128
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-google-trends-surge-in-job-training-programs-signals-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-surge-in-job-training-programs-signals-",
+      "name": "Weekly Google Trends Surge In Job Training Programs Signals Bullish Industrial Sector",
+      "family": "labor_jobs",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.059,
+            "return_pct": 0.293
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.491,
+            "return_pct": 2.454
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-google-trends-spike-in-business-travel-rebound-signal",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-spike-in-business-travel-rebound-signal",
+      "name": "Weekly Google Trends Spike In Business Travel Rebound Signals Bullish Industrial Sector",
+      "family": "travel_mobility",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.059,
+            "return_pct": 0.293
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.491,
+            "return_pct": 2.454
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:pet-emergency-vet-visit-spike",
+      "algo_type": "crazy",
+      "algo_id": "pet-emergency-vet-visit-spike",
+      "name": "Pet Emergency Vet Visit Spike",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLV",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.264,
+            "return_pct": 1.32
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.003,
+            "return_pct": 0.014
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:ev-charger-network-density-jump",
+      "algo_type": "crazy",
+      "algo_id": "ev-charger-network-density-jump",
+      "name": "Ev Charger Network Density Jump",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLK",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 5.781
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 18.077
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:electricity-demand-collapse-during-mild-weather",
+      "algo_type": "crazy",
+      "algo_id": "electricity-demand-collapse-during-mild-weather",
+      "name": "Electricity Demand Collapse During Mild Weather",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLU",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.098,
+            "return_pct": -0.488
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.626,
+            "return_pct": -3.128
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-surge-in-google-trends-for-home-office-setup-signals-b",
+      "algo_type": "crazy",
+      "algo_id": "daily-surge-in-google-trends-for-home-office-setup-signals-b",
+      "name": "Daily Surge In Google Trends For Home Office Setup Signals Bullish Technology Sector",
+      "family": "attention_sentiment",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLK",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 5.781
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 18.077
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-openchargemap-ev-charger-counts-expansion-rate",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-openchargemap-ev-charger-counts-expansion-rate",
+      "name": "Daily Jump In Openchargemap Ev Charger Counts Expansion Rate Signals Bullish Consumer Discretionary",
+      "family": "travel_mobility",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.202,
+            "return_pct": -1.009
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.177,
+            "return_pct": 0.884
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-google-trends-for-food-delivery-delay-complain",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-food-delivery-delay-complain",
+      "name": "Daily Jump In Google Trends For Food Delivery Delay Complaints Signals Bearish Consumer Staples",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLP",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.238,
+            "return_pct": 1.191
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.872,
+            "return_pct": 4.36
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:appliance-shortage-supply-chain-stress",
+      "algo_type": "crazy",
+      "algo_id": "appliance-shortage-supply-chain-stress",
+      "name": "Appliance Shortage Supply Chain Stress",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.059,
+            "return_pct": 0.293
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.491,
+            "return_pct": 2.454
+          }
+        },
+        "summary": "both_up"
       }
     }
   ]

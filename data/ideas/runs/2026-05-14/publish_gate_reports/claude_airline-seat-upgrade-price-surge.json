@@ -1,0 +1,37 @@
+{
+  "source_file": "data/ideas/runs/2026-05-14/publish/claude_airline-seat-upgrade-price-surge.md",
+  "target_file": "data/ideas/runs/2026-05-14/intervention/claude_airline-seat-upgrade-price-surge.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support bts_airline_load_factor yet.",
+    "risk_flags": [
+      "data source instability",
+      "html table scraping fragility",
+      "proxy data not direct BTS API",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "bts_airline_load_factor",
+        "html_table"
+      ],
+      "scores": {
+        "tsa_table": 1,
+        "html_table": 3,
+        "bts_airline_load_factor": 1,
+        "price_only": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 987,
+    "output_tokens": 83
+  },
+  "cost_usd": 0.0032975,
+  "raw_llm_response": "{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Data source is an HTML table scrape proxy, adapter mapping and data reliability need manual review.\",\n  \"risk_flags\": [\"data source instability\", \"html table scraping fragility\", \"proxy data not direct BTS API\"]\n}"
+}

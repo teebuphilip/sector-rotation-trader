@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-05-14T23:40:21
+Updated (UTC): 2026-05-14T23:49:49
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 246
+Crazy models: 261
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -262,3 +262,18 @@ Crazy models: 246
 | ev-charger-network-contraction-signals-electric-vehicle-adop | Ev Charger Network Contraction Signals Electric Vehicle Adoption Slowdown | weekly |
 | google-trends-spike-in-bankruptcy-filing-and-debt-consolidat | Google Trends Spike In Bankruptcy Filing And Debt Consolidation Signals Consumer Default Risk Surge | weekly |
 | port-container-volume-surge-signals-import-demand-recovery-a | Port Container Volume Surge Signals Import Demand Recovery And Consumer Spending Rebound | weekly |
+| daily-jump-in-google-trends-for-food-delivery-delay-complain | Daily Jump In Google Trends For Food Delivery Delay Complaints Signals Bearish Consumer Staples | daily |
+| daily-jump-in-openchargemap-ev-charger-counts-expansion-rate | Daily Jump In Openchargemap Ev Charger Counts Expansion Rate Signals Bullish Consumer Discretionary | daily |
+| daily-surge-in-google-trends-for-electric-bike-repair-signal | Daily Surge In Google Trends For Electric Bike Repair Signals Bullish Consumer Discretionary | daily |
+| daily-surge-in-google-trends-for-home-office-setup-signals-b | Daily Surge In Google Trends For Home Office Setup Signals Bullish Technology Sector | daily |
+| usgs-earthquake-activity-spike-near-major-freight-hubs-signa | Usgs Earthquake Activity Spike Near Major Freight Hubs Signals Temporary Freight Disruption | daily |
+| weekly-google-trends-spike-for-diy-home-renovation-signals-b | Weekly Google Trends Spike For Diy Home Renovation Signals Bullish Consumer Staples | weekly |
+| weekly-google-trends-spike-in-business-travel-rebound-signal | Weekly Google Trends Spike In Business Travel Rebound Signals Bullish Industrial Sector | weekly |
+| weekly-google-trends-surge-in-job-training-programs-signals- | Weekly Google Trends Surge In Job Training Programs Signals Bullish Industrial Sector | weekly |
+| weekly-increase-in-google-trends-for-home-solar-panel-instal | Weekly Increase In Google Trends For Home Solar Panel Installation Delay Signals Bearish Utilities Sector | weekly |
+| weekly-jump-in-google-trends-for-small-business-layoffs-sign | Weekly Jump In Google Trends For Small Business Layoffs Signals Consumer Discretionary Downturn | weekly |
+| weekly-surge-in-google-trends-for-warehouse-automation-signa | Weekly Surge In Google Trends For Warehouse Automation Signals Industrial Sector Demand | weekly |
+| appliance-shortage-supply-chain-stress | Appliance Shortage Supply Chain Stress | weekly |
+| electricity-demand-collapse-during-mild-weather | Electricity Demand Collapse During Mild Weather | daily |
+| ev-charger-network-density-jump | Ev Charger Network Density Jump | weekly |
+| pet-emergency-vet-visit-spike | Pet Emergency Vet Visit Spike | weekly |

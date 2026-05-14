@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-05-14/publish/claude_earthquake-swarm-activity-spike.md",
+  "target_file": "data/ideas/runs/2026-05-14/intervention/claude_earthquake-swarm-activity-spike.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": true,
+    "reason": "Selected adapter measures earthquakes, not geopolitical conflict or war data.",
+    "risk_flags": [
+      "adapter_behavior_mismatch",
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity"
+      ],
+      "scores": {
+        "earthquake_activity": 3,
+        "rss_count": 1,
+        "price_only": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1001,
+    "output_tokens": 79
+  },
+  "cost_usd": 0.0032925,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid earthquake_activity adapter with matching data source and logic.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

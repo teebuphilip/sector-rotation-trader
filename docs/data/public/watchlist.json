@@ -1,6 +1,6 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-14T23:40:22Z",
+  "generated_at": "2026-05-14T23:49:50Z",
   "algos": [
     {
       "schema_version": "v1",
@@ -616,6 +616,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:usgs-earthquake-activity-spike-near-major-freight-hubs-signa",
+      "algo_type": "crazy",
+      "algo_id": "usgs-earthquake-activity-spike-near-major-freight-hubs-signa",
+      "name": "Usgs Earthquake Activity Spike Near Major Freight Hubs Signals Temporary Freight Disruption",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.04,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.04,
+      "spy_delta_30d_pct": -7.69,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.059,
+            "return_pct": 0.293
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.491,
+            "return_pct": 2.454
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:healthcare-cost-inflation-google-trends-acceleration",
       "algo_type": "crazy",
       "algo_id": "healthcare-cost-inflation-google-trends-acceleration",
@@ -864,6 +900,42 @@
           }
         },
         "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-google-trends-spike-for-diy-home-renovation-signals-b",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-spike-for-diy-home-renovation-signals-b",
+      "name": "Weekly Google Trends Spike For Diy Home Renovation Signals Bullish Consumer Staples",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.01,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLP",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.238,
+            "return_pct": 1.191
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.872,
+            "return_pct": 4.36
+          }
+        },
+        "summary": "both_up"
       }
     },
     {
@@ -2401,6 +2473,42 @@
       "alpha_pct": -9.98,
       "ret_30d_pct": -0.06,
       "spy_delta_30d_pct": -7.79,
+      "last_snapshot": "2026-05-14",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.202,
+            "return_pct": -1.009
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.177,
+            "return_pct": 0.884
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-surge-in-google-trends-for-electric-bike-repair-signal",
+      "algo_type": "crazy",
+      "algo_id": "daily-surge-in-google-trends-for-electric-bike-repair-signal",
+      "name": "Daily Surge In Google Trends For Electric Bike Repair Signals Bullish Consumer Discretionary",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.17,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -7.73,
       "last_snapshot": "2026-05-14",
       "new_algo_date": null,
       "comparator": {

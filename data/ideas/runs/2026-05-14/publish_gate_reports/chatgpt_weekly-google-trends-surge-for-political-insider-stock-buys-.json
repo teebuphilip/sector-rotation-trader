@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-14/publish/chatgpt_weekly-google-trends-surge-for-political-insider-stock-buys-.md",
+  "target_file": "data/ideas/runs/2026-05-14/intervention/chatgpt_weekly-google-trends-surge-for-political-insider-stock-buys-.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Data source requires scraping political insider filings, no existing adapter directly supports this.",
+    "risk_flags": [
+      "data source instability",
+      "manual review needed for scraping logic",
+      "requires new adapter"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends",
+        "html_table"
+      ],
+      "scores": {
+        "google_trends": 2,
+        "html_table": 4
+      },
+      "top_score": 4,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 929,
+    "output_tokens": 82
+  },
+  "cost_usd": 0.0031425,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Data source requires scraping political insider filings, no existing adapter directly supports this.\",\n  \"risk_flags\": [\"data source instability\", \"requires new adapter\", \"manual review needed for scraping logic\"]\n}\n```"
+}

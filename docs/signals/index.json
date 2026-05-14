@@ -1,8 +1,8 @@
 {
   "generated": "2026-05-14",
   "lab_started": "2026-01-11",
-  "signal_count": 251,
-  "total_algos": 251,
+  "signal_count": 266,
+  "total_algos": 266,
   "ticker_count": 105,
   "top_bullish_etfs": [
     "XLK",
@@ -42,7 +42,7 @@
     "XLY": {
       "etf": "XLY",
       "sector": "Consumer Cyclical",
-      "composite": "7 of 58",
+      "composite": "7 of 59",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 12
@@ -50,7 +50,7 @@
     "XLI": {
       "etf": "XLI",
       "sector": "Industrials",
-      "composite": "9 of 50",
+      "composite": "9 of 51",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 18
@@ -66,7 +66,7 @@
     "XLP": {
       "etf": "XLP",
       "sector": "Consumer Defensive",
-      "composite": "6 of 39",
+      "composite": "6 of 40",
       "composite_label": "BEARISH",
       "composite_color": "red",
       "bullish_pct": 15
@@ -216,16 +216,6 @@
       "equity": 100446.93
     },
     {
-      "algo_id": "weekly-surge-in-google-trends-searches-for-diy-electronics-r",
-      "name": "Weekly Surge In Google Trends Searches For Diy Electronics Repair Signals Bullish Xlk",
-      "algo_type": "crazy",
-      "ytd_pct": 0.08,
-      "spy_pct": 0.08,
-      "beat_spy": false,
-      "days_running": 85,
-      "equity": 100081.88
-    },
-    {
       "algo_id": "weekly-google-trends-surge-in-diy-electronics-repair-signals",
       "name": "Weekly Google Trends Surge In Diy Electronics Repair Signals Tech Consumer Stress Lift",
       "algo_type": "crazy",
@@ -236,14 +226,14 @@
       "equity": 100081.02
     },
     {
-      "algo_id": "daily-jump-in-consumer-stress-google-trends-searches-for-car",
-      "name": "Daily Jump In Consumer Stress Google Trends Searches For Car Repossession Signals Rising Financial Distress",
+      "algo_id": "weekly-surge-in-google-trends-searches-for-diy-electronics-r",
+      "name": "Weekly Surge In Google Trends Searches For Diy Electronics Repair Signals Bullish Xlk",
       "algo_type": "crazy",
-      "ytd_pct": 0.07,
-      "spy_pct": 0.07,
+      "ytd_pct": 0.08,
+      "spy_pct": 0.08,
       "beat_spy": false,
-      "days_running": 70,
-      "equity": 100070.09
+      "days_running": 85,
+      "equity": 100081.88
     },
     {
       "algo_id": "earthquake-aftershock-insurance-claims-spike",
@@ -266,6 +256,16 @@
       "equity": 100072.76
     },
     {
+      "algo_id": "daily-jump-in-consumer-stress-google-trends-searches-for-car",
+      "name": "Daily Jump In Consumer Stress Google Trends Searches For Car Repossession Signals Rising Financial Distress",
+      "algo_type": "crazy",
+      "ytd_pct": 0.07,
+      "spy_pct": 0.07,
+      "beat_spy": false,
+      "days_running": 70,
+      "equity": 100070.09
+    },
+    {
       "algo_id": "price-momentum-reversion-in-defensive-sectors-after-tech-cra",
       "name": "Price Momentum Reversion In Defensive Sectors After Tech Crash",
       "algo_type": "crazy",
@@ -286,6 +286,16 @@
       "equity": 100047.52
     },
     {
+      "algo_id": "weekly-spike-in-google-trends-searches-for-warehouse-automat",
+      "name": "Weekly Spike In Google Trends Searches For Warehouse Automation Failure Signals Bearish Xli",
+      "algo_type": "crazy",
+      "ytd_pct": 0.04,
+      "spy_pct": 0.04,
+      "beat_spy": false,
+      "days_running": 85,
+      "equity": 100039.42
+    },
+    {
       "algo_id": "semiconductor-moonshot-warning",
       "name": "Semiconductor Moonshot Warning",
       "algo_type": "crazy",
@@ -294,16 +304,6 @@
       "beat_spy": false,
       "days_running": 93,
       "equity": 100041.43
-    },
-    {
-      "algo_id": "google-trends-surge-in-used-car-price-searches",
-      "name": "Google Trends Surge In Used Car Price Searches",
-      "algo_type": "crazy",
-      "ytd_pct": 0.04,
-      "spy_pct": 0.04,
-      "beat_spy": false,
-      "days_running": 79,
-      "equity": 100038.19
     }
   ],
   "ticker_index": {
@@ -833,7 +833,7 @@
       "bullish_pct": 22
     }
   },
-  "idle_algos": 138,
+  "idle_algos": 150,
   "blocked_algos": [
     {
       "timestamp": "2026-05-14T23:35:07",

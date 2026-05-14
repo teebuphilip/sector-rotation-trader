@@ -1,18 +1,18 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-14T23:40:22Z",
+  "generated_at": "2026-05-14T23:49:50Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
-      "count": 26,
+      "count": 28,
       "by_status": {
         "live_only": 10,
         "parked": 2,
-        "sandbox": 14
+        "sandbox": 16
       },
       "by_evidence_class": {
         "live_receipts_only": 10,
-        "needs_history": 14,
+        "needs_history": 16,
         "pending_seed": 2
       },
       "leaders": [
@@ -51,27 +51,6 @@
             },
             "summary": "both_up"
           }
-        },
-        {
-          "schema_version": "v1",
-          "key": "crazy:reddit-sentiment-spike",
-          "algo_type": "crazy",
-          "algo_id": "reddit-sentiment-spike",
-          "name": "Reddit Sentiment Spike",
-          "family": "attention_sentiment",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "daily",
-          "ytd_pct": 0.0,
-          "days_running": 99,
-          "beat_spy": false,
-          "spy_pct": 9.81,
-          "alpha_pct": -9.81,
-          "ret_30d_pct": 0.0,
-          "spy_delta_30d_pct": -7.73,
-          "last_snapshot": "2026-05-14",
-          "new_algo_date": null,
-          "comparator": null
         },
         {
           "schema_version": "v1",
@@ -135,20 +114,56 @@
           "last_snapshot": "2026-05-14",
           "new_algo_date": null,
           "comparator": null
+        },
+        {
+          "schema_version": "v1",
+          "key": "crazy:daily-surge-in-google-trends-for-home-office-setup-signals-b",
+          "algo_type": "crazy",
+          "algo_id": "daily-surge-in-google-trends-for-home-office-setup-signals-b",
+          "name": "Daily Surge In Google Trends For Home Office Setup Signals Bullish Technology Sector",
+          "family": "attention_sentiment",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "ytd_pct": 0.0,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.0,
+          "spy_delta_30d_pct": -7.73,
+          "last_snapshot": "2026-05-14",
+          "new_algo_date": null,
+          "comparator": {
+            "primary_etf": "XLK",
+            "signals": {
+              "momentum_5d": {
+                "direction": "UP",
+                "confidence": 1.0,
+                "return_pct": 5.781
+              },
+              "momentum_20d": {
+                "direction": "UP",
+                "confidence": 1.0,
+                "return_pct": 18.077
+              }
+            },
+            "summary": "both_up"
+          }
         }
       ]
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 63,
+      "count": 67,
       "by_status": {
         "failed": 1,
-        "live_only": 30,
-        "sandbox": 32
+        "live_only": 32,
+        "sandbox": 34
       },
       "by_evidence_class": {
-        "live_receipts_only": 30,
-        "needs_history": 32,
+        "live_receipts_only": 32,
+        "needs_history": 34,
         "v1_backtested": 1
       },
       "leaders": [
@@ -439,13 +454,13 @@
     },
     "freight_logistics": {
       "family": "freight_logistics",
-      "count": 17,
+      "count": 18,
       "by_status": {
-        "live_only": 11,
+        "live_only": 12,
         "sandbox": 6
       },
       "by_evidence_class": {
-        "live_receipts_only": 11,
+        "live_receipts_only": 12,
         "needs_history": 6
       },
       "leaders": [
@@ -529,21 +544,21 @@
         },
         {
           "schema_version": "v1",
-          "key": "crazy:daily-spike-in-freight-logistics-rss-news-volume-mentioning-",
+          "key": "crazy:usgs-earthquake-activity-spike-near-major-freight-hubs-signa",
           "algo_type": "crazy",
-          "algo_id": "daily-spike-in-freight-logistics-rss-news-volume-mentioning-",
-          "name": "Daily Spike In Freight Logistics Rss News Volume Mentioning Port Labor Strike Triggers Bearish Xli",
+          "algo_id": "usgs-earthquake-activity-spike-near-major-freight-hubs-signa",
+          "name": "Usgs Earthquake Activity Spike Near Major Freight Hubs Signals Temporary Freight Disruption",
           "family": "freight_logistics",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
+          "status": "live_only",
+          "evidence_class": "live_receipts_only",
           "rebalance_frequency": "daily",
-          "ytd_pct": 0.0,
-          "days_running": 85,
-          "beat_spy": false,
-          "spy_pct": 9.81,
-          "alpha_pct": -9.81,
-          "ret_30d_pct": 0.0,
-          "spy_delta_30d_pct": -7.73,
+          "ytd_pct": 0.04,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.04,
+          "spy_delta_30d_pct": -7.69,
           "last_snapshot": "2026-05-14",
           "new_algo_date": null,
           "comparator": {
@@ -588,14 +603,14 @@
     },
     "labor_jobs": {
       "family": "labor_jobs",
-      "count": 20,
+      "count": 22,
       "by_status": {
         "live_only": 11,
-        "sandbox": 9
+        "sandbox": 11
       },
       "by_evidence_class": {
         "live_receipts_only": 11,
-        "needs_history": 9
+        "needs_history": 11
       },
       "leaders": [
         {
@@ -752,14 +767,14 @@
     },
     "local_economy_weirdness": {
       "family": "local_economy_weirdness",
-      "count": 21,
+      "count": 23,
       "by_status": {
         "live_only": 12,
-        "sandbox": 9
+        "sandbox": 11
       },
       "by_evidence_class": {
         "live_receipts_only": 12,
-        "needs_history": 9
+        "needs_history": 11
       },
       "leaders": [
         {
@@ -916,16 +931,16 @@
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 64,
+      "count": 66,
       "by_status": {
         "backtest_weak": 1,
         "live_only": 16,
         "parked": 2,
-        "sandbox": 45
+        "sandbox": 47
       },
       "by_evidence_class": {
         "live_receipts_only": 16,
-        "needs_history": 43,
+        "needs_history": 45,
         "pending_seed": 2,
         "v1_backtested": 3
       },
@@ -1025,42 +1040,6 @@
         },
         {
           "schema_version": "v1",
-          "key": "crazy:crypto-capitulation-countdown",
-          "algo_type": "crazy",
-          "algo_id": "crypto-capitulation-countdown",
-          "name": "Crypto Capitulation Countdown",
-          "family": "macro_input_pressure",
-          "status": "sandbox",
-          "evidence_class": "v1_backtested",
-          "rebalance_frequency": "daily",
-          "ytd_pct": 0.0,
-          "days_running": 93,
-          "beat_spy": false,
-          "spy_pct": 9.81,
-          "alpha_pct": -9.81,
-          "ret_30d_pct": 0.0,
-          "spy_delta_30d_pct": -7.73,
-          "last_snapshot": "2026-05-14",
-          "new_algo_date": null,
-          "comparator": {
-            "primary_etf": "XLC",
-            "signals": {
-              "momentum_5d": {
-                "direction": "DOWN",
-                "confidence": 0.046,
-                "return_pct": -0.23
-              },
-              "momentum_20d": {
-                "direction": "DOWN",
-                "confidence": 0.289,
-                "return_pct": -1.447
-              }
-            },
-            "summary": "mixed"
-          }
-        },
-        {
-          "schema_version": "v1",
           "key": "crazy:cloud-storage-demand-surge",
           "algo_type": "crazy",
           "algo_id": "cloud-storage-demand-surge",
@@ -1079,6 +1058,42 @@
           "last_snapshot": "2026-05-14",
           "new_algo_date": null,
           "comparator": null
+        },
+        {
+          "schema_version": "v1",
+          "key": "crazy:appliance-shortage-supply-chain-stress",
+          "algo_type": "crazy",
+          "algo_id": "appliance-shortage-supply-chain-stress",
+          "name": "Appliance Shortage Supply Chain Stress",
+          "family": "macro_input_pressure",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "weekly",
+          "ytd_pct": 0.0,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.0,
+          "spy_delta_30d_pct": -7.73,
+          "last_snapshot": "2026-05-14",
+          "new_algo_date": null,
+          "comparator": {
+            "primary_etf": "XLI",
+            "signals": {
+              "momentum_5d": {
+                "direction": "UP",
+                "confidence": 0.059,
+                "return_pct": 0.293
+              },
+              "momentum_20d": {
+                "direction": "UP",
+                "confidence": 0.491,
+                "return_pct": 2.454
+              }
+            },
+            "summary": "both_up"
+          }
         }
       ]
     },
@@ -1237,14 +1252,14 @@
     },
     "travel_mobility": {
       "family": "travel_mobility",
-      "count": 17,
+      "count": 19,
       "by_status": {
         "live_only": 4,
-        "sandbox": 13
+        "sandbox": 15
       },
       "by_evidence_class": {
         "live_receipts_only": 4,
-        "needs_history": 13
+        "needs_history": 15
       },
       "leaders": [
         {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T23:40:22Z",
+  "generated_at": "2026-05-14T23:49:50Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -492,6 +492,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-surge-in-google-trends-for-electric-bike-repair-signal",
+      "algo_type": "crazy",
+      "algo_id": "daily-surge-in-google-trends-for-electric-bike-repair-signal",
+      "name": "Daily Surge In Google Trends For Electric Bike Repair Signals Bullish Consumer Discretionary",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99828.7,
+      "ytd_pct": -0.17,
+      "trade_count": 12,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:google-trends-surge-in-used-car-price-searches",
       "algo_type": "crazy",
       "algo_id": "google-trends-surge-in-used-car-price-searches",
@@ -732,6 +756,30 @@
       "equity": 99892.81,
       "ytd_pct": -0.11,
       "trade_count": 32,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-google-trends-spike-for-diy-home-renovation-signals-b",
+      "algo_type": "crazy",
+      "algo_id": "weekly-google-trends-spike-for-diy-home-renovation-signals-b",
+      "name": "Weekly Google Trends Spike For Diy Home Renovation Signals Bullish Consumer Staples",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLP"
+      ],
+      "equity": 100010.87,
+      "ytd_pct": 0.01,
+      "trade_count": 2,
       "positions": 0,
       "last_snapshot": "2026-05-14",
       "last_signal": null,
@@ -1160,6 +1208,30 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "No supported V1 price-only backtest path",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:usgs-earthquake-activity-spike-near-major-freight-hubs-signa",
+      "algo_type": "crazy",
+      "algo_id": "usgs-earthquake-activity-spike-near-major-freight-hubs-signa",
+      "name": "Usgs Earthquake Activity Spike Near Major Freight Hubs Signals Temporary Freight Disruption",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100042.42,
+      "ytd_pct": 0.04,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-14",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },

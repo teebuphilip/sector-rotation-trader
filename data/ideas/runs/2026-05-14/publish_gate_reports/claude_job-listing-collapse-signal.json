@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-14/publish/claude_job-listing-collapse-signal.md",
+  "target_file": "data/ideas/runs/2026-05-14/intervention/claude_job-listing-collapse-signal.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "adapter mismatch",
+      "data source instability",
+      "requires new adapter for job posting volume",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "rss_count": 2,
+        "html_table": 4
+      },
+      "top_score": 4,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 943,
+    "output_tokens": 90
+  },
+  "cost_usd": 0.0032575,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Data source requires job posting volume from Indeed or LinkedIn RSS or scrape, which current adapters do not directly support.\",\n  \"risk_flags\": [\"data source instability\", \"adapter mismatch\", \"requires new adapter for job posting volume\"]\n}\n```"
+}

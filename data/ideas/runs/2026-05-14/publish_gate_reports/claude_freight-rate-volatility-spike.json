@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-05-14/publish/claude_freight-rate-volatility-spike.md",
+  "target_file": "data/ideas/runs/2026-05-14/intervention/claude_freight-rate-volatility-spike.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": true,
+    "reason": "No existing adapter directly measures Cass Freight Index or FreightWaves spot rate; requires new adapter for HTML scrape or RSS feed of freight rates.",
+    "risk_flags": [
+      "adapter mismatch",
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "rss_count"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "rss_count": 2,
+        "html_table": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 954,
+    "output_tokens": 95
+  },
+  "cost_usd": 0.003335,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly measures Cass Freight Index or FreightWaves spot rate; requires new adapter for HTML scrape or RSS feed of freight rates.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\", \"adapter mismatch\"]\n}\n```"
+}
