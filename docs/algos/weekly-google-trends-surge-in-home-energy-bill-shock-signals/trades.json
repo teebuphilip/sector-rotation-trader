@@ -23,6 +23,16 @@
       "pnl_pct": -1.5,
       "entry_date": "2026-05-06",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-14",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 111.2642,
+      "price": 44.9,
+      "cost": 4995.76,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -825,6 +835,26 @@
       "positions": {},
       "sector": "Weekly Google Trends Surge In Home Energy Bill Shock Signals Bullish Utilities",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-14",
+      "cash": 94909.57,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99905.33,
+      "positions": {
+        "XLU": {
+          "shares": 111.2642,
+          "entry_price": 44.9,
+          "current_price": 44.9,
+          "market_value": 4995.76,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-14",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Google Trends Surge In Home Energy Bill Shock Signals Bullish Utilities",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-28"

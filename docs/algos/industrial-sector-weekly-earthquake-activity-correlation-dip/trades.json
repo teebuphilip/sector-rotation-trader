@@ -167,6 +167,16 @@
       "pnl_pct": -1.35,
       "entry_date": "2026-05-04",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-14",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 28.5981,
+      "price": 174.51,
+      "cost": 4990.66,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1159,6 +1169,26 @@
       "positions": {},
       "sector": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-14",
+      "cash": 94812.5,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99803.15,
+      "positions": {
+        "XLI": {
+          "shares": 28.5981,
+          "entry_price": 174.51,
+          "current_price": 174.51,
+          "market_value": 4990.66,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-14",
+          "margin": false
+        }
+      },
+      "sector": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-19"

@@ -3902,18 +3902,47 @@
       },
       "sector": "VIX Term Structure",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-14",
+      "cash": 23577.39,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99053.05,
+      "positions": {
+        "XLK": {
+          "shares": 235.1352,
+          "entry_price": 160.57,
+          "current_price": 179.5,
+          "market_value": 42206.77,
+          "unrealized_pnl": 4451.11,
+          "entry_date": "2026-04-27",
+          "margin": false
+        },
+        "XLY": {
+          "shares": 280.348,
+          "entry_price": 117.84,
+          "current_price": 118.67,
+          "market_value": 33268.89,
+          "unrealized_pnl": 232.69,
+          "entry_date": "2026-04-27",
+          "margin": false
+        }
+      },
+      "sector": "VIX Term Structure",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-20",
-  "last_run": "2026-05-13",
+  "last_run": "2026-05-14",
   "meta": {
     "vix-term-structure": {
-      "vix": 17.99,
-      "vxv": 21.04,
-      "ratio": 0.855,
+      "vix": 17.87,
+      "vxv": 21.18,
+      "ratio": 0.8437,
       "signal_label": "STEEP_CONTANGO",
       "name": "VIX Term Structure",
-      "last_run": "2026-05-13",
+      "last_run": "2026-05-14",
       "last_signal": "STEEP_CONTANGO"
     }
   }

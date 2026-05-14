@@ -1,19 +1,10 @@
 {
-  "cash": 94775.53499599762,
+  "cash": 99773.92371323018,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 312.3408604779021,
-  "taxes_paid": 165.23275657512383,
-  "positions": {
-    "XLI": {
-      "shares": 28.73349773604271,
-      "entry_price": 173.6199951171875,
-      "entry_date": "2026-05-13",
-      "cost": 4988.709736631454,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "fees_paid": 322.55019465382685,
+  "taxes_paid": 170.9172372456224,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-01",
@@ -384,6 +375,20 @@
       "cost": 4988.71,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-14",
+      "action": "SELL",
+      "ticker": "XLI",
+      "shares": 28.7335,
+      "price": 174.51,
+      "proceeds": 5004.07,
+      "fees": 10.21,
+      "tax": 5.68,
+      "pnl": 9.68,
+      "pnl_pct": 0.19,
+      "entry_date": "2026-05-13",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1216,20 +1221,30 @@
       },
       "sector": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-14",
+      "cash": 99773.92,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99773.92,
+      "positions": {},
+      "sector": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-02-10",
-  "last_run": "2026-05-13",
+  "last_run": "2026-05-14",
   "meta": {
     "weekly-spike-in-freight-container-volumes-at-east-coast-port": {
       "latest_value": 890861.0,
       "prior_avg": 795107.6875,
       "signal_change": 0.1204,
-      "signal_label": "RISK_ON",
+      "signal_label": "HOLD",
       "entry_date": "2026-05-13",
       "name": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-13"
+      "last_signal": "HOLD",
+      "last_run": "2026-05-14"
     }
   }
 }

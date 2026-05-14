@@ -143,6 +143,16 @@
       "pnl_pct": 0.1,
       "entry_date": "2026-05-12",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-14",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 42.0439,
+      "price": 118.67,
+      "cost": 4989.35,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -995,6 +1005,26 @@
       "positions": {},
       "sector": "Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-14",
+      "cash": 94787.74,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99777.09,
+      "positions": {
+        "XLY": {
+          "shares": 42.0439,
+          "entry_price": 118.67,
+          "current_price": 118.67,
+          "market_value": 4989.35,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-14",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-28"
