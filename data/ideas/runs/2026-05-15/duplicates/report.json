@@ -1,0 +1,82 @@
+{
+  "date": "2026-05-15",
+  "input_count": 24,
+  "kept_count": 23,
+  "duplicate_count": 1,
+  "kept_by_source": {
+    "chatgpt": 13,
+    "claude": 10
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
+      "title": "Daily Spike In Google Trends For Emergency Plumbing Repair Searches Lifting Discretionary Sector",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "daily spike in google trends for emergency plumbing repair signals consumer stress rebound benefiting discretionary sector",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
+        "title": "Daily Spike In Google Trends For Emergency Plumbing Repair Searches Lifting Discretionary Sector",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Increased urgent plumbing repair searches indicate household stress and short-term demand for services. Discretionary sector benefits from increased home repair spending during stress periods.",
+        "data_sources": [
+          "Google Trends daily search interest for emergency plumbing repair"
+        ],
+        "signal_logic": "If daily search volume exceeds 25% above 7-day moving average",
+        "entry_exit": "Entry: If daily search volume exceeds 25% above 7-day moving average Exit: When volume normalizes below 10% above average",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest for emergency plumbing repair via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 18,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Frequent plumbing emergencies drive daily search spikes.",
+        "schema": {
+          "idea": "Daily spike in Google Trends for emergency plumbing repair searches lifting discretionary sector",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest for emergency plumbing repair",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Increased urgent plumbing repair searches indicate household stress and short-term demand for services.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "Discretionary sector benefits from increased home repair spending during stress periods."
+          },
+          "trade_logic": {
+            "entry": "If daily search volume exceeds 25% above 7-day moving average",
+            "exit": "When volume normalizes below 10% above average",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 18,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Frequent plumbing emergencies drive daily search spikes.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
