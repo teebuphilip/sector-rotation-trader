@@ -1,19 +1,10 @@
 {
-  "cash": 94846.7038524317,
+  "cash": 99906.91688564647,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 252.0777579293485,
-  "taxes_paid": 138.03347362957427,
-  "positions": {
-    "XLE": {
-      "shares": 85.97305824271317,
-      "entry_price": 58.06999969482422,
-      "entry_date": "2026-05-14",
-      "cost": 4992.455465917458,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "fees_paid": 262.3090617700154,
+  "taxes_paid": 177.82760045497957,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-01-29",
@@ -312,6 +303,20 @@
       "cost": 4992.46,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-15",
+      "action": "SELL",
+      "ticker": "XLE",
+      "shares": 85.9731,
+      "price": 59.44,
+      "proceeds": 5100.01,
+      "fees": 10.23,
+      "tax": 39.79,
+      "pnl": 67.76,
+      "pnl_pct": 1.36,
+      "entry_date": "2026-05-14",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1264,20 +1269,30 @@
       },
       "sector": "Oil Price Momentum Reversal Energy Sector Bounce",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-15",
+      "cash": 99906.92,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99906.92,
+      "positions": {},
+      "sector": "Oil Price Momentum Reversal Energy Sector Bounce",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-26",
-  "last_run": "2026-05-14",
+  "last_run": "2026-05-15",
   "meta": {
     "oil-price-momentum-reversal-energy-sector-bounce": {
-      "latest_value": 58.07,
-      "prior_avg": 56.804,
-      "signal_change": 0.0223,
-      "signal_label": "RISK_ON",
+      "latest_value": 59.44,
+      "prior_avg": 57.228,
+      "signal_change": 0.0387,
+      "signal_label": "HOLD",
       "entry_date": "2026-05-14",
       "name": "Oil Price Momentum Reversal Energy Sector Bounce",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-14"
+      "last_signal": "HOLD",
+      "last_run": "2026-05-15"
     }
   }
 }

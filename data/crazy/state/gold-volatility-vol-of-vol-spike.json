@@ -806,19 +806,29 @@
       "positions": {},
       "sector": "Gold Volatility Vol-of-vol Spike",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-15",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Gold Volatility Vol-of-vol Spike",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-28",
-  "last_run": "2026-05-14",
+  "last_run": "2026-05-15",
   "meta": {
     "gold-volatility-vol-of-vol-spike": {
-      "latest_value": 179.5,
-      "prior_avg": 175.028,
-      "signal_change": 0.0256,
+      "latest_value": 176.26,
+      "prior_avg": 176.99,
+      "signal_change": -0.0041,
       "signal_label": "HOLD",
       "name": "Gold Volatility Vol-of-vol Spike",
       "last_signal": "HOLD",
-      "last_run": "2026-05-14"
+      "last_run": "2026-05-15"
     }
   }
 }

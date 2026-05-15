@@ -1,19 +1,10 @@
 {
-  "cash": 94909.56893828673,
+  "cash": 99780.5032087323,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 30.129588711199787,
+  "fees_paid": 40.35702606597647,
   "taxes_paid": 0.0,
-  "positions": {
-    "XLU": {
-      "shares": 111.26423128888479,
-      "entry_price": 44.900001525878906,
-      "entry_date": "2026-05-14",
-      "cost": 4995.76415464667,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-05-06",
@@ -48,6 +39,20 @@
       "cost": 4995.76,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-15",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 111.2642,
+      "price": 43.87,
+      "proceeds": 4870.93,
+      "fees": 10.23,
+      "tax": 0.0,
+      "pnl": -124.83,
+      "pnl_pct": -2.5,
+      "entry_date": "2026-05-14",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -880,20 +885,29 @@
       },
       "sector": "Weekly Google Trends Surge In Energy Bill Shock Signals Consumer Stress Impacting Utilities",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-15",
+      "cash": 99780.5,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99780.5,
+      "positions": {},
+      "sector": "Weekly Google Trends Surge In Energy Bill Shock Signals Consumer Stress Impacting Utilities",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-27",
-  "last_run": "2026-05-14",
+  "last_run": "2026-05-15",
   "meta": {
     "weekly-google-trends-surge-in-energy-bill-shock-signals-cons": {
-      "signal_label": "RISK_ON",
+      "signal_label": "RISK_OFF",
       "name": "Weekly Google Trends Surge In Energy Bill Shock Signals Consumer Stress Impacting Utilities",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-14",
-      "latest_value": 4.0,
-      "prior_avg": 0.7143,
-      "signal_change": 4.6,
-      "entry_date": "2026-05-14"
+      "last_signal": "RISK_OFF",
+      "last_run": "2026-05-15",
+      "latest_value": 0.0,
+      "prior_avg": 0.2143,
+      "signal_change": -1.0
     }
   }
 }

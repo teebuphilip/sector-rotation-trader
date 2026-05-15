@@ -1,10 +1,19 @@
 {
-  "cash": 99959.89170092903,
+  "cash": 94951.94711588258,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 40.317401468102304,
+  "fees_paid": 50.26740146810231,
   "taxes_paid": 5.701935025603107,
-  "positions": {},
+  "positions": {
+    "XLI": {
+      "shares": 29.15982942254333,
+      "entry_price": 171.39999389648438,
+      "entry_date": "2026-05-15",
+      "cost": 4997.994585046452,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-05-11",
@@ -53,6 +62,16 @@
       "pnl_pct": 0.19,
       "entry_date": "2026-05-13",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-15",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 29.1598,
+      "price": 171.4,
+      "cost": 4997.99,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1112,20 +1131,40 @@
       "positions": {},
       "sector": "Port Congestion Squeeze",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-15",
+      "cash": 94951.95,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99949.94,
+      "positions": {
+        "XLI": {
+          "shares": 29.1598,
+          "entry_price": 171.4,
+          "current_price": 171.4,
+          "market_value": 4997.99,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-15",
+          "margin": false
+        }
+      },
+      "sector": "Port Congestion Squeeze",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-18",
-  "last_run": "2026-05-14",
+  "last_run": "2026-05-15",
   "meta": {
     "port-congestion-squeeze": {
       "latest_value": 890861.0,
       "prior_avg": 795107.6875,
       "signal_change": 0.1204,
-      "signal_label": "HOLD",
+      "signal_label": "RISK_ON",
       "name": "Port Congestion Squeeze",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-14",
-      "entry_date": "2026-05-13"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-15",
+      "entry_date": "2026-05-15"
     }
   }
 }

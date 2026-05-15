@@ -197,6 +197,20 @@
       "pnl_pct": -3.77,
       "entry_date": "2026-04-30",
       "reason": "20MA_exit"
+    },
+    {
+      "date": "2026-05-15",
+      "action": "SELL",
+      "ticker": "INTC",
+      "shares": 80.0512,
+      "price": 108.77,
+      "proceeds": 8696.76,
+      "fees": 10.41,
+      "tax": 0.0,
+      "pnl": -1303.24,
+      "pnl_pct": -13.03,
+      "entry_date": "2026-05-08",
+      "reason": "stop_loss"
     }
   ],
   "daily_snapshots": [
@@ -2632,6 +2646,35 @@
       },
       "sector": "XLK",
       "num_positions": 3
+    },
+    {
+      "date": "2026-05-15",
+      "cash": 77987.83,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 98852.99,
+      "positions": {
+        "QCOM": {
+          "shares": 53.6049,
+          "entry_price": 186.55,
+          "current_price": 201.49,
+          "market_value": 10800.86,
+          "unrealized_pnl": 800.86,
+          "entry_date": "2026-05-05",
+          "margin": false
+        },
+        "AMD": {
+          "shares": 23.731,
+          "entry_price": 421.39,
+          "current_price": 424.1,
+          "market_value": 10064.31,
+          "unrealized_pnl": 64.31,
+          "entry_date": "2026-05-06",
+          "margin": false
+        }
+      },
+      "sector": "XLK",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-07"

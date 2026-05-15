@@ -1209,19 +1209,29 @@
       "positions": {},
       "sector": "Utilities Sector Negative Price Gap Fill",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-15",
+      "cash": 99869.36,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99869.36,
+      "positions": {},
+      "sector": "Utilities Sector Negative Price Gap Fill",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-19",
-  "last_run": "2026-05-14",
+  "last_run": "2026-05-15",
   "meta": {
     "utilities-sector-negative-price-gap-fill": {
-      "latest_value": 44.9,
-      "prior_avg": 44.968,
-      "signal_change": -0.0015,
+      "latest_value": 43.87,
+      "prior_avg": 44.924,
+      "signal_change": -0.0235,
       "signal_label": "HOLD",
       "name": "Utilities Sector Negative Price Gap Fill",
       "last_signal": "HOLD",
-      "last_run": "2026-05-14"
+      "last_run": "2026-05-15"
     }
   }
 }

@@ -1,19 +1,10 @@
 {
-  "cash": 94787.74137875135,
+  "cash": 99676.91200651441,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 130.91929477435858,
+  "fees_paid": 141.12687686152964,
   "taxes_paid": 2.93218941155852,
-  "positions": {
-    "XLY": {
-      "shares": 42.04392226185,
-      "entry_price": 118.66999816894531,
-      "entry_date": "2026-05-14",
-      "cost": 4989.352177829019,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-17",
@@ -168,6 +159,20 @@
       "cost": 4989.35,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-15",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 42.0439,
+      "price": 116.53,
+      "proceeds": 4889.17,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -100.18,
+      "pnl_pct": -2.01,
+      "entry_date": "2026-05-14",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1040,19 +1045,29 @@
       },
       "sector": "Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-15",
+      "cash": 99676.91,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99676.91,
+      "positions": {},
+      "sector": "Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-28",
-  "last_run": "2026-05-14",
+  "last_run": "2026-05-15",
   "meta": {
     "weekly-google-trends-surge-in-fast-food-job-openings-signals": {
-      "latest_value": 3.0,
-      "prior_avg": 0.4286,
-      "signal_change": 6.0,
-      "signal_label": "RISK_ON",
+      "latest_value": 9.0,
+      "prior_avg": 1.1071,
+      "signal_change": 7.129,
+      "signal_label": "HOLD",
       "name": "Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-14",
+      "last_signal": "HOLD",
+      "last_run": "2026-05-15",
       "entry_date": "2026-05-14"
     }
   }

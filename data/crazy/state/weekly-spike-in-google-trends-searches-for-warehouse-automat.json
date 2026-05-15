@@ -1,10 +1,19 @@
 {
-  "cash": 100039.4186817549,
+  "cash": 95027.49774766716,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 20.163198688015292,
+  "fees_paid": 30.11319868801529,
   "taxes_paid": 28.99430515763871,
-  "positions": {},
+  "positions": {
+    "XLI": {
+      "shares": 29.183028659316317,
+      "entry_price": 171.39999389648438,
+      "entry_date": "2026-05-15",
+      "cost": 5001.970934087745,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-22",
@@ -29,6 +38,16 @@
       "pnl_pct": 0.99,
       "entry_date": "2026-04-22",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-15",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 29.183,
+      "price": 171.4,
+      "cost": 5001.97,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -891,19 +910,40 @@
       "positions": {},
       "sector": "Weekly Spike In Google Trends Searches For Warehouse Automation Failure Signals Bearish Xli",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-15",
+      "cash": 95027.5,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100029.47,
+      "positions": {
+        "XLI": {
+          "shares": 29.183,
+          "entry_price": 171.4,
+          "current_price": 171.4,
+          "market_value": 5001.97,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-15",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Spike In Google Trends Searches For Warehouse Automation Failure Signals Bearish Xli",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-23",
-  "last_run": "2026-05-14",
+  "last_run": "2026-05-15",
   "meta": {
     "weekly-spike-in-google-trends-searches-for-warehouse-automat": {
-      "signal_label": "HOLD",
-      "latest_value": 0.0,
-      "prior_avg": 0.1786,
-      "signal_change": -1.0,
+      "signal_label": "RISK_ON",
+      "latest_value": 7.0,
+      "prior_avg": 0.2143,
+      "signal_change": 31.6667,
       "name": "Weekly Spike In Google Trends Searches For Warehouse Automation Failure Signals Bearish Xli",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-14"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-15",
+      "entry_date": "2026-05-15"
     }
   }
 }
