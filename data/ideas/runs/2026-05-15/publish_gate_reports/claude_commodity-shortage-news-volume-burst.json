@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-05-15/publish/claude_commodity-shortage-news-volume-burst.md",
+  "target_file": "data/ideas/runs/2026-05-15/build/claude_commodity-shortage-news-volume-burst.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, deterministic, uses the correct rss_count adapter for news volume spikes.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "rss_count"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "rss_count": 3,
+        "html_table": 1,
+        "price_only": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 976,
+    "output_tokens": 74
+  },
+  "cost_usd": 0.00318,
+  "raw_llm_response": "{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses the correct rss_count adapter for news volume spikes.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}"
+}

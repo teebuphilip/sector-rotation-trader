@@ -1,0 +1,120 @@
+{
+  "run_date": "2026-05-15",
+  "start": "2024-01-01",
+  "end": "2026-05-15",
+  "slippage_bps": 5.0,
+  "generated_at": "2026-05-15T23:47:44Z",
+  "counts": {
+    "LIVE_ONLY_NON_PRICE": 12
+  },
+  "results": [
+    {
+      "algo_id": "commodity-shortage-news-volume-burst",
+      "name": "Commodity Shortage News Volume Burst",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.rss_count",
+      "metrics": {},
+      "run_date": "2026-05-15"
+    },
+    {
+      "algo_id": "consumer-stress-spike-from-google-trends-on-urgent-appliance",
+      "name": "Consumer Stress Spike From Google Trends On Urgent Appliance Repair Searches",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-15"
+    },
+    {
+      "algo_id": "daily-spike-in-google-trends-for-emergency-roadside-assistan",
+      "name": "Daily Spike In Google Trends For Emergency Roadside Assistance Searches Signals Consumer Stress",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-15"
+    },
+    {
+      "algo_id": "daily-spike-in-google-trends-for-emergency-vehicle-battery-r",
+      "name": "Daily Spike In Google Trends For Emergency Vehicle Battery Replacement Searches Signals Auto Stress",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-15"
+    },
+    {
+      "algo_id": "daily-spike-in-google-trends-for-flu-symptom-searches-boosti",
+      "name": "Daily Spike In Google Trends For Flu Symptom Searches Boosting Healthcare Services Demand",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-15"
+    },
+    {
+      "algo_id": "daily-surge-in-google-trends-for-urgent-dental-care-searches",
+      "name": "Daily Surge In Google Trends For Urgent Dental Care Searches Lifting Healthcare Sector",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-15"
+    },
+    {
+      "algo_id": "ev-charger-buildout-acceleration-play",
+      "name": "Ev Charger Buildout Acceleration Play",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.openchargemap",
+      "metrics": {},
+      "run_date": "2026-05-15"
+    },
+    {
+      "algo_id": "truck-driver-wage-search-surge",
+      "name": "Truck Driver Wage Search Surge",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-15"
+    },
+    {
+      "algo_id": "weather-extreme-disruption-energy-demand-spike",
+      "name": "Weather Extreme Disruption Energy Demand Spike",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.eia_electricity",
+      "metrics": {},
+      "run_date": "2026-05-15"
+    },
+    {
+      "algo_id": "weekly-rise-in-google-trends-for-warehouse-automation-intere",
+      "name": "Weekly Rise In Google Trends For Warehouse Automation Interest Signals Industrial Demand",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-15"
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-for-freight-congestion-complai",
+      "name": "Weekly Surge In Google Trends For Freight Congestion Complaints Correlating With Industrial Sector Risk",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-15"
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-for-used-car-price-searches-si",
+      "name": "Weekly Surge In Google Trends For Used Car Price Searches Signaling Consumer Cost Pressure",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-15"
+    }
+  ]
+}

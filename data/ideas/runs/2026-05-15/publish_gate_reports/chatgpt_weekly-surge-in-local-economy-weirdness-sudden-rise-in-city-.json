@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-15/publish/chatgpt_weekly-surge-in-local-economy-weirdness-sudden-rise-in-city-.md",
+  "target_file": "data/ideas/runs/2026-05-15/intervention/chatgpt_weekly-surge-in-local-economy-weirdness-sudden-rise-in-city-.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "adapter mismatch",
+      "data source instability",
+      "false positives",
+      "regime shifts",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "html_table": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 906,
+    "output_tokens": 87
+  },
+  "cost_usd": 0.003135,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing adapter directly supports municipal building permit databases; requires new adapter for scraping and structured data extraction.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\", \"adapter mismatch\"]\n}\n```"
+}

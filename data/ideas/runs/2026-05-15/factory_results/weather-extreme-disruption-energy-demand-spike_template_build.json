@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-05-15/build/claude_weather-extreme-disruption-energy-demand-spike.md",
+  "out": "crazy/algos/weather_extreme_disruption_energy_demand_spike.py",
+  "adapter": "eia_electricity",
+  "idea_id": "weather-extreme-disruption-energy-demand-spike",
+  "name": "Weather Extreme Disruption Energy Demand Spike",
+  "universe": [
+    "XLU"
+  ],
+  "frequency": "daily",
+  "family": "macro_input_pressure",
+  "threshold": 0.08,
+  "direction": "up",
+  "hold_days": 3
+}

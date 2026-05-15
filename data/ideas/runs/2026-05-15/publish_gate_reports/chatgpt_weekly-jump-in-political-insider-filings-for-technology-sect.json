@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-15/publish/chatgpt_weekly-jump-in-political-insider-filings-for-technology-sect.md",
+  "target_file": "data/ideas/runs/2026-05-15/intervention/chatgpt_weekly-jump-in-political-insider-filings-for-technology-sect.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support html_table yet.",
+    "risk_flags": [
+      "adapter mismatch",
+      "data source requires API adapter",
+      "no volume proxy in html_table",
+      "unsupported_template_adapter",
+      "weekly frequency"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "html_table": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 904,
+    "output_tokens": 88
+  },
+  "cost_usd": 0.00314,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"SEC insider filing API data requires a dedicated adapter, html_table is not suitable\",\n  \"risk_flags\": [\"adapter mismatch\", \"data source requires API adapter\", \"weekly frequency\", \"no volume proxy in html_table\"]\n}\n```"
+}

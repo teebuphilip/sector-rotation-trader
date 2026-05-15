@@ -72,204 +72,216 @@ SPY 30D Return: +5.60%
 | 64 | Weekly Surge In Google Trends For Warehouse Automation Signals Industrial Sector Demand | crazy | +0.00% | 0.00 | 0.00% |
 | 65 | Weekly Google Trends Spike In Searches For Food Supply Chain Disruptions | crazy | +0.00% | 0.00 | 0.00% |
 | 66 | Xlv Google Trends Flu Search Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 67 | Weekly Google Trends Surge For Home Pest Control Searches Signals Consumer Stress Boosting Staples | crazy | +0.00% | 0.00 | 0.00% |
-| 68 | Weekly Jump In Google Trends Home Pest Control Emergency Searches Signals Consumer Stress And Discretionary Rebound | crazy | +0.00% | 0.00 | 0.00% |
-| 69 | Weekly Google Trends Surge For Small Business Loan Application Signals Financial Sector Activity Boost | crazy | +0.00% | 0.00 | 0.00% |
-| 70 | Global Tech Earnings Momentum | crazy | +0.00% | 0.00 | 0.00% |
-| 71 | Consumer Sentiment | crazy | +0.00% | 0.00 | 0.00% |
-| 72 | Work From Home Frenzy | crazy | +0.00% | 0.00 | 0.00% |
-| 73 | Weekly Google Trends Surge In Home Heating Oil Shortage Signals Winter Utility Stress Favoring Utilities Sector | crazy | +0.00% | 0.00 | 0.00% |
-| 74 | Weekly Surge In Google Trends Searches For Freight Container Backlog Signals Industrial Sector Pressure | crazy | +0.00% | 0.00 | 0.00% |
-| 75 | Staples Sector Drawdown Rapid Recovery | crazy | +0.00% | 0.00 | 0.00% |
-| 76 | Pet Emergency Vet Visit Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 77 | Ev Charger Network Expansion Sprint Demand Surge | crazy | +0.00% | 0.00 | 0.00% |
-| 78 | Ev Charger Network Density Jump | crazy | +0.00% | 0.00 | 0.00% |
-| 79 | Reddit Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 80 | Yelp Closure Velocity | crazy | +0.00% | 0.00 | 0.00% |
-| 81 | Weekly Google Trends Surge For Truck Tire Replacement Searches Signals Industrial Sector Repair Cycle | crazy | +0.00% | 0.00 | 0.00% |
-| 82 | Solar Storm Scorcher | crazy | +0.00% | 0.00 | 0.00% |
-| 83 | Small Business Formation | crazy | +0.00% | 0.00 | 0.00% |
-| 84 | Weekly Surge In Google Trends Diy Home Roofing Repair Searches Signals Industrial Sector Demand Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 85 | Weekly Jump In Google Trends For Home Heating Oil Shortage Signals Winter Energy Stress | crazy | +0.00% | 0.00 | 0.00% |
-| 86 | Daily Spike In Daily Earthquake Activity Near Major Logistics Hubs Signals Bearish Xli | crazy | +0.00% | 0.00 | 0.00% |
-| 87 | Glassdoor Misery Gradient | crazy | +0.00% | 0.00 | 0.00% |
-| 88 | Weekly Google Trends Surge In Job Training Programs Signals Bullish Industrial Sector | crazy | +0.00% | 0.00 | 0.00% |
-| 89 | Freight Rail Congestion Rss Volume Explosion | crazy | +0.00% | 0.00 | 0.00% |
-| 90 | Weekly Google Trends Surge In Searches For Diesel Fuel Price Increase | crazy | +0.00% | 0.00 | 0.00% |
-| 91 | Reddit Subreddit Surge Momentum | crazy | +0.00% | 0.00 | 0.00% |
-| 92 | Materials Sector Weekly Positive Correlation Breakdown With Xlb | crazy | +0.00% | 0.00 | 0.00% |
-| 93 | Electricity Demand Spike Weather Anomaly | crazy | +0.00% | 0.00 | 0.00% |
-| 94 | Temperature Extremes Power Demand Spike Utility Boost | crazy | +0.00% | 0.00 | 0.00% |
-| 95 | Daily Jump In Google Trends For Emergency Plumber Signals Rising Local Economy Stress Benefiting Staples | crazy | +0.00% | 0.00 | 0.00% |
-| 96 | Daily Jump In Google Trends For Emergency Dental Care Signals Consumer Stress Lifting Healthcare Sector Demand | crazy | +0.00% | 0.00 | 0.00% |
-| 97 | Appliance Shortage Supply Chain Stress | crazy | +0.00% | 0.00 | 0.00% |
-| 98 | Weekly Google Trends Surge For Truck Driver Shortage Signals Freight Logistics Risk And Industrial Cost Pressure | crazy | +0.00% | 0.00 | 0.00% |
-| 99 | Wage Growth Demand Surge Fast Food Google Trends | crazy | +0.00% | 0.00 | 0.00% |
-| 100 | Reddit Mentions Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 101 | Weekly Surge In Google Trends For Job Interview Preparation Searches | crazy | +0.00% | 0.00 | 0.00% |
-| 102 | Weekly Surge In Google Trends Searches For Home Improvement Loan Signals Consumer Stress Lifting Xly | crazy | +0.00% | 0.00 | 0.00% |
-| 103 | LinkedIn Layoff Propagation | crazy | +0.00% | 0.00 | 0.00% |
-| 104 | Weekly Jump In Google Trends Searches For Airport Security Delay Signals Travel Mobility Disruptions | crazy | +0.00% | 0.00 | 0.00% |
-| 105 | Xlb Daily Volatility Contraction Breakout | crazy | +0.00% | 0.00 | 0.00% |
-| 106 | Ev Charger Expansion Frenzy | crazy | +0.00% | 0.00 | 0.00% |
-| 107 | Reddit Sentiment Spike Trend | crazy | +0.00% | 0.00 | 0.00% |
-| 108 | Xlc Weekly Google Trends Surge In 5g Rollout | crazy | +0.00% | 0.00 | 0.00% |
-| 109 | Reddit Emoji Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 110 | Weekly Google Trends Spike For Small Business Loan Default Searches | crazy | +0.00% | 0.00 | 0.00% |
-| 111 | Daily Jump In Google Trends For Solar Panel Repair Searches Signals Green Energy Sector Rebound | crazy | +0.00% | 0.00 | 0.00% |
-| 112 | Weekly Google Trends Spike For Diy Car Repair Signals Bullish Xly | crazy | +0.00% | 0.00 | 0.00% |
-| 113 | Bankruptcy Filing Rate | crazy | +0.00% | 0.00 | 0.00% |
-| 114 | Daily Spike In Freight Logistics Rss News Volume Mentioning Port Labor Strike Triggers Bearish Xli | crazy | +0.00% | 0.00 | 0.00% |
-| 115 | Google Trends Surge In Used Car Price Searches | crazy | +0.00% | 0.00 | 0.00% |
-| 116 | Reddit Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 117 | Weekly Spike In Google Trends For Fuel Shortage Predicts Energy Sector Volatility | crazy | +0.00% | 0.00 | 0.00% |
-| 118 | Weekly Surge In Google Trends Searches For City Water Outage Signals Bearish Xlre | crazy | +0.00% | 0.00 | 0.00% |
-| 119 | Congress Trading Fade | crazy | +0.00% | 0.00 | 0.00% |
-| 120 | Mortgage Refinance Wave Google Trends Surge | crazy | +0.00% | 0.00 | 0.00% |
-| 121 | Ev Charger Network Density Surge Bullish Signal | crazy | +0.00% | 0.00 | 0.00% |
-| 122 | Daily Jump In Google Trends For Emergency Roadside Assistance Signals Consumer Stress Impacting Discretionary Sector | crazy | +0.00% | 0.00 | 0.00% |
-| 123 | Consumer Discretionary Google Trends Surge For Sale Keywords | crazy | +0.00% | 0.00 | 0.00% |
-| 124 | Ev Charger Network Contraction Signals Electric Vehicle Adoption Slowdown | crazy | +0.00% | 0.00 | 0.00% |
-| 125 | Ev Charger Network Expansion Velocity Surge | crazy | +0.00% | 0.00 | 0.00% |
-| 126 | Recession Whisper Google Trends Unemployment Search Surge | crazy | +0.00% | 0.00 | 0.00% |
-| 127 | Credit Card Delinquency | crazy | +0.00% | 0.00 | 0.00% |
-| 128 | Daily Jump In Google Trends Searches For Home Renovation Permits | crazy | +0.00% | 0.00 | 0.00% |
-| 129 | Weather Windfall | crazy | +0.00% | 0.00 | 0.00% |
-| 130 | Reddit Sentiment Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 131 | Weekly Google Trends Spike For Diy Home Renovation Signals Bullish Consumer Staples | crazy | +0.00% | 0.00 | 0.00% |
-| 132 | Weekly Jump In Google Trends For Job Quitting Searches Signals Labor Market Tightness Benefiting Financial Sector | crazy | +0.00% | 0.00 | 0.00% |
-| 133 | Ev Charger Installation Acceleration Play | crazy | +0.00% | 0.00 | 0.00% |
-| 134 | Daily Jump In Rss News Counts Mentioning Labor Strike Signals Imminent Industrial Disruption | crazy | +0.00% | 0.00 | 0.00% |
-| 135 | Travel Booking Momentum Divergence | crazy | +0.00% | 0.00 | 0.00% |
-| 136 | Daily Surge In Google Trends For Car Rental Price Spike Triggers Travel Mobility Sector Pullback | crazy | +0.00% | 0.00 | 0.00% |
-| 137 | Daily Jump In Google Trends For Home Appliance Repair Signals Consumer Stress Lifting Consumer Staples | crazy | +0.00% | 0.00 | 0.00% |
-| 138 | Ev Charger Network Expansion Sentiment Surge | crazy | +0.00% | 0.00 | 0.00% |
-| 139 | Crypto Capitulation Countdown | crazy | +0.00% | 0.00 | 0.00% |
-| 140 | Tremor Tension | crazy | +0.00% | 0.00 | 0.00% |
-| 141 | Daily Spike In Usgs Earthquake Activity Near Key Industrial Hubs | crazy | +0.00% | 0.00 | 0.00% |
-| 142 | Airline Fuel Cost Volatility Expansion | crazy | +0.00% | 0.00 | 0.00% |
-| 143 | Yield Curve Regime | crazy | +0.00% | 0.00 | 0.00% |
-| 144 | Temperature Shock Energy Demand Flip | crazy | +0.00% | 0.00 | 0.00% |
-| 145 | Electricity Demand Spike During Extreme Cold Snap Triggers Utility Sector Rally | crazy | +0.00% | 0.00 | 0.00% |
-| 146 | Crypto Derivative Arbitrage | crazy | +0.00% | 0.00 | 0.00% |
-| 147 | Daily Spike In Google Trends For Emergency Vehicle Repair Signals Consumer Stress Lifting Industrial Sector | crazy | +0.00% | 0.00 | 0.00% |
-| 148 | Earthquake Aftershock Amplifier | crazy | +0.00% | 0.00 | 0.00% |
-| 149 | Weekly Surge In Google Trends Searches For Warehouse Worker Shortage Signals Labor Tightness | crazy | +0.00% | 0.00 | 0.00% |
-| 150 | Ev Charger Expansion Velocity Boom | crazy | +0.00% | 0.00 | 0.00% |
-| 151 | Energy Sector Sudden Weekly Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 152 | Weekly Increase In Google Trends Searches For Small Business Loan Default Signals Rising Credit Stress | crazy | +0.00% | 0.00 | 0.00% |
-| 153 | Retail Rush Ahead Of Holidays | crazy | +0.00% | 0.00 | 0.00% |
-| 154 | Craigslist Desperation Index | crazy | +0.00% | 0.00 | 0.00% |
-| 155 | Social Media Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 156 | Ev Charger Deployment Sprint Acceleration | crazy | +0.00% | 0.00 | 0.00% |
-| 157 | Weekly Increase In Google Trends Searches For Bulk Shipping Delay Signals Bearish Xlb | crazy | +0.00% | 0.00 | 0.00% |
-| 158 | Weekly Jump In Google Trends For Small Business Layoffs Signals Consumer Discretionary Downturn | crazy | +0.00% | 0.00 | 0.00% |
-| 159 | Earthquake Energy Demand Indicator | crazy | +0.00% | 0.00 | 0.00% |
-| 160 | Daily Surge In Google Trends For Electric Bike Repair Signals Bullish Consumer Discretionary | crazy | +0.00% | 0.00 | 0.00% |
-| 161 | Airport Shopping Spree | crazy | +0.00% | 0.00 | 0.00% |
-| 162 | Technology Sector Daily Ev Charger Count Surge | crazy | +0.00% | 0.00 | 0.00% |
-| 163 | Weekly Increase In Google Trends For Home Solar Panel Installation Delay Signals Bearish Utilities Sector | crazy | +0.00% | 0.00 | 0.00% |
-| 164 | Daily Spike In Google Trends Searches For Emergency Car Battery Replacement Signals Consumer Stress Impacting Discretionary | crazy | +0.00% | 0.00 | 0.00% |
-| 165 | Daily Spike In Google Trends Searches For Home Heating System Failure Signals Winter Utility Stress | crazy | +0.00% | 0.00 | 0.00% |
-| 166 | Daily Surge In Google Trends For Home Office Setup Signals Bullish Technology Sector | crazy | +0.00% | 0.00 | 0.00% |
-| 167 | Real Estate Sector Weekly Google Trends Home Buying Surge | crazy | +0.00% | 0.00 | 0.00% |
-| 168 | Weekly Surge In Openchargemap Ev Charger Installations Signals Bullish Xlc | crazy | +0.00% | 0.00 | 0.00% |
-| 169 | Reddit Subreddit Mention Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 170 | Utilities Sector Weekly Temperature Drop Signal | crazy | +0.00% | 0.00 | 0.00% |
-| 171 | 311 Call Rotation | crazy | +0.00% | 0.00 | 0.00% |
-| 172 | Financial Sector Momentum Divergence With Spy | crazy | +0.00% | 0.00 | 0.00% |
-| 173 | Residential Real Estate Search Momentum Rotation | crazy | +0.00% | 0.00 | 0.00% |
-| 174 | Weather Extremes Utility Demand Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 175 | Pet Food Supply Chain Disruption | crazy | +0.00% | 0.00 | 0.00% |
-| 176 | Weekly Surge In Google Trends For Diy Solar Panel Repair Signals Green Energy Sector Rebound | crazy | +0.00% | 0.00 | 0.00% |
-| 177 | Rss Roar | crazy | +0.00% | 0.00 | 0.00% |
-| 178 | Weekly Google Trends Surge For Diy Roof Repair Searches Signals Consumer Stress Impacting Xli | crazy | +0.00% | 0.00 | 0.00% |
-| 179 | Weekly Jump In Google Trends For Warehouse Labor Shortage Signals Supply Chain Labor Stress And Industrial Sector Risk | crazy | +0.00% | 0.00 | 0.00% |
-| 180 | Healthcare Cost Google Trends Acceleration Index | crazy | +0.00% | 0.00 | 0.00% |
-| 181 | Weekly Google Trends Surge In Home Appliance Repair Searches Signals Bullish Consumer Discretionary | crazy | +0.00% | 0.00 | 0.00% |
-| 182 | Cardboard Box Index | crazy | +0.00% | 0.00 | 0.00% |
-| 183 | Utility Volatility Compression Reversion Bounce | crazy | +0.00% | 0.00 | 0.00% |
-| 184 | Reddit Gaming Thread Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 185 | Google Trends Surge In Luxury Good Searches | crazy | +0.00% | 0.00 | 0.00% |
-| 186 | Ev Charger Expansion Momentum Surge | crazy | +0.00% | 0.00 | 0.00% |
-| 187 | Daily Spike In Google Trends Searches For Electric Vehicle Battery Replacement | crazy | +0.00% | 0.00 | 0.00% |
-| 188 | Weekly Surge In Google Trends For Diy Roof Repair Signals Consumer Stress Lifting Industrial Sector | crazy | +0.00% | 0.00 | 0.00% |
-| 189 | Regional Earthquake Cluster Insurance Demand Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 190 | Daily Spike In Google Trends Searches For Emergency Plumber Signals Consumer Home Repair Stress | crazy | +0.00% | 0.00 | 0.00% |
-| 191 | Twitter Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 192 | TSA Body Count | crazy | +0.00% | 0.00 | 0.00% |
-| 193 | Healthcare Procedure Google Trends Demand Resurgence | crazy | +0.00% | 0.00 | 0.00% |
-| 194 | Weekly Google Trends Surge For Used Truck Purchase Searches Signals Bullish Freight Logistics | crazy | +0.00% | 0.00 | 0.00% |
-| 195 | Patent Filing Velocity | crazy | +0.00% | 0.00 | 0.00% |
-| 196 | Ev Euphoria | crazy | +0.00% | 0.00 | 0.00% |
-| 197 | Weekly Surge In Google Trends For Sudden Appliance Breakdowns Signals Discretionary Sector Rebound | crazy | +0.00% | 0.00 | 0.00% |
-| 198 | Daily Jump In Openchargemap Ev Charger Counts In Key States Signals Tech Sector Acceleration | crazy | +0.00% | 0.00 | 0.00% |
-| 199 | Online Ad Impression Volatility Trader | crazy | +0.00% | 0.00 | 0.00% |
-| 200 | Google Trends Surge In Flight Delay Complaints | crazy | +0.00% | 0.00 | 0.00% |
-| 201 | Airline Load Factor Proxy | crazy | +0.00% | 0.00 | 0.00% |
-| 202 | Superbowl Futures Trade | crazy | +0.00% | 0.00 | 0.00% |
-| 203 | Electricity Demand Collapse During Mild Weather | crazy | +0.00% | 0.00 | 0.00% |
-| 204 | Fintech Disruption Wave | crazy | +0.00% | 0.00 | 0.00% |
-| 205 | Weather Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
-| 206 | Seismic Activity Construction Halt Signal | crazy | +0.00% | 0.00 | 0.00% |
-| 207 | Weekly Google Trends Surge In Searches For Home Solar Installation Financing Signals Xle Bullish | crazy | +0.00% | 0.00 | 0.00% |
-| 208 | Weather Disruption Ripple Effects | crazy | +0.00% | 0.00 | 0.00% |
-| 209 | Weekly Rise In Google Trends Searches For Gas Price Protest Signals Bearish Xle | crazy | +0.00% | 0.00 | 0.00% |
-| 210 | Daily Surge In Google Trends Searches For Home Heating System Failure Signals Consumer Stress Impacting Utilities | crazy | +0.00% | 0.00 | 0.00% |
-| 211 | Electric Vehicle Charge Station Density | crazy | +0.00% | 0.00 | 0.00% |
-| 212 | Cloud Storage Demand Surge | crazy | +0.00% | 0.00 | 0.00% |
-| 213 | Renewable Energy Rss News Volume Surge | crazy | -0.00% | -93.44 | -0.01% |
-| 214 | Earthquake Aftershock Insurance Claims Spike | crazy | -0.00% | -119.20 | -0.01% |
-| 215 | Xlu Daily Electricity Demand Surge | crazy | -0.00% | -74.97 | -0.02% |
-| 216 | Weekly Surge In Google Trends Searches For Diy Home Repair Signals Consumer Stress Lifting Xly | crazy | -0.01% | -148.26 | -0.01% |
-| 217 | Daily Surge In Rss News Counts For New Labor Union Formations Signals Labor Market Pressure On Industrial Sector | crazy | -0.01% | -78.56 | -0.01% |
-| 218 | Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk | crazy | -0.01% | -78.56 | -0.01% |
-| 219 | Grocery Store Foot Traffic Collapse Signal | crazy | -0.01% | -103.94 | -0.02% |
-| 220 | Daily Jump In Google Trends Searches For Home Water Heater Repair Signals Consumer Stress Lifting Xly | crazy | -0.02% | -105.53 | -0.02% |
-| 221 | Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector | crazy | -0.03% | -89.10 | -0.03% |
-| 222 | Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound | crazy | -0.03% | -18.45 | -0.07% |
-| 223 | Daily Spike In Google Trends For Emergency Plumbing Repair Signals Consumer Stress Rebound Benefiting Discretionary Sector | crazy | -0.03% | -25.48 | -0.07% |
-| 224 | Luxury Discretionary Google Trends Collapse Signal | crazy | -0.03% | -23.28 | -0.06% |
-| 225 | Weekly Spike In Earthquake Activity In Port Regions Signals Potential Freight Logistics Disruption | crazy | -0.04% | -41.34 | -0.04% |
-| 226 | Daily Jump In Consumer Stress Google Trends Searches For Car Repossession Signals Rising Financial Distress | crazy | -0.04% | -43.79 | -0.04% |
-| 227 | Shipping Container Squeeze Play | crazy | -0.05% | -46.83 | -0.05% |
-| 228 | Port Congestion Squeeze | crazy | -0.05% | -51.21 | -0.05% |
-| 229 | Utilities Sector Negative Price Gap Fill | crazy | -0.05% | -40.08 | -0.05% |
-| 230 | Daily Jump In Google Trends Searches For Emergency Dental Care | crazy | -0.06% | -31.10 | -0.06% |
-| 231 | Eia Electricity Demand Shock Rebound Spread | crazy | -0.06% | -23.84 | -0.06% |
-| 232 | Weekly Surge In Google Trends For Inflation Hedge Gold Signals Bullish Xlb | crazy | -0.06% | -30.19 | -0.06% |
-| 233 | Weekly Surge In Job Postings For Warehouse Workers Signals Bullish Xli | crazy | -0.07% | -50.29 | -0.07% |
-| 234 | Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf | crazy | -0.07% | -28.89 | -0.09% |
-| 235 | Weekly Surge In Google Trends Searches For Truck Driver Strike Signals Imminent Logistics Disruption | crazy | -0.08% | -23.51 | -0.08% |
-| 236 | Rss News Volume Spike On Food Supply Chain Disruptions | crazy | -0.09% | -15.26 | -0.11% |
-| 237 | Xlb Weekly Rss News Count Spike On Commodity Shortage | crazy | -0.11% | -24.46 | -0.14% |
-| 238 | Weekly Surge In Google Trends For Hotel Room Shortage Signals Travel Sector Tightness | crazy | -0.11% | -17.60 | -0.11% |
-| 239 | Daily Spike In Rss News Counts Mentioning Politician Insider Buying Tech Stock Signals Bullish Xlk | crazy | -0.11% | -19.11 | -0.11% |
-| 240 | Retail Roulette | crazy | -0.12% | -40.20 | -0.12% |
-| 241 | Weekly Surge In Google Trends Searches For Commuting Strike Signals Bearish Xly | crazy | -0.12% | -21.57 | -0.12% |
-| 242 | Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc | crazy | -0.18% | -25.95 | -0.18% |
-| 243 | Weekly Google Trends Surge In Home Energy Bill Shock Signals Bullish Utilities | crazy | -0.22% | -14.85 | -0.22% |
-| 244 | Weekly Google Trends Surge In Energy Bill Shock Signals Consumer Stress Impacting Utilities | crazy | -0.22% | -14.85 | -0.22% |
-| 245 | Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk | crazy | -0.22% | -13.78 | -0.22% |
-| 246 | Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength | crazy | -0.24% | -13.32 | -0.24% |
-| 247 | Port Container Volume Surge Signals Import Demand Recovery And Consumer Spending Rebound | crazy | -0.25% | -19.96 | -0.25% |
-| 248 | News Sentiment Rotation Fade Trade | crazy | -0.26% | -23.26 | -0.26% |
-| 249 | Google Gusts | crazy | -0.29% | -21.86 | -0.29% |
-| 250 | Industrial Sector Weekly Earthquake Activity Correlation Dip | crazy | -0.30% | -20.97 | -0.30% |
-| 251 | Chaos Rotation Lab | crazy | -0.32% | -1.26 | -1.75% |
-| 252 | Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary | crazy | -0.32% | -20.56 | -0.32% |
-| 253 | Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu | crazy | -0.34% | -15.56 | -0.34% |
-| 254 | Daily Surge In Google Trends Searches For Electric Vehicle Charging Station Outages | crazy | -0.34% | -11.10 | -0.34% |
-| 255 | FINRA Dark Pool Signal | crazy | -0.51% | -0.92 | -2.63% |
-| 256 | Misery Rotation | crazy | -0.80% | -4.16 | -0.84% |
-| 257 | Housing Permit Velocity | crazy | -0.83% | -1.82 | -2.22% |
-| 258 | Mortgage Rate Housing Proxy | crazy | -0.89% | -1.39 | -2.18% |
-| 259 | Truck Tonnage Index | crazy | -0.99% | -1.44 | -2.46% |
-| 260 | Freight Rail Carloads | crazy | -1.14% | -1.36 | -2.81% |
-| 261 | NRWise Acceleration | standard | -1.20% | -1.25 | -4.37% |
-| 262 | Liquor Store Leading Indicator | crazy | -1.47% | -3.82 | -1.47% |
-| 263 | Copper Momentum | crazy | -1.86% | -1.60 | -2.91% |
-| 264 | Port Container Volume | crazy | -2.27% | -4.43 | -2.27% |
-| 265 | Lumber Momentum | crazy | -2.42% | -2.37 | -3.00% |
-| 266 | Algo Biscotti (Unconditional Loyalty) | standard | -2.65% | -1.96 | -4.43% |
-| 267 | Electricity Consumption | crazy | -4.34% | -4.91 | -4.56% |
+| 67 | Daily Surge In Google Trends For Urgent Dental Care Searches Lifting Healthcare Sector | crazy | +0.00% | 0.00 | 0.00% |
+| 68 | Weekly Google Trends Surge For Home Pest Control Searches Signals Consumer Stress Boosting Staples | crazy | +0.00% | 0.00 | 0.00% |
+| 69 | Weekly Jump In Google Trends Home Pest Control Emergency Searches Signals Consumer Stress And Discretionary Rebound | crazy | +0.00% | 0.00 | 0.00% |
+| 70 | Weekly Google Trends Surge For Small Business Loan Application Signals Financial Sector Activity Boost | crazy | +0.00% | 0.00 | 0.00% |
+| 71 | Weekly Surge In Google Trends For Freight Congestion Complaints Correlating With Industrial Sector Risk | crazy | +0.00% | 0.00 | 0.00% |
+| 72 | Global Tech Earnings Momentum | crazy | +0.00% | 0.00 | 0.00% |
+| 73 | Consumer Sentiment | crazy | +0.00% | 0.00 | 0.00% |
+| 74 | Work From Home Frenzy | crazy | +0.00% | 0.00 | 0.00% |
+| 75 | Weekly Google Trends Surge In Home Heating Oil Shortage Signals Winter Utility Stress Favoring Utilities Sector | crazy | +0.00% | 0.00 | 0.00% |
+| 76 | Weekly Surge In Google Trends Searches For Freight Container Backlog Signals Industrial Sector Pressure | crazy | +0.00% | 0.00 | 0.00% |
+| 77 | Staples Sector Drawdown Rapid Recovery | crazy | +0.00% | 0.00 | 0.00% |
+| 78 | Pet Emergency Vet Visit Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 79 | Ev Charger Network Expansion Sprint Demand Surge | crazy | +0.00% | 0.00 | 0.00% |
+| 80 | Ev Charger Network Density Jump | crazy | +0.00% | 0.00 | 0.00% |
+| 81 | Reddit Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 82 | Yelp Closure Velocity | crazy | +0.00% | 0.00 | 0.00% |
+| 83 | Weekly Google Trends Surge For Truck Tire Replacement Searches Signals Industrial Sector Repair Cycle | crazy | +0.00% | 0.00 | 0.00% |
+| 84 | Solar Storm Scorcher | crazy | +0.00% | 0.00 | 0.00% |
+| 85 | Small Business Formation | crazy | +0.00% | 0.00 | 0.00% |
+| 86 | Weekly Surge In Google Trends Diy Home Roofing Repair Searches Signals Industrial Sector Demand Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 87 | Weekly Jump In Google Trends For Home Heating Oil Shortage Signals Winter Energy Stress | crazy | +0.00% | 0.00 | 0.00% |
+| 88 | Daily Spike In Daily Earthquake Activity Near Major Logistics Hubs Signals Bearish Xli | crazy | +0.00% | 0.00 | 0.00% |
+| 89 | Glassdoor Misery Gradient | crazy | +0.00% | 0.00 | 0.00% |
+| 90 | Weekly Google Trends Surge In Job Training Programs Signals Bullish Industrial Sector | crazy | +0.00% | 0.00 | 0.00% |
+| 91 | Daily Spike In Google Trends For Flu Symptom Searches Boosting Healthcare Services Demand | crazy | +0.00% | 0.00 | 0.00% |
+| 92 | Freight Rail Congestion Rss Volume Explosion | crazy | +0.00% | 0.00 | 0.00% |
+| 93 | Weekly Google Trends Surge In Searches For Diesel Fuel Price Increase | crazy | +0.00% | 0.00 | 0.00% |
+| 94 | Reddit Subreddit Surge Momentum | crazy | +0.00% | 0.00 | 0.00% |
+| 95 | Materials Sector Weekly Positive Correlation Breakdown With Xlb | crazy | +0.00% | 0.00 | 0.00% |
+| 96 | Electricity Demand Spike Weather Anomaly | crazy | +0.00% | 0.00 | 0.00% |
+| 97 | Temperature Extremes Power Demand Spike Utility Boost | crazy | +0.00% | 0.00 | 0.00% |
+| 98 | Daily Jump In Google Trends For Emergency Plumber Signals Rising Local Economy Stress Benefiting Staples | crazy | +0.00% | 0.00 | 0.00% |
+| 99 | Weekly Surge In Google Trends For Used Car Price Searches Signaling Consumer Cost Pressure | crazy | +0.00% | 0.00 | 0.00% |
+| 100 | Daily Jump In Google Trends For Emergency Dental Care Signals Consumer Stress Lifting Healthcare Sector Demand | crazy | +0.00% | 0.00 | 0.00% |
+| 101 | Appliance Shortage Supply Chain Stress | crazy | +0.00% | 0.00 | 0.00% |
+| 102 | Weekly Google Trends Surge For Truck Driver Shortage Signals Freight Logistics Risk And Industrial Cost Pressure | crazy | +0.00% | 0.00 | 0.00% |
+| 103 | Wage Growth Demand Surge Fast Food Google Trends | crazy | +0.00% | 0.00 | 0.00% |
+| 104 | Reddit Mentions Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 105 | Weekly Surge In Google Trends For Job Interview Preparation Searches | crazy | +0.00% | 0.00 | 0.00% |
+| 106 | Weekly Surge In Google Trends Searches For Home Improvement Loan Signals Consumer Stress Lifting Xly | crazy | +0.00% | 0.00 | 0.00% |
+| 107 | Ev Charger Buildout Acceleration Play | crazy | +0.00% | 0.00 | 0.00% |
+| 108 | LinkedIn Layoff Propagation | crazy | +0.00% | 0.00 | 0.00% |
+| 109 | Weekly Jump In Google Trends Searches For Airport Security Delay Signals Travel Mobility Disruptions | crazy | +0.00% | 0.00 | 0.00% |
+| 110 | Xlb Daily Volatility Contraction Breakout | crazy | +0.00% | 0.00 | 0.00% |
+| 111 | Ev Charger Expansion Frenzy | crazy | +0.00% | 0.00 | 0.00% |
+| 112 | Reddit Sentiment Spike Trend | crazy | +0.00% | 0.00 | 0.00% |
+| 113 | Xlc Weekly Google Trends Surge In 5g Rollout | crazy | +0.00% | 0.00 | 0.00% |
+| 114 | Reddit Emoji Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 115 | Weekly Google Trends Spike For Small Business Loan Default Searches | crazy | +0.00% | 0.00 | 0.00% |
+| 116 | Daily Jump In Google Trends For Solar Panel Repair Searches Signals Green Energy Sector Rebound | crazy | +0.00% | 0.00 | 0.00% |
+| 117 | Weekly Google Trends Spike For Diy Car Repair Signals Bullish Xly | crazy | +0.00% | 0.00 | 0.00% |
+| 118 | Bankruptcy Filing Rate | crazy | +0.00% | 0.00 | 0.00% |
+| 119 | Daily Spike In Freight Logistics Rss News Volume Mentioning Port Labor Strike Triggers Bearish Xli | crazy | +0.00% | 0.00 | 0.00% |
+| 120 | Google Trends Surge In Used Car Price Searches | crazy | +0.00% | 0.00 | 0.00% |
+| 121 | Reddit Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 122 | Weekly Spike In Google Trends For Fuel Shortage Predicts Energy Sector Volatility | crazy | +0.00% | 0.00 | 0.00% |
+| 123 | Weekly Surge In Google Trends Searches For City Water Outage Signals Bearish Xlre | crazy | +0.00% | 0.00 | 0.00% |
+| 124 | Congress Trading Fade | crazy | +0.00% | 0.00 | 0.00% |
+| 125 | Mortgage Refinance Wave Google Trends Surge | crazy | +0.00% | 0.00 | 0.00% |
+| 126 | Ev Charger Network Density Surge Bullish Signal | crazy | +0.00% | 0.00 | 0.00% |
+| 127 | Daily Jump In Google Trends For Emergency Roadside Assistance Signals Consumer Stress Impacting Discretionary Sector | crazy | +0.00% | 0.00 | 0.00% |
+| 128 | Consumer Discretionary Google Trends Surge For Sale Keywords | crazy | +0.00% | 0.00 | 0.00% |
+| 129 | Ev Charger Network Contraction Signals Electric Vehicle Adoption Slowdown | crazy | +0.00% | 0.00 | 0.00% |
+| 130 | Ev Charger Network Expansion Velocity Surge | crazy | +0.00% | 0.00 | 0.00% |
+| 131 | Recession Whisper Google Trends Unemployment Search Surge | crazy | +0.00% | 0.00 | 0.00% |
+| 132 | Credit Card Delinquency | crazy | +0.00% | 0.00 | 0.00% |
+| 133 | Daily Jump In Google Trends Searches For Home Renovation Permits | crazy | +0.00% | 0.00 | 0.00% |
+| 134 | Weather Windfall | crazy | +0.00% | 0.00 | 0.00% |
+| 135 | Reddit Sentiment Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 136 | Weekly Google Trends Spike For Diy Home Renovation Signals Bullish Consumer Staples | crazy | +0.00% | 0.00 | 0.00% |
+| 137 | Weekly Jump In Google Trends For Job Quitting Searches Signals Labor Market Tightness Benefiting Financial Sector | crazy | +0.00% | 0.00 | 0.00% |
+| 138 | Ev Charger Installation Acceleration Play | crazy | +0.00% | 0.00 | 0.00% |
+| 139 | Weather Extreme Disruption Energy Demand Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 140 | Daily Jump In Rss News Counts Mentioning Labor Strike Signals Imminent Industrial Disruption | crazy | +0.00% | 0.00 | 0.00% |
+| 141 | Travel Booking Momentum Divergence | crazy | +0.00% | 0.00 | 0.00% |
+| 142 | Daily Surge In Google Trends For Car Rental Price Spike Triggers Travel Mobility Sector Pullback | crazy | +0.00% | 0.00 | 0.00% |
+| 143 | Truck Driver Wage Search Surge | crazy | +0.00% | 0.00 | 0.00% |
+| 144 | Daily Jump In Google Trends For Home Appliance Repair Signals Consumer Stress Lifting Consumer Staples | crazy | +0.00% | 0.00 | 0.00% |
+| 145 | Ev Charger Network Expansion Sentiment Surge | crazy | +0.00% | 0.00 | 0.00% |
+| 146 | Crypto Capitulation Countdown | crazy | +0.00% | 0.00 | 0.00% |
+| 147 | Tremor Tension | crazy | +0.00% | 0.00 | 0.00% |
+| 148 | Daily Spike In Usgs Earthquake Activity Near Key Industrial Hubs | crazy | +0.00% | 0.00 | 0.00% |
+| 149 | Airline Fuel Cost Volatility Expansion | crazy | +0.00% | 0.00 | 0.00% |
+| 150 | Yield Curve Regime | crazy | +0.00% | 0.00 | 0.00% |
+| 151 | Temperature Shock Energy Demand Flip | crazy | +0.00% | 0.00 | 0.00% |
+| 152 | Electricity Demand Spike During Extreme Cold Snap Triggers Utility Sector Rally | crazy | +0.00% | 0.00 | 0.00% |
+| 153 | Crypto Derivative Arbitrage | crazy | +0.00% | 0.00 | 0.00% |
+| 154 | Daily Spike In Google Trends For Emergency Vehicle Repair Signals Consumer Stress Lifting Industrial Sector | crazy | +0.00% | 0.00 | 0.00% |
+| 155 | Consumer Stress Spike From Google Trends On Urgent Appliance Repair Searches | crazy | +0.00% | 0.00 | 0.00% |
+| 156 | Earthquake Aftershock Amplifier | crazy | +0.00% | 0.00 | 0.00% |
+| 157 | Weekly Surge In Google Trends Searches For Warehouse Worker Shortage Signals Labor Tightness | crazy | +0.00% | 0.00 | 0.00% |
+| 158 | Ev Charger Expansion Velocity Boom | crazy | +0.00% | 0.00 | 0.00% |
+| 159 | Energy Sector Sudden Weekly Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 160 | Weekly Increase In Google Trends Searches For Small Business Loan Default Signals Rising Credit Stress | crazy | +0.00% | 0.00 | 0.00% |
+| 161 | Weekly Rise In Google Trends For Warehouse Automation Interest Signals Industrial Demand | crazy | +0.00% | 0.00 | 0.00% |
+| 162 | Retail Rush Ahead Of Holidays | crazy | +0.00% | 0.00 | 0.00% |
+| 163 | Daily Spike In Google Trends For Emergency Roadside Assistance Searches Signals Consumer Stress | crazy | +0.00% | 0.00 | 0.00% |
+| 164 | Craigslist Desperation Index | crazy | +0.00% | 0.00 | 0.00% |
+| 165 | Social Media Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 166 | Ev Charger Deployment Sprint Acceleration | crazy | +0.00% | 0.00 | 0.00% |
+| 167 | Weekly Increase In Google Trends Searches For Bulk Shipping Delay Signals Bearish Xlb | crazy | +0.00% | 0.00 | 0.00% |
+| 168 | Weekly Jump In Google Trends For Small Business Layoffs Signals Consumer Discretionary Downturn | crazy | +0.00% | 0.00 | 0.00% |
+| 169 | Earthquake Energy Demand Indicator | crazy | +0.00% | 0.00 | 0.00% |
+| 170 | Daily Surge In Google Trends For Electric Bike Repair Signals Bullish Consumer Discretionary | crazy | +0.00% | 0.00 | 0.00% |
+| 171 | Airport Shopping Spree | crazy | +0.00% | 0.00 | 0.00% |
+| 172 | Technology Sector Daily Ev Charger Count Surge | crazy | +0.00% | 0.00 | 0.00% |
+| 173 | Weekly Increase In Google Trends For Home Solar Panel Installation Delay Signals Bearish Utilities Sector | crazy | +0.00% | 0.00 | 0.00% |
+| 174 | Daily Spike In Google Trends Searches For Emergency Car Battery Replacement Signals Consumer Stress Impacting Discretionary | crazy | +0.00% | 0.00 | 0.00% |
+| 175 | Daily Spike In Google Trends Searches For Home Heating System Failure Signals Winter Utility Stress | crazy | +0.00% | 0.00 | 0.00% |
+| 176 | Daily Surge In Google Trends For Home Office Setup Signals Bullish Technology Sector | crazy | +0.00% | 0.00 | 0.00% |
+| 177 | Real Estate Sector Weekly Google Trends Home Buying Surge | crazy | +0.00% | 0.00 | 0.00% |
+| 178 | Weekly Surge In Openchargemap Ev Charger Installations Signals Bullish Xlc | crazy | +0.00% | 0.00 | 0.00% |
+| 179 | Reddit Subreddit Mention Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 180 | Utilities Sector Weekly Temperature Drop Signal | crazy | +0.00% | 0.00 | 0.00% |
+| 181 | 311 Call Rotation | crazy | +0.00% | 0.00 | 0.00% |
+| 182 | Financial Sector Momentum Divergence With Spy | crazy | +0.00% | 0.00 | 0.00% |
+| 183 | Residential Real Estate Search Momentum Rotation | crazy | +0.00% | 0.00 | 0.00% |
+| 184 | Weather Extremes Utility Demand Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 185 | Pet Food Supply Chain Disruption | crazy | +0.00% | 0.00 | 0.00% |
+| 186 | Weekly Surge In Google Trends For Diy Solar Panel Repair Signals Green Energy Sector Rebound | crazy | +0.00% | 0.00 | 0.00% |
+| 187 | Rss Roar | crazy | +0.00% | 0.00 | 0.00% |
+| 188 | Weekly Google Trends Surge For Diy Roof Repair Searches Signals Consumer Stress Impacting Xli | crazy | +0.00% | 0.00 | 0.00% |
+| 189 | Weekly Jump In Google Trends For Warehouse Labor Shortage Signals Supply Chain Labor Stress And Industrial Sector Risk | crazy | +0.00% | 0.00 | 0.00% |
+| 190 | Healthcare Cost Google Trends Acceleration Index | crazy | +0.00% | 0.00 | 0.00% |
+| 191 | Weekly Google Trends Surge In Home Appliance Repair Searches Signals Bullish Consumer Discretionary | crazy | +0.00% | 0.00 | 0.00% |
+| 192 | Cardboard Box Index | crazy | +0.00% | 0.00 | 0.00% |
+| 193 | Utility Volatility Compression Reversion Bounce | crazy | +0.00% | 0.00 | 0.00% |
+| 194 | Reddit Gaming Thread Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 195 | Google Trends Surge In Luxury Good Searches | crazy | +0.00% | 0.00 | 0.00% |
+| 196 | Ev Charger Expansion Momentum Surge | crazy | +0.00% | 0.00 | 0.00% |
+| 197 | Daily Spike In Google Trends Searches For Electric Vehicle Battery Replacement | crazy | +0.00% | 0.00 | 0.00% |
+| 198 | Weekly Surge In Google Trends For Diy Roof Repair Signals Consumer Stress Lifting Industrial Sector | crazy | +0.00% | 0.00 | 0.00% |
+| 199 | Regional Earthquake Cluster Insurance Demand Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 200 | Daily Spike In Google Trends For Emergency Vehicle Battery Replacement Searches Signals Auto Stress | crazy | +0.00% | 0.00 | 0.00% |
+| 201 | Daily Spike In Google Trends Searches For Emergency Plumber Signals Consumer Home Repair Stress | crazy | +0.00% | 0.00 | 0.00% |
+| 202 | Twitter Sentiment Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 203 | TSA Body Count | crazy | +0.00% | 0.00 | 0.00% |
+| 204 | Healthcare Procedure Google Trends Demand Resurgence | crazy | +0.00% | 0.00 | 0.00% |
+| 205 | Weekly Google Trends Surge For Used Truck Purchase Searches Signals Bullish Freight Logistics | crazy | +0.00% | 0.00 | 0.00% |
+| 206 | Patent Filing Velocity | crazy | +0.00% | 0.00 | 0.00% |
+| 207 | Ev Euphoria | crazy | +0.00% | 0.00 | 0.00% |
+| 208 | Weekly Surge In Google Trends For Sudden Appliance Breakdowns Signals Discretionary Sector Rebound | crazy | +0.00% | 0.00 | 0.00% |
+| 209 | Daily Jump In Openchargemap Ev Charger Counts In Key States Signals Tech Sector Acceleration | crazy | +0.00% | 0.00 | 0.00% |
+| 210 | Online Ad Impression Volatility Trader | crazy | +0.00% | 0.00 | 0.00% |
+| 211 | Google Trends Surge In Flight Delay Complaints | crazy | +0.00% | 0.00 | 0.00% |
+| 212 | Airline Load Factor Proxy | crazy | +0.00% | 0.00 | 0.00% |
+| 213 | Superbowl Futures Trade | crazy | +0.00% | 0.00 | 0.00% |
+| 214 | Electricity Demand Collapse During Mild Weather | crazy | +0.00% | 0.00 | 0.00% |
+| 215 | Fintech Disruption Wave | crazy | +0.00% | 0.00 | 0.00% |
+| 216 | Weather Volatility Spike | crazy | +0.00% | 0.00 | 0.00% |
+| 217 | Seismic Activity Construction Halt Signal | crazy | +0.00% | 0.00 | 0.00% |
+| 218 | Weekly Google Trends Surge In Searches For Home Solar Installation Financing Signals Xle Bullish | crazy | +0.00% | 0.00 | 0.00% |
+| 219 | Weather Disruption Ripple Effects | crazy | +0.00% | 0.00 | 0.00% |
+| 220 | Weekly Rise In Google Trends Searches For Gas Price Protest Signals Bearish Xle | crazy | +0.00% | 0.00 | 0.00% |
+| 221 | Daily Surge In Google Trends Searches For Home Heating System Failure Signals Consumer Stress Impacting Utilities | crazy | +0.00% | 0.00 | 0.00% |
+| 222 | Electric Vehicle Charge Station Density | crazy | +0.00% | 0.00 | 0.00% |
+| 223 | Cloud Storage Demand Surge | crazy | +0.00% | 0.00 | 0.00% |
+| 224 | Renewable Energy Rss News Volume Surge | crazy | -0.00% | -93.44 | -0.01% |
+| 225 | Earthquake Aftershock Insurance Claims Spike | crazy | -0.00% | -119.20 | -0.01% |
+| 226 | Xlu Daily Electricity Demand Surge | crazy | -0.00% | -74.97 | -0.02% |
+| 227 | Weekly Surge In Google Trends Searches For Diy Home Repair Signals Consumer Stress Lifting Xly | crazy | -0.01% | -148.26 | -0.01% |
+| 228 | Commodity Shortage News Volume Burst | crazy | -0.01% | -137.01 | -0.01% |
+| 229 | Daily Surge In Rss News Counts For New Labor Union Formations Signals Labor Market Pressure On Industrial Sector | crazy | -0.01% | -78.56 | -0.01% |
+| 230 | Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk | crazy | -0.01% | -78.56 | -0.01% |
+| 231 | Grocery Store Foot Traffic Collapse Signal | crazy | -0.01% | -103.94 | -0.02% |
+| 232 | Daily Jump In Google Trends Searches For Home Water Heater Repair Signals Consumer Stress Lifting Xly | crazy | -0.02% | -105.53 | -0.02% |
+| 233 | Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector | crazy | -0.03% | -89.10 | -0.03% |
+| 234 | Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound | crazy | -0.03% | -18.45 | -0.07% |
+| 235 | Daily Spike In Google Trends For Emergency Plumbing Repair Signals Consumer Stress Rebound Benefiting Discretionary Sector | crazy | -0.03% | -25.48 | -0.07% |
+| 236 | Luxury Discretionary Google Trends Collapse Signal | crazy | -0.03% | -23.28 | -0.06% |
+| 237 | Weekly Spike In Earthquake Activity In Port Regions Signals Potential Freight Logistics Disruption | crazy | -0.04% | -41.34 | -0.04% |
+| 238 | Daily Jump In Consumer Stress Google Trends Searches For Car Repossession Signals Rising Financial Distress | crazy | -0.04% | -43.79 | -0.04% |
+| 239 | Shipping Container Squeeze Play | crazy | -0.05% | -46.83 | -0.05% |
+| 240 | Port Congestion Squeeze | crazy | -0.05% | -51.21 | -0.05% |
+| 241 | Utilities Sector Negative Price Gap Fill | crazy | -0.05% | -40.08 | -0.05% |
+| 242 | Daily Jump In Google Trends Searches For Emergency Dental Care | crazy | -0.06% | -31.10 | -0.06% |
+| 243 | Eia Electricity Demand Shock Rebound Spread | crazy | -0.06% | -23.84 | -0.06% |
+| 244 | Weekly Surge In Google Trends For Inflation Hedge Gold Signals Bullish Xlb | crazy | -0.06% | -30.19 | -0.06% |
+| 245 | Weekly Surge In Job Postings For Warehouse Workers Signals Bullish Xli | crazy | -0.07% | -50.29 | -0.07% |
+| 246 | Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf | crazy | -0.07% | -28.89 | -0.09% |
+| 247 | Weekly Surge In Google Trends Searches For Truck Driver Strike Signals Imminent Logistics Disruption | crazy | -0.08% | -23.51 | -0.08% |
+| 248 | Rss News Volume Spike On Food Supply Chain Disruptions | crazy | -0.09% | -15.26 | -0.11% |
+| 249 | Xlb Weekly Rss News Count Spike On Commodity Shortage | crazy | -0.11% | -24.46 | -0.14% |
+| 250 | Weekly Surge In Google Trends For Hotel Room Shortage Signals Travel Sector Tightness | crazy | -0.11% | -17.60 | -0.11% |
+| 251 | Daily Spike In Rss News Counts Mentioning Politician Insider Buying Tech Stock Signals Bullish Xlk | crazy | -0.11% | -19.11 | -0.11% |
+| 252 | Retail Roulette | crazy | -0.12% | -40.20 | -0.12% |
+| 253 | Weekly Surge In Google Trends Searches For Commuting Strike Signals Bearish Xly | crazy | -0.12% | -21.57 | -0.12% |
+| 254 | Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc | crazy | -0.18% | -25.95 | -0.18% |
+| 255 | Weekly Google Trends Surge In Home Energy Bill Shock Signals Bullish Utilities | crazy | -0.22% | -14.85 | -0.22% |
+| 256 | Weekly Google Trends Surge In Energy Bill Shock Signals Consumer Stress Impacting Utilities | crazy | -0.22% | -14.85 | -0.22% |
+| 257 | Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk | crazy | -0.22% | -13.78 | -0.22% |
+| 258 | Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength | crazy | -0.24% | -13.32 | -0.24% |
+| 259 | Port Container Volume Surge Signals Import Demand Recovery And Consumer Spending Rebound | crazy | -0.25% | -19.96 | -0.25% |
+| 260 | News Sentiment Rotation Fade Trade | crazy | -0.26% | -23.26 | -0.26% |
+| 261 | Google Gusts | crazy | -0.29% | -21.86 | -0.29% |
+| 262 | Industrial Sector Weekly Earthquake Activity Correlation Dip | crazy | -0.30% | -20.97 | -0.30% |
+| 263 | Chaos Rotation Lab | crazy | -0.32% | -1.26 | -1.75% |
+| 264 | Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary | crazy | -0.32% | -20.56 | -0.32% |
+| 265 | Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu | crazy | -0.34% | -15.56 | -0.34% |
+| 266 | Daily Surge In Google Trends Searches For Electric Vehicle Charging Station Outages | crazy | -0.34% | -11.10 | -0.34% |
+| 267 | FINRA Dark Pool Signal | crazy | -0.51% | -0.92 | -2.63% |
+| 268 | Misery Rotation | crazy | -0.80% | -4.16 | -0.84% |
+| 269 | Housing Permit Velocity | crazy | -0.83% | -1.82 | -2.22% |
+| 270 | Mortgage Rate Housing Proxy | crazy | -0.89% | -1.39 | -2.18% |
+| 271 | Truck Tonnage Index | crazy | -0.99% | -1.44 | -2.46% |
+| 272 | Freight Rail Carloads | crazy | -1.14% | -1.36 | -2.81% |
+| 273 | NRWise Acceleration | standard | -1.20% | -1.25 | -4.37% |
+| 274 | Liquor Store Leading Indicator | crazy | -1.47% | -3.82 | -1.47% |
+| 275 | Copper Momentum | crazy | -1.86% | -1.60 | -2.91% |
+| 276 | Port Container Volume | crazy | -2.27% | -4.43 | -2.27% |
+| 277 | Lumber Momentum | crazy | -2.42% | -2.37 | -3.00% |
+| 278 | Algo Biscotti (Unconditional Loyalty) | standard | -2.65% | -1.96 | -4.43% |
+| 279 | Electricity Consumption | crazy | -4.34% | -4.91 | -4.56% |

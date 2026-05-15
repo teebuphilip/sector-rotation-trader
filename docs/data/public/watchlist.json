@@ -1,6 +1,6 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-15T23:40:58Z",
+  "generated_at": "2026-05-15T23:48:10Z",
   "algos": [
     {
       "schema_version": "v1",
@@ -957,6 +957,42 @@
             "direction": "DOWN",
             "confidence": 0.243,
             "return_pct": -1.216
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:commodity-shortage-news-volume-burst",
+      "algo_type": "crazy",
+      "algo_id": "commodity-shortage-news-volume-burst",
+      "name": "Commodity Shortage News Volume Burst",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.01,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.01,
+      "spy_delta_30d_pct": -5.61,
+      "last_snapshot": "2026-05-15",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLB",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.5,
+            "return_pct": -2.5
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.609,
+            "return_pct": -3.045
           }
         },
         "summary": "mixed"

@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-05-15/publish/claude_earthquake-swarm-construction-material-demand-surge.md",
+  "target_file": "data/ideas/runs/2026-05-15/intervention/claude_earthquake-swarm-construction-material-demand-surge.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": true,
+    "reason": "Selected adapter measures earthquakes, not geopolitical conflict or war data.",
+    "risk_flags": [
+      "adapter_behavior_mismatch",
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity"
+      ],
+      "scores": {
+        "earthquake_activity": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 955,
+    "output_tokens": 74
+  },
+  "cost_usd": 0.0031275,
+  "raw_llm_response": "{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is deterministic, uses correct earthquake_activity adapter, and is structurally valid.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}"
+}

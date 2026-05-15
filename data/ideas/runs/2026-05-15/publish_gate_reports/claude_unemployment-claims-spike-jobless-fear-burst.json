@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-15/publish/claude_unemployment-claims-spike-jobless-fear-burst.md",
+  "target_file": "data/ideas/runs/2026-05-15/intervention/claude_unemployment-claims-spike-jobless-fear-burst.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "data source frequency mismatch possible",
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "unsupported_template_adapter",
+      "weekly aggregation not explicit"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series"
+      ],
+      "scores": {
+        "fred_series": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 944,
+    "output_tokens": 81
+  },
+  "cost_usd": 0.00317,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Low confidence in adapter mapping and weekly aggregation details need manual review\",\n  \"risk_flags\": [\"low adapter routing confidence\", \"weekly aggregation not explicit\", \"data source frequency mismatch possible\"]\n}\n```"
+}

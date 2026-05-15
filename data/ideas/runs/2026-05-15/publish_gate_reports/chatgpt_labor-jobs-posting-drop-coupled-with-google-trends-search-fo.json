@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-05-15/publish/chatgpt_labor-jobs-posting-drop-coupled-with-google-trends-search-fo.md",
+  "target_file": "data/ideas/runs/2026-05-15/intervention/chatgpt_labor-jobs-posting-drop-coupled-with-google-trends-search-fo.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": true,
+    "reason": "Job board postings data is not covered by the selected adapter and requires a new adapter.",
+    "risk_flags": [
+      "data source mismatch",
+      "missing adapter for job postings",
+      "weekly frequency requires stable data"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 4,
+        "html_table": 1
+      },
+      "top_score": 4,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 936,
+    "output_tokens": 86
+  },
+  "cost_usd": 0.0032,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Job board postings data is not covered by the selected adapter and requires a new adapter.\",\n  \"risk_flags\": [\"missing adapter for job postings\", \"data source mismatch\", \"weekly frequency requires stable data\"]\n}\n```"
+}

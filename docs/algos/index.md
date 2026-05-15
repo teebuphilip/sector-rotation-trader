@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-05-15T23:40:58
+Updated (UTC): 2026-05-15T23:48:10
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 261
+Crazy models: 273
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -277,3 +277,15 @@ Crazy models: 261
 | electricity-demand-collapse-during-mild-weather | Electricity Demand Collapse During Mild Weather | daily |
 | ev-charger-network-density-jump | Ev Charger Network Density Jump | weekly |
 | pet-emergency-vet-visit-spike | Pet Emergency Vet Visit Spike | weekly |
+| consumer-stress-spike-from-google-trends-on-urgent-appliance | Consumer Stress Spike From Google Trends On Urgent Appliance Repair Searches | weekly |
+| daily-spike-in-google-trends-for-emergency-roadside-assistan | Daily Spike In Google Trends For Emergency Roadside Assistance Searches Signals Consumer Stress | daily |
+| daily-spike-in-google-trends-for-emergency-vehicle-battery-r | Daily Spike In Google Trends For Emergency Vehicle Battery Replacement Searches Signals Auto Stress | daily |
+| daily-spike-in-google-trends-for-flu-symptom-searches-boosti | Daily Spike In Google Trends For Flu Symptom Searches Boosting Healthcare Services Demand | daily |
+| daily-surge-in-google-trends-for-urgent-dental-care-searches | Daily Surge In Google Trends For Urgent Dental Care Searches Lifting Healthcare Sector | daily |
+| weekly-rise-in-google-trends-for-warehouse-automation-intere | Weekly Rise In Google Trends For Warehouse Automation Interest Signals Industrial Demand | weekly |
+| weekly-surge-in-google-trends-for-freight-congestion-complai | Weekly Surge In Google Trends For Freight Congestion Complaints Correlating With Industrial Sector Risk | weekly |
+| weekly-surge-in-google-trends-for-used-car-price-searches-si | Weekly Surge In Google Trends For Used Car Price Searches Signaling Consumer Cost Pressure | weekly |
+| commodity-shortage-news-volume-burst | Commodity Shortage News Volume Burst | daily |
+| ev-charger-buildout-acceleration-play | Ev Charger Buildout Acceleration Play | weekly |
+| truck-driver-wage-search-surge | Truck Driver Wage Search Surge | weekly |
+| weather-extreme-disruption-energy-demand-spike | Weather Extreme Disruption Energy Demand Spike | daily |

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-15T23:40:58Z",
+  "generated_at": "2026-05-15T23:48:10Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -1021,6 +1021,30 @@
       "ytd_pct": -0.79,
       "trade_count": 36,
       "positions": 0,
+      "last_snapshot": "2026-05-15",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:commodity-shortage-news-volume-burst",
+      "algo_type": "crazy",
+      "algo_id": "commodity-shortage-news-volume-burst",
+      "name": "Commodity Shortage News Volume Burst",
+      "family": "freight_logistics",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLB"
+      ],
+      "equity": 99990.05,
+      "ytd_pct": -0.01,
+      "trade_count": 1,
+      "positions": 1,
       "last_snapshot": "2026-05-15",
       "last_signal": null,
       "new_algo_date": null,
