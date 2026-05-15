@@ -657,5 +657,149 @@
     "verdict": "BUILD_LATER",
     "source_file": "drafts/features/2026-05-08/openai-feature-04-trade-history-lightbox.md",
     "_hash": "0443ca6dd26f801e37b2cb58a17fe26e"
+  },
+  "drafts/features/2026-05-15/anthropic-feature-01-signal-divergence-report.md": {
+    "feature_name": "Signal Divergence Report",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 7,
+    "adjusted_score": 8.96,
+    "top_viral_mechanic": "Lets data-literate traders spot recoveries and degradations before the crowd, creating a 'signal hunter' identity and shareable contrarian thesis on underrated algos.",
+    "biggest_weakness": "No built-in sharing mechanism, no incentive to invite others, and divergence insights are personal edge\u2014users have zero reason to broadcast findings publicly.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-05-15/anthropic-feature-01-signal-divergence-report.md",
+    "_hash": "20554d13eafcefbc0efb5a533c996a91"
+  },
+  "drafts/features/2026-05-15/anthropic-feature-02-failure-audit-trail.md": {
+    "feature_name": "Failure Audit Trail",
+    "scores": {
+      "proof_of_work": 4,
+      "invitation_loop": 1,
+      "public_evidence": 3,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 9,
+    "adjusted_score": 10.8,
+    "top_viral_mechanic": "Honest failure documentation with timestamped state transitions lets users prove they understand *why* signals die, not just that they do\u2014pure social currency for data-literate skeptics who distrust hype.",
+    "biggest_weakness": "No incentive loop: viewing a failure audit doesn't require or encourage inviting others, so growth is passive observation rather than active recruitment.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-05-15/anthropic-feature-02-failure-audit-trail.md",
+    "_hash": "cc3abbdec2357de323108fc0fa3f490d"
+  },
+  "drafts/features/2026-05-15/anthropic-feature-03-cross-signal-correlation-matrix.md": {
+    "feature_name": "Cross-Signal Correlation Matrix",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 2,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 8,
+    "adjusted_score": 7.68,
+    "top_viral_mechanic": "Lets skeptical traders publicly prove they spotted signal redundancy others missed, turning portfolio construction into a shareable insight.",
+    "biggest_weakness": "No inherent sharing mechanism\u2014users must manually screenshot or describe findings; correlation matrices are inherently private portfolio decisions, not social artifacts.",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-05-15/anthropic-feature-03-cross-signal-correlation-matrix.md",
+    "_hash": "868c757165ecd695164fac2b60e34797"
+  },
+  "drafts/features/2026-05-15/anthropic-feature-04-live-trade-witness.md": {
+    "feature_name": "Live Trade Witness",
+    "scores": {
+      "proof_of_work": 4,
+      "invitation_loop": 2,
+      "public_evidence": 4,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 11,
+    "adjusted_score": 9.9,
+    "top_viral_mechanic": "Real-time, unfiltered trade execution feed with visible slippage and failures is native proof-of-work for skeptical traders\u2014they can screenshot 'Biscotti caught the move' or 'Biscotti missed by $7' and share as credible evidence.",
+    "biggest_weakness": "No built-in incentive loop; users watch passively and don't need to invite others to get more value from the feed, so organic growth is limited to organic discovery and word-of-mouth.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-05-15/anthropic-feature-04-live-trade-witness.md",
+    "_hash": "5f349979ae71705eeb81c530c7729440"
+  },
+  "drafts/features/2026-05-15/openai-feature-01-signal-decay-tracker.md": {
+    "feature_name": "Signal Decay Tracker",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 7,
+    "adjusted_score": 8.4,
+    "top_viral_mechanic": "Decay visibility directly exploits stockarithm's unfair advantage of publishing failures\u2014users can screenshot 'Receipts Guy' moments where a hyped signal visibly decays, creating anti-hype social currency.",
+    "biggest_weakness": "No invitation loop or network effect; a user gains value alone, and there's no reason to share the decay tracker itself\u2014it's a consumption feature, not a proof-of-work artifact.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-05-15/openai-feature-01-signal-decay-tracker.md",
+    "_hash": "2c157873b8af14df9f281b13cc36f486"
+  },
+  "drafts/features/2026-05-15/openai-feature-02-trade-failure-highlight-reel.md": {
+    "feature_name": "Trade Failure Highlight Reel",
+    "scores": {
+      "proof_of_work": 4,
+      "invitation_loop": 1,
+      "public_evidence": 3,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 9,
+    "adjusted_score": 14.4,
+    "top_viral_mechanic": "Radical transparency on losses becomes proof-of-work currency in skeptical communities\u2014users can screenshot and share 'this algo admits its failures' as social proof of honesty, directly countering fintech hype culture.",
+    "biggest_weakness": "Zero network effects or invitation mechanics; a user gains value alone, so there's no reason to recruit friends or create a sharing loop beyond one-off credibility posts.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-05-15/openai-feature-02-trade-failure-highlight-reel.md",
+    "_hash": "822860636796bf32fb84897665b146e4"
+  },
+  "drafts/features/2026-05-15/openai-feature-03-operator-s-signal-diary.md": {
+    "feature_name": "Operator's Signal Diary",
+    "scores": {
+      "proof_of_work": 3,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 1,
+      "build_complexity": 2,
+      "stockarithm_fit": 5
+    },
+    "viral_total": 7,
+    "adjusted_score": 8.4,
+    "top_viral_mechanic": "Operator's raw, unfiltered voice on failures creates authentic social currency in a skeptical community that despises marketing gloss\u2014users can screenshot and share 'the guy admits this signal is broken' as proof of radical transparency.",
+    "biggest_weakness": "Paywall-gated notes eliminate public evidence and organic sharing; free users can't see the most interesting content, so the feature doesn't naturally spread across Reddit or Twitter where your core audience lives.",
+    "verdict": "BUILD_NOW",
+    "source_file": "drafts/features/2026-05-15/openai-feature-03-operator-s-signal-diary.md",
+    "_hash": "e21a56d1c106fbc878f33830a48aee9e"
+  },
+  "drafts/features/2026-05-15/openai-feature-04-signal-family-clusters.md": {
+    "feature_name": "Signal Family Clusters",
+    "scores": {
+      "proof_of_work": 2,
+      "invitation_loop": 1,
+      "public_evidence": 2,
+      "cooperative_gain": 2,
+      "build_complexity": 2,
+      "stockarithm_fit": 4
+    },
+    "viral_total": 7,
+    "adjusted_score": 6.72,
+    "top_viral_mechanic": "Clusters expose correlated failures transparently, letting skeptical traders publicly demonstrate due diligence by comparing related signals\u2014fits the anti-hype ethos perfectly.",
+    "biggest_weakness": "No incentive for users to share clusters or invite others; it's a discovery tool for individual portfolio analysis, not a social or competitive mechanic.",
+    "verdict": "BUILD_LATER",
+    "source_file": "drafts/features/2026-05-15/openai-feature-04-signal-family-clusters.md",
+    "_hash": "62d973c35bc092c515bb531019239884"
   }
 }
