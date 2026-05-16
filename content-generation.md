@@ -8,6 +8,12 @@ The content engine is intentionally separate from the tactical run.
 
 It does not run algos. It does not seed algos. It does not generate ideas. It does not call an LLM. It only reads already-produced artifacts and formats validated facts.
 
+The guiding docs for this layer are:
+
+- `soul.md`
+- `mechanism.md`
+- `CONTENT_ARCHITECTURE.md`
+
 ## Core Rule
 
 ```text
@@ -219,6 +225,20 @@ Generated content:
 - `content/failures/YYYY-MM-DD.txt`
 - `content/call_of_day/YYYY-MM-DD.txt`
 - `content/weekly/YYYY-WW.txt`
+
+Dispatcher-ready bundle direction:
+
+```text
+marketing/content/{YYYY-MM-DD}-{slug}/
+  meta.json
+  x.md
+  medium.md
+  substack.md
+  substack_note.md
+  reddit_<target>.md
+```
+
+The current v1 path still uses `drafts/social/YYYY-MM-DD/`, but the longer-term content contract should be compatible with a dispatcher that reads bundles in the shape above.
 
 ## Scripts
 
@@ -556,6 +576,8 @@ The content engine must not:
 - move ideas between triage buckets.
 
 Those are upstream responsibilities.
+
+The current v1 draft output remains `drafts/social/YYYY-MM-DD/`. The dispatcher-ready bundle format above is the target shape for cross-repo scaling, not a claim that v1 has already been converted.
 
 ## Future Extensions
 

@@ -671,6 +671,7 @@ The email is operational. It is not the same as the standalone content engine.
 ## Standalone Content Generation Architecture
 
 The content engine is outside the tactical run.
+The voice and operating contract for this layer live in `soul.md`, `mechanism.md`, and `CONTENT_ARCHITECTURE.md`.
 
 Flow:
 

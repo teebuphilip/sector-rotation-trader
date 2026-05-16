@@ -539,6 +539,12 @@ Important: V1 reviews every algo, but only price-compatible long/cash strategies
 
 The content engine is deliberately separate from the tactical run.
 
+The content voice and operating contract are documented in:
+
+- `soul.md`
+- `mechanism.md`
+- `CONTENT_ARCHITECTURE.md`
+
 Flow:
 
 ```text
@@ -585,6 +591,8 @@ If it is not in the validation report, it does not exist.
 ```
 
 The generator does not recompute strategy metrics and does not use an LLM. It formats already-validated facts.
+
+Current public-facing drafts still land in `drafts/social/YYYY-MM-DD/` and `drafts/reddit_launch/YYYY-MM-DD/`. The long-term content contract is to keep the output deterministic, dispatcher-friendly, and fact-locked.
 
 Detailed documentation:
 
