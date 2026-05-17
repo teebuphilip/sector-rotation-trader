@@ -1,0 +1,152 @@
+{
+  "date": "2026-05-17",
+  "input_count": 25,
+  "kept_count": 23,
+  "duplicate_count": 2,
+  "kept_by_source": {
+    "chatgpt": 13,
+    "claude": 10
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-google-trends-for-electric-vehicle-charging-s",
+      "title": "Daily Spike In Google Trends For Electric Vehicle Charging Station Outage Signals Consumer Tech Stress",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "daily spike in google trends for electric vehicle charging station outage signals bearish xlc",
+        "matched_idea_id": "daily-spike-in-google-trends-for-electric-vehicle-charging-s",
+        "matched_origin": "history:2026-04-30",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-google-trends-for-electric-vehicle-charging-s",
+        "title": "Daily Spike In Google Trends For Electric Vehicle Charging Station Outage Signals Consumer Tech Stress",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Spikes in EV charging outage searches indicate rising consumer frustration and potential demand softening. Consumer tech and EV-related sectors suffer when infrastructure stress impacts user experience.",
+        "data_sources": [
+          "Google Trends daily search interest for 'electric vehicle charging station outage'"
+        ],
+        "signal_logic": "Enter short XLC if daily Google Trends for 'electric vehicle charging station outage' rises 40%+ over 3-day average",
+        "entry_exit": "Entry: Enter short XLC if daily Google Trends for 'electric vehicle charging station outage' rises 40%+ over 3-day average Exit: Exit after 7 trading days or if searches normalize",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLC"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest for 'electric vehicle charging station outage' via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "EV infrastructure issues frequently cause short-term consumer attention spikes.",
+        "schema": {
+          "idea": "Daily Spike In Google Trends For 'Electric Vehicle Charging Station Outage' Signals Consumer Tech Stress",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest for 'electric vehicle charging station outage'",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Spikes in EV charging outage searches indicate rising consumer frustration and potential demand softening.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLC",
+            "rationale": "Consumer tech and EV-related sectors suffer when infrastructure stress impacts user experience."
+          },
+          "trade_logic": {
+            "entry": "Enter short XLC if daily Google Trends for 'electric vehicle charging station outage' rises 40%+ over 3-day average",
+            "exit": "Exit after 7 trading days or if searches normalize",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "EV infrastructure issues frequently cause short-term consumer attention spikes.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-jump-in-google-trends-for-job-quitting-searches-signa",
+      "title": "Weekly Jump In Google Trends For Job Quitting Searches Signals Labor Market Stress",
+      "family": "labor_jobs",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "weekly jump in google trends for job quitting searches signals labor market tightness benefiting financial sector",
+        "matched_idea_id": "weekly-jump-in-google-trends-for-job-quitting-searches-signa",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "weekly-jump-in-google-trends-for-job-quitting-searches-signa",
+        "title": "Weekly Jump In Google Trends For Job Quitting Searches Signals Labor Market Stress",
+        "family": "labor_jobs",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising interest in quitting jobs signals growing labor market dissatisfaction or turnover risk. High labor turnover signals operational disruption and cost pressure on industrial companies.",
+        "data_sources": [
+          "Google Trends weekly search interest for 'job quitting'"
+        ],
+        "signal_logic": "Enter short XLI if weekly Google Trends for 'job quitting' rises by 20%+ WoW",
+        "entry_exit": "Entry: Enter short XLI if weekly Google Trends for 'job quitting' rises by 20%+ WoW Exit: Exit after 4 weeks or if the trend declines by 10% WoW",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly search interest for 'job quitting' via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 18,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Labor market stress terms have strong seasonal and cyclical weekly interest fluctuations.",
+        "schema": {
+          "idea": "Weekly Jump In Google Trends For 'Job Quitting' Searches Signals Labor Market Stress",
+          "family": "labor_jobs",
+          "data": {
+            "source": "Google Trends weekly search interest for 'job quitting'",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Rising interest in quitting jobs signals growing labor market dissatisfaction or turnover risk.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLI",
+            "rationale": "High labor turnover signals operational disruption and cost pressure on industrial companies."
+          },
+          "trade_logic": {
+            "entry": "Enter short XLI if weekly Google Trends for 'job quitting' rises by 20%+ WoW",
+            "exit": "Exit after 4 weeks or if the trend declines by 10% WoW",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 18,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Labor market stress terms have strong seasonal and cyclical weekly interest fluctuations.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
