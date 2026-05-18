@@ -2,15 +2,15 @@
   "ticker": "HCA",
   "sector": "Healthcare",
   "sector_etf": "XLV",
-  "composite": "2 of 44",
+  "composite": "2 of 47",
   "composite_label": "BEARISH",
   "composite_color": "red",
   "bullish": 2,
-  "bearish": 42,
-  "neutral": 234,
-  "total_signals": 278,
-  "total_active": 44,
-  "bullish_pct": 5,
+  "bearish": 45,
+  "neutral": 245,
+  "total_signals": 292,
+  "total_active": 47,
+  "bullish_pct": 4,
   "breakdown": [
     {
       "algo_id": "daily-spike-in-google-trends-searches-for-airline-flight-del",
@@ -235,6 +235,15 @@
       "direction": "NEUTRAL",
       "days_running": 87,
       "ytd_pct": -0.09,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "daily-jump-in-rss-news-counts-for-labor-union-strikes-in-tra",
+      "name": "Daily Jump In Rss News Counts For Labor Union Strikes In Transportation Sector",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 66,
+      "ytd_pct": -0.01,
       "beat_spy": false
     },
     {
@@ -463,6 +472,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "daily-spike-in-google-trends-for-heating-oil-delivery-delay-",
+      "name": "Daily Spike In Google Trends For Heating Oil Delivery Delay Signals Energy Sector Pressure",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "daily-jump-in-google-trends-for-food-delivery-delay-complain",
       "name": "Daily Jump In Google Trends For Food Delivery Delay Complaints Signals Bearish Consumer Staples",
       "algo_type": "crazy",
@@ -576,6 +594,15 @@
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 70,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "daily-spike-in-rss-news-feed-for-semiconductor-chip-shortage",
+      "name": "Daily Spike In Rss News Feed For Semiconductor Chip Shortage Signals Tech Sector Volatility",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -895,6 +922,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "weekly-surge-in-google-trends-for-freight-elevator-repair-si",
+      "name": "Weekly Surge In Google Trends For Freight Elevator Repair Signals Industrial Sector Demand",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "weekly-google-trends-surge-in-searches-for-diesel-fuel-price",
       "name": "Weekly Google Trends Surge In Searches For Diesel Fuel Price Increase",
       "algo_type": "crazy",
@@ -1009,6 +1045,15 @@
       "direction": "NEUTRAL",
       "days_running": 83,
       "ytd_pct": -0.2,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "daily-jump-in-google-trends-for-food-poisoning-outbreak-boos",
+      "name": "Daily Jump In Google Trends For Food Poisoning Outbreak Boosts Healthcare Sector Demand",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 66,
+      "ytd_pct": -0.01,
       "beat_spy": false
     },
     {
@@ -1138,6 +1183,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "daily-spike-in-google-trends-for-emergency-dental-surgery-si",
+      "name": "Daily Spike In Google Trends For Emergency Dental Surgery Signals Healthcare Consumer Stress",
+      "algo_type": "crazy",
+      "direction": "BEARISH",
+      "days_running": 66,
+      "ytd_pct": -0.16,
+      "beat_spy": false
+    },
+    {
       "algo_id": "reddit-emoji-sentiment-spike",
       "name": "Reddit Emoji Sentiment Spike",
       "algo_type": "crazy",
@@ -1189,6 +1243,15 @@
       "direction": "NEUTRAL",
       "days_running": 87,
       "ytd_pct": -0.21,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-rise-in-google-trends-for-warehouse-lighting-failure-",
+      "name": "Weekly Rise In Google Trends For Warehouse Lighting Failure Signals Industrial Maintenance Cycle",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
       "beat_spy": false
     },
     {
@@ -1404,6 +1467,15 @@
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 67,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-rise-in-google-trends-for-commercial-truck-tire-blowo",
+      "name": "Weekly Rise In Google Trends For Commercial Truck Tire Blowout Signals Freight Sector Caution",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -1674,6 +1746,15 @@
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 92,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-increase-in-google-trends-for-commercial-drone-repair",
+      "name": "Weekly Increase In Google Trends For Commercial Drone Repair Signals Tech Sector Maintenance Demand",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -2020,6 +2101,15 @@
       "beat_spy": false
     },
     {
+      "algo_id": "weekly-spike-in-google-trends-for-railway-crossing-malfuncti",
+      "name": "Weekly Spike In Google Trends For Railway Crossing Malfunction Signals Freight Sector Risk",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
       "algo_id": "rss-roar",
       "name": "Rss Roar",
       "algo_type": "crazy",
@@ -2034,6 +2124,15 @@
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 79,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "daily-jump-in-google-trends-for-home-internet-outage-signals",
+      "name": "Daily Jump In Google Trends For Home Internet Outage Signals Consumer Discretionary Tech Stress",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
       "ytd_pct": 0.0,
       "beat_spy": false
     },
@@ -2071,6 +2170,15 @@
       "direction": "NEUTRAL",
       "days_running": 82,
       "ytd_pct": -0.02,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-for-electric-scooter-theft-sig",
+      "name": "Weekly Surge In Google Trends For Electric Scooter Theft Signals Consumer Discretionary Stress",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": 0.0,
       "beat_spy": false
     },
     {
@@ -2233,6 +2341,15 @@
       "direction": "BEARISH",
       "days_running": 101,
       "ytd_pct": -2.49,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "daily-jump-in-google-trends-for-emergency-hvac-repair-signal",
+      "name": "Daily Jump In Google Trends For Emergency Hvac Repair Signals Consumer Home Repair Stress",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
+      "ytd_pct": -0.56,
       "beat_spy": false
     },
     {
@@ -2448,6 +2565,15 @@
       "algo_type": "crazy",
       "direction": "NEUTRAL",
       "days_running": 101,
+      "ytd_pct": 0.0,
+      "beat_spy": false
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-for-delayed-package-delivery-s",
+      "name": "Weekly Surge In Google Trends For Delayed Package Delivery Signals Consumer Discretionary Shipping Pressure",
+      "algo_type": "crazy",
+      "direction": "NEUTRAL",
+      "days_running": 66,
       "ytd_pct": 0.0,
       "beat_spy": false
     },

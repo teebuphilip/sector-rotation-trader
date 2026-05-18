@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-05-18/publish/claude_temporary-staffing-agency-hiring-collapse-signals-labor-mark.md",
+  "target_file": "data/ideas/runs/2026-05-18/intervention/claude_temporary-staffing-agency-hiring-collapse-signals-labor-mark.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "adapter mismatch",
+      "low_adapter_confidence",
+      "requires new adapter",
+      "short_trade_not_supported",
+      "shorting not natively supported",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "rss_count": 1,
+        "html_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 977,
+    "output_tokens": 82
+  },
+  "cost_usd": 0.0032625,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"No existing rss_count adapter for ManpowerGroup and Kforce hiring intention indices\",\n  \"risk_flags\": [\"adapter mismatch\", \"requires new adapter\", \"shorting not natively supported\"]\n}\n```"
+}

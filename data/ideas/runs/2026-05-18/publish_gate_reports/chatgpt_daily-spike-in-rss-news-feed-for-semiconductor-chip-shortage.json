@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-05-18/publish/chatgpt_daily-spike-in-rss-news-feed-for-semiconductor-chip-shortage.md",
+  "target_file": "data/ideas/runs/2026-05-18/build/chatgpt_daily-spike-in-rss-news-feed-for-semiconductor-chip-shortage.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "rss_count",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, deterministic, uses correct rss_count adapter for news feed counts.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "rss_count"
+      ],
+      "scores": {
+        "rss_count": 3,
+        "html_table": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 928,
+    "output_tokens": 77
+  },
+  "cost_usd": 0.00309,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses correct rss_count adapter for news feed counts.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

@@ -1,0 +1,37 @@
+{
+  "source_file": "data/ideas/runs/2026-05-18/publish/claude_regional-bank-cds-spread-widening-signals-financial-system-s.md",
+  "target_file": "data/ideas/runs/2026-05-18/intervention/claude_regional-bank-cds-spread-widening-signals-financial-system-s.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "requires shorting",
+      "short_trade_not_supported",
+      "unsupported_template_adapter",
+      "volume data not specified"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "price_only"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 1018,
+    "output_tokens": 81
+  },
+  "cost_usd": 0.003355,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting but current algo envelope supports only long/flat allocations.\",\n  \"risk_flags\": [\"requires shorting\", \"low adapter routing confidence\", \"volume data not specified\"]\n}\n```"
+}

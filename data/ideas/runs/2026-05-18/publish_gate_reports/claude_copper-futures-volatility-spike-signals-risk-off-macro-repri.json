@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-18/publish/claude_copper-futures-volatility-spike-signals-risk-off-macro-repri.md",
+  "target_file": "data/ideas/runs/2026-05-18/intervention/claude_copper-futures-volatility-spike-signals-risk-off-macro-repri.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "requires shorting",
+      "short_trade_not_supported",
+      "volatility calculation not explicit in adapter contract"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 967,
+    "output_tokens": 84
+  },
+  "cost_usd": 0.0032575,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is unsupported by current adapter and algo envelope\",\n  \"risk_flags\": [\"requires shorting\", \"low adapter routing confidence\", \"volatility calculation not explicit in adapter contract\"]\n}\n```"
+}

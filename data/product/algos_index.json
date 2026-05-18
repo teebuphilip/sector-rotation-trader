@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T23:49:11Z",
+  "generated_at": "2026-05-18T23:58:19Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -65,6 +65,30 @@
       "ytd_pct": -0.23,
       "trade_count": 21,
       "positions": 1,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-spike-in-rss-news-feed-for-semiconductor-chip-shortage",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-rss-news-feed-for-semiconductor-chip-shortage",
+      "name": "Daily Spike In Rss News Feed For Semiconductor Chip Shortage Signals Tech Sector Volatility",
+      "family": "attention_sentiment",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLK"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
       "last_snapshot": "2026-05-18",
       "last_signal": null,
       "new_algo_date": null,
@@ -949,6 +973,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-jump-in-google-trends-for-emergency-hvac-repair-signal",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-emergency-hvac-repair-signal",
+      "name": "Daily Jump In Google Trends For Emergency Hvac Repair Signals Consumer Home Repair Stress",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99442.23,
+      "ytd_pct": -0.56,
+      "trade_count": 20,
+      "positions": 0,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:daily-jump-in-google-trends-for-emergency-roadside-assistanc",
       "algo_type": "crazy",
       "algo_id": "daily-jump-in-google-trends-for-emergency-roadside-assistanc",
@@ -997,6 +1045,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-jump-in-google-trends-for-food-poisoning-outbreak-boos",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-food-poisoning-outbreak-boos",
+      "name": "Daily Jump In Google Trends For Food Poisoning Outbreak Boosts Healthcare Sector Demand",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLV"
+      ],
+      "equity": 99989.37,
+      "ytd_pct": -0.01,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:daily-jump-in-google-trends-for-home-appliance-repair-signal",
       "algo_type": "crazy",
       "algo_id": "daily-jump-in-google-trends-for-home-appliance-repair-signal",
@@ -1011,6 +1083,30 @@
       "equity": 99795.5,
       "ytd_pct": -0.2,
       "trade_count": 16,
+      "positions": 0,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-jump-in-google-trends-for-home-internet-outage-signals",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-home-internet-outage-signals",
+      "name": "Daily Jump In Google Trends For Home Internet Outage Signals Consumer Discretionary Tech Stress",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
       "positions": 0,
       "last_snapshot": "2026-05-18",
       "last_signal": null,
@@ -1131,6 +1227,30 @@
       "equity": 99927.72,
       "ytd_pct": -0.07,
       "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-spike-in-google-trends-for-emergency-dental-surgery-si",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-for-emergency-dental-surgery-si",
+      "name": "Daily Spike In Google Trends For Emergency Dental Surgery Signals Healthcare Consumer Stress",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLV"
+      ],
+      "equity": 99840.86,
+      "ytd_pct": -0.16,
+      "trade_count": 8,
       "positions": 0,
       "last_snapshot": "2026-05-18",
       "last_signal": null,
@@ -2308,6 +2428,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-surge-in-google-trends-for-delayed-package-delivery-s",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-delayed-package-delivery-s",
+      "name": "Weekly Surge In Google Trends For Delayed Package Delivery Signals Consumer Discretionary Shipping Pressure",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
       "algo_type": "crazy",
       "algo_id": "weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
@@ -2951,6 +3095,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-rise-in-google-trends-for-commercial-truck-tire-blowo",
+      "algo_type": "crazy",
+      "algo_id": "weekly-rise-in-google-trends-for-commercial-truck-tire-blowo",
+      "name": "Weekly Rise In Google Trends For Commercial Truck Tire Blowout Signals Freight Sector Caution",
+      "family": "freight_logistics",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-spike-in-earthquake-activity-in-port-regions-signals-",
       "algo_type": "crazy",
       "algo_id": "weekly-spike-in-earthquake-activity-in-port-regions-signals-",
@@ -2989,6 +3157,30 @@
       "equity": 99734.85,
       "ytd_pct": -0.27,
       "trade_count": 34,
+      "positions": 0,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-spike-in-google-trends-for-railway-crossing-malfuncti",
+      "algo_type": "crazy",
+      "algo_id": "weekly-spike-in-google-trends-for-railway-crossing-malfuncti",
+      "name": "Weekly Spike In Google Trends For Railway Crossing Malfunction Signals Freight Sector Risk",
+      "family": "freight_logistics",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
       "positions": 0,
       "last_snapshot": "2026-05-18",
       "last_signal": null,
@@ -3848,6 +4040,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-spike-in-google-trends-for-heating-oil-delivery-delay-",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-for-heating-oil-delivery-delay-",
+      "name": "Daily Spike In Google Trends For Heating Oil Delivery Delay Signals Energy Sector Pressure",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLE"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:daily-spike-in-usgs-earthquake-activity-near-key-industrial-",
       "algo_type": "crazy",
       "algo_id": "daily-spike-in-usgs-earthquake-activity-near-key-industrial-",
@@ -4141,6 +4357,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:weekly-increase-in-google-trends-for-commercial-drone-repair",
+      "algo_type": "crazy",
+      "algo_id": "weekly-increase-in-google-trends-for-commercial-drone-repair",
+      "name": "Weekly Increase In Google Trends For Commercial Drone Repair Signals Tech Sector Maintenance Demand",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLK"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:weekly-increase-in-google-trends-for-home-solar-panel-instal",
       "algo_type": "crazy",
       "algo_id": "weekly-increase-in-google-trends-for-home-solar-panel-instal",
@@ -4151,6 +4391,30 @@
       "rebalance_frequency": "weekly",
       "universe": [
         "XLU"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-rise-in-google-trends-for-warehouse-lighting-failure-",
+      "algo_type": "crazy",
+      "algo_id": "weekly-rise-in-google-trends-for-warehouse-lighting-failure-",
+      "name": "Weekly Rise In Google Trends For Warehouse Lighting Failure Signals Industrial Maintenance Cycle",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
       ],
       "equity": 100000.0,
       "ytd_pct": 0.0,
@@ -4180,6 +4444,54 @@
       "ytd_pct": -0.35,
       "trade_count": 11,
       "positions": 1,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-surge-in-google-trends-for-electric-scooter-theft-sig",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-electric-scooter-theft-sig",
+      "name": "Weekly Surge In Google Trends For Electric Scooter Theft Signals Consumer Discretionary Stress",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:weekly-surge-in-google-trends-for-freight-elevator-repair-si",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-freight-elevator-repair-si",
+      "name": "Weekly Surge In Google Trends For Freight Elevator Repair Signals Industrial Sector Demand",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 100000.0,
+      "ytd_pct": 0.0,
+      "trade_count": 0,
+      "positions": 0,
       "last_snapshot": "2026-05-18",
       "last_signal": null,
       "new_algo_date": null,
@@ -5994,6 +6306,30 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "Historical seed exists, but V1 cannot prove point-in-time price-only behavior",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-jump-in-rss-news-counts-for-labor-union-strikes-in-tra",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-rss-news-counts-for-labor-union-strikes-in-tra",
+      "name": "Daily Jump In Rss News Counts For Labor Union Strikes In Transportation Sector",
+      "family": "political_insider_filing",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 99990.05,
+      "ytd_pct": -0.01,
+      "trade_count": 1,
+      "positions": 1,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },

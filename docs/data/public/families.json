@@ -1,18 +1,18 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-18T23:49:11Z",
+  "generated_at": "2026-05-18T23:58:19Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
-      "count": 29,
+      "count": 30,
       "by_status": {
         "live_only": 10,
         "parked": 2,
-        "sandbox": 17
+        "sandbox": 18
       },
       "by_evidence_class": {
         "live_receipts_only": 10,
-        "needs_history": 17,
+        "needs_history": 18,
         "pending_seed": 2
       },
       "leaders": [
@@ -51,27 +51,6 @@
             },
             "summary": "mixed"
           }
-        },
-        {
-          "schema_version": "v1",
-          "key": "crazy:reddit-mentions-volatility-spike",
-          "algo_type": "crazy",
-          "algo_id": "reddit-mentions-volatility-spike",
-          "name": "Reddit Mentions Volatility Spike",
-          "family": "attention_sentiment",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "daily",
-          "ytd_pct": 0.0,
-          "days_running": 101,
-          "beat_spy": false,
-          "spy_pct": 8.42,
-          "alpha_pct": -8.42,
-          "ret_30d_pct": 0.0,
-          "spy_delta_30d_pct": -4.22,
-          "last_snapshot": "2026-05-18",
-          "new_algo_date": null,
-          "comparator": null
         },
         {
           "schema_version": "v1",
@@ -150,20 +129,56 @@
             },
             "summary": "mixed"
           }
+        },
+        {
+          "schema_version": "v1",
+          "key": "crazy:daily-spike-in-rss-news-feed-for-semiconductor-chip-shortage",
+          "algo_type": "crazy",
+          "algo_id": "daily-spike-in-rss-news-feed-for-semiconductor-chip-shortage",
+          "name": "Daily Spike In Rss News Feed For Semiconductor Chip Shortage Signals Tech Sector Volatility",
+          "family": "attention_sentiment",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "ytd_pct": 0.0,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.0,
+          "spy_delta_30d_pct": -4.22,
+          "last_snapshot": "2026-05-18",
+          "new_algo_date": null,
+          "comparator": {
+            "primary_etf": "XLK",
+            "signals": {
+              "momentum_5d": {
+                "direction": "DOWN",
+                "confidence": 0.396,
+                "return_pct": -1.979
+              },
+              "momentum_20d": {
+                "direction": "UP",
+                "confidence": 1.0,
+                "return_pct": 12.811
+              }
+            },
+            "summary": "mixed"
+          }
         }
       ]
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 73,
+      "count": 78,
       "by_status": {
         "failed": 1,
-        "live_only": 32,
-        "sandbox": 40
+        "live_only": 35,
+        "sandbox": 42
       },
       "by_evidence_class": {
-        "live_receipts_only": 32,
-        "needs_history": 40,
+        "live_receipts_only": 35,
+        "needs_history": 42,
         "v1_backtested": 1
       },
       "leaders": [
@@ -454,14 +469,14 @@
     },
     "freight_logistics": {
       "family": "freight_logistics",
-      "count": 20,
+      "count": 22,
       "by_status": {
         "live_only": 13,
-        "sandbox": 7
+        "sandbox": 9
       },
       "by_evidence_class": {
         "live_receipts_only": 13,
-        "needs_history": 7
+        "needs_history": 9
       },
       "leaders": [
         {
@@ -782,14 +797,14 @@
     },
     "local_economy_weirdness": {
       "family": "local_economy_weirdness",
-      "count": 24,
+      "count": 29,
       "by_status": {
         "live_only": 12,
-        "sandbox": 12
+        "sandbox": 17
       },
       "by_evidence_class": {
         "live_receipts_only": 12,
-        "needs_history": 12
+        "needs_history": 17
       },
       "leaders": [
         {
@@ -1129,15 +1144,15 @@
     },
     "political_insider_filing": {
       "family": "political_insider_filing",
-      "count": 18,
+      "count": 19,
       "by_status": {
         "backtest_weak": 3,
-        "live_only": 7,
+        "live_only": 8,
         "parked": 2,
         "sandbox": 6
       },
       "by_evidence_class": {
-        "live_receipts_only": 6,
+        "live_receipts_only": 7,
         "needs_history": 5,
         "pending_seed": 2,
         "v1_backtested": 5

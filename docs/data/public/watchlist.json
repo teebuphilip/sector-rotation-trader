@@ -1,6 +1,6 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-18T23:49:11Z",
+  "generated_at": "2026-05-18T23:58:19Z",
   "algos": [
     {
       "schema_version": "v1",
@@ -849,6 +849,78 @@
             "direction": "DOWN",
             "confidence": 0.362,
             "return_pct": -1.811
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-rss-news-counts-for-labor-union-strikes-in-tra",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-rss-news-counts-for-labor-union-strikes-in-tra",
+      "name": "Daily Jump In Rss News Counts For Labor Union Strikes In Transportation Sector",
+      "family": "political_insider_filing",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.01,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.01,
+      "spy_delta_30d_pct": -4.23,
+      "last_snapshot": "2026-05-18",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.49,
+            "return_pct": -2.451
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.362,
+            "return_pct": -1.811
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-google-trends-for-food-poisoning-outbreak-boos",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-food-poisoning-outbreak-boos",
+      "name": "Daily Jump In Google Trends For Food Poisoning Outbreak Boosts Healthcare Sector Demand",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.01,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -4.22,
+      "last_snapshot": "2026-05-18",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLV",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.375,
+            "return_pct": 1.874
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.231,
+            "return_pct": -1.153
           }
         },
         "summary": "mixed"
@@ -2245,6 +2317,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:daily-spike-in-google-trends-for-emergency-dental-surgery-si",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-for-emergency-dental-surgery-si",
+      "name": "Daily Spike In Google Trends For Emergency Dental Surgery Signals Healthcare Consumer Stress",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.16,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.13,
+      "spy_delta_30d_pct": -4.35,
+      "last_snapshot": "2026-05-18",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLV",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.375,
+            "return_pct": 1.874
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.231,
+            "return_pct": -1.153
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:daily-jump-in-google-trends-searches-for-job-quitting-signal",
       "algo_type": "crazy",
       "algo_id": "daily-jump-in-google-trends-searches-for-job-quitting-signal",
@@ -3273,6 +3381,42 @@
             "direction": "DOWN",
             "confidence": 0.231,
             "return_pct": -1.153
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-google-trends-for-emergency-hvac-repair-signal",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-emergency-hvac-repair-signal",
+      "name": "Daily Jump In Google Trends For Emergency Hvac Repair Signals Consumer Home Repair Stress",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.56,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.07,
+      "spy_delta_30d_pct": -4.29,
+      "last_snapshot": "2026-05-18",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.511,
+            "return_pct": -2.555
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.592,
+            "return_pct": -2.962
           }
         },
         "summary": "mixed"

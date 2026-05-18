@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-18/publish/claude_college-application-volume-collapse-signals-education-demand.md",
+  "target_file": "data/ideas/runs/2026-05-18/intervention/claude_college-application-volume-collapse-signals-education-demand.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "data source scrape stability",
+      "potential false positives",
+      "requires shorting",
+      "short_trade_not_supported",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "html_table": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 961,
+    "output_tokens": 74
+  },
+  "cost_usd": 0.0031425,
+  "raw_llm_response": "{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is not supported by current algo envelope.\",\n  \"risk_flags\": [\"requires shorting\", \"data source scrape stability\", \"potential false positives\"]\n}"
+}

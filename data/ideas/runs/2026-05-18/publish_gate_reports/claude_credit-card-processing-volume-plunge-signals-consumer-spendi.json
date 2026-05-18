@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-05-18/publish/claude_credit-card-processing-volume-plunge-signals-consumer-spendi.md",
+  "target_file": "data/ideas/runs/2026-05-18/intervention/claude_credit-card-processing-volume-plunge-signals-consumer-spendi.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "html_table",
+    "needs_new_adapter": true,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "adapter data source mismatch",
+      "data source instability",
+      "requires shorting position",
+      "short_trade_not_supported",
+      "unsupported_template_adapter",
+      "volume data reliability"
+    ],
+    "route": {
+      "adapters": [
+        "html_table"
+      ],
+      "scores": {
+        "rss_count": 1,
+        "html_table": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 968,
+    "output_tokens": 100
+  },
+  "cost_usd": 0.00342,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Adapter html_table may not reliably provide Visa/Mastercard transaction volume data; shorting not supported natively.\",\n  \"risk_flags\": [\n    \"adapter data source mismatch\",\n    \"requires shorting position\",\n    \"data source instability\",\n    \"volume data reliability\"\n  ]\n}\n```"
+}

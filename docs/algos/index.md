@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-05-18T23:49:11
+Updated (UTC): 2026-05-18T23:58:19
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 273
+Crazy models: 287
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -289,3 +289,17 @@ Crazy models: 273
 | ev-charger-buildout-acceleration-play | Ev Charger Buildout Acceleration Play | weekly |
 | truck-driver-wage-search-surge | Truck Driver Wage Search Surge | weekly |
 | weather-extreme-disruption-energy-demand-spike | Weather Extreme Disruption Energy Demand Spike | daily |
+| daily-jump-in-google-trends-for-emergency-hvac-repair-signal | Daily Jump In Google Trends For Emergency Hvac Repair Signals Consumer Home Repair Stress | daily |
+| daily-jump-in-google-trends-for-food-poisoning-outbreak-boos | Daily Jump In Google Trends For Food Poisoning Outbreak Boosts Healthcare Sector Demand | daily |
+| daily-jump-in-google-trends-for-home-internet-outage-signals | Daily Jump In Google Trends For Home Internet Outage Signals Consumer Discretionary Tech Stress | daily |
+| daily-jump-in-rss-news-counts-for-labor-union-strikes-in-tra | Daily Jump In Rss News Counts For Labor Union Strikes In Transportation Sector | daily |
+| daily-spike-in-google-trends-for-emergency-dental-surgery-si | Daily Spike In Google Trends For Emergency Dental Surgery Signals Healthcare Consumer Stress | daily |
+| daily-spike-in-google-trends-for-heating-oil-delivery-delay- | Daily Spike In Google Trends For Heating Oil Delivery Delay Signals Energy Sector Pressure | daily |
+| daily-spike-in-rss-news-feed-for-semiconductor-chip-shortage | Daily Spike In Rss News Feed For Semiconductor Chip Shortage Signals Tech Sector Volatility | daily |
+| weekly-increase-in-google-trends-for-commercial-drone-repair | Weekly Increase In Google Trends For Commercial Drone Repair Signals Tech Sector Maintenance Demand | weekly |
+| weekly-rise-in-google-trends-for-commercial-truck-tire-blowo | Weekly Rise In Google Trends For Commercial Truck Tire Blowout Signals Freight Sector Caution | weekly |
+| weekly-rise-in-google-trends-for-warehouse-lighting-failure- | Weekly Rise In Google Trends For Warehouse Lighting Failure Signals Industrial Maintenance Cycle | weekly |
+| weekly-spike-in-google-trends-for-railway-crossing-malfuncti | Weekly Spike In Google Trends For Railway Crossing Malfunction Signals Freight Sector Risk | weekly |
+| weekly-surge-in-google-trends-for-delayed-package-delivery-s | Weekly Surge In Google Trends For Delayed Package Delivery Signals Consumer Discretionary Shipping Pressure | weekly |
+| weekly-surge-in-google-trends-for-electric-scooter-theft-sig | Weekly Surge In Google Trends For Electric Scooter Theft Signals Consumer Discretionary Stress | weekly |
+| weekly-surge-in-google-trends-for-freight-elevator-repair-si | Weekly Surge In Google Trends For Freight Elevator Repair Signals Industrial Sector Demand | weekly |

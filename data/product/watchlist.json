@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T23:49:11Z",
+  "generated_at": "2026-05-18T23:58:19Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -324,6 +324,54 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:daily-jump-in-google-trends-for-emergency-hvac-repair-signal",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-emergency-hvac-repair-signal",
+      "name": "Daily Jump In Google Trends For Emergency Hvac Repair Signals Consumer Home Repair Stress",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLY"
+      ],
+      "equity": 99442.23,
+      "ytd_pct": -0.56,
+      "trade_count": 20,
+      "positions": 0,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-jump-in-google-trends-for-food-poisoning-outbreak-boos",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-food-poisoning-outbreak-boos",
+      "name": "Daily Jump In Google Trends For Food Poisoning Outbreak Boosts Healthcare Sector Demand",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLV"
+      ],
+      "equity": 99989.37,
+      "ytd_pct": -0.01,
+      "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:daily-jump-in-google-trends-for-home-appliance-repair-signal",
       "algo_type": "crazy",
       "algo_id": "daily-jump-in-google-trends-for-home-appliance-repair-signal",
@@ -410,6 +458,30 @@
       "equity": 99927.72,
       "ytd_pct": -0.07,
       "trade_count": 2,
+      "positions": 0,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-spike-in-google-trends-for-emergency-dental-surgery-si",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-for-emergency-dental-surgery-si",
+      "name": "Daily Spike In Google Trends For Emergency Dental Surgery Signals Healthcare Consumer Stress",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLV"
+      ],
+      "equity": 99840.86,
+      "ytd_pct": -0.16,
+      "trade_count": 8,
       "positions": 0,
       "last_snapshot": "2026-05-18",
       "last_signal": null,
@@ -2366,6 +2438,30 @@
       "new_algo_date": null,
       "backtest_status": "UNSUPPORTED_DATA",
       "backtest_reason": "Uses non-price adapter: crazy.adapters.eia_electricity",
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
+      "key": "crazy:daily-jump-in-rss-news-counts-for-labor-union-strikes-in-tra",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-rss-news-counts-for-labor-union-strikes-in-tra",
+      "name": "Daily Jump In Rss News Counts For Labor Union Strikes In Transportation Sector",
+      "family": "political_insider_filing",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLI"
+      ],
+      "equity": 99990.05,
+      "ytd_pct": -0.01,
+      "trade_count": 1,
+      "positions": 1,
+      "last_snapshot": "2026-05-18",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
       "backtest_alpha_vs_spy_pct": null,
       "backtest_trade_count": null
     },

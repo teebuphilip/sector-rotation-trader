@@ -1,0 +1,39 @@
+{
+  "source_file": "data/ideas/runs/2026-05-18/publish/claude_natural-gas-storage-injection-collapse-signals-energy-demand.md",
+  "target_file": "data/ideas/runs/2026-05-18/intervention/claude_natural-gas-storage-injection-collapse-signals-energy-demand.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": false,
+    "reason": "fred_series adapter may not directly provide EIA weekly natural gas storage injection data as required",
+    "risk_flags": [
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "potential data source mismatch",
+      "weekly frequency requires verification"
+    ],
+    "route": {
+      "adapters": [
+        "eia_electricity",
+        "fred_series",
+        "html_table",
+        "price_only"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "html_table": 1,
+        "eia_electricity": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 1016,
+    "output_tokens": 85
+  },
+  "cost_usd": 0.00339,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"fred_series adapter may not directly provide EIA weekly natural gas storage injection data as required\",\n  \"risk_flags\": [\"low adapter routing confidence\", \"potential data source mismatch\", \"weekly frequency requires verification\"]\n}\n```"
+}
