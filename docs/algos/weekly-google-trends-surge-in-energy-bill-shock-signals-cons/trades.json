@@ -47,6 +47,16 @@
       "pnl_pct": -2.5,
       "entry_date": "2026-05-14",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-18",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 113.5418,
+      "price": 43.94,
+      "cost": 4989.03,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -889,6 +899,26 @@
       "positions": {},
       "sector": "Weekly Google Trends Surge In Energy Bill Shock Signals Consumer Stress Impacting Utilities",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-18",
+      "cash": 94781.53,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99770.55,
+      "positions": {
+        "XLU": {
+          "shares": 113.5418,
+          "entry_price": 43.94,
+          "current_price": 43.94,
+          "market_value": 4989.03,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-18",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Google Trends Surge In Energy Bill Shock Signals Consumer Stress Impacting Utilities",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-27"

@@ -225,6 +225,20 @@
       "cost": 4987.74,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-18",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 42.8022,
+      "price": 116.32,
+      "proceeds": 4968.54,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -19.2,
+      "pnl_pct": -0.38,
+      "entry_date": "2026-05-15",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1217,6 +1231,16 @@
       },
       "sector": "News Sentiment Rotation Fade Trade",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-18",
+      "cash": 99725.59,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99725.59,
+      "positions": {},
+      "sector": "News Sentiment Rotation Fade Trade",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-21"

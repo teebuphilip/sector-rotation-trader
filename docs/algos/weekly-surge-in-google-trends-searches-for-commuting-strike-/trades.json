@@ -119,6 +119,16 @@
       "pnl_pct": -0.25,
       "entry_date": "2026-05-13",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-18",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 42.9335,
+      "price": 116.32,
+      "cost": 4994.03,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1031,6 +1041,26 @@
       "positions": {},
       "sector": "Weekly Surge In Google Trends Searches For Commuting Strike Signals Bearish Xly",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-18",
+      "cash": 94876.62,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99870.65,
+      "positions": {
+        "XLY": {
+          "shares": 42.9335,
+          "entry_price": 116.32,
+          "current_price": 116.32,
+          "market_value": 4994.03,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-18",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Surge In Google Trends Searches For Commuting Strike Signals Bearish Xly",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-23"

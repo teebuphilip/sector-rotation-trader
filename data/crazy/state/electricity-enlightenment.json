@@ -1,10 +1,19 @@
 {
-  "cash": 99857.3270452387,
+  "cash": 94854.51069297676,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 100.7933185816008,
+  "fees_paid": 110.7433185816008,
   "taxes_paid": 31.820297515538222,
-  "positions": {},
+  "positions": {
+    "XLI": {
+      "shares": 29.240798549118217,
+      "entry_price": 170.75,
+      "entry_date": "2026-05-18",
+      "cost": 4992.866352261935,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-03-16",
@@ -125,6 +134,16 @@
       "pnl_pct": 1.05,
       "entry_date": "2026-04-16",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-18",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 29.2408,
+      "price": 170.75,
+      "cost": 4992.87,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1137,20 +1156,40 @@
       "positions": {},
       "sector": "Electricity Enlightenment",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-18",
+      "cash": 94854.51,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99847.38,
+      "positions": {
+        "XLI": {
+          "shares": 29.2408,
+          "entry_price": 170.75,
+          "current_price": 170.75,
+          "market_value": 4992.87,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-18",
+          "margin": false
+        }
+      },
+      "sector": "Electricity Enlightenment",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-18",
-  "last_run": "2026-05-15",
+  "last_run": "2026-05-18",
   "meta": {
     "electricity-enlightenment": {
-      "signal_label": "HOLD",
-      "latest_value": 10506300.0,
-      "prior_avg": 10422732.6214,
-      "signal_change": 0.008,
-      "entry_date": "2026-04-16",
+      "signal_label": "RISK_ON",
+      "latest_value": 10724487.0,
+      "prior_avg": 10389536.6357,
+      "signal_change": 0.0322,
+      "entry_date": "2026-05-18",
       "name": "Electricity Enlightenment",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-15"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-18"
     }
   }
 }

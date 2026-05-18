@@ -33,6 +33,20 @@
       "cost": 4999.99,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-18",
+      "action": "SELL",
+      "ticker": "XLI",
+      "shares": 29.1715,
+      "price": 170.75,
+      "proceeds": 4970.82,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -29.17,
+      "pnl_pct": -0.58,
+      "entry_date": "2026-05-15",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -735,6 +749,16 @@
       },
       "sector": "Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-18",
+      "cash": 99960.65,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99960.65,
+      "positions": {},
+      "sector": "Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-02-11"

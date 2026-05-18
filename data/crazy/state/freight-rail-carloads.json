@@ -1379,14 +1379,43 @@
       },
       "sector": "Freight Rail Carloads",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-18",
+      "cash": 19980.1,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 98634.91,
+      "positions": {
+        "XLI": {
+          "shares": 260.1758,
+          "entry_price": 172.96,
+          "current_price": 170.75,
+          "market_value": 44425.01,
+          "unrealized_pnl": -574.99,
+          "entry_date": "2026-05-01",
+          "margin": false
+        },
+        "XLB": {
+          "shares": 681.5969,
+          "entry_price": 51.35,
+          "current_price": 50.22,
+          "market_value": 34229.8,
+          "unrealized_pnl": -770.2,
+          "entry_date": "2026-05-01",
+          "margin": false
+        }
+      },
+      "sector": "Freight Rail Carloads",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16",
-  "last_run": "2026-05-15",
+  "last_run": "2026-05-18",
   "meta": {
     "freight-rail-carloads": {
       "name": "Freight Rail Carloads",
-      "last_run": "2026-05-15",
+      "last_run": "2026-05-18",
       "series_id": "RAILFRTCARLOADSD11",
       "rail_13w_chg": 0.05,
       "signal_label": "INDUSTRIAL_SHIFT",

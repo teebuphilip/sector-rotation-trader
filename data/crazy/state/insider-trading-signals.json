@@ -1,15 +1,15 @@
 {
-  "cash": 50145.33295821496,
+  "cash": 50615.79676976809,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 122.96008079502435,
-  "taxes_paid": 515.5282943196923,
+  "fees_paid": 145.62442673993306,
+  "taxes_paid": 1073.9802316995592,
   "positions": {
     "XLP": {
-      "shares": 601.5986722547062,
-      "entry_price": 83.37000274658203,
-      "entry_date": "2026-05-11",
-      "cost": 50155.28295821496,
+      "shares": 589.3567621709084,
+      "entry_price": 85.9000015258789,
+      "entry_date": "2026-05-18",
+      "cost": 50625.746769768084,
       "using_margin": false,
       "consec_below_ma": 0
     }
@@ -142,6 +142,30 @@
       "shares": 601.5987,
       "price": 83.37,
       "cost": 50155.28,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-18",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 601.5987,
+      "price": 85.9,
+      "proceeds": 51664.61,
+      "fees": 12.71,
+      "tax": 558.45,
+      "pnl": 950.88,
+      "pnl_pct": 1.9,
+      "entry_date": "2026-05-11",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-18",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 589.3568,
+      "price": 85.9,
+      "cost": 50625.75,
       "margin": false,
       "fees": 9.95
     }
@@ -1475,15 +1499,35 @@
       },
       "sector": "Insider Trading Signals",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-18",
+      "cash": 50615.8,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 101241.54,
+      "positions": {
+        "XLP": {
+          "shares": 589.3568,
+          "entry_price": 85.9,
+          "current_price": 85.9,
+          "market_value": 50625.75,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-18",
+          "margin": false
+        }
+      },
+      "sector": "Insider Trading Signals",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-16",
-  "last_run": "2026-05-15",
+  "last_run": "2026-05-18",
   "meta": {
     "insider-trading-signals": {
       "name": "Insider Trading Signals",
       "last_signal": "INSIDER_DROUGHT",
-      "last_run": "2026-05-15",
+      "last_run": "2026-05-18",
       "form4_buys_30d": 0,
       "signal_label": "INSIDER_DROUGHT"
     }

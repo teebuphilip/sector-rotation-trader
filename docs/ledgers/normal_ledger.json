@@ -1474,5 +1474,61 @@
     "reason": "stop_loss",
     "algo_id": "nrwise",
     "algo_name": "NRWise Acceleration"
+  },
+  {
+    "date": "2026-05-18",
+    "action": "SELL",
+    "ticker": "XLE",
+    "shares": 627.5683,
+    "price": 60.58,
+    "proceeds": 38006.05,
+    "fees": 12.04,
+    "tax": 787.35,
+    "pnl": 1340.62,
+    "pnl_pct": 3.74,
+    "entry_date": "2026-05-11",
+    "reason": "rebalance",
+    "algo_id": "baileymol",
+    "algo_name": "Algo Baileymol (Chaos Monger)"
+  },
+  {
+    "date": "2026-05-18",
+    "action": "SELL",
+    "ticker": "XLI",
+    "shares": 204.9707,
+    "price": 170.75,
+    "proceeds": 34986.99,
+    "fees": 11.76,
+    "tax": 0.0,
+    "pnl": -891.08,
+    "pnl_pct": -2.48,
+    "entry_date": "2026-05-11",
+    "reason": "rebalance",
+    "algo_id": "baileymol",
+    "algo_name": "Algo Baileymol (Chaos Monger)"
+  },
+  {
+    "date": "2026-05-18",
+    "action": "BUY",
+    "ticker": "XLE",
+    "shares": 594.6069,
+    "price": 60.58,
+    "cost": 36021.29,
+    "margin": false,
+    "fees": 9.95,
+    "algo_id": "baileymol",
+    "algo_name": "Algo Baileymol (Chaos Monger)"
+  },
+  {
+    "date": "2026-05-18",
+    "action": "BUY",
+    "ticker": "XLK",
+    "shares": 206.5915,
+    "price": 174.36,
+    "cost": 36021.29,
+    "margin": false,
+    "fees": 9.95,
+    "algo_id": "baileymol",
+    "algo_name": "Algo Baileymol (Chaos Monger)"
   }
 ]

@@ -1,10 +1,19 @@
 {
-  "cash": 99906.91688564647,
+  "cash": 94901.62104136415,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 262.3090617700154,
+  "fees_paid": 272.25906177001536,
   "taxes_paid": 177.82760045497957,
-  "positions": {},
+  "positions": {
+    "XLE": {
+      "shares": 82.45866116368448,
+      "entry_price": 60.58000183105469,
+      "entry_date": "2026-05-18",
+      "cost": 4995.345844282324,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-01-29",
@@ -317,6 +326,16 @@
       "pnl_pct": 1.36,
       "entry_date": "2026-05-14",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-18",
+      "action": "BUY",
+      "ticker": "XLE",
+      "shares": 82.4587,
+      "price": 60.58,
+      "cost": 4995.35,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1279,20 +1298,40 @@
       "positions": {},
       "sector": "Oil Price Momentum Reversal Energy Sector Bounce",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-18",
+      "cash": 94901.62,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99896.97,
+      "positions": {
+        "XLE": {
+          "shares": 82.4587,
+          "entry_price": 60.58,
+          "current_price": 60.58,
+          "market_value": 4995.35,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-18",
+          "margin": false
+        }
+      },
+      "sector": "Oil Price Momentum Reversal Energy Sector Bounce",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-26",
-  "last_run": "2026-05-15",
+  "last_run": "2026-05-18",
   "meta": {
     "oil-price-momentum-reversal-energy-sector-bounce": {
-      "latest_value": 59.44,
-      "prior_avg": 57.228,
-      "signal_change": 0.0387,
-      "signal_label": "HOLD",
-      "entry_date": "2026-05-14",
+      "latest_value": 60.58,
+      "prior_avg": 57.976,
+      "signal_change": 0.0449,
+      "signal_label": "RISK_ON",
+      "entry_date": "2026-05-18",
       "name": "Oil Price Momentum Reversal Energy Sector Bounce",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-15"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-18"
     }
   }
 }

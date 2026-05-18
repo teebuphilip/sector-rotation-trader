@@ -211,6 +211,54 @@
       "cost": 34958.4,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-18",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 479.2186,
+      "price": 85.9,
+      "proceeds": 41152.73,
+      "fees": 12.15,
+      "tax": 444.1,
+      "pnl": 756.17,
+      "pnl_pct": 1.89,
+      "entry_date": "2026-05-11",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-18",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 774.444,
+      "price": 43.94,
+      "proceeds": 34017.19,
+      "fees": 11.88,
+      "tax": 0.0,
+      "pnl": -941.22,
+      "pnl_pct": -2.69,
+      "entry_date": "2026-05-11",
+      "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-18",
+      "action": "BUY",
+      "ticker": "XLP",
+      "shares": 464.1499,
+      "price": 85.9,
+      "cost": 39870.48,
+      "margin": false,
+      "fees": 9.95
+    },
+    {
+      "date": "2026-05-18",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 793.9616,
+      "price": 43.94,
+      "cost": 34886.67,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1612,6 +1660,35 @@
           "market_value": 33974.86,
           "unrealized_pnl": -983.54,
           "entry_date": "2026-05-11",
+          "margin": false
+        }
+      },
+      "sector": "FINRA Dark Pool Signal",
+      "num_positions": 2
+    },
+    {
+      "date": "2026-05-18",
+      "cash": 24899.15,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99656.3,
+      "positions": {
+        "XLP": {
+          "shares": 464.1499,
+          "entry_price": 85.9,
+          "current_price": 85.9,
+          "market_value": 39870.48,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-18",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 793.9616,
+          "entry_price": 43.94,
+          "current_price": 43.94,
+          "market_value": 34886.67,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-18",
           "margin": false
         }
       },
