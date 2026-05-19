@@ -1,0 +1,292 @@
+{
+  "date": "2026-05-19",
+  "input_count": 25,
+  "kept_count": 21,
+  "duplicate_count": 4,
+  "kept_by_source": {
+    "chatgpt": 11,
+    "claude": 10
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-surge-in-google-trends-for-small-business-loan-defaul",
+      "title": "Weekly Surge In Google Trends For Small Business Loan Default Signals Credit Stress",
+      "family": "local_economy_weirdness",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "weekly surge in google trends for small business loan default signals rising local economic stress",
+        "matched_idea_id": "weekly-surge-in-google-trends-for-small-business-loan-defaul",
+        "matched_origin": "history:2026-05-11",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-surge-in-google-trends-for-small-business-loan-defaul",
+        "title": "Weekly Surge In Google Trends For Small Business Loan Default Signals Credit Stress",
+        "family": "local_economy_weirdness",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising interest in small business loan defaults can presage local economic stress and impact financial sector sentiment. Higher default risk pressures financial institutions' earnings and credit availability.",
+        "data_sources": [
+          "Google Trends weekly search interest"
+        ],
+        "signal_logic": "Enter short XLF when weekly Google Trends for 'small business loan default' rises more than 25% week-over-week",
+        "entry_exit": "Entry: Enter short XLF when weekly Google Trends for 'small business loan default' rises more than 25% week-over-week Exit: Exit after 4 weeks or if trend reverts below 10% weekly increase",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLF"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly search interest via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Small business credit stress tends to fluctuate regularly with economic cycles.",
+        "schema": {
+          "idea": "Weekly surge in Google Trends for 'small business loan default' signals credit stress",
+          "family": "local_economy_weirdness",
+          "data": {
+            "source": "Google Trends weekly search interest",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Rising interest in small business loan defaults can presage local economic stress and impact financial sector sentiment.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLF",
+            "rationale": "Higher default risk pressures financial institutions' earnings and credit availability."
+          },
+          "trade_logic": {
+            "entry": "Enter short XLF when weekly Google Trends for 'small business loan default' rises more than 25% week-over-week",
+            "exit": "Exit after 4 weeks or if trend reverts below 10% weekly increase",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Small business credit stress tends to fluctuate regularly with economic cycles.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "weekly-increase-in-google-trends-for-truck-driver-shortage-s",
+      "title": "Weekly Increase In Google Trends For Truck Driver Shortage Signals Freight Labor Constraints",
+      "family": "labor_jobs",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "weekly increase in google trends for truck driver shortage signals freight sector labor pressure",
+        "matched_idea_id": "weekly-increase-in-google-trends-for-truck-driver-shortage-s",
+        "matched_origin": "history:2026-05-11",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "weekly-increase-in-google-trends-for-truck-driver-shortage-s",
+        "title": "Weekly Increase In Google Trends For Truck Driver Shortage Signals Freight Labor Constraints",
+        "family": "labor_jobs",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Rising attention to truck driver shortages signals tightening freight labor markets and possible supply chain disruptions. Freight and industrial sectors suffer higher costs and delays from labor shortages.",
+        "data_sources": [
+          "Google Trends weekly search interest"
+        ],
+        "signal_logic": "Enter short XLI when weekly Google Trends for 'truck driver shortage' rises more than 20% week-over-week",
+        "entry_exit": "Entry: Enter short XLI when weekly Google Trends for 'truck driver shortage' rises more than 20% week-over-week Exit: Exit after 3 weeks or when weekly increase falls below 10%",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "weekly",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends weekly search interest via api (weekly).",
+        "required_keys": [],
+        "expected_fire_rate": "weekly",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "medium",
+        "reason_it_will_fire_in_30_days": "Labor shortages in freight recur frequently causing weekly search volume changes.",
+        "schema": {
+          "idea": "Weekly increase in Google Trends for 'truck driver shortage' signals freight labor constraints",
+          "family": "labor_jobs",
+          "data": {
+            "source": "Google Trends weekly search interest",
+            "type": "api",
+            "frequency": "weekly",
+            "stable": true
+          },
+          "behavior": "Rising attention to truck driver shortages signals tightening freight labor markets and possible supply chain disruptions.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLI",
+            "rationale": "Freight and industrial sectors suffer higher costs and delays from labor shortages."
+          },
+          "trade_logic": {
+            "entry": "Enter short XLI when weekly Google Trends for 'truck driver shortage' rises more than 20% week-over-week",
+            "exit": "Exit after 3 weeks or when weekly increase falls below 10%",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "weekly",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "medium",
+          "reason_it_will_fire_in_30_days": "Labor shortages in freight recur frequently causing weekly search volume changes.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-google-trends-for-emergency-roadside-assistan",
+      "title": "Daily Spike In Google Trends For Emergency Roadside Assistance Signals Auto Sector Stress",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "daily spike in google trends for emergency roadside assistance searches signals consumer stress",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-roadside-assistan",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-google-trends-for-emergency-roadside-assistan",
+        "title": "Daily Spike In Google Trends For Emergency Roadside Assistance Signals Auto Sector Stress",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Short-term surges in emergency roadside help searches reflect increased vehicle issues and repair needs. Auto repair and service sectors see increased demand during spikes in roadside assistance interest.",
+        "data_sources": [
+          "Google Trends daily search interest"
+        ],
+        "signal_logic": "Enter long XLY when daily 'emergency roadside assistance' searches exceed 2.5 std deviations above 30-day mean",
+        "entry_exit": "Entry: Enter long XLY when daily 'emergency roadside assistance' searches exceed 2.5 std deviations above 30-day mean Exit: Exit after 5 days or when search volume drops below 1 std deviation",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Vehicle breakdown issues cause frequent daily search spikes.",
+        "schema": {
+          "idea": "Daily spike in Google Trends for 'emergency roadside assistance' signals auto sector stress",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Short-term surges in emergency roadside help searches reflect increased vehicle issues and repair needs.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "Auto repair and service sectors see increased demand during spikes in roadside assistance interest."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLY when daily 'emergency roadside assistance' searches exceed 2.5 std deviations above 30-day mean",
+            "exit": "Exit after 5 days or when search volume drops below 1 std deviation",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Vehicle breakdown issues cause frequent daily search spikes.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-jump-in-google-trends-for-emergency-hvac-repair-signal",
+      "title": "Daily Jump In Google Trends For Emergency Hvac Repair Signals Consumer Home Stress In Energy Sector",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "daily jump in google trends for emergency hvac repair signals consumer home repair stress",
+        "matched_idea_id": "daily-jump-in-google-trends-for-emergency-hvac-repair-signal",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "daily-jump-in-google-trends-for-emergency-hvac-repair-signal",
+        "title": "Daily Jump In Google Trends For Emergency Hvac Repair Signals Consumer Home Stress In Energy Sector",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Spikes in emergency HVAC repair searches indicate acute home maintenance needs often linked to weather changes. Consumer staples and home-related services see demand rise during HVAC repair surges.",
+        "data_sources": [
+          "Google Trends daily search interest"
+        ],
+        "signal_logic": "Enter long XLP when daily searches for 'emergency HVAC repair' exceed 2 std deviations above 30-day mean",
+        "entry_exit": "Entry: Enter long XLP when daily searches for 'emergency HVAC repair' exceed 2 std deviations above 30-day mean Exit: Exit after 5 days or when searches fall below 1 std deviation",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLP"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "HVAC emergencies surge frequently due to weather and equipment failures.",
+        "schema": {
+          "idea": "Daily jump in Google Trends for 'emergency HVAC repair' signals consumer home stress in energy sector",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Spikes in emergency HVAC repair searches indicate acute home maintenance needs often linked to weather changes.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLP",
+            "rationale": "Consumer staples and home-related services see demand rise during HVAC repair surges."
+          },
+          "trade_logic": {
+            "entry": "Enter long XLP when daily searches for 'emergency HVAC repair' exceed 2 std deviations above 30-day mean",
+            "exit": "Exit after 5 days or when searches fall below 1 std deviation",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "HVAC emergencies surge frequently due to weather and equipment failures.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
