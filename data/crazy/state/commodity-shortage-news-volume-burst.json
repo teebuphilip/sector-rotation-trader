@@ -1,10 +1,19 @@
 {
-  "cash": 99971.8684873087,
+  "cash": 94963.32506294327,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 20.17942346954988,
+  "fees_paid": 30.12942346954988,
   "taxes_paid": 0.0,
-  "positions": {},
+  "positions": {
+    "XLB": {
+      "shares": 101.92890153031686,
+      "entry_price": 49.040000915527344,
+      "entry_date": "2026-05-19",
+      "cost": 4998.593424365436,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-05-15",
@@ -29,6 +38,16 @@
       "pnl_pct": -0.36,
       "entry_date": "2026-05-15",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-19",
+      "action": "BUY",
+      "ticker": "XLB",
+      "shares": 101.9289,
+      "price": 49.04,
+      "cost": 4998.59,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -711,20 +730,40 @@
       "positions": {},
       "sector": "Commodity Shortage News Volume Burst",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-19",
+      "cash": 94963.33,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99961.92,
+      "positions": {
+        "XLB": {
+          "shares": 101.9289,
+          "entry_price": 49.04,
+          "current_price": 49.04,
+          "market_value": 4998.59,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-19",
+          "margin": false
+        }
+      },
+      "sector": "Commodity Shortage News Volume Burst",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-02-13",
-  "last_run": "2026-05-18",
+  "last_run": "2026-05-19",
   "meta": {
     "commodity-shortage-news-volume-burst": {
-      "latest_value": 87.0,
-      "prior_avg": 2.2,
-      "signal_change": 38.5455,
-      "entry_date": "2026-05-15",
-      "signal_label": "HOLD",
+      "latest_value": 82.0,
+      "prior_avg": 5.0,
+      "signal_change": 15.4,
+      "entry_date": "2026-05-19",
+      "signal_label": "RISK_ON",
       "name": "Commodity Shortage News Volume Burst",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-18"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-19"
     }
   }
 }

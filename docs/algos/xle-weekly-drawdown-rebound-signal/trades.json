@@ -393,6 +393,20 @@
       "cost": 4983.36,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-19",
+      "action": "SELL",
+      "ticker": "XLE",
+      "shares": 82.2609,
+      "price": 61.29,
+      "proceeds": 5031.54,
+      "fees": 10.23,
+      "tax": 17.83,
+      "pnl": 30.35,
+      "pnl_pct": 0.61,
+      "entry_date": "2026-05-18",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1535,6 +1549,16 @@
       },
       "sector": "Xle Weekly Drawdown Rebound Signal",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-19",
+      "cash": 99687.7,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99687.7,
+      "positions": {},
+      "sector": "Xle Weekly Drawdown Rebound Signal",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-18"

@@ -1,19 +1,10 @@
 {
-  "cash": 94854.51069297676,
+  "cash": 99778.39772391452,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 110.7433185816008,
+  "fees_paid": 120.94879544655568,
   "taxes_paid": 31.820297515538222,
-  "positions": {
-    "XLI": {
-      "shares": 29.240798549118217,
-      "entry_price": 170.75,
-      "entry_date": "2026-05-18",
-      "cost": 4992.866352261935,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-03-16",
@@ -144,6 +135,20 @@
       "cost": 4992.87,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-19",
+      "action": "SELL",
+      "ticker": "XLI",
+      "shares": 29.2408,
+      "price": 168.74,
+      "proceeds": 4923.89,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -68.98,
+      "pnl_pct": -1.38,
+      "entry_date": "2026-05-18",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1176,20 +1181,30 @@
       },
       "sector": "Electricity Enlightenment",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-19",
+      "cash": 99778.4,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99778.4,
+      "positions": {},
+      "sector": "Electricity Enlightenment",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-18",
-  "last_run": "2026-05-18",
+  "last_run": "2026-05-19",
   "meta": {
     "electricity-enlightenment": {
-      "signal_label": "RISK_ON",
-      "latest_value": 10724487.0,
-      "prior_avg": 10389536.6357,
-      "signal_change": 0.0322,
+      "signal_label": "HOLD",
+      "latest_value": 12417854.0,
+      "prior_avg": 10571523.6357,
+      "signal_change": 0.1747,
       "entry_date": "2026-05-18",
       "name": "Electricity Enlightenment",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-18"
+      "last_signal": "HOLD",
+      "last_run": "2026-05-19"
     }
   }
 }

@@ -1,10 +1,19 @@
 {
-  "cash": 99898.67683137054,
+  "cash": 94893.79298980201,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 121.09511627715129,
+  "fees_paid": 131.0451162771513,
   "taxes_paid": 14.543699981538047,
-  "positions": {},
+  "positions": {
+    "XLU": {
+      "shares": 112.65074028821354,
+      "entry_price": 44.34000015258789,
+      "entry_date": "2026-05-19",
+      "cost": 4994.933841568527,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-03-16",
@@ -149,6 +158,16 @@
       "pnl_pct": -0.2,
       "entry_date": "2026-04-17",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-19",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 112.6507,
+      "price": 44.34,
+      "cost": 4994.93,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1181,19 +1200,40 @@
       "positions": {},
       "sector": "Xlu Daily Electricity Demand Surge",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-19",
+      "cash": 94893.79,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99888.73,
+      "positions": {
+        "XLU": {
+          "shares": 112.6507,
+          "entry_price": 44.34,
+          "current_price": 44.34,
+          "market_value": 4994.93,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-19",
+          "margin": false
+        }
+      },
+      "sector": "Xlu Daily Electricity Demand Surge",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-18",
-  "last_run": "2026-05-18",
+  "last_run": "2026-05-19",
   "meta": {
     "xlu-daily-electricity-demand-surge": {
-      "signal_label": "HOLD",
-      "latest_value": 10724487.0,
-      "prior_avg": 10422599.4,
-      "signal_change": 0.029,
+      "signal_label": "RISK_ON",
+      "latest_value": 12417854.0,
+      "prior_avg": 11053221.0571,
+      "signal_change": 0.1235,
       "name": "Xlu Daily Electricity Demand Surge",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-18"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-19",
+      "entry_date": "2026-05-19"
     }
   }
 }

@@ -1,11 +1,31 @@
 {
-  "cash": 100000,
+  "cash": 94990.05,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 0.0,
+  "fees_paid": 9.95,
   "taxes_paid": 0.0,
-  "positions": {},
-  "trade_log": [],
+  "positions": {
+    "XLE": {
+      "shares": 81.57937551495922,
+      "entry_price": 61.290000915527344,
+      "entry_date": "2026-05-19",
+      "cost": 5000.0,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
+  "trade_log": [
+    {
+      "date": "2026-05-19",
+      "action": "BUY",
+      "ticker": "XLE",
+      "shares": 81.5794,
+      "price": 61.29,
+      "cost": 5000.0,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-02-06",
@@ -726,19 +746,40 @@
       "positions": {},
       "sector": "Natural Gas Futures Volatility Pump Rotation",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-19",
+      "cash": 94990.05,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99990.05,
+      "positions": {
+        "XLE": {
+          "shares": 81.5794,
+          "entry_price": 61.29,
+          "current_price": 61.29,
+          "market_value": 5000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-19",
+          "margin": false
+        }
+      },
+      "sector": "Natural Gas Futures Volatility Pump Rotation",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-02-06",
-  "last_run": "2026-05-18",
+  "last_run": "2026-05-19",
   "meta": {
     "natural-gas-futures-volatility-pump-rotation": {
-      "signal_label": "HOLD",
-      "latest_value": 10724487.0,
-      "prior_avg": 10422687.9714,
-      "signal_change": 0.029,
+      "signal_label": "RISK_ON",
+      "latest_value": 12417854.0,
+      "prior_avg": 11053313.6,
+      "signal_change": 0.1235,
       "name": "Natural Gas Futures Volatility Pump Rotation",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-18"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-19",
+      "entry_date": "2026-05-19"
     }
   }
 }

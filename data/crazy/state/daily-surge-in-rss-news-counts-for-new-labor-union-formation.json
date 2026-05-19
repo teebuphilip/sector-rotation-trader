@@ -1,10 +1,19 @@
 {
-  "cash": 99960.64599789876,
+  "cash": 94952.66369800382,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 40.317723878866424,
+  "fees_paid": 50.26772387886642,
   "taxes_paid": 5.705677411551332,
-  "positions": {},
+  "positions": {
+    "XLI": {
+      "shares": 29.619723463250782,
+      "entry_price": 168.74000549316406,
+      "entry_date": "2026-05-19",
+      "cost": 4998.032299894938,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-05-13",
@@ -53,6 +62,16 @@
       "pnl_pct": -0.58,
       "entry_date": "2026-05-15",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-19",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 29.6197,
+      "price": 168.74,
+      "cost": 4998.03,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -765,20 +784,40 @@
       "positions": {},
       "sector": "Daily Surge In Rss News Counts For New Labor Union Formations Signals Labor Market Pressure On Industrial Sector",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-19",
+      "cash": 94952.66,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99950.7,
+      "positions": {
+        "XLI": {
+          "shares": 29.6197,
+          "entry_price": 168.74,
+          "current_price": 168.74,
+          "market_value": 4998.03,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-19",
+          "margin": false
+        }
+      },
+      "sector": "Daily Surge In Rss News Counts For New Labor Union Formations Signals Labor Market Pressure On Industrial Sector",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-02-11",
-  "last_run": "2026-05-18",
+  "last_run": "2026-05-19",
   "meta": {
     "daily-surge-in-rss-news-counts-for-new-labor-union-formation": {
-      "latest_value": 6.0,
-      "prior_avg": 1.6667,
-      "signal_change": 2.6,
-      "signal_label": "HOLD",
+      "latest_value": 7.0,
+      "prior_avg": 2.5,
+      "signal_change": 1.8,
+      "signal_label": "RISK_ON",
       "name": "Daily Surge In Rss News Counts For New Labor Union Formations Signals Labor Market Pressure On Industrial Sector",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-18",
-      "entry_date": "2026-05-15"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-19",
+      "entry_date": "2026-05-19"
     }
   }
 }

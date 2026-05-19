@@ -143,6 +143,16 @@
       "pnl_pct": -0.2,
       "entry_date": "2026-04-17",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-19",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 112.6507,
+      "price": 44.34,
+      "cost": 4994.93,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1175,6 +1185,26 @@
       "positions": {},
       "sector": "Xlu Daily Electricity Demand Surge",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-19",
+      "cash": 94893.79,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99888.73,
+      "positions": {
+        "XLU": {
+          "shares": 112.6507,
+          "entry_price": 44.34,
+          "current_price": 44.34,
+          "market_value": 4994.93,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-19",
+          "margin": false
+        }
+      },
+      "sector": "Xlu Daily Electricity Demand Surge",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-18"
