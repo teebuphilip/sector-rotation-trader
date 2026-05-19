@@ -1,4 +1,4 @@
-name: Overnight Status And Drive Sync
+name: Overnight Status Report
 
 on:
   schedule:
@@ -29,12 +29,5 @@ jobs:
       - name: Set ET report date
         run: echo "ET_REPORT_DATE=$(TZ=America/New_York date +%F)" >> "$GITHUB_ENV"
 
-      - name: Push latest ops files to Drive
-        env:
-          GOOGLE_DRIVE_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
-          GOOGLE_DRIVE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_OAUTH_CLIENT_ID }}
-          GOOGLE_DRIVE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_OAUTH_CLIENT_SECRET }}
-          GOOGLE_DRIVE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_OAUTH_REFRESH_TOKEN }}
-          ET_REPORT_DATE: ${{ env.ET_REPORT_DATE }}
-        run: >
-          python scripts/push_ops_files_to_drive.py --config gemini_feed_config.json
+      - name: Note
+        run: echo "Drive push disabled; Relay.app now handles downstream distribution."

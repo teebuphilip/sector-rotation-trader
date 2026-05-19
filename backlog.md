@@ -110,6 +110,14 @@ This is the backlog for features and product work that are explicitly out of sco
   - risks
 - Goal: bring older algos up to the same descriptive standard as ideation-pipeline algos.
 
+### Regime-Aware Trade Tagging
+- Tag trades and signal performance by a small set of regime buckets, then summarize results by regime.
+- Keep the first version narrow:
+  - trending
+  - mean-reverting
+  - volatile / compressed
+- Goal: separate "wrong regime" from "bad signal" without adding a large new strategy framework.
+
 ### Premium Signal Change Notes
 - Add short premium change logs for signals that moved materially in rank, alpha, or drawdown.
 - Goal: give subscribers a reason to come back beyond static dashboards.
