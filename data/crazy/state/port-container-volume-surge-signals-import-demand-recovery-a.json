@@ -1,10 +1,19 @@
 {
-  "cash": 99717.59935089284,
+  "cash": 94721.76938334819,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 383.10332214604,
+  "fees_paid": 393.05332214604,
   "taxes_paid": 155.40554818119392,
-  "positions": {},
+  "positions": {
+    "XLY": {
+      "shares": 42.43302100037994,
+      "entry_price": 117.5,
+      "entry_date": "2026-05-20",
+      "cost": 4985.879967544643,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-01",
@@ -461,6 +470,16 @@
       "pnl_pct": 0.05,
       "entry_date": "2026-05-20",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-20",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 42.433,
+      "price": 117.5,
+      "cost": 4985.88,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1383,6 +1402,26 @@
       "positions": {},
       "sector": "Port Container Volume Surge Signals Import Demand Recovery And Consumer Spending Rebound",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 94721.77,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99707.65,
+      "positions": {
+        "XLY": {
+          "shares": 42.433,
+          "entry_price": 117.5,
+          "current_price": 117.5,
+          "market_value": 4985.88,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-20",
+          "margin": false
+        }
+      },
+      "sector": "Port Container Volume Surge Signals Import Demand Recovery And Consumer Spending Rebound",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-02-11",
@@ -1392,10 +1431,10 @@
       "latest_value": 890861.0,
       "prior_avg": 795107.6875,
       "signal_change": 0.1204,
-      "signal_label": "HOLD",
+      "signal_label": "RISK_ON",
       "entry_date": "2026-05-20",
       "name": "Port Container Volume Surge Signals Import Demand Recovery And Consumer Spending Rebound",
-      "last_signal": "HOLD",
+      "last_signal": "RISK_ON",
       "last_run": "2026-05-20"
     }
   }

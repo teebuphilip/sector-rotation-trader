@@ -1,10 +1,19 @@
 {
-  "cash": 99708.86042141746,
+  "cash": 94713.46740034659,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 241.94671200652712,
+  "fees_paid": 251.8967120065271,
   "taxes_paid": 29.674660104889128,
-  "positions": {},
+  "positions": {
+    "XLY": {
+      "shares": 42.461789064990384,
+      "entry_price": 117.41010284423828,
+      "entry_date": "2026-05-20",
+      "cost": 4985.443021070873,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-22",
@@ -293,6 +302,16 @@
       "pnl_pct": 0.27,
       "entry_date": "2026-05-20",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-20",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 42.4618,
+      "price": 117.4101,
+      "cost": 4985.44,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1355,18 +1374,38 @@
       "positions": {},
       "sector": "News Sentiment Rotation Fade Trade",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 94713.47,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99698.91,
+      "positions": {
+        "XLY": {
+          "shares": 42.4618,
+          "entry_price": 117.4101,
+          "current_price": 117.4101,
+          "market_value": 4985.44,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-20",
+          "margin": false
+        }
+      },
+      "sector": "News Sentiment Rotation Fade Trade",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-21",
   "last_run": "2026-05-20",
   "meta": {
     "news-sentiment-rotation-fade-trade": {
-      "latest_value": 13.0,
-      "prior_avg": 9.8571,
-      "signal_change": 0.3188,
-      "signal_label": "HOLD",
+      "latest_value": 19.0,
+      "prior_avg": 9.1429,
+      "signal_change": 1.0781,
+      "signal_label": "RISK_ON",
       "name": "News Sentiment Rotation Fade Trade",
-      "last_signal": "HOLD",
+      "last_signal": "RISK_ON",
       "last_run": "2026-05-20",
       "entry_date": "2026-05-20"
     }

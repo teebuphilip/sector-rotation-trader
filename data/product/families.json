@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-20T14:40:58Z",
+  "generated_at": "2026-05-20T17:29:45Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
@@ -51,34 +51,10 @@
           "universe": [
             "XLK"
           ],
-          "equity": 100029.07,
-          "ytd_pct": 0.03,
-          "trade_count": 2,
-          "positions": 0,
-          "last_snapshot": "2026-05-20",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": null,
-          "backtest_reason": null,
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:daily-spike-in-rss-news-counts-on-corporate-dividend-cuts",
-          "algo_type": "crazy",
-          "algo_id": "daily-spike-in-rss-news-counts-on-corporate-dividend-cuts",
-          "name": "Daily Spike In Rss News Counts On Corporate Dividend Cuts",
-          "family": "attention_sentiment",
-          "status": "parked",
-          "evidence_class": "pending_seed",
-          "rebalance_frequency": "daily",
-          "universe": [
-            "XLF"
-          ],
-          "equity": 99997.78,
-          "ytd_pct": -0.0,
-          "trade_count": 2,
-          "positions": 0,
+          "equity": 100019.12,
+          "ytd_pct": 0.02,
+          "trade_count": 3,
+          "positions": 1,
           "last_snapshot": "2026-05-20",
           "last_signal": null,
           "new_algo_date": null,
@@ -134,6 +110,37 @@
           "backtest_reason": null,
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
+        },
+        {
+          "key": "crazy:reddit-emoji-sentiment-spike",
+          "algo_type": "crazy",
+          "algo_id": "reddit-emoji-sentiment-spike",
+          "name": "Reddit Emoji Sentiment Spike",
+          "family": "attention_sentiment",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "universe": [
+            "AAPL",
+            "TSLA",
+            "AMD",
+            "GME",
+            "AMC",
+            "NVDA",
+            "MSFT",
+            "NFLX"
+          ],
+          "equity": 100000.0,
+          "ytd_pct": 0.0,
+          "trade_count": 0,
+          "positions": 0,
+          "last_snapshot": "2026-05-20",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": "UNSUPPORTED_DATA",
+          "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMC, AMD, GME, MSFT, NFLX, NVDA, TSLA",
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
         }
       ]
     },
@@ -170,8 +177,8 @@
             "XLU",
             "XLV"
           ],
-          "equity": 103157.76,
-          "ytd_pct": 3.16,
+          "equity": 103550.65,
+          "ytd_pct": 3.55,
           "trade_count": 6,
           "positions": 2,
           "last_snapshot": "2026-05-20",
@@ -179,6 +186,35 @@
           "new_algo_date": null,
           "backtest_status": "UNSUPPORTED_DATA",
           "backtest_reason": "No supported V1 price-only backtest path",
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
+        {
+          "key": "crazy:mortgage-rate-housing-proxy",
+          "algo_type": "crazy",
+          "algo_id": "mortgage-rate-housing-proxy",
+          "name": "Mortgage Rate Housing Proxy",
+          "family": "consumer_stress",
+          "status": "live_only",
+          "evidence_class": "live_receipts_only",
+          "rebalance_frequency": "monthly",
+          "universe": [
+            "XLRE",
+            "XLF",
+            "XLB",
+            "XLP",
+            "XLU",
+            "XLV"
+          ],
+          "equity": 100092.57,
+          "ytd_pct": 0.09,
+          "trade_count": 6,
+          "positions": 2,
+          "last_snapshot": "2026-05-20",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": "UNSUPPORTED_DATA",
+          "backtest_reason": "Uses non-price adapter: crazy.adapters.fred_series",
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
         },
@@ -253,35 +289,6 @@
           "backtest_reason": null,
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:mortgage-rate-housing-proxy",
-          "algo_type": "crazy",
-          "algo_id": "mortgage-rate-housing-proxy",
-          "name": "Mortgage Rate Housing Proxy",
-          "family": "consumer_stress",
-          "status": "live_only",
-          "evidence_class": "live_receipts_only",
-          "rebalance_frequency": "monthly",
-          "universe": [
-            "XLRE",
-            "XLF",
-            "XLB",
-            "XLP",
-            "XLU",
-            "XLV"
-          ],
-          "equity": 100057.97,
-          "ytd_pct": 0.06,
-          "trade_count": 6,
-          "positions": 2,
-          "last_snapshot": "2026-05-20",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": "UNSUPPORTED_DATA",
-          "backtest_reason": "Uses non-price adapter: crazy.adapters.fred_series",
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
         }
       ]
     },
@@ -310,8 +317,8 @@
             "EEM",
             "TLT"
           ],
-          "equity": 110315.04,
-          "ytd_pct": 10.32,
+          "equity": 110484.31,
+          "ytd_pct": 10.48,
           "trade_count": 1,
           "positions": 1,
           "last_snapshot": "2026-05-20",
@@ -344,8 +351,8 @@
             "XLRE",
             "XLU"
           ],
-          "equity": 108528.2,
-          "ytd_pct": 8.53,
+          "equity": 108167.76,
+          "ytd_pct": 8.17,
           "trade_count": 54,
           "positions": 2,
           "last_snapshot": "2026-05-20",
@@ -379,8 +386,8 @@
             "XLU",
             "SPY"
           ],
-          "equity": 108088.79,
-          "ytd_pct": 8.09,
+          "equity": 107741.17,
+          "ytd_pct": 7.74,
           "trade_count": 10,
           "positions": 2,
           "last_snapshot": "2026-05-20",
@@ -415,8 +422,8 @@
             "SPY",
             "AGG"
           ],
-          "equity": 106536.28,
-          "ytd_pct": 6.54,
+          "equity": 106401.77,
+          "ytd_pct": 6.4,
           "trade_count": 21,
           "positions": 3,
           "last_snapshot": "2026-05-20",
@@ -449,8 +456,8 @@
             "XLRE",
             "XLU"
           ],
-          "equity": 98280.03,
-          "ytd_pct": -1.72,
+          "equity": 97936.35,
+          "ytd_pct": -2.06,
           "trade_count": 7,
           "positions": 1,
           "last_snapshot": "2026-05-20",
@@ -635,8 +642,8 @@
             "XLU",
             "XLV"
           ],
-          "equity": 101661.06,
-          "ytd_pct": 1.66,
+          "equity": 102014.28,
+          "ytd_pct": 2.01,
           "trade_count": 2,
           "positions": 2,
           "last_snapshot": "2026-05-20",
@@ -935,8 +942,8 @@
             "XLU",
             "XLV"
           ],
-          "equity": 100139.44,
-          "ytd_pct": 0.14,
+          "equity": 100186.16,
+          "ytd_pct": 0.19,
           "trade_count": 2,
           "positions": 2,
           "last_snapshot": "2026-05-20",
@@ -964,8 +971,8 @@
             "XLU",
             "XLV"
           ],
-          "equity": 100119.15,
-          "ytd_pct": 0.12,
+          "equity": 100136.17,
+          "ytd_pct": 0.14,
           "trade_count": 6,
           "positions": 2,
           "last_snapshot": "2026-05-20",
@@ -1082,8 +1089,8 @@
             "XLP",
             "XLU"
           ],
-          "equity": 100946.87,
-          "ytd_pct": 0.95,
+          "equity": 101135.46,
+          "ytd_pct": 1.14,
           "trade_count": 13,
           "positions": 1,
           "last_snapshot": "2026-05-20",
@@ -1111,8 +1118,8 @@
             "XLU",
             "XLV"
           ],
-          "equity": 100045.53,
-          "ytd_pct": 0.05,
+          "equity": 100092.8,
+          "ytd_pct": 0.09,
           "trade_count": 22,
           "positions": 2,
           "last_snapshot": "2026-05-20",
@@ -1233,8 +1240,8 @@
             "XLU",
             "XLV"
           ],
-          "equity": 103161.33,
-          "ytd_pct": 3.16,
+          "equity": 103570.4,
+          "ytd_pct": 3.57,
           "trade_count": 10,
           "positions": 2,
           "last_snapshot": "2026-05-20",

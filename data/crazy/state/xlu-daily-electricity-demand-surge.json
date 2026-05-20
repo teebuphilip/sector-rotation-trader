@@ -1,10 +1,19 @@
 {
-  "cash": 99863.89991336357,
+  "cash": 94860.75491769539,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 161.46217271500186,
+  "fees_paid": 171.41217271500184,
   "taxes_paid": 14.543699981538047,
-  "positions": {},
+  "positions": {
+    "XLU": {
+      "shares": 111.98015202021446,
+      "entry_price": 44.59000015258789,
+      "entry_date": "2026-05-20",
+      "cost": 4993.194995668178,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-03-16",
@@ -197,6 +206,16 @@
       "pnl_pct": -0.09,
       "entry_date": "2026-05-20",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-20",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 111.9802,
+      "price": 44.59,
+      "cost": 4993.19,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1289,18 +1308,38 @@
       "positions": {},
       "sector": "Xlu Daily Electricity Demand Surge",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 94860.75,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99853.95,
+      "positions": {
+        "XLU": {
+          "shares": 111.9802,
+          "entry_price": 44.59,
+          "current_price": 44.59,
+          "market_value": 4993.19,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-20",
+          "margin": false
+        }
+      },
+      "sector": "Xlu Daily Electricity Demand Surge",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-18",
   "last_run": "2026-05-20",
   "meta": {
     "xlu-daily-electricity-demand-surge": {
-      "signal_label": "HOLD",
-      "latest_value": 11784540.0,
+      "signal_label": "RISK_ON",
+      "latest_value": 11784538.0,
       "prior_avg": 11262180.9714,
       "signal_change": 0.0464,
       "name": "Xlu Daily Electricity Demand Surge",
-      "last_signal": "HOLD",
+      "last_signal": "RISK_ON",
       "last_run": "2026-05-20",
       "entry_date": "2026-05-20"
     }

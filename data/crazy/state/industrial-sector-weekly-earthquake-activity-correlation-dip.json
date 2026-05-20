@@ -1,19 +1,10 @@
 {
-  "cash": 94706.91173268431,
+  "cash": 99691.72982823745,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 191.3704599510947,
+  "fees_paid": 201.5789719242978,
   "taxes_paid": 4.639447566590679,
-  "positions": {
-    "XLI": {
-      "shares": 29.202142755968868,
-      "entry_price": 170.7100067138672,
-      "entry_date": "2026-05-20",
-      "cost": 4985.097985930754,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-20",
@@ -240,6 +231,20 @@
       "cost": 4985.1,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-20",
+      "action": "SELL",
+      "ticker": "XLI",
+      "shares": 29.2021,
+      "price": 171.05,
+      "proceeds": 4984.82,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -0.28,
+      "pnl_pct": -0.01,
+      "entry_date": "2026-05-20",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1332,19 +1337,29 @@
       },
       "sector": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 99691.73,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99691.73,
+      "positions": {},
+      "sector": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-19",
   "last_run": "2026-05-20",
   "meta": {
     "industrial-sector-weekly-earthquake-activity-correlation-dip": {
-      "signal_label": "RISK_ON",
-      "latest_value": 104.0,
-      "prior_avg": 359.7143,
-      "signal_change": -0.7109,
+      "signal_label": "HOLD",
+      "latest_value": 150.0,
+      "prior_avg": 360.1071,
+      "signal_change": -0.5835,
       "entry_date": "2026-05-20",
       "name": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
-      "last_signal": "RISK_ON",
+      "last_signal": "HOLD",
       "last_run": "2026-05-20"
     }
   }

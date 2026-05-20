@@ -47,6 +47,16 @@
       "pnl_pct": -0.23,
       "entry_date": "2026-05-20",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-20",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 112.0486,
+      "price": 44.605,
+      "cost": 4997.93,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -799,6 +809,26 @@
       "positions": {},
       "sector": "Electricity Demand Spike During Extreme Cold Snap Triggers Utility Sector Rally",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 94950.64,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99948.56,
+      "positions": {
+        "XLU": {
+          "shares": 112.0486,
+          "entry_price": 44.605,
+          "current_price": 44.605,
+          "market_value": 4997.93,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-20",
+          "margin": false
+        }
+      },
+      "sector": "Electricity Demand Spike During Extreme Cold Snap Triggers Utility Sector Rally",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-02-11"

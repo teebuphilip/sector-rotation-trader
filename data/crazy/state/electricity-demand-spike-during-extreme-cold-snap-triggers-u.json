@@ -1,10 +1,19 @@
 {
-  "cash": 99958.51379835635,
+  "cash": 94950.63810843854,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 40.36729590168957,
+  "fees_paid": 50.317295901689576,
   "taxes_paid": 0.0,
-  "positions": {},
+  "positions": {
+    "XLU": {
+      "shares": 112.04855377669713,
+      "entry_price": 44.60499954223633,
+      "entry_date": "2026-05-20",
+      "cost": 4997.925689917818,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-05-19",
@@ -53,6 +62,16 @@
       "pnl_pct": -0.23,
       "entry_date": "2026-05-20",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-20",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 112.0486,
+      "price": 44.605,
+      "cost": 4997.93,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -805,18 +824,38 @@
       "positions": {},
       "sector": "Electricity Demand Spike During Extreme Cold Snap Triggers Utility Sector Rally",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 94950.64,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99948.56,
+      "positions": {
+        "XLU": {
+          "shares": 112.0486,
+          "entry_price": 44.605,
+          "current_price": 44.605,
+          "market_value": 4997.93,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-20",
+          "margin": false
+        }
+      },
+      "sector": "Electricity Demand Spike During Extreme Cold Snap Triggers Utility Sector Rally",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-02-11",
   "last_run": "2026-05-20",
   "meta": {
     "electricity-demand-spike-during-extreme-cold-snap-triggers-u": {
-      "signal_label": "HOLD",
-      "latest_value": 11784540.0,
+      "signal_label": "RISK_ON",
+      "latest_value": 11784538.0,
       "prior_avg": 10648957.2,
       "signal_change": 0.1066,
       "name": "Electricity Demand Spike During Extreme Cold Snap Triggers Utility Sector Rally",
-      "last_signal": "HOLD",
+      "last_signal": "RISK_ON",
       "last_run": "2026-05-20",
       "entry_date": "2026-05-20"
     }

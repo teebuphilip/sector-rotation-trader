@@ -1,10 +1,19 @@
 {
-  "cash": 99702.88599796304,
+  "cash": 94707.79169806489,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 383.02411737027444,
+  "fees_paid": 392.9741173702744,
   "taxes_paid": 170.9172372456224,
-  "positions": {},
+  "positions": {
+    "XLI": {
+      "shares": 29.12053407794321,
+      "entry_price": 171.19000244140625,
+      "entry_date": "2026-05-20",
+      "cost": 4985.144299898152,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-01",
@@ -461,6 +470,16 @@
       "pnl_pct": -0.04,
       "entry_date": "2026-05-20",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-20",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 29.1205,
+      "price": 171.19,
+      "cost": 4985.14,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1393,6 +1412,26 @@
       "positions": {},
       "sector": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 94707.79,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99692.94,
+      "positions": {
+        "XLI": {
+          "shares": 29.1205,
+          "entry_price": 171.19,
+          "current_price": 171.19,
+          "market_value": 4985.14,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-20",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-02-10",
@@ -1402,10 +1441,10 @@
       "latest_value": 890861.0,
       "prior_avg": 795107.6875,
       "signal_change": 0.1204,
-      "signal_label": "HOLD",
+      "signal_label": "RISK_ON",
       "entry_date": "2026-05-20",
       "name": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
-      "last_signal": "HOLD",
+      "last_signal": "RISK_ON",
       "last_run": "2026-05-20"
     }
   }
