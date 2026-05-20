@@ -2785,6 +2785,35 @@
       },
       "sector": "XLK",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 77987.83,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99024.91,
+      "positions": {
+        "QCOM": {
+          "shares": 53.6049,
+          "entry_price": 186.55,
+          "current_price": 199.7699,
+          "market_value": 10708.65,
+          "unrealized_pnl": 708.65,
+          "entry_date": "2026-05-05",
+          "margin": false
+        },
+        "AMD": {
+          "shares": 23.731,
+          "entry_price": 421.39,
+          "current_price": 435.23,
+          "market_value": 10328.44,
+          "unrealized_pnl": 328.44,
+          "entry_date": "2026-05-06",
+          "margin": false
+        }
+      },
+      "sector": "XLK",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-07",

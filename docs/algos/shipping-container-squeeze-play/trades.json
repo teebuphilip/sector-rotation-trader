@@ -95,6 +95,16 @@
       "pnl_pct": -0.2,
       "entry_date": "2026-05-19",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-20",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 29.4266,
+      "price": 169.7457,
+      "cost": 4995.03,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1057,6 +1067,26 @@
       "positions": {},
       "sector": "Shipping Container Squeeze Play",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 94895.64,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99890.67,
+      "positions": {
+        "XLI": {
+          "shares": 29.4266,
+          "entry_price": 169.7457,
+          "current_price": 169.7457,
+          "market_value": 4995.03,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-20",
+          "margin": false
+        }
+      },
+      "sector": "Shipping Container Squeeze Play",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-21"

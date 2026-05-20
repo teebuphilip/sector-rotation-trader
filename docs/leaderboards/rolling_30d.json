@@ -1,133 +1,109 @@
 {
-  "as_of": "2026-05-20T13:09:46.300296",
-  "spy_ret_30d": 0.035288986905240405,
+  "as_of": "2026-05-20T14:21:58.852977",
+  "spy_ret_30d": 0.04121518114365652,
   "entries": [
     {
       "algo_id": "simple_monthly",
       "name": "Quantified Simple Monthly Rotation",
       "category": "standard",
-      "ret_30d": 0.0860361999999999,
-      "sharpe_30d": 3.8204048566372095,
+      "ret_30d": 0.09343350000000017,
+      "sharpe_30d": 4.0646730445720705,
       "max_dd_30d": -0.03487461208540213
     },
     {
       "algo_id": "faber",
       "name": "Faber Momentum Rotation",
       "category": "standard",
-      "ret_30d": 0.0376877011199499,
-      "sharpe_30d": 3.9928361548945848,
+      "ret_30d": 0.04043319276382751,
+      "sharpe_30d": 4.222926942631323,
       "max_dd_30d": -0.01094781829041646
     },
     {
       "algo_id": "vix-fear-rotation",
       "name": "VIX Fear Rotation",
       "category": "crazy",
-      "ret_30d": 0.02804185028543893,
-      "sharpe_30d": 1.5971768923005023,
+      "ret_30d": 0.0353839999210952,
+      "sharpe_30d": 2.039195985094732,
       "max_dd_30d": -0.025215918645079487
     },
     {
       "algo_id": "vix-term-structure",
       "name": "VIX Term Structure",
       "category": "crazy",
-      "ret_30d": 0.026597152806527413,
-      "sharpe_30d": 1.4801337468116695,
+      "ret_30d": 0.0341803766872133,
+      "sharpe_30d": 1.9311283676848952,
       "max_dd_30d": -0.025162375111114736
-    },
-    {
-      "algo_id": "dmsr",
-      "name": "Antonacci Dual Momentum Sector Rotation",
-      "category": "standard",
-      "ret_30d": 0.02263453428797746,
-      "sharpe_30d": 1.7970715297580193,
-      "max_dd_30d": -0.017382428680884184
     },
     {
       "algo_id": "uber-mobility",
       "name": "Uber Mobility Index",
       "category": "crazy",
-      "ret_30d": 0.02135584981411287,
-      "sharpe_30d": 1.1890866646511502,
+      "ret_30d": 0.02611159620764525,
+      "sharpe_30d": 1.4842552526616977,
       "max_dd_30d": -0.024862854230569914
     },
     {
       "algo_id": "retail-sales-momentum",
       "name": "Retail Sales Momentum",
       "category": "crazy",
-      "ret_30d": 0.021052599999999977,
-      "sharpe_30d": 1.2966177585246044,
+      "ret_30d": 0.0260494,
+      "sharpe_30d": 1.643762080057081,
       "max_dd_30d": -0.024862714237417087
     },
     {
-      "algo_id": "biscotti-crazy",
-      "name": "Algo Biscotti (Unconditional Loyalty)",
-      "category": "crazy",
-      "ret_30d": 0.020995488454655487,
-      "sharpe_30d": 1.1862638179882645,
-      "max_dd_30d": -0.023003166528159744
+      "algo_id": "dmsr",
+      "name": "Antonacci Dual Momentum Sector Rotation",
+      "category": "standard",
+      "ret_30d": 0.024828718004098915,
+      "sharpe_30d": 2.018154692115531,
+      "max_dd_30d": -0.017382428680884184
     },
     {
       "algo_id": "baileymol",
       "name": "Algo Baileymol (Chaos Monger)",
       "category": "standard",
-      "ret_30d": 0.019954533306746347,
-      "sharpe_30d": 1.7020068647936617,
+      "ret_30d": 0.022531871352854616,
+      "sharpe_30d": 1.9299830307999437,
       "max_dd_30d": -0.014656950908872092
     },
     {
-      "algo_id": "insider-trading-signals",
-      "name": "Insider Trading Signals",
+      "algo_id": "biscotti-crazy",
+      "name": "Algo Biscotti (Unconditional Loyalty) (crazy)",
       "category": "crazy",
-      "ret_30d": 0.01353519999999997,
-      "sharpe_30d": 1.204227120998503,
-      "max_dd_30d": -0.010480261373659953
+      "ret_30d": 0.016559932698485547,
+      "sharpe_30d": 0.8299584062305211,
+      "max_dd_30d": -0.023003166528159744
     },
     {
       "algo_id": "job-posting-acceleration",
       "name": "Job Posting Acceleration",
       "category": "crazy",
-      "ret_30d": 0.006870399999999943,
-      "sharpe_30d": 0.1735788927111123,
+      "ret_30d": 0.011563100000000048,
+      "sharpe_30d": 0.6192032220038143,
       "max_dd_30d": -0.023298824926721064
     },
     {
-      "algo_id": "misery-rotation",
-      "name": "Misery Rotation",
+      "algo_id": "insider-trading-signals",
+      "name": "Insider Trading Signals",
       "category": "crazy",
-      "ret_30d": 0.0019742999999998734,
-      "sharpe_30d": -0.8338750604147953,
-      "max_dd_30d": -0.008444736673231262
+      "ret_30d": 0.006109299999999873,
+      "sharpe_30d": 0.0792725422596011,
+      "max_dd_30d": -0.010480261373659953
     },
     {
       "algo_id": "weekly-google-trends-surge-in-diy-electronics-repair-signals",
       "name": "Weekly Google Trends Surge In Diy Electronics Repair Signals Tech Consumer Stress Lift",
       "category": "crazy",
       "ret_30d": 0.0017485378554091824,
-      "sharpe_30d": -4.3708965222699625,
+      "sharpe_30d": -4.568662441646989,
       "max_dd_30d": -0.0011916279737465671
-    },
-    {
-      "algo_id": "housing-permit-velocity",
-      "name": "Housing Permit Velocity",
-      "category": "crazy",
-      "ret_30d": 0.0016960999999999782,
-      "sharpe_30d": -0.44844937639844135,
-      "max_dd_30d": -0.0221692165995309
-    },
-    {
-      "algo_id": "mortgage-rate-housing-proxy",
-      "name": "Mortgage Rate Housing Proxy",
-      "category": "crazy",
-      "ret_30d": 0.0013224631701709288,
-      "sharpe_30d": -0.36274092924116186,
-      "max_dd_30d": -0.02183073751894139
     },
     {
       "algo_id": "weekly-surge-in-google-trends-for-diy-electronics-repair-sig",
       "name": "Weekly Surge In Google Trends For Diy Electronics Repair Signals Bullish Xlk",
       "category": "crazy",
       "ret_30d": 0.0012431080524051286,
-      "sharpe_30d": -7.8644708709021485,
+      "sharpe_30d": -8.1398314489769,
       "max_dd_30d": -0.000447534914429907
     },
     {
@@ -135,47 +111,39 @@
       "name": "Weekly Surge In Google Trends Searches For Diy Electronics Repair Signals Bullish Xlk",
       "category": "crazy",
       "ret_30d": 0.0008188000000000084,
-      "sharpe_30d": -13.533870780002669,
+      "sharpe_30d": -13.884622295525725,
       "max_dd_30d": -0.0003010736259503726
     },
     {
-      "algo_id": "finra-dark-pool-signal",
-      "name": "FINRA Dark Pool Signal",
+      "algo_id": "daily-spike-in-rss-news-feed-for-semiconductor-chip-shortage",
+      "name": "Daily Spike In Rss News Feed For Semiconductor Chip Shortage Signals Tech Sector Volatility",
       "category": "crazy",
-      "ret_30d": 0.0006207000000000296,
-      "sharpe_30d": -0.3915272185772331,
-      "max_dd_30d": -0.026314272468100586
-    },
-    {
-      "algo_id": "oil-price-momentum-reversal-energy-sector-bounce",
-      "name": "Oil Price Momentum Reversal Energy Sector Bounce",
-      "category": "crazy",
-      "ret_30d": 0.0005524607937592574,
-      "sharpe_30d": -14.528793176423353,
-      "max_dd_30d": -0.00039824842790997007
+      "ret_30d": 0.0002907000000000881,
+      "sharpe_30d": -31.03186281436831,
+      "max_dd_30d": -9.94999999999709e-05
     },
     {
       "algo_id": "daily-jump-in-google-trends-for-home-building-permit-delay-s",
       "name": "Daily Jump In Google Trends For Home Building Permit Delay Signals Local Economy Construction Stress Hurting Real Estate Sector",
       "category": "crazy",
       "ret_30d": 0.00024249999999992333,
-      "sharpe_30d": -34.582955548139324,
+      "sharpe_30d": -35.48144656308197,
       "max_dd_30d": -9.94999999999709e-05
     },
     {
-      "algo_id": "xle-weekly-drawdown-rebound-signal",
-      "name": "Xle Weekly Drawdown Rebound Signal",
+      "algo_id": "oil-price-momentum-reversal-energy-sector-bounce",
+      "name": "Oil Price Momentum Reversal Energy Sector Bounce",
       "category": "crazy",
-      "ret_30d": 0.00010484883206429707,
-      "sharpe_30d": -45.45005681069241,
-      "max_dd_30d": -9.983214153485736e-05
+      "ret_30d": 5.0169087850937544e-05,
+      "sharpe_30d": -14.266794420703595,
+      "max_dd_30d": -0.0006015366554582029
     },
     {
       "algo_id": "weekly-spike-in-google-trends-searches-for-warehouse-automat",
       "name": "Weekly Spike In Google Trends Searches For Warehouse Automation Failure Signals Bearish Xli",
       "category": "crazy",
       "ret_30d": 2.899999999916858e-06,
-      "sharpe_30d": -24.463008575742908,
+      "sharpe_30d": -24.929580130960208,
       "max_dd_30d": -0.00039114581032161777
     },
     {
@@ -2039,7 +2007,15 @@
       "name": "Renewable Energy Rss News Volume Surge",
       "category": "crazy",
       "ret_30d": -2.300000000010627e-06,
-      "sharpe_30d": -93.44101141851382,
+      "sharpe_30d": -95.63747586166531,
+      "max_dd_30d": -9.94999999999709e-05
+    },
+    {
+      "algo_id": "daily-spike-in-rss-news-counts-on-corporate-dividend-cuts",
+      "name": "Daily Spike In Rss News Counts On Corporate Dividend Cuts",
+      "category": "crazy",
+      "ret_30d": -2.2199999999972242e-05,
+      "sharpe_30d": -106.16379984655372,
       "max_dd_30d": -9.94999999999709e-05
     },
     {
@@ -2047,7 +2023,7 @@
       "name": "Weekly Rise In Google Trends Interest For Food Delivery Delay Signals Bearish Xlp",
       "category": "crazy",
       "ret_30d": -2.9668751397649018e-05,
-      "sharpe_30d": -36.7263900325753,
+      "sharpe_30d": -37.41771158833824,
       "max_dd_30d": -0.0002696603001717317
     },
     {
@@ -2055,7 +2031,7 @@
       "name": "Earthquake Aftershock Insurance Claims Spike",
       "category": "crazy",
       "ret_30d": -3.647289699015843e-05,
-      "sharpe_30d": -119.19838652240904,
+      "sharpe_30d": -121.60941571953884,
       "max_dd_30d": -9.94261164528348e-05
     },
     {
@@ -2063,7 +2039,7 @@
       "name": "Price Momentum Reversion In Defensive Sectors After Tech Crash",
       "category": "crazy",
       "ret_30d": -4.1772522034966286e-05,
-      "sharpe_30d": -32.18656213854723,
+      "sharpe_30d": -32.83835439342621,
       "max_dd_30d": -0.00040093626412541177
     },
     {
@@ -2071,7 +2047,7 @@
       "name": "Google Trends Surge In Logistics Job Openings Signals Labor Shortage In Freight",
       "category": "crazy",
       "ret_30d": -7.734478076226736e-05,
-      "sharpe_30d": -12.565726247856416,
+      "sharpe_30d": -12.850642408601402,
       "max_dd_30d": -0.0007744123338171281
     },
     {
@@ -2079,7 +2055,7 @@
       "name": "Daily Jump In Google Trends Searches For Job Quitting Signals Labor Market Tightness Benefiting Consumer Discretionary",
       "category": "crazy",
       "ret_30d": -8.002600895362644e-05,
-      "sharpe_30d": -132.3788176318394,
+      "sharpe_30d": -135.2910727275693,
       "max_dd_30d": -9.965691978586573e-05
     },
     {
@@ -2087,31 +2063,15 @@
       "name": "Weekly Surge In Google Trends Searches For Diy Home Repair Signals Consumer Stress Lifting Xly",
       "category": "crazy",
       "ret_30d": -8.103162531303276e-05,
-      "sharpe_30d": -148.2634892178085,
+      "sharpe_30d": -150.84129796055416,
       "max_dd_30d": -0.00010028167560497657
-    },
-    {
-      "algo_id": "daily-spike-in-rss-news-feed-for-semiconductor-chip-shortage",
-      "name": "Daily Spike In Rss News Feed For Semiconductor Chip Shortage Signals Tech Sector Volatility",
-      "category": "crazy",
-      "ret_30d": -9.94999999999191e-05,
-      "sharpe_30d": -137.01339018186727,
-      "max_dd_30d": -9.94999999999709e-05
-    },
-    {
-      "algo_id": "daily-spike-in-rss-news-counts-on-corporate-dividend-cuts",
-      "name": "Daily Spike In Rss News Counts On Corporate Dividend Cuts",
-      "category": "crazy",
-      "ret_30d": -9.94999999999191e-05,
-      "sharpe_30d": -137.01339018186727,
-      "max_dd_30d": -9.94999999999709e-05
     },
     {
       "algo_id": "semiconductor-moonshot-warning",
       "name": "Semiconductor Moonshot Warning",
       "category": "crazy",
       "ret_30d": -0.00014391964965965176,
-      "sharpe_30d": -35.67747760589636,
+      "sharpe_30d": -36.23663150357424,
       "max_dd_30d": -0.0005029192201994325
     },
     {
@@ -2119,7 +2079,7 @@
       "name": "Grocery Store Foot Traffic Collapse Signal",
       "category": "crazy",
       "ret_30d": -0.00014505204017811746,
-      "sharpe_30d": -91.64114616113567,
+      "sharpe_30d": -93.1904418591215,
       "max_dd_30d": -0.00015498298898684952
     },
     {
@@ -2127,23 +2087,15 @@
       "name": "Natural Gas Futures Volatility Pump Rotation",
       "category": "crazy",
       "ret_30d": -0.00020169999999997135,
-      "sharpe_30d": -100.41701983294645,
+      "sharpe_30d": -102.33966691783084,
       "max_dd_30d": -0.00020169999999998254
-    },
-    {
-      "algo_id": "utility-power-grid-stress",
-      "name": "Utility Power Grid Stress",
-      "category": "crazy",
-      "ret_30d": -0.0002017999999999187,
-      "sharpe_30d": -116.58227509048342,
-      "max_dd_30d": -0.00020179999999993015
     },
     {
       "algo_id": "temperature-extremes-power-demand-spike-utility-boost",
       "name": "Temperature Extremes Power Demand Spike Utility Boost",
       "category": "crazy",
       "ret_30d": -0.0002017999999999187,
-      "sharpe_30d": -109.65926679845575,
+      "sharpe_30d": -111.42882526755369,
       "max_dd_30d": -0.00020179999999993015
     },
     {
@@ -2151,15 +2103,7 @@
       "name": "Weather Extreme Disruption Energy Demand Spike",
       "category": "crazy",
       "ret_30d": -0.0002017999999999187,
-      "sharpe_30d": -100.36894871050778,
-      "max_dd_30d": -0.00020179999999993015
-    },
-    {
-      "algo_id": "electricity-demand-spike-during-extreme-cold-snap-triggers-u",
-      "name": "Electricity Demand Spike During Extreme Cold Snap Triggers Utility Sector Rally",
-      "category": "crazy",
-      "ret_30d": -0.0002017999999999187,
-      "sharpe_30d": -100.36894871050778,
+      "sharpe_30d": -102.29057600682101,
       "max_dd_30d": -0.00020179999999993015
     },
     {
@@ -2167,7 +2111,7 @@
       "name": "Weather Extremes Utility Demand Spike",
       "category": "crazy",
       "ret_30d": -0.0002017999999999187,
-      "sharpe_30d": -100.36894871050778,
+      "sharpe_30d": -102.29057600682101,
       "max_dd_30d": -0.00020179999999993015
     },
     {
@@ -2175,31 +2119,31 @@
       "name": "Electricity Demand Collapse During Mild Weather",
       "category": "crazy",
       "ret_30d": -0.0002017999999999187,
-      "sharpe_30d": -100.36894871050778,
+      "sharpe_30d": -102.29057600682101,
       "max_dd_30d": -0.00020179999999993015
-    },
-    {
-      "algo_id": "xlu-daily-electricity-demand-surge",
-      "name": "Xlu Daily Electricity Demand Surge",
-      "category": "crazy",
-      "ret_30d": -0.0002021047725554448,
-      "sharpe_30d": -116.41178400468135,
-      "max_dd_30d": -0.00020210477255543094
     },
     {
       "algo_id": "daily-jump-in-google-trends-searches-for-home-water-heater-r",
       "name": "Daily Jump In Google Trends Searches For Home Water Heater Repair Signals Consumer Stress Lifting Xly",
       "category": "crazy",
       "ret_30d": -0.0002028063122258006,
-      "sharpe_30d": -105.53371891026576,
+      "sharpe_30d": -107.35054003782209,
       "max_dd_30d": -0.0002028063122257851
+    },
+    {
+      "algo_id": "xle-weekly-drawdown-rebound-signal",
+      "name": "Xle Weekly Drawdown Rebound Signal",
+      "category": "crazy",
+      "ret_30d": -0.00022625274287557673,
+      "sharpe_30d": -34.92744986353465,
+      "max_dd_30d": -0.00043084553059200974
     },
     {
       "algo_id": "daily-spike-in-google-trends-for-home-air-purifier-repair-si",
       "name": "Daily Spike In Google Trends For Home Air Purifier Repair Signals Consumer Stress Rebound In Discretionary Sector",
       "category": "crazy",
       "ret_30d": -0.0002813999999999872,
-      "sharpe_30d": -89.10159772292121,
+      "sharpe_30d": -90.53083101637803,
       "max_dd_30d": -0.0003011000000000058
     },
     {
@@ -2207,15 +2151,47 @@
       "name": "Weekly Surge In Google Trends For Diy Plumbing Repair Signals Consumer Stress Rebound",
       "category": "crazy",
       "ret_30d": -0.0002961999999999687,
-      "sharpe_30d": -18.445069140839912,
+      "sharpe_30d": -18.778446207932284,
       "max_dd_30d": -0.0006539658802148656
+    },
+    {
+      "algo_id": "baileymol-crazy",
+      "name": "Chaos Rotation Lab",
+      "category": "crazy",
+      "ret_30d": -0.0002962669725689038,
+      "sharpe_30d": -0.7870994143879462,
+      "max_dd_30d": -0.01746859748627749
+    },
+    {
+      "algo_id": "utility-power-grid-stress",
+      "name": "Utility Power Grid Stress",
+      "category": "crazy",
+      "ret_30d": -0.00030130000000005985,
+      "sharpe_30d": -100.31450409193587,
+      "max_dd_30d": -0.00030130000000004657
+    },
+    {
+      "algo_id": "electricity-demand-spike-during-extreme-cold-snap-triggers-u",
+      "name": "Electricity Demand Spike During Extreme Cold Snap Triggers Utility Sector Rally",
+      "category": "crazy",
+      "ret_30d": -0.00030130000000005985,
+      "sharpe_30d": -87.96211106499626,
+      "max_dd_30d": -0.00030130000000004657
+    },
+    {
+      "algo_id": "xlu-daily-electricity-demand-surge",
+      "name": "Xlu Daily Electricity Demand Surge",
+      "category": "crazy",
+      "ret_30d": -0.0003017056882033131,
+      "sharpe_30d": -100.18567308851591,
+      "max_dd_30d": -0.0003017056882032818
     },
     {
       "algo_id": "daily-spike-in-google-trends-for-emergency-plumbing-repair-s",
       "name": "Daily Spike In Google Trends For Emergency Plumbing Repair Signals Consumer Stress Rebound Benefiting Discretionary Sector",
       "category": "crazy",
       "ret_30d": -0.0003122366131060872,
-      "sharpe_30d": -25.475654078757646,
+      "sharpe_30d": -25.929921671163584,
       "max_dd_30d": -0.0006544921160255425
     },
     {
@@ -2223,7 +2199,7 @@
       "name": "Luxury Discretionary Google Trends Collapse Signal",
       "category": "crazy",
       "ret_30d": -0.00034252992805161586,
-      "sharpe_30d": -23.277321573936188,
+      "sharpe_30d": -23.734584035397006,
       "max_dd_30d": -0.0005854636788226679
     },
     {
@@ -2231,7 +2207,7 @@
       "name": "Weekly Surge In Google Trends For Diy Car Maintenance Signals Rising Auto Sector Interest",
       "category": "crazy",
       "ret_30d": -0.0004109794423261537,
-      "sharpe_30d": -45.54754596149715,
+      "sharpe_30d": -46.349537849010616,
       "max_dd_30d": -0.00041097944232616675
     },
     {
@@ -2239,23 +2215,15 @@
       "name": "Retail Roulette",
       "category": "crazy",
       "ret_30d": -0.0004259873918537327,
-      "sharpe_30d": -50.27056501071194,
+      "sharpe_30d": -50.94532077853056,
       "max_dd_30d": -0.00042598739185369393
-    },
-    {
-      "algo_id": "commodity-shortage-news-volume-burst",
-      "name": "Commodity Shortage News Volume Burst",
-      "category": "crazy",
-      "ret_30d": -0.00048309999999995856,
-      "sharpe_30d": -63.53171039931246,
-      "max_dd_30d": -0.0004830999999999767
     },
     {
       "algo_id": "utilities-sector-negative-price-gap-fill",
       "name": "Utilities Sector Negative Price Gap Fill",
       "category": "crazy",
       "ret_30d": -0.000522109699481188,
-      "sharpe_30d": -40.08276573714629,
+      "sharpe_30d": -40.60454437957075,
       "max_dd_30d": -0.0005221096994811655
     },
     {
@@ -2263,39 +2231,31 @@
       "name": "Daily Spike In Rss News Counts Around Labor Union Contract Negotiation Signals Bearish Xlf",
       "category": "crazy",
       "ret_30d": -0.0005452000000000234,
-      "sharpe_30d": -23.713615902827964,
+      "sharpe_30d": -24.067405766413955,
       "max_dd_30d": -0.0008515361347899257
+    },
+    {
+      "algo_id": "commodity-shortage-news-volume-burst",
+      "name": "Commodity Shortage News Volume Burst",
+      "category": "crazy",
+      "ret_30d": -0.0005825999999999887,
+      "sharpe_30d": -62.781451589965094,
+      "max_dd_30d": -0.0005825999999999476
     },
     {
       "algo_id": "daily-jump-in-google-trends-searches-for-emergency-dental-ca",
       "name": "Daily Jump In Google Trends Searches For Emergency Dental Care",
       "category": "crazy",
       "ret_30d": -0.000585339131798035,
-      "sharpe_30d": -31.100887736628746,
+      "sharpe_30d": -31.60685389399154,
       "max_dd_30d": -0.0005853391317980219
-    },
-    {
-      "algo_id": "daily-surge-in-rss-news-counts-for-new-labor-union-formation",
-      "name": "Daily Surge In Rss News Counts For New Labor Union Formations Signals Labor Market Pressure On Industrial Sector",
-      "category": "crazy",
-      "ret_30d": -0.0005950999999999596,
-      "sharpe_30d": -43.436429620570955,
-      "max_dd_30d": -0.0005950999999999476
-    },
-    {
-      "algo_id": "weekly-rise-in-rss-count-for-labor-strike-news-signals-indus",
-      "name": "Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk",
-      "category": "crazy",
-      "ret_30d": -0.0005950999999999596,
-      "sharpe_30d": -43.436429620570955,
-      "max_dd_30d": -0.0005950999999999476
     },
     {
       "algo_id": "eia-electricity-demand-shock-rebound-spread",
       "name": "Eia Electricity Demand Shock Rebound Spread",
       "category": "crazy",
       "ret_30d": -0.0005969000000000113,
-      "sharpe_30d": -48.951977035186296,
+      "sharpe_30d": -49.603439017826055,
       "max_dd_30d": -0.0005969000000000232
     },
     {
@@ -2303,7 +2263,7 @@
       "name": "Weekly Surge In Google Trends For Inflation Hedge Gold Signals Bullish Xlb",
       "category": "crazy",
       "ret_30d": -0.0006303155306619512,
-      "sharpe_30d": -30.187355008995898,
+      "sharpe_30d": -30.629270017350656,
       "max_dd_30d": -0.0006303155306619702
     },
     {
@@ -2311,39 +2271,55 @@
       "name": "Daily Jump In Google Trends For Emergency Hvac Repair Signals Consumer Home Repair Stress",
       "category": "crazy",
       "ret_30d": -0.0006581398910557867,
-      "sharpe_30d": -54.197307649680454,
+      "sharpe_30d": -54.82758524707596,
       "max_dd_30d": -0.0006581398910557415
     },
     {
-      "algo_id": "rss-news-volume-spike-on-food-supply-chain-disruptions",
-      "name": "Rss News Volume Spike On Food Supply Chain Disruptions",
+      "algo_id": "daily-surge-in-rss-news-counts-for-new-labor-union-formation",
+      "name": "Daily Surge In Rss News Counts For New Labor Union Formations Signals Labor Market Pressure On Industrial Sector",
       "category": "crazy",
-      "ret_30d": -0.0006871999999999989,
-      "sharpe_30d": -20.886456426361267,
-      "max_dd_30d": -0.0010624000000000525
+      "ret_30d": -0.0006946000000001007,
+      "sharpe_30d": -44.21262732058833,
+      "max_dd_30d": -0.000694600000000064
+    },
+    {
+      "algo_id": "weekly-rise-in-rss-count-for-labor-strike-news-signals-indus",
+      "name": "Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk",
+      "category": "crazy",
+      "ret_30d": -0.0006946000000001007,
+      "sharpe_30d": -44.21262732058833,
+      "max_dd_30d": -0.000694600000000064
     },
     {
       "algo_id": "weekly-surge-in-google-trends-searches-for-truck-driver-stri",
       "name": "Weekly Surge In Google Trends Searches For Truck Driver Strike Signals Imminent Logistics Disruption",
       "category": "crazy",
       "ret_30d": -0.000773899999999994,
-      "sharpe_30d": -23.506718166167786,
+      "sharpe_30d": -23.85547560249532,
       "max_dd_30d": -0.0007738999999999941
+    },
+    {
+      "algo_id": "rss-news-volume-spike-on-food-supply-chain-disruptions",
+      "name": "Rss News Volume Spike On Food Supply Chain Disruptions",
+      "category": "crazy",
+      "ret_30d": -0.000786700000000029,
+      "sharpe_30d": -21.512863871249905,
+      "max_dd_30d": -0.0010624000000000525
     },
     {
       "algo_id": "daily-jump-in-rss-news-counts-for-labor-union-strikes-in-tra",
       "name": "Daily Jump In Rss News Counts For Labor Union Strikes In Transportation Sector",
       "category": "crazy",
       "ret_30d": -0.0007900999999999048,
-      "sharpe_30d": -23.04215826492393,
+      "sharpe_30d": -23.381254789630248,
       "max_dd_30d": -0.0007900999999999476
     },
     {
       "algo_id": "electricity-enlightenment",
       "name": "Electricity Enlightenment",
       "category": "crazy",
-      "ret_30d": -0.0008900698626731485,
-      "sharpe_30d": -26.2454310770517,
+      "ret_30d": -0.0008071515631351556,
+      "sharpe_30d": -25.90010183620341,
       "max_dd_30d": -0.0008900698626731223
     },
     {
@@ -2351,31 +2327,31 @@
       "name": "Weekly Surge In Job Postings For Warehouse Workers Signals Bullish Xli",
       "category": "crazy",
       "ret_30d": -0.0009449000000000263,
-      "sharpe_30d": -39.48902700403312,
+      "sharpe_30d": -41.800933812349946,
       "max_dd_30d": -0.0009449000000000524
     },
     {
       "algo_id": "shipping-container-squeeze-play",
       "name": "Shipping Container Squeeze Play",
       "category": "crazy",
-      "ret_30d": -0.0009938000000000446,
-      "sharpe_30d": -39.59781305922075,
-      "max_dd_30d": -0.0009938000000000466
+      "ret_30d": -0.0010932999999999637,
+      "sharpe_30d": -40.34045128095336,
+      "max_dd_30d": -0.0010933000000000175
     },
     {
       "algo_id": "port-congestion-squeeze",
       "name": "Port Congestion Squeeze",
       "category": "crazy",
-      "ret_30d": -0.0009938000000000446,
-      "sharpe_30d": -40.721546656235624,
-      "max_dd_30d": -0.0009938000000000466
+      "ret_30d": -0.0010932999999999637,
+      "sharpe_30d": -41.360192511462266,
+      "max_dd_30d": -0.0010933000000000175
     },
     {
       "algo_id": "daily-spike-in-rss-news-counts-mentioning-politician-insider",
       "name": "Daily Spike In Rss News Counts Mentioning Politician Insider Buying Tech Stock Signals Bullish Xlk",
       "category": "crazy",
       "ret_30d": -0.0011352000000000029,
-      "sharpe_30d": -19.11281597978472,
+      "sharpe_30d": -19.325454752230577,
       "max_dd_30d": -0.0011480000000000292
     },
     {
@@ -2383,15 +2359,39 @@
       "name": "Daily Spike In Google Trends For Emergency Dental Surgery Signals Healthcare Consumer Stress",
       "category": "crazy",
       "ret_30d": -0.0012556221401636147,
-      "sharpe_30d": -21.083202558470038,
+      "sharpe_30d": -21.30188096748314,
       "max_dd_30d": -0.0012556221401635638
+    },
+    {
+      "algo_id": "misery-rotation",
+      "name": "Misery Rotation",
+      "category": "crazy",
+      "ret_30d": -0.0015478999999999354,
+      "sharpe_30d": -1.6180688863589823,
+      "max_dd_30d": -0.008444736673231262
+    },
+    {
+      "algo_id": "finra-dark-pool-signal",
+      "name": "FINRA Dark Pool Signal",
+      "category": "crazy",
+      "ret_30d": -0.0017385000000000872,
+      "sharpe_30d": -0.596881633029077,
+      "max_dd_30d": -0.026314272468100586
+    },
+    {
+      "algo_id": "housing-permit-velocity",
+      "name": "Housing Permit Velocity",
+      "category": "crazy",
+      "ret_30d": -0.0017871000000000414,
+      "sharpe_30d": -0.8808270204499636,
+      "max_dd_30d": -0.0221692165995309
     },
     {
       "algo_id": "weekly-surge-in-google-trends-for-hotel-room-shortage-signal",
       "name": "Weekly Surge In Google Trends For Hotel Room Shortage Signals Travel Sector Tightness",
       "category": "crazy",
       "ret_30d": -0.001858699999999991,
-      "sharpe_30d": -17.1195533394765,
+      "sharpe_30d": -17.240249626367763,
       "max_dd_30d": -0.0018586999999999534
     },
     {
@@ -2399,7 +2399,7 @@
       "name": "Weekly Surge In Google Trends Searches For Commuting Strike Signals Bearish Xly",
       "category": "crazy",
       "ret_30d": -0.00194939999999999,
-      "sharpe_30d": -19.791192435508833,
+      "sharpe_30d": -19.913155480442235,
       "max_dd_30d": -0.0019494000000000232
     },
     {
@@ -2407,7 +2407,7 @@
       "name": "Weekly Google Trends Surge In Home Energy Bill Shock Signals Bullish Utilities",
       "category": "crazy",
       "ret_30d": -0.0020727999999999858,
-      "sharpe_30d": -14.283734455584884,
+      "sharpe_30d": -14.376983800806183,
       "max_dd_30d": -0.002294499999999971
     },
     {
@@ -2415,7 +2415,7 @@
       "name": "Weekly Google Trends Surge In Energy Bill Shock Signals Consumer Stress Impacting Utilities",
       "category": "crazy",
       "ret_30d": -0.0020727999999999858,
-      "sharpe_30d": -14.283734455584884,
+      "sharpe_30d": -14.376983800806183,
       "max_dd_30d": -0.002294499999999971
     },
     {
@@ -2423,79 +2423,79 @@
       "name": "Daily Jump In Google Trends For Emergency Plumber Near Me Signals Consumer Home Repair Stress",
       "category": "crazy",
       "ret_30d": -0.002088958908290639,
-      "sharpe_30d": -29.25505280870948,
+      "sharpe_30d": -29.21987538852786,
       "max_dd_30d": -0.0020889589082906204
+    },
+    {
+      "algo_id": "mortgage-rate-housing-proxy",
+      "name": "Mortgage Rate Housing Proxy",
+      "category": "crazy",
+      "ret_30d": -0.002183334483562338,
+      "sharpe_30d": -0.6993286933825762,
+      "max_dd_30d": -0.02183073751894139
     },
     {
       "algo_id": "port-container-volume-surge-signals-import-demand-recovery-a",
       "name": "Port Container Volume Surge Signals Import Demand Recovery And Consumer Spending Rebound",
       "category": "crazy",
-      "ret_30d": -0.0021585813338798054,
-      "sharpe_30d": -19.639589267472296,
-      "max_dd_30d": -0.0021585813338797504
+      "ret_30d": -0.002258140432160438,
+      "sharpe_30d": -20.10672643032719,
+      "max_dd_30d": -0.0022581404321604607
     },
     {
-      "algo_id": "weekly-spike-in-freight-container-volumes-at-east-coast-port",
-      "name": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
+      "algo_id": "daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig",
+      "name": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
       "category": "crazy",
-      "ret_30d": -0.002476335311847211,
-      "sharpe_30d": -13.531779782249094,
-      "max_dd_30d": -0.002476335311847221
+      "ret_30d": -0.0024399999999999977,
+      "sharpe_30d": -13.068737671180445,
+      "max_dd_30d": -0.0028435000000000582
     },
     {
       "algo_id": "xlb-weekly-rss-news-count-spike-on-commodity-shortage",
       "name": "Xlb Weekly Rss News Count Spike On Commodity Shortage",
       "category": "crazy",
       "ret_30d": -0.0024772999999999046,
-      "sharpe_30d": -15.105101216410068,
+      "sharpe_30d": -15.185141174307027,
       "max_dd_30d": -0.0024772999999999592
     },
     {
-      "algo_id": "attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
-      "name": "Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc",
+      "algo_id": "weekly-spike-in-freight-container-volumes-at-east-coast-port",
+      "name": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
       "category": "crazy",
-      "ret_30d": -0.0025994000000000295,
-      "sharpe_30d": -23.109173805755358,
-      "max_dd_30d": -0.0025994000000000234
-    },
-    {
-      "algo_id": "daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig",
-      "name": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
-      "category": "crazy",
-      "ret_30d": -0.00284350000000011,
-      "sharpe_30d": -14.259000882510705,
-      "max_dd_30d": -0.0028435000000000582
-    },
-    {
-      "algo_id": "news-sentiment-rotation-fade-trade",
-      "name": "News Sentiment Rotation Fade Trade",
-      "category": "crazy",
-      "ret_30d": -0.0029457999999999984,
-      "sharpe_30d": -26.519962746841742,
-      "max_dd_30d": -0.0029458000000000175
+      "ret_30d": -0.0025758729071969633,
+      "sharpe_30d": -13.823193052553925,
+      "max_dd_30d": -0.0025758729071969555
     },
     {
       "algo_id": "industrial-sector-weekly-earthquake-activity-correlation-dip",
       "name": "Industrial Sector Weekly Earthquake Activity Correlation Dip",
       "category": "crazy",
-      "ret_30d": -0.0029601945393566975,
-      "sharpe_30d": -14.334363137600835,
+      "ret_30d": -0.0028811866780744655,
+      "sharpe_30d": -19.677023343239462,
       "max_dd_30d": -0.0029601945393567183
     },
     {
-      "algo_id": "liquor",
-      "name": "Liquor Store Leading Indicator",
+      "algo_id": "attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
+      "name": "Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc",
       "category": "crazy",
-      "ret_30d": -0.003036299999999992,
-      "sharpe_30d": -1.3421572291414208,
-      "max_dd_30d": -0.014678800000000047
+      "ret_30d": -0.002925399999999967,
+      "sharpe_30d": -23.578304953912752,
+      "max_dd_30d": -0.002925399999999936
+    },
+    {
+      "algo_id": "news-sentiment-rotation-fade-trade",
+      "name": "News Sentiment Rotation Fade Trade",
+      "category": "crazy",
+      "ret_30d": -0.0030453000000000285,
+      "sharpe_30d": -25.18089330243591,
+      "max_dd_30d": -0.003045299999999988
     },
     {
       "algo_id": "weekly-spike-in-google-trends-for-home-cooling-failure-signa",
       "name": "Weekly Spike In Google Trends For Home Cooling Failure Signals Bearish Xlu",
       "category": "crazy",
       "ret_30d": -0.003304600000000102,
-      "sharpe_30d": -15.059713520020981,
+      "sharpe_30d": -15.081912151737468,
       "max_dd_30d": -0.003525899999999965
     },
     {
@@ -2503,23 +2503,15 @@
       "name": "Daily Surge In Google Trends Searches For Electric Vehicle Charging Station Outages",
       "category": "crazy",
       "ret_30d": -0.0034302054693076123,
-      "sharpe_30d": -11.099969048070225,
+      "sharpe_30d": -11.103949672692048,
       "max_dd_30d": -0.003430205469307612
-    },
-    {
-      "algo_id": "baileymol-crazy",
-      "name": "Chaos Rotation Lab",
-      "category": "crazy",
-      "ret_30d": -0.0035288193803527657,
-      "sharpe_30d": -1.2378312450343045,
-      "max_dd_30d": -0.01746859748627749
     },
     {
       "algo_id": "google-gusts",
       "name": "Google Gusts",
       "category": "crazy",
       "ret_30d": -0.003544400000000003,
-      "sharpe_30d": -21.9956634567838,
+      "sharpe_30d": -21.982475945920626,
       "max_dd_30d": -0.0035444000000000235
     },
     {
@@ -2527,71 +2519,79 @@
       "name": "Weekly Google Trends Surge In Fast Food Job Openings Signals Bullish Consumer Discretionary",
       "category": "crazy",
       "ret_30d": -0.0035609162381342596,
-      "sharpe_30d": -19.794235162624794,
+      "sharpe_30d": -19.736488463346316,
       "max_dd_30d": -0.003560916238134221
     },
     {
-      "algo_id": "biscotti",
-      "name": "Algo Biscotti (Unconditional Loyalty)",
-      "category": "standard",
-      "ret_30d": -0.014730329462142255,
-      "sharpe_30d": -1.3945637530018273,
-      "max_dd_30d": -0.044289292837061865
+      "algo_id": "liquor",
+      "name": "Liquor Store Leading Indicator",
+      "category": "crazy",
+      "ret_30d": -0.008600300000000005,
+      "sharpe_30d": -2.127662492757436,
+      "max_dd_30d": -0.014678800000000047
     },
     {
       "algo_id": "nrwise",
       "name": "NRWise Acceleration",
       "category": "standard",
-      "ret_30d": -0.017552258496534412,
-      "sharpe_30d": -1.6919834855484845,
+      "ret_30d": -0.010300183398213925,
+      "sharpe_30d": -1.1002642533171303,
       "max_dd_30d": -0.049024996986461594
+    },
+    {
+      "algo_id": "biscotti",
+      "name": "Algo Biscotti (Unconditional Loyalty)",
+      "category": "standard",
+      "ret_30d": -0.01753931822618715,
+      "sharpe_30d": -1.6003273708364634,
+      "max_dd_30d": -0.044289292837061865
     },
     {
       "algo_id": "truck-tonnage",
       "name": "Truck Tonnage Index",
       "category": "crazy",
-      "ret_30d": -0.023454100000000033,
-      "sharpe_30d": -2.588864224222986,
+      "ret_30d": -0.020727700000000016,
+      "sharpe_30d": -2.3035176878479486,
       "max_dd_30d": -0.037920220193110414
     },
     {
       "algo_id": "freight-rail-carloads",
       "name": "Freight Rail Carloads",
       "category": "crazy",
-      "ret_30d": -0.026923299999999983,
-      "sharpe_30d": -2.530587054615251,
+      "ret_30d": -0.02350399999999997,
+      "sharpe_30d": -2.217640785267431,
       "max_dd_30d": -0.043376083416535746
     },
     {
       "algo_id": "lumber-momentum",
       "name": "Lumber Momentum",
       "category": "crazy",
-      "ret_30d": -0.029402551107670538,
-      "sharpe_30d": -2.8214931658868956,
+      "ret_30d": -0.025995573119050763,
+      "sharpe_30d": -2.492279930227937,
       "max_dd_30d": -0.03541101407832471
     },
     {
       "algo_id": "copper-momentum",
       "name": "Copper Momentum",
       "category": "crazy",
-      "ret_30d": -0.034760417323047355,
-      "sharpe_30d": -2.6740069211490956,
+      "ret_30d": -0.03093335573779188,
+      "sharpe_30d": -2.3673653963379375,
       "max_dd_30d": -0.045215667744283136
     },
     {
       "algo_id": "port-container-volume",
       "name": "Port Container Volume",
       "category": "crazy",
-      "ret_30d": -0.037960500000000064,
-      "sharpe_30d": -5.82977522662469,
+      "ret_30d": -0.03437060000000003,
+      "sharpe_30d": -5.141535558758997,
       "max_dd_30d": -0.03796050000000003
     },
     {
       "algo_id": "electricity-consumption",
       "name": "Electricity Consumption",
       "category": "crazy",
-      "ret_30d": -0.057733337789517725,
-      "sharpe_30d": -6.125094972731848,
+      "ret_30d": -0.05419207208772181,
+      "sharpe_30d": -5.59834605217745,
       "max_dd_30d": -0.06048683957552765
     }
   ]

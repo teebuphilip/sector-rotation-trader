@@ -1,19 +1,10 @@
 {
-  "cash": 94921.08694920978,
+  "cash": 99867.29810987358,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 292.43649393927524,
+  "fees_paid": 302.6587716576511,
   "taxes_paid": 195.70531290758447,
-  "positions": {
-    "XLE": {
-      "shares": 81.52015485583216,
-      "entry_price": 61.290000915527344,
-      "entry_date": "2026-05-20",
-      "cost": 4996.370365747884,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-01-29",
@@ -360,6 +351,20 @@
       "cost": 4996.37,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-20",
+      "action": "SELL",
+      "ticker": "XLE",
+      "shares": 81.5202,
+      "price": 60.8001,
+      "proceeds": 4946.21,
+      "fees": 10.22,
+      "tax": 0.0,
+      "pnl": -50.16,
+      "pnl_pct": -1.0,
+      "entry_date": "2026-05-20",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1372,19 +1377,29 @@
       },
       "sector": "Oil Price Momentum Reversal Energy Sector Bounce",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 99867.3,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99867.3,
+      "positions": {},
+      "sector": "Oil Price Momentum Reversal Energy Sector Bounce",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-26",
   "last_run": "2026-05-20",
   "meta": {
     "oil-price-momentum-reversal-energy-sector-bounce": {
-      "latest_value": 61.29,
-      "prior_avg": 58.658,
-      "signal_change": 0.0449,
-      "signal_label": "RISK_ON",
+      "latest_value": 60.795,
+      "prior_avg": 59.402,
+      "signal_change": 0.0235,
+      "signal_label": "HOLD",
       "entry_date": "2026-05-20",
       "name": "Oil Price Momentum Reversal Energy Sector Bounce",
-      "last_signal": "RISK_ON",
+      "last_signal": "HOLD",
       "last_run": "2026-05-20"
     }
   }

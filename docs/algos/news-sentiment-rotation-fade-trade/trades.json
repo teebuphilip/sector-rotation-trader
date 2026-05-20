@@ -263,6 +263,16 @@
       "pnl_pct": -0.2,
       "entry_date": "2026-05-19",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-20",
+      "action": "BUY",
+      "ticker": "XLY",
+      "shares": 43.0991,
+      "price": 115.67,
+      "cost": 4985.27,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1295,6 +1305,26 @@
       "positions": {},
       "sector": "News Sentiment Rotation Fade Trade",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 94710.2,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99695.47,
+      "positions": {
+        "XLY": {
+          "shares": 43.0991,
+          "entry_price": 115.67,
+          "current_price": 115.67,
+          "market_value": 4985.27,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-20",
+          "margin": false
+        }
+      },
+      "sector": "News Sentiment Rotation Fade Trade",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-21"

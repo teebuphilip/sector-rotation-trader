@@ -1,10 +1,19 @@
 {
-  "cash": 99979.8161705008,
+  "cash": 94970.87536197576,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 20.18382949920699,
+  "fees_paid": 30.13382949920699,
   "taxes_paid": 0.0,
-  "positions": {},
+  "positions": {
+    "XLU": {
+      "shares": 111.89683030544032,
+      "entry_price": 44.67499923706055,
+      "entry_date": "2026-05-20",
+      "cost": 4998.99080852504,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-05-19",
@@ -29,6 +38,16 @@
       "pnl_pct": -0.2,
       "entry_date": "2026-05-19",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-20",
+      "action": "BUY",
+      "ticker": "XLU",
+      "shares": 111.8968,
+      "price": 44.675,
+      "cost": 4998.99,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1118,20 +1137,40 @@
       "positions": {},
       "sector": "Utility Power Grid Stress",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 94970.88,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99969.87,
+      "positions": {
+        "XLU": {
+          "shares": 111.8968,
+          "entry_price": 44.675,
+          "current_price": 44.675,
+          "market_value": 4998.99,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-20",
+          "margin": false
+        }
+      },
+      "sector": "Utility Power Grid Stress",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-18",
   "last_run": "2026-05-20",
   "meta": {
     "utility-power-grid-stress": {
-      "signal_label": "HOLD",
+      "signal_label": "RISK_ON",
       "name": "Utility Power Grid Stress",
-      "last_signal": "HOLD",
+      "last_signal": "RISK_ON",
       "last_run": "2026-05-20",
-      "latest_value": 11785143.0,
-      "prior_avg": 10648950.0786,
-      "signal_change": 0.1067,
-      "entry_date": "2026-05-19"
+      "latest_value": 11784540.0,
+      "prior_avg": 10648957.2,
+      "signal_change": 0.1066,
+      "entry_date": "2026-05-20"
     }
   }
 }

@@ -1,19 +1,10 @@
 {
-  "cash": 94693.36262097905,
+  "cash": 99644.75391843975,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 352.9747095337766,
+  "fees_paid": 363.19718760287776,
   "taxes_paid": 185.9220644383012,
-  "positions": {
-    "XLE": {
-      "shares": 81.32460108228871,
-      "entry_price": 61.290000915527344,
-      "entry_date": "2026-05-20",
-      "cost": 4984.384874788371,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-01-21",
@@ -432,6 +423,20 @@
       "cost": 4984.38,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-20",
+      "action": "SELL",
+      "ticker": "XLE",
+      "shares": 81.3246,
+      "price": 61.01,
+      "proceeds": 4951.39,
+      "fees": 10.22,
+      "tax": 0.0,
+      "pnl": -32.99,
+      "pnl_pct": -0.66,
+      "entry_date": "2026-05-20",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1604,18 +1609,28 @@
       },
       "sector": "Xle Weekly Drawdown Rebound Signal",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 99644.75,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99644.75,
+      "positions": {},
+      "sector": "Xle Weekly Drawdown Rebound Signal",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-18",
   "last_run": "2026-05-20",
   "meta": {
     "xle-weekly-drawdown-rebound-signal": {
-      "latest_value": 61.29,
-      "prior_avg": 57.811,
-      "signal_change": 0.0602,
-      "signal_label": "RISK_ON",
+      "latest_value": 61.01,
+      "prior_avg": 58.082,
+      "signal_change": 0.0504,
+      "signal_label": "HOLD",
       "name": "Xle Weekly Drawdown Rebound Signal",
-      "last_signal": "RISK_ON",
+      "last_signal": "HOLD",
       "last_run": "2026-05-20",
       "entry_date": "2026-05-20"
     }
