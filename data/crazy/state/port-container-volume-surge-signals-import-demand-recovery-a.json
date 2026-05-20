@@ -1,19 +1,10 @@
 {
-  "cash": 94721.76938334819,
+  "cash": 99712.9776863949,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 393.05332214604,
-  "taxes_paid": 155.40554818119392,
-  "positions": {
-    "XLY": {
-      "shares": 42.43302100037994,
-      "entry_price": 117.5,
-      "entry_date": "2026-05-20",
-      "cost": 4985.879967544643,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "fees_paid": 403.2662795823592,
+  "taxes_paid": 158.53488807922756,
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-01",
@@ -480,6 +471,20 @@
       "cost": 4985.88,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-20",
+      "action": "SELL",
+      "ticker": "XLY",
+      "shares": 42.433,
+      "price": 117.94,
+      "proceeds": 4994.34,
+      "fees": 10.21,
+      "tax": 3.13,
+      "pnl": 5.33,
+      "pnl_pct": 0.11,
+      "entry_date": "2026-05-20",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1422,6 +1427,16 @@
       },
       "sector": "Port Container Volume Surge Signals Import Demand Recovery And Consumer Spending Rebound",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 99712.98,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99712.98,
+      "positions": {},
+      "sector": "Port Container Volume Surge Signals Import Demand Recovery And Consumer Spending Rebound",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-02-11",
@@ -1431,10 +1446,10 @@
       "latest_value": 890861.0,
       "prior_avg": 795107.6875,
       "signal_change": 0.1204,
-      "signal_label": "RISK_ON",
+      "signal_label": "HOLD",
       "entry_date": "2026-05-20",
       "name": "Port Container Volume Surge Signals Import Demand Recovery And Consumer Spending Rebound",
-      "last_signal": "RISK_ON",
+      "last_signal": "HOLD",
       "last_run": "2026-05-20"
     }
   }

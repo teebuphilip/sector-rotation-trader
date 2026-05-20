@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-20T17:32:36Z",
+  "generated_at": "2026-05-20T23:58:53Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -13,10 +13,10 @@
       "universe": [
         "XLC"
       ],
-      "equity": 99698.98,
-      "ytd_pct": -0.3,
-      "trade_count": 24,
-      "positions": 0,
+      "equity": 99689.03,
+      "ytd_pct": -0.31,
+      "trade_count": 25,
+      "positions": 1,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -61,10 +61,10 @@
       "universe": [
         "XLK"
       ],
-      "equity": 99744.92,
-      "ytd_pct": -0.26,
-      "trade_count": 26,
-      "positions": 0,
+      "equity": 99734.97,
+      "ytd_pct": -0.27,
+      "trade_count": 27,
+      "positions": 1,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -85,10 +85,10 @@
       "universe": [
         "XLK"
       ],
-      "equity": 100019.12,
-      "ytd_pct": 0.02,
-      "trade_count": 3,
-      "positions": 1,
+      "equity": 100027.17,
+      "ytd_pct": 0.03,
+      "trade_count": 4,
+      "positions": 0,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -157,10 +157,10 @@
       "universe": [
         "XLY"
       ],
-      "equity": 99698.91,
-      "ytd_pct": -0.3,
-      "trade_count": 25,
-      "positions": 1,
+      "equity": 99706.65,
+      "ytd_pct": -0.29,
+      "trade_count": 26,
+      "positions": 0,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -218,6 +218,30 @@
       "backtest_trade_count": null
     },
     {
+      "key": "crazy:rss-news-volume-spike-on-corporate-bond-downgrades-signals-c",
+      "algo_type": "crazy",
+      "algo_id": "rss-news-volume-spike-on-corporate-bond-downgrades-signals-c",
+      "name": "Rss News Volume Spike On Corporate Bond Downgrades Signals Credit Stress Rotation",
+      "family": "attention_sentiment",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "universe": [
+        "XLF"
+      ],
+      "equity": 99990.05,
+      "ytd_pct": -0.01,
+      "trade_count": 1,
+      "positions": 1,
+      "last_snapshot": "2026-05-20",
+      "last_signal": null,
+      "new_algo_date": null,
+      "backtest_status": null,
+      "backtest_reason": null,
+      "backtest_alpha_vs_spy_pct": null,
+      "backtest_trade_count": null
+    },
+    {
       "key": "crazy:vix-fear-rotation",
       "algo_type": "crazy",
       "algo_id": "vix-fear-rotation",
@@ -234,8 +258,8 @@
         "XLY",
         "XLF"
       ],
-      "equity": 96197.86,
-      "ytd_pct": -3.8,
+      "equity": 96556.2,
+      "ytd_pct": -3.44,
       "trade_count": 122,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -263,8 +287,8 @@
         "XLY",
         "XLF"
       ],
-      "equity": 97929.47,
-      "ytd_pct": -2.07,
+      "equity": 98293.48,
+      "ytd_pct": -1.71,
       "trade_count": 110,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -844,8 +868,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 100092.57,
-      "ytd_pct": 0.09,
+      "equity": 99949.96,
+      "ytd_pct": -0.05,
       "trade_count": 6,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -873,8 +897,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 103550.65,
-      "ytd_pct": 3.55,
+      "equity": 103945.6,
+      "ytd_pct": 3.95,
       "trade_count": 6,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -1137,10 +1161,10 @@
       "universe": [
         "XLY"
       ],
-      "equity": 99970.38,
-      "ytd_pct": -0.03,
-      "trade_count": 8,
-      "positions": 0,
+      "equity": 99960.43,
+      "ytd_pct": -0.04,
+      "trade_count": 9,
+      "positions": 1,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -1209,10 +1233,10 @@
       "universe": [
         "XLB"
       ],
-      "equity": 99923.58,
+      "equity": 99917.37,
       "ytd_pct": -0.08,
-      "trade_count": 7,
-      "positions": 1,
+      "trade_count": 8,
+      "positions": 0,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -1238,8 +1262,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 98333.87,
-      "ytd_pct": -1.67,
+      "equity": 98288.9,
+      "ytd_pct": -1.71,
       "trade_count": 2,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -1262,10 +1286,10 @@
       "universe": [
         "XLI"
       ],
-      "equity": 99895.17,
-      "ytd_pct": -0.1,
-      "trade_count": 11,
-      "positions": 1,
+      "equity": 99875.62,
+      "ytd_pct": -0.12,
+      "trade_count": 12,
+      "positions": 0,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -1290,8 +1314,8 @@
         "XLP",
         "XLU"
       ],
-      "equity": 97215.61,
-      "ytd_pct": -2.78,
+      "equity": 97170.96,
+      "ytd_pct": -2.83,
       "trade_count": 2,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -1314,10 +1338,10 @@
       "universe": [
         "XLY"
       ],
-      "equity": 99707.65,
+      "equity": 99712.98,
       "ytd_pct": -0.29,
-      "trade_count": 39,
-      "positions": 1,
+      "trade_count": 40,
+      "positions": 0,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -1338,10 +1362,10 @@
       "universe": [
         "XLP"
       ],
-      "equity": 99921.24,
-      "ytd_pct": -0.08,
-      "trade_count": 19,
-      "positions": 1,
+      "equity": 99898.78,
+      "ytd_pct": -0.1,
+      "trade_count": 20,
+      "positions": 0,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -1362,10 +1386,10 @@
       "universe": [
         "XLI"
       ],
-      "equity": 99890.68,
-      "ytd_pct": -0.11,
-      "trade_count": 11,
-      "positions": 1,
+      "equity": 99870.55,
+      "ytd_pct": -0.13,
+      "trade_count": 12,
+      "positions": 0,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -1391,8 +1415,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 98553.35,
-      "ytd_pct": -1.45,
+      "equity": 98512.08,
+      "ytd_pct": -1.49,
       "trade_count": 2,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -1487,10 +1511,10 @@
       "universe": [
         "XLI"
       ],
-      "equity": 99692.94,
-      "ytd_pct": -0.31,
-      "trade_count": 39,
-      "positions": 1,
+      "equity": 99669.33,
+      "ytd_pct": -0.33,
+      "trade_count": 40,
+      "positions": 0,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -1583,10 +1607,10 @@
       "universe": [
         "XLI"
       ],
-      "equity": 99918.46,
-      "ytd_pct": -0.08,
-      "trade_count": 9,
-      "positions": 1,
+      "equity": 99894.97,
+      "ytd_pct": -0.11,
+      "trade_count": 10,
+      "positions": 0,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -1636,8 +1660,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 102014.28,
-      "ytd_pct": 2.01,
+      "equity": 102373.79,
+      "ytd_pct": 2.37,
       "trade_count": 2,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -1756,10 +1780,10 @@
       "universe": [
         "XLI"
       ],
-      "equity": 99915.67,
-      "ytd_pct": -0.08,
-      "trade_count": 9,
-      "positions": 1,
+      "equity": 99892.18,
+      "ytd_pct": -0.11,
+      "trade_count": 10,
+      "positions": 0,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -2001,8 +2025,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 99631.0,
-      "ytd_pct": -0.37,
+      "equity": 99467.33,
+      "ytd_pct": -0.53,
       "trade_count": 2,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -2131,7 +2155,7 @@
         "XLRE",
         "XLU"
       ],
-      "equity": 93973.11,
+      "equity": 93971.57,
       "ytd_pct": -6.03,
       "trade_count": 86,
       "positions": 2,
@@ -2165,8 +2189,8 @@
         "XLRE",
         "XLU"
       ],
-      "equity": 98241.95,
-      "ytd_pct": -1.76,
+      "equity": 98492.99,
+      "ytd_pct": -1.51,
       "trade_count": 7,
       "positions": 1,
       "last_snapshot": "2026-05-20",
@@ -2194,8 +2218,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 97506.97,
-      "ytd_pct": -2.49,
+      "equity": 97497.21,
+      "ytd_pct": -2.5,
       "trade_count": 6,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -2270,8 +2294,8 @@
         "XLP",
         "XLV"
       ],
-      "equity": 95151.59,
-      "ytd_pct": -4.85,
+      "equity": 95112.91,
+      "ytd_pct": -4.89,
       "trade_count": 42,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -2318,10 +2342,10 @@
       "universe": [
         "XLU"
       ],
-      "equity": 99948.56,
-      "ytd_pct": -0.05,
-      "trade_count": 5,
-      "positions": 1,
+      "equity": 99927.69,
+      "ytd_pct": -0.07,
+      "trade_count": 6,
+      "positions": 0,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -2342,10 +2366,10 @@
       "universe": [
         "XLI"
       ],
-      "equity": 99766.98,
-      "ytd_pct": -0.23,
-      "trade_count": 16,
-      "positions": 0,
+      "equity": 99757.03,
+      "ytd_pct": -0.24,
+      "trade_count": 17,
+      "positions": 1,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -2419,8 +2443,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 100136.17,
-      "ytd_pct": 0.14,
+      "equity": 100007.15,
+      "ytd_pct": 0.01,
       "trade_count": 6,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -2448,8 +2472,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 97847.14,
-      "ytd_pct": -2.15,
+      "equity": 98017.11,
+      "ytd_pct": -1.98,
       "trade_count": 6,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -2477,8 +2501,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 100186.16,
-      "ytd_pct": 0.19,
+      "equity": 100040.28,
+      "ytd_pct": 0.04,
       "trade_count": 2,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -2621,10 +2645,10 @@
       "universe": [
         "XLU"
       ],
-      "equity": 99956.4,
-      "ytd_pct": -0.04,
-      "trade_count": 5,
-      "positions": 1,
+      "equity": 99938.31,
+      "ytd_pct": -0.06,
+      "trade_count": 6,
+      "positions": 0,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -2717,10 +2741,10 @@
       "universe": [
         "XLU"
       ],
-      "equity": 99853.95,
-      "ytd_pct": -0.15,
-      "trade_count": 17,
-      "positions": 1,
+      "equity": 99834.76,
+      "ytd_pct": -0.17,
+      "trade_count": 18,
+      "positions": 0,
       "last_snapshot": "2026-05-20",
       "last_signal": null,
       "new_algo_date": null,
@@ -2818,8 +2842,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 100092.8,
-      "ytd_pct": 0.09,
+      "equity": 99932.48,
+      "ytd_pct": -0.07,
       "trade_count": 22,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -2894,8 +2918,8 @@
         "XLP",
         "XLU"
       ],
-      "equity": 101135.46,
-      "ytd_pct": 1.14,
+      "equity": 101017.59,
+      "ytd_pct": 1.02,
       "trade_count": 13,
       "positions": 1,
       "last_snapshot": "2026-05-20",
@@ -3043,8 +3067,8 @@
         "XLU",
         "XLV"
       ],
-      "equity": 103570.4,
-      "ytd_pct": 3.57,
+      "equity": 103955.78,
+      "ytd_pct": 3.96,
       "trade_count": 10,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -3125,8 +3149,8 @@
         "XLRE",
         "XLU"
       ],
-      "equity": 108167.76,
-      "ytd_pct": 8.17,
+      "equity": 108154.5,
+      "ytd_pct": 8.15,
       "trade_count": 54,
       "positions": 2,
       "last_snapshot": "2026-05-20",
@@ -3159,8 +3183,8 @@
         "XLRE",
         "XLU"
       ],
-      "equity": 97936.35,
-      "ytd_pct": -2.06,
+      "equity": 98186.6,
+      "ytd_pct": -1.81,
       "trade_count": 7,
       "positions": 1,
       "last_snapshot": "2026-05-20",
@@ -3195,8 +3219,8 @@
         "SPY",
         "AGG"
       ],
-      "equity": 106401.77,
-      "ytd_pct": 6.4,
+      "equity": 106340.65,
+      "ytd_pct": 6.34,
       "trade_count": 21,
       "positions": 3,
       "last_snapshot": "2026-05-20",
@@ -3230,7 +3254,7 @@
         "XLU",
         "SPY"
       ],
-      "equity": 107741.17,
+      "equity": 107742.09,
       "ytd_pct": 7.74,
       "trade_count": 10,
       "positions": 2,
@@ -3256,8 +3280,8 @@
         "EEM",
         "TLT"
       ],
-      "equity": 110484.31,
-      "ytd_pct": 10.48,
+      "equity": 111048.51,
+      "ytd_pct": 11.05,
       "trade_count": 1,
       "positions": 1,
       "last_snapshot": "2026-05-20",

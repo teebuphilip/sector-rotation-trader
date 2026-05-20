@@ -1,11 +1,31 @@
 {
-  "cash": 100000,
+  "cash": 94990.05,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 0.0,
+  "fees_paid": 9.95,
   "taxes_paid": 0.0,
-  "positions": {},
-  "trade_log": [],
+  "positions": {
+    "XLF": {
+      "shares": 96.78668243841416,
+      "entry_price": 51.65999984741211,
+      "entry_date": "2026-05-20",
+      "cost": 5000.0,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
+  "trade_log": [
+    {
+      "date": "2026-05-20",
+      "action": "BUY",
+      "ticker": "XLF",
+      "shares": 96.7867,
+      "price": 51.66,
+      "cost": 5000.0,
+      "margin": false,
+      "fees": 9.95
+    }
+  ],
   "daily_snapshots": [
     {
       "date": "2026-02-17",
@@ -706,19 +726,40 @@
       "positions": {},
       "sector": "Rss News Volume Spike On Corporate Bond Downgrades Signals Credit Stress Rotation",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 94990.05,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99990.05,
+      "positions": {
+        "XLF": {
+          "shares": 96.7867,
+          "entry_price": 51.66,
+          "current_price": 51.66,
+          "market_value": 5000.0,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-20",
+          "margin": false
+        }
+      },
+      "sector": "Rss News Volume Spike On Corporate Bond Downgrades Signals Credit Stress Rotation",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-02-17",
   "last_run": "2026-05-20",
   "meta": {
     "rss-news-volume-spike-on-corporate-bond-downgrades-signals-c": {
-      "latest_value": 4.0,
-      "prior_avg": 3.4,
-      "signal_change": 0.1765,
-      "signal_label": "HOLD",
+      "latest_value": 11.0,
+      "prior_avg": 2.6667,
+      "signal_change": 3.125,
+      "signal_label": "RISK_ON",
       "name": "Rss News Volume Spike On Corporate Bond Downgrades Signals Credit Stress Rotation",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-20"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-20",
+      "entry_date": "2026-05-20"
     }
   }
 }

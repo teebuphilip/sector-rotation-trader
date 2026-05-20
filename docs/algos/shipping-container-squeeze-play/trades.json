@@ -129,6 +129,20 @@
       "cost": 4995.03,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-20",
+      "action": "SELL",
+      "ticker": "XLI",
+      "shares": 29.1988,
+      "price": 170.73,
+      "proceeds": 4974.9,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -20.14,
+      "pnl_pct": -0.4,
+      "entry_date": "2026-05-20",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1141,6 +1155,16 @@
       },
       "sector": "Shipping Container Squeeze Play",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 99870.55,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99870.55,
+      "positions": {},
+      "sector": "Shipping Container Squeeze Play",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-21"

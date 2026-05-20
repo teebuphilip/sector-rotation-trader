@@ -1,19 +1,10 @@
 {
-  "cash": 94919.38437362398,
+  "cash": 99892.17734025662,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 90.58543799342237,
+  "fees_paid": 100.79334396922167,
   "taxes_paid": 5.705677411551332,
-  "positions": {
-    "XLI": {
-      "shares": 29.1864405629143,
-      "entry_price": 171.18499755859375,
-      "entry_date": "2026-05-20",
-      "cost": 4996.280756506526,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-05-13",
@@ -120,6 +111,20 @@
       "cost": 4996.28,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-20",
+      "action": "SELL",
+      "ticker": "XLI",
+      "shares": 29.1864,
+      "price": 170.73,
+      "proceeds": 4972.79,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -23.49,
+      "pnl_pct": -0.47,
+      "entry_date": "2026-05-20",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -912,6 +917,16 @@
       },
       "sector": "Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 99892.18,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99892.18,
+      "positions": {},
+      "sector": "Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-02-11",
@@ -919,12 +934,12 @@
   "meta": {
     "weekly-rise-in-rss-count-for-labor-strike-news-signals-indus": {
       "latest_value": 64.0,
-      "prior_avg": 4.375,
-      "signal_change": 13.6286,
+      "prior_avg": 3.5,
+      "signal_change": 17.2857,
       "entry_date": "2026-05-20",
-      "signal_label": "RISK_ON",
+      "signal_label": "HOLD",
       "name": "Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk",
-      "last_signal": "RISK_ON",
+      "last_signal": "HOLD",
       "last_run": "2026-05-20"
     }
   }

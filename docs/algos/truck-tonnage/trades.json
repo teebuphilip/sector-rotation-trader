@@ -1530,6 +1530,35 @@
       },
       "sector": "Truck Tonnage Index",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 29980.1,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 98512.08,
+      "positions": {
+        "XLI": {
+          "shares": 231.2673,
+          "entry_price": 172.96,
+          "current_price": 170.73,
+          "market_value": 39484.27,
+          "unrealized_pnl": -515.73,
+          "entry_date": "2026-05-01",
+          "margin": false
+        },
+        "XLB": {
+          "shares": 584.2259,
+          "entry_price": 51.35,
+          "current_price": 49.72,
+          "market_value": 29047.71,
+          "unrealized_pnl": -952.29,
+          "entry_date": "2026-05-01",
+          "margin": false
+        }
+      },
+      "sector": "Truck Tonnage Index",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16"

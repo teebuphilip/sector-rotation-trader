@@ -1,19 +1,10 @@
 {
-  "cash": 94924.67834885923,
+  "cash": 99898.77555135592,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 191.4666069205928,
+  "fees_paid": 201.6833073471418,
   "taxes_paid": 52.15549200725456,
-  "positions": {
-    "XLP": {
-      "shares": 58.28243800951256,
-      "entry_price": 85.7301025390625,
-      "entry_date": "2026-05-20",
-      "cost": 4996.559386782065,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-05-03",
@@ -240,6 +231,20 @@
       "cost": 4996.56,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-20",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 58.2824,
+      "price": 85.52,
+      "proceeds": 4974.1,
+      "fees": 10.22,
+      "tax": 0.0,
+      "pnl": -22.46,
+      "pnl_pct": -0.45,
+      "entry_date": "2026-05-20",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1182,19 +1187,29 @@
       },
       "sector": "Rss News Volume Spike On Food Supply Chain Disruptions",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 99898.78,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99898.78,
+      "positions": {},
+      "sector": "Rss News Volume Spike On Food Supply Chain Disruptions",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-02-01",
   "last_run": "2026-05-20",
   "meta": {
     "rss-news-volume-spike-on-food-supply-chain-disruptions": {
-      "latest_value": 15.0,
-      "prior_avg": 3.9091,
-      "signal_change": 2.8372,
+      "latest_value": 18.0,
+      "prior_avg": 2.6429,
+      "signal_change": 5.8108,
       "entry_date": "2026-05-20",
-      "signal_label": "RISK_ON",
+      "signal_label": "HOLD",
       "name": "Rss News Volume Spike On Food Supply Chain Disruptions",
-      "last_signal": "RISK_ON",
+      "last_signal": "HOLD",
       "last_run": "2026-05-20"
     }
   }
