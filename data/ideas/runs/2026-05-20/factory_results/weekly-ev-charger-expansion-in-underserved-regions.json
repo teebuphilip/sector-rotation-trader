@@ -1,16 +1,11 @@
 {
-  "adapter": "openchargemap",
+  "adapter": null,
   "algo_file": "crazy/algos/weekly_ev_charger_expansion_in_underserved_regions.py",
-  "built": true,
+  "built": false,
   "errors": [],
   "idea_id": "weekly-ev-charger-expansion-in-underserved-regions",
   "run_ok": null,
-  "seeded": true,
+  "seeded": false,
   "spec_file": "data/ideas/runs/2026-05-20/build/claude_weekly-ev-charger-expansion-in-underserved-regions.md",
-  "status": "completed_pending_run",
-  "backtest_status": "LIVE_ONLY_NON_PRICE",
-  "backtest_reason": "Uses non-price adapter: crazy.adapters.openchargemap",
-  "backtest_alpha_vs_spy_pct": null,
-  "backtest_trade_count": null,
-  "backtest_report_dir": "reports/backtests/factory/2026-05-20/algos/crazy/weekly-ev-charger-expansion-in-underserved-regions"
+  "status": "skipped_already_triaged"
 }

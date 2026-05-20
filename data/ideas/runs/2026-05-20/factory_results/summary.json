@@ -1,27 +1,21 @@
 {
-  "attempted": 19,
-  "built": 19,
-  "completed": 19,
+  "attempted": 0,
+  "built": 0,
+  "completed": 0,
   "date": "2026-05-20",
   "dry_run": false,
   "failed": 0,
   "generated": false,
   "intervention": 0,
-  "seeded": 19,
-  "skipped": 0,
+  "seeded": 0,
+  "skipped": 19,
   "status": "summary",
   "backtest": {
-    "seeded_ids": 19,
-    "matched_algos": 19,
-    "reviewed": 19,
-    "counts": {
-      "LIVE_ONLY_NON_PRICE": 18,
-      "INSUFFICIENT_ACTIVITY": 1
-    },
+    "seeded_ids": 0,
+    "matched_algos": 0,
+    "reviewed": 0,
+    "counts": {},
     "missing_algo_ids": [],
-    "output_root": "reports/backtests/factory/2026-05-20",
-    "start": "2024-01-01",
-    "end": "2026-05-20",
-    "slippage_bps": 5.0
+    "output_root": "reports/backtests/factory/2026-05-20"
   }
 }

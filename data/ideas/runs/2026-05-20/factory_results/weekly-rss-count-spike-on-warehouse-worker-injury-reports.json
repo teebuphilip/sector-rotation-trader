@@ -1,16 +1,11 @@
 {
-  "adapter": "rss_count",
+  "adapter": null,
   "algo_file": "crazy/algos/weekly_rss_count_spike_on_warehouse_worker_injury_reports.py",
-  "built": true,
+  "built": false,
   "errors": [],
   "idea_id": "weekly-rss-count-spike-on-warehouse-worker-injury-reports",
   "run_ok": null,
-  "seeded": true,
+  "seeded": false,
   "spec_file": "data/ideas/runs/2026-05-20/build/claude_weekly-rss-count-spike-on-warehouse-worker-injury-reports.md",
-  "status": "completed_pending_run",
-  "backtest_status": "LIVE_ONLY_NON_PRICE",
-  "backtest_reason": "Uses non-price adapter: crazy.adapters.rss_count",
-  "backtest_alpha_vs_spy_pct": null,
-  "backtest_trade_count": null,
-  "backtest_report_dir": "reports/backtests/factory/2026-05-20/algos/crazy/weekly-rss-count-spike-on-warehouse-worker-injury-reports"
+  "status": "skipped_already_triaged"
 }

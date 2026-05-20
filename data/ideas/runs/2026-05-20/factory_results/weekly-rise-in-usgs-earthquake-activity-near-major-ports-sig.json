@@ -1,16 +1,11 @@
 {
-  "adapter": "earthquake_activity",
+  "adapter": null,
   "algo_file": "crazy/algos/weekly_rise_in_usgs_earthquake_activity_near_major_ports_sig.py",
-  "built": true,
+  "built": false,
   "errors": [],
   "idea_id": "weekly-rise-in-usgs-earthquake-activity-near-major-ports-sig",
   "run_ok": null,
-  "seeded": true,
+  "seeded": false,
   "spec_file": "data/ideas/runs/2026-05-20/build/chatgpt_weekly-rise-in-usgs-earthquake-activity-near-major-ports-sig.md",
-  "status": "completed_pending_run",
-  "backtest_status": "LIVE_ONLY_NON_PRICE",
-  "backtest_reason": "Uses non-price adapter: crazy.adapters.earthquake_activity",
-  "backtest_alpha_vs_spy_pct": null,
-  "backtest_trade_count": null,
-  "backtest_report_dir": "reports/backtests/factory/2026-05-20/algos/crazy/weekly-rise-in-usgs-earthquake-activity-near-major-ports-sig"
+  "status": "skipped_already_triaged"
 }

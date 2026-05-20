@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-20T14:21:47Z",
+  "generated_at": "2026-05-20T14:24:06Z",
   "algos": [
     {
       "key": "crazy:attention-sentiment-spike-daily-surge-in-news-rss-counts-men",
@@ -79,8 +79,8 @@
       "algo_id": "daily-spike-in-rss-news-counts-on-corporate-dividend-cuts",
       "name": "Daily Spike In Rss News Counts On Corporate Dividend Cuts",
       "family": "attention_sentiment",
-      "status": "live_only",
-      "evidence_class": "live_receipts_only",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "daily",
       "universe": [
         "XLF"
@@ -151,8 +151,8 @@
       "algo_id": "daily-surge-in-rss-news-counts-for-corporate-bond-downgrade-",
       "name": "Daily Surge In Rss News Counts For Corporate Bond Downgrade Signals Credit Stress Rotation",
       "family": "attention_sentiment",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "daily",
       "universe": [
         "XLF"
@@ -1050,8 +1050,8 @@
       "algo_id": "daily-jump-in-google-trends-for-bank-account-overdraft-fees",
       "name": "Daily Jump In Google Trends For Bank Account Overdraft Fees",
       "family": "consumer_stress",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "daily",
       "universe": [
         "XLY"
@@ -1410,8 +1410,8 @@
       "algo_id": "daily-spike-in-google-trends-for-emergency-plumber-near-me-s",
       "name": "Daily Spike In Google Trends For Emergency Plumber Near Me Signals Consumer Stress Lifting Home Repair Demand",
       "family": "consumer_stress",
-      "status": "live_only",
-      "evidence_class": "live_receipts_only",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "daily",
       "universe": [
         "XLY"
@@ -1722,8 +1722,8 @@
       "algo_id": "daily-surge-in-google-trends-for-electric-vehicle-charging-s",
       "name": "Daily Surge In Google Trends For Electric Vehicle Charging Station Outage Signals Green Tech Stress",
       "family": "consumer_stress",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "daily",
       "universe": [
         "XLC"
@@ -1746,8 +1746,8 @@
       "algo_id": "daily-surge-in-google-trends-for-emergency-food-delivery-sig",
       "name": "Daily Surge In Google Trends For Emergency Food Delivery Signals Consumer Stress Lifting Staples Demand",
       "family": "consumer_stress",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "daily",
       "universe": [
         "XLP"
@@ -3436,8 +3436,8 @@
       "algo_id": "weekly-rise-in-google-trends-for-freight-train-delays-signal",
       "name": "Weekly Rise In Google Trends For Freight Train Delays Signals Logistics Bottlenecks",
       "family": "freight_logistics",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "universe": [
         "XLI"
@@ -3460,8 +3460,8 @@
       "algo_id": "weekly-rise-in-usgs-earthquake-activity-near-major-ports-sig",
       "name": "Weekly Rise In Usgs Earthquake Activity Near Major Ports Signals Potential Freight Disruptions",
       "family": "freight_logistics",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "universe": [
         "XLI"
@@ -3628,8 +3628,8 @@
       "algo_id": "daily-jump-in-google-trends-for-warehouse-worker-strike-sign",
       "name": "Daily Jump In Google Trends For Warehouse Worker Strike Signals Labor Stress In Logistics",
       "family": "labor_jobs",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "daily",
       "universe": [
         "XLI"
@@ -4106,8 +4106,8 @@
       "algo_id": "weekly-jump-in-google-trends-for-truck-driver-shortage-signa",
       "name": "Weekly Jump In Google Trends For Truck Driver Shortage Signals Labor Stress In Transportation",
       "family": "labor_jobs",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "universe": [
         "XLI"
@@ -4130,8 +4130,8 @@
       "algo_id": "weekly-jump-in-google-trends-for-warehouse-automation-jobs-s",
       "name": "Weekly Jump In Google Trends For Warehouse Automation Jobs Signals Labor Substitution Pressure",
       "family": "labor_jobs",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "universe": [
         "XLI"
@@ -4202,8 +4202,8 @@
       "algo_id": "weekly-rss-count-spike-on-warehouse-worker-injury-reports",
       "name": "Weekly Rss Count Spike On Warehouse Worker Injury Reports",
       "family": "labor_jobs",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "universe": [
         "XLI"
@@ -4866,8 +4866,8 @@
       "algo_id": "weekly-google-trends-surge-in-pest-control-searches",
       "name": "Weekly Google Trends Surge In Pest Control Searches",
       "family": "local_economy_weirdness",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "universe": [
         "XLRE"
@@ -4962,8 +4962,8 @@
       "algo_id": "weekly-jump-in-google-trends-for-home-moving-truck-rental-de",
       "name": "Weekly Jump In Google Trends For Home Moving Truck Rental Demand Signals Housing Market Activity",
       "family": "local_economy_weirdness",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "universe": [
         "XLRE"
@@ -5335,8 +5335,8 @@
       "algo_id": "daily-stock-price-volatility-spike-in-xlu-relative-to-spy",
       "name": "Daily Stock Price Volatility Spike In Xlu Relative To Spy",
       "family": "macro_input_pressure",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "daily",
       "universe": [
         "XLU"
@@ -6631,8 +6631,8 @@
       "algo_id": "weekly-jump-in-rss-news-counts-for-coal-shortage-signals-inp",
       "name": "Weekly Jump In Rss News Counts For Coal Shortage Signals Input Cost Pressure In Materials",
       "family": "macro_input_pressure",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "universe": [
         "XLB"
@@ -6655,8 +6655,8 @@
       "algo_id": "weekly-rise-in-google-trends-for-solar-panel-installation-de",
       "name": "Weekly Rise In Google Trends For Solar Panel Installation Delay Signals Supply Chain Issues In Green Energy",
       "family": "macro_input_pressure",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "universe": [
         "XLE"
@@ -7810,8 +7810,8 @@
       "algo_id": "weekly-ev-charger-expansion-in-underserved-regions",
       "name": "Weekly Ev Charger Expansion In Underserved Regions",
       "family": "travel_mobility",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "universe": [
         "XLE"
@@ -7906,8 +7906,8 @@
       "algo_id": "weekly-surge-in-google-trends-for-last-minute-flight-deals-s",
       "name": "Weekly Surge In Google Trends For Last Minute Flight Deals Signals Travel Demand Rebound",
       "family": "travel_mobility",
-      "status": "sandbox",
-      "evidence_class": "needs_history",
+      "status": "parked",
+      "evidence_class": "pending_seed",
       "rebalance_frequency": "weekly",
       "universe": [
         "XLY"
