@@ -2,7 +2,7 @@
   "content_facts": {
     "call_of_day": {
       "bullish_pct": 30,
-      "composite": "14 of 46",
+      "composite": "14 of 47",
       "reason": "Highest bullish percentage in precomputed sector consensus",
       "sector": "XLI",
       "sector_name": "Industrials",
@@ -53,20 +53,20 @@
         "explanation": "Strong full-window force rank but weaker recent 30D rank.",
         "force_rank": 11,
         "name": "Daily Jump In Consumer Stress Google Trends Searches For Car Repossession Signals Rising Financial Distress",
-        "rank_gap": -215,
+        "rank_gap": -227,
         "ret_30d": -0.00042562032589277266,
-        "rolling_30d_rank": 226,
+        "rolling_30d_rank": 238,
         "ytd_pct": 0.07
       },
       {
-        "algo_id": "daily-jump-in-google-trends-searches-for-job-quitting-signal",
-        "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
-        "force_rank": 221,
-        "name": "Daily Jump In Google Trends Searches For Job Quitting Signals Labor Market Tightness Benefiting Consumer Discretionary",
-        "rank_gap": 206,
-        "ret_30d": 0.000500177181578243,
-        "rolling_30d_rank": 15,
-        "ytd_pct": -0.17
+        "algo_id": "earthquake-aftershock-insurance-claims-spike",
+        "explanation": "Strong full-window force rank but weaker recent 30D rank.",
+        "force_rank": 12,
+        "name": "Earthquake Aftershock Insurance Claims Spike",
+        "rank_gap": -213,
+        "ret_30d": -3.647289699015843e-05,
+        "rolling_30d_rank": 225,
+        "ytd_pct": 0.07
       }
     ],
     "signal_of_day": {
@@ -123,20 +123,20 @@
         "explanation": "Strong full-window force rank but weaker recent 30D rank.",
         "force_rank": 11,
         "name": "Daily Jump In Consumer Stress Google Trends Searches For Car Repossession Signals Rising Financial Distress",
-        "rank_gap": -215,
+        "rank_gap": -227,
         "ret_30d": -0.00042562032589277266,
-        "rolling_30d_rank": 226,
+        "rolling_30d_rank": 238,
         "ytd_pct": 0.07
       },
       {
-        "algo_id": "daily-jump-in-google-trends-searches-for-job-quitting-signal",
-        "explanation": "Strong recent 30D rank despite weaker full-window force rank.",
-        "force_rank": 221,
-        "name": "Daily Jump In Google Trends Searches For Job Quitting Signals Labor Market Tightness Benefiting Consumer Discretionary",
-        "rank_gap": 206,
-        "ret_30d": 0.000500177181578243,
-        "rolling_30d_rank": 15,
-        "ytd_pct": -0.17
+        "algo_id": "earthquake-aftershock-insurance-claims-spike",
+        "explanation": "Strong full-window force rank but weaker recent 30D rank.",
+        "force_rank": 12,
+        "name": "Earthquake Aftershock Insurance Claims Spike",
+        "rank_gap": -213,
+        "ret_30d": -3.647289699015843e-05,
+        "rolling_30d_rank": 225,
+        "ytd_pct": 0.07
       }
     ],
     "killed": [],
@@ -485,10 +485,10 @@
       }
     ]
   },
-  "generated_at": "2026-05-15T23:41:08.342909Z",
+  "generated_at": "2026-05-20T10:07:36.359863Z",
   "report_date": "2026-05-15",
   "rolling_30d": {
-    "as_of": "2026-05-15T23:41:06.903285",
+    "as_of": "2026-05-15T23:48:09.578685",
     "bottom_5": [
       {
         "algo_id": "copper-momentum",
@@ -497,7 +497,7 @@
         "max_dd_30d": -0.02906566732874978,
         "name": "Copper Momentum",
         "ret_30d": -0.01862889999999995,
-        "rolling_30d_rank": 263,
+        "rolling_30d_rank": 275,
         "sharpe_30d": -1.6025124771887944,
         "spy_delta_30d": -0.07467653312843225
       },
@@ -508,7 +508,7 @@
         "max_dd_30d": -0.022683500000000058,
         "name": "Port Container Volume",
         "ret_30d": -0.02268350000000008,
-        "rolling_30d_rank": 264,
+        "rolling_30d_rank": 276,
         "sharpe_30d": -4.427608999865747,
         "spy_delta_30d": -0.07873113312843238
       },
@@ -519,7 +519,7 @@
         "max_dd_30d": -0.030042778099394363,
         "name": "Lumber Momentum",
         "ret_30d": -0.024195099999999914,
-        "rolling_30d_rank": 265,
+        "rolling_30d_rank": 277,
         "sharpe_30d": -2.365910398254564,
         "spy_delta_30d": -0.08024273312843222
       },
@@ -530,7 +530,7 @@
         "max_dd_30d": -0.044289292837061865,
         "name": "Algo Biscotti (Unconditional Loyalty)",
         "ret_30d": -0.02649876351771019,
-        "rolling_30d_rank": 266,
+        "rolling_30d_rank": 278,
         "sharpe_30d": -1.955144770786992,
         "spy_delta_30d": -0.0825463966461425
       },
@@ -541,7 +541,7 @@
         "max_dd_30d": -0.04556749145530972,
         "name": "Electricity Consumption",
         "ret_30d": -0.043382699999999996,
-        "rolling_30d_rank": 267,
+        "rolling_30d_rank": 279,
         "sharpe_30d": -4.909113511211001,
         "spy_delta_30d": -0.0994303331284323
       }
@@ -665,8 +665,8 @@
     "generated": "2026-05-15",
     "sector_summary": {
       "XLB": {
-        "bullish_pct": 15,
-        "composite": "6 of 39",
+        "bullish_pct": 18,
+        "composite": "7 of 40",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLB",
@@ -674,7 +674,7 @@
       },
       "XLC": {
         "bullish_pct": 0,
-        "composite": "0 of 37",
+        "composite": "0 of 38",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLC",
@@ -682,7 +682,7 @@
       },
       "XLE": {
         "bullish_pct": 8,
-        "composite": "3 of 39",
+        "composite": "3 of 40",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLE",
@@ -690,7 +690,7 @@
       },
       "XLF": {
         "bullish_pct": 3,
-        "composite": "1 of 37",
+        "composite": "1 of 38",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLF",
@@ -698,15 +698,15 @@
       },
       "XLI": {
         "bullish_pct": 30,
-        "composite": "14 of 46",
+        "composite": "14 of 47",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLI",
         "sector": "Industrials"
       },
       "XLK": {
-        "bullish_pct": 19,
-        "composite": "8 of 43",
+        "bullish_pct": 18,
+        "composite": "8 of 44",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLK",
@@ -714,7 +714,7 @@
       },
       "XLP": {
         "bullish_pct": 18,
-        "composite": "7 of 39",
+        "composite": "7 of 40",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLP",
@@ -722,7 +722,7 @@
       },
       "XLRE": {
         "bullish_pct": 3,
-        "composite": "1 of 38",
+        "composite": "1 of 39",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLRE",
@@ -730,7 +730,7 @@
       },
       "XLU": {
         "bullish_pct": 12,
-        "composite": "5 of 40",
+        "composite": "5 of 41",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLU",
@@ -738,15 +738,15 @@
       },
       "XLV": {
         "bullish_pct": 5,
-        "composite": "2 of 41",
+        "composite": "2 of 42",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLV",
         "sector": "Healthcare"
       },
       "XLY": {
-        "bullish_pct": 12,
-        "composite": "7 of 60",
+        "bullish_pct": 11,
+        "composite": "7 of 61",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLY",
@@ -756,15 +756,23 @@
     "sectors_ranked": [
       {
         "bullish_pct": 30,
-        "composite": "14 of 46",
+        "composite": "14 of 47",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLI",
         "sector": "Industrials"
       },
       {
-        "bullish_pct": 19,
-        "composite": "8 of 43",
+        "bullish_pct": 18,
+        "composite": "7 of 40",
+        "composite_color": "red",
+        "composite_label": "BEARISH",
+        "etf": "XLP",
+        "sector": "Consumer Defensive"
+      },
+      {
+        "bullish_pct": 18,
+        "composite": "8 of 44",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLK",
@@ -772,15 +780,7 @@
       },
       {
         "bullish_pct": 18,
-        "composite": "7 of 39",
-        "composite_color": "red",
-        "composite_label": "BEARISH",
-        "etf": "XLP",
-        "sector": "Consumer Defensive"
-      },
-      {
-        "bullish_pct": 15,
-        "composite": "6 of 39",
+        "composite": "7 of 40",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLB",
@@ -788,23 +788,23 @@
       },
       {
         "bullish_pct": 12,
-        "composite": "7 of 60",
-        "composite_color": "red",
-        "composite_label": "BEARISH",
-        "etf": "XLY",
-        "sector": "Consumer Cyclical"
-      },
-      {
-        "bullish_pct": 12,
-        "composite": "5 of 40",
+        "composite": "5 of 41",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLU",
         "sector": "Utilities"
       },
       {
+        "bullish_pct": 11,
+        "composite": "7 of 61",
+        "composite_color": "red",
+        "composite_label": "BEARISH",
+        "etf": "XLY",
+        "sector": "Consumer Cyclical"
+      },
+      {
         "bullish_pct": 8,
-        "composite": "3 of 39",
+        "composite": "3 of 40",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLE",
@@ -812,7 +812,7 @@
       },
       {
         "bullish_pct": 5,
-        "composite": "2 of 41",
+        "composite": "2 of 42",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLV",
@@ -820,7 +820,7 @@
       },
       {
         "bullish_pct": 3,
-        "composite": "1 of 38",
+        "composite": "1 of 39",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLRE",
@@ -828,7 +828,7 @@
       },
       {
         "bullish_pct": 3,
-        "composite": "1 of 37",
+        "composite": "1 of 38",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLF",
@@ -836,14 +836,14 @@
       },
       {
         "bullish_pct": 0,
-        "composite": "0 of 37",
+        "composite": "0 of 38",
         "composite_color": "red",
         "composite_label": "BEARISH",
         "etf": "XLC",
         "sector": "Communication Services"
       }
     ],
-    "signal_count": 266,
+    "signal_count": 278,
     "ticker_count": 105,
     "top_bearish_etfs": [
       "XLF",
@@ -855,15 +855,43 @@
       "XLK",
       "XLP"
     ],
-    "total_algos": 266
+    "total_algos": 278
   },
   "system_state": {
     "beating_spy_force_rank": 1,
-    "rolling_30d_algos": 267,
+    "force_rank_duplicate_algo_ids": {
+      "baileymol": 2,
+      "biscotti": 2
+    },
+    "force_rank_duplicate_count": 2,
+    "rolling_30d_algos": 279,
     "rolling_30d_beating_spy": 1,
+    "rolling_30d_duplicate_algo_ids": {
+      "baileymol": 2,
+      "biscotti": 2
+    },
+    "rolling_30d_duplicate_count": 2,
+    "rolling_only_algo_ids": [
+      "commodity-shortage-news-volume-burst",
+      "consumer-stress-spike-from-google-trends-on-urgent-appliance",
+      "daily-spike-in-google-trends-for-emergency-roadside-assistan",
+      "daily-spike-in-google-trends-for-emergency-vehicle-battery-r",
+      "daily-spike-in-google-trends-for-flu-symptom-searches-boosti",
+      "daily-surge-in-google-trends-for-urgent-dental-care-searches",
+      "ev-charger-buildout-acceleration-play",
+      "nrwise",
+      "truck-driver-wage-search-surge",
+      "weather-extreme-disruption-energy-demand-spike",
+      "weekly-rise-in-google-trends-for-warehouse-automation-intere",
+      "weekly-surge-in-google-trends-for-freight-congestion-complai",
+      "weekly-surge-in-google-trends-for-used-car-price-searches-si"
+    ],
+    "rolling_only_count": 13,
     "sectors_computed": 11,
-    "signals_generated": 266,
+    "signals_generated": 278,
     "tickers_covered": 105,
-    "total_force_ranked": 266
+    "total_force_ranked": 266,
+    "unique_force_algo_ids": 264,
+    "unique_rolling_30d_algo_ids": 277
   }
 }

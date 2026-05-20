@@ -24,6 +24,22 @@ def _load_state(path: Path) -> dict | None:
         return json.load(f)
 
 
+def _unique_algo_id(base_id: str, algo_type: str, used_ids: set[str]) -> str:
+    candidate = base_id
+    if candidate not in used_ids:
+        return candidate
+    suffix = algo_type or "unknown"
+    candidate = f"{base_id}-{suffix}"
+    if candidate not in used_ids:
+        return candidate
+    counter = 2
+    while True:
+        candidate = f"{base_id}-{suffix}-{counter}"
+        if candidate not in used_ids:
+            return candidate
+        counter += 1
+
+
 def _snap_df(state: dict) -> pd.DataFrame:
     snaps = state.get("daily_snapshots", [])
     if not snaps:
@@ -100,13 +116,16 @@ def _spy_30d_return() -> float | None:
 
 def main() -> int:
     entries = []
+    used_ids: set[str] = set()
 
     # Baseline NRWise
     base_state = _load_state(Path("state.json"))
     if base_state:
         df = _snap_df(base_state)
+        algo_id = _unique_algo_id("nrwise", "standard", used_ids)
+        used_ids.add(algo_id)
         entries.append({
-            "algo_id": "nrwise",
+            "algo_id": algo_id,
             "name": "NRWise Acceleration",
             "category": "standard",
             "ret_30d": _rolling_30d_return(df),
@@ -121,8 +140,10 @@ def main() -> int:
             state = _load_state(path)
             if not state:
                 continue
-            algo_id = path.stem
-            meta = state.get("meta", {}).get(algo_id, {})
+            stem_id = path.stem
+            algo_id = _unique_algo_id(stem_id, "standard", used_ids)
+            used_ids.add(algo_id)
+            meta = state.get("meta", {}).get(stem_id, {})
             name = meta.get("name") or algo_id
             df = _snap_df(state)
             entries.append({
@@ -141,8 +162,10 @@ def main() -> int:
             state = _load_state(path)
             if not state:
                 continue
-            algo_id = path.stem
-            meta = state.get("meta", {}).get(algo_id, {})
+            stem_id = path.stem
+            algo_id = _unique_algo_id(stem_id, "crazy", used_ids)
+            used_ids.add(algo_id)
+            meta = state.get("meta", {}).get(stem_id, {})
             name = meta.get("name") or algo_id
             df = _snap_df(state)
             entries.append({

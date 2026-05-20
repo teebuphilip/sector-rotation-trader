@@ -99,6 +99,21 @@ def _force_rows(rows: List[Dict[str, str]], report_date: str) -> List[Dict[str, 
     return sorted(out, key=lambda r: r["rank_return"] or 999999)
 
 
+def _algo_id_stats(rows: List[Dict[str, Any]]) -> Dict[str, Any]:
+    counts: Dict[str, int] = {}
+    for row in rows:
+        algo_id = str(row.get("algo_id") or "").strip()
+        if not algo_id:
+            continue
+        counts[algo_id] = counts.get(algo_id, 0) + 1
+    duplicates = {algo_id: count for algo_id, count in counts.items() if count > 1}
+    return {
+        "unique_algo_ids": len(counts),
+        "duplicate_algo_ids": duplicates,
+        "duplicate_count": sum(count - 1 for count in duplicates.values()),
+    }
+
+
 def _previous_rank_map(rows: List[Dict[str, str]], report_date: str) -> Dict[str, int]:
     dates = sorted({r.get("date", "") for r in rows if r.get("date") and r.get("date") < report_date})
     if not dates:
@@ -301,6 +316,11 @@ def _build_report(report_date: str) -> Dict[str, Any]:
     _with_rank_changes(force, prior)
 
     rolling, spy_30d, rolling_as_of = _rolling_entries()
+    force_stats = _algo_id_stats(force)
+    rolling_stats = _algo_id_stats(rolling)
+    force_ids = {r.get("algo_id") for r in force if r.get("algo_id")}
+    rolling_ids = {r.get("algo_id") for r in rolling if r.get("algo_id")}
+    rolling_only_ids = sorted(rolling_ids - force_ids)
     signals = _load_json(SIGNALS_JSON) or {}
     sectors = _sector_consensus(signals)
     joined = _join_by_algo(force, rolling)
@@ -322,9 +342,17 @@ def _build_report(report_date: str) -> Dict[str, Any]:
         },
         "system_state": {
             "total_force_ranked": len(force),
+            "unique_force_algo_ids": force_stats["unique_algo_ids"],
+            "force_rank_duplicate_count": force_stats["duplicate_count"],
+            "force_rank_duplicate_algo_ids": force_stats["duplicate_algo_ids"],
             "beating_spy_force_rank": beating,
             "rolling_30d_algos": len(rolling),
+            "unique_rolling_30d_algo_ids": rolling_stats["unique_algo_ids"],
+            "rolling_30d_duplicate_count": rolling_stats["duplicate_count"],
+            "rolling_30d_duplicate_algo_ids": rolling_stats["duplicate_algo_ids"],
             "rolling_30d_beating_spy": rolling_beating_spy,
+            "rolling_only_algo_ids": rolling_only_ids,
+            "rolling_only_count": len(rolling_only_ids),
             "signals_generated": sectors.get("signal_count", 0),
             "tickers_covered": sectors.get("ticker_count", 0),
             "sectors_computed": len(sectors.get("sector_summary", {})),
@@ -373,13 +401,30 @@ def _write_md(report: Dict[str, Any], path: Path) -> None:
 
     s = report["system_state"]
     lines.append("## System State")
-    lines.append(f"- Force-ranked algos: {s['total_force_ranked']}")
-    lines.append(f"- Force-ranked beating SPY: {s['beating_spy_force_rank']} of {s['total_force_ranked']}")
-    lines.append(f"- Rolling 30D algos: {s['rolling_30d_algos']}")
-    lines.append(f"- Rolling 30D beating SPY: {s['rolling_30d_beating_spy']} of {s['rolling_30d_algos']}")
+    lines.append(f"- Force-ranked algos: {s['total_force_ranked']} rows ({s['unique_force_algo_ids']} unique algo_ids)")
+    lines.append(f"- Force-ranked beating SPY: {s['beating_spy_force_rank']} of {s['total_force_ranked']} rows")
+    lines.append(f"- Rolling 30D algos: {s['rolling_30d_algos']} rows ({s['unique_rolling_30d_algo_ids']} unique algo_ids)")
+    lines.append(f"- Rolling 30D beating SPY: {s['rolling_30d_beating_spy']} of {s['rolling_30d_algos']} rows")
     lines.append(f"- Signals generated: {s['signals_generated']}")
     lines.append(f"- Tickers covered: {s['tickers_covered']}")
     lines.append(f"- Sectors computed: {s['sectors_computed']}")
+    lines.append("")
+
+    lines.append("## Data Hygiene")
+    force_dups = report["system_state"].get("force_rank_duplicate_count", 0)
+    rolling_dups = report["system_state"].get("rolling_30d_duplicate_count", 0)
+    rolling_only = report["system_state"].get("rolling_only_count", 0)
+    lines.append(f"- Force-rank duplicate rows: {force_dups}")
+    lines.append(f"- Rolling 30D duplicate rows: {rolling_dups}")
+    lines.append(f"- Rolling-only algo_ids with no force-rank row: {rolling_only}")
+    if force_dups:
+        lines.append("- Force-rank duplicate algo_ids:")
+        for algo_id, count in sorted((report["system_state"].get("force_rank_duplicate_algo_ids") or {}).items()):
+            lines.append(f"  - {algo_id}: {count} rows")
+    if rolling_dups:
+        lines.append("- Rolling 30D duplicate algo_ids:")
+        for algo_id, count in sorted((report["system_state"].get("rolling_30d_duplicate_algo_ids") or {}).items()):
+            lines.append(f"  - {algo_id}: {count} rows")
     lines.append("")
 
     lines.append("## Force Rank")
