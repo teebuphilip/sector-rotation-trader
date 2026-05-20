@@ -11,7 +11,7 @@
       "entry logic depends on volume",
       "potential data source mismatch",
       "price_only_volume_gap",
-      "volume data required but adapter is price_only"
+      "volume data required but price_only adapter lacks volume"
     ],
     "route": {
       "adapters": [
@@ -27,8 +27,8 @@
   },
   "usage": {
     "input_tokens": 1004,
-    "output_tokens": 87
+    "output_tokens": 88
   },
-  "cost_usd": 0.00338,
-  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"price_only adapter does not provide volume data required for XLK volume condition\",\n  \"risk_flags\": [\"volume data required but adapter is price_only\", \"potential data source mismatch\", \"entry logic depends on volume\"]\n}\n```"
+  "cost_usd": 0.00339,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"price_only adapter does not provide volume data required for XLK volume condition\",\n  \"risk_flags\": [\"volume data required but price_only adapter lacks volume\", \"entry logic depends on volume\", \"potential data source mismatch\"]\n}\n```"
 }

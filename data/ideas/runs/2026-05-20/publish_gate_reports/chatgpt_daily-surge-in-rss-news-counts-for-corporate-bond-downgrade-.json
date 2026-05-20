@@ -6,7 +6,7 @@
     "adapter_ok": true,
     "selected_adapter": "rss_count",
     "needs_new_adapter": false,
-    "reason": "Spec is clear, uses a valid rss_count adapter for daily news counts on corporate bond downgrades.",
+    "reason": "Spec is clear, deterministic, uses correct rss_count adapter for news counts.",
     "risk_flags": [
       "data source instability",
       "false positives",
@@ -26,8 +26,8 @@
   },
   "usage": {
     "input_tokens": 938,
-    "output_tokens": 82
+    "output_tokens": 76
   },
-  "cost_usd": 0.003165,
-  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid rss_count adapter for daily news counts on corporate bond downgrades.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+  "cost_usd": 0.003105,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses correct rss_count adapter for news counts.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
 }

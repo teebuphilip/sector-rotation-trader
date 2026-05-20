@@ -11,7 +11,8 @@
       "data frequency mismatch",
       "potential data instability",
       "proxy conversion unclear",
-      "unsupported_template_adapter"
+      "unsupported_template_adapter",
+      "weekly to daily conversion"
     ],
     "route": {
       "adapters": [
@@ -26,8 +27,8 @@
   },
   "usage": {
     "input_tokens": 980,
-    "output_tokens": 87
+    "output_tokens": 93
   },
-  "cost_usd": 0.00332,
-  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Weekly rail car loading data scraped as html_table converted to daily proxies needs manual review for data frequency and proxy validity.\",\n  \"risk_flags\": [\"data frequency mismatch\", \"proxy conversion unclear\", \"potential data instability\"]\n}\n```"
+  "cost_usd": 0.00338,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"html_table\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Weekly rail car loading data scraped as html_table converted to daily proxies needs manual review for data frequency and proxy validity.\",\n  \"risk_flags\": [\"data frequency mismatch\", \"proxy conversion unclear\", \"weekly to daily conversion\", \"potential data instability\"]\n}\n```"
 }

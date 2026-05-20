@@ -1,7 +1,7 @@
 {
   "schema_version": "v1",
   "run_date": "2026-05-20",
-  "generated_at": "2026-05-20T17:29:54Z",
+  "generated_at": "2026-05-20T17:32:37Z",
   "counts": {
     "total": 323,
     "normal": 5,
@@ -144,7 +144,7 @@
       "spy_pct": 8.64,
       "alpha_pct": 1.85,
       "ret_30d_pct": 10.48,
-      "spy_delta_30d_pct": 6.05,
+      "spy_delta_30d_pct": 6.07,
       "last_snapshot": "2026-05-20",
       "new_algo_date": null,
       "comparator": null
@@ -165,7 +165,7 @@
       "spy_pct": 8.64,
       "alpha_pct": -0.47,
       "ret_30d_pct": 1.93,
-      "spy_delta_30d_pct": -2.5,
+      "spy_delta_30d_pct": -2.48,
       "last_snapshot": "2026-05-20",
       "new_algo_date": null,
       "comparator": null
@@ -186,7 +186,7 @@
       "spy_pct": 8.64,
       "alpha_pct": -0.89,
       "ret_30d_pct": 3.75,
-      "spy_delta_30d_pct": -0.68,
+      "spy_delta_30d_pct": -0.67,
       "last_snapshot": "2026-05-20",
       "new_algo_date": null,
       "comparator": null
@@ -207,7 +207,7 @@
       "spy_pct": 8.64,
       "alpha_pct": -2.23,
       "ret_30d_pct": 2.59,
-      "spy_delta_30d_pct": -1.84,
+      "spy_delta_30d_pct": -1.82,
       "last_snapshot": "2026-05-20",
       "new_algo_date": null,
       "comparator": null
@@ -228,7 +228,7 @@
       "spy_pct": 8.64,
       "alpha_pct": -5.07,
       "ret_30d_pct": 3.59,
-      "spy_delta_30d_pct": -0.84,
+      "spy_delta_30d_pct": -0.83,
       "last_snapshot": "2026-05-20",
       "new_algo_date": null,
       "comparator": null
@@ -249,7 +249,7 @@
       "spy_pct": 8.64,
       "alpha_pct": -5.09,
       "ret_30d_pct": 3.55,
-      "spy_delta_30d_pct": -0.88,
+      "spy_delta_30d_pct": -0.87,
       "last_snapshot": "2026-05-20",
       "new_algo_date": null,
       "comparator": null
@@ -270,7 +270,7 @@
       "spy_pct": 8.64,
       "alpha_pct": -6.62,
       "ret_30d_pct": 2.01,
-      "spy_delta_30d_pct": -2.42,
+      "spy_delta_30d_pct": -2.4,
       "last_snapshot": "2026-05-20",
       "new_algo_date": null,
       "comparator": null
@@ -291,7 +291,7 @@
       "spy_pct": 8.64,
       "alpha_pct": -7.5,
       "ret_30d_pct": 1.14,
-      "spy_delta_30d_pct": -3.3,
+      "spy_delta_30d_pct": -3.28,
       "last_snapshot": "2026-05-20",
       "new_algo_date": null,
       "comparator": null
@@ -312,7 +312,7 @@
       "spy_pct": 8.64,
       "alpha_pct": -8.45,
       "ret_30d_pct": 0.19,
-      "spy_delta_30d_pct": -4.25,
+      "spy_delta_30d_pct": -4.23,
       "last_snapshot": "2026-05-20",
       "new_algo_date": null,
       "comparator": null
@@ -333,85 +333,85 @@
       "spy_pct": 8.64,
       "alpha_pct": -8.5,
       "ret_30d_pct": 0.14,
-      "spy_delta_30d_pct": -4.3,
+      "spy_delta_30d_pct": -4.28,
       "last_snapshot": "2026-05-20",
       "new_algo_date": null,
       "comparator": null
     }
   ],
   "rolling_30d": {
-    "as_of": "2026-05-20T17:29:53.602684",
-    "spy_ret_30d_pct": 4.43,
+    "as_of": "2026-05-20T17:32:35.537785",
+    "spy_ret_30d_pct": 4.42,
     "leaders": [
       {
         "algo_id": "simple_monthly",
         "name": "Quantified Simple Monthly Rotation",
         "algo_type": "normal",
         "ret_30d_pct": 10.48,
-        "vs_spy_30d_pct": 6.05
+        "vs_spy_30d_pct": 6.07
       },
       {
         "algo_id": "vix-fear-rotation",
         "name": "VIX Fear Rotation",
         "algo_type": "crazy",
         "ret_30d_pct": 4.26,
-        "vs_spy_30d_pct": -0.17
+        "vs_spy_30d_pct": -0.15
       },
       {
         "algo_id": "vix-term-structure",
         "name": "VIX Term Structure",
         "algo_type": "crazy",
         "ret_30d_pct": 4.12,
-        "vs_spy_30d_pct": -0.32
+        "vs_spy_30d_pct": -0.3
       },
       {
         "algo_id": "faber",
         "name": "Faber Momentum Rotation",
         "algo_type": "normal",
         "ret_30d_pct": 3.75,
-        "vs_spy_30d_pct": -0.68
+        "vs_spy_30d_pct": -0.67
       },
       {
         "algo_id": "uber-mobility",
         "name": "Uber Mobility Index",
         "algo_type": "crazy",
         "ret_30d_pct": 3.59,
-        "vs_spy_30d_pct": -0.84
+        "vs_spy_30d_pct": -0.83
       },
       {
         "algo_id": "retail-sales-momentum",
         "name": "Retail Sales Momentum",
         "algo_type": "crazy",
         "ret_30d_pct": 3.55,
-        "vs_spy_30d_pct": -0.88
+        "vs_spy_30d_pct": -0.87
       },
       {
         "algo_id": "dmsr",
         "name": "Antonacci Dual Momentum Sector Rotation",
         "algo_type": "normal",
         "ret_30d_pct": 2.59,
-        "vs_spy_30d_pct": -1.84
+        "vs_spy_30d_pct": -1.82
       },
       {
         "algo_id": "job-posting-acceleration",
         "name": "Job Posting Acceleration",
         "algo_type": "crazy",
         "ret_30d_pct": 2.01,
-        "vs_spy_30d_pct": -2.42
+        "vs_spy_30d_pct": -2.4
       },
       {
         "algo_id": "baileymol",
         "name": "Algo Baileymol (Chaos Monger)",
         "algo_type": "normal",
         "ret_30d_pct": 1.93,
-        "vs_spy_30d_pct": -2.5
+        "vs_spy_30d_pct": -2.48
       },
       {
         "algo_id": "biscotti-crazy",
         "name": "Algo Biscotti (Unconditional Loyalty) (alt)",
         "algo_type": "crazy",
         "ret_30d_pct": 1.71,
-        "vs_spy_30d_pct": -2.73
+        "vs_spy_30d_pct": -2.71
       }
     ]
   }

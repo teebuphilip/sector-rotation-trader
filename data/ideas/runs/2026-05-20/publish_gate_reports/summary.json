@@ -11,80 +11,54 @@
   },
   "parse_failures": 0,
   "costs": {
-    "openai": 0.07291,
-    "total": 0.07291
+    "openai": 0.07293999999999999,
+    "total": 0.07293999999999999
   },
   "files": [
     {
       "file": "data/ideas/runs/2026-05-20/publish/chatgpt_daily-jump-in-google-trends-for-warehouse-worker-strike-sign.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-05-20/build/chatgpt_daily-jump-in-google-trends-for-warehouse-worker-strike-sign.md",
-      "reason": "Spec is clear, uses a real adapter with matching data source and frequency.",
+      "reason": "Spec is clear, deterministic, uses a valid existing adapter with matching data source.",
       "risk_flags": [
         "data source instability",
         "false positives",
         "regime shifts"
       ],
-      "cost_usd": 0.00306,
+      "cost_usd": 0.00307,
       "parse_failed": false
     },
     {
       "file": "data/ideas/runs/2026-05-20/publish/chatgpt_daily-spike-in-google-trends-for-emergency-plumber-near-me-s.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-05-20/build/chatgpt_daily-spike-in-google-trends-for-emergency-plumber-near-me-s.md",
-      "reason": "Spec is clear, deterministic, uses a valid existing adapter for Google Trends daily data.",
+      "reason": "Spec is clear, deterministic, uses a real adapter matching the data source.",
       "risk_flags": [
         "data source instability",
         "false positives",
         "regime shifts"
       ],
-      "cost_usd": 0.00312,
+      "cost_usd": 0.0031,
       "parse_failed": false
     },
     {
       "file": "data/ideas/runs/2026-05-20/publish/chatgpt_daily-surge-in-google-trends-for-electric-vehicle-charging-s.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-05-20/build/chatgpt_daily-surge-in-google-trends-for-electric-vehicle-charging-s.md",
-      "reason": "Spec is clear, uses a real adapter with matching data source and frequency.",
+      "reason": "Spec is clear, deterministic, uses a valid existing adapter matching the data source.",
       "risk_flags": [
         "data source instability",
         "false positives",
         "regime shifts"
       ],
-      "cost_usd": 0.0031075,
+      "cost_usd": 0.0031175,
       "parse_failed": false
     },
     {
       "file": "data/ideas/runs/2026-05-20/publish/chatgpt_daily-surge-in-google-trends-for-emergency-food-delivery-sig.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-05-20/build/chatgpt_daily-surge-in-google-trends-for-emergency-food-delivery-sig.md",
-      "reason": "Spec is clear, uses a real adapter with matching data source and frequency.",
-      "risk_flags": [
-        "data source instability",
-        "false positives",
-        "regime shifts"
-      ],
-      "cost_usd": 0.00308,
-      "parse_failed": false
-    },
-    {
-      "file": "data/ideas/runs/2026-05-20/publish/chatgpt_daily-surge-in-rss-news-counts-for-corporate-bond-downgrade-.md",
-      "decision": "BUILD",
-      "target": "data/ideas/runs/2026-05-20/build/chatgpt_daily-surge-in-rss-news-counts-for-corporate-bond-downgrade-.md",
-      "reason": "Spec is clear, uses a valid rss_count adapter for daily news counts on corporate bond downgrades.",
-      "risk_flags": [
-        "data source instability",
-        "false positives",
-        "regime shifts"
-      ],
-      "cost_usd": 0.003165,
-      "parse_failed": false
-    },
-    {
-      "file": "data/ideas/runs/2026-05-20/publish/chatgpt_weekly-jump-in-google-trends-for-home-moving-truck-rental-de.md",
-      "decision": "BUILD",
-      "target": "data/ideas/runs/2026-05-20/build/chatgpt_weekly-jump-in-google-trends-for-home-moving-truck-rental-de.md",
-      "reason": "Spec is clear, deterministic, uses a valid existing adapter for Google Trends weekly data.",
+      "reason": "Spec is clear, deterministic, uses a valid existing adapter with matching data source.",
       "risk_flags": [
         "data source instability",
         "false positives",
@@ -94,61 +68,35 @@
       "parse_failed": false
     },
     {
+      "file": "data/ideas/runs/2026-05-20/publish/chatgpt_daily-surge-in-rss-news-counts-for-corporate-bond-downgrade-.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-05-20/build/chatgpt_daily-surge-in-rss-news-counts-for-corporate-bond-downgrade-.md",
+      "reason": "Spec is clear, deterministic, uses correct rss_count adapter for news counts.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.003105,
+      "parse_failed": false
+    },
+    {
+      "file": "data/ideas/runs/2026-05-20/publish/chatgpt_weekly-jump-in-google-trends-for-home-moving-truck-rental-de.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-05-20/build/chatgpt_weekly-jump-in-google-trends-for-home-moving-truck-rental-de.md",
+      "reason": "Spec is clear, deterministic, uses a valid existing adapter for Google Trends data.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.00308,
+      "parse_failed": false
+    },
+    {
       "file": "data/ideas/runs/2026-05-20/publish/chatgpt_weekly-jump-in-google-trends-for-truck-driver-shortage-signa.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-05-20/build/chatgpt_weekly-jump-in-google-trends-for-truck-driver-shortage-signa.md",
-      "reason": "Spec is clear, uses a real adapter with matching data source and frequency.",
-      "risk_flags": [
-        "data source instability",
-        "false positives",
-        "regime shifts"
-      ],
-      "cost_usd": 0.0030625,
-      "parse_failed": false
-    },
-    {
-      "file": "data/ideas/runs/2026-05-20/publish/chatgpt_weekly-jump-in-google-trends-for-warehouse-automation-jobs-s.md",
-      "decision": "BUILD",
-      "target": "data/ideas/runs/2026-05-20/build/chatgpt_weekly-jump-in-google-trends-for-warehouse-automation-jobs-s.md",
-      "reason": "Spec is clear, deterministic, uses a valid existing adapter for Google Trends weekly data.",
-      "risk_flags": [
-        "data source instability",
-        "false positives",
-        "regime shifts"
-      ],
-      "cost_usd": 0.0030675,
-      "parse_failed": false
-    },
-    {
-      "file": "data/ideas/runs/2026-05-20/publish/chatgpt_weekly-jump-in-rss-news-counts-for-coal-shortage-signals-inp.md",
-      "decision": "BUILD",
-      "target": "data/ideas/runs/2026-05-20/build/chatgpt_weekly-jump-in-rss-news-counts-for-coal-shortage-signals-inp.md",
-      "reason": "Spec is clear, uses a valid rss_count adapter, and is structurally sound.",
-      "risk_flags": [
-        "data source instability",
-        "false positives",
-        "regime shifts"
-      ],
-      "cost_usd": 0.003045,
-      "parse_failed": false
-    },
-    {
-      "file": "data/ideas/runs/2026-05-20/publish/chatgpt_weekly-rise-in-google-trends-for-freight-train-delays-signal.md",
-      "decision": "BUILD",
-      "target": "data/ideas/runs/2026-05-20/build/chatgpt_weekly-rise-in-google-trends-for-freight-train-delays-signal.md",
-      "reason": "Spec is clear, uses a valid existing adapter with deterministic routing and sufficient detail.",
-      "risk_flags": [
-        "data source instability",
-        "false positives",
-        "regime shifts"
-      ],
-      "cost_usd": 0.0030975,
-      "parse_failed": false
-    },
-    {
-      "file": "data/ideas/runs/2026-05-20/publish/chatgpt_weekly-rise-in-google-trends-for-solar-panel-installation-de.md",
-      "decision": "BUILD",
-      "target": "data/ideas/runs/2026-05-20/build/chatgpt_weekly-rise-in-google-trends-for-solar-panel-installation-de.md",
       "reason": "Spec is clear, deterministic, uses a valid existing adapter with matching data source and frequency.",
       "risk_flags": [
         "data source instability",
@@ -156,6 +104,58 @@
         "regime shifts"
       ],
       "cost_usd": 0.0030925,
+      "parse_failed": false
+    },
+    {
+      "file": "data/ideas/runs/2026-05-20/publish/chatgpt_weekly-jump-in-google-trends-for-warehouse-automation-jobs-s.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-05-20/build/chatgpt_weekly-jump-in-google-trends-for-warehouse-automation-jobs-s.md",
+      "reason": "Spec is clear, deterministic, uses a valid existing adapter with matching data source and frequency.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.0030775,
+      "parse_failed": false
+    },
+    {
+      "file": "data/ideas/runs/2026-05-20/publish/chatgpt_weekly-jump-in-rss-news-counts-for-coal-shortage-signals-inp.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-05-20/build/chatgpt_weekly-jump-in-rss-news-counts-for-coal-shortage-signals-inp.md",
+      "reason": "Spec is clear, uses a valid rss_count adapter, and is buildable as is.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.003055,
+      "parse_failed": false
+    },
+    {
+      "file": "data/ideas/runs/2026-05-20/publish/chatgpt_weekly-rise-in-google-trends-for-freight-train-delays-signal.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-05-20/build/chatgpt_weekly-rise-in-google-trends-for-freight-train-delays-signal.md",
+      "reason": "Spec is clear, uses a real adapter with matching data source and frequency.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.0030875,
+      "parse_failed": false
+    },
+    {
+      "file": "data/ideas/runs/2026-05-20/publish/chatgpt_weekly-rise-in-google-trends-for-solar-panel-installation-de.md",
+      "decision": "BUILD",
+      "target": "data/ideas/runs/2026-05-20/build/chatgpt_weekly-rise-in-google-trends-for-solar-panel-installation-de.md",
+      "reason": "Spec is clear, deterministic, uses a valid existing adapter for Google Trends weekly data.",
+      "risk_flags": [
+        "data source instability",
+        "false positives",
+        "regime shifts"
+      ],
+      "cost_usd": 0.0030425,
       "parse_failed": false
     },
     {
@@ -193,16 +193,17 @@
         "data frequency mismatch",
         "potential data instability",
         "proxy conversion unclear",
-        "unsupported_template_adapter"
+        "unsupported_template_adapter",
+        "weekly to daily conversion"
       ],
-      "cost_usd": 0.00332,
+      "cost_usd": 0.00338,
       "parse_failed": false
     },
     {
       "file": "data/ideas/runs/2026-05-20/publish/claude_daily-jump-in-google-trends-for-bank-account-overdraft-fees.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-05-20/build/claude_daily-jump-in-google-trends-for-bank-account-overdraft-fees.md",
-      "reason": "Spec is clear, deterministic, uses a valid existing adapter matching the data source.",
+      "reason": "Spec is clear, uses a valid existing adapter with deterministic routing and sufficient detail.",
       "risk_flags": [
         "data source instability",
         "false positives",
@@ -220,35 +221,35 @@
         "entry logic depends on volume",
         "potential data source mismatch",
         "price_only_volume_gap",
-        "volume data required but adapter is price_only"
+        "volume data required but price_only adapter lacks volume"
       ],
-      "cost_usd": 0.00338,
+      "cost_usd": 0.00339,
       "parse_failed": false
     },
     {
       "file": "data/ideas/runs/2026-05-20/publish/claude_daily-spike-in-rss-news-counts-on-corporate-dividend-cuts.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-05-20/build/claude_daily-spike-in-rss-news-counts-on-corporate-dividend-cuts.md",
-      "reason": "Spec is clear, uses a valid rss_count adapter for daily news count spikes on dividend cuts.",
+      "reason": "Spec is clear, uses a valid rss_count adapter with matching data source and frequency.",
       "risk_flags": [
         "data source instability",
         "false positives",
         "regime shifts"
       ],
-      "cost_usd": 0.00325,
+      "cost_usd": 0.00327,
       "parse_failed": false
     },
     {
       "file": "data/ideas/runs/2026-05-20/publish/claude_daily-stock-price-volatility-spike-in-xlu-relative-to-spy.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-05-20/build/claude_daily-stock-price-volatility-spike-in-xlu-relative-to-spy.md",
-      "reason": "Spec is clear, uses valid price_only adapter for daily prices and volatility calculation.",
+      "reason": "Spec is deterministic, uses valid price_only adapter for daily prices, and logic is clear.",
       "risk_flags": [
         "data source instability",
         "false positives",
         "regime shifts"
       ],
-      "cost_usd": 0.003255,
+      "cost_usd": 0.003275,
       "parse_failed": false
     },
     {
@@ -297,13 +298,13 @@
       "file": "data/ideas/runs/2026-05-20/publish/claude_weekly-google-trends-surge-in-pest-control-searches.md",
       "decision": "BUILD",
       "target": "data/ideas/runs/2026-05-20/build/claude_weekly-google-trends-surge-in-pest-control-searches.md",
-      "reason": "Spec is clear, uses a valid existing adapter with deterministic routing and appropriate data source.",
+      "reason": "Spec is clear, uses a valid existing adapter with deterministic routing and sufficient detail.",
       "risk_flags": [
         "data source instability",
         "false positives",
         "regime shifts"
       ],
-      "cost_usd": 0.0032375,
+      "cost_usd": 0.0032275,
       "parse_failed": false
     },
     {

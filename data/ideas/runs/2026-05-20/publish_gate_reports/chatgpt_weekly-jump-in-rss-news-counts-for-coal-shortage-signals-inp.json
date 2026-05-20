@@ -6,7 +6,7 @@
     "adapter_ok": true,
     "selected_adapter": "rss_count",
     "needs_new_adapter": false,
-    "reason": "Spec is clear, uses a valid rss_count adapter, and is structurally sound.",
+    "reason": "Spec is clear, uses a valid rss_count adapter, and is buildable as is.",
     "risk_flags": [
       "data source instability",
       "false positives",
@@ -25,8 +25,8 @@
   },
   "usage": {
     "input_tokens": 906,
-    "output_tokens": 78
+    "output_tokens": 79
   },
-  "cost_usd": 0.003045,
-  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid rss_count adapter, and is structurally sound.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+  "cost_usd": 0.003055,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"rss_count\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid rss_count adapter, and is buildable as is.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
 }
