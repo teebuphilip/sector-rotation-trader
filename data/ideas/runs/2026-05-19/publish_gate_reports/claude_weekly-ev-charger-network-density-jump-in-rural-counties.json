@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-19/publish/claude_weekly-ev-charger-network-density-jump-in-rural-counties.md",
+  "target_file": "data/ideas/runs/2026-05-19/build/claude_weekly-ev-charger-network-density-jump-in-rural-counties.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "openchargemap",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, deterministic, uses a real adapter matching the data source.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "openchargemap"
+      ],
+      "scores": {
+        "openchargemap": 3,
+        "html_table": 1,
+        "price_only": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 991,
+    "output_tokens": 77
+  },
+  "cost_usd": 0.0032475,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"openchargemap\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, deterministic, uses a real adapter matching the data source.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

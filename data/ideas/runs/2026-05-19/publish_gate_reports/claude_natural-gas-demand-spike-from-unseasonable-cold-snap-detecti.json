@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-05-19/publish/claude_natural-gas-demand-spike-from-unseasonable-cold-snap-detecti.md",
+  "target_file": "data/ideas/runs/2026-05-19/build/claude_natural-gas-demand-spike-from-unseasonable-cold-snap-detecti.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "weather_series",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a valid weather_series adapter with appropriate data and logic.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "weather_series"
+      ],
+      "scores": {
+        "weather_series": 2,
+        "html_table": 1
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 974,
+    "output_tokens": 77
+  },
+  "cost_usd": 0.003205,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"weather_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid weather_series adapter with appropriate data and logic.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

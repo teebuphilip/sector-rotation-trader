@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-05-19/build/claude_natural-gas-demand-spike-from-unseasonable-cold-snap-detecti.md",
+  "out": "crazy/algos/natural_gas_demand_spike_from_unseasonable_cold_snap_detecti.py",
+  "adapter": "weather_series",
+  "idea_id": "natural-gas-demand-spike-from-unseasonable-cold-snap-detecti",
+  "name": "Natural Gas Demand Spike From Unseasonable Cold Snap Detection",
+  "universe": [
+    "XLU"
+  ],
+  "frequency": "daily",
+  "family": "macro_input_pressure",
+  "threshold": 0.1,
+  "direction": "down",
+  "hold_days": 7
+}

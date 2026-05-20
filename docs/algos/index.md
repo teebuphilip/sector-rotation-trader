@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-05-19T23:51:06
+Updated (UTC): 2026-05-20T00:00:50
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 287
+Crazy models: 299
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -303,3 +303,15 @@ Crazy models: 287
 | weekly-surge-in-google-trends-for-delayed-package-delivery-s | Weekly Surge In Google Trends For Delayed Package Delivery Signals Consumer Discretionary Shipping Pressure | weekly |
 | weekly-surge-in-google-trends-for-electric-scooter-theft-sig | Weekly Surge In Google Trends For Electric Scooter Theft Signals Consumer Discretionary Stress | weekly |
 | weekly-surge-in-google-trends-for-freight-elevator-repair-si | Weekly Surge In Google Trends For Freight Elevator Repair Signals Industrial Sector Demand | weekly |
+| daily-jump-in-google-trends-for-emergency-plumber-near-me-si | Daily Jump In Google Trends For Emergency Plumber Near Me Signals Consumer Home Repair Stress | daily |
+| daily-spike-in-google-trends-for-urgent-dental-surgery-signa | Daily Spike In Google Trends For Urgent Dental Surgery Signals Healthcare Demand Surge | daily |
+| weekly-increase-in-google-trends-for-industrial-machinery-br | Weekly Increase In Google Trends For Industrial Machinery Breakdown Signals Rising Repair Demand | weekly |
+| weekly-surge-in-google-trends-for-diy-car-maintenance-signal | Weekly Surge In Google Trends For Diy Car Maintenance Signals Rising Auto Sector Interest | weekly |
+| earthquake-activity-surge-in-oil-producing-regions-signals-s | Earthquake Activity Surge In Oil-producing Regions Signals Supply Disruption Risk Premium | daily |
+| google-trends-surge-in-logistics-job-openings-signals-labor- | Google Trends Surge In Logistics Job Openings Signals Labor Shortage In Freight | weekly |
+| google-trends-surge-in-mortgage-refinance-calculator-signals | Google Trends Surge In Mortgage Refinance Calculator Signals Rate-sensitive Financial Stress | weekly |
+| natural-gas-demand-spike-from-unseasonable-cold-snap-detecti | Natural Gas Demand Spike From Unseasonable Cold Snap Detection | daily |
+| rss-news-volume-spike-on-corporate-bond-downgrades-signals-c | Rss News Volume Spike On Corporate Bond Downgrades Signals Credit Stress Rotation | daily |
+| vix-to-realized-volatility-contraction-signals-mean-reversio | Vix-to-realized Volatility Contraction Signals Mean Reversion Opportunity In Large Caps | daily |
+| weekly-ev-charger-network-density-jump-in-rural-counties | Weekly Ev Charger Network Density Jump In Rural Counties | weekly |
+| weekly-spike-in-food-bank-demand-google-trends-signals-consu | Weekly Spike In Food Bank Demand Google Trends Signals Consumer Staples Demand Surge | weekly |

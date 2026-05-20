@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-05-19/publish/claude_earthquake-activity-surge-in-oil-producing-regions-signals-s.md",
+  "target_file": "data/ideas/runs/2026-05-19/build/claude_earthquake-activity-surge-in-oil-producing-regions-signals-s.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": false,
+    "reason": "Spec is deterministic, uses correct earthquake_activity adapter with valid data source and logic.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity"
+      ],
+      "scores": {
+        "earthquake_activity": 3,
+        "price_only": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 992,
+    "output_tokens": 74
+  },
+  "cost_usd": 0.00322,
+  "raw_llm_response": "{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is deterministic, uses correct earthquake_activity adapter with valid data source and logic.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}"
+}

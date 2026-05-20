@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-05-19/build/claude_earthquake-activity-surge-in-oil-producing-regions-signals-s.md",
+  "out": "crazy/algos/earthquake_activity_surge_in_oil_producing_regions_signals_s.py",
+  "adapter": "earthquake_activity",
+  "idea_id": "earthquake-activity-surge-in-oil-producing-regions-signals-s",
+  "name": "Earthquake Activity Surge In Oil-producing Regions Signals Supply Disruption Risk Premium",
+  "universe": [
+    "XLE"
+  ],
+  "frequency": "daily",
+  "family": "macro_input_pressure",
+  "threshold": 2.0,
+  "direction": "up",
+  "hold_days": 5
+}

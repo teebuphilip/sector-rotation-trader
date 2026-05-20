@@ -1,0 +1,35 @@
+{
+  "source_file": "data/ideas/runs/2026-05-19/publish/chatgpt_weekly-increase-in-google-trends-for-freight-container-backl.md",
+  "target_file": "data/ideas/runs/2026-05-19/intervention/chatgpt_weekly-increase-in-google-trends-for-freight-container-backl.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "potential data source instability",
+      "requires short position",
+      "short_trade_not_supported",
+      "signal threshold sensitivity"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 4,
+        "html_table": 1,
+        "port_container_volume": 1
+      },
+      "top_score": 4,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 931,
+    "output_tokens": 79
+  },
+  "cost_usd": 0.0031175,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires shorting which is not supported by current algo envelope.\",\n  \"risk_flags\": [\"requires short position\", \"potential data source instability\", \"signal threshold sensitivity\"]\n}\n```"
+}

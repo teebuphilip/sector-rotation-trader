@@ -1,0 +1,27 @@
+{
+  "attempted": 12,
+  "built": 12,
+  "completed": 12,
+  "date": "2026-05-19",
+  "dry_run": false,
+  "failed": 0,
+  "generated": false,
+  "intervention": 0,
+  "seeded": 12,
+  "skipped": 0,
+  "status": "summary",
+  "backtest": {
+    "seeded_ids": 12,
+    "matched_algos": 12,
+    "reviewed": 12,
+    "counts": {
+      "LIVE_ONLY_NON_PRICE": 11,
+      "INSUFFICIENT_ACTIVITY": 1
+    },
+    "missing_algo_ids": [],
+    "output_root": "reports/backtests/factory/2026-05-19",
+    "start": "2024-01-01",
+    "end": "2026-05-19",
+    "slippage_bps": 5.0
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "run_date": "2026-05-19",
+  "start": "2024-01-01",
+  "end": "2026-05-19",
+  "slippage_bps": 5.0,
+  "generated_at": "2026-05-20T00:00:26Z",
+  "counts": {
+    "LIVE_ONLY_NON_PRICE": 11,
+    "INSUFFICIENT_ACTIVITY": 1
+  },
+  "results": [
+    {
+      "algo_id": "daily-jump-in-google-trends-for-emergency-plumber-near-me-si",
+      "name": "Daily Jump In Google Trends For Emergency Plumber Near Me Signals Consumer Home Repair Stress",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-19"
+    },
+    {
+      "algo_id": "daily-spike-in-google-trends-for-urgent-dental-surgery-signa",
+      "name": "Daily Spike In Google Trends For Urgent Dental Surgery Signals Healthcare Demand Surge",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-19"
+    },
+    {
+      "algo_id": "earthquake-activity-surge-in-oil-producing-regions-signals-s",
+      "name": "Earthquake Activity Surge In Oil-producing Regions Signals Supply Disruption Risk Premium",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.earthquake_activity",
+      "metrics": {},
+      "run_date": "2026-05-19"
+    },
+    {
+      "algo_id": "google-trends-surge-in-logistics-job-openings-signals-labor-",
+      "name": "Google Trends Surge In Logistics Job Openings Signals Labor Shortage In Freight",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-19"
+    },
+    {
+      "algo_id": "google-trends-surge-in-mortgage-refinance-calculator-signals",
+      "name": "Google Trends Surge In Mortgage Refinance Calculator Signals Rate-sensitive Financial Stress",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-19"
+    },
+    {
+      "algo_id": "natural-gas-demand-spike-from-unseasonable-cold-snap-detecti",
+      "name": "Natural Gas Demand Spike From Unseasonable Cold Snap Detection",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.weather_series",
+      "metrics": {},
+      "run_date": "2026-05-19"
+    },
+    {
+      "algo_id": "rss-news-volume-spike-on-corporate-bond-downgrades-signals-c",
+      "name": "Rss News Volume Spike On Corporate Bond Downgrades Signals Credit Stress Rotation",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.rss_count",
+      "metrics": {},
+      "run_date": "2026-05-19"
+    },
+    {
+      "algo_id": "vix-to-realized-volatility-contraction-signals-mean-reversio",
+      "name": "Vix-to-realized Volatility Contraction Signals Mean Reversion Opportunity In Large Caps",
+      "family": "crazy",
+      "status": "INSUFFICIENT_ACTIVITY",
+      "reason": "Backtest completed",
+      "metrics": {
+        "total_return_pct": 0.0,
+        "spy_return_pct": 60.58,
+        "alpha_vs_spy_pct": -60.58,
+        "max_drawdown_pct": 0.0,
+        "spy_max_drawdown_pct": -18.76,
+        "sharpe": 0.0,
+        "spy_sharpe": 1.05,
+        "trade_count": 0,
+        "sell_count": 0,
+        "win_rate_pct": 0.0,
+        "turnover": 0.0
+      },
+      "run_date": "2026-05-19"
+    },
+    {
+      "algo_id": "weekly-ev-charger-network-density-jump-in-rural-counties",
+      "name": "Weekly Ev Charger Network Density Jump In Rural Counties",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.openchargemap",
+      "metrics": {},
+      "run_date": "2026-05-19"
+    },
+    {
+      "algo_id": "weekly-increase-in-google-trends-for-industrial-machinery-br",
+      "name": "Weekly Increase In Google Trends For Industrial Machinery Breakdown Signals Rising Repair Demand",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-19"
+    },
+    {
+      "algo_id": "weekly-spike-in-food-bank-demand-google-trends-signals-consu",
+      "name": "Weekly Spike In Food Bank Demand Google Trends Signals Consumer Staples Demand Surge",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-19"
+    },
+    {
+      "algo_id": "weekly-surge-in-google-trends-for-diy-car-maintenance-signal",
+      "name": "Weekly Surge In Google Trends For Diy Car Maintenance Signals Rising Auto Sector Interest",
+      "family": "crazy",
+      "status": "LIVE_ONLY_NON_PRICE",
+      "reason": "Uses non-price adapter: crazy.adapters.google_trends",
+      "metrics": {},
+      "run_date": "2026-05-19"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-05-19/build/claude_vix-to-realized-volatility-contraction-signals-mean-reversio.md",
+  "out": "crazy/algos/vix_to_realized_volatility_contraction_signals_mean_reversio.py",
+  "adapter": "price_only",
+  "idea_id": "vix-to-realized-volatility-contraction-signals-mean-reversio",
+  "name": "Vix-to-realized Volatility Contraction Signals Mean Reversion Opportunity In Large Caps",
+  "universe": [
+    "XLK"
+  ],
+  "frequency": "daily",
+  "family": "attention_sentiment",
+  "threshold": 0.15,
+  "direction": "up",
+  "hold_days": 7
+}

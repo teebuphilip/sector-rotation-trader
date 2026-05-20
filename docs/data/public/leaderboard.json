@@ -1,8 +1,8 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-19T23:51:17Z",
+  "generated_at": "2026-05-20T00:00:51Z",
   "counts": {
-    "total": 292,
+    "total": 304,
     "beating_spy": 3
   },
   "algos": [
@@ -1808,6 +1808,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-for-diy-car-maintenance-signal",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-diy-car-maintenance-signal",
+      "name": "Weekly Surge In Google Trends For Diy Car Maintenance Signals Rising Auto Sector Interest",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.06,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.04,
+      "spy_delta_30d_pct": -3.57,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.644,
+            "return_pct": -3.218
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.315,
+            "return_pct": -1.575
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:oil-price-momentum-reversal-energy-sector-bounce",
       "algo_type": "crazy",
       "algo_id": "oil-price-momentum-reversal-energy-sector-bounce",
@@ -2557,6 +2593,42 @@
             "direction": "DOWN",
             "confidence": 1.0,
             "return_pct": -5.273
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:google-trends-surge-in-mortgage-refinance-calculator-signals",
+      "algo_type": "crazy",
+      "algo_id": "google-trends-surge-in-mortgage-refinance-calculator-signals",
+      "name": "Google Trends Surge In Mortgage Refinance Calculator Signals Rate-sensitive Financial Stress",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.14,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -3.53,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLF",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.186,
+            "return_pct": -0.931
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.459,
+            "return_pct": -2.294
           }
         },
         "summary": "mixed"
@@ -3485,6 +3557,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:google-trends-surge-in-logistics-job-openings-signals-labor-",
+      "algo_type": "crazy",
+      "algo_id": "google-trends-surge-in-logistics-job-openings-signals-labor-",
+      "name": "Google Trends Surge In Logistics Job Openings Signals Labor Shortage In Freight",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.32,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.01,
+      "spy_delta_30d_pct": -3.54,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.644,
+            "return_pct": -3.218
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.315,
+            "return_pct": -1.575
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:weekly-spike-in-google-trends-for-home-cooling-failure-signa",
       "algo_type": "crazy",
       "algo_id": "weekly-spike-in-google-trends-for-home-cooling-failure-signa",
@@ -3730,6 +3838,42 @@
             "direction": "DOWN",
             "confidence": 0.224,
             "return_pct": -1.118
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-google-trends-for-emergency-plumber-near-me-si",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-emergency-plumber-near-me-si",
+      "name": "Daily Jump In Google Trends For Emergency Plumber Near Me Signals Consumer Home Repair Stress",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.41,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.21,
+      "spy_delta_30d_pct": -3.74,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.551,
+            "return_pct": -2.756
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.662,
+            "return_pct": -3.312
           }
         },
         "summary": "mixed"
@@ -9601,6 +9745,294 @@
           }
         },
         "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-spike-in-food-bank-demand-google-trends-signals-consu",
+      "algo_type": "crazy",
+      "algo_id": "weekly-spike-in-food-bank-demand-google-trends-signals-consu",
+      "name": "Weekly Spike In Food Bank Demand Google Trends Signals Consumer Staples Demand Surge",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -3.53,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLP",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.391,
+            "return_pct": 1.954
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 5.193
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-increase-in-google-trends-for-industrial-machinery-br",
+      "algo_type": "crazy",
+      "algo_id": "weekly-increase-in-google-trends-for-industrial-machinery-br",
+      "name": "Weekly Increase In Google Trends For Industrial Machinery Breakdown Signals Rising Repair Demand",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -3.53,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.644,
+            "return_pct": -3.218
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.315,
+            "return_pct": -1.575
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:weekly-ev-charger-network-density-jump-in-rural-counties",
+      "algo_type": "crazy",
+      "algo_id": "weekly-ev-charger-network-density-jump-in-rural-counties",
+      "name": "Weekly Ev Charger Network Density Jump In Rural Counties",
+      "family": "local_economy_weirdness",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -3.53,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.644,
+            "return_pct": -3.218
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.315,
+            "return_pct": -1.575
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:vix-to-realized-volatility-contraction-signals-mean-reversio",
+      "algo_type": "crazy",
+      "algo_id": "vix-to-realized-volatility-contraction-signals-mean-reversio",
+      "name": "Vix-to-realized Volatility Contraction Signals Mean Reversion Opportunity In Large Caps",
+      "family": "attention_sentiment",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -3.53,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLK",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.224,
+            "return_pct": -1.119
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 11.992
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:rss-news-volume-spike-on-corporate-bond-downgrades-signals-c",
+      "algo_type": "crazy",
+      "algo_id": "rss-news-volume-spike-on-corporate-bond-downgrades-signals-c",
+      "name": "Rss News Volume Spike On Corporate Bond Downgrades Signals Credit Stress Rotation",
+      "family": "attention_sentiment",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -3.53,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLF",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.186,
+            "return_pct": -0.931
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.459,
+            "return_pct": -2.294
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:natural-gas-demand-spike-from-unseasonable-cold-snap-detecti",
+      "algo_type": "crazy",
+      "algo_id": "natural-gas-demand-spike-from-unseasonable-cold-snap-detecti",
+      "name": "Natural Gas Demand Spike From Unseasonable Cold Snap Detection",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -3.53,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLU",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.376,
+            "return_pct": -1.881
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.271,
+            "return_pct": -1.357
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:earthquake-activity-surge-in-oil-producing-regions-signals-s",
+      "algo_type": "crazy",
+      "algo_id": "earthquake-activity-surge-in-oil-producing-regions-signals-s",
+      "name": "Earthquake Activity Surge In Oil-producing Regions Signals Supply Disruption Risk Premium",
+      "family": "macro_input_pressure",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -3.53,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLE",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 6.462
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 1.0,
+            "return_pct": 9.701
+          }
+        },
+        "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-spike-in-google-trends-for-urgent-dental-surgery-signa",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-for-urgent-dental-surgery-signa",
+      "name": "Daily Spike In Google Trends For Urgent Dental Surgery Signals Healthcare Demand Surge",
+      "family": "consumer_stress",
+      "status": "sandbox",
+      "evidence_class": "needs_history",
+      "rebalance_frequency": "daily",
+      "ytd_pct": 0.0,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -3.53,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLV",
+        "signals": {
+          "momentum_5d": {
+            "direction": "UP",
+            "confidence": 0.202,
+            "return_pct": 1.008
+          },
+          "momentum_20d": {
+            "direction": "UP",
+            "confidence": 0.192,
+            "return_pct": 0.959
+          }
+        },
+        "summary": "both_up"
       }
     }
   ]

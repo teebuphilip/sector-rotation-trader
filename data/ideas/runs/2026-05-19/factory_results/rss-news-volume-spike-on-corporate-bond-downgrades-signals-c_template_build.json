@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-05-19/build/claude_rss-news-volume-spike-on-corporate-bond-downgrades-signals-c.md",
+  "out": "crazy/algos/rss_news_volume_spike_on_corporate_bond_downgrades_signals_c.py",
+  "adapter": "rss_count",
+  "idea_id": "rss-news-volume-spike-on-corporate-bond-downgrades-signals-c",
+  "name": "Rss News Volume Spike On Corporate Bond Downgrades Signals Credit Stress Rotation",
+  "universe": [
+    "XLF"
+  ],
+  "frequency": "daily",
+  "family": "attention_sentiment",
+  "threshold": 1.5,
+  "direction": "up",
+  "hold_days": 5
+}

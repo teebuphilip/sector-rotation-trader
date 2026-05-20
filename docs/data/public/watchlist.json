@@ -1,6 +1,6 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-19T23:51:07Z",
+  "generated_at": "2026-05-20T00:00:51Z",
   "algos": [
     {
       "schema_version": "v1",
@@ -1804,6 +1804,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:weekly-surge-in-google-trends-for-diy-car-maintenance-signal",
+      "algo_type": "crazy",
+      "algo_id": "weekly-surge-in-google-trends-for-diy-car-maintenance-signal",
+      "name": "Weekly Surge In Google Trends For Diy Car Maintenance Signals Rising Auto Sector Interest",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.06,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.04,
+      "spy_delta_30d_pct": -3.57,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.644,
+            "return_pct": -3.218
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.315,
+            "return_pct": -1.575
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:oil-price-momentum-reversal-energy-sector-bounce",
       "algo_type": "crazy",
       "algo_id": "oil-price-momentum-reversal-energy-sector-bounce",
@@ -2517,6 +2553,42 @@
             "direction": "DOWN",
             "confidence": 1.0,
             "return_pct": -5.273
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:google-trends-surge-in-mortgage-refinance-calculator-signals",
+      "algo_type": "crazy",
+      "algo_id": "google-trends-surge-in-mortgage-refinance-calculator-signals",
+      "name": "Google Trends Surge In Mortgage Refinance Calculator Signals Rate-sensitive Financial Stress",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.14,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -3.53,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLF",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.186,
+            "return_pct": -0.931
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.459,
+            "return_pct": -2.294
           }
         },
         "summary": "mixed"
@@ -3373,6 +3445,42 @@
     },
     {
       "schema_version": "v1",
+      "key": "crazy:google-trends-surge-in-logistics-job-openings-signals-labor-",
+      "algo_type": "crazy",
+      "algo_id": "google-trends-surge-in-logistics-job-openings-signals-labor-",
+      "name": "Google Trends Surge In Logistics Job Openings Signals Labor Shortage In Freight",
+      "family": "labor_jobs",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "weekly",
+      "ytd_pct": -0.32,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.01,
+      "spy_delta_30d_pct": -3.54,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLI",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.644,
+            "return_pct": -3.218
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.315,
+            "return_pct": -1.575
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
       "key": "crazy:weekly-spike-in-google-trends-for-home-cooling-failure-signa",
       "algo_type": "crazy",
       "algo_id": "weekly-spike-in-google-trends-for-home-cooling-failure-signa",
@@ -3569,6 +3677,42 @@
       "ret_30d_pct": -0.36,
       "spy_delta_30d_pct": -3.88,
       "last_snapshot": "2026-05-19",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.551,
+            "return_pct": -2.756
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.662,
+            "return_pct": -3.312
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-jump-in-google-trends-for-emergency-plumber-near-me-si",
+      "algo_type": "crazy",
+      "algo_id": "daily-jump-in-google-trends-for-emergency-plumber-near-me-si",
+      "name": "Daily Jump In Google Trends For Emergency Plumber Near Me Signals Consumer Home Repair Stress",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.41,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.21,
+      "spy_delta_30d_pct": -3.74,
+      "last_snapshot": "2026-05-20",
       "new_algo_date": null,
       "comparator": {
         "primary_etf": "XLY",
