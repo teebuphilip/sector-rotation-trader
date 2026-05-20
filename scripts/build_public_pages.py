@@ -221,7 +221,7 @@ def _site_links() -> str:
             parts.append('<span class="footer-sep">&middot;</span>')
         parts.append(f'<a href="{href}" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">{_e(label)}</a>')
     parts.append('<span class="footer-sep">&middot;</span>')
-    parts.append('<a href="/biscotti.html" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;">Biscotti</a>')
+    parts.append('<a href="https://www.randbalgolabs.com" style="color:rgba(255,255,255,0.58);text-decoration:none;white-space:nowrap;" target="_blank" rel="noopener noreferrer">R&amp;B AlgoLabs</a>')
     return "".join(parts)
 
 

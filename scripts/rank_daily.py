@@ -66,7 +66,7 @@ def _unique_display_name(base_name: str, algo_type: str, used_names: set[str]) -
     candidate = base_name
     if candidate not in used_names:
         return candidate
-    suffix = f" ({algo_type})" if algo_type else ""
+    suffix = " (alt)"
     candidate = f"{base_name}{suffix}"
     if candidate not in used_names:
         return candidate
