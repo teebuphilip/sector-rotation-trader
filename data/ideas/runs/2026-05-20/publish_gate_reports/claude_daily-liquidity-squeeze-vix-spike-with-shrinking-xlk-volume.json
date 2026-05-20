@@ -8,7 +8,7 @@
     "needs_new_adapter": false,
     "reason": "price_only currently provides close/value data, not volume.",
     "risk_flags": [
-      "entry logic requires volume",
+      "entry logic depends on volume",
       "potential data source mismatch",
       "price_only_volume_gap",
       "volume data required but adapter is price_only"
@@ -30,5 +30,5 @@
     "output_tokens": 87
   },
   "cost_usd": 0.00338,
-  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"price_only adapter does not provide volume data required for XLK volume collapse condition\",\n  \"risk_flags\": [\"volume data required but adapter is price_only\", \"entry logic requires volume\", \"potential data source mismatch\"]\n}\n```"
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"price_only adapter does not provide volume data required for XLK volume condition\",\n  \"risk_flags\": [\"volume data required but adapter is price_only\", \"potential data source mismatch\", \"entry logic depends on volume\"]\n}\n```"
 }
