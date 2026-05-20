@@ -2240,17 +2240,46 @@
       },
       "sector": "Electricity Consumption",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 19556.59,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 94166.38,
+      "positions": {
+        "XLI": {
+          "shares": 251.6403,
+          "entry_price": 175.04,
+          "current_price": 168.74,
+          "market_value": 42461.78,
+          "unrealized_pnl": -1585.33,
+          "entry_date": "2026-05-11",
+          "margin": false
+        },
+        "XLB": {
+          "shares": 655.5466,
+          "entry_price": 52.26,
+          "current_price": 49.04,
+          "market_value": 32148.0,
+          "unrealized_pnl": -2110.86,
+          "entry_date": "2026-05-11",
+          "margin": false
+        }
+      },
+      "sector": "Electricity Consumption",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16",
-  "last_run": "2026-05-19",
+  "last_run": "2026-05-20",
   "meta": {
     "electricity-consumption": {
       "name": "Electricity Consumption",
-      "last_run": "2026-05-19",
+      "last_run": "2026-05-20",
       "adapter": "eia_electricity",
       "respondent": "US48",
-      "electricity_4w_chg": 0.0642,
+      "electricity_4w_chg": 0.0705,
       "signal_label": "INDUSTRIAL_POWER_DEMAND",
       "signal_key": "INDUSTRIAL_POWER_DEMAND",
       "last_signal": "INDUSTRIAL_POWER_DEMAND"

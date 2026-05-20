@@ -1,19 +1,10 @@
 {
-  "cash": 94893.79298980201,
+  "cash": 99878.49328945637,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 131.0451162771513,
+  "fees_paid": 141.2786581913162,
   "taxes_paid": 14.543699981538047,
-  "positions": {
-    "XLU": {
-      "shares": 112.65074028821354,
-      "entry_price": 44.34000015258789,
-      "entry_date": "2026-05-19",
-      "cost": 4994.933841568527,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-03-16",
@@ -168,6 +159,20 @@
       "cost": 4994.93,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-20",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 112.6507,
+      "price": 44.34,
+      "proceeds": 4984.7,
+      "fees": 10.23,
+      "tax": 0.0,
+      "pnl": -10.23,
+      "pnl_pct": -0.2,
+      "entry_date": "2026-05-19",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1220,19 +1225,29 @@
       },
       "sector": "Xlu Daily Electricity Demand Surge",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 99878.49,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99878.49,
+      "positions": {},
+      "sector": "Xlu Daily Electricity Demand Surge",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-18",
-  "last_run": "2026-05-19",
+  "last_run": "2026-05-20",
   "meta": {
     "xlu-daily-electricity-demand-surge": {
-      "signal_label": "RISK_ON",
-      "latest_value": 12417854.0,
-      "prior_avg": 11053221.0571,
-      "signal_change": 0.1235,
+      "signal_label": "HOLD",
+      "latest_value": 11785143.0,
+      "prior_avg": 11262177.7143,
+      "signal_change": 0.0464,
       "name": "Xlu Daily Electricity Demand Surge",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-19",
+      "last_signal": "HOLD",
+      "last_run": "2026-05-20",
       "entry_date": "2026-05-19"
     }
   }

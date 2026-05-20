@@ -6,11 +6,11 @@
 - sector_consensus: Precomputed sector verdicts from docs/signals/index.json. Use for current directional sector context.
 
 ## System State
-- Force-ranked algos: 278 rows (278 unique algo_ids)
-- Force-ranked beating SPY: 1 of 278 rows
-- Rolling 30D algos: 279 rows (279 unique algo_ids)
-- Rolling 30D beating SPY: 3 of 279 rows
-- Signals generated: 278
+- Force-ranked algos: 304 rows (304 unique algo_ids)
+- Force-ranked beating SPY: 3 of 304 rows
+- Rolling 30D algos: 305 rows (305 unique algo_ids)
+- Rolling 30D beating SPY: 2 of 305 rows
+- Signals generated: 304
 - Tickers covered: 105
 - Sectors computed: 11
 
@@ -25,25 +25,25 @@ Full-window/since-seed rank; not the same as recent 30D performance.
 ### Top 10
 | Rank | Algo | Type | Return | Alpha vs SPY | Rank Change |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Quantified Simple Monthly Rotation | normal | +10.50% | +2.01% | +0 |
-| 2 | Algo Baileymol (Chaos Monger) | normal | +8.29% | -0.20% | +264 |
-| 3 | Faber Momentum Rotation | normal | +7.34% | -1.15% | +0 |
-| 4 | Antonacci Dual Momentum Sector Rotation | normal | +6.14% | -2.35% | +0 |
-| 5 | Uber Mobility Index | crazy | +3.28% | -5.21% | +0 |
-| 6 | Retail Sales Momentum | crazy | +3.27% | -5.22% | +0 |
-| 7 | Job Posting Acceleration | crazy | +1.77% | -6.72% | +0 |
-| 8 | Insider Trading Signals | crazy | +1.06% | -7.43% | +0 |
-| 9 | Weekly Google Trends Surge In Diy Electronics Repair Signals Tech Consumer Stress Lift | crazy | +0.08% | -8.41% | +0 |
-| 10 | Weekly Surge In Google Trends Searches For Diy Electronics Repair Signals Bullish Xlk | crazy | +0.08% | -8.41% | +0 |
+| 1 | Quantified Simple Monthly Rotation | normal | +8.60% | +0.91% | +0 |
+| 2 | Algo Baileymol (Chaos Monger) | normal | +8.23% | +0.54% | +264 |
+| 3 | Faber Momentum Rotation | normal | +7.76% | +0.07% | +0 |
+| 4 | Antonacci Dual Momentum Sector Rotation | normal | +6.06% | -1.64% | +0 |
+| 5 | Uber Mobility Index | crazy | +2.12% | -5.58% | +0 |
+| 6 | Retail Sales Momentum | crazy | +2.11% | -5.59% | +0 |
+| 7 | Insider Trading Signals | crazy | +1.35% | -6.34% | +1 |
+| 8 | Job Posting Acceleration | crazy | +0.69% | -7.01% | -1 |
+| 9 | Misery Rotation | crazy | +0.20% | -7.50% | +243 |
+| 10 | Housing Permit Velocity | crazy | +0.17% | -7.52% | +243 |
 
 ### Bottom 5
 | Rank | Algo | Type | Return | Alpha vs SPY | Rank Change |
 | --- | --- | --- | --- | --- | --- |
-| 274 | Algo Biscotti (Unconditional Loyalty) | crazy | -2.87% | -11.36% | n/a |
-| 275 | Algo Biscotti (Unconditional Loyalty) | normal | -3.17% | -11.66% | -12 |
-| 276 | VIX Fear Rotation | crazy | -4.04% | -12.53% | -12 |
-| 277 | Electricity Consumption | crazy | -4.34% | -12.83% | -12 |
-| 278 | Chaos Rotation Lab | crazy | -6.10% | -14.59% | n/a |
+| 300 | Copper Momentum | crazy | -3.50% | -11.19% | -42 |
+| 301 | Port Container Volume | crazy | -3.80% | -11.49% | -42 |
+| 302 | VIX Fear Rotation | crazy | -5.15% | -12.84% | -38 |
+| 303 | Electricity Consumption | crazy | -5.83% | -13.53% | -38 |
+| 304 | Chaos Rotation Lab | crazy | -5.96% | -13.65% | n/a |
 
 ## Rolling 30D
 Trailing 30-day return rank; useful for recent momentum and tactical spotlight.
@@ -51,44 +51,44 @@ SPY 30D: +3.53%
 
 | Rank | Algo | Category | 30D Return | 30D vs SPY |
 | --- | --- | --- | --- | --- |
-| 1 | Quantified Simple Monthly Rotation | standard | +10.50% | +6.97% |
-| 2 | VIX Fear Rotation | crazy | +5.17% | +1.64% |
-| 3 | VIX Term Structure | crazy | +4.75% | +1.22% |
-| 4 | Faber Momentum Rotation | standard | +3.37% | -0.16% |
-| 5 | Antonacci Dual Momentum Sector Rotation | standard | +3.31% | -0.22% |
-| 6 | Uber Mobility Index | crazy | +3.28% | -0.24% |
-| 7 | Retail Sales Momentum | crazy | +3.27% | -0.25% |
-| 8 | Algo Baileymol (Chaos Monger) | standard | +3.14% | -0.39% |
-| 9 | Algo Biscotti (Unconditional Loyalty) | crazy | +2.30% | -1.23% |
-| 10 | Job Posting Acceleration | crazy | +1.77% | -1.76% |
+| 1 | Quantified Simple Monthly Rotation | standard | +8.60% | +5.07% |
+| 2 | Faber Momentum Rotation | standard | +3.77% | +0.24% |
+| 3 | VIX Fear Rotation | crazy | +2.80% | -0.72% |
+| 4 | VIX Term Structure | crazy | +2.66% | -0.87% |
+| 5 | Antonacci Dual Momentum Sector Rotation | standard | +2.26% | -1.27% |
+| 6 | Uber Mobility Index | crazy | +2.14% | -1.39% |
+| 7 | Retail Sales Momentum | crazy | +2.11% | -1.42% |
+| 8 | Algo Biscotti (Unconditional Loyalty) | crazy | +2.10% | -1.43% |
+| 9 | Algo Baileymol (Chaos Monger) | standard | +2.00% | -1.53% |
+| 10 | Insider Trading Signals | crazy | +1.35% | -2.18% |
 
 ## Sector Consensus
-- Top Bullish: XLI, XLK, XLP
-- Top Bearish: XLF, XLRE, XLC
+- Top Bullish: XLK, XLE, XLI
+- Top Bearish: XLC, XLRE, XLF
 
 | ETF | Sector | Composite | Label | Bullish % |
 | --- | --- | --- | --- | --- |
-| XLI | Industrials | 14 of 47 | BEARISH | 30% |
-| XLP | Consumer Defensive | 7 of 40 | BEARISH | 18% |
-| XLK | Technology | 8 of 44 | BEARISH | 18% |
-| XLB | Basic Materials | 7 of 40 | BEARISH | 18% |
-| XLU | Utilities | 5 of 41 | BEARISH | 12% |
-| XLY | Consumer Cyclical | 7 of 61 | BEARISH | 11% |
-| XLE | Energy | 3 of 40 | BEARISH | 8% |
-| XLV | Healthcare | 2 of 42 | BEARISH | 5% |
-| XLRE | Real Estate | 1 of 39 | BEARISH | 3% |
-| XLF | Financial Services | 1 of 38 | BEARISH | 3% |
-| XLC | Communication Services | 0 of 38 | BEARISH | 0% |
+| XLK | Technology | 12 of 38 | BEARISH | 32% |
+| XLE | Energy | 6 of 34 | BEARISH | 18% |
+| XLP | Consumer Defensive | 6 of 37 | BEARISH | 16% |
+| XLI | Industrials | 8 of 50 | BEARISH | 16% |
+| XLB | Basic Materials | 6 of 37 | BEARISH | 16% |
+| XLU | Utilities | 5 of 43 | BEARISH | 12% |
+| XLY | Consumer Cyclical | 5 of 60 | BEARISH | 8% |
+| XLV | Healthcare | 2 of 40 | BEARISH | 5% |
+| XLRE | Real Estate | 1 of 35 | BEARISH | 3% |
+| XLC | Communication Services | 1 of 33 | BEARISH | 3% |
+| XLF | Financial Services | 0 of 36 | BEARISH | 0% |
 
 ## Content Facts
 - Signal of day: Quantified Simple Monthly Rotation (Ranked #1 on rolling 30D leaderboard)
-- Call of day: XLI BEARISH (Highest bullish percentage in precomputed sector consensus)
+- Call of day: XLK BEARISH (Highest bullish percentage in precomputed sector consensus)
 - Failure of day: Chaos Rotation Lab (Lowest full-window force rank)
 
 ## Notable Divergences
-- VIX Fear Rotation: force rank #276, rolling 30D rank #2. Strong recent 30D rank despite weaker full-window force rank.
-- VIX Term Structure: force rank #272, rolling 30D rank #3. Strong recent 30D rank despite weaker full-window force rank.
-- Algo Biscotti (Unconditional Loyalty): force rank #274, rolling 30D rank #9. Strong recent 30D rank despite weaker full-window force rank.
-- Daily Jump In Consumer Stress Google Trends Searches For Car Repossession Signals Rising Financial Distress: force rank #11, rolling 30D rank #238. Strong full-window force rank but weaker recent 30D rank.
-- Daily Jump In Google Trends Searches For Job Quitting Signals Labor Market Tightness Benefiting Consumer Discretionary: force rank #233, rolling 30D rank #15. Strong recent 30D rank despite weaker full-window force rank.
+- VIX Fear Rotation: force rank #302, rolling 30D rank #3. Strong recent 30D rank despite weaker full-window force rank.
+- VIX Term Structure: force rank #299, rolling 30D rank #4. Strong recent 30D rank despite weaker full-window force rank.
+- Algo Biscotti (Unconditional Loyalty): force rank #294, rolling 30D rank #8. Strong recent 30D rank despite weaker full-window force rank.
+- Xle Weekly Drawdown Rebound Signal: force rank #280, rolling 30D rank #21. Strong recent 30D rank despite weaker full-window force rank.
+- Healthcare Cost Shock Google Search Spike: force rank #285, rolling 30D rank #53. Strong recent 30D rank despite weaker full-window force rank.
 

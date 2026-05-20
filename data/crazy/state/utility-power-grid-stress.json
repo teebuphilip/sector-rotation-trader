@@ -1,19 +1,10 @@
 {
-  "cash": 94990.05,
+  "cash": 99979.8161705008,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 9.95,
+  "fees_paid": 20.18382949920699,
   "taxes_paid": 0.0,
-  "positions": {
-    "XLU": {
-      "shares": 112.76499735664021,
-      "entry_price": 44.34000015258789,
-      "entry_date": "2026-05-19",
-      "cost": 5000.0,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-05-19",
@@ -24,6 +15,20 @@
       "cost": 5000.0,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-20",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 112.765,
+      "price": 44.34,
+      "proceeds": 4989.77,
+      "fees": 10.23,
+      "tax": 0.0,
+      "pnl": -10.23,
+      "pnl_pct": -0.2,
+      "entry_date": "2026-05-19",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1103,19 +1108,29 @@
       },
       "sector": "Utility Power Grid Stress",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 99979.82,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99979.82,
+      "positions": {},
+      "sector": "Utility Power Grid Stress",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-18",
-  "last_run": "2026-05-19",
+  "last_run": "2026-05-20",
   "meta": {
     "utility-power-grid-stress": {
-      "signal_label": "RISK_ON",
+      "signal_label": "HOLD",
       "name": "Utility Power Grid Stress",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-19",
-      "latest_value": 12417854.0,
-      "prior_avg": 10571523.6357,
-      "signal_change": 0.1747,
+      "last_signal": "HOLD",
+      "last_run": "2026-05-20",
+      "latest_value": 11785143.0,
+      "prior_avg": 10648950.0786,
+      "signal_change": 0.1067,
       "entry_date": "2026-05-19"
     }
   }

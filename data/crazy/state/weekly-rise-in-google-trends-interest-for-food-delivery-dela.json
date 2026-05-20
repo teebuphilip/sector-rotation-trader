@@ -1,19 +1,10 @@
 {
-  "cash": 94786.25336464221,
+  "cash": 99765.31037599657,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 171.29117866786825,
+  "fees_paid": 181.50802861046336,
   "taxes_paid": 51.52079003656354,
-  "positions": {
-    "XLP": {
-      "shares": 57.954165100841564,
-      "entry_price": 86.08999633789062,
-      "entry_date": "2026-05-19",
-      "cost": 4989.273861296959,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-02-10",
@@ -216,6 +207,20 @@
       "cost": 4989.27,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-20",
+      "action": "SELL",
+      "ticker": "XLP",
+      "shares": 57.9542,
+      "price": 86.09,
+      "proceeds": 4979.06,
+      "fees": 10.22,
+      "tax": 0.0,
+      "pnl": -10.22,
+      "pnl_pct": -0.2,
+      "entry_date": "2026-05-19",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1188,20 +1193,30 @@
       },
       "sector": "Weekly Rise In Google Trends Interest For Food Delivery Delay Signals Bearish Xlp",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 99765.31,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99765.31,
+      "positions": {},
+      "sector": "Weekly Rise In Google Trends Interest For Food Delivery Delay Signals Bearish Xlp",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-23",
-  "last_run": "2026-05-19",
+  "last_run": "2026-05-20",
   "meta": {
     "weekly-rise-in-google-trends-interest-for-food-delivery-dela": {
-      "signal_label": "RISK_ON",
+      "signal_label": "HOLD",
       "latest_value": 7.0,
       "prior_avg": 4.1786,
       "signal_change": 0.6752,
       "entry_date": "2026-05-19",
       "name": "Weekly Rise In Google Trends Interest For Food Delivery Delay Signals Bearish Xlp",
-      "last_signal": "RISK_ON",
-      "last_run": "2026-05-19"
+      "last_signal": "HOLD",
+      "last_run": "2026-05-20"
     }
   }
 }

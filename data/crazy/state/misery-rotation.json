@@ -1247,14 +1247,43 @@
       },
       "sector": "Misery Rotation",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 29980.1,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100197.43,
+      "positions": {
+        "XLP": {
+          "shares": 473.7091,
+          "entry_price": 84.44,
+          "current_price": 86.09,
+          "market_value": 40781.62,
+          "unrealized_pnl": 781.62,
+          "entry_date": "2026-05-12",
+          "margin": false
+        },
+        "XLU": {
+          "shares": 663.8637,
+          "entry_price": 45.19,
+          "current_price": 44.34,
+          "market_value": 29435.72,
+          "unrealized_pnl": -564.28,
+          "entry_date": "2026-05-12",
+          "margin": false
+        }
+      },
+      "sector": "Misery Rotation",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-16",
-  "last_run": "2026-05-19",
+  "last_run": "2026-05-20",
   "meta": {
     "misery-rotation": {
       "name": "Misery Rotation",
-      "last_run": "2026-05-19",
+      "last_run": "2026-05-20",
       "misery_index": 8.25,
       "misery_delta_3m": 1.12,
       "unrate": 4.3,
