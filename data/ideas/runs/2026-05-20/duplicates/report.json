@@ -1,0 +1,152 @@
+{
+  "date": "2026-05-20",
+  "input_count": 25,
+  "kept_count": 23,
+  "duplicate_count": 2,
+  "kept_by_source": {
+    "chatgpt": 13,
+    "claude": 10
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-surge-in-google-trends-for-urgent-dental-surgery-signa",
+      "title": "Daily Surge In Google Trends For Urgent Dental Surgery Signals Healthcare Consumer Stress",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "high_title_overlap",
+        "score": 0.692,
+        "matched_title": "daily spike in google trends for emergency dental surgery signals healthcare consumer stress",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-dental-surgery-si",
+        "matched_origin": "history:2026-05-18",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-surge-in-google-trends-for-urgent-dental-surgery-signa",
+        "title": "Daily Surge In Google Trends For Urgent Dental Surgery Signals Healthcare Consumer Stress",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Spikes in urgent dental surgery searches indicate rising consumer health stress and urgent care demand. Healthcare sector benefits from increased urgent care service demand driven by consumer stress.",
+        "data_sources": [
+          "Google Trends daily search interest"
+        ],
+        "signal_logic": "If daily Google Trends for 'urgent dental surgery' rises 50% vs 7-day average",
+        "entry_exit": "Entry: If daily Google Trends for 'urgent dental surgery' rises 50% vs 7-day average Exit: After 5 trading days or if trend drops below +20% baseline",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLV"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Healthcare urgent care search spikes are common during flu seasons and acute illness outbreaks.",
+        "schema": {
+          "idea": "Daily surge in Google Trends for 'urgent dental surgery' signals healthcare consumer stress",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Spikes in urgent dental surgery searches indicate rising consumer health stress and urgent care demand.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLV",
+            "rationale": "Healthcare sector benefits from increased urgent care service demand driven by consumer stress."
+          },
+          "trade_logic": {
+            "entry": "If daily Google Trends for 'urgent dental surgery' rises 50% vs 7-day average",
+            "exit": "After 5 trading days or if trend drops below +20% baseline",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Healthcare urgent care search spikes are common during flu seasons and acute illness outbreaks.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-google-trends-for-urgent-hvac-repair-signals-",
+      "title": "Daily Spike In Google Trends For Urgent Hvac Repair Signals Consumer Stress Lifting Discretionary Home Services",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_structure",
+        "score": 0.6,
+        "matched_title": "daily spike in google trends for emergency plumber near me signals consumer stress lifting home repair demand",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-plumber-near-me-s",
+        "matched_origin": "current_run",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-google-trends-for-urgent-hvac-repair-signals-",
+        "title": "Daily Spike In Google Trends For Urgent Hvac Repair Signals Consumer Stress Lifting Discretionary Home Services",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Urgent HVAC repair searches spike when consumers face unexpected home stress, boosting discretionary services. Home services and consumer discretionary benefit from stress-driven urgent repairs.",
+        "data_sources": [
+          "Google Trends daily search interest"
+        ],
+        "signal_logic": "If daily Google Trends for 'urgent HVAC repair' rises 45% vs 7-day average",
+        "entry_exit": "Entry: If daily Google Trends for 'urgent HVAC repair' rises 45% vs 7-day average Exit: After 7 trading days or if trend declines below +20% baseline",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLY"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily search interest via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 24,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "HVAC failures and urgent repair searches spike seasonally and during heat waves or cold snaps.",
+        "schema": {
+          "idea": "Daily spike in Google Trends for 'urgent HVAC repair' signals consumer stress lifting discretionary home services",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily search interest",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Urgent HVAC repair searches spike when consumers face unexpected home stress, boosting discretionary services.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLY",
+            "rationale": "Home services and consumer discretionary benefit from stress-driven urgent repairs."
+          },
+          "trade_logic": {
+            "entry": "If daily Google Trends for 'urgent HVAC repair' rises 45% vs 7-day average",
+            "exit": "After 7 trading days or if trend declines below +20% baseline",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 24,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "HVAC failures and urgent repair searches spike seasonally and during heat waves or cold snaps.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
