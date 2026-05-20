@@ -1,19 +1,10 @@
 {
-  "cash": 94719.00534850867,
+  "cash": 99702.88599796304,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 372.8156181795959,
+  "fees_paid": 383.02411737027444,
   "taxes_paid": 170.9172372456224,
-  "positions": {
-    "XLI": {
-      "shares": 29.315777487573378,
-      "entry_price": 170.07000732421875,
-      "entry_date": "2026-05-20",
-      "cost": 4985.7344920267715,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-04-01",
@@ -456,6 +447,20 @@
       "cost": 4985.73,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-20",
+      "action": "SELL",
+      "ticker": "XLI",
+      "shares": 29.3158,
+      "price": 170.355,
+      "proceeds": 4983.88,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -1.85,
+      "pnl_pct": -0.04,
+      "entry_date": "2026-05-20",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1378,6 +1383,16 @@
       },
       "sector": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 99702.89,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99702.89,
+      "positions": {},
+      "sector": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-02-10",
@@ -1387,10 +1402,10 @@
       "latest_value": 890861.0,
       "prior_avg": 795107.6875,
       "signal_change": 0.1204,
-      "signal_label": "RISK_ON",
+      "signal_label": "HOLD",
       "entry_date": "2026-05-20",
       "name": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
-      "last_signal": "RISK_ON",
+      "last_signal": "HOLD",
       "last_run": "2026-05-20"
     }
   }

@@ -1,10 +1,19 @@
 {
-  "cash": 99707.460841571,
+  "cash": 94712.13779949244,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 221.78690786224377,
+  "fees_paid": 231.73690786224375,
   "taxes_paid": 26.35804238423334,
-  "positions": {},
+  "positions": {
+    "XLC": {
+      "shares": 43.25327910532342,
+      "entry_price": 115.26000213623047,
+      "entry_date": "2026-05-20",
+      "cost": 4985.3730420785505,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-23",
@@ -269,6 +278,16 @@
       "pnl_pct": -0.65,
       "entry_date": "2026-05-20",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-20",
+      "action": "BUY",
+      "ticker": "XLC",
+      "shares": 43.2533,
+      "price": 115.26,
+      "cost": 4985.37,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1301,6 +1320,26 @@
       "positions": {},
       "sector": "Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 94712.14,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99697.51,
+      "positions": {
+        "XLC": {
+          "shares": 43.2533,
+          "entry_price": 115.26,
+          "current_price": 115.26,
+          "market_value": 4985.37,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-20",
+          "margin": false
+        }
+      },
+      "sector": "Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-22",
@@ -1310,9 +1349,9 @@
       "latest_value": 22.0,
       "prior_avg": 7.3333,
       "signal_change": 2.0,
-      "signal_label": "HOLD",
+      "signal_label": "RISK_ON",
       "name": "Attention Sentiment Spike Daily Surge In News Rss Counts Mentioning Cyberattack Triggers Bullish Xlc",
-      "last_signal": "HOLD",
+      "last_signal": "RISK_ON",
       "last_run": "2026-05-20",
       "entry_date": "2026-05-20"
     }

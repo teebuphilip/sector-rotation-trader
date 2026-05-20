@@ -1,19 +1,10 @@
 {
-  "cash": 94944.15358001868,
+  "cash": 99933.5295976724,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 50.309931811227244,
+  "fees_paid": 60.5402403419197,
   "taxes_paid": 0.0,
-  "positions": {
-    "XLB": {
-      "shares": 101.09404794410446,
-      "entry_price": 49.435001373291016,
-      "entry_date": "2026-05-20",
-      "cost": 4997.584398948352,
-      "using_margin": false,
-      "consec_below_ma": 0
-    }
-  },
+  "positions": {},
   "trade_log": [
     {
       "date": "2026-05-15",
@@ -72,6 +63,20 @@
       "cost": 4997.58,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-20",
+      "action": "SELL",
+      "ticker": "XLB",
+      "shares": 101.094,
+      "price": 49.455,
+      "proceeds": 4989.38,
+      "fees": 10.23,
+      "tax": 0.0,
+      "pnl": -8.21,
+      "pnl_pct": -0.16,
+      "entry_date": "2026-05-20",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -804,6 +809,16 @@
       },
       "sector": "Commodity Shortage News Volume Burst",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 99933.53,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99933.53,
+      "positions": {},
+      "sector": "Commodity Shortage News Volume Burst",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-02-13",
@@ -814,9 +829,9 @@
       "prior_avg": 9.5,
       "signal_change": 5.6316,
       "entry_date": "2026-05-20",
-      "signal_label": "RISK_ON",
+      "signal_label": "HOLD",
       "name": "Commodity Shortage News Volume Burst",
-      "last_signal": "RISK_ON",
+      "last_signal": "HOLD",
       "last_run": "2026-05-20"
     }
   }

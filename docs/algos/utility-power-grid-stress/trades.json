@@ -33,6 +33,20 @@
       "cost": 4998.99,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-20",
+      "action": "SELL",
+      "ticker": "XLU",
+      "shares": 111.8968,
+      "price": 44.735,
+      "proceeds": 4995.47,
+      "fees": 10.23,
+      "tax": 0.0,
+      "pnl": -3.52,
+      "pnl_pct": -0.07,
+      "entry_date": "2026-05-20",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1142,6 +1156,16 @@
       },
       "sector": "Utility Power Grid Stress",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 99966.35,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99966.35,
+      "positions": {},
+      "sector": "Utility Power Grid Stress",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-18"

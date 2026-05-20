@@ -1,10 +1,19 @@
 {
-  "cash": 99756.00273235315,
+  "cash": 94758.2525957355,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 241.90799833049493,
+  "fees_paid": 251.85799833049492,
   "taxes_paid": 96.1506768843141,
-  "positions": {},
+  "positions": {
+    "XLK": {
+      "shares": 28.355885785606876,
+      "entry_price": 175.89999389648438,
+      "entry_date": "2026-05-20",
+      "cost": 4987.800136617658,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-24",
@@ -293,6 +302,16 @@
       "pnl_pct": 0.81,
       "entry_date": "2026-05-20",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-20",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 28.3559,
+      "price": 175.9,
+      "cost": 4987.8,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1315,6 +1334,26 @@
       "positions": {},
       "sector": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-20",
+      "cash": 94758.25,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99746.05,
+      "positions": {
+        "XLK": {
+          "shares": 28.3559,
+          "entry_price": 175.9,
+          "current_price": 175.9,
+          "market_value": 4987.8,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-20",
+          "margin": false
+        }
+      },
+      "sector": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-23",
@@ -1322,11 +1361,11 @@
   "meta": {
     "daily-spike-in-rss-counts-for-cybersecurity-breach-news-trig": {
       "latest_value": 33.0,
-      "prior_avg": 9.5,
-      "signal_change": 2.4737,
-      "signal_label": "HOLD",
+      "prior_avg": 10.0,
+      "signal_change": 2.3,
+      "signal_label": "RISK_ON",
       "name": "Daily Spike In Rss Counts For Cybersecurity Breach News Triggers Bearish Xlk",
-      "last_signal": "HOLD",
+      "last_signal": "RISK_ON",
       "last_run": "2026-05-20",
       "entry_date": "2026-05-20"
     }
