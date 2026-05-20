@@ -62,6 +62,22 @@ def _unique_algo_id(base_id: str, algo_type: str, used_ids: set[str]) -> str:
         counter += 1
 
 
+def _unique_display_name(base_name: str, algo_type: str, used_names: set[str]) -> str:
+    candidate = base_name
+    if candidate not in used_names:
+        return candidate
+    suffix = f" ({algo_type})" if algo_type else ""
+    candidate = f"{base_name}{suffix}"
+    if candidate not in used_names:
+        return candidate
+    counter = 2
+    while True:
+        candidate = f"{base_name}{suffix} #{counter}"
+        if candidate not in used_names:
+            return candidate
+        counter += 1
+
+
 def get_spy_ytd() -> float:
     """Fetch SPY YTD return percentage."""
     try:
@@ -110,6 +126,7 @@ def load_algo_entries() -> list:
 
     entries = []
     used_ids: set[str] = set()
+    used_names: set[str] = set()
     for state_dir, algo_type in [
         (NORMAL_STATE_DIR, "normal"),
         (CRAZY_STATE_DIR, "crazy"),
@@ -144,6 +161,8 @@ def load_algo_entries() -> list:
                 if isinstance(val, dict) and val.get("name"):
                     name = val["name"]
                     break
+            name = _unique_display_name(name, algo_type, used_names)
+            used_names.add(name)
 
             entries.append({
                 "algo_id": algo_id,
