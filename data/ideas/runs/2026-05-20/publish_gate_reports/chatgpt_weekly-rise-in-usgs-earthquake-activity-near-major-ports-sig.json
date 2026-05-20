@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-20/publish/chatgpt_weekly-rise-in-usgs-earthquake-activity-near-major-ports-sig.md",
+  "target_file": "data/ideas/runs/2026-05-20/build/chatgpt_weekly-rise-in-usgs-earthquake-activity-near-major-ports-sig.md",
+  "verdict": {
+    "decision": "BUILD",
+    "adapter_ok": true,
+    "selected_adapter": "earthquake_activity",
+    "needs_new_adapter": false,
+    "reason": "Spec is clear, uses a valid adapter for USGS earthquake data, and is buildable as is.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "regime shifts"
+    ],
+    "route": {
+      "adapters": [
+        "earthquake_activity"
+      ],
+      "scores": {
+        "earthquake_activity": 3,
+        "tsa_table": 1,
+        "html_table": 1
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 935,
+    "output_tokens": 83
+  },
+  "cost_usd": 0.0031675,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"earthquake_activity\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid adapter for USGS earthquake data, and is buildable as is.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

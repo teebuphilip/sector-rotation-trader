@@ -1,0 +1,40 @@
+{
+  "source_file": "data/ideas/runs/2026-05-20/publish/claude_weekly-fred-series-crb-commodity-index-drop-below-12-month-m.md",
+  "target_file": "data/ideas/runs/2026-05-20/intervention/claude_weekly-fred-series-crb-commodity-index-drop-below-12-month-m.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "data source instability",
+      "false positives",
+      "low_adapter_confidence",
+      "regime shifts",
+      "unsupported_template_adapter"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "google_trends",
+        "html_table",
+        "price_only"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "google_trends": 1,
+        "html_table": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 1009,
+    "output_tokens": 77
+  },
+  "cost_usd": 0.0032925,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a real adapter with matching data source and deterministic logic.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+}

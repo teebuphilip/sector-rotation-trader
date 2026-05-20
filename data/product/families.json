@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-05-20T12:43:17Z",
+  "generated_at": "2026-05-20T13:09:47Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
-      "count": 32,
+      "count": 34,
       "by_status": {
-        "live_only": 11,
+        "live_only": 12,
         "parked": 2,
-        "sandbox": 19
+        "sandbox": 20
       },
       "by_evidence_class": {
-        "live_receipts_only": 11,
-        "needs_history": 19,
+        "live_receipts_only": 12,
+        "needs_history": 20,
         "pending_seed": 2
       },
       "leaders": [
@@ -50,6 +50,30 @@
           "rebalance_frequency": "daily",
           "universe": [
             "XLK"
+          ],
+          "equity": 100000.0,
+          "ytd_pct": 0.0,
+          "trade_count": 0,
+          "positions": 0,
+          "last_snapshot": "2026-05-20",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": null,
+          "backtest_reason": null,
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
+        {
+          "key": "crazy:daily-surge-in-rss-news-counts-for-corporate-bond-downgrade-",
+          "algo_type": "crazy",
+          "algo_id": "daily-surge-in-rss-news-counts-for-corporate-bond-downgrade-",
+          "name": "Daily Surge In Rss News Counts For Corporate Bond Downgrade Signals Credit Stress Rotation",
+          "family": "attention_sentiment",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "universe": [
+            "XLF"
           ],
           "equity": 100000.0,
           "ytd_pct": 0.0,
@@ -121,53 +145,20 @@
           "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: EA, MSFT, NVDA, RBLX, TTWO",
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:reddit-mentions-volatility-spike",
-          "algo_type": "crazy",
-          "algo_id": "reddit-mentions-volatility-spike",
-          "name": "Reddit Mentions Volatility Spike",
-          "family": "attention_sentiment",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "daily",
-          "universe": [
-            "AAPL",
-            "TSLA",
-            "GME",
-            "AMC",
-            "MSFT",
-            "NVDA",
-            "AMD",
-            "NFLX",
-            "META",
-            "BABA"
-          ],
-          "equity": 100000.0,
-          "ytd_pct": 0.0,
-          "trade_count": 0,
-          "positions": 0,
-          "last_snapshot": "2026-05-20",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": "UNSUPPORTED_DATA",
-          "backtest_reason": "V1 only supports SPY/sector ETFs; unsupported tickers: AAPL, AMC, AMD, BABA, GME, META, MSFT, NFLX, NVDA, TSLA",
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
         }
       ]
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 83,
+      "count": 87,
       "by_status": {
         "failed": 1,
-        "live_only": 38,
-        "sandbox": 44
+        "live_only": 39,
+        "sandbox": 47
       },
       "by_evidence_class": {
-        "live_receipts_only": 38,
-        "needs_history": 44,
+        "live_receipts_only": 39,
+        "needs_history": 47,
         "v1_backtested": 1
       },
       "leaders": [
@@ -483,14 +474,14 @@
     },
     "freight_logistics": {
       "family": "freight_logistics",
-      "count": 22,
+      "count": 24,
       "by_status": {
         "live_only": 13,
-        "sandbox": 9
+        "sandbox": 11
       },
       "by_evidence_class": {
         "live_receipts_only": 13,
-        "needs_history": 9
+        "needs_history": 11
       },
       "leaders": [
         {
@@ -622,14 +613,14 @@
     },
     "labor_jobs": {
       "family": "labor_jobs",
-      "count": 24,
+      "count": 28,
       "by_status": {
         "live_only": 12,
-        "sandbox": 12
+        "sandbox": 16
       },
       "by_evidence_class": {
         "live_receipts_only": 12,
-        "needs_history": 12
+        "needs_history": 16
       },
       "leaders": [
         {
@@ -676,6 +667,30 @@
           "equity": 100072.76,
           "ytd_pct": 0.07,
           "trade_count": 2,
+          "positions": 0,
+          "last_snapshot": "2026-05-20",
+          "last_signal": null,
+          "new_algo_date": null,
+          "backtest_status": null,
+          "backtest_reason": null,
+          "backtest_alpha_vs_spy_pct": null,
+          "backtest_trade_count": null
+        },
+        {
+          "key": "crazy:daily-jump-in-google-trends-for-warehouse-worker-strike-sign",
+          "algo_type": "crazy",
+          "algo_id": "daily-jump-in-google-trends-for-warehouse-worker-strike-sign",
+          "name": "Daily Jump In Google Trends For Warehouse Worker Strike Signals Labor Stress In Logistics",
+          "family": "labor_jobs",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "universe": [
+            "XLI"
+          ],
+          "equity": 100000.0,
+          "ytd_pct": 0.0,
+          "trade_count": 0,
           "positions": 0,
           "last_snapshot": "2026-05-20",
           "last_signal": null,
@@ -742,50 +757,19 @@
           "backtest_reason": "No supported V1 price-only backtest path",
           "backtest_alpha_vs_spy_pct": null,
           "backtest_trade_count": null
-        },
-        {
-          "key": "crazy:linkedin",
-          "algo_type": "crazy",
-          "algo_id": "linkedin",
-          "name": "LinkedIn Layoff Propagation",
-          "family": "labor_jobs",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "monthly",
-          "universe": [
-            "XLK",
-            "XLF",
-            "XLE",
-            "XLV",
-            "XLI",
-            "XLC",
-            "XLP",
-            "XLU"
-          ],
-          "equity": 100000.0,
-          "ytd_pct": 0.0,
-          "trade_count": 0,
-          "positions": 0,
-          "last_snapshot": "2026-05-20",
-          "last_signal": null,
-          "new_algo_date": null,
-          "backtest_status": "UNSUPPORTED_DATA",
-          "backtest_reason": "No supported V1 price-only backtest path",
-          "backtest_alpha_vs_spy_pct": null,
-          "backtest_trade_count": null
         }
       ]
     },
     "local_economy_weirdness": {
       "family": "local_economy_weirdness",
-      "count": 31,
+      "count": 33,
       "by_status": {
         "live_only": 12,
-        "sandbox": 19
+        "sandbox": 21
       },
       "by_evidence_class": {
         "live_receipts_only": 12,
-        "needs_history": 19
+        "needs_history": 21
       },
       "leaders": [
         {
@@ -923,16 +907,16 @@
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 69,
+      "count": 72,
       "by_status": {
         "backtest_weak": 1,
         "live_only": 23,
         "parked": 2,
-        "sandbox": 43
+        "sandbox": 46
       },
       "by_evidence_class": {
         "live_receipts_only": 23,
-        "needs_history": 41,
+        "needs_history": 44,
         "pending_seed": 2,
         "v1_backtested": 3
       },
@@ -1223,14 +1207,14 @@
     },
     "travel_mobility": {
       "family": "travel_mobility",
-      "count": 19,
+      "count": 21,
       "by_status": {
         "live_only": 4,
-        "sandbox": 15
+        "sandbox": 17
       },
       "by_evidence_class": {
         "live_receipts_only": 4,
-        "needs_history": 15
+        "needs_history": 17
       },
       "leaders": [
         {

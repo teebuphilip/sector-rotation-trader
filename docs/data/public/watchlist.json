@@ -1,6 +1,6 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-20T12:43:17Z",
+  "generated_at": "2026-05-20T13:09:47Z",
   "algos": [
     {
       "schema_version": "v1",
@@ -1008,6 +1008,42 @@
           }
         },
         "summary": "both_up"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-spike-in-rss-news-counts-on-corporate-dividend-cuts",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-rss-news-counts-on-corporate-dividend-cuts",
+      "name": "Daily Spike In Rss News Counts On Corporate Dividend Cuts",
+      "family": "attention_sentiment",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.01,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": -0.01,
+      "spy_delta_30d_pct": -3.54,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLF",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.186,
+            "return_pct": -0.931
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.459,
+            "return_pct": -2.294
+          }
+        },
+        "summary": "mixed"
       }
     },
     {
@@ -2301,6 +2337,42 @@
             "direction": "DOWN",
             "confidence": 0.315,
             "return_pct": -1.575
+          }
+        },
+        "summary": "mixed"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "key": "crazy:daily-spike-in-google-trends-for-emergency-plumber-near-me-s",
+      "algo_type": "crazy",
+      "algo_id": "daily-spike-in-google-trends-for-emergency-plumber-near-me-s",
+      "name": "Daily Spike In Google Trends For Emergency Plumber Near Me Signals Consumer Stress Lifting Home Repair Demand",
+      "family": "consumer_stress",
+      "status": "live_only",
+      "evidence_class": "live_receipts_only",
+      "rebalance_frequency": "daily",
+      "ytd_pct": -0.1,
+      "days_running": 0,
+      "beat_spy": null,
+      "spy_pct": null,
+      "alpha_pct": null,
+      "ret_30d_pct": 0.0,
+      "spy_delta_30d_pct": -3.53,
+      "last_snapshot": "2026-05-20",
+      "new_algo_date": null,
+      "comparator": {
+        "primary_etf": "XLY",
+        "signals": {
+          "momentum_5d": {
+            "direction": "DOWN",
+            "confidence": 0.551,
+            "return_pct": -2.756
+          },
+          "momentum_20d": {
+            "direction": "DOWN",
+            "confidence": 0.662,
+            "return_pct": -3.312
           }
         },
         "summary": "mixed"

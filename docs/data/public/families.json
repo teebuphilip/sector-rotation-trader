@@ -1,18 +1,18 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-20T12:43:17Z",
+  "generated_at": "2026-05-20T13:09:47Z",
   "families": {
     "attention_sentiment": {
       "family": "attention_sentiment",
-      "count": 32,
+      "count": 34,
       "by_status": {
-        "live_only": 11,
+        "live_only": 12,
         "parked": 2,
-        "sandbox": 19
+        "sandbox": 20
       },
       "by_evidence_class": {
-        "live_receipts_only": 11,
-        "needs_history": 19,
+        "live_receipts_only": 12,
+        "needs_history": 20,
         "pending_seed": 2
       },
       "leaders": [
@@ -51,27 +51,6 @@
             },
             "summary": "mixed"
           }
-        },
-        {
-          "schema_version": "v1",
-          "key": "crazy:reddit-mentions-volatility-spike",
-          "algo_type": "crazy",
-          "algo_id": "reddit-mentions-volatility-spike",
-          "name": "Reddit Mentions Volatility Spike",
-          "family": "attention_sentiment",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "daily",
-          "ytd_pct": 0.0,
-          "days_running": 103,
-          "beat_spy": false,
-          "spy_pct": 7.69,
-          "alpha_pct": -7.69,
-          "ret_30d_pct": 0.0,
-          "spy_delta_30d_pct": -3.53,
-          "last_snapshot": "2026-05-20",
-          "new_algo_date": null,
-          "comparator": null
         },
         {
           "schema_version": "v1",
@@ -150,20 +129,56 @@
             },
             "summary": "mixed"
           }
+        },
+        {
+          "schema_version": "v1",
+          "key": "crazy:daily-surge-in-rss-news-counts-for-corporate-bond-downgrade-",
+          "algo_type": "crazy",
+          "algo_id": "daily-surge-in-rss-news-counts-for-corporate-bond-downgrade-",
+          "name": "Daily Surge In Rss News Counts For Corporate Bond Downgrade Signals Credit Stress Rotation",
+          "family": "attention_sentiment",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "ytd_pct": 0.0,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.0,
+          "spy_delta_30d_pct": -3.53,
+          "last_snapshot": "2026-05-20",
+          "new_algo_date": null,
+          "comparator": {
+            "primary_etf": "XLF",
+            "signals": {
+              "momentum_5d": {
+                "direction": "DOWN",
+                "confidence": 0.186,
+                "return_pct": -0.931
+              },
+              "momentum_20d": {
+                "direction": "DOWN",
+                "confidence": 0.459,
+                "return_pct": -2.294
+              }
+            },
+            "summary": "mixed"
+          }
         }
       ]
     },
     "consumer_stress": {
       "family": "consumer_stress",
-      "count": 83,
+      "count": 87,
       "by_status": {
         "failed": 1,
-        "live_only": 38,
-        "sandbox": 44
+        "live_only": 39,
+        "sandbox": 47
       },
       "by_evidence_class": {
-        "live_receipts_only": 38,
-        "needs_history": 44,
+        "live_receipts_only": 39,
+        "needs_history": 47,
         "v1_backtested": 1
       },
       "leaders": [
@@ -439,14 +454,14 @@
     },
     "freight_logistics": {
       "family": "freight_logistics",
-      "count": 22,
+      "count": 24,
       "by_status": {
         "live_only": 13,
-        "sandbox": 9
+        "sandbox": 11
       },
       "by_evidence_class": {
         "live_receipts_only": 13,
-        "needs_history": 9
+        "needs_history": 11
       },
       "leaders": [
         {
@@ -618,14 +633,14 @@
     },
     "labor_jobs": {
       "family": "labor_jobs",
-      "count": 24,
+      "count": 28,
       "by_status": {
         "live_only": 12,
-        "sandbox": 12
+        "sandbox": 16
       },
       "by_evidence_class": {
         "live_receipts_only": 12,
-        "needs_history": 12
+        "needs_history": 16
       },
       "leaders": [
         {
@@ -687,27 +702,6 @@
         },
         {
           "schema_version": "v1",
-          "key": "crazy:linkedin",
-          "algo_type": "crazy",
-          "algo_id": "linkedin",
-          "name": "LinkedIn Layoff Propagation",
-          "family": "labor_jobs",
-          "status": "sandbox",
-          "evidence_class": "needs_history",
-          "rebalance_frequency": "monthly",
-          "ytd_pct": 0.0,
-          "days_running": 103,
-          "beat_spy": false,
-          "spy_pct": 7.69,
-          "alpha_pct": -7.69,
-          "ret_30d_pct": 0.0,
-          "spy_delta_30d_pct": -3.53,
-          "last_snapshot": "2026-05-20",
-          "new_algo_date": null,
-          "comparator": null
-        },
-        {
-          "schema_version": "v1",
           "key": "crazy:glassdoor",
           "algo_type": "crazy",
           "algo_id": "glassdoor",
@@ -762,19 +756,55 @@
             },
             "summary": "mixed"
           }
+        },
+        {
+          "schema_version": "v1",
+          "key": "crazy:daily-jump-in-google-trends-for-warehouse-worker-strike-sign",
+          "algo_type": "crazy",
+          "algo_id": "daily-jump-in-google-trends-for-warehouse-worker-strike-sign",
+          "name": "Daily Jump In Google Trends For Warehouse Worker Strike Signals Labor Stress In Logistics",
+          "family": "labor_jobs",
+          "status": "sandbox",
+          "evidence_class": "needs_history",
+          "rebalance_frequency": "daily",
+          "ytd_pct": 0.0,
+          "days_running": 0,
+          "beat_spy": null,
+          "spy_pct": null,
+          "alpha_pct": null,
+          "ret_30d_pct": 0.0,
+          "spy_delta_30d_pct": -3.53,
+          "last_snapshot": "2026-05-20",
+          "new_algo_date": null,
+          "comparator": {
+            "primary_etf": "XLI",
+            "signals": {
+              "momentum_5d": {
+                "direction": "DOWN",
+                "confidence": 0.644,
+                "return_pct": -3.218
+              },
+              "momentum_20d": {
+                "direction": "DOWN",
+                "confidence": 0.315,
+                "return_pct": -1.575
+              }
+            },
+            "summary": "mixed"
+          }
         }
       ]
     },
     "local_economy_weirdness": {
       "family": "local_economy_weirdness",
-      "count": 31,
+      "count": 33,
       "by_status": {
         "live_only": 12,
-        "sandbox": 19
+        "sandbox": 21
       },
       "by_evidence_class": {
         "live_receipts_only": 12,
-        "needs_history": 19
+        "needs_history": 21
       },
       "leaders": [
         {
@@ -931,16 +961,16 @@
     },
     "macro_input_pressure": {
       "family": "macro_input_pressure",
-      "count": 69,
+      "count": 72,
       "by_status": {
         "backtest_weak": 1,
         "live_only": 23,
         "parked": 2,
-        "sandbox": 43
+        "sandbox": 46
       },
       "by_evidence_class": {
         "live_receipts_only": 23,
-        "needs_history": 41,
+        "needs_history": 44,
         "pending_seed": 2,
         "v1_backtested": 3
       },
@@ -1252,14 +1282,14 @@
     },
     "travel_mobility": {
       "family": "travel_mobility",
-      "count": 19,
+      "count": 21,
       "by_status": {
         "live_only": 4,
-        "sandbox": 15
+        "sandbox": 17
       },
       "by_evidence_class": {
         "live_receipts_only": 4,
-        "needs_history": 15
+        "needs_history": 17
       },
       "leaders": [
         {

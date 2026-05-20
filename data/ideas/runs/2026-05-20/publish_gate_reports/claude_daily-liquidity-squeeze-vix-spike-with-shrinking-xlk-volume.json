@@ -1,0 +1,34 @@
+{
+  "source_file": "data/ideas/runs/2026-05-20/publish/claude_daily-liquidity-squeeze-vix-spike-with-shrinking-xlk-volume.md",
+  "target_file": "data/ideas/runs/2026-05-20/intervention/claude_daily-liquidity-squeeze-vix-spike-with-shrinking-xlk-volume.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": false,
+    "reason": "price_only currently provides close/value data, not volume.",
+    "risk_flags": [
+      "entry logic depends on volume",
+      "potential data source mismatch",
+      "price_only_volume_gap",
+      "volume data required but price_only adapter lacks volume"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "html_table": 1,
+        "price_only": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 1004,
+    "output_tokens": 88
+  },
+  "cost_usd": 0.00339,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"price_only adapter does not provide volume data required for XLK volume condition\",\n  \"risk_flags\": [\"volume data required but price_only adapter lacks volume\", \"potential data source mismatch\", \"entry logic depends on volume\"]\n}\n```"
+}

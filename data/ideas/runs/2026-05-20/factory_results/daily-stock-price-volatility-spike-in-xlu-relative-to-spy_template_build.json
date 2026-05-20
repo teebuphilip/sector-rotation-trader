@@ -1,0 +1,15 @@
+{
+  "spec_file": "data/ideas/runs/2026-05-20/build/claude_daily-stock-price-volatility-spike-in-xlu-relative-to-spy.md",
+  "out": "crazy/algos/daily_stock_price_volatility_spike_in_xlu_relative_to_spy.py",
+  "adapter": "price_only",
+  "idea_id": "daily-stock-price-volatility-spike-in-xlu-relative-to-spy",
+  "name": "Daily Stock Price Volatility Spike In Xlu Relative To Spy",
+  "universe": [
+    "XLU"
+  ],
+  "frequency": "daily",
+  "family": "macro_input_pressure",
+  "threshold": 0.1,
+  "direction": "up",
+  "hold_days": 8
+}

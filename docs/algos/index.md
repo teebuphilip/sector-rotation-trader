@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-05-20T12:43:17
+Updated (UTC): 2026-05-20T13:09:46
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 299
+Crazy models: 318
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -315,3 +315,22 @@ Crazy models: 299
 | vix-to-realized-volatility-contraction-signals-mean-reversio | Vix-to-realized Volatility Contraction Signals Mean Reversion Opportunity In Large Caps | daily |
 | weekly-ev-charger-network-density-jump-in-rural-counties | Weekly Ev Charger Network Density Jump In Rural Counties | weekly |
 | weekly-spike-in-food-bank-demand-google-trends-signals-consu | Weekly Spike In Food Bank Demand Google Trends Signals Consumer Staples Demand Surge | weekly |
+| daily-jump-in-google-trends-for-warehouse-worker-strike-sign | Daily Jump In Google Trends For Warehouse Worker Strike Signals Labor Stress In Logistics | daily |
+| daily-spike-in-google-trends-for-emergency-plumber-near-me-s | Daily Spike In Google Trends For Emergency Plumber Near Me Signals Consumer Stress Lifting Home Repair Demand | daily |
+| daily-surge-in-google-trends-for-electric-vehicle-charging-s | Daily Surge In Google Trends For Electric Vehicle Charging Station Outage Signals Green Tech Stress | daily |
+| daily-surge-in-google-trends-for-emergency-food-delivery-sig | Daily Surge In Google Trends For Emergency Food Delivery Signals Consumer Stress Lifting Staples Demand | daily |
+| daily-surge-in-rss-news-counts-for-corporate-bond-downgrade- | Daily Surge In Rss News Counts For Corporate Bond Downgrade Signals Credit Stress Rotation | daily |
+| weekly-jump-in-google-trends-for-home-moving-truck-rental-de | Weekly Jump In Google Trends For Home Moving Truck Rental Demand Signals Housing Market Activity | weekly |
+| weekly-jump-in-google-trends-for-truck-driver-shortage-signa | Weekly Jump In Google Trends For Truck Driver Shortage Signals Labor Stress In Transportation | weekly |
+| weekly-jump-in-google-trends-for-warehouse-automation-jobs-s | Weekly Jump In Google Trends For Warehouse Automation Jobs Signals Labor Substitution Pressure | weekly |
+| weekly-jump-in-rss-news-counts-for-coal-shortage-signals-inp | Weekly Jump In Rss News Counts For Coal Shortage Signals Input Cost Pressure In Materials | weekly |
+| weekly-rise-in-google-trends-for-freight-train-delays-signal | Weekly Rise In Google Trends For Freight Train Delays Signals Logistics Bottlenecks | weekly |
+| weekly-rise-in-google-trends-for-solar-panel-installation-de | Weekly Rise In Google Trends For Solar Panel Installation Delay Signals Supply Chain Issues In Green Energy | weekly |
+| weekly-rise-in-usgs-earthquake-activity-near-major-ports-sig | Weekly Rise In Usgs Earthquake Activity Near Major Ports Signals Potential Freight Disruptions | weekly |
+| weekly-surge-in-google-trends-for-last-minute-flight-deals-s | Weekly Surge In Google Trends For Last Minute Flight Deals Signals Travel Demand Rebound | weekly |
+| daily-jump-in-google-trends-for-bank-account-overdraft-fees | Daily Jump In Google Trends For Bank Account Overdraft Fees | daily |
+| daily-spike-in-rss-news-counts-on-corporate-dividend-cuts | Daily Spike In Rss News Counts On Corporate Dividend Cuts | daily |
+| daily-stock-price-volatility-spike-in-xlu-relative-to-spy | Daily Stock Price Volatility Spike In Xlu Relative To Spy | daily |
+| weekly-ev-charger-expansion-in-underserved-regions | Weekly Ev Charger Expansion In Underserved Regions | weekly |
+| weekly-google-trends-surge-in-pest-control-searches | Weekly Google Trends Surge In Pest Control Searches | weekly |
+| weekly-rss-count-spike-on-warehouse-worker-injury-reports | Weekly Rss Count Spike On Warehouse Worker Injury Reports | weekly |
