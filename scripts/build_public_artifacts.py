@@ -230,6 +230,25 @@ def _sort_public_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return sorted(rows, key=key, reverse=True)
 
 
+def _normalize_display_names(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    used: set[str] = set()
+    out: list[dict[str, Any]] = []
+    for row in rows:
+        item = dict(row)
+        base_name = str(item.get('name') or item.get('algo_id') or 'Unknown')
+        candidate = base_name
+        if candidate in used:
+            candidate = f"{base_name} (alt)"
+            counter = 2
+            while candidate in used:
+                candidate = f"{base_name} (alt) #{counter}"
+                counter += 1
+        item['name'] = candidate
+        used.add(candidate)
+        out.append(item)
+    return out
+
+
 def _build_benchmarks(rank_rows: dict[tuple[str, str], dict[str, Any]], rolling_doc: dict[str, Any]) -> dict[str, dict[str, Any]]:
     spy_ytd = None
     for row in rank_rows.values():
@@ -284,7 +303,7 @@ def main() -> int:
         rank = rank_rows.get((str(item.get('algo_type') or ''), str(item.get('algo_id') or '')))
         rolling = rolling_rows.get((str(item.get('algo_type') or ''), str(item.get('algo_id') or '')))
         public_algos.append(_strip_algo_row(item, rank, rolling, spy_ret_30d, comparison_doc))
-    public_algos = _sort_public_rows(public_algos)
+    public_algos = _normalize_display_names(_sort_public_rows(public_algos))
 
     def project_block(block: dict[str, Any]) -> dict[str, Any]:
         rows = []
@@ -297,7 +316,7 @@ def main() -> int:
         return {
             'schema_version': PUBLIC_SCHEMA_VERSION,
             'generated_at': block.get('generated_at'),
-            'algos': _sort_public_rows(rows),
+            'algos': _normalize_display_names(_sort_public_rows(rows)),
         }
 
     public_families: dict[str, Any] = {
@@ -318,7 +337,7 @@ def main() -> int:
             'count': payload.get('count', 0),
             'by_status': payload.get('by_status', {}),
             'by_evidence_class': payload.get('by_evidence_class', {}),
-            'leaders': _sort_public_rows(rows)[:5],
+            'leaders': _normalize_display_names(_sort_public_rows(rows))[:5],
         }
 
     daily_payload = {
@@ -361,6 +380,9 @@ def main() -> int:
             ],
         },
     }
+
+    daily_payload['top_live_ytd'] = _normalize_display_names(daily_payload['top_live_ytd'])
+    daily_payload['rolling_30d']['leaders'] = _normalize_display_names(daily_payload['rolling_30d']['leaders'])
 
     leaderboard_payload = {
         'schema_version': PUBLIC_SCHEMA_VERSION,
