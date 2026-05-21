@@ -1,10 +1,19 @@
 {
-  "cash": 99892.17734025662,
+  "cash": 94887.61847324378,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 100.79334396922167,
+  "fees_paid": 110.74334396922167,
   "taxes_paid": 5.705677411551332,
-  "positions": {},
+  "positions": {
+    "XLI": {
+      "shares": 29.288740413802195,
+      "entry_price": 170.52999877929688,
+      "entry_date": "2026-05-21",
+      "cost": 4994.608867012831,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-05-13",
@@ -125,6 +134,16 @@
       "pnl_pct": -0.47,
       "entry_date": "2026-05-20",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-21",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 29.2887,
+      "price": 170.53,
+      "cost": 4994.61,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -927,20 +946,40 @@
       "positions": {},
       "sector": "Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-21",
+      "cash": 94887.62,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99882.23,
+      "positions": {
+        "XLI": {
+          "shares": 29.2887,
+          "entry_price": 170.53,
+          "current_price": 170.53,
+          "market_value": 4994.61,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-21",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-02-11",
-  "last_run": "2026-05-20",
+  "last_run": "2026-05-21",
   "meta": {
     "weekly-rise-in-rss-count-for-labor-strike-news-signals-indus": {
-      "latest_value": 64.0,
-      "prior_avg": 3.5,
-      "signal_change": 17.2857,
-      "entry_date": "2026-05-20",
-      "signal_label": "HOLD",
+      "latest_value": 46.0,
+      "prior_avg": 5.0,
+      "signal_change": 8.2,
+      "entry_date": "2026-05-21",
+      "signal_label": "RISK_ON",
       "name": "Weekly Rise In Rss Count For Labor Strike News Signals Industrial Sector Risk",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-20"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-21"
     }
   }
 }

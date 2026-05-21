@@ -3209,14 +3209,43 @@
       },
       "sector": "Algo Baileymol (Chaos Monger)",
       "num_positions": 2
+    },
+    {
+      "date": "2026-05-21",
+      "cash": 36001.39,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 108057.74,
+      "positions": {
+        "XLE": {
+          "shares": 594.6069,
+          "entry_price": 60.58,
+          "current_price": 59.13,
+          "market_value": 35159.11,
+          "unrealized_pnl": -862.18,
+          "entry_date": "2026-05-18",
+          "margin": false
+        },
+        "XLK": {
+          "shares": 206.5915,
+          "entry_price": 174.36,
+          "current_price": 178.6,
+          "market_value": 36897.24,
+          "unrealized_pnl": 875.95,
+          "entry_date": "2026-05-18",
+          "margin": false
+        }
+      },
+      "sector": "Algo Baileymol (Chaos Monger)",
+      "num_positions": 2
     }
   ],
   "sim_start": "2026-01-11",
-  "last_run": "2026-05-20",
+  "last_run": "2026-05-21",
   "meta": {
     "baileymol": {
       "name": "Algo Baileymol (Chaos Monger)",
-      "last_run": "2026-05-20",
+      "last_run": "2026-05-21",
       "last_signal": "XLE,XLI,XLK"
     }
   }

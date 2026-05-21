@@ -201,6 +201,20 @@
       "cost": 4988.35,
       "margin": false,
       "fees": 9.95
+    },
+    {
+      "date": "2026-05-21",
+      "action": "SELL",
+      "ticker": "XLI",
+      "shares": 29.2178,
+      "price": 170.53,
+      "proceeds": 4972.3,
+      "fees": 10.21,
+      "tax": 0.0,
+      "pnl": -16.05,
+      "pnl_pct": -0.32,
+      "entry_date": "2026-05-20",
+      "reason": "rebalance"
     }
   ],
   "daily_snapshots": [
@@ -1323,6 +1337,16 @@
       },
       "sector": "Electricity Enlightenment",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-21",
+      "cash": 99740.98,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99740.98,
+      "positions": {},
+      "sector": "Electricity Enlightenment",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-18"

@@ -1400,14 +1400,34 @@
       },
       "sector": "Quantified Simple Monthly Rotation",
       "num_positions": 1
+    },
+    {
+      "date": "2026-05-21",
+      "cash": -0.0,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 111963.78,
+      "positions": {
+        "XLK": {
+          "shares": 626.8969,
+          "entry_price": 159.5,
+          "current_price": 178.6,
+          "market_value": 111963.78,
+          "unrealized_pnl": 11973.73,
+          "entry_date": "2026-04-30",
+          "margin": false
+        }
+      },
+      "sector": "Quantified Simple Monthly Rotation",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-11",
-  "last_run": "2026-05-20",
+  "last_run": "2026-05-21",
   "meta": {
     "simple_monthly": {
       "name": "Quantified Simple Monthly Rotation",
-      "last_run": "2026-05-20",
+      "last_run": "2026-05-21",
       "last_signal": "XLK"
     }
   }

@@ -1,10 +1,19 @@
 {
-  "cash": 99917.37257053208,
+  "cash": 94911.55394200548,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 80.72044849192807,
+  "fees_paid": 90.67044849192807,
   "taxes_paid": 0.0,
-  "positions": {},
+  "positions": {
+    "XLB": {
+      "shares": 99.87742068785187,
+      "entry_price": 50.02000045776367,
+      "entry_date": "2026-05-21",
+      "cost": 4995.868628526605,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-05-15",
@@ -101,6 +110,16 @@
       "pnl_pct": -0.12,
       "entry_date": "2026-05-20",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-21",
+      "action": "BUY",
+      "ticker": "XLB",
+      "shares": 99.8774,
+      "price": 50.02,
+      "cost": 4995.87,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -873,20 +892,40 @@
       "positions": {},
       "sector": "Commodity Shortage News Volume Burst",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-21",
+      "cash": 94911.55,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99907.42,
+      "positions": {
+        "XLB": {
+          "shares": 99.8774,
+          "entry_price": 50.02,
+          "current_price": 50.02,
+          "market_value": 4995.87,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-21",
+          "margin": false
+        }
+      },
+      "sector": "Commodity Shortage News Volume Burst",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-02-13",
-  "last_run": "2026-05-20",
+  "last_run": "2026-05-21",
   "meta": {
     "commodity-shortage-news-volume-burst": {
       "latest_value": 76.0,
-      "prior_avg": 5.75,
-      "signal_change": 12.2174,
-      "entry_date": "2026-05-20",
-      "signal_label": "HOLD",
+      "prior_avg": 6.75,
+      "signal_change": 10.2593,
+      "entry_date": "2026-05-21",
+      "signal_label": "RISK_ON",
       "name": "Commodity Shortage News Volume Burst",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-20"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-21"
     }
   }
 }

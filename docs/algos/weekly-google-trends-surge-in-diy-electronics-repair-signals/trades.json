@@ -263,6 +263,16 @@
       "pnl_pct": 2.04,
       "entry_date": "2026-05-07",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-21",
+      "action": "BUY",
+      "ticker": "XLK",
+      "shares": 28.0182,
+      "price": 178.6,
+      "cost": 5004.05,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1265,6 +1275,26 @@
       "positions": {},
       "sector": "Weekly Google Trends Surge In Diy Electronics Repair Signals Tech Consumer Stress Lift",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-21",
+      "cash": 95067.02,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100071.07,
+      "positions": {
+        "XLK": {
+          "shares": 28.0182,
+          "entry_price": 178.6,
+          "current_price": 178.6,
+          "market_value": 5004.05,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-21",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Google Trends Surge In Diy Electronics Repair Signals Tech Consumer Stress Lift",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-01-27"

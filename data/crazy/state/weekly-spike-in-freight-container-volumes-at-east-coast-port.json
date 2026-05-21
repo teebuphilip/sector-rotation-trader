@@ -1,10 +1,19 @@
 {
-  "cash": 99669.33303318263,
+  "cash": 94675.9163815235,
   "borrowed": 0.0,
   "accrued_interest": 0.0,
-  "fees_paid": 403.1814409634334,
+  "fees_paid": 413.13144096343336,
   "taxes_paid": 170.9172372456224,
-  "positions": {},
+  "positions": {
+    "XLI": {
+      "shares": 29.223401673208404,
+      "entry_price": 170.52999877929688,
+      "entry_date": "2026-05-21",
+      "cost": 4983.4666516591315,
+      "using_margin": false,
+      "consec_below_ma": 0
+    }
+  },
   "trade_log": [
     {
       "date": "2026-04-01",
@@ -485,6 +494,16 @@
       "pnl_pct": -0.47,
       "entry_date": "2026-05-20",
       "reason": "rebalance"
+    },
+    {
+      "date": "2026-05-21",
+      "action": "BUY",
+      "ticker": "XLI",
+      "shares": 29.2234,
+      "price": 170.53,
+      "cost": 4983.47,
+      "margin": false,
+      "fees": 9.95
     }
   ],
   "daily_snapshots": [
@@ -1447,20 +1466,40 @@
       "positions": {},
       "sector": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-21",
+      "cash": 94675.92,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 99659.38,
+      "positions": {
+        "XLI": {
+          "shares": 29.2234,
+          "entry_price": 170.53,
+          "current_price": 170.53,
+          "market_value": 4983.47,
+          "unrealized_pnl": 0.0,
+          "entry_date": "2026-05-21",
+          "margin": false
+        }
+      },
+      "sector": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
+      "num_positions": 1
     }
   ],
   "sim_start": "2026-02-10",
-  "last_run": "2026-05-20",
+  "last_run": "2026-05-21",
   "meta": {
     "weekly-spike-in-freight-container-volumes-at-east-coast-port": {
       "latest_value": 890861.0,
       "prior_avg": 795107.6875,
       "signal_change": 0.1204,
-      "signal_label": "HOLD",
-      "entry_date": "2026-05-20",
+      "signal_label": "RISK_ON",
+      "entry_date": "2026-05-21",
       "name": "Weekly Spike In Freight Container Volumes At East Coast Ports Signals Industrial Sector Strength",
-      "last_signal": "HOLD",
-      "last_run": "2026-05-20"
+      "last_signal": "RISK_ON",
+      "last_run": "2026-05-21"
     }
   }
 }

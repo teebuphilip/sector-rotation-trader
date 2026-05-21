@@ -966,19 +966,29 @@
       "positions": {},
       "sector": "Rental Car Shortage Volatility Spike",
       "num_positions": 0
+    },
+    {
+      "date": "2026-05-21",
+      "cash": 100000,
+      "borrowed": 0.0,
+      "interest": 0.0,
+      "equity": 100000.0,
+      "positions": {},
+      "sector": "Rental Car Shortage Volatility Spike",
+      "num_positions": 0
     }
   ],
   "sim_start": "2026-01-21",
-  "last_run": "2026-05-20",
+  "last_run": "2026-05-21",
   "meta": {
     "rental-car-shortage-volatility-spike": {
       "signal_label": "HOLD",
       "name": "Rental Car Shortage Volatility Spike",
       "last_signal": "HOLD",
-      "last_run": "2026-05-20",
+      "last_run": "2026-05-21",
       "latest_value": 16.0,
-      "prior_avg": 44.8571,
-      "signal_change": -0.6433
+      "prior_avg": 48.0357,
+      "signal_change": -0.6669
     }
   }
 }
