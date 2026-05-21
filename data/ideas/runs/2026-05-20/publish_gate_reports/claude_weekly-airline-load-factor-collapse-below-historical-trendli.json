@@ -30,5 +30,5 @@
     "output_tokens": 81
   },
   "cost_usd": 0.0032475,
-  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"bts_airline_load_factor\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid existing adapter with matching data source and frequency.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
+  "raw_llm_response": "```json\n{\n  \"decision\": \"BUILD\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"bts_airline_load_factor\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec is clear, uses a valid existing adapter with appropriate frequency and data source.\",\n  \"risk_flags\": [\"data source instability\", \"false positives\", \"regime shifts\"]\n}\n```"
 }
