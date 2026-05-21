@@ -1,0 +1,33 @@
+{
+  "source_file": "data/ideas/runs/2026-05-21/publish/chatgpt_daily-spike-in-google-trends-for-urgent-local-business-permi.md",
+  "target_file": "data/ideas/runs/2026-05-21/intervention/chatgpt_daily-spike-in-google-trends-for-urgent-local-business-permi.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": true,
+    "selected_adapter": "google_trends",
+    "needs_new_adapter": false,
+    "reason": "Current structural algo envelope supports long/flat allocation, not native short trades.",
+    "risk_flags": [
+      "data source stability",
+      "position sizing unclear for long-only system",
+      "requires shorting",
+      "short_trade_not_supported"
+    ],
+    "route": {
+      "adapters": [
+        "google_trends"
+      ],
+      "scores": {
+        "google_trends": 2
+      },
+      "top_score": 2,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 909,
+    "output_tokens": 82
+  },
+  "cost_usd": 0.0030925,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"google_trends\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Spec requires short exposure which is not supported by current algo envelope.\",\n  \"risk_flags\": [\"requires shorting\", \"position sizing unclear for long-only system\", \"data source stability\"]\n}\n```"
+}

@@ -1,0 +1,36 @@
+{
+  "source_file": "data/ideas/runs/2026-05-21/publish/claude_freight-ton-miles-volume-contraction-logistics-weakness.md",
+  "target_file": "data/ideas/runs/2026-05-21/intervention/claude_freight-ton-miles-volume-contraction-logistics-weakness.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "Template builder does not support fred_series yet.",
+    "risk_flags": [
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "potential data source instability",
+      "unsupported_template_adapter",
+      "weekly frequency requires validation"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "tsa_table"
+      ],
+      "scores": {
+        "fred_series": 1,
+        "tsa_table": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 971,
+    "output_tokens": 80
+  },
+  "cost_usd": 0.0032275,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": true,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"Low confidence in deterministic adapter routing and weekly frequency needs manual review.\",\n  \"risk_flags\": [\"low adapter routing confidence\", \"weekly frequency requires validation\", \"potential data source instability\"]\n}\n```"
+}

@@ -1,0 +1,32 @@
+{
+  "source_file": "data/ideas/runs/2026-05-21/publish/claude_volatility-expansion-xlv-defensive-safe-haven-rotation.md",
+  "target_file": "data/ideas/runs/2026-05-21/intervention/claude_volatility-expansion-xlv-defensive-safe-haven-rotation.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "price_only",
+    "needs_new_adapter": true,
+    "reason": "Spec requires VIX and XLV relative performance plus SPY data, but price_only adapter does not support multi-symbol relative returns or volume.",
+    "risk_flags": [
+      "adapter mismatch",
+      "multi-symbol relative performance",
+      "volume not specified"
+    ],
+    "route": {
+      "adapters": [
+        "price_only"
+      ],
+      "scores": {
+        "price_only": 3
+      },
+      "top_score": 3,
+      "confidence": "ok"
+    }
+  },
+  "usage": {
+    "input_tokens": 992,
+    "output_tokens": 92
+  },
+  "cost_usd": 0.0034,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"price_only\",\n  \"needs_new_adapter\": true,\n  \"reason\": \"Spec requires VIX and XLV relative performance plus SPY data, but price_only adapter does not support multi-symbol relative returns or volume.\",\n  \"risk_flags\": [\"multi-symbol relative performance\", \"volume not specified\", \"adapter mismatch\"]\n}\n```"
+}

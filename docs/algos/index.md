@@ -1,6 +1,6 @@
 # Algo Index
 
-Updated (UTC): 2026-05-21T23:46:40
+Updated (UTC): 2026-05-21T23:52:18
 
 Normal models: 5
 
@@ -12,7 +12,7 @@ Normal models: 5
 | biscotti | Algo Biscotti (Unconditional Loyalty) | monthly_eom |
 | baileymol | Algo Baileymol (Chaos Monger) | weekly |
 
-Crazy models: 318
+Crazy models: 327
 
 | Algo ID | Name | Frequency |
 | --- | --- | --- |
@@ -334,3 +334,12 @@ Crazy models: 318
 | weekly-ev-charger-expansion-in-underserved-regions | Weekly Ev Charger Expansion In Underserved Regions | weekly |
 | weekly-google-trends-surge-in-pest-control-searches | Weekly Google Trends Surge In Pest Control Searches | weekly |
 | weekly-rss-count-spike-on-warehouse-worker-injury-reports | Weekly Rss Count Spike On Warehouse Worker Injury Reports | weekly |
+| daily-surge-in-google-trends-for-emergency-hvac-repair-signa | Daily Surge In Google Trends For Emergency Hvac Repair Signals Consumer Stress Boosting Home Improvement | daily |
+| daily-surge-in-open-charge-map-ev-charger-new-install-counts | Daily Surge In Open Charge Map Ev Charger New Install Counts Signals Auto Tech Growth | daily |
+| weekly-google-trends-spike-for-urgent-job-resignation-search | Weekly Google Trends Spike For Urgent Job Resignation Searches Signals Labor Market Stress | weekly |
+| weekly-google-trends-spike-in-searches-for-home-solar-panel- | Weekly Google Trends Spike In Searches For Home Solar Panel Repair Signals Green Energy Sector Repair Demand | weekly |
+| weekly-google-trends-surge-for-warehouse-automation-interest | Weekly Google Trends Surge For Warehouse Automation Interest Signals Industrial Tech Demand | weekly |
+| weekly-surge-in-google-trends-for-car-rental-pickup-delays-s | Weekly Surge In Google Trends For Car Rental Pickup Delays Signals Travel Disruption | weekly |
+| ev-charger-rollout-acceleration-green-energy-sector-tailwind | Ev Charger Rollout Acceleration Green Energy Sector Tailwind | weekly |
+| google-trends-surge-in-bankruptcy-search-intent | Google Trends Surge In Bankruptcy Search Intent | weekly |
+| rss-count-surge-for-supply-chain-bottleneck-news | Rss Count Surge For Supply Chain Bottleneck News | daily |

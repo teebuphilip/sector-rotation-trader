@@ -1,0 +1,38 @@
+{
+  "source_file": "data/ideas/runs/2026-05-21/publish/claude_natural-gas-price-spike-industrial-margin-squeeze.md",
+  "target_file": "data/ideas/runs/2026-05-21/intervention/claude_natural-gas-price-spike-industrial-margin-squeeze.md",
+  "verdict": {
+    "decision": "INTERVENTION",
+    "adapter_ok": false,
+    "selected_adapter": "fred_series",
+    "needs_new_adapter": true,
+    "reason": "price_only currently provides close/value data, not volume.",
+    "risk_flags": [
+      "low adapter routing confidence",
+      "low_adapter_confidence",
+      "price_only_volume_gap",
+      "unsupported_template_adapter",
+      "volume required but fred_series is price_only"
+    ],
+    "route": {
+      "adapters": [
+        "fred_series",
+        "price_only",
+        "weather_series"
+      ],
+      "scores": {
+        "weather_series": 1,
+        "fred_series": 1,
+        "price_only": 1
+      },
+      "top_score": 1,
+      "confidence": "low"
+    }
+  },
+  "usage": {
+    "input_tokens": 989,
+    "output_tokens": 78
+  },
+  "cost_usd": 0.0032525,
+  "raw_llm_response": "```json\n{\n  \"decision\": \"INTERVENTION\",\n  \"adapter_ok\": false,\n  \"selected_adapter\": \"fred_series\",\n  \"needs_new_adapter\": false,\n  \"reason\": \"fred_series does not provide volume data needed for the signal logic\",\n  \"risk_flags\": [\"volume required but fred_series is price_only\", \"low adapter routing confidence\"]\n}\n```"
+}
