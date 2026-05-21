@@ -1,0 +1,152 @@
+{
+  "date": "2026-05-21",
+  "input_count": 24,
+  "kept_count": 22,
+  "duplicate_count": 2,
+  "kept_by_source": {
+    "chatgpt": 12,
+    "claude": 10
+  },
+  "duplicates": [
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-usgs-earthquake-activity-near-major-ports-sig",
+      "title": "Daily Spike In Usgs Earthquake Activity Near Major Ports Signals Freight Disruption Risk",
+      "family": "freight_logistics",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "daily spike in usgs earthquake activity near major ports signals short-term freight logistics disruption and bearish xli",
+        "matched_idea_id": "daily-spike-in-usgs-earthquake-activity-near-major-ports-sig",
+        "matched_origin": "history:2026-04-30",
+        "matched_source": "chatgpt"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-usgs-earthquake-activity-near-major-ports-sig",
+        "title": "Daily Spike In Usgs Earthquake Activity Near Major Ports Signals Freight Disruption Risk",
+        "family": "freight_logistics",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Increased earthquake frequency near major ports can disrupt freight logistics and supply chains. Logistics disruptions reduce industrial and manufacturing output, hurting industrial sector ETFs.",
+        "data_sources": [
+          "USGS earthquake daily activity near LA and NY ports"
+        ],
+        "signal_logic": "Enter short if daily earthquake count within 100km of key ports rises above 3 events",
+        "entry_exit": "Entry: Enter short if daily earthquake count within 100km of key ports rises above 3 events Exit: Exit when daily count falls back below 2 events",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use USGS earthquake daily activity near LA and NY ports via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Earthquake swarms and aftershocks near ports regularly occur and can create short-term disruption risk.",
+        "schema": {
+          "idea": "Daily Spike In USGS Earthquake Activity Near Major Ports Signals Freight Disruption Risk",
+          "family": "freight_logistics",
+          "data": {
+            "source": "USGS earthquake daily activity near LA and NY ports",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Increased earthquake frequency near major ports can disrupt freight logistics and supply chains.",
+          "market_impact": {
+            "direction": "bearish",
+            "sector": "XLI",
+            "rationale": "Logistics disruptions reduce industrial and manufacturing output, hurting industrial sector ETFs."
+          },
+          "trade_logic": {
+            "entry": "Enter short if daily earthquake count within 100km of key ports rises above 3 events",
+            "exit": "Exit when daily count falls back below 2 events",
+            "expected_frequency": "medium"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Earthquake swarms and aftershocks near ports regularly occur and can create short-term disruption risk.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    },
+    {
+      "source": "chatgpt",
+      "idea_id": "daily-spike-in-google-trends-for-emergency-vehicle-battery-r",
+      "title": "Daily Spike In Google Trends For Emergency Vehicle Battery Replacement Searches Signals Auto Repair Stress",
+      "family": "consumer_stress",
+      "duplicate_of": {
+        "reason": "same_idea_id",
+        "score": 1.0,
+        "matched_title": "daily spike in google trends for emergency vehicle battery replacement searches signals auto stress",
+        "matched_idea_id": "daily-spike-in-google-trends-for-emergency-vehicle-battery-r",
+        "matched_origin": "existing_algo",
+        "matched_source": "crazy"
+      },
+      "idea": {
+        "idea_id": "daily-spike-in-google-trends-for-emergency-vehicle-battery-r",
+        "title": "Daily Spike In Google Trends For Emergency Vehicle Battery Replacement Searches Signals Auto Repair Stress",
+        "family": "consumer_stress",
+        "source_provider": "openai",
+        "source_model": "gpt-4.1-mini",
+        "thesis": "Spike in emergency vehicle battery replacement searches indicates rising auto repair stress. Higher auto repair demand lifts industrial sector companies servicing vehicle parts and maintenance.",
+        "data_sources": [
+          "Google Trends daily emergency vehicle battery replacement searches"
+        ],
+        "signal_logic": "Enter long when daily search volume spikes 40% above 10-day average",
+        "entry_exit": "Entry: Enter long when daily search volume spikes 40% above 10-day average Exit: Exit when volume falls below 15% above 10-day average",
+        "position_sizing": "Allocate 5% per signal, max 20% total exposure.",
+        "universe": [
+          "XLI"
+        ],
+        "frequency": "daily",
+        "risks": "Data source instability, false positives, and regime shifts.",
+        "implementation_notes": "Use Google Trends daily emergency vehicle battery replacement searches via api (daily).",
+        "required_keys": [],
+        "expected_fire_rate": "daily",
+        "historical_backfill": true,
+        "minimum_history_months": 12,
+        "adapter_status": "existing",
+        "trigger_sensitivity": "high",
+        "reason_it_will_fire_in_30_days": "Vehicle battery failures spike seasonally and with cold snaps or electrical system recalls.",
+        "schema": {
+          "idea": "Daily Spike In Google Trends For Emergency Vehicle Battery Replacement Searches Signals Auto Repair Stress",
+          "family": "consumer_stress",
+          "data": {
+            "source": "Google Trends daily emergency vehicle battery replacement searches",
+            "type": "api",
+            "frequency": "daily",
+            "stable": true
+          },
+          "behavior": "Spike in emergency vehicle battery replacement searches indicates rising auto repair stress.",
+          "market_impact": {
+            "direction": "bullish",
+            "sector": "XLI",
+            "rationale": "Higher auto repair demand lifts industrial sector companies servicing vehicle parts and maintenance."
+          },
+          "trade_logic": {
+            "entry": "Enter long when daily search volume spikes 40% above 10-day average",
+            "exit": "Exit when volume falls below 15% above 10-day average",
+            "expected_frequency": "high"
+          },
+          "expected_fire_rate": "daily",
+          "historical_backfill": true,
+          "minimum_history_months": 12,
+          "adapter_status": "existing",
+          "trigger_sensitivity": "high",
+          "reason_it_will_fire_in_30_days": "Vehicle battery failures spike seasonally and with cold snaps or electrical system recalls.",
+          "source_provider": "openai",
+          "source_model": "gpt-4.1-mini"
+        }
+      }
+    }
+  ]
+}
